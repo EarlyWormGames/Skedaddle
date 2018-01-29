@@ -163,7 +163,8 @@ public class Cannon : ActionObject
             m_rCons = m_aAnimal.m_rBody.constraints;
             m_aAnimal.m_rBody.constraints = RigidbodyConstraints.FreezeRotation;
             m_aAnimal.m_rBody.useGravity = true;
-            m_aAnimal.m_rBody.AddForce((m_bAimLeft ? m_tLeftShootDir.position - transform.position : m_tRightShootDir.position - transform.position).normalized * (m_bAimLeft ? m_fLeftShootForce : m_fRightShootForce), ForceMode.Impulse);
+            Vector3 direction = ((m_bAimLeft ? m_tLeftShootDir.position : m_tRightShootDir.position) - transform.position).normalized;
+            m_aAnimal.m_rBody.AddForce(direction * (m_bAimLeft ? m_fLeftShootForce : m_fRightShootForce), ForceMode.Impulse);
             m_bShoot = false;
 
             PlaySound(SOUND_EVENT.CANNON_SHOOT);
