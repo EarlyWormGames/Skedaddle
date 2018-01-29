@@ -1,5 +1,3 @@
-// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
-
 Shader "Hidden/Shader Forge/SFN_Time" {
     Properties {
         _OutputMask ("Output Mask", Vector) = (1,1,1,1)
@@ -17,7 +15,6 @@ Shader "Hidden/Shader Forge/SFN_Time" {
             #pragma target 3.0
             uniform float4 _OutputMask;
             uniform sampler2D _IN;
-            uniform float4 _TimeEditor;
 
             struct VertexInput {
                 float4 vertex : POSITION;
@@ -33,7 +30,7 @@ Shader "Hidden/Shader Forge/SFN_Time" {
             float4 frag(VertexOutput i) : COLOR {
 
                 // Operator
-                float4 outputColor = _Time + _TimeEditor;
+                float4 outputColor = _Time;
 
                 // Return
                 return outputColor * _OutputMask;

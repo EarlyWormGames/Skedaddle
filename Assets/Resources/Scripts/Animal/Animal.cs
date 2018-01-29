@@ -579,6 +579,7 @@ public class Animal : MonoBehaviour
 
     protected virtual void Move()
     {
+        m_v3MoveVelocity = Vector3.zero;
         if (!m_bUseXTarget && !m_bUseYTarget && !m_bUseZTarget)
         {
             if (m_bSelected && m_bAlive)
@@ -702,13 +703,13 @@ public class Animal : MonoBehaviour
             {
                 if (transform.position.x < m_fXTarget - 0.008f)
                 {
-                    m_rBody.AddForce(-Vector3.left * m_fCurrentSpeed * Time.deltaTime);
+                    m_v3MoveVelocity = (-Vector3.left * m_fCurrentSpeed);
                     m_bWalkingRight = true;
                     m_bFacingLeft = false;
                 }
                 else if (transform.position.x > m_fXTarget + 0.008f)
                 {
-                    m_rBody.AddForce(Vector3.left * m_fCurrentSpeed * Time.deltaTime);
+                    m_v3MoveVelocity = (Vector3.left * m_fCurrentSpeed);
                     m_bWalkingLeft = true;
                     m_bFacingLeft = true;
                 }
@@ -722,13 +723,13 @@ public class Animal : MonoBehaviour
             {
                 if (transform.position.y < m_fYTarget - 0.008f)
                 {
-                    m_rBody.AddForce(Vector3.up * m_fCurrentSpeed * Time.deltaTime);
+                    m_v3MoveVelocity = (Vector3.up * m_fCurrentSpeed);
                     m_bWalkingRight = true;
                     m_bFacingLeft = false;
                 }
                 else if (transform.position.y > m_fYTarget + 0.008f)
                 {
-                    m_rBody.AddForce(Vector3.down * m_fCurrentSpeed * Time.deltaTime);
+                    m_v3MoveVelocity = (Vector3.down * m_fCurrentSpeed);
                     m_bWalkingLeft = true;
                     m_bFacingLeft = true;
                 }
@@ -742,13 +743,13 @@ public class Animal : MonoBehaviour
             {
                 if (transform.position.z < m_fYTarget - 0.008f)
                 {
-                    m_rBody.AddForce(Vector3.back * m_fCurrentSpeed * Time.deltaTime);
+                    m_v3MoveVelocity = (Vector3.back * m_fCurrentSpeed);
                     m_bWalkingRight = true;
                     m_bFacingLeft = false;
                 }
                 else if (transform.position.z > m_fYTarget + 0.008f)
                 {
-                    m_rBody.AddForce(Vector3.forward * m_fCurrentSpeed * Time.deltaTime);
+                    m_v3MoveVelocity = (Vector3.forward * m_fCurrentSpeed);
                     m_bWalkingLeft = true;
                     m_bFacingLeft = true;
                 }
@@ -765,21 +766,21 @@ public class Animal : MonoBehaviour
     {
         if (m_v3MoveVelocity != Vector3.zero)
         {
-            m_v3MoveVelocity *= Time.deltaTime;
             float topSpeed = m_fTopSpeed * (m_bOnGround ? (m_bRunning ? m_fRunSpeedMult : 1) : m_fFallSpeedMult);
 
             m_rBody.AddForce(m_v3MoveVelocity);
             Vector3 velocity = m_rBody.velocity;
             velocity.x = Mathf.Clamp(velocity.x, -topSpeed, topSpeed);
+            velocity.z = Mathf.Clamp(velocity.z, -topSpeed, topSpeed);
             m_rBody.velocity = velocity;
-
-            m_v3MoveVelocity = Vector3.zero;
         }
     }
 
     public void MoveInDirection(Vector3 a_direction)
     {
         m_v3MoveVelocity = a_direction * m_fCurrentSpeed;
+        MoveRig();
+        m_v3MoveVelocity = Vector3.zero;
     }
 
     public void Turn(float angle)
