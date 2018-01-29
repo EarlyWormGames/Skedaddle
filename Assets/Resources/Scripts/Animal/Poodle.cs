@@ -173,7 +173,7 @@ public class Poodle : Animal
             {
                 m_aAnimalAnimator.SetBool("Walking", false);
             }
-            if (m_bRunning && m_v3MoveVelocity.magnitude > 0.10f)
+            if (m_bRunning && m_rBody.velocity.magnitude > 0.10f)
             {
                 m_aAnimalAnimator.SetBool("Sprint", true);
             } else

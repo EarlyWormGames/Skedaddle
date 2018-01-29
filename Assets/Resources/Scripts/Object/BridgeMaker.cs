@@ -132,7 +132,7 @@ public class BridgeMaker : ActionObject
     public override void AnimalEnter(Animal a_animal)
     {
         a_animal.m_eExtras.m_bmTongueBridge = this;
-        m_headTerrain = a_animal.m_tCollider.FindChild("Head Offset").GetComponent<TerrainDetection>();
+        m_headTerrain = a_animal.m_tCollider.Find("Head Offset").GetComponent<TerrainDetection>();
         m_headIK = (AimIK)m_headTerrain.effectedIK;
     }
 

@@ -189,6 +189,7 @@ public class Animal : MonoBehaviour
     internal bool           m_EyeDown = false;
     internal EWGazeObject   m_GazeObject;
     internal GrounderQuadruped m_gqGrounder;
+    internal Vector3        m_v3MoveVelocity;
 
     //==================================
     //          Protected Vars
@@ -220,7 +221,6 @@ public class Animal : MonoBehaviour
     protected bool          m_bGazeRunning = false;
     protected float         m_fGazeTimer = 0f;
 
-    protected Vector3       m_v3MoveVelocity;   
     protected Dictionary<Collider, Type> m_dChildColliders;
 
 
@@ -565,6 +565,7 @@ public class Animal : MonoBehaviour
     void FixedUpdate()
     {
         OnFixedUpdate();
+        MoveRig();
     }
 
     public void ForceTurn(bool a_facingLeft)
@@ -601,30 +602,26 @@ public class Animal : MonoBehaviour
                                 if (m_bTurned)
                                 {
                                     Vector3 force = m_tCollider.transform.forward * m_fCurrentSpeed * (m_bOnGround ? 1 : m_fFallSpeedMult) * (stickAmount.x < -0.2f ? -stickAmount.x : 1);
-                                    if ((m_v3MoveVelocity + force).magnitude < m_fTopSpeed * (m_bOnGround ? (m_bRunning ? m_fRunSpeedMult : 1) : m_fFallSpeedMult))
-                                        m_v3MoveVelocity += (force) * Time.deltaTime;
+                                    m_v3MoveVelocity += force;
                                 }
                                 else
                                 {
                                     Vector3 force = Vector3.left * m_fCurrentSpeed * (m_bRunning ? 0 : m_fTurnSpeedMult);
-                                    if ((m_v3MoveVelocity + force).magnitude < m_fTopSpeed * (m_bOnGround ? (m_bRunning ? m_fRunSpeedMult : 1) : m_fFallSpeedMult))
-                                        m_v3MoveVelocity += (force) * Time.deltaTime;
+                                    m_v3MoveVelocity += force;
                                     Turn(180);
                                 }
                             }
                             else
                             {
                                 Vector3 force = Vector3.left * m_fCurrentSpeed * (m_bRunning ? 0 : m_fTurnSpeedMult);
-                                if ((m_v3MoveVelocity + force).magnitude < m_fTopSpeed * (m_bOnGround ? (m_bRunning ? m_fRunSpeedMult : 1) : m_fFallSpeedMult))
-                                    m_v3MoveVelocity+= (force) * Time.deltaTime;
+                                m_v3MoveVelocity+= force;
                                 if(!m_bTurned)Turn(180);
                             }
                         }
                         else
                         {
                             Vector3 force = new Vector3(-Mathf.Cos(m_fTurnAxis), 0, -Mathf.Sin(m_fTurnAxis)) * m_fCurrentSpeed * m_fPullSpeedMult * (m_bOnGround ? 1 : m_fFallSpeedMult) * (stickAmount.x < -0.2f ? -stickAmount.x : 1);
-                            if ((m_v3MoveVelocity + force).magnitude < m_fTopSpeed * m_fPullSpeedMult * (m_bOnGround ? 1 : m_fFallSpeedMult))
-                                m_v3MoveVelocity += (force) * Time.deltaTime;
+                            m_v3MoveVelocity += (force) * Time.deltaTime;
                         }
                         m_bWalkingLeft = true;
                     }
@@ -642,14 +639,12 @@ public class Animal : MonoBehaviour
                                 if (!m_bTurned)
                                 {
                                     Vector3 force = m_tCollider.transform.forward * m_fCurrentSpeed * (m_bOnGround ? 1 : m_fFallSpeedMult) * (stickAmount.x > 0.2f ? stickAmount.x : 1);
-                                    if ((m_v3MoveVelocity + force).magnitude < m_fTopSpeed * (m_bOnGround ? (m_bRunning ? m_fRunSpeedMult : 1) : m_fFallSpeedMult))
-                                        m_v3MoveVelocity += (force) * Time.deltaTime;
+                                    m_v3MoveVelocity += force;
                                 }
                                 else
                                 {
                                     Vector3 force = Vector3.right * m_fCurrentSpeed * (m_bRunning ? 0 : m_fTurnSpeedMult);
-                                    if ((m_v3MoveVelocity + force).magnitude < m_fTopSpeed * (m_bOnGround ? (m_bRunning ? m_fRunSpeedMult : 1) : m_fFallSpeedMult))
-                                        m_v3MoveVelocity += (force) * Time.deltaTime;
+                                    m_v3MoveVelocity += force;
                                     Turn(180);
                                 }
                             }
@@ -657,8 +652,7 @@ public class Animal : MonoBehaviour
                             {
                                 
                                 Vector3 force = Vector3.right * m_fCurrentSpeed * (m_bRunning ? 0 : m_fTurnSpeedMult);
-                                if ((m_v3MoveVelocity + force).magnitude < m_fTopSpeed * (m_bOnGround ? (m_bRunning ? m_fRunSpeedMult : 1) : m_fFallSpeedMult))
-                                    m_v3MoveVelocity += (force) * Time.deltaTime;
+                                m_v3MoveVelocity += force;
                                 if (m_bTurned)
                                     Turn(180);
                             }
@@ -666,8 +660,7 @@ public class Animal : MonoBehaviour
                         else
                         {
                             Vector3 force = new Vector3(Mathf.Cos(m_fTurnAxis),0, Mathf.Sin(m_fTurnAxis)) * m_fCurrentSpeed * m_fPullSpeedMult * (m_bOnGround ? 1 : m_fFallSpeedMult) * (stickAmount.x > 0.2f ? stickAmount.x : 1);
-                            if ((m_v3MoveVelocity + force).magnitude < m_fTopSpeed * m_fPullSpeedMult * (m_bOnGround ? 1 : m_fFallSpeedMult))
-                                m_v3MoveVelocity += (force) * Time.deltaTime;
+                            m_v3MoveVelocity += force;
                         }
                         m_bWalkingRight = true;
                     }
@@ -766,34 +759,24 @@ public class Animal : MonoBehaviour
                     m_bUseZTarget = false;
                 }
             }
-        }
-
-        //Vector3 move = m_v3MoveVelocity * Time.deltaTime;
-        if (!m_bPullingObject)
-            SweepTest(ref m_v3MoveVelocity);
-        m_rBody.MovePosition(transform.position + (m_v3MoveVelocity));
-
-        if (m_v3MoveVelocity.magnitude < 0.01f * Time.deltaTime)
-            m_v3MoveVelocity = Vector3.zero;
-        else
-            m_v3MoveVelocity -= m_v3MoveVelocity.normalized * m_fDecelerateSpeed * Time.deltaTime * (m_v3MoveVelocity.magnitude * m_fPushTopMult);
+        }      
     }
 
-    void SweepTest(ref Vector3 a_Force)
+    public void MoveRig()
     {
-        RaycastHit info;
-        Ray ray = new Ray(transform.position + transform.TransformDirection(m_v3WalkingOffset), a_Force.normalized);
-        if (Physics.BoxCast(ray.origin, m_v3WalkingSize / 2f, ray.direction, out info, m_tJointRoot.rotation, m_fWalkingDistance, m_lGroundCheckMask))
-            a_Force = Vector3.zero;
+        float topSpeed = m_fTopSpeed * (m_bOnGround ? (m_bRunning ? m_fRunSpeedMult : 1) : m_fFallSpeedMult);
 
-        ExtDebug.DrawBoxCastBox(ray.origin, m_v3WalkingSize / 2f, m_tJointRoot.rotation, ray.direction, m_fWalkingDistance, Color.blue);
+        m_rBody.AddForce(m_v3MoveVelocity);
+        Vector3 velocity = m_rBody.velocity;
+        velocity.x = Mathf.Clamp(velocity.x, -topSpeed, topSpeed);
+        m_rBody.velocity = velocity;
+
+        m_v3MoveVelocity = Vector3.zero;
     }
 
     public void MoveInDirection(Vector3 a_direction)
     {
-        a_direction *= m_fCurrentSpeed;
-        if ((m_rBody.velocity + a_direction).magnitude < m_fTopSpeed)
-            m_rBody.MovePosition(a_direction + transform.position);
+        m_v3MoveVelocity = a_direction * m_fCurrentSpeed;
     }
 
     public void Turn(float angle)
