@@ -1,8 +1,18 @@
 ﻿using UnityEngine;
 using System;
+using System.Collections.Generic;
 
 public class BezierSpline : MonoBehaviour
 {
+    public int ArcIncrements = 100;
+    public int ArcSubDivs = 5;
+
+    public bool DrawTangents = false;
+    public bool DrawIncrements = false;
+    public bool LowExit = true;
+    public bool HighExit = true;
+    public bool AllowReverse = true;
+
     [SerializeField]
     private Vector3[] points;
 
@@ -11,6 +21,18 @@ public class BezierSpline : MonoBehaviour
 
     [SerializeField]
     private bool loop;
+
+    private float[] arcLengths;
+    private Vector3[] arcPoints;
+    private int[] arcSubDivs;
+
+    public float MaxSplineLength
+    {
+        get
+        {
+            return arcLengths[arcLengths.Length - 1];
+        }
+    }
 
     public bool Loop
     {
@@ -27,6 +49,15 @@ public class BezierSpline : MonoBehaviour
                 SetControlPoint(0, points[0]);
             }
         }
+    }
+
+    private void Awake()
+    {
+        ArcLength();
+        //for(int i = 0; i < CurveCount; ++i)
+        //{
+        //    GetLength(i);
+        //}
     }
 
     public void Reset()
@@ -87,6 +118,102 @@ public class BezierSpline : MonoBehaviour
             transform.position).normalized;
     }
 
+    public void ArcLength()
+    {
+        float maxLength = 0;
+
+        float mult = 1 / (float)ArcIncrements;
+        arcLengths = new float[ArcIncrements + 1];
+        arcPoints = new Vector3[ArcIncrements + 1];
+        arcSubDivs = new int[ArcSubDivs];
+
+        Vector3 pp = GetPoint(0); //PreviousPoint
+        arcPoints[0] = pp;
+        for(int i = 1; i <= ArcIncrements; ++i)
+        {
+            Vector3 point = GetPoint(i * mult);
+            maxLength += Vector3.Distance(pp, point);
+            arcLengths[i] = maxLength;
+
+            arcPoints[i] = point;
+            pp = point;
+        }
+
+        float size = ArcIncrements / (float)(ArcSubDivs + 1);
+        int index = 0;
+        for(int i = 0; i < arcLengths.Length; ++i)
+        {
+            if(i >= size * (index + 1))
+            {
+                arcSubDivs[index] = i;
+
+                ++index;
+
+                if (index == arcSubDivs.Length)
+                    break;
+            }
+        }
+    }
+
+    public float GetArcDist(float dist, bool subDivCheck = true)
+    {
+        dist -= 0.00001f;
+        if (arcLengths == null)
+            ArcLength();
+
+        int start = 0;
+
+        if (subDivCheck)
+        {
+            for (int i = 0; i < arcSubDivs.Length; ++i)
+            {
+                if (dist > arcLengths[arcSubDivs[i]])
+                {
+                    if (i == arcSubDivs.Length - 1)
+                    {
+                        start = arcSubDivs[i];
+                    }
+                    else if (dist < arcLengths[arcSubDivs[i + 1]])
+                    {
+                        start = arcSubDivs[i];
+                        break;
+                    }
+                }
+            }
+        }
+
+        for(int i = start; i < arcLengths.Length; ++i)
+        {
+            if(arcLengths[i] > dist)
+            {
+                return i / (float)(arcLengths.Length - 1);
+            }
+        }
+        return 0;
+    }
+
+    public float GetArcLength(Vector3 point, bool a_ignoreY = false)
+    {
+        if (arcPoints == null)
+            ArcLength();
+
+        int closest = 0;
+        float distance = -1;
+        for (int i = 0; i < arcPoints.Length; ++i)
+        {
+            if (a_ignoreY)
+                point.y = arcPoints[i].y;
+
+            float dist = Vector3.Distance(arcPoints[i], point);
+            if (dist < distance || distance < 0)
+            {
+                distance = dist;
+                closest = i;
+            }
+        }
+        return arcLengths[closest];
+    }
+
     public void AddCurve()
     {
         Vector3 point = points[points.Length - 1];
@@ -113,7 +240,7 @@ public class BezierSpline : MonoBehaviour
     public void RemoveCurve()
     {
         if (points.Length > 4)
-        {
+        {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
             Array.Resize(ref points, points.Length - 3);
         }
     }
@@ -280,4 +407,43 @@ public class BezierSpline : MonoBehaviour
         }
         modes = newmodes;
     }
+
+    #if UNITY_EDITOR
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.gray;
+        Vector3 p0 = transform.TransformPoint(GetControlPoint(0));
+        for (int i = 1; i < ControlPointCount; i += 3)
+        {
+            Vector3 p1 = transform.TransformPoint(GetControlPoint(i));
+            Vector3 p2 = transform.TransformPoint(GetControlPoint(i + 1));
+            Vector3 p3 = transform.TransformPoint(GetControlPoint(i + 2));
+
+            UnityEditor.Handles.DrawBezier(p0, p3, p1, p2, Color.white, null, 2f);
+            p0 = p3;
+        }
+
+        if (arcSubDivs != null)
+        {
+            UnityEditor.Handles.color = Color.blue;
+            for (int i = 0; i < arcSubDivs.Length; ++i)
+            {
+                Vector3 pos = GetPoint(arcSubDivs[i] / (float)(arcLengths.Length - 1));
+                Vector3 dir = Camera.current.gameObject.transform.position - pos;
+                UnityEditor.Handles.DrawSolidDisc(pos, dir, UnityEditor.HandleUtility.GetHandleSize(pos) * 0.04f);
+            }
+        }
+
+        if (DrawIncrements && arcLengths != null)
+        {
+            UnityEditor.Handles.color = Color.red;
+            for (int i = 0; i < arcLengths.Length; ++i)
+            {
+                Vector3 pos = GetPoint(i / (float)(arcLengths.Length - 1));
+                Vector3 dir = Camera.current.gameObject.transform.position - pos;
+                UnityEditor.Handles.DrawSolidDisc(pos, dir, UnityEditor.HandleUtility.GetHandleSize(pos) * 0.012f);
+            }
+        }
+    }
+#endif
 }

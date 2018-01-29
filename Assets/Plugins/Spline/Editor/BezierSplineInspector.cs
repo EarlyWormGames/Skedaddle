@@ -14,6 +14,8 @@ public class BezierSplineInspector : Editor
     private Transform handleTransform;
     private int selectedIndex = -1;
 
+    private float length;
+
     private static Color[] modeColors = {
         Color.white,
         Color.yellow,
@@ -38,6 +40,8 @@ public class BezierSplineInspector : Editor
             DrawSelectedPointInspector();
         }
 
+        GUILayout.Label("Curve Count: " + spline.CurveCount);
+
         if (GUILayout.Button("Add Curve"))
         {
             Undo.RecordObject(spline, "Add Curve");
@@ -61,18 +65,92 @@ public class BezierSplineInspector : Editor
             spline.Reverse();
             EditorUtility.SetDirty(spline);
         }
+
+        EditorGUI.BeginChangeCheck();
+        int increments = EditorGUILayout.IntField("Increments Count", spline.ArcIncrements);
+        if (EditorGUI.EndChangeCheck())
+        {
+            Undo.RecordObject(spline, "Increments Count");
+            EditorUtility.SetDirty(spline);
+            spline.ArcIncrements = increments;
+        }
+
+        EditorGUI.BeginChangeCheck();
+        int divs = EditorGUILayout.IntField("Sub Divisions", spline.ArcSubDivs);
+        if(EditorGUI.EndChangeCheck())
+        {
+            Undo.RecordObject(spline, "Divs");
+            EditorUtility.SetDirty(spline);
+            spline.ArcSubDivs = divs;
+        }
+
+        if (GUILayout.Button("Calculate Increments"))
+        {
+            Undo.RecordObject(spline, "Calc Increments");
+            spline.ArcLength();
+            EditorUtility.SetDirty(spline);
+        }
+
+        EditorGUI.BeginChangeCheck();
+        bool drawincrements = EditorGUILayout.Toggle("Draw Increments", spline.DrawIncrements);
+        if (EditorGUI.EndChangeCheck())
+        {
+            Undo.RecordObject(spline, "Draw Increments");
+            spline.DrawIncrements = drawincrements;
+            EditorUtility.SetDirty(spline);
+        }
+
+        EditorGUI.BeginChangeCheck();
+        bool tangents = EditorGUILayout.Toggle("Draw Tangents", spline.DrawTangents);
+        if (EditorGUI.EndChangeCheck())
+        {
+            Undo.RecordObject(spline, "Draw Tangents");
+            spline.DrawTangents = tangents;
+            EditorUtility.SetDirty(spline);
+        }
+
+        EditorGUI.BeginChangeCheck();
+        bool lowexit = EditorGUILayout.Toggle("Allow Low Exit", spline.LowExit);
+        if (EditorGUI.EndChangeCheck())
+        {
+            Undo.RecordObject(spline, "Allow Low Exit");
+            spline.LowExit = lowexit;
+            EditorUtility.SetDirty(spline);
+        }
+
+        EditorGUI.BeginChangeCheck();
+        bool highexit = EditorGUILayout.Toggle("Allow High Exit", spline.HighExit);
+        if (EditorGUI.EndChangeCheck())
+        {
+            Undo.RecordObject(spline, "Allow High Exit");
+            spline.LowExit = highexit;
+            EditorUtility.SetDirty(spline);
+        }
+
+        EditorGUI.BeginChangeCheck();
+        bool reverse = EditorGUILayout.Toggle("Allow Reverse", spline.AllowReverse);
+        if (EditorGUI.EndChangeCheck())
+        {
+            Undo.RecordObject(spline, "Allow Reverse");
+            spline.AllowReverse = reverse;
+            EditorUtility.SetDirty(spline);
+        }
+
+        int index = selectedIndex - 1;
+        if (index < 0)
+            index = 0;
     }
 
     private void DrawSelectedPointInspector()
     {
         GUILayout.Label("Selected Point");
         EditorGUI.BeginChangeCheck();
-        Vector3 point = EditorGUILayout.Vector3Field("Position", spline.GetControlPoint(selectedIndex));
+        Vector3 point = EditorGUILayout.Vector3Field("Position", spline.transform.TransformPoint(spline.GetControlPoint(selectedIndex)));
         if (EditorGUI.EndChangeCheck())
         {
             Undo.RecordObject(spline, "Move Point");
             EditorUtility.SetDirty(spline);
-            spline.SetControlPoint(selectedIndex, point);
+            spline.SetControlPoint(selectedIndex, spline.transform.InverseTransformPoint(point));
         }
 
         EditorGUI.BeginChangeCheck();
@@ -101,10 +179,10 @@ public class BezierSplineInspector : Editor
             Handles.DrawLine(p0, p1);
             Handles.DrawLine(p2, p3);
 
-            Handles.DrawBezier(p0, p3, p1, p2, Color.white, null, 2f);
             p0 = p3;
         }
-        ShowDirections();
+        if (spline.DrawTangents)
+            ShowDirections();
     }
 
     private void ShowDirections()
@@ -129,7 +207,7 @@ public class BezierSplineInspector : Editor
             size *= 2f;
         }
         Handles.color = modeColors[(int)spline.GetControlPointMode(index)];
-        if (Handles.Button(point, handleTransform.rotation, size * handleSize, size * pickSize, Handles.DotCap))
+        if (Handles.Button(point, handleTransform.rotation, size * handleSize, size * pickSize, Handles.DotHandleCap))
         {
             selectedIndex = index;
             Repaint();
