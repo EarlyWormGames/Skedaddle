@@ -66,7 +66,6 @@ public class Animal : MonoBehaviour
     public float            m_fWalkSpeed = 0.001f;
     public float            m_fTopSpeed = 0.05f;
     public float            m_fPushTopMult = 0.6f;
-    public float            m_fDecelerateSpeed = 0.001f;
     public float            m_fPullSpeedMult = 0.5f;
     public float            m_fFallSpeedMult = 0.5f;
     public float            m_fRunSpeedMult = 1.5f;
