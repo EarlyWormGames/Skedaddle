@@ -53,6 +53,10 @@ public class ActionObject : MonoBehaviour
     [Header("Sounds")]
     public NamedEvent[] m_aSoundEvents;
 
+    [Header("Events")]
+    public UnityEvent OnAnimalEnter;
+    public UnityEvent OnAnimalExit;
+
 
     protected bool m_bUseDefaultAction = true;
     protected bool m_bEyetrackSelected = false;
@@ -162,6 +166,8 @@ public class ActionObject : MonoBehaviour
 
         m_aCurrentAnimal = anim;
         AnimalEnter(anim);
+
+        OnAnimalEnter.Invoke();
     }
 
     protected virtual void ObjectEnter(Collider a_col) { }
@@ -206,6 +212,7 @@ public class ActionObject : MonoBehaviour
         if (anim != null)
         {
             AnimalExit(anim);
+            OnAnimalExit.Invoke();
         }
     }
 

@@ -1,20 +1,28 @@
 using UnityEngine;
+using UnityEngine.Events;
 using System.Collections.Generic;
 
 public class PressureButton : ActionObject
 {
+    public UnityEvent OnButtonDown, OnButtonUp;
+
+    [Header("Quick Camera Pan")]
     public Transform m_tMovePoint;
     public Transform m_tLookAt;
     public float m_fWaitTimer;
     public float m_fLookTime;
 
+    [Header("Misc")]
+    [Tooltip("Can only animals trigger the button?")]
     public bool m_bRequireAnimals = true;
     public Animator m_aController;
-    public Activations[] m_aObjects;
+
     [SerializeField] public List<Collider> m_acIgnores;
 
     private List<GameObject> m_lgObj;
     private bool m_bLook = true;
+
+    private bool m_bButtonDown = false;
 
     //Inherited functions
 
@@ -39,18 +47,16 @@ public class PressureButton : ActionObject
 
             if (m_lgObj.Count == 0)
             {
-                for (int i = 0; i < m_aObjects.Length; ++i)
+                if (m_bButtonDown)
                 {
-                    if(!m_aObjects[i].m_bDoReverse)
-                        m_aObjects[i].m_aObj.DoActionOff();
-                    else
-                        m_aObjects[i].m_aObj.DoActionOn();
+                    m_bButtonDown = false;
+                    m_aController.SetBool("Switch", false);
                 }
-                m_aController.SetBool("Switch", false);
             }
         }
-        else if(m_lgObj.Count == 0)
+        else if(m_lgObj.Count == 0 && m_bButtonDown)
         {
+            m_bButtonDown = false;
             m_aController.SetBool("Switch", false);
         }
     }
@@ -60,6 +66,9 @@ public class PressureButton : ActionObject
 
     void OnTriggerEnter(Collider a_col)
     {
+        if (m_bButtonDown)
+            return;
+
         if (m_bRequireAnimals)
         {
             Animal anim = a_col.GetComponentInParent<Animal>();
@@ -77,14 +86,9 @@ public class PressureButton : ActionObject
             m_lgObj.Add(a_col.gameObject);
         }
 
-        for (int i = 0; i < m_aObjects.Length; ++i)
-        {
-            if (m_aObjects[i].m_bDoReverse)
-                m_aObjects[i].m_aObj.DoActionOff();
-            else
-                m_aObjects[i].m_aObj.DoActionOn();
-        }
+        m_bButtonDown = true;
         m_aController.SetBool("Switch", true);
+        OnButtonDown.Invoke();
 
         if (m_bLook)
         {
@@ -99,6 +103,9 @@ public class PressureButton : ActionObject
 
     void OnTriggerExit(Collider a_col)
     {
+        if (!m_bButtonDown)
+            return;
+
         if (m_lgObj.Contains(a_col.gameObject))
         {
             m_lgObj.Remove(a_col.gameObject);
@@ -106,13 +113,7 @@ public class PressureButton : ActionObject
         else
             return;
 
-        for (int i = 0; i < m_aObjects.Length; ++i)
-        {
-            if (!m_aObjects[i].m_bDoReverse)
-                m_aObjects[i].m_aObj.DoActionOff();
-            else
-                m_aObjects[i].m_aObj.DoActionOn();
-        }
+        OnButtonUp.Invoke();
     }
     
     //protected override void DoAction() { }
