@@ -114,7 +114,12 @@ public class Pendulum : ActionObject
             }
         }
     }
-
+	//LACHLAN'S MODIFICATIONS START
+	public void ChangeSwingTime(float newSwingTimeMod)
+	{
+		m_SwingTime = m_SwingTime + newSwingTimeMod;
+	}
+	//LACHLAN'S MODIFICATIONS END
     public override void DoAction()
     {
         m_bSwing = !m_bSwing;
