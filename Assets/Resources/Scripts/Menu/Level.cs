@@ -9,8 +9,7 @@ public class Level : MonoBehaviour
     public Level m_lNextLevel;
     public Transform m_tMovePoint;
     public LevelPreview m_LevelScreen;
-
-    public bool m_bReady = false;
+    
     internal Area m_aParent;
 
     private float m_fLeftLookTimer = -1f;
