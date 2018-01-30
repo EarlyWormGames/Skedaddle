@@ -76,6 +76,12 @@ public class Animal : MonoBehaviour
     public float            m_fRotSpeed = 1f;
     public float            m_fSplineRotSpeed = 1f;
 
+    [Header("Rotation Settings")]
+    public float            m_fForwardRotation = 180;
+    public float            m_fBackRotation = 0;
+    public float            m_fLeftRotation = 270;
+    public float            m_fRightRotation = 90;
+
     [Header("Climb Jump")]
     public float            m_fJumpWaitTime = 1f;
     public float            m_fJumpLerpSpeed = 2f;
@@ -362,23 +368,23 @@ public class Animal : MonoBehaviour
                 {
                     case FACING_DIR.FRONT:
                         {
-                            rot = Quaternion.Euler(0, 180, 0);
+                            rot = Quaternion.Euler(0, m_fForwardRotation, 0);
                             break;
                         }
                     case FACING_DIR.RIGHT:
                         {
-                            rot = Quaternion.Euler(0, 90, 0);
+                            rot = Quaternion.Euler(0, m_fRightRotation, 0);
                             m_bTurned = false;
                             break;
                         }
                     case FACING_DIR.BACK:
                         {
-                            rot = Quaternion.Euler(0, 0, 0);
+                            rot = Quaternion.Euler(0, m_fBackRotation, 0);
                             break;
                         }
                     case FACING_DIR.LEFT:
                         {
-                            rot = Quaternion.Euler(0, 270, 0);
+                            rot = Quaternion.Euler(0, m_fLeftRotation, 0);
                             m_bTurned = true;
                             break;
                         }

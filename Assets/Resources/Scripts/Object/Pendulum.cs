@@ -2,38 +2,37 @@ using UnityEngine;
 using System.Collections.Generic;
 using System;
 
-public class Pendulum : ActionObject
+public class Pendulum : MonoBehaviour
 {
     //==================================
     //          Public Vars
     //==================================
-    public bool m_showDebug;
+    [Header("Misc")]
     public bool m_bSwing = true;
-    public float m_fSwingSpeed = 1f;
-    public float m_fKillThreshold = 1f;
-    public float m_fRestTime = 2f;
-    public float m_fRestAngle = 0f;
+    public Transform m_tSwingObject;
+    public bool m_bDoOnce = false;
+
+    [Header("Curves")]
     public AnimationCurve m_aRestCurve;
+    public AnimationCurve m_aSwingCurve;
+
+    [Header("Rotation")]
+    public float LeftRotation;
+    public float RightRotation;
+    public float m_fSwingTime = 2f;
+    public float m_fRestAngle;
+    public float m_fRestTime = 2f;
+    [Tooltip("Will the pendulum swing to the right after rest?")]
+    public bool m_bRightOnRest = false;
+
+    [Header("Smash")]
     public GameObject m_goHead;
     public ParticleSystem m_psExplosion;
-
-    public Transform m_tAnchorPoint;
-
-    public bool m_bOnce = false;
     public bool m_bDestroyOnSmash = false;
-    public float m_fForwardMult = 0.8f;
     public float m_fShardForce = 2;
-
-    public AnimationCurve m_SwingCurve;
-    public float m_SwingTime = 1;
-    public Vector3 m_EndRotation;
-
     public float m_Force = 50;
     public float m_DeathForce = 10;
     public float m_DeathUpForce = 3;
-
-    public Transform m_tDebugCenter;
-    public Vector3 m_fDebugSize;
 
     //==================================
     //          Internal Vars
@@ -46,26 +45,20 @@ public class Pendulum : ActionObject
     private Vector3 m_TempVel = Vector3.zero;
     private bool m_bDone = false;
     private float m_RestLerp;
+    private bool m_bWasRest = false;
 
-    private Quaternion m_qRestRotation;
-    private Quaternion m_qEndRotation;
+    private Quaternion m_qRestStartRotation, m_qSwingStart;
     private Rigidbody[] m_rShards;
-
-    private Quaternion m_qStartRotation;
+    
     private Vector3 m_v3StartPos;
-
-    private Quaternion m_qPoleStartRotation;
-    private Vector3 m_v3PoleStartPos;
 
     private float m_Timer = 0f;
 
-    protected override void OnStart()
+    void Start()
     {
-        m_qStartRotation = transform.localRotation;
         m_v3StartPos = transform.localPosition;
-
-        m_qRestRotation = Quaternion.identity;
         //m_qEndRotation = Quaternion.Euler(m_tAnchorPoint.eulerAngles.x, m_tAnchorPoint.eulerAngles.y, m_EndRotation);
+        m_qSwingStart = transform.rotation;
 
         if (m_goHead != null)
         {
@@ -73,84 +66,68 @@ public class Pendulum : ActionObject
         }
     }
 
-    protected override void OnFixedUpdate()
+    void Update()
     {
-        //if (m_Left && m_rBody.velocity.x >= 0)
-        //    m_Left = false;
-        //else if (!m_Left && m_rBody.velocity.x <= 0)
-        //    m_Left = true;
-        //
-        //if (m_bSwing)
-        //{
-        //    m_rBody.AddForce(m_Left ? Vector3.left : -Vector3.left * m_fSwingSpeed);
-        //}
-    }
-
-    protected override void OnUpdate()
-    {
-        if (!m_bSwing && m_tAnchorPoint != null)
+        if (!m_bSwing)
         {
+            if (!m_bWasRest)
+            {
+                m_bWasRest = true;
+                m_qRestStartRotation = m_tSwingObject.rotation;
+                m_Timer = 0;
+                m_Left = !m_bRightOnRest;
+            }
+
             m_RestLerp += Time.deltaTime;
             float val = m_aRestCurve.Evaluate(Mathf.Min(m_RestLerp / m_fRestTime, 1));
-            m_tAnchorPoint.rotation = Quaternion.Lerp(m_tAnchorPoint.rotation, m_qRestRotation, val);
+            m_tSwingObject.rotation = Quaternion.Lerp(m_qRestStartRotation, Quaternion.Euler(0, 0, m_fRestAngle), val);
         }
-        else if (m_bSwing && m_tAnchorPoint != null)
+        else if (m_bSwing)
         {
-            if (m_Left)
+            if (m_bWasRest)
             {
-                m_Timer += Time.deltaTime;
-                m_tAnchorPoint.rotation = Quaternion.Euler(Vector3.Lerp(m_qRestRotation.eulerAngles, m_EndRotation, m_SwingCurve.Evaluate(m_Timer / m_SwingTime)));
-
-                if (m_Timer >= m_SwingTime)
-                    m_Left = false;
+                m_bWasRest = false;
+                m_RestLerp = 0;
+                m_qSwingStart = transform.rotation;
             }
-            else
-            {
-                m_Timer -= Time.deltaTime;
-                m_tAnchorPoint.rotation = Quaternion.Euler(Vector3.Lerp(m_qRestRotation.eulerAngles, m_EndRotation, m_SwingCurve.Evaluate(m_Timer / m_SwingTime)));
 
-                if (m_Timer <= 0)
-                    m_Left = true;
+            m_Timer = Mathf.Clamp(m_Timer + Time.deltaTime, 0, m_fSwingTime);
+            float t = m_aSwingCurve.Evaluate(m_Timer / m_fSwingTime);
+            Quaternion end = Quaternion.Euler(new Vector3(0, 0, m_Left ? LeftRotation : RightRotation));
+
+            m_tSwingObject.rotation = Quaternion.Lerp(m_qSwingStart, end, t);
+
+            if (m_Timer >= m_fSwingTime)
+            {
+                m_Timer = 0;
+                m_Left = !m_Left;
+                m_qSwingStart = Quaternion.Euler(new Vector3(0, 0, !m_Left ? LeftRotation : RightRotation));
             }
         }
     }
 
-    public override void DoAction()
+
+    public void Switch()
     {
         m_bSwing = !m_bSwing;
-
-        if (m_bSwing)
-        {
-        }
-        else
-        {
-            m_rBody.isKinematic = true;
-        }
     }
 
-    public override void DoActionOn()
+    public void Swing()
     {
-        if (m_bDone && m_bOnce)
+        if (m_bDone && m_bDoOnce)
             return;
 
-        m_qRestRotation = Quaternion.Euler(m_tAnchorPoint.eulerAngles.x, m_tAnchorPoint.eulerAngles.y, m_fRestAngle);
         m_bDone = true;
         m_bSwing = true;
     }
 
-    public override void DoActionOff()
+    public void Stop()
     {
-        if (m_bOnce)
+        if (m_bDoOnce)
             return;
 
         m_bSwing = false;
         m_RestLerp = 0;
-
-        m_qRestRotation = Quaternion.Euler(m_tAnchorPoint.eulerAngles.x, m_tAnchorPoint.eulerAngles.y, m_fRestAngle);
-
-        m_tAnchorPoint.rotation = Quaternion.Euler(m_tAnchorPoint.eulerAngles.x, m_tAnchorPoint.eulerAngles.y, transform.eulerAngles.z);
-        transform.localRotation = m_qStartRotation;
-        transform.localPosition = m_v3StartPos;
     }
 
     void OnCollisionEnter(Collision a_col)
@@ -187,15 +164,6 @@ public class Pendulum : ActionObject
                     a_col.collider.GetComponentInParent<Animal>().m_rBody.AddForce(new Vector3((m_Left ? -1 : 1) * m_DeathForce, m_DeathUpForce, 0) * mass, ForceMode.Impulse);
                 }
             }
-        }
-    }
-
-    private void OnDrawGizmos()
-    {
-        if (m_showDebug && m_tDebugCenter != null)
-        {
-            Gizmos.color = new Color(1, 0, 0, 0.25f);
-            Gizmos.DrawCube(m_tDebugCenter.position, m_fDebugSize);
         }
     }
 }
