@@ -441,7 +441,7 @@ public class Animal : MonoBehaviour
         {
             m_bWallOnRight = false;
         }
-        if (m_bWalkingLeft && m_rBody.velocity.x < 0.001f && m_rBody.velocity.x > -0.001f)
+        if (m_bWalkingLeft && m_rBody.velocity.x < 0.0001f && m_rBody.velocity.x > -0.0001f)
         {
             m_bWallOnLeft = true;
         }
@@ -621,7 +621,7 @@ public class Animal : MonoBehaviour
                         else
                         {
                             Vector3 force = new Vector3(-Mathf.Cos(m_fTurnAxis), 0, -Mathf.Sin(m_fTurnAxis)) * m_fCurrentSpeed * m_fPullSpeedMult * (m_bOnGround ? 1 : m_fFallSpeedMult) * (stickAmount.x < -0.2f ? -stickAmount.x : 1);
-                            m_v3MoveVelocity += (force) * Time.deltaTime;
+                            m_v3MoveVelocity += force;
                         }
                         m_bWalkingLeft = true;
                     }
