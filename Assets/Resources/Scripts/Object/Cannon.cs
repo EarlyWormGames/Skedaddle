@@ -24,6 +24,8 @@ public class Cannon : ActionObject
 
     public TutBox m_tBox;
 
+    public string RotateEvent, RotateStopEvent, ShootEvent;
+
     //==================================
     //          Internal Vars
     //==================================
@@ -98,7 +100,7 @@ public class Cannon : ActionObject
             if (Vector3.Distance(m_tRotObject.localRotation.eulerAngles, m_bAimLeft ? m_qLeftEndRot.eulerAngles : m_qRightEndRot.eulerAngles) < 1.2f)
             {
                 if (!m_bStopped)
-                    PlaySound(SOUND_EVENT.CANNON_ROTATE_STOP);
+                    NamedEvent.TriggerEvent(RotateStopEvent, m_aSoundEvents);
                 m_bStopped = true;
                 m_bPlayed = false;
                 m_bCanShoot = true;
@@ -107,7 +109,7 @@ public class Cannon : ActionObject
             {
                 m_bStopped = false;
                 m_bPlayed = true;
-                PlaySound(SOUND_EVENT.CANNON_ROTATE);
+                NamedEvent.TriggerEvent(RotateEvent, m_aSoundEvents);
                 m_bCanShoot = false;
             }
             if (Keybinding.GetKeyDown("MoveLeft") || Controller.GetDpadDown(ControllerDpad.Left) || Controller.GetStickPositionDown(true, ControllerDpad.Left))
@@ -167,7 +169,7 @@ public class Cannon : ActionObject
             m_aAnimal.m_rBody.AddForce(direction * (m_bAimLeft ? m_fLeftShootForce : m_fRightShootForce), ForceMode.Impulse);
             m_bShoot = false;
 
-            PlaySound(SOUND_EVENT.CANNON_SHOOT);
+            NamedEvent.TriggerEvent(ShootEvent, m_aSoundEvents);
         }
     }
 

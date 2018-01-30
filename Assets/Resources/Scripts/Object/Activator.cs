@@ -13,6 +13,8 @@ namespace EW
         public bool m_bLorisLight = false;
 
         public bool m_bOnAtStart = true;
+
+        public string ActivateEvent, DeactivateEvent;
         //==================================
         //          Internal Vars
         //==================================
@@ -33,7 +35,7 @@ namespace EW
             if (m_bOnAtStart)
             {
                 m_bOnAtStart = false;
-                PlaySound(SOUND_EVENT.ACTIVATED);
+                NamedEvent.TriggerEvent(ActivateEvent, m_aSoundEvents);
             }
         }
         //protected override void AnimalEnter(Animal a_animal) { }
@@ -51,7 +53,7 @@ namespace EW
                 m_apSystems[i].Stop();
             }
 
-            PlaySound(SOUND_EVENT.DEACTIVATED);
+            NamedEvent.TriggerEvent(DeactivateEvent, m_aSoundEvents);
 
             if (m_bLorisLight)
             {
@@ -72,7 +74,7 @@ namespace EW
                 m_apSystems[i].Play();
             }
 
-            PlaySound(SOUND_EVENT.ACTIVATED);
+            NamedEvent.TriggerEvent(ActivateEvent, m_aSoundEvents);
 
             if (m_bLorisLight)
             {

@@ -12,6 +12,8 @@ public class RotatingObject : ActionObject
     public AnimationCurve m_aCurve;
     public AnimationCurve m_aReverseCurve;
     public bool m_bUseReverse = false;
+
+    public string OpenEvent, CloseEvent;
     //==================================
     //          Internal Vars
     //==================================
@@ -74,7 +76,7 @@ public class RotatingObject : ActionObject
             m_bDown = false;
         }
 
-        PlaySound(m_bDown ? SOUND_EVENT.DOOR_OPEN : SOUND_EVENT.DOOR_CLOSE);
+        NamedEvent.TriggerEvent(m_bDown ? OpenEvent : CloseEvent, m_aSoundEvents);
         m_bMove = true;
         m_fTimer = 0f;
     }
@@ -84,10 +86,10 @@ public class RotatingObject : ActionObject
         if (m_bMove)
             return;
         m_bRequiredState = true;
-        PlaySound(SOUND_EVENT.DOOR_OPEN);
         m_bDown = true;
         m_bMove = true;
         m_fTimer = 0f;
+        NamedEvent.TriggerEvent(m_bDown ? OpenEvent : CloseEvent, m_aSoundEvents);
     }
 
     public override void DoActionOff()
@@ -95,10 +97,10 @@ public class RotatingObject : ActionObject
         if (m_bMove)
             return;
         m_bRequiredState = false;
-        PlaySound(SOUND_EVENT.DOOR_CLOSE);
         m_bDown = false;
         m_bMove = true;
         m_fTimer = 0f;
+        NamedEvent.TriggerEvent(m_bDown ? OpenEvent : CloseEvent, m_aSoundEvents);
     }
 
     void OnSlideEnd()
@@ -113,7 +115,7 @@ public class RotatingObject : ActionObject
             m_bDown = m_bRequiredState;
             m_bMove = true;
             m_fTimer = 0f;
-            PlaySound(m_bDown ? SOUND_EVENT.DOOR_OPEN : SOUND_EVENT.DOOR_CLOSE);
+            NamedEvent.TriggerEvent(m_bDown ? OpenEvent : CloseEvent, m_aSoundEvents);
         }
     }
 }

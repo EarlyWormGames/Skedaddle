@@ -258,7 +258,7 @@ public class Trampampoline : ActionObject
                 return;
 
             m_cChestBounced.gameObject.layer = LayerMask.NameToLayer("Trigger");
-            m_cChestBounced.PlaySound(SOUND_EVENT.CHEST_LAND);
+            NamedEvent.TriggerEvent(m_cChestBounced.LandEvent, m_cChestBounced.m_aSoundEvents);
             m_cChestBounced = null;
         }
         else

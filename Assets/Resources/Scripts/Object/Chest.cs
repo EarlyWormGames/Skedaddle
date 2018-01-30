@@ -23,6 +23,8 @@ public class Chest : ActionObject
 
     public float        m_fRotateSpeed = 2f;
 
+    public string       LandEvent;
+
     //==================================
     //          Internal Vars
     //==================================

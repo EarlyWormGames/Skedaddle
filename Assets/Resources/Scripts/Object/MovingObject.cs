@@ -31,6 +31,8 @@ public class MovingObject : ActionObject
     public LayerMask m_Layer;
 
     public UnityEvent m_OnMoveEnd;
+
+    public string OpenEvent, CloseEvent;
     //==================================
     //          Internal Vars
     //==================================
@@ -119,7 +121,7 @@ public class MovingObject : ActionObject
             m_bDown = false;
         }
 
-        PlaySound(m_bDown ? SOUND_EVENT.DOOR_OPEN : SOUND_EVENT.DOOR_CLOSE);
+        NamedEvent.TriggerEvent(m_bDown ? OpenEvent : CloseEvent, m_aSoundEvents);
         m_bMove = true;
         m_fTimer = 0f;
     }
@@ -129,8 +131,8 @@ public class MovingObject : ActionObject
         if (m_bMove)
             return;
         m_bRequiredState = true;
-        PlaySound(SOUND_EVENT.DOOR_OPEN);
         m_bDown = true;
+        NamedEvent.TriggerEvent(m_bDown ? OpenEvent : CloseEvent, m_aSoundEvents);
         m_bMove = true;
         m_fTimer = 0f;
     }
@@ -142,8 +144,8 @@ public class MovingObject : ActionObject
         if (m_bDontDeactivate)
             return;
         m_bRequiredState = false;
-        PlaySound(SOUND_EVENT.DOOR_CLOSE);
         m_bDown = false;
+        NamedEvent.TriggerEvent(m_bDown ? OpenEvent : CloseEvent, m_aSoundEvents);
         m_bMove = true;
         m_fTimer = 0f;
     }
@@ -160,10 +162,10 @@ public class MovingObject : ActionObject
             m_bDown = m_bRequiredState;
             m_bMove = true;
             m_fTimer = 0f;
-            PlaySound(m_bDown ? SOUND_EVENT.DOOR_OPEN : SOUND_EVENT.DOOR_CLOSE);
+            NamedEvent.TriggerEvent(m_bDown ? OpenEvent : CloseEvent, m_aSoundEvents);
         }
 
-        if(m_oActivate != null)
+        if (m_oActivate != null)
         {
             m_oActivate.DoAction();
         }

@@ -6,6 +6,8 @@ public class Lever : LeverPlug
     public Animator m_aController;
     public bool m_bReverseAnims = false;
 
+    public string LeverPullEvent;
+
     public override void DoAnimation()
     {
         if (m_fSoundTimer >= 0f)
@@ -21,7 +23,7 @@ public class Lever : LeverPlug
             if (m_fSoundTimer >= m_fSoundTime)
             {
                 m_fSoundTimer = -1f;
-                PlaySound(SOUND_EVENT.LEVER_PULL);
+                NamedEvent.TriggerEvent(LeverPullEvent, m_aSoundEvents);
             }
         }
         else

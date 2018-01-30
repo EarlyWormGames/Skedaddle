@@ -2,44 +2,32 @@
 using UnityEngine.Events;
 using System;
 
+[Serializable]
+public class NamedEvent
+{
+    public string m_EventKey;
+    public UnityEvent m_eFunction;
 
+    public static void TriggerEvent(string key, NamedEvent[] events)
+    {
+        if (events == null)
+            return;
+
+        foreach (NamedEvent ev in events)
+        {
+            if (ev.m_EventKey == key)
+            {
+                if (ev.m_eFunction != null)
+                {
+                    ev.m_eFunction.Invoke();
+                }
+            }
+        }
+    }
+}
 
 public class ActionObject : MonoBehaviour
 {
-    [Serializable]
-    public class NamedEvent
-    {
-        public SOUND_EVENT m_Event;
-        public UnityEvent m_eFunction;
-    }
-
-    public enum SOUND_EVENT
-    {
-        PUSH,
-        PUSH_STOP,
-
-        ROPE_SNAP,
-        CAGE_CRASH,
-
-        CANNON_ROTATE,
-        CANNON_ROTATE_STOP,
-        CANNON_SHOOT,
-
-        ACTIVATED,
-        DEACTIVATED,
-
-        LEVER_PULL,
-
-        SCISSOR_UP,
-        SCISSOR_DOWN,
-        SCISSOR_STOP,
-        
-        CHEST_LAND,
-
-        DOOR_OPEN,
-        DOOR_CLOSE,
-    }
-
     [Header("Requirements")]
     public ANIMAL_SIZE m_aRequiredSize;
     public ANIMAL_NAME m_aRequiredAnimal;
@@ -226,25 +214,6 @@ public class ActionObject : MonoBehaviour
     public virtual void DoActionOff() { }
 
     public virtual void Detach() { }
-
-
-    public void PlaySound(SOUND_EVENT a_type)
-    {
-        if (m_aSoundEvents == null)
-            return;
-
-        foreach (NamedEvent ev in m_aSoundEvents)
-        {
-            if (ev.m_Event == a_type)
-            {
-                if (ev.m_eFunction != null)
-                {
-                    if (ev.m_eFunction.GetPersistentEventCount() > 0)
-                        ev.m_eFunction.Invoke();
-                }
-            }
-        }
-    }
 
     public void SetTimer(bool a_Run)
     {

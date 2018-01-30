@@ -16,6 +16,8 @@ public class PPObject : ActionObject
     public bool m_bZDivert = false;
     public bool m_bKeepY = false;
 
+    public string PushEvent, PushStopEvent;
+
     private bool m_bMoving;
     private bool m_bZMoved;
 
@@ -98,13 +100,13 @@ public class PPObject : ActionObject
             if (m_bPushSound)
             {
                 m_bPushSound = false;
-                PlaySound(SOUND_EVENT.PUSH);
+                NamedEvent.TriggerEvent(PushEvent, m_aSoundEvents);
             }
         }
         else
         {
             if (!m_bPushSound)
-                PlaySound(SOUND_EVENT.PUSH_STOP);
+                NamedEvent.TriggerEvent(PushStopEvent, m_aSoundEvents);
 
             if (m_psDust != null)
             {

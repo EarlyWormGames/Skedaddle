@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class ScissorLift : ActionObject
+public class ScissorLift : MonoBehaviour
 {
     //==================================
     //          Public Vars
@@ -10,6 +10,12 @@ public class ScissorLift : ActionObject
     public float m_fBlendSpeed = 1f;
     public bool m_bLook = true;
     public Transform m_tLookPoint;
+
+    [Header("Sounds")]
+    public NamedEvent[] m_aSoundEvents;
+    public string RaiseEventKey;
+    public string LowerEventKey;
+    public string StopEventKey;
 
     //==================================
     //          Internal Vars
@@ -25,7 +31,7 @@ public class ScissorLift : ActionObject
 
     //Inherited functions
 
-    protected override void OnStart()
+    void Start()
     {
         m_aController = GetComponent<Animator>();
 
@@ -34,7 +40,7 @@ public class ScissorLift : ActionObject
         m_bUp = m_bStartUp;
     }
 
-    protected override void OnUpdate()
+    void Update()
     {
         if (!m_bUp)
         {
@@ -46,7 +52,7 @@ public class ScissorLift : ActionObject
             {
                 m_fBlend = 1.1f;
                 if (!m_bStopped)
-                    PlaySound(SOUND_EVENT.SCISSOR_STOP);
+                    NamedEvent.TriggerEvent(StopEventKey, m_aSoundEvents);
                 m_bStopped = true;
             }
         }
@@ -60,7 +66,7 @@ public class ScissorLift : ActionObject
             {
                 m_fBlend = 0f;
                 if (!m_bStopped)
-                    PlaySound(SOUND_EVENT.SCISSOR_STOP);
+                    NamedEvent.TriggerEvent(StopEventKey, m_aSoundEvents);
                 m_bStopped = true;
             }
         }
@@ -68,15 +74,12 @@ public class ScissorLift : ActionObject
         m_aController.SetFloat("ScissorBlend", m_fBlend);
     }
 
-    //protected override void AnimalEnter(Animal a_animal) { }
-    //protected override void AnimalExit(Animal a_animal) { }
-    //public override void DoAction() { }
-    public override void DoActionOn()
+    public void Raise()
     {
-        m_bUp = !m_bStartUp;
+        m_bUp = true;
         m_bStopped = false;
 
-        PlaySound(m_bUp ? SOUND_EVENT.SCISSOR_UP : SOUND_EVENT.SCISSOR_DOWN);
+        NamedEvent.TriggerEvent(RaiseEventKey, m_aSoundEvents);
 
         if (m_bLook)
         {
@@ -85,11 +88,11 @@ public class ScissorLift : ActionObject
         }
     }
 
-    public override void DoActionOff()
+    public void Lower()
     {
-        m_bUp = m_bStartUp;
+        m_bUp = false;
         m_bStopped = false;
-
-        PlaySound(m_bUp ? SOUND_EVENT.SCISSOR_UP : SOUND_EVENT.SCISSOR_DOWN);
+        
+        NamedEvent.TriggerEvent(LowerEventKey, m_aSoundEvents);
     }
 }
