@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TilingTexture : TrainEffects {
+public class TilingTexture : TrainEffects
+{
 
     public bool m_bBounce;
-    public Material m_mAnimatedUV;
     public Transform m_tJitterObject;
     public Vector2 m_v2Speed;
     public float m_fJitterStrength;
@@ -12,6 +12,8 @@ public class TilingTexture : TrainEffects {
 
     public Transform m_tMovePoint;
     public Transform m_tResetPoint;
+
+    public Renderer[] m_Renderers;
 
     private float m_fUVTimer;
     private Terrain m_tTerrain;
@@ -23,7 +25,7 @@ public class TilingTexture : TrainEffects {
 
     public override void OnStart()
     {
-        if(GetComponent<Terrain>() != null)
+        if (GetComponent<Terrain>() != null)
         {
             m_tTerrain = GetComponent<Terrain>();
         }
@@ -32,7 +34,8 @@ public class TilingTexture : TrainEffects {
         if (m_tJitterObject != null) m_fBaseHeight = m_tJitterObject.position.y;
     }
 
-    public override void OnUpdate () {
+    public override void OnUpdate()
+    {
         if (m_bStartTime)
         {
             m_fTimer -= Time.deltaTime;
@@ -61,7 +64,7 @@ public class TilingTexture : TrainEffects {
         {
             m_fUVTimer = 0;
         }
-        if(m_tTerrain != null)
+        if (m_tTerrain != null)
         {
             //SplatPrototype[] splatPrototypes = m_tTerrain.terrainData.splatPrototypes;
             //foreach (SplatPrototype splat in splatPrototypes)
@@ -77,8 +80,13 @@ public class TilingTexture : TrainEffects {
                 m_tTerrain.transform.parent.position = m_tResetPoint.position - difference;
             }
         }
-        if (m_mAnimatedUV != null)
-            m_mAnimatedUV.mainTextureOffset = new Vector2(m_fUVTimer * m_v2Speed.x, m_fUVTimer * m_v2Speed.y);
+        if (m_Renderers.Length > 0)
+        {
+            foreach (var item in m_Renderers)
+            {
+                item.material.mainTextureOffset = new Vector2(m_fUVTimer * m_v2Speed.x, m_fUVTimer * m_v2Speed.y);
+            }
+        }
 
         if (m_tJitterObject != null)
         {

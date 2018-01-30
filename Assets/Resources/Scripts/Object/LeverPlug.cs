@@ -1,29 +1,28 @@
 using UnityEngine;
+using UnityEngine.Events;
 using System.Collections;
-
-[System.Serializable]
-public class Activations
-{
-    public string name;
-    public ActionObject m_aObj;
-    public bool m_bDoReverse;
-}
 
 public class LeverPlug : ActionObject
 {
-    public bool m_bIsPlug;
-    public float m_fHoldTime = 0f;
-    public Activations[] m_aObjects;
+    public UnityEvent OnLeverForward, OnLeverReverse;
 
-    public Transform m_tMovePoint;
+    [Header("Quick Camera Pan")]
     public Transform m_tCameraMove;
     public Transform m_tCameraFocus;
-    public FACING_DIR m_fDirection = FACING_DIR.BACK;
-    public FACING_DIR m_FinishDirection;
     public float m_fWaitTimer = 1f;
     public float m_fLookTime = 1f;
-    public float m_fSoundTime = 0.2f;
 
+    [Header("Animation")]
+    [Tooltip("Where the animal will position itself to for animating")]
+    public Transform m_tMovePoint;
+    public bool m_bIsPlug;
+    public float m_fHoldTime = 0f;
+    public float m_fSoundTime = 0.2f;
+    [Tooltip("Which direction should the animal face while animating?")]
+    public FACING_DIR m_fDirection = FACING_DIR.BACK;
+    public FACING_DIR m_FinishDirection;
+    
+    [Tooltip("Can the lever be used multiple times?")]
     public bool m_bUseOnce = false;
 
     protected bool m_bOn = false;
@@ -86,19 +85,11 @@ public class LeverPlug : ActionObject
     public override void DoAction()
     {
         m_bOn = !m_bOn;
-        for (int i = 0; i < m_aObjects.Length; ++i)
-        {
-            if ((m_bOn && !m_aObjects[i].m_bDoReverse) || (!m_bOn && m_aObjects[i].m_bDoReverse))
-            {
-                if (m_aObjects[i] == null ? false : m_aObjects[i].m_aObj != null)
-                    m_aObjects[i].m_aObj.DoActionOn();
-            }
-            else if((!m_bOn && !m_aObjects[i].m_bDoReverse) || (m_bOn && m_aObjects[i].m_bDoReverse))
-            {
-                if (m_aObjects[i] == null ? false : m_aObjects[i].m_aObj != null)
-                    m_aObjects[i].m_aObj.DoActionOff();
-            }
-        }
+
+        if (m_bOn)
+            OnLeverForward.Invoke();
+        else
+            OnLeverReverse.Invoke();
 
         if (m_bFirst)
         {
@@ -124,10 +115,7 @@ public class LeverPlug : ActionObject
     public void TurnOff()
     {
         m_bOn = false;
-        for (int i = 0; i < m_aObjects.Length; ++i)
-        {
-            m_aObjects[i].m_aObj.DoActionOff();
-        }
+        OnLeverReverse.Invoke();
 
         DoAnimation();
     }
@@ -135,10 +123,7 @@ public class LeverPlug : ActionObject
     public void TurnOn()
     {
         m_bOn = true;
-        for (int i = 0; i < m_aObjects.Length; ++i)
-        {
-            m_aObjects[i].m_aObj.DoActionOn();
-        }
+        OnLeverForward.Invoke();
 
         DoAnimation();
     }
