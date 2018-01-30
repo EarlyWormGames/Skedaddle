@@ -46,6 +46,7 @@ public class Pendulum : MonoBehaviour
     private bool m_bDone = false;
     private float m_RestLerp;
     private bool m_bWasRest = false;
+    private bool m_bSwingDone = false;
 
     private Quaternion m_qRestStartRotation, m_qSwingStart;
     private Rigidbody[] m_rShards;
@@ -60,6 +61,8 @@ public class Pendulum : MonoBehaviour
         //m_qEndRotation = Quaternion.Euler(m_tAnchorPoint.eulerAngles.x, m_tAnchorPoint.eulerAngles.y, m_EndRotation);
         m_qSwingStart = transform.rotation;
 
+        m_bSwingDone = !m_bSwing;
+
         if (m_goHead != null)
         {
             m_rShards = m_goHead.GetComponentsInChildren<Rigidbody>();
@@ -68,7 +71,7 @@ public class Pendulum : MonoBehaviour
 
     void Update()
     {
-        if (!m_bSwing)
+        if (!m_bSwing && m_bSwingDone)
         {
             if (!m_bWasRest)
             {
@@ -82,8 +85,9 @@ public class Pendulum : MonoBehaviour
             float val = m_aRestCurve.Evaluate(Mathf.Min(m_RestLerp / m_fRestTime, 1));
             m_tSwingObject.rotation = Quaternion.Lerp(m_qRestStartRotation, Quaternion.Euler(0, 0, m_fRestAngle), val);
         }
-        else if (m_bSwing)
+        else
         {
+            m_bSwingDone = false;
             if (m_bWasRest)
             {
                 m_bWasRest = false;
@@ -99,6 +103,7 @@ public class Pendulum : MonoBehaviour
 
             if (m_Timer >= m_fSwingTime)
             {
+                m_bSwingDone = true;
                 m_Timer = 0;
                 m_Left = !m_Left;
                 m_qSwingStart = Quaternion.Euler(new Vector3(0, 0, !m_Left ? LeftRotation : RightRotation));
