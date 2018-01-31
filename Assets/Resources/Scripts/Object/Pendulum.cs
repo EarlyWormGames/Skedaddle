@@ -26,7 +26,8 @@ public class Pendulum : MonoBehaviour
     public bool m_bRightOnRest = false;
 
     [Header("Smash")]
-    public GameObject m_goHead;
+    public GameObject m_HeadObject;
+    public GameObject m_goHeadShatter;
     public ParticleSystem m_psExplosion;
     public bool m_bDestroyOnSmash = false;
     public float m_fShardForce = 2;
@@ -61,9 +62,9 @@ public class Pendulum : MonoBehaviour
 
         m_bSwingDone = !m_bSwing;
 
-        if (m_goHead != null)
+        if (m_goHeadShatter != null)
         {
-            m_rShards = m_goHead.GetComponentsInChildren<Rigidbody>();
+            m_rShards = m_goHeadShatter.GetComponentsInChildren<Rigidbody>();
         }
     }
 
@@ -157,7 +158,7 @@ public class Pendulum : MonoBehaviour
                     x.AddForce(Vector3.left * m_Force, ForceMode.Impulse);
                     x.AddForce(Vector3.forward * m_Force * m_fShardForce, ForceMode.Impulse);
                 }
-                Destroy(gameObject);
+                Destroy(m_HeadObject);
             }
         }
         else if (a_col.collider.GetComponentInParent<Animal>())
