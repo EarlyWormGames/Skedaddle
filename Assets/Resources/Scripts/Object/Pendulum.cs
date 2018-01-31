@@ -51,6 +51,7 @@ public class Pendulum : MonoBehaviour
     private Rigidbody[] m_rShards;
     
     private Vector3 m_v3StartPos;
+    private Quaternion m_qSwingStart, m_qRestStartRotation;
 
     private float m_Timer = 0f;
 
