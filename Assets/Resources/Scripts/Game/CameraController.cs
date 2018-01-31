@@ -190,11 +190,11 @@ public class CameraController : Singleton<CameraController>
         {
             m_fPlayerOffsety += Time.deltaTime;
         }
-        if (Keybinding.GetKey("CameraPanOut"))
+        if (Keybinding.GetKey("CameraZoomOut"))
         {
             m_fPlayerOffsetz -= Time.deltaTime;
         }
-        if (Keybinding.GetKey("CameraPanIn"))
+        if (Keybinding.GetKey("CameraZoomIn"))
         {
             m_fPlayerOffsetz += Time.deltaTime;
         }
