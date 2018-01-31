@@ -102,7 +102,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4503219444239524}
   - component: {fileID: 65614820528768874}
-  - component: {fileID: 114750715611878806}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -184,6 +183,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4439726015839326}
   - component: {fileID: 114817003894160710}
+  - component: {fileID: 114391091208236130}
   m_Layer: 0
   m_Name: SmashMallet
   m_TagString: Untagged
@@ -254,7 +254,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1984724242460948}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.864, y: 3.16, z: 4.945}
+  m_LocalPosition: {x: -11.908031, y: 3.1208045, z: -5.212}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4689206723393178}
@@ -655,40 +655,20 @@ TrailRenderer:
     generateLightingData: 0
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
---- !u!114 &114750715611878806
+--- !u!114 &114391091208236130
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1553750842144964}
+  m_GameObject: {fileID: 1984724242460948}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 469036bb862331640bbd87773a5a996d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_aRequiredSize: 0
-  m_aRequiredAnimal: 0
-  m_aMaximumSize: 0
-  m_aCurrentAnimal: {fileID: 0}
-  m_rBody: {fileID: 0}
-  m_GazeObject: {fileID: 0}
-  m_aSoundEvents: []
-  OnAnimalEnter:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnAnimalExit:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  m_showDebug: 0
   m_bSwing: 1
-  m_fSwingSpeed: 1300
-  m_fKillThreshold: 1
-  m_fRestTime: 4
-  m_fRestAngle: 77
+  m_tSwingObject: {fileID: 4439726015839326}
+  m_bDoOnce: 0
   m_aRestCurve:
     serializedVersion: 2
     m_Curve:
@@ -699,6 +679,18 @@ MonoBehaviour:
       outSlope: 0
       tangentMode: 0
     - serializedVersion: 2
+      time: 0.32782266
+      value: 0.1529805
+      inSlope: 1.3450533
+      outSlope: 1.3450533
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.7392936
+      value: 0.88945645
+      inSlope: 0.9831786
+      outSlope: 0.9831786
+      tangentMode: 0
+    - serializedVersion: 2
       time: 1
       value: 1
       inSlope: 0
@@ -707,14 +699,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  m_goHead: {fileID: 0}
-  m_psExplosion: {fileID: 0}
-  m_tAnchorPoint: {fileID: 4439726015839326}
-  m_bOnce: 0
-  m_bDestroyOnSmash: 0
-  m_fForwardMult: 0.8
-  m_fShardForce: 2
-  m_SwingCurve:
+  m_aSwingCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 2
@@ -724,16 +709,16 @@ MonoBehaviour:
       outSlope: 0
       tangentMode: 0
     - serializedVersion: 2
-      time: 0.309
-      value: 0.1
-      inSlope: 0.87827206
-      outSlope: 0.87827206
+      time: 0.32782266
+      value: 0.1529805
+      inSlope: 1.3450533
+      outSlope: 1.3450533
       tangentMode: 0
     - serializedVersion: 2
-      time: 0.6908577
-      value: 0.8991285
-      inSlope: 0.86963177
-      outSlope: 0.86963177
+      time: 0.7392936
+      value: 0.88945645
+      inSlope: 0.9831786
+      outSlope: 0.9831786
       tangentMode: 0
     - serializedVersion: 2
       time: 1
@@ -744,14 +729,19 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  m_SwingTime: 1
-  m_EndRotation: {x: 0, y: 0, z: -90}
-  m_Force: 8
+  LeftRotation: -70
+  RightRotation: 70
+  m_fSwingTime: 1.5
+  m_fRestAngle: 0
+  m_fRestTime: 1.5
+  m_bRightOnRest: 0
+  m_goHead: {fileID: 0}
+  m_psExplosion: {fileID: 0}
+  m_bDestroyOnSmash: 0
+  m_fShardForce: 2
+  m_Force: 50
   m_DeathForce: 10
   m_DeathUpForce: 3
-  m_tDebugCenter: {fileID: 0}
-  m_fDebugSize: {x: 0, y: 0, z: 0}
-  m_qRestRotation: {fileID: 0}
 --- !u!114 &114817003894160710
 MonoBehaviour:
   m_ObjectHideFlags: 1
