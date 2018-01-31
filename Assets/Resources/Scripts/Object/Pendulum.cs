@@ -115,7 +115,12 @@ public class Pendulum : MonoBehaviour
             }
         }
     }
-
+	//LACHLAN'S CHANGES START
+	public void SwingTimeChange(float newSwingTime)
+	{
+		m_fSwingTime = m_fSwingTime + newSwingTime;
+	}
+	//LACHLAN'S CHANGES END
     public void Switch()
     {
         m_bSwing = !m_bSwing;
