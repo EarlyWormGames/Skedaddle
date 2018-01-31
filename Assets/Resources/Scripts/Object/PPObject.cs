@@ -225,6 +225,7 @@ public class PPObject : ActionObject
             m_aCurrentAnimal = null;
             return;
         }
+        m_Joint.connectedBody = null;
 
         m_aPushingAnimal.m_bPullingObject = false;
         m_aPushingAnimal.m_oCurrentObject = null;
