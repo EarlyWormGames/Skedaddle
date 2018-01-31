@@ -244,6 +244,7 @@ public class PPObject : ActionObject
 
         if (m_aPushingAnimal.m_oCurrentObject == this)
         {
+            m_Joint.connectedBody = null;
             m_aPushingAnimal.m_bPullingObject = false;
             m_aPushingAnimal.m_oCurrentObject = null;
             m_aPushingAnimal.m_fFacingDir = FACING_DIR.NONE;
