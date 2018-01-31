@@ -38,6 +38,8 @@ public class CameraController : Singleton<CameraController>
     public float m_fRotateSpeed = 2f;
     public float m_fFocalSpeed = 2f;
     public Vector2 m_fAnimalSpeedBuffer = new Vector2 (0.5f, 0.5f);
+    public bool m_bAllowManualOffsets = false;
+    public bool m_bFollowAnimalZ = false;
 
     public AnimationCurve m_aLerpCurve;
 
@@ -85,6 +87,9 @@ public class CameraController : Singleton<CameraController>
     private Light[] m_LorisLight;
 
     private float m_fStartz;
+    private float m_fPlayerOffsetx;
+    private float m_fPlayerOffsety;
+    private float m_fPlayerOffsetz;
 
     //=============
 
@@ -169,12 +174,37 @@ public class CameraController : Singleton<CameraController>
             transform.rotation = Quaternion.Lerp(transform.rotation, m_qStartRot, Time.deltaTime * m_fRotateSpeed);
         }
 
+        if (Keybinding.GetKey("CameraPanLeft"))
+        {
+            m_fPlayerOffsetx -= Time.deltaTime;
+        }
+        if (Keybinding.GetKey("CameraPanRight"))
+        {
+            m_fPlayerOffsetx += Time.deltaTime;
+        }
+        if (Keybinding.GetKey("CameraPanDown"))
+        {
+            m_fPlayerOffsety -= Time.deltaTime;
+        }
+        if (Keybinding.GetKey("CameraPanUp"))
+        {
+            m_fPlayerOffsety += Time.deltaTime;
+        }
+        if (Keybinding.GetKey("CameraPanOut"))
+        {
+            m_fPlayerOffsetz -= Time.deltaTime;
+        }
+        if (Keybinding.GetKey("CameraPanIn"))
+        {
+            m_fPlayerOffsetz += Time.deltaTime;
+        }
+
         if (m_aAnimal != null && m_bFollow)
         {
             m_v2SpeedOffset = new Vector2(m_aAnimal.m_rBody.velocity.x * m_fAnimalSpeedBuffer.x, m_aAnimal.m_rBody.velocity.y * m_fAnimalSpeedBuffer.y);
-            m_v3Target.x = m_aAnimal.m_tCameraPivot.position.x + m_v2SpeedOffset.x;
-            m_v3Target.y = m_aAnimal.m_tCameraPivot.position.y + m_fYAdd + m_aAnimal.m_fCameraY + m_v2SpeedOffset.y;
-            m_v3Target.z = m_fStartz;
+            m_v3Target.x = m_aAnimal.m_tCameraPivot.position.x + m_v2SpeedOffset.x + (m_bAllowManualOffsets ? m_fPlayerOffsetx : 0);
+            m_v3Target.y = m_aAnimal.m_tCameraPivot.position.y + m_fYAdd + m_aAnimal.m_fCameraY + m_v2SpeedOffset.y + (m_bAllowManualOffsets ? m_fPlayerOffsety : 0);
+            m_v3Target.z = (m_bAllowManualOffsets ? m_fPlayerOffsetz : 0) + m_fStartz + (m_bFollowAnimalZ ? m_aAnimal.m_tCameraPivot.position.z : 0);
 
             if (m_v3Target.x < m_v2XLimits.x)
             {
@@ -193,7 +223,7 @@ public class CameraController : Singleton<CameraController>
             {
                 m_v3Target.y = m_v2YLimits.y + m_fYAdd;
             }
-            transform.position = Vector3.Lerp(transform.position, m_v3Target, Time.deltaTime * m_fCameraSpeed);
+            transform.position = Vector3.Slerp(transform.position, m_v3Target, Time.deltaTime * m_fCameraSpeed);
         }
         else if (!m_bFollow)
         {
