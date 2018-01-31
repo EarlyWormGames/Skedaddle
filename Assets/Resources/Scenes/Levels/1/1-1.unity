@@ -4208,13 +4208,13 @@ MonoBehaviour:
   m_fMicroDuration: 7
   m_bDontDeactivate: 1
   m_bBounce: 1
-  m_mAnimatedUV: {fileID: 2100000, guid: 947e99864bac5af46a3a1aad2834d90b, type: 2}
   m_tJitterObject: {fileID: 89658641}
   m_v2Speed: {x: 10, y: 0}
   m_fJitterStrength: 0.1
   m_fJitterSpeed: 16
   m_tMovePoint: {fileID: 0}
   m_tResetPoint: {fileID: 0}
+  m_Renderers: []
 --- !u!1 &90530742
 GameObject:
   m_ObjectHideFlags: 0
@@ -13716,6 +13716,16 @@ MonoBehaviour:
   m_rBody: {fileID: 0}
   m_GazeObject: {fileID: 0}
   m_aSoundEvents: []
+  OnAnimalEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnAnimalExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_tEndPoint: {fileID: 0}
   m_tRopes: {fileID: 0}
   m_fEndScale: 0
@@ -13763,6 +13773,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  OpenEvent: 
+  CloseEvent: 
 --- !u!114 &327420849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50338,6 +50350,8 @@ GameObject:
   - component: {fileID: 1268834995}
   - component: {fileID: 1268834999}
   - component: {fileID: 1268835000}
+  - component: {fileID: 1268835002}
+  - component: {fileID: 1268835001}
   m_Layer: 22
   m_Name: PPStaticObject
   m_TagString: PhysicalObject
@@ -50456,6 +50470,115 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsParent: 1
+--- !u!153 &1268835001
+ConfigurableJoint:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1268834994}
+  m_ConnectedBody: {fileID: 0}
+  m_Anchor: {x: 0, y: 0.36339384, z: 0}
+  m_Axis: {x: 1, y: 0, z: 0}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: 14.99, y: -1.4538474, z: 7.52}
+  serializedVersion: 2
+  m_SecondaryAxis: {x: 0, y: 1, z: 0}
+  m_XMotion: 1
+  m_YMotion: 0
+  m_ZMotion: 0
+  m_AngularXMotion: 0
+  m_AngularYMotion: 0
+  m_AngularZMotion: 0
+  m_LinearLimitSpring:
+    spring: 0
+    damper: 0
+  m_LinearLimit:
+    limit: 0
+    bounciness: 0
+    contactDistance: 0
+  m_AngularXLimitSpring:
+    spring: 0
+    damper: 0
+  m_LowAngularXLimit:
+    limit: 0
+    bounciness: 0
+    contactDistance: 0
+  m_HighAngularXLimit:
+    limit: 0
+    bounciness: 0
+    contactDistance: 0
+  m_AngularYZLimitSpring:
+    spring: 0
+    damper: 0
+  m_AngularYLimit:
+    limit: 0
+    bounciness: 0
+    contactDistance: 0
+  m_AngularZLimit:
+    limit: 0
+    bounciness: 0
+    contactDistance: 0
+  m_TargetPosition: {x: 0, y: 0, z: 0}
+  m_TargetVelocity: {x: 0, y: 0, z: 0}
+  m_XDrive:
+    serializedVersion: 3
+    positionSpring: 0
+    positionDamper: 0
+    maximumForce: 3.4028233e+38
+  m_YDrive:
+    serializedVersion: 3
+    positionSpring: 0
+    positionDamper: 0
+    maximumForce: 3.4028233e+38
+  m_ZDrive:
+    serializedVersion: 3
+    positionSpring: 0
+    positionDamper: 0
+    maximumForce: 3.4028233e+38
+  m_TargetRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_TargetAngularVelocity: {x: 0, y: 0, z: 0}
+  m_RotationDriveMode: 0
+  m_AngularXDrive:
+    serializedVersion: 3
+    positionSpring: 0
+    positionDamper: 0
+    maximumForce: 3.4028233e+38
+  m_AngularYZDrive:
+    serializedVersion: 3
+    positionSpring: 0
+    positionDamper: 0
+    maximumForce: 3.4028233e+38
+  m_SlerpDrive:
+    serializedVersion: 3
+    positionSpring: 0
+    positionDamper: 0
+    maximumForce: 3.4028233e+38
+  m_ProjectionMode: 0
+  m_ProjectionDistance: 0.1
+  m_ProjectionAngle: 180
+  m_ConfiguredInWorldSpace: 0
+  m_SwapBodies: 0
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
+--- !u!54 &1268835002
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1268834994}
+  serializedVersion: 2
+  m_Mass: 0.3
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1270363175
 GameObject:
   m_ObjectHideFlags: 0
@@ -52560,7 +52683,7 @@ MonoBehaviour:
   m_rBody: {fileID: 0}
   m_GazeObject: {fileID: 1268834999}
   m_aSoundEvents:
-  - m_Event: 0
+  - m_EventKey: 
     m_eFunction:
       m_PersistentCalls:
         m_Calls:
@@ -52588,7 +52711,7 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-  - m_Event: 1
+  - m_EventKey: 
     m_eFunction:
       m_PersistentCalls:
         m_Calls:
@@ -52605,7 +52728,17 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-  m_tParent: {fileID: 1268834998}
+  OnAnimalEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnAnimalExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  m_Joint: {fileID: 1268835001}
   m_tMovePoint: {fileID: 0}
   m_psDust: {fileID: 605782227}
   m_aPushingAnimal: {fileID: 0}
@@ -52614,6 +52747,8 @@ MonoBehaviour:
   m_bChangeDirection: 1
   m_bZDivert: 0
   m_bKeepY: 0
+  PushEvent: 
+  PushStopEvent: 
 --- !u!1 &1335512711
 GameObject:
   m_ObjectHideFlags: 0
@@ -58634,7 +58769,7 @@ MonoBehaviour:
   m_rBody: {fileID: 0}
   m_GazeObject: {fileID: 2142527695}
   m_aSoundEvents:
-  - m_Event: 0
+  - m_EventKey: 
     m_eFunction:
       m_PersistentCalls:
         m_Calls:
@@ -58662,7 +58797,7 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-  - m_Event: 1
+  - m_EventKey: 
     m_eFunction:
       m_PersistentCalls:
         m_Calls:
@@ -58679,7 +58814,17 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-  m_tParent: {fileID: 2142527694}
+  OnAnimalEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnAnimalExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  m_Joint: {fileID: 2142527697}
   m_tMovePoint: {fileID: 0}
   m_psDust: {fileID: 1897843879}
   m_aPushingAnimal: {fileID: 0}
@@ -58688,6 +58833,8 @@ MonoBehaviour:
   m_bChangeDirection: 1
   m_bZDivert: 0
   m_bKeepY: 0
+  PushEvent: 
+  PushStopEvent: 
 --- !u!1 &1502543013
 GameObject:
   m_ObjectHideFlags: 0
@@ -60128,13 +60275,13 @@ MonoBehaviour:
   m_fMicroDuration: 7
   m_bDontDeactivate: 1
   m_bBounce: 0
-  m_mAnimatedUV: {fileID: 2100000, guid: c80e14df983d3b74f819ac8c6e728c6b, type: 2}
   m_tJitterObject: {fileID: 1542261776}
   m_v2Speed: {x: 7, y: 0}
   m_fJitterStrength: 0.05
   m_fJitterSpeed: 4
   m_tMovePoint: {fileID: 0}
   m_tResetPoint: {fileID: 0}
+  m_Renderers: []
 --- !u!1 &1542424649
 GameObject:
   m_ObjectHideFlags: 0
@@ -76005,6 +76152,16 @@ MonoBehaviour:
   m_rBody: {fileID: 0}
   m_GazeObject: {fileID: 0}
   m_aSoundEvents: []
+  OnAnimalEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnAnimalExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_tEndPoint: {fileID: 941865189}
   m_tRopes: {fileID: 0}
   m_fEndScale: 0
@@ -76052,6 +76209,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  OpenEvent: 
+  CloseEvent: 
 --- !u!4 &1957237536
 Transform:
   m_ObjectHideFlags: 0
@@ -78218,6 +78377,16 @@ MonoBehaviour:
   m_rBody: {fileID: 0}
   m_GazeObject: {fileID: 0}
   m_aSoundEvents: []
+  OnAnimalEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnAnimalExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_tEndPoint: {fileID: 757445621}
   m_tRopes: {fileID: 0}
   m_fEndScale: 0
@@ -78277,6 +78446,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  OpenEvent: 
+  CloseEvent: 
 --- !u!4 &2022915124
 Transform:
   m_ObjectHideFlags: 0
@@ -82272,6 +82443,8 @@ GameObject:
   - component: {fileID: 2142527691}
   - component: {fileID: 2142527696}
   - component: {fileID: 2142527695}
+  - component: {fileID: 2142527698}
+  - component: {fileID: 2142527697}
   m_Layer: 22
   m_Name: PPStaticObject (1)
   m_TagString: PhysicalObject
@@ -82390,6 +82563,115 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsParent: 1
+--- !u!153 &2142527697
+ConfigurableJoint:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2142527690}
+  m_ConnectedBody: {fileID: 0}
+  m_Anchor: {x: 0, y: 0.36339384, z: 0}
+  m_Axis: {x: 1, y: 0, z: 0}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: 18.95, y: -1.4448473, z: 7.52}
+  serializedVersion: 2
+  m_SecondaryAxis: {x: 0, y: 1, z: 0}
+  m_XMotion: 1
+  m_YMotion: 0
+  m_ZMotion: 0
+  m_AngularXMotion: 0
+  m_AngularYMotion: 0
+  m_AngularZMotion: 0
+  m_LinearLimitSpring:
+    spring: 0
+    damper: 0
+  m_LinearLimit:
+    limit: 0
+    bounciness: 0
+    contactDistance: 0
+  m_AngularXLimitSpring:
+    spring: 0
+    damper: 0
+  m_LowAngularXLimit:
+    limit: 0
+    bounciness: 0
+    contactDistance: 0
+  m_HighAngularXLimit:
+    limit: 0
+    bounciness: 0
+    contactDistance: 0
+  m_AngularYZLimitSpring:
+    spring: 0
+    damper: 0
+  m_AngularYLimit:
+    limit: 0
+    bounciness: 0
+    contactDistance: 0
+  m_AngularZLimit:
+    limit: 0
+    bounciness: 0
+    contactDistance: 0
+  m_TargetPosition: {x: 0, y: 0, z: 0}
+  m_TargetVelocity: {x: 0, y: 0, z: 0}
+  m_XDrive:
+    serializedVersion: 3
+    positionSpring: 0
+    positionDamper: 0
+    maximumForce: 3.4028233e+38
+  m_YDrive:
+    serializedVersion: 3
+    positionSpring: 0
+    positionDamper: 0
+    maximumForce: 3.4028233e+38
+  m_ZDrive:
+    serializedVersion: 3
+    positionSpring: 0
+    positionDamper: 0
+    maximumForce: 3.4028233e+38
+  m_TargetRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_TargetAngularVelocity: {x: 0, y: 0, z: 0}
+  m_RotationDriveMode: 0
+  m_AngularXDrive:
+    serializedVersion: 3
+    positionSpring: 0
+    positionDamper: 0
+    maximumForce: 3.4028233e+38
+  m_AngularYZDrive:
+    serializedVersion: 3
+    positionSpring: 0
+    positionDamper: 0
+    maximumForce: 3.4028233e+38
+  m_SlerpDrive:
+    serializedVersion: 3
+    positionSpring: 0
+    positionDamper: 0
+    maximumForce: 3.4028233e+38
+  m_ProjectionMode: 0
+  m_ProjectionDistance: 0.1
+  m_ProjectionAngle: 180
+  m_ConfiguredInWorldSpace: 0
+  m_SwapBodies: 0
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
+--- !u!54 &2142527698
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2142527690}
+  serializedVersion: 2
+  m_Mass: 0.3
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2142618876
 GameObject:
   m_ObjectHideFlags: 0
