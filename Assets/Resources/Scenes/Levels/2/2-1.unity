@@ -611,6 +611,14 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11429574, guid: d2e13cf27d1a5da488fbc2bae21dddea, type: 2}
+      propertyPath: OnButtonUp.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11429574, guid: d2e13cf27d1a5da488fbc2bae21dddea, type: 2}
+      propertyPath: OnButtonDown.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 432278, guid: d2e13cf27d1a5da488fbc2bae21dddea, type: 2}
       propertyPath: m_LocalPosition.x
       value: -4.29
@@ -651,6 +659,46 @@ Prefab:
       propertyPath: m_acIgnores.Array.data[0]
       value: 
       objectReference: {fileID: 1040769347}
+    - target: {fileID: 11429574, guid: d2e13cf27d1a5da488fbc2bae21dddea, type: 2}
+      propertyPath: OnButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11429574, guid: d2e13cf27d1a5da488fbc2bae21dddea, type: 2}
+      propertyPath: OnButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11429574, guid: d2e13cf27d1a5da488fbc2bae21dddea, type: 2}
+      propertyPath: OnButtonUp.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11429574, guid: d2e13cf27d1a5da488fbc2bae21dddea, type: 2}
+      propertyPath: OnButtonUp.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11429574, guid: d2e13cf27d1a5da488fbc2bae21dddea, type: 2}
+      propertyPath: OnButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1535095535}
+    - target: {fileID: 11429574, guid: d2e13cf27d1a5da488fbc2bae21dddea, type: 2}
+      propertyPath: OnButtonUp.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1535095535}
+    - target: {fileID: 11429574, guid: d2e13cf27d1a5da488fbc2bae21dddea, type: 2}
+      propertyPath: OnButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DoActionOn
+      objectReference: {fileID: 0}
+    - target: {fileID: 11429574, guid: d2e13cf27d1a5da488fbc2bae21dddea, type: 2}
+      propertyPath: OnButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 11429574, guid: d2e13cf27d1a5da488fbc2bae21dddea, type: 2}
+      propertyPath: OnButtonUp.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DoActionOff
+      objectReference: {fileID: 0}
+    - target: {fileID: 11429574, guid: d2e13cf27d1a5da488fbc2bae21dddea, type: 2}
+      propertyPath: OnButtonUp.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d2e13cf27d1a5da488fbc2bae21dddea, type: 2}
   m_IsPrefabParent: 0
@@ -2564,6 +2612,16 @@ MonoBehaviour:
   m_rBody: {fileID: 0}
   m_GazeObject: {fileID: 0}
   m_aSoundEvents: []
+  OnAnimalEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnAnimalExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_bIsTop: 1
   m_isFrayedRope: 0
   m_rFrayedRope: {fileID: 0}
@@ -23588,6 +23646,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 419158341}
   m_Mesh: {fileID: 4300002, guid: 9e4ef2c7aeaa1e5418bfac74fd4fbdec, type: 3}
+--- !u!1 &420426800
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 420426801}
+  m_Layer: 0
+  m_Name: SmashMallet RestRotation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &420426801
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 420426800}
+  m_LocalRotation: {x: 0, y: 0, z: 0.6087614, w: 0.7933533}
+  m_LocalPosition: {x: -4.267, y: 2.94, z: 7.75}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 37
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &423581051
 GameObject:
   m_ObjectHideFlags: 0
@@ -24476,6 +24562,16 @@ MonoBehaviour:
   m_rBody: {fileID: 0}
   m_GazeObject: {fileID: 0}
   m_aSoundEvents: []
+  OnAnimalEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnAnimalExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_tAnchorPoint: {fileID: 910215302}
   m_fDirection: 4
   m_FinishDirection: 0
@@ -38294,6 +38390,16 @@ MonoBehaviour:
   m_rBody: {fileID: 0}
   m_GazeObject: {fileID: 0}
   m_aSoundEvents: []
+  OnAnimalEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnAnimalExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_tAnchorPoint: {fileID: 451101928}
   m_fDirection: 3
   m_FinishDirection: 0
@@ -49051,6 +49157,16 @@ MonoBehaviour:
   m_rBody: {fileID: 0}
   m_GazeObject: {fileID: 0}
   m_aSoundEvents: []
+  OnAnimalEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnAnimalExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_agDisables:
   - {fileID: 0}
   - {fileID: 0}
@@ -49065,6 +49181,8 @@ MonoBehaviour:
   m_apSystems: []
   m_bLorisLight: 1
   m_bOnAtStart: 1
+  ActivateEvent: 
+  DeactivateEvent: 
 --- !u!4 &866296655
 Transform:
   m_ObjectHideFlags: 0
@@ -51849,7 +51967,7 @@ MonoBehaviour:
   m_rBody: {fileID: 0}
   m_GazeObject: {fileID: 0}
   m_aSoundEvents:
-  - m_Event: 5
+  - m_EventKey: 
     m_eFunction:
       m_PersistentCalls:
         m_Calls:
@@ -51877,7 +51995,7 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-  - m_Event: 6
+  - m_EventKey: 
     m_eFunction:
       m_PersistentCalls:
         m_Calls:
@@ -51894,11 +52012,23 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
+  OnAnimalEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnAnimalExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_agDisables:
   - {fileID: 769977943}
   m_apSystems: []
   m_bLorisLight: 1
   m_bOnAtStart: 1
+  ActivateEvent: 
+  DeactivateEvent: 
 --- !u!4 &934078162
 Transform:
   m_ObjectHideFlags: 0
@@ -59896,6 +60026,16 @@ MonoBehaviour:
   m_rBody: {fileID: 0}
   m_GazeObject: {fileID: 0}
   m_aSoundEvents: []
+  OnAnimalEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnAnimalExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_eDeathType: 1
   m_bOnActivate: 0
 --- !u!65 &1158746071
@@ -61929,6 +62069,16 @@ MonoBehaviour:
   m_rBody: {fileID: 0}
   m_GazeObject: {fileID: 0}
   m_aSoundEvents: []
+  OnAnimalEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnAnimalExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_tEndPoint: {fileID: 11746287}
   m_tRopes: {fileID: 0}
   m_fEndScale: 0
@@ -61988,6 +62138,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  OpenEvent: 
+  CloseEvent: 
 --- !u!1 &1213069078 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100002, guid: ea75499423557fe4d9b04dad638b3f09, type: 3}
@@ -62010,23 +62162,40 @@ MonoBehaviour:
   m_rBody: {fileID: 0}
   m_GazeObject: {fileID: 0}
   m_aSoundEvents: []
-  m_bIsPlug: 1
-  m_fHoldTime: 0
-  m_aObjects:
-  - name: Lights
-    m_aObj: {fileID: 934078161}
-    m_bDoReverse: 0
-  m_tMovePoint: {fileID: 626242333}
+  OnAnimalEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnAnimalExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnLeverForward:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnLeverReverse:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_tCameraMove: {fileID: 0}
   m_tCameraFocus: {fileID: 0}
-  m_fDirection: 2
-  m_FinishDirection: 0
   m_fWaitTimer: 1
   m_fLookTime: 1
+  m_tMovePoint: {fileID: 626242333}
+  m_bIsPlug: 1
+  m_fHoldTime: 0
   m_fSoundTime: 0.2
+  m_fDirection: 2
+  m_FinishDirection: 0
   m_bUseOnce: 0
   m_aController: {fileID: 1213069081}
   m_bReverseAnims: 1
+  LeverPullEvent: 
 --- !u!65 &1213069080
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -62568,6 +62737,16 @@ MonoBehaviour:
   m_rBody: {fileID: 0}
   m_GazeObject: {fileID: 0}
   m_aSoundEvents: []
+  OnAnimalEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnAnimalExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_goObject: {fileID: 1075792560}
   m_psExplosion: {fileID: 784203203}
   m_fShardForce: 0
@@ -69856,7 +70035,7 @@ MonoBehaviour:
   m_rBody: {fileID: 0}
   m_GazeObject: {fileID: 0}
   m_aSoundEvents:
-  - m_Event: 0
+  - m_EventKey: 
     m_eFunction:
       m_PersistentCalls:
         m_Calls:
@@ -69884,7 +70063,7 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-  - m_Event: 0
+  - m_EventKey: 
     m_eFunction:
       m_PersistentCalls:
         m_Calls:
@@ -69901,6 +70080,16 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
+  OnAnimalEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnAnimalExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_tParent: {fileID: 1237218383}
   m_tMovePoint: {fileID: 0}
   m_psDust: {fileID: 1930624201}
@@ -69910,6 +70099,8 @@ MonoBehaviour:
   m_bChangeDirection: 1
   m_bZDivert: 0
   m_bKeepY: 0
+  PushEvent: 
+  PushStopEvent: 
 --- !u!1 &1337696719
 GameObject:
   m_ObjectHideFlags: 0
@@ -73538,20 +73729,36 @@ MonoBehaviour:
   m_rBody: {fileID: 0}
   m_GazeObject: {fileID: 0}
   m_aSoundEvents: []
-  m_bIsPlug: 0
-  m_fHoldTime: 0
-  m_aObjects:
-  - name: 
-    m_aObj: {fileID: 0}
-    m_bDoReverse: 0
-  m_tMovePoint: {fileID: 0}
+  OnAnimalEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnAnimalExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnLeverForward:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnLeverReverse:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_tCameraMove: {fileID: 0}
   m_tCameraFocus: {fileID: 0}
-  m_fDirection: 0
-  m_FinishDirection: 0
   m_fWaitTimer: 1
   m_fLookTime: 1
+  m_tMovePoint: {fileID: 0}
+  m_bIsPlug: 0
+  m_fHoldTime: 0
   m_fSoundTime: 0.2
+  m_fDirection: 0
+  m_FinishDirection: 0
   m_bUseOnce: 0
 --- !u!23 &1437528697
 MeshRenderer:
@@ -76028,6 +76235,16 @@ MonoBehaviour:
   m_rBody: {fileID: 0}
   m_GazeObject: {fileID: 0}
   m_aSoundEvents: []
+  OnAnimalEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnAnimalExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_bIsTop: 0
   m_isFrayedRope: 0
   m_rFrayedRope: {fileID: 0}
@@ -77590,6 +77807,16 @@ MonoBehaviour:
   m_rBody: {fileID: 0}
   m_GazeObject: {fileID: 0}
   m_aSoundEvents: []
+  OnAnimalEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnAnimalExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_showDebug: 0
   m_bSwing: 0
   m_fSwingSpeed: 3
@@ -77646,6 +77873,7 @@ MonoBehaviour:
   m_DeathUpForce: 4
   m_tDebugCenter: {fileID: 0}
   m_fDebugSize: {x: 0, y: 0, z: 0}
+  m_qRestRotation: {fileID: 420426801}
 --- !u!1001 &1538051171
 Prefab:
   m_ObjectHideFlags: 0
@@ -80268,6 +80496,16 @@ MonoBehaviour:
   m_rBody: {fileID: 0}
   m_GazeObject: {fileID: 0}
   m_aSoundEvents: []
+  OnAnimalEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnAnimalExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_tAnchorPoint: {fileID: 348719045}
   m_fDirection: 4
   m_FinishDirection: 0
@@ -81948,7 +82186,7 @@ Transform:
   m_PrefabParentObject: {fileID: 493978, guid: 2ca916a3898d847418846360915926ba, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1660471125}
-  m_LocalRotation: {x: 0, y: 0, z: 0.5667882, w: 0.82386357}
+  m_LocalRotation: {x: 0, y: 0, z: 0.6087614, w: 0.7933533}
   m_LocalPosition: {x: -4.267, y: 2.94, z: 7.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -89986,6 +90224,16 @@ MonoBehaviour:
   m_rBody: {fileID: 0}
   m_GazeObject: {fileID: 0}
   m_aSoundEvents: []
+  OnAnimalEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnAnimalExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_tCentre: {fileID: 1858228919}
   m_LeftRope: {fileID: 0}
   m_RightRope: {fileID: 0}
