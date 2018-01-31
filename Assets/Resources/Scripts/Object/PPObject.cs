@@ -5,7 +5,7 @@ using System.Collections;
 public class PPObject : ActionObject
 {
     [Header("PP Settings")]
-    public Transform m_tParent;
+    public Joint m_Joint;
     public Transform m_tMovePoint;
     public ParticleSystem m_psDust;
 
@@ -26,8 +26,6 @@ public class PPObject : ActionObject
     private float m_fStartZ;
     private float m_fStartY;
 
-    private Transform m_tMain;
-
     //Inherited functions
     protected override void OnStart()
     {
@@ -35,19 +33,13 @@ public class PPObject : ActionObject
         {
             m_rBody = GetComponent<Rigidbody>();
         }
-
-        m_tMain = m_tParent == null ? transform : m_tParent;
-        m_fStartY = m_tMain.position.y;
     }
 
     protected override void OnUpdate()
     {
         if (m_aPushingAnimal != null)
         {
-            m_aCurrentAnimal = m_aPushingAnimal;
-
-            if (m_bKeepY)
-                m_tMain.position += new Vector3(0, m_fStartY - m_tMain.position.y, 0);
+            m_aCurrentAnimal = m_aPushingAnimal;            
 
             if (m_aPushingAnimal != m_aCurrentAnimal && m_aCurrentAnimal != null)
             {
@@ -148,8 +140,7 @@ public class PPObject : ActionObject
 
         if(m_aPushingAnimal != null && m_aPushingAnimal.m_bAutoClimbing)
         {
-            if (m_tParent != null)
-                m_tParent.parent = null;
+
         }
     }
 
@@ -178,6 +169,9 @@ public class PPObject : ActionObject
         {
             if (m_aPushingAnimal.m_oCurrentObject == null)
             {
+                //Start pushing
+                m_Joint.connectedBody = m_aPushingAnimal.m_rBody;
+
                 m_aPushingAnimal.m_bPullingObject = true;
                 m_aPushingAnimal.m_oCurrentObject = this;
                 m_bQuickExitFix = true;
@@ -197,30 +191,18 @@ public class PPObject : ActionObject
                     }
                 }
 
-                if (m_tParent == null)
-                {
-                    transform.parent = m_aPushingAnimal.transform;
-                }
-                else
-                {
-                    m_tParent.parent = m_aPushingAnimal.transform;
-                }
-
-
                 m_aPushingAnimal.OnPushChange();
             }
             else if (m_aPushingAnimal.m_oCurrentObject == this)
             {
+                //Stop pushing
+                m_Joint.connectedBody = null;
+
                 m_aPushingAnimal.m_bPullingObject = false;
                 m_aPushingAnimal.m_oCurrentObject = null;
-                if (m_tParent == null)
-                {
-                    transform.parent = null;
-                }
-                else
-                {
-                    m_tParent.parent = null;
-                }
+
+
+
                 m_aPushingAnimal.m_fFacingDir = FACING_DIR.NONE;
                 m_aPushingAnimal.m_bCanWalkLeft = true;
                 m_aPushingAnimal.m_bCanWalkRight = true;
@@ -246,14 +228,6 @@ public class PPObject : ActionObject
 
         m_aPushingAnimal.m_bPullingObject = false;
         m_aPushingAnimal.m_oCurrentObject = null;
-        if (m_tParent == null)
-        {
-            transform.parent = null;
-        }
-        else
-        {
-            m_tParent.parent = null;
-        }
         m_aPushingAnimal.m_fFacingDir = FACING_DIR.NONE;
         m_aPushingAnimal.m_bCanWalkLeft = true;
         m_aPushingAnimal.m_bCanWalkRight = true;
@@ -271,14 +245,6 @@ public class PPObject : ActionObject
         {
             m_aPushingAnimal.m_bPullingObject = false;
             m_aPushingAnimal.m_oCurrentObject = null;
-            if (m_tParent == null)
-            {
-                transform.parent = null;
-            }
-            else
-            {
-                m_tParent.parent = null;
-            }
             m_aPushingAnimal.m_fFacingDir = FACING_DIR.NONE;
             m_aPushingAnimal.m_bCanWalkLeft = true;
             m_aPushingAnimal.m_bCanWalkRight = true;
