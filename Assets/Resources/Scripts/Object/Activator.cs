@@ -57,7 +57,6 @@ namespace EW
 
             if (m_bLorisLight)
             {
-                CameraController.Instance.m_bUseNightVision = true;
                 ((Loris)AnimalController.Instance.GetAnimal(ANIMAL_NAME.LORIS)).SetNightVision(true);
             }
         }

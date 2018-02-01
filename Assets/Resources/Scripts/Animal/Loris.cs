@@ -457,6 +457,7 @@ public class Loris : Animal
 
     public void SetNightVision(bool a_On)
     {
+        CameraController.Instance.m_bUseNightVision = a_On;
         m_bUseLight = a_On;
     }
 }
