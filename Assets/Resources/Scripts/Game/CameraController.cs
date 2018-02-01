@@ -136,7 +136,7 @@ public class CameraController : Singleton<CameraController>
         //Shader.SetGlobalMatrix("node_6897", m_cCamera.cameraToWorldMatrix);
     }
 
-    void Update()
+    void FixedUpdate()
     {
         m_bLorisSelected = AnimalController.Instance.GetAnimalSelected(ANIMAL_NAME.LORIS);
         
@@ -176,27 +176,27 @@ public class CameraController : Singleton<CameraController>
 
         if (Keybinding.GetKey("CameraPanLeft"))
         {
-            m_fPlayerOffsetx -= Time.deltaTime;
+            m_fPlayerOffsetx -= Time.deltaTime * 3;
         }
         if (Keybinding.GetKey("CameraPanRight"))
         {
-            m_fPlayerOffsetx += Time.deltaTime;
+            m_fPlayerOffsetx += Time.deltaTime * 3;
         }
         if (Keybinding.GetKey("CameraPanDown"))
         {
-            m_fPlayerOffsety -= Time.deltaTime;
+            m_fPlayerOffsety -= Time.deltaTime * 3;
         }
         if (Keybinding.GetKey("CameraPanUp"))
         {
-            m_fPlayerOffsety += Time.deltaTime;
+            m_fPlayerOffsety += Time.deltaTime * 3;
         }
         if (Keybinding.GetKey("CameraZoomOut"))
         {
-            m_fPlayerOffsetz -= Time.deltaTime;
+            m_fPlayerOffsetz -= Time.deltaTime * 3;
         }
         if (Keybinding.GetKey("CameraZoomIn"))
         {
-            m_fPlayerOffsetz += Time.deltaTime;
+            m_fPlayerOffsetz += Time.deltaTime * 3;
         }
 
         if (m_aAnimal != null && m_bFollow)

@@ -26,10 +26,15 @@ namespace RootMotion.FinalIK {
 		/// </summary>
 		[Tooltip("Layers to ground the character to. Make sure to exclude the layer of the character controller.")]
 		public LayerMask layers;
-		/// <summary>
-		/// Max step height. Maximum vertical distance of Grounding from the root of the character.
-		/// </summary>
-		[Tooltip("Max step height. Maximum vertical distance of Grounding from the root of the character.")]
+        /// <summary>
+        /// Maximum distance from the ground before the ground is no longer detected.
+        /// </summary>
+        [Tooltip("Maximum distance from the ground before the ground is no longer detected.")]
+        public float GroundTheshold = 0.5f;
+        /// <summary>
+        /// Max step height. Maximum vertical distance of Grounding from the root of the character.
+        /// </summary>
+        [Tooltip("Max step height. Maximum vertical distance of Grounding from the root of the character.")]
 		public float maxStep = 0.5f;
 		/// <summary>
 		/// The height offset of the root.
@@ -253,9 +258,16 @@ namespace RootMotion.FinalIK {
 				if (leg.IKOffset > lowestOffset) lowestOffset = leg.IKOffset;
 				if (leg.IKOffset < highestOffset) highestOffset = leg.IKOffset;
 
-				if (leg.isGrounded) isGrounded = true;
-                if (leg.groundLayer != -1) currentGroundLayer = leg.groundLayer;
-                if (leg.groundObject != null) currentGround = leg.groundObject;
+                
+                if (leg.groundLayer != -1)
+                {
+                    currentGroundLayer = leg.groundLayer;
+                }
+                if (leg.isGrounded)
+                {
+                    isGrounded = true;
+                }
+                if (leg.groundObject != "") currentGround = leg.groundObject;
             }
 			
 			// Precess pelvis

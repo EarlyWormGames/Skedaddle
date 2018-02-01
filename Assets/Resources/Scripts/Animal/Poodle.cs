@@ -11,6 +11,7 @@ public class Poodle : Animal
     public float m_fPelvisCorrectionDampening = 1;
     public float m_fPushForce;
     public float m_IKLedgeBlend;
+    public float m_fIKDampen = 1;
     [HideInInspector]
     public bool m_bIKAnimationFix;
 
@@ -26,8 +27,8 @@ public class Poodle : Animal
     //================================== 
     private float m_fPlugPullDelay;
     private bool m_bWasFollow = false;
-    private float m_fDampen;
-    private float m_fIKDampen;
+    private float m_fDampen = 1;
+    
     private float m_fIKBackLegsDampen;
 
     
@@ -65,30 +66,32 @@ public class Poodle : Animal
 
         m_bRunning = false;
         m_fCurrentSpeed = m_fWalkSpeed;
-
-        if (m_bSelected && !m_bPullingObject && !m_bTurning && !(m_pFollower.m_bFollow || m_bForceWalk))
+        if (m_gqGrounder.solver.currentGroundLayer != -1)
         {
-            if (EWEyeTracking.active)
+            if (m_bSelected && !m_bPullingObject && !m_bTurning && !(m_pFollower.m_bFollow || m_bForceWalk))
             {
-                if (EWEyeTracking.worldPosition.x > transform.position.x + m_RunBuffer ||
-                    EWEyeTracking.worldPosition.x < transform.position.x - m_RunBuffer)
+                if (EWEyeTracking.active)
                 {
-                    m_bRunning = true;
-                    m_fCurrentSpeed = m_fWalkSpeed * m_fRunSpeedMult;
+                    if (EWEyeTracking.worldPosition.x > transform.position.x + m_RunBuffer ||
+                        EWEyeTracking.worldPosition.x < transform.position.x - m_RunBuffer)
+                    {
+                        m_bRunning = true;
+                        m_fCurrentSpeed = m_fWalkSpeed * m_fRunSpeedMult;
+                    }
+                    else
+                        m_bRunning = false;
                 }
-                else
-                    m_bRunning = false;
-            }
 
-            if (Keybinding.GetKey("SecondaryAction") || Controller.GetButton(ControllerButtons.X))
-            {
-                m_fCurrentSpeed = m_fWalkSpeed * m_fRunSpeedMult;
-                m_bRunning = true;
+                if (Keybinding.GetKey("SecondaryAction") || Controller.GetButton(ControllerButtons.X))
+                {
+                    m_fCurrentSpeed = m_fWalkSpeed * m_fRunSpeedMult;
+                    m_bRunning = true;
+                }
             }
-        }
-        else if (m_bPullingObject)
-        {
-            m_bRunning = false;
+            else if (m_bPullingObject)
+            {
+                m_bRunning = false;
+            }
         }
 
 
@@ -98,7 +101,7 @@ public class Poodle : Animal
         m_aAnimalAnimator.SetFloat("Vertical Velocity", m_rBody.velocity.y);
         m_aAnimalAnimator.SetFloat("Horizontal Velocity", m_rBody.velocity.x);
 
-        m_fDampen = 0;
+        
         if (!m_bOnSlope)
         {
             if (m_gqGrounder.forelegSolver.rootHit.point.y < m_gqGrounder.solver.rootHit.point.y && m_bOnGround)
@@ -107,7 +110,7 @@ public class Poodle : Animal
                 {
                     if ((m_gqGrounder.solver.rootHit.point.y - m_gqGrounder.forelegSolver.rootHit.point.y < 0.33f) && m_bFrontGroundDetected)
                     {
-                        m_fDampen = Mathf.Clamp(((m_gqGrounder.solver.rootHit.point.y - m_gqGrounder.forelegSolver.rootHit.point.y) / m_fPelvisCorrectionDampening), 0, 1);
+                        //m_fDampen = Mathf.Clamp(((m_gqGrounder.solver.rootHit.point.y - m_gqGrounder.forelegSolver.rootHit.point.y) / m_fPelvisCorrectionDampening), 0, 1);
                     }
                     else
                     {
@@ -161,7 +164,8 @@ public class Poodle : Animal
         {
             //on ground
             m_aAnimalAnimator.SetBool("OnGround", true);
-            m_aAnimalAnimator.SetFloat("Follow-Through Vertical", Mathf.Lerp(m_aAnimalAnimator.GetFloat("Follow-Through Vertical"), 0.1f, Time.deltaTime * 2f));
+            m_fDampen = 1;
+            m_aAnimalAnimator.SetFloat("Follow-Through Vertical", Mathf.Lerp(m_aAnimalAnimator.GetFloat("Follow-Through Vertical"), 0, Time.deltaTime * 2f));
 
             if (((m_bWalkingLeft ^ m_bWalkingRight) && m_bSelected) || m_pFollower.m_bFollow || m_bForceWalk)
             {
@@ -217,7 +221,8 @@ public class Poodle : Animal
                 //Falling
                 m_aAnimalAnimator.SetBool("Walking", false);
                 m_aAnimalAnimator.SetBool("OnGround", false);
-                m_aAnimalAnimator.SetFloat("Follow-Through Vertical", m_aAnimalAnimator.GetFloat("Vertical Velocity") * 2);
+                m_fDampen = 0;
+                m_aAnimalAnimator.SetFloat("Follow-Through Vertical", m_aAnimalAnimator.GetFloat("Vertical Velocity"));
             }
 
         }

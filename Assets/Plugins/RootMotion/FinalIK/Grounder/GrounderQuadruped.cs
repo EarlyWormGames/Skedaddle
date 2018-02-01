@@ -277,8 +277,8 @@ namespace RootMotion.FinalIK {
 			if (rootRotationWeight <= 0f) return;
 			if (rootRotationSpeed <= 0f) return;
 
-			solver.rotateSolver = true;
-			forelegSolver.rotateSolver = true;
+			//solver.rotateSolver = true;
+			//forelegSolver.rotateSolver = true;
 			
 			// Get the horizontal rotation of the character
 			Vector3 tangent = characterRoot.forward;

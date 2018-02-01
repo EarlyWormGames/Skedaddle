@@ -497,7 +497,7 @@ public class Animal : MonoBehaviour
 
 
             bool onGround = false;
-            if (m_gqGrounder.forelegSolver.isGrounded)
+            if (m_gqGrounder.forelegSolver.currentGroundLayer != -1)
             {
                 if (m_gqGrounder.forelegSolver.currentGroundLayer != LayerMask.NameToLayer("Grounder"))
                 {
@@ -506,13 +506,16 @@ public class Animal : MonoBehaviour
                 else
                 {
                     m_bFrontGroundDetected = false;
+                    
                 }
+                m_gqGrounder.solver.GroundTheshold = m_gqGrounder.solver.maxStep;
             }
             else
             {
                 m_bFrontGroundDetected = false;
+                m_gqGrounder.solver.GroundTheshold = 0.01f;
             }
-            m_bBackGroundDetected = m_gqGrounder.solver.isGrounded;
+            m_bBackGroundDetected = m_gqGrounder.solver.currentGroundLayer != -1;
 
             if(m_bFrontGroundDetected || m_bBackGroundDetected)
             {
@@ -545,6 +548,7 @@ public class Animal : MonoBehaviour
                 }
 
                 m_bOnGround = true;
+                
                 m_fCurrentSpeed = m_fWalkSpeed;
             }
             else if (m_bCheckForFall)
@@ -560,6 +564,7 @@ public class Animal : MonoBehaviour
                 }
 
                 m_bOnGround = false;
+                
 
             }
         }

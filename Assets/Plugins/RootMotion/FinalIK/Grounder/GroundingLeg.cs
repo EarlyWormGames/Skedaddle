@@ -9,7 +9,7 @@ namespace RootMotion.FinalIK {
 		/// The %Grounding %Leg.
 		/// </summary>
 		public class Leg {
-
+            
             /// <summary>
 			/// Returns the layer of the ground
 			/// </summary>
@@ -117,7 +117,7 @@ namespace RootMotion.FinalIK {
 					RaycastHit predictedHit = GetRaycastHit(prediction);
 					SetFootToPoint(predictedHit.normal, predictedHit.point);
                     groundLayer = predictedHit.collider.gameObject.layer;
-                    groundObject = predictedHit.collider.gameObject.name;
+                        groundObject = predictedHit.collider.gameObject.name;
                     break;
 
 				// Medium, 3 raycasts
@@ -132,7 +132,7 @@ namespace RootMotion.FinalIK {
 					
 					SetFootToPlane(planeNormal, heelHit.point, heelHit.point);
                     groundLayer = heelHit.collider.gameObject.layer;
-                    groundObject = heelHit.collider.gameObject.name;
+                        groundObject = heelHit.collider.gameObject.name;
                     break;
 				
 				// The slowest, raycast and a capsule cast
@@ -147,17 +147,21 @@ namespace RootMotion.FinalIK {
                             groundLayer = capsuleHit.collider.gameObject.layer;
                             groundObject = capsuleHit.collider.gameObject.name;
                         }
+                        else
+                        {
+                            groundObject = "";
+                        }
                     break;
 				}
 
 				// Is the foot grounded?
-				isGrounded = heightFromGround < grounding.maxStep;
+				isGrounded = heightFromGround < grounding.GroundTheshold /*grounding.maxStep*/;
                 if (!isGrounded)
                 {
                     groundLayer = -1;
                 }
 
-				float offsetTarget = stepHeightFromGround;
+                float offsetTarget = stepHeightFromGround;
 				if (!grounding.rootGrounded) offsetTarget = 0f;
 
 				IKOffset = Interp.LerpValue(IKOffset, offsetTarget, grounding.footSpeed, grounding.footSpeed);
