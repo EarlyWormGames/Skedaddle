@@ -131,10 +131,12 @@ namespace RootMotion.FinalIK {
         /// Gets the layer of the ground collider which is currently being used;
         /// </summary>
         public int currentGroundLayer { get; private set; }
-		/// <summary>
-		/// The root Transform
-		/// </summary>
-		public Transform root { get; private set; }
+        public float lowestOffset { get; private set; }
+        public float highestOffset { get; private set; }
+        /// <summary>
+        /// The root Transform
+        /// </summary>
+        public Transform root { get; private set; }
 		/// <summary>
 		/// Ground height at the root position.
 		/// </summary>
@@ -246,8 +248,8 @@ namespace RootMotion.FinalIK {
 			// Root hit
 			rootHit = GetRootHit();
 
-			float lowestOffset = Mathf.NegativeInfinity;
-			float highestOffset = Mathf.Infinity;
+			lowestOffset = Mathf.NegativeInfinity;
+			highestOffset = Mathf.Infinity;
 			isGrounded = false;
             currentGroundLayer = -1;
 

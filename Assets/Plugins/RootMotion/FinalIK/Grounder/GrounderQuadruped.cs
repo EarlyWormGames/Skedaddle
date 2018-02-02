@@ -29,6 +29,18 @@ namespace RootMotion.FinalIK {
 		/// </summary>
 		[Tooltip("The Grounding solver for the forelegs.")]
 		public Grounding forelegSolver = new Grounding();
+        /// <summary>
+        /// The weight of how much the pelvis is pulled down by the shoulders when the pelvis is higher
+        /// </summary>
+        [Tooltip("The weight of how much the pelvis is pulled down by the shoulders when pelvis is higher")]
+        [Range(0f, 1f)]
+        public float PelvisStraightenWeight = 0.5f;
+        /// <summary>
+        /// The weight of how much the shoulders are pulled down by the pelvis when the shoulders are higher
+        /// </summary>
+        [Tooltip("/// The weight of how much the shoulders are pulled down by the pelvis when the shoulders are higher")]
+        [Range(0f, 1f)]
+        public float ShoulderStraightenWeight = 0.5f;
 		/// <summary>
 		/// The weight of rotating the character root to the ground angle (range: 0 - 1).
 		/// </summary>
@@ -342,17 +354,34 @@ namespace RootMotion.FinalIK {
 			// Update the Grounding
 			solver.Update();
 			forelegSolver.Update();
-			
-			// Move the pelvis
-			pelvis.position += solver.pelvis.IKOffset * weight;
+
+            float backLegStraighten;
+            float forelegStraighten;
+
+            if(solver.pelvis.IKOffset.y < forelegSolver.pelvis.IKOffset.y)
+            {
+                forelegStraighten = (forelegSolver.pelvis.IKOffset.y - solver.pelvis.IKOffset.y) * ShoulderStraightenWeight;
+                backLegStraighten = 0;
+            }
+            else
+            {
+                backLegStraighten = (solver.pelvis.IKOffset.y - forelegSolver.pelvis.IKOffset.y) * PelvisStraightenWeight;
+                forelegStraighten = 0;
+            }
+
+            Vector3 NewSolverIKOffset = new Vector3(solver.pelvis.IKOffset.x, solver.pelvis.IKOffset.y - backLegStraighten, solver.pelvis.IKOffset.z);
+            Vector3 NewForelegSolverIKOffset = new Vector3(forelegSolver.pelvis.IKOffset.x, forelegSolver.pelvis.IKOffset.y - forelegStraighten, forelegSolver.pelvis.IKOffset.z);
+
+            // Move the pelvis
+            pelvis.position += NewSolverIKOffset * weight;
 			
 			// Rotate the pelvis
 			Vector3 spineDirection = lastSpineBone.position - pelvis.position;
 			
 			Vector3 newSpinePosition = 
 				lastSpineBone.position + 
-					forelegSolver.root.up * Mathf.Clamp(forelegSolver.pelvis.heightOffset, Mathf.NegativeInfinity, 0f) -
-					solver.root.up * solver.pelvis.heightOffset;
+					forelegSolver.root.up * Mathf.Clamp(forelegSolver.pelvis.heightOffset - forelegStraighten, Mathf.NegativeInfinity, 0f) -
+					solver.root.up * (solver.pelvis.heightOffset - backLegStraighten);
 			
 			Vector3 newDirection = newSpinePosition - pelvis.position;
 			
