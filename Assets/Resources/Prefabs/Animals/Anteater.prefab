@@ -1683,7 +1683,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 420824}
-  - component: {fileID: 11449294}
+  - component: {fileID: 114685606147305528}
   m_Layer: 8
   m_Name: Joint_Skinned_Head
   m_TagString: Untagged
@@ -1896,6 +1896,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 496998}
+  - {fileID: 453488}
   - {fileID: 481924}
   m_Father: {fileID: 443276}
   m_RootOrder: 0
@@ -2658,7 +2660,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 170866}
   m_LocalRotation: {x: 0, y: 0.7075702, z: 0, w: 0.70664316}
-  m_LocalPosition: {x: -10.52, y: 2.23, z: -6.49}
+  m_LocalPosition: {x: -28.81, y: 0.5, z: -1.78}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 498468}
@@ -2756,12 +2758,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 183298}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.07, y: 0.9619999, z: 1.02}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.00037364176, y: 0.20657551, z: 0.36720365}
+  m_LocalScale: {x: 0.37355492, y: 0.3735543, z: 0.3735546}
   m_Children: []
-  m_Father: {fileID: 4000010847711744}
-  m_RootOrder: 4
+  m_Father: {fileID: 408274}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &453584
 Transform:
@@ -3093,7 +3095,7 @@ Transform:
   - {fileID: 428064}
   - {fileID: 407642}
   m_Father: {fileID: 408274}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &482608
 Transform:
@@ -3308,11 +3310,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 144798}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.07, y: 1, z: -0.97}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.15, z: -0.437}
+  m_LocalScale: {x: 0.37355492, y: 0.3735543, z: 0.3735546}
   m_Children: []
-  m_Father: {fileID: 4000010847711744}
-  m_RootOrder: 5
+  m_Father: {fileID: 408274}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 10.136001, y: 0.001, z: 0.013}
 --- !u!4 &497902
 Transform:
@@ -3385,7 +3387,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 1
 --- !u!95 &9539550
@@ -3418,8 +3420,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showDebug: 1
   overrideTarget: 1
-  effectedIK: {fileID: 11449294}
-  raycastOffset: {x: 0, y: 0.79, z: 0}
+  UseLocal: 0
+  effectedIK: {fileID: 114685606147305528}
+  raycastOffset: {x: 0, y: 0.2, z: 0}
   raycastLayers:
     serializedVersion: 2
     m_Bits: 1048577
@@ -3442,8 +3445,8 @@ MonoBehaviour:
   timeStep: 0
   fixTransforms: 1
   solver:
-    IKPosition: {x: -4.3888793, y: 0.8280252, z: -4.96354}
-    IKPositionWeight: 1
+    IKPosition: {x: -29.637491, y: 0.6400349, z: -1.847913}
+    IKPositionWeight: 0.9999999
     root: {fileID: 407642}
     target: {fileID: 411588}
     tolerance: 0
@@ -3452,32 +3455,41 @@ MonoBehaviour:
     XY: 0
     bones:
     - transform: {fileID: 407642}
-      weight: 1
+      weight: 0.528
       solverPosition: {x: 0, y: 0, z: 0}
       solverRotation: {x: 0, y: 0, z: 0, w: 0}
       defaultLocalPosition: {x: 0.03160151, y: -0.0041515576, z: 6.4486053e-18}
       defaultLocalRotation: {x: -0.14890215, y: -0.9888506, z: 0.0000030575902, w: 0.0016497155}
-      length: 0.16943735
+      length: 0.16943622
       sqrMag: 0
-      axis: {x: -0.16612017, y: -0.033359148, z: -0.0005247723}
+      axis: {x: -0.16611892, y: -0.033359535, z: -0.0005247661}
     - transform: {fileID: 482608}
-      weight: 1
+      weight: 0.483
       solverPosition: {x: 0, y: 0, z: 0}
       solverRotation: {x: 0, y: 0, z: 0, w: 0}
       defaultLocalPosition: {x: -0.062054884, y: -0.012461452, z: -0.00019603057}
       defaultLocalRotation: {x: -0.0006369301, y: -0.0015199543, z: 0.24336988, w: 0.9699322}
-      length: 0.285952
+      length: 0.28595215
       sqrMag: 0
-      axis: {x: -0.28595203, y: 0.00000033360962, z: 0.0000003609362}
+      axis: {x: -0.28595215, y: 0.0000004677314, z: 0.000000086197126}
     - transform: {fileID: 448066}
-      weight: 1
+      weight: 0.495
       solverPosition: {x: 0, y: 0, z: 0}
       solverRotation: {x: 0, y: 0, z: 0, w: 0}
       defaultLocalPosition: {x: -0.106818505, y: -7.105427e-17, z: -2.4323777e-17}
       defaultLocalRotation: {x: 0, y: 0, z: 0.06841357, w: -0.99765706}
-      length: 0.25597733
+      length: 0.25597787
       sqrMag: 0
-      axis: {x: -0.45064017, y: -0.012613673, z: 0.00000036511477}
+      axis: {x: -0.25597787, y: 0.0000002763009, z: 0.000000004041567}
+    - transform: {fileID: 440264}
+      weight: 0.5
+      solverPosition: {x: 0, y: 0, z: 0}
+      solverRotation: {x: 0, y: 0, z: 0, w: 0}
+      defaultLocalPosition: {x: -0.0956215, y: 0, z: -2.432672e-17}
+      defaultLocalRotation: {x: 0, y: 0, z: 0.21316254, w: -0.97701675}
+      length: 0.28098083
+      sqrMag: 0
+      axis: {x: -0.637148, y: -0.3057929, z: 0.00000009725843}
 --- !u!114 &11411004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3551,10 +3563,9 @@ MonoBehaviour:
   m_goIKSwitch: {fileID: 127790}
   m_tJointRoot: {fileID: 443276}
   m_tCollider: {fileID: 4000010847711744}
-  m_fWalkSpeed: 0.2
+  m_fWalkSpeed: 30
   m_fTopSpeed: 1.5
   m_fPushTopMult: 0.75
-  m_fDecelerateSpeed: 6.5
   m_fPullSpeedMult: 0.5
   m_fFallSpeedMult: 0.5
   m_fRunSpeedMult: 1.5
@@ -3562,6 +3573,10 @@ MonoBehaviour:
   m_fTurnAxis: 0
   m_fRotSpeed: 4.5
   m_fSplineRotSpeed: 1
+  m_fForwardRotation: 180
+  m_fBackRotation: 0
+  m_fLeftRotation: 270
+  m_fRightRotation: 90
   m_fJumpWaitTime: 1
   m_fJumpLerpSpeed: 2
   m_fJumpWaitFrames: 1
@@ -3588,7 +3603,7 @@ MonoBehaviour:
   m_fIdleSwapTime: 10
   m_fIdleSwapVarience: 2
   m_iNumberOfIdles: 3
-  m_ikHead: {fileID: 11449294}
+  m_ikHead: {fileID: 0}
 --- !u!114 &11423516
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3602,15 +3617,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showDebug: 1
   overrideTarget: 1
+  UseLocal: 0
   effectedIK: {fileID: 11408080}
-  raycastOffset: {x: 0, y: 0.87, z: 0}
+  raycastOffset: {x: 0, y: 0.35, z: 0}
   raycastLayers:
     serializedVersion: 2
     m_Bits: 1048577
   min: -2
   max: 2
   lerpSpeed: 4
-  heightOffset: 0.28
+  heightOffset: 0.05
   angleBuffer: 1
 --- !u!114 &11430268
 MonoBehaviour:
@@ -3724,56 +3740,6 @@ MonoBehaviour:
     maintainRotationWeight: 0
     bendModifierWeight: 1
     bendGoal: {fileID: 0}
---- !u!114 &11449294
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 196848}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5013856973b27429d937d256dc082f2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeStep: 0
-  fixTransforms: 1
-  solver:
-    IKPosition: {x: -0.033005238, y: -0.31003642, z: -4.963542}
-    IKPositionWeight: 1
-    root: {fileID: 420824}
-    target: {fileID: 457706}
-    tolerance: 0
-    maxIterations: 4
-    useRotationLimits: 1
-    XY: 0
-    bones:
-    - transform: {fileID: 428212}
-      weight: 0.513
-      solverPosition: {x: 0, y: 0, z: 0}
-      solverRotation: {x: 0, y: 0, z: 0, w: 0}
-      defaultLocalPosition: {x: -0.054979023, y: 3.5527136e-17, z: 5.7369207e-18}
-      defaultLocalRotation: {x: -4.1633363e-17, y: 2.2811614e-16, z: -0.024954703,
-        w: 0.99968857}
-      length: 0
-      sqrMag: 0
-      axis: {x: 0, y: 0, z: 0}
-    - transform: {fileID: 420824}
-      weight: 1
-      solverPosition: {x: 0, y: 0, z: 0}
-      solverRotation: {x: 0, y: 0, z: 0, w: 0}
-      defaultLocalPosition: {x: -0.06251349, y: 3.5527136e-17, z: 9.815703e-18}
-      defaultLocalRotation: {x: -0.06761515, y: -0.36305067, z: 0.0030731487, w: 0.9293078}
-      length: 0
-      sqrMag: 0
-      axis: {x: 0, y: 0, z: 0}
-    transform: {fileID: 482898}
-    axis: {x: -1, y: 0, z: 0}
-    poleAxis: {x: 0, y: 0, z: 0}
-    polePosition: {x: -2.7756612, y: 0.9056411, z: -4.963542}
-    poleWeight: 0
-    poleTarget: {fileID: 0}
-    clampWeight: 0.526
-    clampSmoothing: 2
 --- !u!114 &11460120
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3869,9 +3835,10 @@ MonoBehaviour:
     layers:
       serializedVersion: 2
       m_Bits: 1048577
+    GroundTheshold: 0.5
     maxStep: 0.5
     heightOffset: 0
-    footSpeed: 2.5
+    footSpeed: 10
     footRadius: 0.1
     prediction: 0.05
     footRotationWeight: 1
@@ -3888,9 +3855,10 @@ MonoBehaviour:
     layers:
       serializedVersion: 2
       m_Bits: 1048577
+    GroundTheshold: 0.5
     maxStep: 0.5
     heightOffset: 0
-    footSpeed: 2.5
+    footSpeed: 10
     footRadius: 0.15
     prediction: 0.05
     footRotationWeight: 1
@@ -3903,7 +3871,9 @@ MonoBehaviour:
     liftPelvisWeight: 0.5
     rootSphereCastRadius: 0.1
     quality: 2
-  rootRotationWeight: 0.5
+  PelvisStraightenWeight: 0.5
+  ShoulderStraightenWeight: 0.5
+  rootRotationWeight: 0
   minRootRotation: -25
   maxRootRotation: 45
   rootRotationSpeed: 4
@@ -3930,11 +3900,12 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: dfdb24813dea6514d912fab54d1c7b59, type: 2}
+  - {fileID: 2100000, guid: 57ac048096997fe4f8d7c846dd5b6c89, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3945,6 +3916,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -3980,11 +3952,12 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: dfdb24813dea6514d912fab54d1c7b59, type: 2}
+  - {fileID: 2100000, guid: 57ac048096997fe4f8d7c846dd5b6c89, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3995,6 +3968,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -4025,11 +3999,12 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: dfdb24813dea6514d912fab54d1c7b59, type: 2}
+  - {fileID: 2100000, guid: 57ac048096997fe4f8d7c846dd5b6c89, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4040,6 +4015,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -4070,11 +4046,12 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: dfdb24813dea6514d912fab54d1c7b59, type: 2}
+  - {fileID: 2100000, guid: 57ac048096997fe4f8d7c846dd5b6c89, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4085,6 +4062,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -4116,11 +4094,12 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: dfdb24813dea6514d912fab54d1c7b59, type: 2}
+  - {fileID: 2100000, guid: 57ac048096997fe4f8d7c846dd5b6c89, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4131,6 +4110,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -4162,11 +4142,12 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: dfdb24813dea6514d912fab54d1c7b59, type: 2}
+  - {fileID: 2100000, guid: 57ac048096997fe4f8d7c846dd5b6c89, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4177,6 +4158,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -4207,11 +4189,12 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: dfdb24813dea6514d912fab54d1c7b59, type: 2}
+  - {fileID: 2100000, guid: 57ac048096997fe4f8d7c846dd5b6c89, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4222,6 +4205,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -4253,11 +4237,12 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: dfdb24813dea6514d912fab54d1c7b59, type: 2}
+  - {fileID: 2100000, guid: 57ac048096997fe4f8d7c846dd5b6c89, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4268,6 +4253,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -4298,11 +4284,12 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: dfdb24813dea6514d912fab54d1c7b59, type: 2}
+  - {fileID: 2100000, guid: 57ac048096997fe4f8d7c846dd5b6c89, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4313,6 +4300,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -4354,11 +4342,12 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: dfdb24813dea6514d912fab54d1c7b59, type: 2}
+  - {fileID: 2100000, guid: 57ac048096997fe4f8d7c846dd5b6c89, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4369,6 +4358,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -4399,11 +4389,12 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: dfdb24813dea6514d912fab54d1c7b59, type: 2}
+  - {fileID: 2100000, guid: 57ac048096997fe4f8d7c846dd5b6c89, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4414,6 +4405,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -4444,11 +4436,12 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: dfdb24813dea6514d912fab54d1c7b59, type: 2}
+  - {fileID: 2100000, guid: 57ac048096997fe4f8d7c846dd5b6c89, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4459,6 +4452,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -4489,11 +4483,12 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: dfdb24813dea6514d912fab54d1c7b59, type: 2}
+  - {fileID: 2100000, guid: 57ac048096997fe4f8d7c846dd5b6c89, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4504,6 +4499,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -4535,11 +4531,12 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: dfdb24813dea6514d912fab54d1c7b59, type: 2}
+  - {fileID: 2100000, guid: 57ac048096997fe4f8d7c846dd5b6c89, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4550,6 +4547,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -4580,11 +4578,12 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: dfdb24813dea6514d912fab54d1c7b59, type: 2}
+  - {fileID: 2100000, guid: 57ac048096997fe4f8d7c846dd5b6c89, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4595,6 +4594,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -4625,11 +4625,12 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: dfdb24813dea6514d912fab54d1c7b59, type: 2}
+  - {fileID: 2100000, guid: 57ac048096997fe4f8d7c846dd5b6c89, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4640,6 +4641,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -4670,11 +4672,12 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: dfdb24813dea6514d912fab54d1c7b59, type: 2}
+  - {fileID: 2100000, guid: 57ac048096997fe4f8d7c846dd5b6c89, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4685,6 +4688,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -4715,11 +4719,12 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: dfdb24813dea6514d912fab54d1c7b59, type: 2}
+  - {fileID: 2100000, guid: 57ac048096997fe4f8d7c846dd5b6c89, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4730,6 +4735,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -4760,11 +4766,12 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: dfdb24813dea6514d912fab54d1c7b59, type: 2}
+  - {fileID: 2100000, guid: 57ac048096997fe4f8d7c846dd5b6c89, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4775,6 +4782,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -4805,11 +4813,12 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: dfdb24813dea6514d912fab54d1c7b59, type: 2}
+  - {fileID: 2100000, guid: 57ac048096997fe4f8d7c846dd5b6c89, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4820,6 +4829,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -4850,11 +4860,12 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: dfdb24813dea6514d912fab54d1c7b59, type: 2}
+  - {fileID: 2100000, guid: 57ac048096997fe4f8d7c846dd5b6c89, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4865,6 +4876,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -4896,11 +4908,12 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: dfdb24813dea6514d912fab54d1c7b59, type: 2}
+  - {fileID: 2100000, guid: 57ac048096997fe4f8d7c846dd5b6c89, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4911,6 +4924,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -4941,11 +4955,12 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: dfdb24813dea6514d912fab54d1c7b59, type: 2}
+  - {fileID: 2100000, guid: 57ac048096997fe4f8d7c846dd5b6c89, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4956,6 +4971,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -4987,11 +5003,12 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: dfdb24813dea6514d912fab54d1c7b59, type: 2}
+  - {fileID: 2100000, guid: 57ac048096997fe4f8d7c846dd5b6c89, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5002,6 +5019,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -5032,11 +5050,12 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: dfdb24813dea6514d912fab54d1c7b59, type: 2}
+  - {fileID: 2100000, guid: 57ac048096997fe4f8d7c846dd5b6c89, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5047,6 +5066,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -5077,11 +5097,12 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: dfdb24813dea6514d912fab54d1c7b59, type: 2}
+  - {fileID: 2100000, guid: 57ac048096997fe4f8d7c846dd5b6c89, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5092,6 +5113,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -5122,11 +5144,12 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: dfdb24813dea6514d912fab54d1c7b59, type: 2}
+  - {fileID: 2100000, guid: 57ac048096997fe4f8d7c846dd5b6c89, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5137,6 +5160,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -5288,8 +5312,6 @@ Transform:
   - {fileID: 457706}
   - {fileID: 433744}
   - {fileID: 411588}
-  - {fileID: 453488}
-  - {fileID: 496998}
   m_Father: {fileID: 446564}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5363,6 +5385,57 @@ MonoBehaviour:
   - {fileID: 425414}
   - {fileID: 472356}
   m_Water: {fileID: 0}
+--- !u!114 &114685606147305528
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 196848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b9a1a9e9a934b23a7db351dd9ec69e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeStep: 0
+  fixTransforms: 1
+  solver:
+    IKPosition: {x: -27.914785, y: 0.90300846, z: -1.8501737}
+    IKPositionWeight: 1
+    root: {fileID: 420824}
+    target: {fileID: 457706}
+    tolerance: 0
+    maxIterations: 4
+    useRotationLimits: 1
+    XY: 0
+    bones:
+    - transform: {fileID: 428212}
+      weight: 1
+      solverPosition: {x: 0, y: 0, z: 0}
+      solverRotation: {x: 0, y: 0, z: 0, w: 0}
+      defaultLocalPosition: {x: -0.054979023, y: 3.5527136e-17, z: 5.7369207e-18}
+      defaultLocalRotation: {x: -4.1633363e-17, y: 2.2811614e-16, z: -0.024954703,
+        w: 0.99968857}
+      length: 0.16734813
+      sqrMag: 0
+      axis: {x: -0.16734824, y: -0.000000011662379, z: 0.00000006296391}
+    - transform: {fileID: 420824}
+      weight: 1
+      solverPosition: {x: 0, y: 0, z: 0}
+      solverRotation: {x: 0, y: 0, z: 0, w: 0}
+      defaultLocalPosition: {x: -0.06251349, y: 3.5527136e-17, z: 9.815703e-18}
+      defaultLocalRotation: {x: -0.06761515, y: -0.36305067, z: 0.0030731487, w: 0.9293078}
+      length: 0.38071343
+      sqrMag: 0
+      axis: {x: -0.28085205, y: -0.060839336, z: 0.2497271}
+    - transform: {fileID: 425300}
+      weight: 1
+      solverPosition: {x: 0, y: 0, z: 0}
+      solverRotation: {x: 0, y: 0, z: 0, w: 0}
+      defaultLocalPosition: {x: -0.034033906, y: -1.0658141e-16, z: -9.787458e-18}
+      defaultLocalRotation: {x: 0, y: 0, z: 0.0069222297, w: 0.99997604}
+      length: 0
+      sqrMag: 0
+      axis: {x: -0.5407459, y: 0.084136106, z: 0.00000007788764}
 --- !u!136 &136000010318450984
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -5372,10 +5445,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.19
-  m_Height: 1.2361438
+  m_Radius: 0.19000001
+  m_Height: 0.9372284
   m_Direction: 2
-  m_Center: {x: 0.07, y: 0.59, z: 0}
+  m_Center: {x: 0.069999985, y: 0.59, z: 0.14945772}
 --- !u!136 &136000013984171198
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -5385,7 +5458,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.19
-  m_Height: 1.2361438
+  m_Radius: 0.19000001
+  m_Height: 0.9485008
   m_Direction: 2
-  m_Center: {x: 0.07, y: 0.2, z: 0}
+  m_Center: {x: 0.06999999, y: 0.19999999, z: 0.14382152}

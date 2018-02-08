@@ -29,6 +29,7 @@ namespace RootMotion.FinalIK {
 			/// <summary>
 			/// Gets the current rotation offset of the foot.
 			/// </summary>
+            public Transform IKRaycast { get; private set; }
 			public Quaternion rotationOffset { get; private set; }
 			/// <summary>
 			/// Returns true, if the leg is valid and initiated
@@ -65,6 +66,7 @@ namespace RootMotion.FinalIK {
 				this.transform = transform;
 				up = Vector3.up;
 				IKPosition = transform.position;
+                IKRaycast = new GameObject("IKRaycast").transform;
 				
 				initiated = true;
 				OnEnable();
@@ -141,7 +143,7 @@ namespace RootMotion.FinalIK {
 					heelHit = GetRaycastHit(Vector3.zero);
 					RaycastHit capsuleHit = GetCapsuleHit(prediction);
 
-					SetFootToPlane(capsuleHit.normal, capsuleHit.point, heelHit.point);
+					SetFootToPoint(capsuleHit.normal, capsuleHit.point);
                         if (capsuleHit.collider != null)
                         {
                             groundLayer = capsuleHit.collider.gameObject.layer;
@@ -164,10 +166,10 @@ namespace RootMotion.FinalIK {
                 float offsetTarget = stepHeightFromGround;
 				if (!grounding.rootGrounded) offsetTarget = 0f;
 
-				IKOffset = Interp.LerpValue(IKOffset, offsetTarget, grounding.footSpeed, grounding.footSpeed);
-				IKOffset = Mathf.Lerp(IKOffset, offsetTarget, deltaTime * grounding.footSpeed);
+                //IKOffset = Interp.LerpValue(IKOffset, offsetTarget, grounding.footSpeed, grounding.footSpeed);
+                IKOffset = Mathf.Lerp(IKOffset, offsetTarget, deltaTime * grounding.footSpeed);
 
-				float legHeight = grounding.GetVerticalOffset(transform.position, grounding.root.position);
+                float legHeight = grounding.GetVerticalOffset(transform.position, grounding.root.position);
 				float currentMaxOffset = Mathf.Clamp(grounding.maxStep - legHeight, 0f, grounding.maxStep);
 
 				IKOffset = Mathf.Clamp(IKOffset, -currentMaxOffset, IKOffset);
@@ -176,6 +178,7 @@ namespace RootMotion.FinalIK {
 
 				// Update IK values
 				IKPosition = transform.position - up * IKOffset;
+                
 
 				float rW = grounding.footRotationWeight;
 				rotationOffset = rW >= 1? r: Quaternion.Slerp(Quaternion.identity, r, rW);
@@ -225,19 +228,24 @@ namespace RootMotion.FinalIK {
 			// Set foot height from ground relative to a point
 			private void SetFootToPoint(Vector3 normal, Vector3 point) {
 				toHitNormal = Quaternion.FromToRotation(up, RotateNormal(normal));
-				
-				heightFromGround = GetHeightFromGround(point);
+
+                IKRaycast.position = point;
+                heightFromGround = GetHeightFromGround(point);
 			}
 			
 			// Set foot height from ground relative to a plane
 			private void SetFootToPlane(Vector3 planeNormal, Vector3 planePoint, Vector3 heelHitPoint) {
 				planeNormal = RotateNormal(planeNormal);
 				toHitNormal = Quaternion.FromToRotation(up, planeNormal);
-				
-				Vector3 pointOnPlane = V3Tools.LineToPlane(transform.position + up * grounding.maxStep, -up, planeNormal, planePoint);
-				
-				// Get the height offset of the point on the plane
-				heightFromGround = GetHeightFromGround(pointOnPlane);
+
+                
+
+                Vector3 pointOnPlane = V3Tools.LineToPlane(transform.position + up * grounding.maxStep, -up, planeNormal, planePoint);
+
+                
+
+                // Get the height offset of the point on the plane
+                heightFromGround = GetHeightFromGround(pointOnPlane);
 				
 				// Making sure the heel doesn't penetrate the ground
 				float heelHeight = GetHeightFromGround(heelHitPoint);
