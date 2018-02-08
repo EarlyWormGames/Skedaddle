@@ -126,7 +126,6 @@ public class AnimalController : Singleton<AnimalController>
             CameraController.Instance.m_aAnimal = m_lAnimals[m_iSelectedNumber];
             m_lAnimals[m_iSelectedNumber].m_bSelected = true;
             m_lAnimals[m_iSelectedNumber].OnSelectChange();
-            MusicHandler.SetIndex(m_iSelectedNumber);
             if (m_iAnimalGui != null)
             {
                 m_iAnimalGui.ChangeAnimal(m_lAnimals[m_iSelectedNumber].m_eName);
@@ -175,7 +174,6 @@ public class AnimalController : Singleton<AnimalController>
                     CameraController.Instance.m_aAnimal = m_lAnimals[m_iSelectedNumber];
                     m_lAnimals[m_iSelectedNumber].m_bSelected = true;
                     m_lAnimals[m_iSelectedNumber].OnSelectChange();
-                    MusicHandler.SetIndex(m_iSelectedNumber);
                     if (m_iAnimalGui != null)
                     {
                         m_iAnimalGui.ChangeAnimal(m_lAnimals[m_iSelectedNumber].m_eName);

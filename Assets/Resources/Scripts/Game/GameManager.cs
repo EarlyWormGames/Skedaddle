@@ -4,8 +4,6 @@ using UnityEngine.SceneManagement;
 using System;
 using System.Collections.Generic;
 
-using FMODUnity;
-
 public class GameManager : Singleton<GameManager>
 {
     public GameObject m_goMenuPrefab;
