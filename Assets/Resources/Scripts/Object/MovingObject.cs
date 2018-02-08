@@ -58,7 +58,7 @@ public class MovingObject : ActionObject
         m_qStartRot = transform.rotation;
     }
 
-    protected override void OnUpdate()
+    protected override void OnCanTrigger()
     {
         if(m_aAnimator != null)
         {

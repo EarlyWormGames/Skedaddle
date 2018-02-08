@@ -8,7 +8,6 @@ public class EndLevel : MonoBehaviour
     public string m_sLoadScene;
 
     public LevelDoor m_Door;
-    public PathObject m_Path;
 
     public SpriteRenderer m_sLock;
     public float m_fColorLerpSpeed = 1f;
@@ -37,8 +36,6 @@ public class EndLevel : MonoBehaviour
         m_iAnimalGUI = FindObjectOfType<InGameGUI>();
         if (m_Door != null)
             m_Door.enabled = false;
-        if (m_Path != null)
-            m_Path.gameObject.SetActive(false);
 
         m_GazeObject = GetComponent<EWGazeObject>();
     }
@@ -87,8 +84,6 @@ public class EndLevel : MonoBehaviour
 
                 if (m_Door != null)
                     m_Door.enabled = true;
-                if (m_Path != null)
-                    m_Path.gameObject.SetActive(true);
             }
         }
     }

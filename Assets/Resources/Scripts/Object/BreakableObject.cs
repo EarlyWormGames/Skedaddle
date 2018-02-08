@@ -29,7 +29,7 @@ public class BreakableObject : ActionObject
             m_rShards = m_goObject.GetComponentsInChildren<Rigidbody>();
         }
     }
-    protected override void OnUpdate() { }
+    protected override void OnCanTrigger() { }
     //protected override void AnimalEnter(Animal a_animal) { }
     //protected override void AnimalExit(Animal a_animal) { }
     public override void DoAction()

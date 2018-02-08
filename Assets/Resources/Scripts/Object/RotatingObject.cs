@@ -36,7 +36,7 @@ public class RotatingObject : ActionObject
         m_v3StartRot = transform.eulerAngles;
     }
 
-    protected override void OnUpdate()
+    protected override void OnCanTrigger()
     {
         if (m_bMove)
         {

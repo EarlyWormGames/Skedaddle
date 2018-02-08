@@ -68,7 +68,7 @@ public class Poodle : Animal
         m_fCurrentSpeed = m_fWalkSpeed;
         if (m_gqGrounder.solver.currentGroundLayer != -1)
         {
-            if (m_bSelected && !m_bPullingObject && !m_bTurning && !(m_pFollower.m_bFollow || m_bForceWalk))
+            if (m_bSelected && !m_bPullingObject && !m_bTurning && !m_bForceWalk)
             {
                 if (EWEyeTracking.active)
                 {
@@ -147,7 +147,7 @@ public class Poodle : Animal
             m_aAnimalAnimator.SetBool("AutoClimbing", false);
         }
 
-        if (m_pFollower.m_bFollow || m_bForceWalk)
+        if (m_bForceWalk)
         {
             m_aAnimalAnimator.SetBool("Controlled", true);
             m_aAnimalAnimator.SetFloat("Horizontal Velocity", 1);
@@ -174,7 +174,7 @@ public class Poodle : Animal
                 m_aAnimalAnimator.SetBool("EdgeWarning", true);
             }
 
-            if (((m_bWalkingLeft ^ m_bWalkingRight) && m_bSelected) || m_pFollower.m_bFollow || m_bForceWalk)
+            if (((m_bWalkingLeft ^ m_bWalkingRight) && m_bSelected) || m_bForceWalk)
             {
                 //walking
                 m_aAnimalAnimator.SetBool("Walking", true);

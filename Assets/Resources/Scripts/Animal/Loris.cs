@@ -77,16 +77,16 @@ public class Loris : Animal
         }
         //All animations here
 
-        if (m_pFollower.m_bFollow)
-        {
-            m_aAnimalAnimator.SetBool("Controlled", true);
-            m_bWasFollow = true;
-        }
-        else if (m_bWasFollow)
-        {
-            m_bWasFollow = false;
-            m_aAnimalAnimator.SetBool("Controlled", m_bSelected);
-        }
+        //if (m_pFollower.m_bFollow)
+        //{
+        //    m_aAnimalAnimator.SetBool("Controlled", true);
+        //    m_bWasFollow = true;
+        //}
+        //else if (m_bWasFollow)
+        //{
+        //    m_bWasFollow = false;
+        //    m_aAnimalAnimator.SetBool("Controlled", m_bSelected);
+        //}
 
         //set horozontal velocity
         m_aAnimalAnimator.SetFloat("Velocity", m_rBody.velocity.magnitude);
@@ -217,7 +217,7 @@ public class Loris : Animal
         {
             //on ground
             m_aAnimalAnimator.SetBool("OnGround", true);
-            if ((m_bWalkingLeft ^ m_bWalkingRight) || m_pFollower.m_bFollow || m_bForceWalk)
+            if ((m_bWalkingLeft ^ m_bWalkingRight) || m_bForceWalk)
             {
                 m_aAnimalAnimator.SetBool("Walking", true);
                 m_bStartedWalking = true;
@@ -269,31 +269,31 @@ public class Loris : Animal
 
             if (m_oCurrentObject != null)
             {
-                if (m_aAnimalAnimator.GetFloat("OnRope") == 1 && m_oCurrentObject.GetComponent<LadderObject>().m_bCanShimmy)
-                {
-                    
-                        if (Keybinding.GetKey("MoveLeft") || Controller.GetDpad(ControllerDpad.Left) || Controller.GetStick(true).x < -0.2f)
-                        {
-                            m_aAnimalAnimator.SetBool("Shimmy Left", true);
-                            m_aAnimalAnimator.SetBool("Shimmy Right", false);
-                        }
-                        else if (Keybinding.GetKey("MoveRight") || Controller.GetDpad(ControllerDpad.Right) || Controller.GetStick(true).x > 0.2f)
-                        {
-                            m_aAnimalAnimator.SetBool("Shimmy Right", true);
-                            m_aAnimalAnimator.SetBool("Shimmy Left", false);
-                        }
-                        else
-                        {
-                            m_aAnimalAnimator.SetBool("Shimmy Left", false);
-                            m_aAnimalAnimator.SetBool("Shimmy Right", false);
-                        }
-                    
-                }
-                else
-                {
-                    m_aAnimalAnimator.SetBool("Shimmy Left", false);
-                    m_aAnimalAnimator.SetBool("Shimmy Right", false);
-                }
+                //if (m_aAnimalAnimator.GetFloat("OnRope") == 1 && m_oCurrentObject.GetComponent<LadderObject>().m_bCanShimmy)
+                //{
+                //    
+                //        if (Keybinding.GetKey("MoveLeft") || Controller.GetDpad(ControllerDpad.Left) || Controller.GetStick(true).x < -0.2f)
+                //        {
+                //            m_aAnimalAnimator.SetBool("Shimmy Left", true);
+                //            m_aAnimalAnimator.SetBool("Shimmy Right", false);
+                //        }
+                //        else if (Keybinding.GetKey("MoveRight") || Controller.GetDpad(ControllerDpad.Right) || Controller.GetStick(true).x > 0.2f)
+                //        {
+                //            m_aAnimalAnimator.SetBool("Shimmy Right", true);
+                //            m_aAnimalAnimator.SetBool("Shimmy Left", false);
+                //        }
+                //        else
+                //        {
+                //            m_aAnimalAnimator.SetBool("Shimmy Left", false);
+                //            m_aAnimalAnimator.SetBool("Shimmy Right", false);
+                //        }
+                //    
+                //}
+                //else
+                //{
+                //    m_aAnimalAnimator.SetBool("Shimmy Left", false);
+                //    m_aAnimalAnimator.SetBool("Shimmy Right", false);
+                //}
             }
             else
             {
@@ -354,7 +354,7 @@ public class Loris : Animal
                     if (m_fDropTimer <= 0f)
                     {
                         m_fDropTimer = m_fDropTime;
-                        ((LadderObject)m_oCurrentObject).StopClimbing();
+                        //((LadderObject)m_oCurrentObject).StopClimbing();
                     }
                 }
             }

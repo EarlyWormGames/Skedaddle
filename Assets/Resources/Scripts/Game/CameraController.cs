@@ -29,7 +29,6 @@ public class CameraController : Singleton<CameraController>
 
     //=============
     //PUBLIC
-    public Animal m_aAnimal;
     public Rigidbody m_rBody;
 
     public float m_fYAdd = 0f;
@@ -190,12 +189,12 @@ public class CameraController : Singleton<CameraController>
             m_fPlayerOffsetz += Time.deltaTime * 3;
         }
 
-        if (m_aAnimal != null && m_bFollow)
+        if (Animal.CurrentAnimal != null && m_bFollow)
         {
-            m_v2SpeedOffset = new Vector2(m_aAnimal.m_rBody.velocity.x * m_fAnimalSpeedBuffer.x, m_aAnimal.m_rBody.velocity.y * m_fAnimalSpeedBuffer.y);
-            m_v3Target.x = m_aAnimal.m_tCameraPivot.position.x + m_v2SpeedOffset.x + (m_bAllowManualOffsets ? m_fPlayerOffsetx : 0);
-            m_v3Target.y = m_aAnimal.m_tCameraPivot.position.y + m_fYAdd + m_aAnimal.m_fCameraY + m_v2SpeedOffset.y + (m_bAllowManualOffsets ? m_fPlayerOffsety : 0);
-            m_v3Target.z = (m_bAllowManualOffsets ? m_fPlayerOffsetz : 0) + m_fStartz + (m_bFollowAnimalZ ? m_aAnimal.m_tCameraPivot.position.z : 0);
+            m_v2SpeedOffset = new Vector2(Animal.CurrentAnimal.m_rBody.velocity.x * m_fAnimalSpeedBuffer.x, Animal.CurrentAnimal.m_rBody.velocity.y * m_fAnimalSpeedBuffer.y);
+            m_v3Target.x = Animal.CurrentAnimal.m_tCameraPivot.position.x + m_v2SpeedOffset.x + (m_bAllowManualOffsets ? m_fPlayerOffsetx : 0);
+            m_v3Target.y = Animal.CurrentAnimal.m_tCameraPivot.position.y + m_fYAdd + Animal.CurrentAnimal.m_fCameraY + m_v2SpeedOffset.y + (m_bAllowManualOffsets ? m_fPlayerOffsety : 0);
+            m_v3Target.z = (m_bAllowManualOffsets ? m_fPlayerOffsetz : 0) + m_fStartz + (m_bFollowAnimalZ ? Animal.CurrentAnimal.m_tCameraPivot.position.z : 0);
 
             if (m_v3Target.x < m_v2XLimits.x)
             {
@@ -360,7 +359,7 @@ public class CameraController : Singleton<CameraController>
         //}
 
         //GameObject.Find("GameController").GetComponent<Audio>().ChangeAnimalMusic(a_animal.name);
-        m_aAnimal = a_animal;
+        Animal.CurrentAnimal = a_animal;
     }
 
     public void LightsOut()

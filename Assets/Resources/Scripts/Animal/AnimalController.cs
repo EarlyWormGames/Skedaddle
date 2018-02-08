@@ -123,7 +123,7 @@ public class AnimalController : Singleton<AnimalController>
             
 
             m_iSelectedNumber = a_index;
-            CameraController.Instance.m_aAnimal = m_lAnimals[m_iSelectedNumber];
+            Animal.CurrentAnimal = m_lAnimals[m_iSelectedNumber];
             m_lAnimals[m_iSelectedNumber].m_bSelected = true;
             m_lAnimals[m_iSelectedNumber].OnSelectChange();
             if (m_iAnimalGui != null)
@@ -171,7 +171,7 @@ public class AnimalController : Singleton<AnimalController>
                     }
 
                     m_iSelectedNumber = i;
-                    CameraController.Instance.m_aAnimal = m_lAnimals[m_iSelectedNumber];
+                    Animal.CurrentAnimal = m_lAnimals[m_iSelectedNumber];
                     m_lAnimals[m_iSelectedNumber].m_bSelected = true;
                     m_lAnimals[m_iSelectedNumber].OnSelectChange();
                     if (m_iAnimalGui != null)

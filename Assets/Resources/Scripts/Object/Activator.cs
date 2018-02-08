@@ -30,7 +30,7 @@ namespace EW
             m_bUseDefaultAction = false;
         }
 
-        protected override void OnUpdate()
+        protected override void OnCanTrigger()
         {
             if (m_bOnAtStart)
             {

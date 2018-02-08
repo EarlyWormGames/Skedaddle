@@ -48,7 +48,7 @@ public class CageDrop : ActionObject
         //}
     }
 
-    protected override void OnUpdate()
+    protected override void OnCanTrigger()
     {
         if (!m_bDropped)
         {

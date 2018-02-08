@@ -42,7 +42,7 @@ public class Anteater : Animal
         m_aAnimalAnimator.SetBool("OnGround", m_bOnGround);
         m_aAnimalAnimator.SetBool("Dead", !Alive);
         m_aAnimalAnimator.SetFloat("Vertical Velocity", m_rBody.velocity.y);
-        if ((m_bWalkingLeft ^ m_bWalkingRight) || m_pFollower.m_bFollow)
+        if ((m_bWalkingLeft ^ m_bWalkingRight))
         {
             m_aAnimalAnimator.SetBool("Walking", true);
         }

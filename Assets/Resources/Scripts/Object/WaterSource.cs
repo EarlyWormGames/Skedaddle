@@ -19,7 +19,7 @@ public class WaterSource : ActionObject
     //Inherited functions
 
     //protected override void OnStart() { }
-    protected override void OnUpdate()
+    protected override void OnCanTrigger()
     {
         if (m_wHolder != null)
         {

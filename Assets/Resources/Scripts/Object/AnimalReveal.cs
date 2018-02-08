@@ -34,11 +34,11 @@ public class AnimalReveal : ActionObject
     }
 
 
-    protected override void OnUpdate()
+    protected override void OnCanTrigger()
     {
         if (!Done)
         {
-            base.OnUpdate();
+            base.OnCanTrigger();
         }
     }
     //protected override void AnimalEnter(Animal a_animal) { }

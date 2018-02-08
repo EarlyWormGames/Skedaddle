@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 using System;
+using System.Collections.Generic;
 
 [Serializable]
 public class NamedEvent
@@ -34,7 +35,7 @@ public class ActionObject : MonoBehaviour
     public ANIMAL_SIZE m_aMaximumSize;
 
     [Header("Links")]
-    public Animal m_aCurrentAnimal;
+    public List<Animal> m_CurrentAnimals = new List<Animal>();
     public Rigidbody m_rBody;
     public EWGazeObject m_GazeObject;
 
@@ -90,7 +91,24 @@ public class ActionObject : MonoBehaviour
         if (m_bGazeRunning)
             m_fGazeTimer += Time.deltaTime;
 
+        if (m_CurrentAnimals.Contains(Animal.CurrentAnimal))
+        {
+            if (CheckCorrectAnimal(Animal.CurrentAnimal))
+            {
+                if (m_bUseDefaultAction)
+                {
+                    if (Keybinding.GetKeyDown("Action") || Controller.GetButtonDown(ControllerButtons.A))
+                    {
+                        DoAction();
+                    }
+                }
+                else
+                    OnCanTrigger();
+            }
+        }
+
         OnUpdate();
+        DoAnimation();
     }
 
     void FixedUpdate()
@@ -99,21 +117,27 @@ public class ActionObject : MonoBehaviour
     }
 
     protected virtual void OnFixedUpdate() { }
-    protected virtual void OnUpdate()
+    protected virtual void OnCanTrigger() { }
+    protected virtual void OnUpdate() { }
+
+    public bool CheckCorrectAnimal(Animal a_animal)
     {
-        if (!m_bUseDefaultAction)
-            return;
-
-        if (m_aCurrentAnimal == null)
-            return;
-        else if ((m_aCurrentAnimal.m_oCurrentObject != this && m_aCurrentAnimal.m_oCurrentObject != null) || !m_aCurrentAnimal.m_bSelected)
-            return;
-
-        if (Keybinding.GetKeyDown("Action") || Controller.GetButtonDown(ControllerButtons.A))
+        if (m_aRequiredAnimal != ANIMAL_NAME.NONE)
         {
-            DoAction();
+            if (a_animal.m_eName != m_aRequiredAnimal)
+                return false;
         }
-        DoAnimation();
+        else if (m_aRequiredSize != ANIMAL_SIZE.NONE)
+        {
+            if (a_animal.m_eSize < m_aRequiredSize)
+                return false;
+        }
+        else if (m_aMaximumSize != ANIMAL_SIZE.NONE)
+        {
+            if (a_animal.m_eSize > m_aMaximumSize)
+                return false;
+        }
+        return true;
     }
 
     void OnTriggerEnter(Collider a_col)
@@ -127,33 +151,12 @@ public class ActionObject : MonoBehaviour
 
         Animal anim = animtrig.parent;
 
-        if (m_aRequiredAnimal != ANIMAL_NAME.NONE)
-        {
-            if (anim.m_eName != m_aRequiredAnimal)
-            {
-                WrongAnimalEnter(anim);
-                return;
-            }
-        }
-        else if (m_aRequiredSize != ANIMAL_SIZE.NONE)
-        {
-            if (anim.m_eSize < m_aRequiredSize)
-            {
-                WrongAnimalEnter(anim);
-                return;
-            }
-        }
-        else if(m_aMaximumSize != ANIMAL_SIZE.NONE)
-        {
-            if (anim.m_eSize > m_aMaximumSize)
-            {
-                WrongAnimalEnter(anim);
-                return;
-            }
-        }
+        if (CheckCorrectAnimal(anim))
+            AnimalEnter(anim);
+        else
+            WrongAnimalEnter(anim);
 
-        m_aCurrentAnimal = anim;
-        AnimalEnter(anim);
+        m_CurrentAnimals.Add(anim);
 
         OnAnimalEnter.Invoke();
     }
@@ -173,29 +176,7 @@ public class ActionObject : MonoBehaviour
 
         Animal anim = animtrig.parent;
 
-        if (m_aCurrentAnimal != null)
-        {
-            if (anim == m_aCurrentAnimal)
-            {
-                if (m_bQuickExitFix)
-                {
-                    m_bQuickExitFix = false;
-                    return;
-                }
-
-                m_aCurrentAnimal = null;
-            }
-            else
-            {
-                WrongAnimalExit(anim);
-                return;
-            }
-        }
-        else
-        {
-            WrongAnimalExit(anim);
-            return;
-        }
+        m_CurrentAnimals.Remove(anim);
 
         if (anim != null)
         {

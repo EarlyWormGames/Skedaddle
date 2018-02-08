@@ -51,6 +51,17 @@ public class Animal : MonoBehaviour
         ELECTRO_DEATH,
     }
 
+    public enum FACING_DIR
+    {
+        NONE,
+        FRONT,
+        RIGHT,
+        BACK,
+        LEFT
+    }
+
+    public static Animal CurrentAnimal;
+
     //==================================
     //          Public Vars
     //      (Used for Inspector)
@@ -203,7 +214,6 @@ public class Animal : MonoBehaviour
     
     //Movement
     protected float         m_fCurrentSpeed;
-    protected PathFollower  m_pFollower;
 
     protected bool          m_bFacingLeft = false;
     protected bool          m_bWalkingLeft = false;
@@ -256,7 +266,6 @@ public class Animal : MonoBehaviour
     {
         m_rBody = GetComponent<Rigidbody>();
         m_cCol = GetComponent<Collider>();
-        m_pFollower = GetComponent<PathFollower>();
         m_gqGrounder = m_goIKSwitch.GetComponent<GrounderQuadruped>();
         m_fFallStartY = transform.position.y;
 

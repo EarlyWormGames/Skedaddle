@@ -24,7 +24,7 @@ public class SlidingDoor : ActionObject
     }
 	
 	// Update is called once per frame
-	protected override void OnUpdate ()
+	protected override void OnCanTrigger ()
     {
         if (m_aSlidingDoorAni != null)
         {
