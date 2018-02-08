@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-using UnityStandardAssets.CinematicEffects;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
@@ -13,29 +12,15 @@ public class Settings : MonoBehaviour
     public static UnityAction OnSettingsChanged;
 
     private static float m_Brightness = 1.17f;
-    private TonemappingColorGrading m_Tone;
     private static bool m_AmbientOcclusion = true;
 
     void Start()
     {
         m_BrightnessSlider.value = Brightness;
-        m_Tone = FindObjectOfType<TonemappingColorGrading>();
-        if (m_Tone != null)
-        {
-            TonemappingColorGrading.TonemappingSettings map = m_Tone.tonemapping;
-            map.exposure = m_Brightness;
-            m_Tone.tonemapping = map;
-        }
     }
 
     void Update()
     {
-        if (m_Tone != null)
-        {
-            TonemappingColorGrading.TonemappingSettings map = m_Tone.tonemapping;
-            map.exposure = m_Brightness;
-            m_Tone.tonemapping = map;
-        }
     }
 
     public static void LoadSettings()

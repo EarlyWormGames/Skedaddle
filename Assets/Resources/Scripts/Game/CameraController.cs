@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityStandardAssets.CinematicEffects;
 using System.Collections.Generic;
 
 public delegate void CameraEndDelegate();
@@ -77,8 +76,7 @@ public class CameraController : Singleton<CameraController>
     private CameraEndDelegate m_cEndDelegate;
     private bool m_bEnded;
     private bool m_bTimeLerp = true;
-
-    private LensAberrations m_Vingette;
+    
     private float m_VingetteStart = 0f;
 
     private List<Light> m_Lights;
@@ -97,9 +95,6 @@ public class CameraController : Singleton<CameraController>
     void Start()
     {
         m_fStartz = transform.position.z;
-        m_Vingette = GetComponent<LensAberrations>();
-        if (m_Vingette != null)
-            m_VingetteStart = m_Vingette.vignette.intensity;
 
         m_v3Target = transform.position;
         m_cCamera = GetComponent<Camera>();
@@ -142,8 +137,6 @@ public class CameraController : Singleton<CameraController>
         
         if (m_bUseNightVision)
         {
-            if (m_Vingette != null)
-                m_Vingette.vignette.intensity = Mathf.Lerp(m_Vingette.vignette.intensity, m_VingetteMax, Time.deltaTime * m_VingetteSpeed);
             if (m_bLorisSelected)
             {
                 LetThereBeLight();
@@ -154,8 +147,6 @@ public class CameraController : Singleton<CameraController>
         }
         else
         {
-            if (m_Vingette != null)
-                m_Vingette.vignette.intensity = Mathf.Lerp(m_Vingette.vignette.intensity, m_VingetteStart, Time.deltaTime * m_VingetteSpeed);
             LetThereBeLight();
         }
 
