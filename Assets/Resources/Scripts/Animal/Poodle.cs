@@ -158,6 +158,7 @@ public class Poodle : Animal
             m_bWasFollow = false;
             m_aAnimalAnimator.SetBool("Controlled", m_bSelected);
         }
+        
 
         //WALKING
         if (m_bOnGround)
@@ -166,6 +167,12 @@ public class Poodle : Animal
             m_aAnimalAnimator.SetBool("OnGround", true);
             m_fDampen = 1;
             m_aAnimalAnimator.SetFloat("Follow-Through Vertical", Mathf.Lerp(m_aAnimalAnimator.GetFloat("Follow-Through Vertical"), 0, Time.deltaTime * 2f));
+
+            m_aAnimalAnimator.SetBool("EdgeWarning", false);
+            if (!m_bRestGroundDetected)
+            {
+                m_aAnimalAnimator.SetBool("EdgeWarning", true);
+            }
 
             if (((m_bWalkingLeft ^ m_bWalkingRight) && m_bSelected) || m_pFollower.m_bFollow || m_bForceWalk)
             {
@@ -221,6 +228,7 @@ public class Poodle : Animal
                 //Falling
                 m_aAnimalAnimator.SetBool("Walking", false);
                 m_aAnimalAnimator.SetBool("OnGround", false);
+                m_aAnimalAnimator.SetBool("EdgeWarning", false);
                 m_fDampen = 0;
                 m_aAnimalAnimator.SetFloat("Follow-Through Vertical", m_aAnimalAnimator.GetFloat("Vertical Velocity"));
             }
