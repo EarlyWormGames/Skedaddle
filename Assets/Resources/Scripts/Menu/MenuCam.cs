@@ -40,7 +40,7 @@ public class MenuCam : MonoBehaviour
             m_rightArrow.SetActive(false);
         }
 
-        if (m_bPlaying || !Splash.GameLoaded || Controller.Connected)
+        if (m_bPlaying || !Splash.GameLoaded)
             return;
 
         if (!EWEyeTracking.active)

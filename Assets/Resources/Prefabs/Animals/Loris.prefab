@@ -691,10 +691,11 @@ GameObject:
   - component: {fileID: 423376}
   - component: {fileID: 5400566}
   - component: {fileID: 11486266}
-  - component: {fileID: 11445330}
   - component: {fileID: 11498748}
   - component: {fileID: 114000013904348872}
   - component: {fileID: 114076638057655230}
+  - component: {fileID: 114001635179487430}
+  - component: {fileID: 114492827005369712}
   m_Layer: 8
   m_Name: Loris
   m_TagString: Animal
@@ -6565,7 +6566,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 111396}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -28.46, y: 0.77046394, z: -2.32}
+  m_LocalPosition: {x: 46.85, y: -1.64, z: 8.064}
   m_LocalScale: {x: 0.401, y: 0.401, z: 0.401}
   m_Children:
   - {fileID: 427722}
@@ -10440,7 +10441,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_Constraints: 120
   m_CollisionDetection: 1
 --- !u!65 &6559716
@@ -10835,18 +10836,6 @@ MonoBehaviour:
     maintainRotationWeight: 0
     bendModifierWeight: 1
     bendGoal: {fileID: 0}
---- !u!114 &11445330
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 111396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5d6c7ad8be4ae64ab3daaf81be7e2b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_fStopDist: 0.1
 --- !u!114 &11449444
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11209,70 +11198,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce4b050ca8ddb5e43b1a21c77de8c821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Layer:
-    serializedVersion: 2
-    m_Bits: 262144
-  m_IgnoreFirstSound: 0
-  m_DestroyTime: 3
-  m_tFrontRight: {fileID: 436820}
-  m_tFrontLeft: {fileID: 411170}
-  m_tBackRight: {fileID: 414456}
-  m_tBackLeft: {fileID: 499986}
-  m_Events:
-  - Name: WalkFoot
-    Sounds:
-    - Event: event:/SFX/FTS/LORIS/WALK_WOOD
-      SurfaceType: 0
-    - Event: event:/SFX/FTS/LORIS/WALK_METAL
-      SurfaceType: 1
-    - Event: event:/SFX/FTS/LORIS/WALK_SHELF
-      SurfaceType: 2
-    - Event: event:/SFX/FTS/LORIS/WALK_BOX_LARGE
-      SurfaceType: 4
-    - Event: event:/SFX/FTS/LORIS/WALK_SUITCASE
-      SurfaceType: 3
-  - Name: PullFoot
-    Sounds:
-    - Event: event:/SFX/MVS/LORIS/WALK
-      SurfaceType: 0
-  - Name: PushFoot
-    Sounds:
-    - Event: event:/SFX/FTS/LORIS/PUSH_WOOD
-      SurfaceType: 0
-  - Name: ClimbRope
-    Sounds:
-    - Event: event:/SFX/FTS/LORIS/CLIMB_ROPE
-      SurfaceType: 0
-  - Name: ClimbLadder
-    Sounds:
-    - Event: event:/SFX/FTS/LORIS/CLIMB_LADDER
-      SurfaceType: 0
-  - Name: Slide
-    Sounds:
-    - Event: event:/SFX/OBJECTS/ENVIRONMENTAL/SLIDE
-      SurfaceType: 0
-  - Name: ClimbFoot
-    Sounds:
-    - Event: event:/SFX/FTS/LORIS/CLIMB_BOX_LARGE
-      SurfaceType: 0
-    - Event: event:/SFX/FTS/LORIS/CLIMB_METAL
-      SurfaceType: 1
-    - Event: event:/SFX/FTS/LORIS/CLIMB_SHELF
-      SurfaceType: 2
-    - Event: event:/SFX/FTS/LORIS/CLIMB_SUITCASE
-      SurfaceType: 3
-  - Name: WalkMVS
-    Sounds:
-    - Event: event:/SFX/MVS/LORIS/WALK
-      SurfaceType: 0
-  - Name: ClimbMVS
-    Sounds:
-    - Event: event:/SFX/MVS/LORIS/CLIMB
-      SurfaceType: 0
-  - Name: IdleClimbMVS
-    Sounds:
-    - Event: event:/SFX/MVS/LORIS/IDLE_CLIMB
-      SurfaceType: 0
 --- !u!114 &11498748
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11284,22 +11209,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ce5c7e92d9751142bd0dbbdce2b1bc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layer:
-    serializedVersion: 2
-    m_Bits: 262144
-  sounds:
-  - sound: {fileID: 11410856}
-    surface: 0
-  - sound: {fileID: 11470410}
-    surface: 2
-  - sound: {fileID: 11462436}
-    surface: 1
-  - sound: {fileID: 11414554}
-    surface: 4
-  - sound: {fileID: 11454794}
-    surface: 3
-  - sound: {fileID: 11414554}
-    surface: 4
 --- !u!114 &11499244
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13213,6 +13122,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_sName: Loris
   m_TrackTime: 0
+--- !u!114 &114001635179487430
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 111396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84d2c07be54604d7d9acbaf6555da85a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoAssignGlobal: 1
+  actionMaps:
+  - actionMap: {fileID: 11400000, guid: 80f2df7e1586bc94aa1bbea872f6ca3b, type: 2}
+    active: 1
+    blockSubsequent: 1
 --- !u!114 &114039960980768472
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13297,6 +13222,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsParent: 0
+--- !u!114 &114492827005369712
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 111396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8b8b7cc5a8d9d54695ad890164f0baa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BaseMoveSpeed: 0.18
+  MaxMoveSpeed: 0.02
+  DecelerationRate: 0.08
 --- !u!114 &114533132107253472
 MonoBehaviour:
   m_ObjectHideFlags: 1

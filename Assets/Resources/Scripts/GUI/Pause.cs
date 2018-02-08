@@ -41,17 +41,17 @@ public class Pause : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((Keybinding.GetKeyDown("Pause") || Controller.GetButtonDown(ControllerButtons.Start)) && m_bCanPause)
-        {
-            if (!m_bIsPaused)
-            {
-                OpenPause();
-            }
-            else
-            {
-                ClosePause();
-            }
-        }
+        //if ((Keybinding.GetKeyDown("Pause") || Controller.GetButtonDown(ControllerButtons.Start)) && m_bCanPause)
+        //{
+        //    if (!m_bIsPaused)
+        //    {
+        //        OpenPause();
+        //    }
+        //    else
+        //    {
+        //        ClosePause();
+        //    }
+        //}
     }
 
     public void OpenPause()

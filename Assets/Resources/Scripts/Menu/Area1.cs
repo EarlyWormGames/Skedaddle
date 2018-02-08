@@ -17,11 +17,11 @@ public class Area1 : Area
     {
         if (m_bSelected)
         {
-            if (Keybinding.GetKeyDown("Pause") || Controller.GetButtonDown(ControllerButtons.B))
-            {
-                Exit();
-                return;
-            }
+            //if (Keybinding.GetKeyDown("Pause") || Controller.GetButtonDown(ControllerButtons.B))
+            //{
+            //    Exit();
+            //    return;
+            //}
             Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, m_SelectedLevel.m_tMovePoint.position, Time.deltaTime * m_LerpSpeed);
         }
 

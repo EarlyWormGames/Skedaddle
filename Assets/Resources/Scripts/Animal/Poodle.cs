@@ -82,11 +82,11 @@ public class Poodle : Animal
                         m_bRunning = false;
                 }
 
-                if (Keybinding.GetKey("SecondaryAction") || Controller.GetButton(ControllerButtons.X))
-                {
-                    m_fCurrentSpeed = m_fWalkSpeed * m_fRunSpeedMult;
-                    m_bRunning = true;
-                }
+                //if (Keybinding.GetKey("SecondaryAction") || Controller.GetButton(ControllerButtons.X))
+                //{
+                //    m_fCurrentSpeed = m_fWalkSpeed * m_fRunSpeedMult;
+                //    m_bRunning = true;
+                //}
             }
             else if (m_bPullingObject)
             {

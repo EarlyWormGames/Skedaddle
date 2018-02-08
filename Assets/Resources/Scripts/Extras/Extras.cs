@@ -28,8 +28,8 @@ public class Extras : MonoBehaviour
     {
         if (m_eSelected == null)
         {
-            if (Keybinding.GetKeyDown("Pause") || Controller.GetButtonDown(ControllerButtons.B))
-                EWApplication.LoadLevel("Menu");
+            //if (Keybinding.GetKeyDown("Pause") || Controller.GetButtonDown(ControllerButtons.B))
+            //    EWApplication.LoadLevel("Menu");
         }
     }
 

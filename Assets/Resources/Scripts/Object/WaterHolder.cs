@@ -28,10 +28,10 @@ public class WaterHolder : ActionObject
     {
         if (m_wTrunk != null && AnimalController.Instance.GetCurrentAnimal().m_eName == ANIMAL_NAME.ELEPHANT)
         {
-            if (Keybinding.GetKeyDown("Action") || Controller.GetButtonDown(ControllerButtons.A))
-            {
-                Fill(m_wTrunk.Empty());
-            }
+            //if (Keybinding.GetKeyDown("Action") || Controller.GetButtonDown(ControllerButtons.A))
+            //{
+            //    Fill(m_wTrunk.Empty());
+            //}
         }
     }
     //protected override void AnimalEnter(Animal a_animal) { }

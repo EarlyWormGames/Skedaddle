@@ -35,22 +35,22 @@ public class Turn : StateMachineBehaviour {
     {
         if (m_aAnimal.m_bSelected)
         {
-            if (Keybinding.GetKeyDown("MoveRight") || Controller.GetDpadDown(ControllerDpad.Right) || Controller.GetStickPositionDown(true, ControllerDpad.Right))
-            {
-                animator.SetFloat("Turn_Speed", 3);
-                if (m_aAnimal.m_bTurned)
-                {
-                    m_bTurnAgain = true;
-                }
-            }
-            if (Keybinding.GetKeyDown("MoveLeft") || Controller.GetDpadDown(ControllerDpad.Left) || Controller.GetStickPositionDown(true, ControllerDpad.Left))
-            {
-                animator.SetFloat("Turn_Speed", 3);
-                if (!m_aAnimal.m_bTurned)
-                {
-                    m_bTurnAgain = true;
-                }
-            }
+            //if (Keybinding.GetKeyDown("MoveRight") || Controller.GetDpadDown(ControllerDpad.Right) || Controller.GetStickPositionDown(true, ControllerDpad.Right))
+            //{
+            //    animator.SetFloat("Turn_Speed", 3);
+            //    if (m_aAnimal.m_bTurned)
+            //    {
+            //        m_bTurnAgain = true;
+            //    }
+            //}
+            //if (Keybinding.GetKeyDown("MoveLeft") || Controller.GetDpadDown(ControllerDpad.Left) || Controller.GetStickPositionDown(true, ControllerDpad.Left))
+            //{
+            //    animator.SetFloat("Turn_Speed", 3);
+            //    if (!m_aAnimal.m_bTurned)
+            //    {
+            //        m_bTurnAgain = true;
+            //    }
+            //}
         }
 
         m_aAnimal.m_fAnimationSpeed = stateInfo.speed * stateInfo.speedMultiplier;

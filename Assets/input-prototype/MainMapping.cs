@@ -1,0 +1,9 @@
+using UnityEngine;
+using UnityEngine.InputNew;
+
+// GENERATED FILE - DO NOT EDIT MANUALLY
+public class MainMapping : ActionMapInput {
+	public MainMapping (ActionMap actionMap) : base (actionMap) { }
+	
+	public AxisInputControl @moveX { get { return (AxisInputControl)this[0]; } }
+}

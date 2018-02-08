@@ -59,10 +59,7 @@ public class RoofDustParticles : TrainEffects {
         {
             for(int i = 0; i < m_psParticles.Length; i++)
             {
-                if (m_iParticlesPlayed.Contains(i))
-                {
-                    m_psParticles[i].Play();
-                }
+
             }
             m_bCycle = false;
         }
@@ -83,14 +80,6 @@ public class RoofDustParticles : TrainEffects {
     public void DecidePlaying(int number)
     {
         int numberCheck = Mathf.RoundToInt(Random.Range(-0.49f, m_psParticles.Length - 0.51f)); 
-        if (!m_iParticlesPlayed.Contains(numberCheck))
-        {
-            m_iParticlesPlayed[number] = numberCheck;
-        }
-        else
-        {
-            DecidePlaying(number);
-        }
     }
 
 }

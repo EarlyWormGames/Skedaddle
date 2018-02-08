@@ -164,30 +164,30 @@ public class CameraController : Singleton<CameraController>
             transform.rotation = Quaternion.Lerp(transform.rotation, m_qStartRot, Time.deltaTime * m_fRotateSpeed);
         }
 
-        if (Keybinding.GetKey("CameraPanLeft"))
-        {
-            m_fPlayerOffsetx -= Time.deltaTime * 3;
-        }
-        if (Keybinding.GetKey("CameraPanRight"))
-        {
-            m_fPlayerOffsetx += Time.deltaTime * 3;
-        }
-        if (Keybinding.GetKey("CameraPanDown"))
-        {
-            m_fPlayerOffsety -= Time.deltaTime * 3;
-        }
-        if (Keybinding.GetKey("CameraPanUp"))
-        {
-            m_fPlayerOffsety += Time.deltaTime * 3;
-        }
-        if (Keybinding.GetKey("CameraZoomOut"))
-        {
-            m_fPlayerOffsetz -= Time.deltaTime * 3;
-        }
-        if (Keybinding.GetKey("CameraZoomIn"))
-        {
-            m_fPlayerOffsetz += Time.deltaTime * 3;
-        }
+        //if (Keybinding.GetKey("CameraPanLeft"))
+        //{
+        //    m_fPlayerOffsetx -= Time.deltaTime * 3;
+        //}
+        //if (Keybinding.GetKey("CameraPanRight"))
+        //{
+        //    m_fPlayerOffsetx += Time.deltaTime * 3;
+        //}
+        //if (Keybinding.GetKey("CameraPanDown"))
+        //{
+        //    m_fPlayerOffsety -= Time.deltaTime * 3;
+        //}
+        //if (Keybinding.GetKey("CameraPanUp"))
+        //{
+        //    m_fPlayerOffsety += Time.deltaTime * 3;
+        //}
+        //if (Keybinding.GetKey("CameraZoomOut"))
+        //{
+        //    m_fPlayerOffsetz -= Time.deltaTime * 3;
+        //}
+        //if (Keybinding.GetKey("CameraZoomIn"))
+        //{
+        //    m_fPlayerOffsetz += Time.deltaTime * 3;
+        //}
 
         if (Animal.CurrentAnimal != null && m_bFollow)
         {

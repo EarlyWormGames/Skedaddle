@@ -84,18 +84,6 @@ public static class ArrayExtension
         return -1;
     }
 
-    public static bool Contains<T>(this T[] a_array, T a_object) where T : IComparable<T>
-    {
-        for (int i = 0; i < a_array.Length; ++i)
-        {
-            if (a_array[i].CompareTo(a_object) == 0)
-            {
-                return true;
-            }
-        }
-        return false;
-    }
-
     public static Type[] GetTypes(this Array a_array)
     {
         Type[] types = new Type[a_array.Length];

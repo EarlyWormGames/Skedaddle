@@ -98,21 +98,21 @@ public class InGameMenu : MonoBehaviour
             }
         }
 
-        if ((Keybinding.GetKeyDown("Pause") || Controller.GetButtonDown(ControllerButtons.Start)))
-        {
-            if (!m_bPaused)
-            {
-                Pause();
-            }
-            else if (m_SelectedTab.m_Name == TabName.MAIN)
-            {
-                Return();
-            }
-            else
-            {
-                SwitchTab(TabName.MAIN);
-            }
-        }
+        //if ((Keybinding.GetKeyDown("Pause") || Controller.GetButtonDown(ControllerButtons.Start)))
+        //{
+        //    if (!m_bPaused)
+        //    {
+        //        Pause();
+        //    }
+        //    else if (m_SelectedTab.m_Name == TabName.MAIN)
+        //    {
+        //        Return();
+        //    }
+        //    else
+        //    {
+        //        SwitchTab(TabName.MAIN);
+        //    }
+        //}
     }
 
     public void Menu()

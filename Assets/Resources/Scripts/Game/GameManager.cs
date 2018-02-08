@@ -59,17 +59,9 @@ public class GameManager : Singleton<GameManager>
             m_bDoOnce = false;
         }
 
-        if (Keybinding.GetKeyDown("Restart"))
-        {
-            EWApplication.ReloadLevel();
-        }
-
-        //m_fGCTimer += Time.deltaTime;
-        //
-        //if (m_fGCTimer >= 10f)
+        //if (Keybinding.GetKeyDown("Restart"))
         //{
-        //    m_fGCTimer = 0f;
-        //    //GC.Collect();
+        //    EWApplication.ReloadLevel();
         //}
     }
 

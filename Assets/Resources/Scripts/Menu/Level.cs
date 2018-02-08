@@ -42,11 +42,11 @@ public class Level : MonoBehaviour
             m_fEyeTimer += Time.deltaTime;
         }
 
-        if (Keybinding.GetKeyDown("Action") || Controller.GetButtonDown(ControllerButtons.A) || /*Input.GetMouseButtonDown(0) ||*/ m_fEyeTimer >= EWEyeTracking.holdTime)
-        {
-            EWApplication.LoadLevel(m_sLevelName);
-            m_bLoading = true;
-        }
+        //if (Keybinding.GetKeyDown("Action") || Controller.GetButtonDown(ControllerButtons.A) || /*Input.GetMouseButtonDown(0) ||*/ m_fEyeTimer >= EWEyeTracking.holdTime)
+        //{
+        //    EWApplication.LoadLevel(m_sLevelName);
+        //    m_bLoading = true;
+        //}
 
         Rect left = new Rect(0, 0, Screen.width / 4f, Screen.height);
         Rect right = new Rect(Screen.width - (Screen.width / 4f), 0, Screen.width / 4f, Screen.height);
@@ -55,10 +55,10 @@ public class Level : MonoBehaviour
         {
             MenuCam.instance.m_leftArrow.SetActive(true);
 
-            if (Keybinding.GetKeyDown("MoveLeft") || Controller.GetDpadDown(ControllerDpad.Left) || Controller.GetStickPositionDown(true, ControllerDpad.Left))
-            {
-                m_aParent.SelectLevel(m_lPrevLevel);
-            }
+            //if (Keybinding.GetKeyDown("MoveLeft") || Controller.GetDpadDown(ControllerDpad.Left) || Controller.GetStickPositionDown(true, ControllerDpad.Left))
+            //{
+            //    m_aParent.SelectLevel(m_lPrevLevel);
+            //}
         }
         else
             MenuCam.instance.m_leftArrow.SetActive(false);
@@ -67,10 +67,10 @@ public class Level : MonoBehaviour
         {
             MenuCam.instance.m_rightArrow.SetActive(true);
 
-            if (Keybinding.GetKeyDown("MoveRight") || Controller.GetDpadDown(ControllerDpad.Right) || Controller.GetStickPositionDown(true, ControllerDpad.Right))
-            {
-                m_aParent.SelectLevel(m_lNextLevel);
-            }
+            //if (Keybinding.GetKeyDown("MoveRight") || Controller.GetDpadDown(ControllerDpad.Right) || Controller.GetStickPositionDown(true, ControllerDpad.Right))
+            //{
+            //    m_aParent.SelectLevel(m_lNextLevel);
+            //}
         }
         else
             MenuCam.instance.m_rightArrow.SetActive(false);

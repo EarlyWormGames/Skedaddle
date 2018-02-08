@@ -97,10 +97,10 @@ public class ActionObject : MonoBehaviour
             {
                 if (m_bUseDefaultAction)
                 {
-                    if (Keybinding.GetKeyDown("Action") || Controller.GetButtonDown(ControllerButtons.A))
-                    {
-                        DoAction();
-                    }
+                    //if (Keybinding.GetKeyDown("Action") || Controller.GetButtonDown(ControllerButtons.A))
+                    //{
+                    //    DoAction();
+                    //}
                 }
                 else
                     OnCanTrigger();

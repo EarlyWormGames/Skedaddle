@@ -49,10 +49,10 @@ public class MenuAnimal : Area
 
         if (m_bSelected)
         {
-            if (Keybinding.GetKeyDown("Pause") || Controller.GetButtonDown(ControllerButtons.B))
-            {
-                Exit();
-            }
+            //if (Keybinding.GetKeyDown("Pause") || Controller.GetButtonDown(ControllerButtons.B))
+            //{
+            //    Exit();
+            //}
         }
 
         if (m_fFadeTimer >= 0f)

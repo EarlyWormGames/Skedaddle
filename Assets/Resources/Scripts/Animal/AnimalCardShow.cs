@@ -75,10 +75,10 @@ public class AnimalCardShow : MonoBehaviour
     {
         if (m_bShowing)
         {
-            if (Keybinding.GetKeyDown("Action") || Controller.GetButtonDown(ControllerButtons.A))
-            {
-                Hide();
-            }
+            //if (Keybinding.GetKeyDown("Action") || Controller.GetButtonDown(ControllerButtons.A))
+            //{
+            //    Hide();
+            //}
         }
     }
 }

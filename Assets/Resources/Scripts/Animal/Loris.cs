@@ -342,23 +342,6 @@ public class Loris : Animal
 
         //=====================================
         bool climbDown = false;
-        if (m_bClimbing)
-        {
-            if (!m_bCanClimbDown)
-            {
-                if (Keybinding.GetKey("MoveDown") || Controller.GetDpad(ControllerDpad.Down) || Controller.GetStick(true).y < -0.2f || m_EyeDown)
-                {
-                    climbDown = true;
-                    m_fDropTimer -= Time.deltaTime;
-
-                    if (m_fDropTimer <= 0f)
-                    {
-                        m_fDropTimer = m_fDropTime;
-                        //((LadderObject)m_oCurrentObject).StopClimbing();
-                    }
-                }
-            }
-        }
 
         if (!climbDown)
             m_fDropTimer = m_fDropTime;
@@ -381,40 +364,7 @@ public class Loris : Animal
 
     protected override void OnFixedUpdate()
     {
-        if (m_bClimbing)
-        {
-            bool moving = false;
-            if (m_bCanClimbUp && m_bSelected && m_bAlive)
-            {
-                if (Keybinding.GetKey("MoveUp") || Controller.GetDpad(ControllerDpad.Up) || Controller.GetStick(true).y > 0.2f || m_bEyeClimbUp)
-                {
-                    Vector3 force = Vector3.up * m_fClimbSpeed;
-                    if ((m_rBody.velocity + force).y < m_fClimbTopSpeed)
-                        m_rBody.AddForce(force);
-                    moving = true;
-                }
-            }
-
-            if (m_bCanClimbDown && m_bSelected && m_bAlive)
-            {
-                if (Keybinding.GetKey("MoveDown") || Controller.GetDpad(ControllerDpad.Down) || Controller.GetStick(true).y < -0.2f || m_bEyeClimbDown)
-                {
-                    Vector3 force = -Vector3.up * m_fClimbSpeed;
-                    if ((m_rBody.velocity + force).y > -m_fClimbTopSpeed)
-                        m_rBody.AddForce(force);
-                    moving = true;
-                }
-            }
-
-            if (!moving)
-            {
-                m_rBody.velocity = Vector3.Lerp(m_rBody.velocity, Vector3.zero, m_fStopSpeed);
-            }
-        }
-        else
-        {
-            m_bIgnoreCheck = false;
-        }
+        
     }
 
     public void ClimbChange(FACING_DIR a_facingType, bool a_isRope)

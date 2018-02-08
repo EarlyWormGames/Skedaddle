@@ -31,10 +31,10 @@ public class OptionsArea : Area
                 Exit();
             }*/
 
-            if (Keybinding.GetKeyDown("Pause") || Controller.GetButtonDown(ControllerButtons.B))
-            {
-                Exit();
-            }
+            //if (Keybinding.GetKeyDown("Pause") || Controller.GetButtonDown(ControllerButtons.B))
+            //{
+            //    Exit();
+            //}
 
             if (m_iStartFolder >= 0)
             {

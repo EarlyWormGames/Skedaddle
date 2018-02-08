@@ -70,21 +70,21 @@ public class EndLevel : MonoBehaviour
             else
                 m_fGazeTimer = 0f;
 
-            if (Keybinding.GetKey("Action") || Controller.GetButtonDown(ControllerButtons.A) || m_fGazeTimer >= EWEyeTracking.holdTime)
-            {
-                Analytics.CustomEvent("Level Ended", new Dictionary<string, object>
-                {
-                    { "Level", SceneManager.GetActiveScene().name },
-                    { "Time", m_fLevelTimer }
-                });
-
-                //EXIT LEVEL
-                EWApplication.LoadLevel(m_sLoadScene);
-                enabled = false;
-
-                if (m_Door != null)
-                    m_Door.enabled = true;
-            }
+            //if (Keybinding.GetKey("Action") || Controller.GetButtonDown(ControllerButtons.A) || m_fGazeTimer >= EWEyeTracking.holdTime)
+            //{
+            //    Analytics.CustomEvent("Level Ended", new Dictionary<string, object>
+            //    {
+            //        { "Level", SceneManager.GetActiveScene().name },
+            //        { "Time", m_fLevelTimer }
+            //    });
+            //
+            //    //EXIT LEVEL
+            //    EWApplication.LoadLevel(m_sLoadScene);
+            //    enabled = false;
+            //
+            //    if (m_Door != null)
+            //        m_Door.enabled = true;
+            //}
         }
     }
 

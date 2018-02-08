@@ -52,7 +52,7 @@ public class TutBox : MonoBehaviour
         //}
         //else
         //{
-        TutPanel.Instance.ShowText(Controller.Connected ? m_sGPText : m_sKeyText);
+        //TutPanel.Instance.ShowText(Controller.Connected ? m_sGPText : m_sKeyText);
         //TutPanel.Instance.ShowText(m_sKeyText);
         //}
 

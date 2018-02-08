@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24e5bc088c9caeb44bc4283dc321b033, type: 3}
+  m_Name: MainMapping
+  m_EditorClassIdentifier: 
+  m_Actions:
+  - {fileID: 114741689078800838}
+  m_ControlSchemes:
+  - m_Name: KeyboardMouse
+    m_SerializableDeviceTypes:
+    - m_TypeName: UnityEngine.InputNew.Keyboard, NewInput, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+    - m_TypeName: UnityEngine.InputNew.Mouse, NewInput, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+    m_ActionMap: {fileID: 11400000}
+    m_Bindings:
+    - sources: []
+      deadZone: 0.3
+      buttonAxisSources:
+      - negative:
+          controlIndex: 97
+          deviceType:
+            m_TypeName: UnityEngine.InputNew.Keyboard, NewInput, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+        positive:
+          controlIndex: 100
+          deviceType:
+            m_TypeName: UnityEngine.InputNew.Keyboard, NewInput, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+      gravity: 1000
+      sensitivity: 1000
+      snap: 1
+      primaryIsButtonAxis: 0
+  m_MapTypeName: MainMapping, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+--- !u!114 &114741689078800838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eba7b4b2e3ea134991ccbff5f47c2c8, type: 3}
+  m_Name: MoveX
+  m_EditorClassIdentifier: 
+  m_ActionMap: {fileID: 11400000}
+  m_ActionIndex: 0
+  m_ControlData:
+    componentControlIndices: 
+    controlType: 2
+    name: MoveX
+    defaultValue: 0

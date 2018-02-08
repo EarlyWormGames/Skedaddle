@@ -30,11 +30,11 @@ public class ExtrasItem : MonoBehaviour
         {
             if (m_bCanQuit)
             {
-                if (Keybinding.GetKeyDown("Pause") || Controller.GetButtonDown(ControllerButtons.B))
-                {
-                    m_gNav.Select();
-                    Hide();
-                }
+                //if (Keybinding.GetKeyDown("Pause") || Controller.GetButtonDown(ControllerButtons.B))
+                //{
+                //    m_gNav.Select();
+                //    Hide();
+                //}
             }
         }
 
