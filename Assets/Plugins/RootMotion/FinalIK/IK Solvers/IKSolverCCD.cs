@@ -57,7 +57,7 @@ namespace RootMotion.FinalIK {
 
 				if (OnPreIteration != null) OnPreIteration(i);
 				
-				Solve(IKPosition + (i == 0? singularityOffset: Vector3.zero));
+				Solve(IKPosition /*+ (i == 0? singularityOffset: Vector3.zero)*/);
 			}
 			
 			lastLocalDirection = localDirection;

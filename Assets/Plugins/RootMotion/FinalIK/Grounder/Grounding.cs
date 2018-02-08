@@ -131,6 +131,10 @@ namespace RootMotion.FinalIK {
         /// Gets the layer of the ground collider which is currently being used;
         /// </summary>
         public int currentGroundLayer { get; private set; }
+        /// <summary>
+        /// finds Location where IK will go
+        /// </summary>
+        public Transform[] LegRaycast { get; private set; }
         public float lowestOffset { get; private set; }
         public float highestOffset { get; private set; }
         /// <summary>
@@ -208,6 +212,7 @@ namespace RootMotion.FinalIK {
 
 			// Constructing Legs
 			if (legs == null) legs = new Leg[feet.Length];
+            LegRaycast = new Transform[feet.Length];
 			if (legs.Length != feet.Length) legs = new Leg[feet.Length];
 			for (int i = 0; i < feet.Length; i++) if (legs[i] == null) legs[i] = new Leg();
 			
@@ -252,6 +257,7 @@ namespace RootMotion.FinalIK {
 			highestOffset = Mathf.Infinity;
 			isGrounded = false;
             currentGroundLayer = -1;
+            int raycastIndex = 0;
 
 			// Process legs
 			foreach (Leg leg in legs) {
@@ -259,8 +265,9 @@ namespace RootMotion.FinalIK {
 
 				if (leg.IKOffset > lowestOffset) lowestOffset = leg.IKOffset;
 				if (leg.IKOffset < highestOffset) highestOffset = leg.IKOffset;
+                LegRaycast[raycastIndex] = leg.IKRaycast;
+                raycastIndex++;
 
-                
                 if (leg.groundLayer != -1)
                 {
                     currentGroundLayer = leg.groundLayer;

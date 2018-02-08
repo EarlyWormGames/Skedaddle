@@ -7,5 +7,9 @@ public class Teleport : MonoBehaviour
     {
         Transform teleAnim = AnimalController.Instance.GetCurrentAnimal().transform;
         teleAnim.position = TeleportLocation.position;
+        Animal animal = teleAnim.GetComponent<Animal>();
+        animal.m_bCanWalkLeft = true;
+        animal.m_bCanWalkRight = true;
+        animal.m_bOnTrampoline = false;
     }
 }

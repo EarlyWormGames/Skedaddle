@@ -422,7 +422,7 @@ namespace RootMotion.FinalIK {
 		private void SetFootIK(Foot foot, float maxOffset) {
 			Vector3 direction = foot.leg.IKPosition - foot.transform.position;
 			
-			foot.solver.IKPosition = foot.transform.position + Vector3.ClampMagnitude(direction, maxOffset);
+			foot.solver.IKPosition = foot.leg.IKPosition;
 			foot.solver.IKPositionWeight = weight;
 		}
 		
@@ -469,10 +469,14 @@ namespace RootMotion.FinalIK {
         {
             if (Application.isPlaying)
             {
-                Vector3 legsCenter = Vector3.zero;
-                foreach (Grounding.Leg leg in forelegSolver.legs) legsCenter += leg.transform.position;
-                legsCenter /= legs.Length;
-                Gizmos.DrawSphere(legsCenter, 0.01f);
+                foreach(Transform tran in solver.LegRaycast)
+                {
+                    Gizmos.DrawSphere(tran.position, 0.02f);
+                }
+                foreach (Transform tran in forelegSolver.LegRaycast)
+                {
+                    Gizmos.DrawSphere(tran.position, 0.02f);
+                }
             }
         }
     }
