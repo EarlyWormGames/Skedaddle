@@ -3,7 +3,6 @@ using System.Collections;
 
 public class ExtrasVideo : ExtrasItem
 {
-    public VideoPlayer m_vPlayer;
     public GameObject m_gPlayParent;
     public MeshRenderer m_vPlayGUI;
     public float m_fLerpSpeed = 1f;
@@ -16,7 +15,6 @@ public class ExtrasVideo : ExtrasItem
     public override void Show()
     {
         base.Show();
-        m_vPlayer.Play();
         m_bSelected = true;
         m_vPlayGUI.enabled = false;
         m_fLerpTimer = 0f;
@@ -26,7 +24,6 @@ public class ExtrasVideo : ExtrasItem
     public override void Hide()
     {
         base.Hide();
-        m_vPlayer.Stop();
         m_bSelected = false;
         m_vPlayGUI.enabled = true;
         m_fLerpTimer = 0f;
@@ -49,6 +46,5 @@ public class ExtrasVideo : ExtrasItem
 
         m_gPlayParent.transform.position = Vector3.Lerp(m_bSelected ? m_tStartPoint.position : m_tEndPoint.position, m_bSelected ? m_tEndPoint.position : m_tStartPoint.position, percent);
         m_gPlayParent.transform.rotation = Quaternion.Lerp(m_bSelected ? m_tStartPoint.rotation : m_tEndPoint.rotation, m_bSelected ? m_tEndPoint.rotation : m_tStartPoint.rotation, percent);
-        m_vPlayer.transform.localScale = Vector3.Lerp(m_bSelected ? m_tStartPoint.localScale : m_tEndPoint.localScale, m_bSelected ? m_tEndPoint.localScale : m_tStartPoint.localScale, percent);
     }
 }

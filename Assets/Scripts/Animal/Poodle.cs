@@ -16,11 +16,13 @@ public class Poodle : Animal
     public bool m_bIKAnimationFix;
 
     public float m_RunBuffer = 2f;
-    
+    public float m_fRunSpeedMult = 1.5f;
+
 
     //==================================
     //          Internal Vars
     //==================================
+    internal bool m_bRunning = false;
 
     //==================================
     //          Private Vars

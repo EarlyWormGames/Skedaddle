@@ -79,7 +79,6 @@ public class Animal : MonoBehaviour
     public float            m_fPushTopMult = 0.6f;
     public float            m_fPullSpeedMult = 0.5f;
     public float            m_fFallSpeedMult = 0.5f;
-    public float            m_fRunSpeedMult = 1.5f;
     public float            m_fTurnSpeedMult = 0.95f;
 
     public float            m_fTurnAxis;
@@ -104,9 +103,6 @@ public class Animal : MonoBehaviour
     public LayerMask        m_lGroundCheckMask;
     public Transform        m_atGroundCheckPoints;
     public Transform        m_atPushOffCheckPoint;
-    public Vector3          m_v3WalkingOffset;
-    public Vector3          m_v3WalkingSize;
-    public float            m_fWalkingDistance;
 
     [Header("Eyetracking")]
     [Tooltip("How far left/right eyes need to be looking to trigger movement")]
@@ -131,10 +127,9 @@ public class Animal : MonoBehaviour
     //          Internal Vars
     //    (Public use for scripts)
     //==================================
-    internal ANIMAL_SIZE m_eSize;
-    internal ANIMAL_NAME m_eName;
-
-    //The object it's currently interactive with (only set while ACTUALLY INTERACTING)
+    internal ANIMAL_SIZE    m_eSize;
+    internal ANIMAL_NAME    m_eName;
+    
     internal FACING_DIR     m_fFacingDir;
 
     //Helpers for objects
@@ -183,7 +178,6 @@ public class Animal : MonoBehaviour
     internal bool           m_bTurning = false;
     internal float          m_fTurnStartRotation = 0f;
     internal bool           m_bFinishTurn = false;
-    internal bool           m_bRunning = false;
 
     internal bool           m_bCheckForFall = true;
     internal Vector3        m_v3ForwardTarg;
@@ -206,6 +200,7 @@ public class Animal : MonoBehaviour
     internal EWGazeObject   m_GazeObject;
     internal GrounderQuadruped m_gqGrounder;
     internal Vector3        m_v3MoveVelocity;
+    internal bool m_bFacingLeft = false;
 
     //==================================
     //          Protected Vars
@@ -215,7 +210,6 @@ public class Animal : MonoBehaviour
     //Movement
     protected float         m_fCurrentSpeed;
 
-    protected bool          m_bFacingLeft = false;
     protected bool          m_bWalkingLeft = false;
     protected bool          m_bWalkingRight = false;
     protected bool          m_bLeanUp = false;
@@ -607,7 +601,7 @@ public class Animal : MonoBehaviour
     {
         if (m_v3MoveVelocity != Vector3.zero)
         {
-            float topSpeed = m_fTopSpeed * (m_bOnGround ? (m_bRunning ? m_fRunSpeedMult : 1) : m_fFallSpeedMult);
+            float topSpeed = m_fTopSpeed * (m_bOnGround ? 1 : m_fFallSpeedMult);
 
             m_rBody.AddForce(m_v3MoveVelocity);
             Vector3 velocity = m_rBody.velocity;
@@ -853,16 +847,16 @@ public class Animal : MonoBehaviour
         m_bGazeRunning = a_Run;
     }
 
-    void OnDrawGizmosSelected()
+    public float[] CalculateMoveSpeed()
     {
-        if (m_tJointRoot == null)
-            return;
+        float[] speedMinMax = new float[3];
+        speedMinMax[0] = m_fCurrentSpeed;
 
-        Gizmos.color = Color.red;
-        Matrix4x4 cubeTrans = Matrix4x4.TRS(transform.position + transform.TransformDirection(m_v3WalkingOffset), m_tJointRoot.rotation, m_v3WalkingSize);
-        Matrix4x4 old = Gizmos.matrix;
-        Gizmos.matrix *= cubeTrans;
-        Gizmos.DrawWireCube(Vector3.zero, Vector3.one);
-        Gizmos.matrix = old;
+        if (m_bCanWalkLeft)
+            speedMinMax[1] = -m_fTopSpeed;
+        if (m_bCanWalkRight)
+            speedMinMax[2] = m_fTopSpeed;
+
+        return speedMinMax;
     }
 }
