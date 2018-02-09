@@ -17,7 +17,9 @@ public class AnimalMovement : MonoBehaviour
     private MainMapping input;
     private float moveVelocity;
     private Rigidbody rig;
-    private float splinePos;
+
+    private float splineDist;
+    private Vector3 splinePos;
 
     // Use this for initialization
     void Start()
@@ -35,7 +37,7 @@ public class AnimalMovement : MonoBehaviour
         moveVelocity = Mathf.Clamp(moveVelocity, speed[1], speed[2]);
         moveVelocity = Mathf.MoveTowards(moveVelocity, 0, DecelerationRate * Time.deltaTime);
 
-        Move();
+        Move(speed);
     }
 
     private void FixedUpdate()
@@ -43,7 +45,7 @@ public class AnimalMovement : MonoBehaviour
         
     }
 
-    void Move()
+    void Move(float[] a_speeds)
     {
         if (moveVelocity == 0)
             return;
@@ -56,17 +58,30 @@ public class AnimalMovement : MonoBehaviour
         }
         else
         {
-            float oldSplinePos = splinePos;
-            
-            splinePos = Mathf.Clamp(splinePos + moveVelocity, 0, FollowSpline.MaxSplineLength);            
-            var point = FollowSpline.GetPoint(splinePos / FollowSpline.MaxSplineLength);
-            point.y = transform.position.y;
-
-            Vector3 dir = point - transform.position;
-            if (!TryMove(point))
+            if (transform.position == splinePos)
             {
-                splinePos = oldSplinePos;
-                moveVelocity = 0;
+                float oldSplinePos = splineDist;
+
+                splineDist = Mathf.Clamp(splineDist + moveVelocity, 0, FollowSpline.MaxSplineLength);
+                splinePos = FollowSpline.GetPoint(splineDist / FollowSpline.MaxSplineLength);
+                splinePos.y = transform.position.y;
+                
+                if (!TryMove(splinePos))
+                {
+                    splineDist = oldSplinePos;
+                    moveVelocity = 0;
+                    splinePos = transform.position;
+                }
+            }
+            else
+            {
+                splinePos.y = transform.position.y;
+
+                Vector3 dir = splinePos - transform.position;
+                dir = Vector3.ClampMagnitude(dir, a_speeds[2]);
+                Vector3 point = transform.position + dir;
+
+                TryMove(point);
             }
         }
     }
@@ -86,5 +101,13 @@ public class AnimalMovement : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    public void SetSpline(BezierSpline spline)
+    {
+        FollowSpline = spline;
+        splineDist = FollowSpline.GetArcLength(transform.position, true);
+        splinePos = FollowSpline.GetPoint(splineDist / FollowSpline.MaxSplineLength);
+        splinePos.y = transform.position.y;
     }
 }

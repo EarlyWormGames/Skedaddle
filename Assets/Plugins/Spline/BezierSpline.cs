@@ -125,7 +125,7 @@ public class BezierSpline : MonoBehaviour
         float mult = 1 / (float)ArcIncrements;
         arcLengths = new float[ArcIncrements + 1];
         arcPoints = new Vector3[ArcIncrements + 1];
-        arcSubDivs = new int[ArcSubDivs];
+        arcSubDivs = new int[ArcSubDivs + 2];
 
         Vector3 pp = GetPoint(0); //PreviousPoint
         arcPoints[0] = pp;
@@ -141,11 +141,13 @@ public class BezierSpline : MonoBehaviour
 
         float size = ArcIncrements / (float)(ArcSubDivs + 1);
         int index = 0;
+        arcSubDivs[0] = 0;
+        arcSubDivs[arcSubDivs.Length - 1] = arcLengths.Length - 1;
         for(int i = 0; i < arcLengths.Length; ++i)
         {
             if(i >= size * (index + 1))
             {
-                arcSubDivs[index] = i;
+                arcSubDivs[index + 1] = i;
 
                 ++index;
 
@@ -192,14 +194,44 @@ public class BezierSpline : MonoBehaviour
         return 0;
     }
 
-    public float GetArcLength(Vector3 point, bool a_ignoreY = false)
+    public float GetArcLength(Vector3 point, bool a_ignoreY = false, bool subDivCheck = true)
     {
         if (arcPoints == null)
             ArcLength();
 
         int closest = 0;
         float distance = -1;
-        for (int i = 0; i < arcPoints.Length; ++i)
+
+        int start = 0;
+        int end = 1;
+
+        if (subDivCheck)
+        {
+            for (int i = 0; i < arcSubDivs.Length; ++i)
+            {
+                float dist = Vector3.Distance(arcPoints[arcSubDivs[i]], point);
+                if (dist < distance || distance < 0)
+                {
+                    distance = dist;
+                    if (i == 0)
+                    {
+                        start = i;
+                        end = 1;
+                    }
+                    else
+                    {
+                        start = arcSubDivs[i - 1];
+                        if (i + 1 < arcSubDivs.Length)
+                            end = arcSubDivs[i + 1];
+                        else
+                            end = arcSubDivs[arcSubDivs.Length - 1];
+                    }
+                }
+            }
+        }
+
+        distance = -1;
+        for (int i = start; i <= end; ++i)
         {
             if (a_ignoreY)
                 point.y = arcPoints[i].y;
