@@ -36,7 +36,8 @@ public class CameraScale : MonoBehaviour
         {
             lastW = Width;
             lastH = Height;
-            targ.Release();
+            if (targ != null)
+                targ.Release();
             targ = new RenderTexture(Width, Height, 24, RenderTextureFormat.ARGBFloat);
         }
 

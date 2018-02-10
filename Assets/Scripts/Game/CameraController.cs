@@ -130,7 +130,7 @@ public class CameraController : Singleton<CameraController>
         //Shader.SetGlobalMatrix("node_6897", m_cCamera.cameraToWorldMatrix);
     }
 
-    void FixedUpdate()
+    void LateUpdate()
     {
         m_bLorisSelected = AnimalController.Instance.GetAnimalSelected(ANIMAL_NAME.LORIS);
         
@@ -288,7 +288,6 @@ public class CameraController : Singleton<CameraController>
                 }
             }
         }
-
     }
 
     public void ViewObject(GameObject a_object, float a_waitTimer = 1f, float a_lookTime = 1f, Transform a_lookAt = null, bool a_bCancelLookAt = true)
