@@ -13,6 +13,8 @@ public class AnimalMovement : MonoBehaviour
     public Transform ForwardDictator;
     public SplineMovement FollowSpline;
 
+    public float RotateLerpSpeed = 60;
+
     private Animal animal;
     private MainMapping input;
     private float moveVelocity, lastMove;
@@ -55,6 +57,11 @@ public class AnimalMovement : MonoBehaviour
             Vector3 newPoint = transform.position + (ForwardDictator.forward * moveVelocity);
             if (!TryMove(newPoint))
                 moveVelocity = 0;
+            Vector3 rotation = transform.eulerAngles;
+            rotation.y = 90;
+            rotation.z = 0;
+            rotation.x = 0;
+            transform.eulerAngles = rotation;
         }
         else
         {
@@ -75,6 +82,14 @@ public class AnimalMovement : MonoBehaviour
             Vector3 moveDir = dir.normalized * move;
 
             TryMove(transform.position + moveDir);
+
+            Vector3 rotation = transform.eulerAngles;
+            Vector3 newRotation = transform.eulerAngles;
+            transform.forward = dir.normalized;
+            newRotation.x = transform.eulerAngles.x;
+            newRotation.y = transform.eulerAngles.y;
+
+            transform.eulerAngles = Vector3.Lerp(rotation, newRotation, Time.deltaTime * RotateLerpSpeed);
 
             if (dir.magnitude < move)
             {

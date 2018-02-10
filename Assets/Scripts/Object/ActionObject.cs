@@ -54,6 +54,8 @@ public class ActionObject : MonoBehaviour
     protected float m_fGazeTimer = 0f;
     protected bool m_bGazeRunning = false;
 
+    protected Animal m_aCurrentAnimal;
+
     // Use this for initialization
     void Start()
     {
@@ -91,20 +93,35 @@ public class ActionObject : MonoBehaviour
         if (m_bGazeRunning)
             m_fGazeTimer += Time.deltaTime;
 
-        if (m_CurrentAnimals.Contains(Animal.CurrentAnimal))
+        if (m_aCurrentAnimal == null)
         {
-            if (CheckCorrectAnimal(Animal.CurrentAnimal))
+            if (m_CurrentAnimals.Contains(Animal.CurrentAnimal))
             {
-                if (m_bUseDefaultAction)
+                if (CheckCorrectAnimal(Animal.CurrentAnimal))
                 {
-                    //if (Keybinding.GetKeyDown("Action") || Controller.GetButtonDown(ControllerButtons.A))
-                    //{
-                    //    DoAction();
-                    //}
+                    if (m_bUseDefaultAction)
+                    {
+                        if (Input.GetKeyDown(KeyCode.E))
+                        {
+                            DoAction();
+                        }
+                    }
+                    else
+                        OnCanTrigger();
                 }
-                else
-                    OnCanTrigger();
             }
+        }
+        else if (m_aCurrentAnimal == Animal.CurrentAnimal)
+        {
+            if (m_bUseDefaultAction)
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    DoAction();
+                }
+            }
+            else
+                OnCanTrigger();
         }
 
         OnUpdate();
