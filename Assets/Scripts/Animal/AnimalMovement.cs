@@ -9,9 +9,9 @@ using UnityEngine.InputNew;
 public class AnimalMovement : MonoBehaviour
 {
     public float DecelerationRate = 1;
-    public float MoveMin = 0.01f;
+    public float MoveMin = 0.00001f;
     public Transform ForwardDictator;
-    public BezierSpline FollowSpline;
+    public SplineMovement FollowSpline;
 
     private Animal animal;
     private MainMapping input;
@@ -60,28 +60,52 @@ public class AnimalMovement : MonoBehaviour
         {
             if (transform.position == splinePos)
             {
-                float oldSplinePos = splineDist;
-
-                splineDist = Mathf.Clamp(splineDist + moveVelocity, 0, FollowSpline.MaxSplineLength);
-                splinePos = FollowSpline.GetPoint(splineDist / FollowSpline.MaxSplineLength);
+                float oldSplineDist = splineDist;
+                splinePos = FollowSpline.GetPointAtDist(oldSplineDist + moveVelocity);
                 splinePos.y = transform.position.y;
-                
-                if (!TryMove(splinePos))
+
+                float move = moveVelocity;
+                float mult = 1;
+                if (move < 0)
                 {
-                    splineDist = oldSplinePos;
+                    mult = -1;
+                }
+                move *= mult;
+
+                Vector3 dir = splinePos - transform.position;
+                dir = Vector3.ClampMagnitude(dir, move);
+                splineDist += dir.magnitude * mult;
+
+                if (!TryMove(transform.position + dir))
+                {
+                    splineDist = oldSplineDist;
                     moveVelocity = 0;
                     splinePos = transform.position;
+                }
+                else
+                {
+                    if (splineDist <= MoveMin && FollowSpline.LowExit)
+                        FollowSpline = null;
+                    else if (FollowSpline.HighExit && splineDist >= FollowSpline.MaxLength - MoveMin)
+                        FollowSpline = null;
                 }
             }
             else
             {
                 splinePos.y = transform.position.y;
+                float move = moveVelocity;
+                if (move < 0)
+                    move *= -1;
 
                 Vector3 dir = splinePos - transform.position;
-                dir = Vector3.ClampMagnitude(dir, a_speeds[2]);
+                dir = Vector3.ClampMagnitude(dir, move);
                 Vector3 point = transform.position + dir;
 
-                TryMove(point);
+                if (!TryMove(point))
+                {
+                    splinePos = transform.position;
+                    moveVelocity = 0;
+                }
             }
         }
     }
@@ -103,11 +127,18 @@ public class AnimalMovement : MonoBehaviour
         return false;
     }
 
-    public void SetSpline(BezierSpline spline)
+    public void SetSpline(SplineMovement spline)
     {
         FollowSpline = spline;
-        splineDist = FollowSpline.GetArcLength(transform.position, true);
-        splinePos = FollowSpline.GetPoint(splineDist / FollowSpline.MaxSplineLength);
+
+        int index = FollowSpline.GetClosestPoint(transform.position);
+        splineDist = FollowSpline.points[index].totalDistance;
+        splinePos = FollowSpline.points[index].current;
         splinePos.y = transform.position.y;
+    }
+
+    public void StopSpline()
+    {
+        FollowSpline = null;
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class AnimalSplineSetter : MonoBehaviour
 {
     public ANIMAL_NAME RequiredAnimal;
-    public BezierSpline Spline;
+    public SplineMovement Spline;
 
     private void OnTriggerEnter(Collider other)
     {
