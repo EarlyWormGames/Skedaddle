@@ -15,10 +15,10 @@ public class AnimalMovement : MonoBehaviour
 
     private Animal animal;
     private MainMapping input;
-    private float moveVelocity;
+    private float moveVelocity, lastMove;
     private Rigidbody rig;
 
-    private float splineDist;
+    private int currentPoint;
     private Vector3 splinePos;
 
     // Use this for initialization
@@ -58,56 +58,38 @@ public class AnimalMovement : MonoBehaviour
         }
         else
         {
-            if (transform.position == splinePos)
+            if (lastMove < 0 && moveVelocity > 0)
+                ++currentPoint;
+            else if (lastMove > 0 && moveVelocity < 0)
+                --currentPoint;
+
+            currentPoint = Mathf.Clamp(currentPoint, 0, FollowSpline.points.Length - 1);
+            splinePos = FollowSpline.points[currentPoint].current;
+            splinePos.y = transform.position.y;
+
+            float move = moveVelocity;
+            if (move < 0)
+                move *= -1;
+
+            Vector3 dir = splinePos - transform.position;
+            Vector3 moveDir = dir.normalized * move;
+
+            TryMove(transform.position + moveDir);
+
+            if (dir.magnitude < move)
             {
-                float oldSplineDist = splineDist;
-                splinePos = FollowSpline.GetPointAtDist(oldSplineDist + moveVelocity);
-                splinePos.y = transform.position.y;
-
-                float move = moveVelocity;
-                float mult = 1;
-                if (move < 0)
-                {
-                    mult = -1;
-                }
-                move *= mult;
-
-                Vector3 dir = splinePos - transform.position;
-                dir = Vector3.ClampMagnitude(dir, move);
-                splineDist += dir.magnitude * mult;
-
-                if (!TryMove(transform.position + dir))
-                {
-                    splineDist = oldSplineDist;
-                    moveVelocity = 0;
-                    splinePos = transform.position;
-                }
+                if (moveVelocity < 0)
+                    --currentPoint;
                 else
-                {
-                    if (splineDist <= MoveMin && FollowSpline.LowExit)
-                        FollowSpline = null;
-                    else if (FollowSpline.HighExit && splineDist >= FollowSpline.MaxLength - MoveMin)
-                        FollowSpline = null;
-                }
-            }
-            else
-            {
-                splinePos.y = transform.position.y;
-                float move = moveVelocity;
-                if (move < 0)
-                    move *= -1;
+                    ++currentPoint;
 
-                Vector3 dir = splinePos - transform.position;
-                dir = Vector3.ClampMagnitude(dir, move);
-                Vector3 point = transform.position + dir;
-
-                if (!TryMove(point))
-                {
-                    splinePos = transform.position;
-                    moveVelocity = 0;
-                }
+                if (currentPoint < 0 && FollowSpline.LowExit)
+                    FollowSpline = null;
+                else if (currentPoint > FollowSpline.points.Length - 1 && FollowSpline.HighExit)
+                    FollowSpline = null;
             }
         }
+        lastMove = moveVelocity;
     }
 
     /// <summary>
@@ -131,9 +113,8 @@ public class AnimalMovement : MonoBehaviour
     {
         FollowSpline = spline;
 
-        int index = FollowSpline.GetClosestPoint(transform.position);
-        splineDist = FollowSpline.points[index].totalDistance;
-        splinePos = FollowSpline.points[index].current;
+        currentPoint = FollowSpline.GetClosestPoint(transform.position);
+        splinePos = FollowSpline.points[currentPoint].current;
         splinePos.y = transform.position.y;
     }
 

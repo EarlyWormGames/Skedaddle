@@ -41,40 +41,6 @@ public class SplineMovement : MonoBehaviour
         }
     }
 
-    public Vector3 GetPointAtDist(float distance)
-    {
-        Point current = null;
-        int index = 0;
-        current = points[index];
-
-        for (int i = 0; i < points.Length; ++i)
-        {
-            if (points[i].totalDistance < distance)
-            {
-                current = points[i];
-                index = i;
-            }
-            else
-                break;
-        }
-
-        if (current == null || distance < 0) return points[0].current;
-
-        if (index < points.Length - 1)
-        {
-            float dist = Vector3.Distance(current.current, points[index + 1].current);
-            float t = 0;
-            float val = distance - current.totalDistance;
-            t = val / dist;
-
-            return Vector3.Lerp(current.current, points[index + 1].current, t);
-        }
-        else
-        {
-            return current.current;
-        }
-    }
-
     public int GetClosestPoint(Vector3 position)
     {
         float distance = -1;
