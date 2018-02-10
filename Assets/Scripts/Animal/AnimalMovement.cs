@@ -74,11 +74,11 @@ public class AnimalMovement : MonoBehaviour
             splinePos = FollowSpline.points[currentPoint].current;
             splinePos.y = transform.position.y;
 
+            Vector3 dir = splinePos - transform.position;
             float move = moveVelocity;
             if (move < 0)
                 move *= -1;
 
-            Vector3 dir = splinePos - transform.position;
             Vector3 moveDir = dir.normalized * move;
 
             TryMove(transform.position + moveDir);
@@ -89,7 +89,7 @@ public class AnimalMovement : MonoBehaviour
             newRotation.x = transform.eulerAngles.x;
             newRotation.y = transform.eulerAngles.y;
 
-            transform.eulerAngles = Vector3.Lerp(rotation, newRotation, Time.deltaTime * RotateLerpSpeed);
+            transform.rotation = Quaternion.Lerp(Quaternion.Euler(rotation), Quaternion.Euler(newRotation), Time.deltaTime * RotateLerpSpeed);
 
             if (dir.magnitude < move)
             {
@@ -126,6 +126,9 @@ public class AnimalMovement : MonoBehaviour
 
     public void SetSpline(SplineMovement spline)
     {
+        if (FollowSpline == spline)
+            return;
+
         FollowSpline = spline;
 
         currentPoint = FollowSpline.GetClosestPoint(transform.position);

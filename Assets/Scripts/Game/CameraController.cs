@@ -213,7 +213,7 @@ public class CameraController : Singleton<CameraController>
             {
                 m_v3Target.y = m_v2YLimits.y + m_fYAdd;
             }
-            transform.position = Vector3.Slerp(transform.position, m_v3Target, Time.deltaTime * m_fCameraSpeed);
+            transform.position = Vector3.Lerp(transform.position, m_v3Target, Time.smoothDeltaTime * m_fCameraSpeed);
         }
         else if (!m_bFollow)
         {

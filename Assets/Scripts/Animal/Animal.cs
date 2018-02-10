@@ -76,7 +76,6 @@ public class Animal : MonoBehaviour
     [Header("Speeds")]
     public float            m_fWalkSpeed = 0.001f;
     public float            m_fTopSpeed = 0.05f;
-    public float            m_fPushTopMult = 0.6f;
     public float            m_fPullSpeedMult = 0.5f;
     public float            m_fFallSpeedMult = 0.5f;
     public float            m_fTurnSpeedMult = 0.95f;
@@ -853,9 +852,9 @@ public class Animal : MonoBehaviour
         speedMinMax[0] = m_fCurrentSpeed;
 
         if (m_bCanWalkLeft)
-            speedMinMax[1] = -m_fTopSpeed;
+            speedMinMax[1] = -m_fTopSpeed * (m_bPullingObject ? m_fPullSpeedMult : 1);
         if (m_bCanWalkRight)
-            speedMinMax[2] = m_fTopSpeed;
+            speedMinMax[2] = m_fTopSpeed * (m_bPullingObject ? m_fPullSpeedMult : 1);
 
         return speedMinMax;
     }
