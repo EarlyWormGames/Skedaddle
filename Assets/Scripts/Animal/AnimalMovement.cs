@@ -39,14 +39,34 @@ public class AnimalMovement : MonoBehaviour
         float[] speed = animal.CalculateMoveSpeed();
         moveVelocity += input.moveX.value * Time.deltaTime * speed[0];
         moveVelocity = Mathf.Clamp(moveVelocity, speed[1], speed[2]);
-        moveVelocity = Mathf.MoveTowards(moveVelocity, 0, DecelerationRate * Time.deltaTime);
+
+        if (input.moveX.value == 0)
+        {
+            moveVelocity = Mathf.MoveTowards(moveVelocity, 0, DecelerationRate * Time.deltaTime);
+            animal.m_bWalkingLeft = false;
+            animal.m_bWalkingRight = false;
+        }
+        else if (input.moveX.value > 0)
+        {
+            animal.m_bWalkingRight = true;
+            animal.m_bWalkingLeft = false;
+        }
+        else if (input.moveX.value < 0)
+        {
+            animal.m_bWalkingLeft = true;
+            animal.m_bWalkingRight = false;
+        }
+
+        if ((moveVelocity < 0 && !animal.m_bFacingLeft) && animal.CanTurn())
+        {
+            animal.Turn(FACING_DIR.LEFT);
+        }
+        else if ((moveVelocity > 0 && animal.m_bFacingLeft) && animal.CanTurn())
+        {
+            animal.Turn(FACING_DIR.RIGHT);
+        }
 
         Move(speed);
-    }
-
-    private void FixedUpdate()
-    {
-        
     }
 
     void Move(float[] a_speeds)
@@ -85,9 +105,13 @@ public class AnimalMovement : MonoBehaviour
 
             TryMove(transform.position + moveDir);
 
+            float rotateMult = 1;
+            if (moveVelocity < 0)
+                rotateMult = -1;
+
             Vector3 rotation = transform.eulerAngles;
             Vector3 newRotation = transform.eulerAngles;
-            transform.forward = dir.normalized;
+            transform.forward = dir.normalized * rotateMult;
             newRotation.x = transform.eulerAngles.x;
             newRotation.y = transform.eulerAngles.y;
 

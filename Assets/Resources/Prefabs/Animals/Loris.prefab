@@ -694,7 +694,6 @@ GameObject:
   - component: {fileID: 11498748}
   - component: {fileID: 114000013904348872}
   - component: {fileID: 114076638057655230}
-  - component: {fileID: 114001635179487430}
   - component: {fileID: 114492827005369712}
   m_Layer: 8
   m_Name: Loris
@@ -6452,7 +6451,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 111396}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 52.398, y: -1.993, z: 9.91}
+  m_LocalPosition: {x: 52.345, y: -2.052, z: 9.91}
   m_LocalScale: {x: 0.401, y: 0.401, z: 0.401}
   m_Children:
   - {fileID: 427722}
@@ -10257,7 +10256,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 122
+  m_Constraints: 120
   m_CollisionDetection: 1
 --- !u!65 &6559716
 BoxCollider:
@@ -10702,7 +10701,7 @@ MonoBehaviour:
   m_tJointRoot: {fileID: 486628}
   m_tCollider: {fileID: 4984212974349418}
   m_fWalkSpeed: 0.18
-  m_fTopSpeed: 0.016
+  m_fTopSpeed: 0.0065
   m_fPullSpeedMult: 0.6
   m_fFallSpeedMult: 0.2
   m_fTurnSpeedMult: 0.8
@@ -10807,6 +10806,8 @@ MonoBehaviour:
   m_lVisionLight: []
   m_fOnIntensity: 1
   m_fLightSpeed: 2.5
+  m_fWalkAnimMult: 100
+  m_fPushAnimMult: 100
   m_v2IdleChangeTime: {x: 4, y: 10}
   m_fDropTime: 0.3
   m_fClimbBuffer: 0.5
@@ -12757,22 +12758,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_sName: Loris
   m_TrackTime: 0
---- !u!114 &114001635179487430
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 111396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84d2c07be54604d7d9acbaf6555da85a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  autoAssignGlobal: 1
-  actionMaps:
-  - actionMap: {fileID: 11400000, guid: 80f2df7e1586bc94aa1bbea872f6ca3b, type: 2}
-    active: 1
-    blockSubsequent: 1
 --- !u!114 &114039960980768472
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12868,11 +12853,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8b8b7cc5a8d9d54695ad890164f0baa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DecelerationRate: 0.08
+  DecelerationRate: 0.03
   MoveMin: 0.005
   ForwardDictator: {fileID: 466434}
   FollowSpline: {fileID: 0}
-  RotateLerpSpeed: 10
+  RotateLerpSpeed: 5
+  moveVelocity: 0
 --- !u!114 &114533132107253472
 MonoBehaviour:
   m_ObjectHideFlags: 1

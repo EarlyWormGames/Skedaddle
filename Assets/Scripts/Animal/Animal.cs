@@ -202,6 +202,10 @@ public class Animal : MonoBehaviour
     internal bool           m_bFacingLeft = false;
 
     internal bool           m_bCanClimb = true;
+    internal bool           m_bWalkingLeft = false;
+    internal bool           m_bWalkingRight = false;
+    internal AnimalMovement m_aMovement;
+
 
     //==================================
     //          Protected Vars
@@ -211,17 +215,12 @@ public class Animal : MonoBehaviour
     //Movement
     protected float         m_fCurrentSpeed;
 
-    protected bool          m_bWalkingLeft = false;
-    protected bool          m_bWalkingRight = false;
     protected bool          m_bLeanUp = false;
     protected bool          m_bLeanDown = false;
     protected bool          m_bFrontGroundDetected = false;
     protected bool          m_bBackGroundDetected = false;
     protected bool          m_bRestGroundDetected = false;
     protected bool          m_bPushOffDetected = false;
-
-    protected AnimalMovement m_aMovement;
-
 
 
     protected float         m_fSelectionTimer = 0;
@@ -860,5 +859,16 @@ public class Animal : MonoBehaviour
             speedMinMax[2] = m_fTopSpeed * (m_bPullingObject ? m_fPullSpeedMult : 1);
 
         return speedMinMax;
+    }
+
+    public bool CanTurn()
+    {
+        return !m_bTurning && !m_bPullingObject;
+    }
+
+    public void SetDirection(FACING_DIR direction)
+    {
+        if (m_aMovement.FollowSpline == null)
+            m_fFacingDir = direction;
     }
 }

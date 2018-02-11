@@ -2,6 +2,7 @@
 using UnityEngine.Events;
 using System;
 using System.Collections.Generic;
+using UnityEngine.InputNew;
 
 [Serializable]
 public class NamedEvent
@@ -53,6 +54,8 @@ public class ActionObject : MonoBehaviour
     protected bool m_bGazeRunning = false;
 
     protected Animal m_aCurrentAnimal;
+    protected MainMapping input;
+
 
     // Use this for initialization
     void Start()
@@ -64,6 +67,8 @@ public class ActionObject : MonoBehaviour
 
         if (m_GazeObject == null)
             m_GazeObject = GetComponent<EWGazeObject>();
+
+        input = GameManager.Instance.GetComponent<PlayerInput>().GetActions<MainMapping>();
 
         OnStart();
     }
@@ -112,7 +117,7 @@ public class ActionObject : MonoBehaviour
 
     protected virtual void OnCanTrigger()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (input.interact.wasJustPressed)
         {
             DoAction();
         }

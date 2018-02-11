@@ -13,20 +13,18 @@ public class ClimbJump : ActionObject
     public ActionObject TransitionTo;
     
     private Vector3 ClimbCurve;
-    private MainMapping input;
     private float timer;
 
     protected override void OnStart()
     {
         base.OnStart();
-        input = GameManager.Instance.GetComponent<PlayerInput>().GetActions<MainMapping>();
     }
 
     protected override void OnCanTrigger()
     {
         if (!DoOnTrigger)
         {
-            if (input.moveY.rawValue > 0)
+            if (input.moveY.value > 0)
             {
                 DoAction();
             }
@@ -48,7 +46,8 @@ public class ClimbJump : ActionObject
             timer -= Time.deltaTime;
 
             float climbMult = GetMultiplier(Direction);
-            m_aCurrentAnimal.m_fFacingDir = Direction;
+            
+            m_aCurrentAnimal.SetDirection(Direction);
 
             //Calculate the position of the animal (based on the animation)
             if (Direction == FACING_DIR.RIGHT || Direction == FACING_DIR.LEFT)
@@ -68,7 +67,7 @@ public class ClimbJump : ActionObject
             else
             {
                 //Lerp to the end position
-                m_aCurrentAnimal.transform.position = Vector3.Lerp(m_aCurrentAnimal.transform.position, AnchorPoint.position + ClimbCurve, 2);
+                m_aCurrentAnimal.transform.position = Vector3.Lerp(m_aCurrentAnimal.transform.position, AnchorPoint.position + ClimbCurve, 1);
             }
 
             if (m_aCurrentAnimal.m_aAnimalAnimator.GetFloat("Stop_Lerp") > 0)
