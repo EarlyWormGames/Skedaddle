@@ -15,6 +15,8 @@ public class Loris : Animal
     public Light[] m_lVisionLight = new Light[0];
     public float m_fOnIntensity = 1.68f;
     public float m_fLightSpeed = 1f;
+    public float m_fWalkAnimMult = 20;
+    public float m_fPushAnimMult = 5;
 
     public Vector2 m_v2IdleChangeTime;
 
@@ -89,7 +91,7 @@ public class Loris : Animal
         //}
 
         //set horozontal velocity
-        m_aAnimalAnimator.SetFloat("Velocity", m_rBody.velocity.magnitude);
+        m_aAnimalAnimator.SetFloat("Velocity", m_aMovement.moveVelocity * m_fWalkAnimMult);
         m_aAnimalAnimator.SetBool("Climbing", m_bClimbing);
         m_aAnimalAnimator.SetFloat("Vertical Velocity", m_rBody.velocity.y);
 
@@ -185,7 +187,7 @@ public class Loris : Animal
         {
             m_aAnimalAnimator.SetBool("Pushing", true);
             float rot = m_tJointRoot.rotation.eulerAngles.y;
-            m_aAnimalAnimator.SetFloat("Horizontal Velocity", rot < 180 ? m_rBody.velocity.x : -m_rBody.velocity.x);
+            m_aAnimalAnimator.SetFloat("Horizontal Velocity", (rot < 180 ? m_aMovement.moveVelocity : -m_aMovement.moveVelocity) * m_fPushAnimMult);
         }
         else
         {

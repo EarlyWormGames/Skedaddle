@@ -27,7 +27,6 @@ namespace EW
 
         protected override void OnStart()
         {
-            m_bUseDefaultAction = false;
         }
 
         protected override void OnCanTrigger()

@@ -35,7 +35,7 @@ public class ActionObject : MonoBehaviour
     public ANIMAL_SIZE m_aMaximumSize;
 
     [Header("Links")]
-    public List<Animal> m_CurrentAnimals = new List<Animal>();
+    public List<Animal> m_lAnimalsIn = new List<Animal>();
     public Rigidbody m_rBody;
     public EWGazeObject m_GazeObject;
 
@@ -46,8 +46,6 @@ public class ActionObject : MonoBehaviour
     public UnityEvent OnAnimalEnter;
     public UnityEvent OnAnimalExit;
 
-
-    protected bool m_bUseDefaultAction = true;
     protected bool m_bEyetrackSelected = false;
     protected bool m_bQuickExitFix = false;
 
@@ -95,37 +93,29 @@ public class ActionObject : MonoBehaviour
 
         if (m_aCurrentAnimal == null)
         {
-            if (m_CurrentAnimals.Contains(Animal.CurrentAnimal))
+            if (m_lAnimalsIn.Contains(Animal.CurrentAnimal))
             {
                 if (CheckCorrectAnimal(Animal.CurrentAnimal))
                 {
-                    if (m_bUseDefaultAction)
-                    {
-                        if (Input.GetKeyDown(KeyCode.E))
-                        {
-                            DoAction();
-                        }
-                    }
-                    else
-                        OnCanTrigger();
+                    OnCanTrigger();
                 }
             }
         }
         else if (m_aCurrentAnimal == Animal.CurrentAnimal)
         {
-            if (m_bUseDefaultAction)
-            {
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    DoAction();
-                }
-            }
-            else
-                OnCanTrigger();
+            OnCanTrigger();
         }
 
         OnUpdate();
         DoAnimation();
+    }
+
+    protected virtual void OnCanTrigger()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            DoAction();
+        }
     }
 
     void FixedUpdate()
@@ -134,7 +124,6 @@ public class ActionObject : MonoBehaviour
     }
 
     protected virtual void OnFixedUpdate() { }
-    protected virtual void OnCanTrigger() { }
     protected virtual void OnUpdate() { }
 
     public bool CheckCorrectAnimal(Animal a_animal)
@@ -168,12 +157,15 @@ public class ActionObject : MonoBehaviour
 
         Animal anim = animtrig.parent;
 
+        if (m_lAnimalsIn.Contains(anim))
+            return;
+
         if (CheckCorrectAnimal(anim))
             AnimalEnter(anim);
         else
             WrongAnimalEnter(anim);
 
-        m_CurrentAnimals.Add(anim);
+        m_lAnimalsIn.Add(anim);
 
         OnAnimalEnter.Invoke();
     }
@@ -193,7 +185,10 @@ public class ActionObject : MonoBehaviour
 
         Animal anim = animtrig.parent;
 
-        m_CurrentAnimals.Remove(anim);
+        if (!m_lAnimalsIn.Contains(anim))
+            return;
+
+        m_lAnimalsIn.Remove(anim);
 
         if (anim != null)
         {

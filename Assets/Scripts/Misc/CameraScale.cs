@@ -17,7 +17,7 @@ public class CameraScale : MonoBehaviour
 
     int lastW, lastH;
 
-    private void Start()
+    private void OnEnable()
     {
         cam = GetComponent<Camera>();
         targ = new RenderTexture(Width, Height, 24, RenderTextureFormat.ARGBFloat);

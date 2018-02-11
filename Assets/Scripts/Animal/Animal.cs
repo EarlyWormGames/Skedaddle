@@ -33,6 +33,15 @@ public enum ANIMAL_NAME
     ELEPHANT = 5
 }
 
+public enum FACING_DIR
+{
+    NONE,
+    FRONT,
+    RIGHT,
+    BACK,
+    LEFT
+}
+
 public class Animal : MonoBehaviour
 {
     [Serializable]
@@ -49,15 +58,6 @@ public class Animal : MonoBehaviour
         FALL_STOP,
         FALL_DEATH,
         ELECTRO_DEATH,
-    }
-
-    public enum FACING_DIR
-    {
-        NONE,
-        FRONT,
-        RIGHT,
-        BACK,
-        LEFT
     }
 
     public static Animal CurrentAnimal;
@@ -199,7 +199,9 @@ public class Animal : MonoBehaviour
     internal EWGazeObject   m_GazeObject;
     internal GrounderQuadruped m_gqGrounder;
     internal Vector3        m_v3MoveVelocity;
-    internal bool m_bFacingLeft = false;
+    internal bool           m_bFacingLeft = false;
+
+    internal bool           m_bCanClimb = true;
 
     //==================================
     //          Protected Vars
@@ -217,8 +219,8 @@ public class Animal : MonoBehaviour
     protected bool          m_bBackGroundDetected = false;
     protected bool          m_bRestGroundDetected = false;
     protected bool          m_bPushOffDetected = false;
-    
 
+    protected AnimalMovement m_aMovement;
 
 
 
@@ -251,6 +253,7 @@ public class Animal : MonoBehaviour
     void Awake()
     {
         m_aAnimalAnimator = GetComponentInChildren<Animator>();
+        m_aMovement = GetComponent<AnimalMovement>();
 
         OnAwake();
     }

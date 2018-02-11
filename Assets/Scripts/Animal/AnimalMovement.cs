@@ -5,7 +5,6 @@ using UnityEngine.InputNew;
 
 [RequireComponent(typeof(Animal))]
 [RequireComponent(typeof(Rigidbody))]
-[RequireComponent(typeof(PlayerInput))]
 public class AnimalMovement : MonoBehaviour
 {
     public float DecelerationRate = 1;
@@ -15,9 +14,12 @@ public class AnimalMovement : MonoBehaviour
 
     public float RotateLerpSpeed = 60;
 
+    [HideInInspector]
+    public float moveVelocity;
+
+    private float lastMove;
     private Animal animal;
     private MainMapping input;
-    private float moveVelocity, lastMove;
     private Rigidbody rig;
 
     private int currentPoint;
@@ -26,7 +28,7 @@ public class AnimalMovement : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        input = GetComponent<PlayerInput>().GetActions<MainMapping>();
+        input = GameManager.Instance.GetComponent<PlayerInput>().GetActions<MainMapping>();
         rig = GetComponent<Rigidbody>();
         animal = GetComponent<Animal>();
     }
@@ -116,7 +118,7 @@ public class AnimalMovement : MonoBehaviour
     {
         Vector3 dir = point - transform.position;
         RaycastHit hit;
-        if (!rig.SweepTest(dir.normalized, out hit, dir.magnitude))
+        if (!rig.SweepTest(dir.normalized, out hit, dir.magnitude, QueryTriggerInteraction.Ignore))
         {
             transform.position = point;
             return true;
