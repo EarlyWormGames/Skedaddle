@@ -143,6 +143,8 @@ public class ClimbJump : ActionObject
         m_aCurrentAnimal.m_bCheckGround = false;
         m_aCurrentAnimal.m_bAutoClimbing = true;
         m_aCurrentAnimal.m_rBody.isKinematic = true;
+
+        m_lAnimalsIn.Remove(m_aCurrentAnimal);
     }
 
     public static float GetMultiplier(FACING_DIR direction)
