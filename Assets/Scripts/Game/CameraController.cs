@@ -134,20 +134,20 @@ public class CameraController : Singleton<CameraController>
     {
         m_bLorisSelected = AnimalController.Instance.GetAnimalSelected(ANIMAL_NAME.LORIS);
         
-        if (m_bUseNightVision)
-        {
-            if (m_bLorisSelected)
-            {
-                LetThereBeLight();
-                m_ItsLitFam = true;
-            }
-            else
-                LightsOut();
-        }
-        else
-        {
-            LetThereBeLight();
-        }
+        //if (m_bUseNightVision)
+        //{
+        //    if (m_bLorisSelected)
+        //    {
+        //        LetThereBeLight();
+        //        m_ItsLitFam = true;
+        //    }
+        //    else
+        //        LightsOut();
+        //}
+        //else
+        //{
+        //    LetThereBeLight();
+        //}
 
         //Ray ray = m_cCamera.ScreenPointToRay(EyeTracking.position);
         //Debug.DrawLine(ray.origin, ray.direction * 100, Color.red);
