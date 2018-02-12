@@ -17,9 +17,12 @@ public class LeverAnimated : Lever
             m_aCurrentAnimal.m_bPullingLeverOn = IsOn;
             m_aCurrentAnimal.m_bPullingLeverOff = !IsOn;
 
-            if (!IsOn)
-                waitFrames = 15;
+            waitFrames = 15;
         }
+    }
+
+    public override void DoAnimation()
+    {
     }
 
     public void LateUpdate()
@@ -33,7 +36,7 @@ public class LeverAnimated : Lever
             return;
         }
 
-            if (!IsPlug)
+        if (!IsPlug)
         {
             float curve = m_aCurrentAnimal.m_aAnimalAnimator.GetFloat("Root_Curve_Y");
             AnimController.SetFloat("Position", curve);

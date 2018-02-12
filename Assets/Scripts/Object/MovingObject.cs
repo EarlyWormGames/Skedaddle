@@ -1,185 +1,70 @@
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using System.Collections;
 
-public class MovingObject : ActionObject
+public class MovingObject : MonoBehaviour
 {
-    //==================================
-    //          Public Vars
-    //==================================
-    public Transform    m_tEndPoint;
-    public Transform    m_tRopes;
-    public float        m_fEndScale;
-    public float        m_fSlideTime = 1f;
-    public bool         m_bRotate;
-    public bool         m_bDontDeactivate;
+    public Transform PointA, PointB;
+    [Tooltip("Time (in s) to transition from point A to B")]
+    public float Speed = 1;
+    public AnimationCurve MovingCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
 
-    public Transform    m_tMovePoint;
-    public Transform    m_tLookAt;
-    public bool         m_bLook = true;
-    public ActionObject m_oActivate;
-    public float        m_fWaitTimer = 1f;
-    public float        m_fLookTime = 1f;
+    protected bool isLerping;
+    protected float lerpTimer = 0;
+    protected bool movingForward = true;
 
-    public Animator m_aAnimator;
-
-    public AnimationCurve m_aCurve;
-    public AnimationCurve m_aReverseCurve;
-    public bool m_bUseReverse = false;
-
-    public BoxCollider m_BoxCaster;
-    public LayerMask m_Layer;
-
-    public UnityEvent m_OnMoveEnd;
-
-    public string OpenEvent, CloseEvent;
-    //==================================
-    //          Internal Vars
-    //==================================
-
-    //==================================
-    //          Private Vars
-    //================================== 
-    private bool m_bDown = false;
-    private bool m_bRequiredState = false;
-    private Vector3 m_v3StartPos;
-    private Quaternion m_qStartRot;
-    private bool m_bMove = false;
-    private float m_fTimer;
-    private float m_fAnimTimer;
-
-    private bool m_bStartMove = false;
-
-    //Inherited functions
-
-    protected override void OnStart()
+    // Use this for initialization
+    void Start()
     {
-        m_v3StartPos = transform.position;
-        m_qStartRot = transform.rotation;
+
     }
 
-    protected override void OnCanTrigger()
+    // Update is called once per frame
+    void Update()
     {
-        if(m_aAnimator != null)
-        {
-            m_aAnimator.SetFloat("Fold", m_fAnimTimer);
-        }
-        if (m_bMove)
-        {
-            if (m_bStartMove)
-            {
-                m_bStartMove = false;
-            }
+        if (isLerping)
+            DoSlide();
 
-            if (m_BoxCaster != null)
-            {
-                if(!Physics.CheckBox(m_BoxCaster.transform.TransformPoint(m_BoxCaster.center), m_BoxCaster.size / 2f, m_BoxCaster.transform.rotation, m_Layer.value))
-                    m_fTimer += Time.deltaTime;
-            }
-            else
-                m_fTimer += Time.deltaTime;
-
-            m_fAnimTimer = m_fTimer;
-            Vector3 start = m_bDown ? m_v3StartPos : m_tEndPoint.position;
-            Vector3 end = m_bDown ? m_tEndPoint.position : m_v3StartPos;
-            Quaternion rotStart = m_bDown ? m_qStartRot : m_tEndPoint.rotation;
-            Quaternion rotEnd = m_bDown ? m_tEndPoint.rotation : m_qStartRot;
-            float t = Mathf.Min(1, m_fTimer / m_fSlideTime);
-            t = m_bUseReverse && !m_bDown? m_aReverseCurve.Evaluate(t) : m_aCurve.Evaluate(t);
-            transform.position = Vector3.Lerp(start, end, t);
-            if(m_tRopes != null)
-            {
-                m_tRopes.localScale = Vector3.Lerp(new Vector3(m_tRopes.localScale.x, 1, m_tRopes.localScale.z), new Vector3(m_tRopes.localScale.x, m_fEndScale, m_tRopes.localScale.z), 1 - t);
-            }
-            if (m_bRotate)
-            {
-                transform.rotation = Quaternion.Lerp(rotStart, rotEnd, t);
-            }
-
-            if (m_fTimer >= m_fSlideTime)
-            {
-                OnSlideEnd();
-            }
-        }
+        OnUpdate();
     }
 
-    //protected override void AnimalEnter(Animal a_animal) { }
-    //protected override void AnimalExit(Animal a_animal) { }
-    public override void DoAction()
+    protected virtual void OnUpdate() { }
+
+    protected virtual void DoSlide()
     {
-        if (m_bMove)
-            return;
+        lerpTimer = Mathf.Clamp(lerpTimer + Time.deltaTime, 0, Speed);
 
-        if (transform.position == m_v3StartPos)
-        {
-            m_bRequiredState = true;
-            m_bDown = true;
-        }
-        else
-        {
-            m_bRequiredState = false;
-            m_bDown = false;
-        }
+        Vector3 start = movingForward ? PointA.position : PointB.position;
+        Vector3 end = !movingForward ? PointA.position : PointB.position;
 
-        NamedEvent.TriggerEvent(m_bDown ? OpenEvent : CloseEvent, m_aSoundEvents);
-        m_bMove = true;
-        m_fTimer = 0f;
+        float t = MovingCurve.Evaluate(lerpTimer / Speed);
+        transform.position = Vector3.Lerp(start, end, t);
+
+        if (lerpTimer >= Speed)
+            Stop();
     }
 
-    public override void DoActionOn()
+    public virtual void Move(bool forward)
     {
-        if (m_bMove)
-            return;
-        m_bRequiredState = true;
-        m_bDown = true;
-        NamedEvent.TriggerEvent(m_bDown ? OpenEvent : CloseEvent, m_aSoundEvents);
-        m_bMove = true;
-        m_fTimer = 0f;
+        if (forward != movingForward)
+        {
+            lerpTimer = Speed - lerpTimer;
+        }
+
+        isLerping = true;
+        movingForward = forward;
     }
 
-    public override void DoActionOff()
+    public virtual void Move()
     {
-        if (m_bMove)
-            return;
-        if (m_bDontDeactivate)
-            return;
-        m_bRequiredState = false;
-        m_bDown = false;
-        NamedEvent.TriggerEvent(m_bDown ? OpenEvent : CloseEvent, m_aSoundEvents);
-        m_bMove = true;
-        m_fTimer = 0f;
+        movingForward = !movingForward;
+        isLerping = true;
+        lerpTimer = Speed - lerpTimer;
     }
 
-    void OnSlideEnd()
+    public virtual void Stop()
     {
-        m_bStartMove = true;
-
-        m_fTimer = 0f;
-        m_bMove = false;
-
-        if (m_bRequiredState != m_bDown)
-        {
-            m_bDown = m_bRequiredState;
-            m_bMove = true;
-            m_fTimer = 0f;
-            NamedEvent.TriggerEvent(m_bDown ? OpenEvent : CloseEvent, m_aSoundEvents);
-        }
-
-        if (m_oActivate != null)
-        {
-            m_oActivate.DoAction();
-        }
-
-        if (m_bLook)
-        {
-            m_bLook = false;
-
-            if (m_tMovePoint != null)
-            {
-                CameraController.Instance.ViewObject(m_tMovePoint.gameObject, m_fWaitTimer, m_fLookTime, m_tLookAt);
-            }
-        }
-
-        m_OnMoveEnd.Invoke();
+        isLerping = false;
     }
 }

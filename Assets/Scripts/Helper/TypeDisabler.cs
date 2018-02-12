@@ -8,7 +8,7 @@ public class TypeDisabler : MonoBehaviour
 
     void Start()
     {
-        m_tRemove = typeof(MovingObject);
+        //m_tRemove = typeof(MovingObject);
     }
 
     void OnTriggerEnter(Collider a_col)
