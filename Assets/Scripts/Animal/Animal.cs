@@ -865,7 +865,7 @@ public class Animal : MonoBehaviour
     {
         bool objOkay = true;
         if (m_oCurrentObject != null)
-            objOkay = m_oCurrentObject.m_bAllowsTurn;
+            objOkay = !m_oCurrentObject.m_bBlocksTurn;
 
         return !m_bTurning && !m_bPullingObject && objOkay;
     }

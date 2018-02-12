@@ -129,7 +129,14 @@ public class AnimalMovement : MonoBehaviour
 
             transform.rotation = Quaternion.Lerp(Quaternion.Euler(rotation), Quaternion.Euler(newRotation), Time.deltaTime * RotateLerpSpeed);
 
-            if (dir.magnitude < move)
+            Vector3 forward = animal.transform.forward;
+
+            if (animal.m_tJointRoot.localRotation.y > 180)
+                forward *= -1;
+
+            float dot = Vector3.Dot(dir, forward);
+
+            if (dir.magnitude < move || ((dot < 0 && moveVelocity > 0) || (dot > 0 && moveVelocity < 0)))
             {
                 if (moveVelocity < 0)
                     --currentPoint;

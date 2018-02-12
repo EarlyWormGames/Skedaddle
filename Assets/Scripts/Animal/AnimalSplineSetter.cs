@@ -9,13 +9,13 @@ public class AnimalSplineSetter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        AnimalTrigger trig = other.GetComponent<AnimalTrigger>();
+        Animal trig = other.GetComponentInParent<Animal>();
         if (trig == null)
             return;
 
-        if (trig.parent.m_eName != RequiredAnimal)
+        if (trig.m_eName != RequiredAnimal)
             return;
 
-        trig.parent.GetComponent<AnimalMovement>().SetSpline(Spline);
+        trig.GetComponent<AnimalMovement>().SetSpline(Spline);
     }
 }
