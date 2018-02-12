@@ -16,6 +16,9 @@ public class Lever : ActionObject
         if (Animal.CurrentAnimal.m_oCurrentObject != null && Animal.CurrentAnimal.m_oCurrentObject != this)
             return;
 
+        if (m_aCurrentAnimal != null)
+            return;
+
         if (triggered && OnlyOnce)
             return;
         triggered = true;
