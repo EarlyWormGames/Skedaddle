@@ -24,6 +24,9 @@ public class SplineMovement : MonoBehaviour
     public bool HighExit = true;
     public bool LowExit = true;
 
+    public Vector3 IgnoreAxis = new Vector3(0, 1, 0);
+    public bool DisableGravity;
+
     public float MaxLength;
     public Point[] points;
 
