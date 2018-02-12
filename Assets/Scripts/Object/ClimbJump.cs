@@ -130,7 +130,7 @@ public class ClimbJump : ActionObject
 
         if (Animal.CurrentAnimal.m_oCurrentObject != null && Animal.CurrentAnimal.m_oCurrentObject != this)
         {
-            if (!m_CanDetach)
+            if (!m_CanDetach || !Animal.CurrentAnimal.m_oCurrentObject.m_CanBeDetached)
                 return;
             Animal.CurrentAnimal.m_oCurrentObject.Detach();
         }

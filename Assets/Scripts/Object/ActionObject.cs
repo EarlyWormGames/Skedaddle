@@ -49,6 +49,7 @@ public class ActionObject : MonoBehaviour
 
     [Header("Settings")]
     public bool m_CanDetach;
+    public bool m_CanBeDetached = true;
     public bool m_bAllowsTurn = false;
     public bool m_bBlocksMovement = false;
 

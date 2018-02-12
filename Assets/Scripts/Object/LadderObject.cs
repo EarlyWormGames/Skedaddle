@@ -124,7 +124,7 @@ public class LadderObject : ActionObject
     {
         if (Animal.CurrentAnimal.m_oCurrentObject != null)
         {
-            if (!m_CanDetach)
+            if (!m_CanDetach || !Animal.CurrentAnimal.m_oCurrentObject.m_CanBeDetached)
                 return;
             Animal.CurrentAnimal.m_oCurrentObject.Detach();
         }
