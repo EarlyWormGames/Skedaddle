@@ -145,6 +145,8 @@ public class LadderObject : ActionObject
 
     public override void Detach()
     {
+        moveVelocity = 0;
+
         m_aCurrentAnimal.m_oCurrentObject = null;
         m_aCurrentAnimal.transform.parent = null;
         m_aCurrentAnimal.m_rBody.isKinematic = false;
