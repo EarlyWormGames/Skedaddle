@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class Lever : ActionObject
 {
+    public FACING_DIR Direction;
     public bool OnlyOnce;
     public UnityEvent OnSwitchOn, OnSwitchOff;
 
@@ -25,6 +26,8 @@ public class Lever : ActionObject
 
         m_aCurrentAnimal = Animal.CurrentAnimal;
         m_aCurrentAnimal.m_oCurrentObject = this;
+
+        m_aCurrentAnimal.SetDirection(Direction);
 
         IsOn = !IsOn;
     }
@@ -63,6 +66,7 @@ public class Lever : ActionObject
 
     public override void Detach()
     {
+        m_aCurrentAnimal.SetDirection(FACING_DIR.NONE);
         m_aCurrentAnimal.m_oCurrentObject = null;
         m_aCurrentAnimal = null;
     }
