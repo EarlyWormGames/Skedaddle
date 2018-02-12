@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -124,8 +124,10 @@ GameObject:
   - component: {fileID: 52913589}
   - component: {fileID: 52913588}
   - component: {fileID: 52913587}
+  - component: {fileID: 52913591}
+  - component: {fileID: 52913592}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: Ladder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -191,11 +193,99 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 52913586}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 53.3, y: -2.19, z: 14.14}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_LocalPosition: {x: 52.35, y: -1.275, z: 11.151}
+  m_LocalScale: {x: 0.5479333, y: 2.320281, z: 1}
+  m_Children:
+  - {fileID: 1708931517}
+  - {fileID: 186250336}
+  - {fileID: 1988527410}
+  - {fileID: 1629424207}
   m_Father: {fileID: 0}
   m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &52913591
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 52913586}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &52913592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 52913586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9921df7f8ceb034389c73d0688258f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_aRequiredSize: 0
+  m_aRequiredAnimal: 1
+  m_aMaximumSize: 0
+  m_lAnimalsIn: []
+  m_rBody: {fileID: 0}
+  m_GazeObject: {fileID: 0}
+  m_aSoundEvents: []
+  OnAnimalEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnAnimalExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  m_CanDetach: 0
+  m_bAllowsTurn: 0
+  m_bBlocksMovement: 0
+  LowExit: 1
+  HighExit: 1
+  RotateSpeed: 5
+  TopTransition: {fileID: 0}
+  BottomTransition: {fileID: 0}
+  IgnoreAxes: {x: 0, y: 0, z: 0}
+  Points:
+  - {fileID: 186250336}
+  - {fileID: 1629424207}
+  - {fileID: 1988527410}
+--- !u!1 &186250335
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 186250336}
+  m_Layer: 0
+  m_Name: LowPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &186250336
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 186250335}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.343, z: -0.603}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 52913590}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &341580965
 GameObject:
@@ -441,6 +531,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  m_CanDetach: 0
+  m_bAllowsTurn: 0
+  m_bBlocksMovement: 0
 --- !u!1 &854299313
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,25 +830,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DrawTangents: 0
   AllowReverse: 1
-  splineCount: 1
+  splineCount: -3
   points:
   - {x: 0.6877785, y: 0, z: 0}
-  - {x: 2.2984886, y: 0, z: -0.067255974}
-  - {x: 2.6767042, y: 0, z: -2.9689047}
-  - {x: 2.7782211, y: 0, z: -0.8780384}
-  - {x: 2.8363457, y: 0, z: 0.319108}
-  - {x: 3.1097908, y: 0, z: -0.41399288}
-  - {x: 2.4448853, y: 0, z: 0.05739498}
-  - {x: 1.2215644, y: 0, z: 0.9246739}
-  - {x: 0.088630676, y: 0, z: -1.0486784}
-  - {x: 0.5654335, y: 0, z: -1.4916592}
-  - {x: 1.0422363, y: 0, z: -1.9346399}
-  - {x: 1.0441551, y: 0, z: -2.6740327}
-  - {x: 3.2321167, y: 0, z: -1.2860689}
-  - {x: 4.07654, y: 0, z: -0.75039726}
-  - {x: 4.32539, y: 0, z: -0.3502741}
-  - {x: 4.0771637, y: 0, z: 1.0008421}
-  modes: 000000000100000001000000020000000100000001000000
+  - {x: 3.471793, y: 0, z: 0.03260672}
+  - {x: 0.8829498, y: 0, z: -2.1030164}
+  - {x: 3.4016914, y: 0, z: -1.4112215}
+  modes: 000000000000000001000000020000000100000001000000
   loop: 0
 --- !u!4 &1160051006
 Transform:
@@ -881,7 +962,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 423376, guid: f98253888c8cae8498d5b4fe3c7b6f7e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 52.345
+      value: 51.662
       objectReference: {fileID: 0}
     - target: {fileID: 423376, guid: f98253888c8cae8498d5b4fe3c7b6f7e, type: 2}
       propertyPath: m_LocalPosition.y
@@ -914,6 +995,18 @@ Prefab:
     - target: {fileID: 111396, guid: f98253888c8cae8498d5b4fe3c7b6f7e, type: 2}
       propertyPath: m_Name
       value: Loris(Clone)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11486266, guid: f98253888c8cae8498d5b4fe3c7b6f7e, type: 2}
+      propertyPath: m_fClimbSpeed
+      value: 0.232
+      objectReference: {fileID: 0}
+    - target: {fileID: 11486266, guid: f98253888c8cae8498d5b4fe3c7b6f7e, type: 2}
+      propertyPath: m_fClimbTopSpeed
+      value: 0.009
+      objectReference: {fileID: 0}
+    - target: {fileID: 11486266, guid: f98253888c8cae8498d5b4fe3c7b6f7e, type: 2}
+      propertyPath: m_fClimbStopSpeed
+      value: 0.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f98253888c8cae8498d5b4fe3c7b6f7e, type: 2}
@@ -1001,6 +1094,34 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.3188723, y: 0.6943591, z: 1}
   m_Center: {x: 0.00073333754, y: -0.0677748, z: 0}
+--- !u!1 &1629424206
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1629424207}
+  m_Layer: 0
+  m_Name: MiddlePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1629424207
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1629424206}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.39, y: 0.059, z: -0.6029997}
+  m_LocalScale: {x: 0.99999404, y: 0.9999995, z: 1}
+  m_Children: []
+  m_Father: {fileID: 52913590}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1643502686
 GameObject:
   m_ObjectHideFlags: 0
@@ -1061,8 +1182,10 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  m_CanDetach: 0
+  m_bAllowsTurn: 0
+  m_bBlocksMovement: 0
   DoOnTrigger: 0
-  AllowDetach: 1
   Direction: 2
   FinishDirection: 2
   AnchorPoint: {fileID: 854299314}
@@ -1094,6 +1217,47 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.27454478, y: 0.69435906, z: 0.9999999}
   m_Center: {x: -0.52142996, y: -0.06777481, z: 0}
+--- !u!1 &1708931516
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1708931517}
+  - component: {fileID: 1708931518}
+  m_Layer: 11
+  m_Name: trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1708931517
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1708931516}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.841}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 52913590}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1708931518
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1708931516}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1776634969
 Prefab:
   m_ObjectHideFlags: 0
@@ -1136,6 +1300,34 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ac26916394ca4e4caa5daf8346f4a48, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1988527409
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1988527410}
+  m_Layer: 0
+  m_Name: HighPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1988527410
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1988527409}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.455, z: -0.6029997}
+  m_LocalScale: {x: 0.99999404, y: 0.9999995, z: 1}
+  m_Children: []
+  m_Father: {fileID: 52913590}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2052324052 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 193460, guid: 6ac26916394ca4e4caa5daf8346f4a48, type: 2}
@@ -1216,8 +1408,10 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  m_CanDetach: 0
+  m_bAllowsTurn: 0
+  m_bBlocksMovement: 0
   DoOnTrigger: 0
-  AllowDetach: 1
   Direction: 4
   FinishDirection: 4
   AnchorPoint: {fileID: 341580966}

@@ -10,7 +10,7 @@ public class Loris : Animal
     //==================================
     public float m_fClimbSpeed = 1f;
     public float m_fClimbTopSpeed = 1.5f;
-    public float m_fStopSpeed = 0.2f;
+    public float m_fClimbStopSpeed = 0.2f;
 
     public Light[] m_lVisionLight = new Light[0];
     public float m_fOnIntensity = 1.68f;
@@ -411,5 +411,28 @@ public class Loris : Animal
     {
         CameraController.Instance.m_bUseNightVision = a_On;
         m_bUseLight = a_On;
+    }
+
+    public override float[] CalculateMoveSpeed()
+    {
+        float[] speedMinMax = new float[3];
+        speedMinMax[0] = m_fCurrentSpeed;
+        if (m_bClimbing)
+            speedMinMax[0] = m_fClimbSpeed;
+
+        if (!m_bClimbing)
+        {
+            if (m_bCanWalkLeft)
+                speedMinMax[1] = -m_fTopSpeed * (m_bPullingObject ? m_fPullSpeedMult : 1);
+            if (m_bCanWalkRight)
+                speedMinMax[2] = m_fTopSpeed * (m_bPullingObject ? m_fPullSpeedMult : 1);
+        }
+        else
+        {
+            speedMinMax[1] = -m_fClimbTopSpeed;
+            speedMinMax[2] = m_fClimbTopSpeed;
+        }
+
+        return speedMinMax;
     }
 }

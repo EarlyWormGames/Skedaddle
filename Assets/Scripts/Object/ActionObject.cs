@@ -47,6 +47,11 @@ public class ActionObject : MonoBehaviour
     public UnityEvent OnAnimalEnter;
     public UnityEvent OnAnimalExit;
 
+    [Header("Settings")]
+    public bool m_CanDetach;
+    public bool m_bAllowsTurn = false;
+    public bool m_bBlocksMovement = false;
+
     protected bool m_bEyetrackSelected = false;
     protected bool m_bQuickExitFix = false;
 

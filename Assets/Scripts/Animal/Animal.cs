@@ -848,7 +848,7 @@ public class Animal : MonoBehaviour
         m_bGazeRunning = a_Run;
     }
 
-    public float[] CalculateMoveSpeed()
+    public virtual float[] CalculateMoveSpeed()
     {
         float[] speedMinMax = new float[3];
         speedMinMax[0] = m_fCurrentSpeed;
@@ -863,7 +863,20 @@ public class Animal : MonoBehaviour
 
     public bool CanTurn()
     {
-        return !m_bTurning && !m_bPullingObject;
+        bool objOkay = true;
+        if (m_oCurrentObject != null)
+            objOkay = m_oCurrentObject.m_bAllowsTurn;
+
+        return !m_bTurning && !m_bPullingObject && objOkay;
+    }
+
+    public bool CanMove()
+    {
+        bool objOkay = true;
+        if (m_oCurrentObject != null)
+            objOkay = !m_oCurrentObject.m_bBlocksMovement;
+
+        return (m_bCanWalkLeft || m_bCanWalkRight) && objOkay;
     }
 
     public void SetDirection(FACING_DIR direction)

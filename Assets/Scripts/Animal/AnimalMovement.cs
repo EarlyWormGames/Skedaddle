@@ -74,6 +74,12 @@ public class AnimalMovement : MonoBehaviour
         if (moveVelocity == 0)
             return;
 
+        if (!animal.CanMove())
+        {
+            moveVelocity = 0;
+            return;
+        }
+
         if (FollowSpline == null)
         {
             Vector3 newPoint = transform.position + (ForwardDictator.forward * moveVelocity);

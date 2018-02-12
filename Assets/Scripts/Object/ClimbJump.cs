@@ -6,7 +6,6 @@ using UnityEngine.InputNew;
 public class ClimbJump : ActionObject
 {
     public bool DoOnTrigger = false;
-    public bool AllowDetach = true;
     public FACING_DIR Direction = FACING_DIR.RIGHT;
     public FACING_DIR FinishDirection = FACING_DIR.RIGHT;
     public Transform AnchorPoint;
@@ -131,7 +130,7 @@ public class ClimbJump : ActionObject
 
         if (Animal.CurrentAnimal.m_oCurrentObject != null && Animal.CurrentAnimal.m_oCurrentObject != this)
         {
-            if (!AllowDetach)
+            if (!m_CanDetach)
                 return;
             Animal.CurrentAnimal.m_oCurrentObject.Detach();
         }
