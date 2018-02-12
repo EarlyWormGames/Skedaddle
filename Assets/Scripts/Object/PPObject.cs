@@ -34,7 +34,7 @@ public class PPObject : ActionObject
 
     public override void DoAction()
     {
-        if (Animal.CurrentAnimal.m_oCurrentObject != null && Animal.CurrentAnimal.m_oCurrentObject != this)
+        if (!TryDetach())
             return;
 
         if (m_aCurrentAnimal != null)

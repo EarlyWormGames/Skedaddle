@@ -41,8 +41,21 @@ public class AnimalMovement : MonoBehaviour
         moveVelocity = Mathf.Clamp(moveVelocity, speed[1], speed[2]);
 
         if (input.moveX.value == 0)
-        {
             moveVelocity = Mathf.MoveTowards(moveVelocity, 0, DecelerationRate * Time.deltaTime);
+
+        Move(speed);
+    }
+
+    void Move(float[] a_speeds)
+    {
+        if (moveVelocity == 0)
+            return;
+
+        if (!animal.m_bSelected)
+            return;
+
+        if (input.moveX.value == 0)
+        {
             animal.m_bWalkingLeft = false;
             animal.m_bWalkingRight = false;
         }
@@ -65,14 +78,6 @@ public class AnimalMovement : MonoBehaviour
         {
             animal.Turn(FACING_DIR.RIGHT);
         }
-
-        Move(speed);
-    }
-
-    void Move(float[] a_speeds)
-    {
-        if (moveVelocity == 0)
-            return;
 
         if (!animal.CanMove())
         {

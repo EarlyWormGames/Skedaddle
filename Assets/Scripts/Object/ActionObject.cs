@@ -226,4 +226,15 @@ public class ActionObject : MonoBehaviour
         m_fGazeTimer = 0f;
         m_bGazeRunning = a_Run;
     }
+
+    protected bool TryDetach()
+    {
+        if (Animal.CurrentAnimal.m_oCurrentObject != null)
+        {
+            if (!m_CanDetach || !Animal.CurrentAnimal.m_oCurrentObject.m_CanBeDetached)
+                return false;
+            Animal.CurrentAnimal.m_oCurrentObject.Detach();
+        }
+        return true;
+    }
 }

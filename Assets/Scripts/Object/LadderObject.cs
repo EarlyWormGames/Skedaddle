@@ -59,6 +59,9 @@ public class LadderObject : ActionObject
         if (moveVelocity == 0)
             return;
 
+        if (!loris.m_bSelected)
+            return;
+
         if (moveVelocity < 0 && !moveDown)
             return;
         else if (moveVelocity < 0 && !moveUp)
@@ -122,12 +125,11 @@ public class LadderObject : ActionObject
 
     public override void DoAction()
     {
-        if (Animal.CurrentAnimal.m_oCurrentObject != null)
-        {
-            if (!m_CanDetach || !Animal.CurrentAnimal.m_oCurrentObject.m_CanBeDetached)
-                return;
-            Animal.CurrentAnimal.m_oCurrentObject.Detach();
-        }
+        if (m_aCurrentAnimal != null)
+            return;
+
+        if (!TryDetach())
+            return;
 
         m_aCurrentAnimal = Animal.CurrentAnimal;
         m_aCurrentAnimal.m_oCurrentObject = this;

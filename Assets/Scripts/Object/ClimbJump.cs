@@ -128,12 +128,8 @@ public class ClimbJump : ActionObject
         if (m_aCurrentAnimal != null)
             return;
 
-        if (Animal.CurrentAnimal.m_oCurrentObject != null && Animal.CurrentAnimal.m_oCurrentObject != this)
-        {
-            if (!m_CanDetach || !Animal.CurrentAnimal.m_oCurrentObject.m_CanBeDetached)
-                return;
-            Animal.CurrentAnimal.m_oCurrentObject.Detach();
-        }
+        if (!TryDetach())
+            return;
 
         m_aCurrentAnimal = Animal.CurrentAnimal;
         timer = m_aCurrentAnimal.m_fJumpWaitTime;
