@@ -118,7 +118,6 @@ public class ActionObject : MonoBehaviour
         }
 
         OnUpdate();
-        DoAnimation();
     }
 
     protected virtual void OnCanTrigger()
