@@ -8,13 +8,17 @@ public class LadderObject : ActionObject
     public float RotateSpeed = 5;
     public ActionObject TopTransition, BottomTransition;
     public Vector3 IgnoreAxes = new Vector3(1, 0, 1);
+    public FACING_DIR Direction;
 
     [Tooltip("First = Bottom, Last = Top :: THESE MUST BE IN CORRECT ORDER!")]
     public Transform[] Points;
 
+    [HideInInspector]
+    public float moveVelocity;
+
+
     private int pointIndex;
     private Loris loris;
-    private float moveVelocity;
     private bool moveDown = true, moveUp = true;
     private bool justEnter;
 
@@ -135,6 +139,8 @@ public class LadderObject : ActionObject
 
         pointIndex = FindClosestPoint(transform.position);
         justEnter = true;
+
+        loris.SetDirection(Direction);
     }
 
     public override void Detach()
@@ -144,6 +150,7 @@ public class LadderObject : ActionObject
         m_aCurrentAnimal.m_rBody.isKinematic = false;
 
         loris.m_bClimbing = false;
+        loris.SetDirection(FACING_DIR.NONE);
 
         if (TopTransition != null && pointIndex > Points.Length - 1)
             TopTransition.AnimalEnter(m_aCurrentAnimal);

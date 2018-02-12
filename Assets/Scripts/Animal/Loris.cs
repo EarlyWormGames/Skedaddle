@@ -25,6 +25,9 @@ public class Loris : Animal
     [Tooltip("How far up/down eyes need to be looking to move while climbing")]
     public float m_fClimbBuffer = 0.5f;
 
+    public float m_fClimbAnimMult = 100;
+    public float m_fClimbAnimMinimum = 0.005f;
+
     //==================================
     //          Internal Vars
     //==================================
@@ -93,7 +96,16 @@ public class Loris : Animal
         //set horozontal velocity
         m_aAnimalAnimator.SetFloat("Velocity", m_aMovement.moveVelocity * m_fWalkAnimMult);
         m_aAnimalAnimator.SetBool("Climbing", m_bClimbing);
-        m_aAnimalAnimator.SetFloat("Vertical Velocity", m_rBody.velocity.y);
+
+        float verticalVelocity = 0;
+
+        if (!m_bClimbing)
+            m_aAnimalAnimator.SetFloat("Vertical Velocity", m_rBody.velocity.y);
+        else
+        {
+            verticalVelocity = ((LadderObject)m_oCurrentObject).moveVelocity;
+            m_aAnimalAnimator.SetFloat("Vertical Velocity", verticalVelocity * m_fClimbAnimMult);
+        }
 
         m_fIdleTimer -= Time.deltaTime;
 
@@ -239,9 +251,9 @@ public class Loris : Animal
         else if(!m_bAutoClimbing && m_bClimbing)
         {
             //Climbing
-            m_aAnimalAnimator.SetFloat("ClimbDirection", m_rBody.velocity.normalized.y);
+            m_aAnimalAnimator.SetFloat("ClimbDirection", verticalVelocity);
 
-            if (m_rBody.velocity.y > 0.05f)
+            if (verticalVelocity > m_fClimbAnimMinimum)
             {
                 //Climb up
                 m_aAnimalAnimator.SetBool("ClimbingUp", true);
@@ -249,7 +261,7 @@ public class Loris : Animal
                 m_aAnimalAnimator.SetBool("ClimbMoving", true);
                 m_aAnimalAnimator.SetFloat("ClimbDirection", 1);
             }
-            else if (m_rBody.velocity.y < -0.05f)
+            else if (verticalVelocity < -m_fClimbAnimMinimum)
             {
                 //climb Down
                 m_aAnimalAnimator.SetBool("ClimbingUp", false);
