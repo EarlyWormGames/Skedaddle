@@ -870,7 +870,7 @@ public class Animal : MonoBehaviour
         return !m_bTurning && !m_bPullingObject && objOkay;
     }
 
-    public bool CanMove()
+    public virtual bool CanMove()
     {
         bool objOkay = true;
         if (m_oCurrentObject != null)
