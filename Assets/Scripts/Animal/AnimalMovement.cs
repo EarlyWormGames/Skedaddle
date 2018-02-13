@@ -85,11 +85,11 @@ public class AnimalMovement : MonoBehaviour
         if (moveVelocity == 0)
             return;
 
-        if ((moveVelocity < 0 && !animal.m_bFacingLeft) && animal.CanTurn())
+        if ((currentInput < 0 && !animal.m_bFacingLeft) && animal.CanTurn())
         {
             animal.Turn(FACING_DIR.LEFT);
         }
-        else if ((moveVelocity > 0 && animal.m_bFacingLeft) && animal.CanTurn())
+        else if ((currentInput > 0 && animal.m_bFacingLeft) && animal.CanTurn())
         {
             animal.Turn(FACING_DIR.RIGHT);
         }
@@ -119,7 +119,7 @@ public class AnimalMovement : MonoBehaviour
                 --currentPoint;
 
             currentPoint = Mathf.Clamp(currentPoint, 0, FollowSpline.points.Length - 1);
-            splinePos = FollowSpline.points[currentPoint].current;
+            splinePos = FollowSpline.GetPosition(currentPoint);
 
             if (FollowSpline.IgnoreAxis.x > 0)
                 splinePos.x = transform.position.x;

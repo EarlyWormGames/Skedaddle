@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -9695,7 +9695,7 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_CanDetach: 0
   m_CanBeDetached: 1
-  m_bBlocksTurn: 1
+  m_bBlocksTurn: 0
   m_bBlocksMovement: 0
 --- !u!1 &854299313
 GameObject:
@@ -10536,7 +10536,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Spline: {fileID: 1160051005}
-  NumPoints: 100
+  NumPoints: 10
+  RegeneratePoints: 0
   HighExit: 1
   LowExit: 1
   MoveAxisKey:
@@ -10544,6 +10545,29 @@ MonoBehaviour:
   InvertAxis: 0
   IgnoreAxis: {x: 0, y: 1, z: 0}
   DisableGravity: 0
+  points:
+  - current: {x: 0.6877785, y: 0, z: 0}
+    totalDistance: 0
+  - current: {x: 1.3722763, y: 0, z: -0.050269127}
+    totalDistance: 0.6863412
+  - current: {x: 1.797287, y: 0, z: -0.2006588}
+    totalDistance: 1.1371751
+  - current: {x: 2.025692, y: 0, z: -0.42119312}
+    totalDistance: 1.4546719
+  - current: {x: 2.1203728, y: 0, z: -0.681901}
+    totalDistance: 1.7320399
+  - current: {x: 2.1442108, y: 0, z: -0.9528065}
+    totalDistance: 2.003992
+  - current: {x: 2.1600952, y: 0, z: -1.2039366}
+    totalDistance: 2.255624
+  - current: {x: 2.2308998, y: 0, z: -1.4053164}
+    totalDistance: 2.4690886
+  - current: {x: 2.4195137, y: 0, z: -1.5269737}
+    totalDistance: 2.693534
+  - current: {x: 2.7888145, y: 0, z: -1.5389328}
+    totalDistance: 3.0630283
+  - current: {x: 3.4016914, y: 0, z: -1.4112215}
+    totalDistance: 3.68907
 --- !u!114 &1160051005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15687,10 +15711,10 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_CanDetach: 1
-  m_CanBeDetached: 0
+  m_CanDetach: 0
+  m_CanBeDetached: 1
   m_bBlocksTurn: 0
-  m_bBlocksMovement: 1
+  m_bBlocksMovement: 0
   DoOnTrigger: 0
   Direction: 2
   FinishDirection: 2
@@ -15783,10 +15807,10 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_CanDetach: 1
-  m_CanBeDetached: 0
+  m_CanDetach: 0
+  m_CanBeDetached: 1
   m_bBlocksTurn: 0
-  m_bBlocksMovement: 1
+  m_bBlocksMovement: 0
   DoOnTrigger: 0
   Direction: 4
   FinishDirection: 4
@@ -16762,10 +16786,10 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_CanDetach: 1
-  m_CanBeDetached: 0
+  m_CanDetach: 0
+  m_CanBeDetached: 1
   m_bBlocksTurn: 0
-  m_bBlocksMovement: 1
+  m_bBlocksMovement: 0
   DoOnTrigger: 0
   Direction: 4
   FinishDirection: 4
@@ -17223,7 +17247,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Spline: {fileID: 2144303971}
-  NumPoints: 100
+  NumPoints: 10
+  RegeneratePoints: 0
   HighExit: 1
   LowExit: 1
   MoveAxisKey:
@@ -17231,6 +17256,29 @@ MonoBehaviour:
   InvertAxis: 1
   IgnoreAxis: {x: 0, y: 1, z: 0}
   DisableGravity: 0
+  points:
+  - current: {x: 0.6877785, y: 0, z: -0.000000059604645}
+    totalDistance: 0
+  - current: {x: 1.3722773, y: 0, z: -0.0502702}
+    totalDistance: 0.68634224
+  - current: {x: 1.797288, y: 0, z: -0.20065701}
+    totalDistance: 1.1371751
+  - current: {x: 2.025692, y: 0, z: -0.4211924}
+    totalDistance: 1.454672
+  - current: {x: 2.1203728, y: 0, z: -0.68190026}
+    totalDistance: 1.73204
+  - current: {x: 2.1442118, y: 0, z: -0.9528048}
+    totalDistance: 2.0039914
+  - current: {x: 2.1600943, y: 0, z: -1.2039378}
+    totalDistance: 2.255626
+  - current: {x: 2.2308998, y: 0, z: -1.4053156}
+    totalDistance: 2.469089
+  - current: {x: 2.4195127, y: 0, z: -1.526974}
+    totalDistance: 2.6935341
+  - current: {x: 2.7888155, y: 0, z: -1.538933}
+    totalDistance: 3.0630305
+  - current: {x: 3.4016914, y: 0, z: -1.4112208}
+    totalDistance: 3.6890714
 --- !u!114 &2144303971
 MonoBehaviour:
   m_ObjectHideFlags: 0
