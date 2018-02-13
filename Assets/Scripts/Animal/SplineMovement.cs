@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputNew;
 
 public class SplineMovement : MonoBehaviour
 {
@@ -23,18 +24,22 @@ public class SplineMovement : MonoBehaviour
     public int NumPoints = 100;
     public bool HighExit = true;
     public bool LowExit = true;
+    public AxisAction MoveAxisKey;
+    public bool InvertAxis = false;
 
     public Vector3 IgnoreAxis = new Vector3(0, 1, 0);
     public bool DisableGravity;
-
-    public float MaxLength;
+    
     public Point[] points;
 
     public void Start()
     {
+        if (MoveAxisKey.action != null)
+            MoveAxisKey.Bind(GameManager.Instance.GetComponent<PlayerInput>().handle);
+
         points = new Point[NumPoints + 1];
         Vector3 last = m_Spline.GetPoint(0);
-        MaxLength = 0;
+        float MaxLength = 0;
         for (int t = 0; t <= NumPoints; t++)
         {
             Vector3 current = m_Spline.GetPoint(t / (float)NumPoints);

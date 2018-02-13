@@ -14,21 +14,25 @@ public class AnimalMovement : MonoBehaviour
 
     public float RotateLerpSpeed = 60;
 
+    public AxisAction MoveAxisKey;
+
     [HideInInspector]
     public float moveVelocity;
 
     private float lastMove;
     private Animal animal;
-    private MainMapping input;
     private Rigidbody rig;
 
     private int currentPoint;
     private Vector3 splinePos;
 
+    private AxisAction currentAxis;
+    private float currentInput;
+
     // Use this for initialization
     void Start()
     {
-        input = GameManager.Instance.GetComponent<PlayerInput>().GetActions<MainMapping>();
+        MoveAxisKey.Bind(GameManager.Instance.GetComponent<PlayerInput>().handle);
         rig = GetComponent<Rigidbody>();
         animal = GetComponent<Animal>();
     }
@@ -36,11 +40,22 @@ public class AnimalMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (FollowSpline == null)
+            currentAxis = MoveAxisKey;
+        else if (FollowSpline.MoveAxisKey.control == null)
+            currentAxis = MoveAxisKey;
+        else if (FollowSpline.MoveAxisKey.control != null)
+            currentAxis = FollowSpline.MoveAxisKey;
+
+        currentInput = currentAxis.control.value;
+        if (FollowSpline != null)
+            currentInput *= FollowSpline.InvertAxis ? -1 : 1;
+
         float[] speed = animal.CalculateMoveSpeed();
-        moveVelocity += input.moveX.value * Time.deltaTime * speed[0];
+        moveVelocity += currentInput * Time.deltaTime * speed[0];
         moveVelocity = Mathf.Clamp(moveVelocity, speed[1], speed[2]);
 
-        if (input.moveX.value == 0)
+        if (currentInput == 0)
             moveVelocity = Mathf.MoveTowards(moveVelocity, 0, DecelerationRate * Time.deltaTime);
 
         Move(speed);
@@ -51,17 +66,17 @@ public class AnimalMovement : MonoBehaviour
         if (!animal.m_bSelected)
             return;
 
-        if (input.moveX.value == 0)
+        if (currentInput == 0)
         {
             animal.m_bWalkingLeft = false;
             animal.m_bWalkingRight = false;
         }
-        else if (input.moveX.value > 0)
+        else if (currentInput > 0)
         {
             animal.m_bWalkingRight = true;
             animal.m_bWalkingLeft = false;
         }
-        else if (input.moveX.value < 0)
+        else if (currentInput < 0)
         {
             animal.m_bWalkingLeft = true;
             animal.m_bWalkingRight = false;
