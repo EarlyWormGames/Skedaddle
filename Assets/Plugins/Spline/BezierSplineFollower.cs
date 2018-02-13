@@ -21,7 +21,7 @@ public class BezierSplineFollower : MonoBehaviour
     public BezierSpline m_Spline;
     public Transform m_MoveObject;
     public float m_FollowTime = 5;
-    public AnimationCurve m_Curve;
+    public AnimationCurve m_Curve = AnimationCurve.Linear(0, 0, 1, 1);
     public eLoopType m_LoopType;
     public int m_LoopTimes = 5;
     public bool m_FollowOnStart = false;
@@ -116,7 +116,7 @@ public class BezierSplineFollower : MonoBehaviour
         t = m_Curve.Evaluate(m_bReverse ? 1 - t : t);
 
         Gizmos.color = new Color(0, 0.8f, 0, 0.3f);
-        Gizmos.DrawCube(m_Spline.GetPoint(t), Vector3.one);
+        Gizmos.DrawCube(m_Spline.GetPoint(t), Vector3.one * 0.3f);
     }
 
     public float GetTime()

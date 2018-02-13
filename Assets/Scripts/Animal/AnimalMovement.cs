@@ -48,9 +48,6 @@ public class AnimalMovement : MonoBehaviour
 
     void Move(float[] a_speeds)
     {
-        if (moveVelocity == 0)
-            return;
-
         if (!animal.m_bSelected)
             return;
 
@@ -69,6 +66,9 @@ public class AnimalMovement : MonoBehaviour
             animal.m_bWalkingLeft = true;
             animal.m_bWalkingRight = false;
         }
+
+        if (moveVelocity == 0)
+            return;
 
         if ((moveVelocity < 0 && !animal.m_bFacingLeft) && animal.CanTurn())
         {
