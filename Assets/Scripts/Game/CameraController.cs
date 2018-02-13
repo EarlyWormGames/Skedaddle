@@ -189,105 +189,105 @@ public class CameraController : Singleton<CameraController>
         //    m_fPlayerOffsetz += Time.deltaTime * 3;
         //}
 
-        if (Animal.CurrentAnimal != null && m_bFollow)
-        {
-            m_v2SpeedOffset = new Vector2(Animal.CurrentAnimal.m_rBody.velocity.x * m_fAnimalSpeedBuffer.x, Animal.CurrentAnimal.m_rBody.velocity.y * m_fAnimalSpeedBuffer.y);
-            m_v3Target.x = Animal.CurrentAnimal.m_tCameraPivot.position.x + m_v2SpeedOffset.x + (m_bAllowManualOffsets ? m_fPlayerOffsetx : 0);
-            m_v3Target.y = Animal.CurrentAnimal.m_tCameraPivot.position.y + m_fYAdd + Animal.CurrentAnimal.m_fCameraY + m_v2SpeedOffset.y + (m_bAllowManualOffsets ? m_fPlayerOffsety : 0);
-            m_v3Target.z = (m_bAllowManualOffsets ? m_fPlayerOffsetz : 0) + m_fStartz + (m_bFollowAnimalZ ? Animal.CurrentAnimal.m_tCameraPivot.position.z : 0);
-
-            if (m_v3Target.x < m_v2XLimits.x)
-            {
-                m_v3Target.x = m_v2XLimits.x;
-            }
-            else if (m_v3Target.x > m_v2XLimits.y)
-            {
-                m_v3Target.x = m_v2XLimits.y;
-            }
-
-            if (m_v3Target.y < m_v2YLimits.x)
-            {
-                m_v3Target.y = m_v2YLimits.x;
-            }
-            else if (m_v3Target.y > m_v2YLimits.y + m_fYAdd)
-            {
-                m_v3Target.y = m_v2YLimits.y + m_fYAdd;
-            }
-            transform.position = Vector3.Lerp(transform.position, m_v3Target, Time.smoothDeltaTime * m_fCameraSpeed);
-        }
-        else if (!m_bFollow)
-        {
-            if (m_bTimeLerp)
-            {
-                if (!m_bEnded)
-                {
-                    m_fLookTimer += Time.deltaTime;
-
-                    float t = m_aLerpCurve.Evaluate(Mathf.Min(1, m_fLookTimer / m_fLookTime));
-                    transform.position = Vector3.Lerp(m_v3LerpStart, m_v3Target, t);
-
-                    if (t >= 1)
-                    {
-                        if (m_cEndDelegate != null && !m_bEnded)
-                        {
-                            m_cEndDelegate();
-                            m_bEnded = true;
-                        }
-                    }
-                }
-
-                if (m_fLookTimer >= m_fWaitTime)
-                {
-                    if (m_bReload)
-                    {
-                        m_bReload = false;
-                        m_fWaitTime = 10f;
-                        EWApplication.ReloadLevel();
-                    }
-                    else
-                    {
-                        m_bFollow = true;
-
-                        if (m_bCancelLook)
-                        {
-                            m_bCancelLook = false;
-                            m_tLookAt = null;
-                        }
-                    }
-                }
-            }
-            else
-            {
-                m_fLookTimer += Time.deltaTime;
-                float t = m_aLerpCurve.Evaluate(Mathf.Min(1, m_fLookTimer / m_fLookTime));
-                transform.position = Vector3.Lerp(m_v3LerpStart, m_v3Target, t);
-
-                if (m_cEndDelegate != null && !m_bEnded)
-                {
-                    m_cEndDelegate();
-                }
-
-                if (m_fLookTimer >= m_fWaitTime)
-                {
-                    if (m_bReload)
-                    {
-                        m_bReload = false;
-                        m_fWaitTime = 10f;
-                        EWApplication.ReloadLevel();
-                    }
-                    else
-                    {
-                        m_bFollow = true;
-
-                        if (m_bCancelLook)
-                        {
-                            m_bCancelLook = false;
-                            m_tLookAt = null;
-                        }
-                    }
-                }
-            }
-        }
+        //if (Animal.CurrentAnimal != null && m_bFollow)
+        //{
+        //    m_v2SpeedOffset = new Vector2(Animal.CurrentAnimal.m_rBody.velocity.x * m_fAnimalSpeedBuffer.x, Animal.CurrentAnimal.m_rBody.velocity.y * m_fAnimalSpeedBuffer.y);
+        //    m_v3Target.x = Animal.CurrentAnimal.m_tCameraPivot.position.x + m_v2SpeedOffset.x + (m_bAllowManualOffsets ? m_fPlayerOffsetx : 0);
+        //    m_v3Target.y = Animal.CurrentAnimal.m_tCameraPivot.position.y + m_fYAdd + Animal.CurrentAnimal.m_fCameraY + m_v2SpeedOffset.y + (m_bAllowManualOffsets ? m_fPlayerOffsety : 0);
+        //    m_v3Target.z = (m_bAllowManualOffsets ? m_fPlayerOffsetz : 0) + m_fStartz + (m_bFollowAnimalZ ? Animal.CurrentAnimal.m_tCameraPivot.position.z : 0);
+        //
+        //    if (m_v3Target.x < m_v2XLimits.x)
+        //    {
+        //        m_v3Target.x = m_v2XLimits.x;
+        //    }
+        //    else if (m_v3Target.x > m_v2XLimits.y)
+        //    {
+        //        m_v3Target.x = m_v2XLimits.y;
+        //    }
+        //
+        //    if (m_v3Target.y < m_v2YLimits.x)
+        //    {
+        //        m_v3Target.y = m_v2YLimits.x;
+        //    }
+        //    else if (m_v3Target.y > m_v2YLimits.y + m_fYAdd)
+        //    {
+        //        m_v3Target.y = m_v2YLimits.y + m_fYAdd;
+        //    }
+        //    transform.position = Vector3.Lerp(transform.position, m_v3Target, Time.smoothDeltaTime * m_fCameraSpeed);
+        //}
+        //else if (!m_bFollow)
+        //{
+        //    if (m_bTimeLerp)
+        //    {
+        //        if (!m_bEnded)
+        //        {
+        //            m_fLookTimer += Time.deltaTime;
+        //
+        //            float t = m_aLerpCurve.Evaluate(Mathf.Min(1, m_fLookTimer / m_fLookTime));
+        //            transform.position = Vector3.Lerp(m_v3LerpStart, m_v3Target, t);
+        //
+        //            if (t >= 1)
+        //            {
+        //                if (m_cEndDelegate != null && !m_bEnded)
+        //                {
+        //                    m_cEndDelegate();
+        //                    m_bEnded = true;
+        //                }
+        //            }
+        //        }
+        //
+        //        if (m_fLookTimer >= m_fWaitTime)
+        //        {
+        //            if (m_bReload)
+        //            {
+        //                m_bReload = false;
+        //                m_fWaitTime = 10f;
+        //                EWApplication.ReloadLevel();
+        //            }
+        //            else
+        //            {
+        //                m_bFollow = true;
+        //
+        //                if (m_bCancelLook)
+        //                {
+        //                    m_bCancelLook = false;
+        //                    m_tLookAt = null;
+        //                }
+        //            }
+        //        }
+        //    }
+        //    else
+        //    {
+        //        m_fLookTimer += Time.deltaTime;
+        //        float t = m_aLerpCurve.Evaluate(Mathf.Min(1, m_fLookTimer / m_fLookTime));
+        //        transform.position = Vector3.Lerp(m_v3LerpStart, m_v3Target, t);
+        //
+        //        if (m_cEndDelegate != null && !m_bEnded)
+        //        {
+        //            m_cEndDelegate();
+        //        }
+        //
+        //        if (m_fLookTimer >= m_fWaitTime)
+        //        {
+        //            if (m_bReload)
+        //            {
+        //                m_bReload = false;
+        //                m_fWaitTime = 10f;
+        //                EWApplication.ReloadLevel();
+        //            }
+        //            else
+        //            {
+        //                m_bFollow = true;
+        //
+        //                if (m_bCancelLook)
+        //                {
+        //                    m_bCancelLook = false;
+        //                    m_tLookAt = null;
+        //                }
+        //            }
+        //        }
+        //    }
+        //}
     }
 
     public void ViewObject(GameObject a_object, float a_waitTimer = 1f, float a_lookTime = 1f, Transform a_lookAt = null, bool a_bCancelLookAt = true)

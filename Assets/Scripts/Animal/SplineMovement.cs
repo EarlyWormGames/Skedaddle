@@ -10,12 +10,14 @@ public class SplineMovement : MonoBehaviour
     {
         public Vector3 current;
         public float totalDistance;
+        public float time;
 
-        public float SetPoint(Vector3 current, Vector3 next, float distanceTraveled)
+        public float SetPoint(Vector3 current, Vector3 next, float distanceTraveled, float time)
         {
             this.current = next;
             float distance = (next - current).magnitude;
             this.totalDistance = distanceTraveled + distance;
+            this.time = time;
             return distanceTraveled + distance;
         }
     }
@@ -54,12 +56,12 @@ public class SplineMovement : MonoBehaviour
         last = m_Spline.transform.InverseTransformPoint(last);
 
         float MaxLength = 0;
-        for (int t = 0; t <= NumPoints; t++)
+        for (int i = 0; i <= NumPoints; i++)
         {
-            Vector3 current = m_Spline.GetPoint(t / (float)NumPoints);
+            Vector3 current = m_Spline.GetPoint(i / (float)NumPoints);
             current = m_Spline.transform.InverseTransformPoint(current);
-            points[t] = new Point();
-            MaxLength = points[t].SetPoint(last, current, MaxLength);
+            points[i] = new Point();
+            MaxLength = points[i].SetPoint(last, current, MaxLength, i / (float)NumPoints);
             last = current;
         }
 
