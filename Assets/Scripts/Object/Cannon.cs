@@ -23,6 +23,7 @@ public class Cannon : ActionObject
     private Quaternion start, end;
     private bool useStartRotation = true;
     private bool shooting = false;
+    private bool firstpress = true;
 
     protected override void OnStart()
     {
@@ -68,6 +69,7 @@ public class Cannon : ActionObject
         loris.m_tCollider.gameObject.layer = LayerMask.NameToLayer("AnimalNoCollide");
         loris.transform.position = LorisSitPoint.position;
         shooting = false;
+        firstpress = true;
 
         m_lAnimalsIn.Remove(loris);
     }
@@ -94,9 +96,12 @@ public class Cannon : ActionObject
         }
         else if (input.interact.wasJustPressed && !isLerping)
             Shoot();
-        else if (input.moveX.negative.wasJustPressed && !facingLeft ||
-            input.moveX.positive.wasJustPressed && facingLeft && !isLerping)
+        else if ((input.moveX.negative.wasJustPressed && !facingLeft ||
+            input.moveX.positive.wasJustPressed && facingLeft && !isLerping) || firstpress)
+        {
             Switch();
+            firstpress = false;
+        }
     }
 
     public void Shoot()
@@ -115,12 +120,7 @@ public class Cannon : ActionObject
         shooting = true;
         useStartRotation = true;
 
-        isLerping = true;
-        timer = 0;
-
-        Vector3 forward = (facingLeft ? LeftFacing.position : RightFacing.position) - RotateObject.position;
-        start = Quaternion.LookRotation(forward.normalized, Vector3.up);
-        end = startRotation;
+        OnShoot.Invoke();
     }
 
     void SplineEnd()
@@ -132,6 +132,13 @@ public class Cannon : ActionObject
         loris.m_oCurrentObject = null;
         loris = null;
         m_aCurrentAnimal = null;
+
+        isLerping = true;
+        timer = 0;
+
+        Vector3 forward = (facingLeft ? LeftFacing.position : RightFacing.position) - RotateObject.position;
+        start = Quaternion.LookRotation(forward.normalized, Vector3.up);
+        end = startRotation;
     }
 
     void Switch()

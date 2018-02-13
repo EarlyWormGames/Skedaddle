@@ -652,7 +652,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 356377449
+  randomSeed: 152055124
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -5316,15 +5316,15 @@ Transform:
   m_PrefabParentObject: {fileID: 419348, guid: 6c1accf208a66144c8f71aa0bf5fd244, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 631272889}
-  m_LocalRotation: {x: 0.3541301, y: -0.3453734, z: -0.61203915, w: 0.61702293}
-  m_LocalPosition: {x: -1.050006, y: 0.075685486, z: 0.5189334}
+  m_LocalRotation: {x: -0.0018255115, y: 0.0069172373, z: -0.7027281, w: 0.7114226}
+  m_LocalPosition: {x: -0.028, y: 0.113, z: 1.135}
   m_LocalScale: {x: 1.5438085, y: 1.5438087, z: 1.5438087}
   m_Children:
   - {fileID: 1314060680}
   - {fileID: 165597854}
   m_Father: {fileID: 658690307}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.40800002, y: 0.711, z: -89.29301}
 --- !u!199 &631272891
 ParticleSystemRenderer:
   serializedVersion: 4
@@ -5388,7 +5388,7 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 631272889}
   serializedVersion: 5
-  lengthInSec: 5
+  lengthInSec: 2
   simulationSpeed: 1
   stopAction: 0
   looping: 0
@@ -5441,7 +5441,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -891404084
+  randomSeed: 1773135379
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -5530,8 +5530,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.21176471, g: 0.21176471, b: 0.21176471, a: 0.8039216}
-      maxColor: {r: 0.61960787, g: 0.61960787, b: 0.61960787, a: 0.5019608}
+      minColor: {r: 0.21176471, g: 0.21176471, b: 0.21176471, a: 0.903}
+      maxColor: {r: 0.61960787, g: 0.61960787, b: 0.61960787, a: 0.928}
       maxGradient:
         serializedVersion: 2
         key0: {r: 0.56078434, g: 0.56078434, b: 0.56078434, a: 0.80784315}
@@ -6547,8 +6547,8 @@ ParticleSystem:
         ctime7: 0
         atime0: 0
         atime1: 65535
-        atime2: 0
-        atime3: 0
+        atime2: 65535
+        atime3: 65535
         atime4: 0
         atime5: 0
         atime6: 0
@@ -11077,7 +11077,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 538173661
+  randomSeed: -1403776341
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -15092,8 +15092,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.72710466, y: 0.47814146, z: 0.59034157}
-  m_Center: {x: 0.045916643, y: 0.7076434, z: 0.054787625}
+  m_Size: {x: 0.5533262, y: 0.47814146, z: 0.59034157}
+  m_Center: {x: -0.04097286, y: 0.7076434, z: 0.05478763}
 --- !u!4 &1515841307
 Transform:
   m_ObjectHideFlags: 0
@@ -15146,7 +15146,7 @@ MonoBehaviour:
   m_CanBeDetached: 0
   m_bBlocksTurn: 1
   m_bBlocksMovement: 1
-  RotateTime: 1
+  RotateTime: 0.8
   RotateObject: {fileID: 658690307}
   LorisSitPoint: {fileID: 1978232700}
   RotateCurve:
@@ -15155,25 +15155,36 @@ MonoBehaviour:
     - serializedVersion: 2
       time: 0
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: 1
+      outSlope: 1
       tangentMode: 0
     - serializedVersion: 2
       time: 1
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: 1
+      outSlope: 1
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   SplineLeft: {fileID: 1897608785}
   SplineRight: {fileID: 1622248604}
   LeftFacing: {fileID: 788263640}
   RightFacing: {fileID: 1693957539}
   OnShoot:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 631272892}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &1516967071
@@ -15493,8 +15504,8 @@ MonoBehaviour:
   points:
   - {x: 0.8187758, y: 0.72946125, z: 0.0000009898041}
   - {x: 1.6468655, y: 3.449201, z: 0.0000012821663}
-  - {x: 3.1932192, y: 5.3789606, z: -0.000002342832}
-  - {x: 4.22978, y: 3.1138577, z: -0.000001220527}
+  - {x: 3.1932192, y: 5.543997, z: -0.000002342832}
+  - {x: 4.22978, y: 3.2788935, z: -0.000001220527}
   modes: 0000000000000000
   loop: 0
 --- !u!1 &1643502686
@@ -16366,8 +16377,8 @@ MonoBehaviour:
   points:
   - {x: 0.8187758, y: 0.72946125, z: 0.0000009898041}
   - {x: -0.09993398, y: 3.2547762, z: 0.0000015674689}
-  - {x: -4.0870004, y: 9.596973, z: -0.0000023542152}
-  - {x: -6.526823, y: -0.8022788, z: -0.0000012447496}
+  - {x: -4.0870004, y: 10.376159, z: -0.0000023542152}
+  - {x: -6.526823, y: -0.023092983, z: -0.0000012447496}
   modes: 0000000000000000
   loop: 0
 --- !u!1 &1897697724
@@ -16493,7 +16504,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1978232699}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.124, z: 0.092}
+  m_LocalPosition: {x: 0, y: 0.276, z: 0.092}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 658690307}
@@ -16827,7 +16838,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2114290052}
   m_LocalRotation: {x: 0, y: 0.49999925, z: -0, w: 0.86602587}
-  m_LocalPosition: {x: -0.059, y: 0.1, z: 0.374}
+  m_LocalPosition: {x: -0.016, y: 0.1, z: 0.373}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 19984646}
