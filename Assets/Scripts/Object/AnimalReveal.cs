@@ -10,7 +10,6 @@ public class AnimalReveal : ActionObject
     public bool Done = false;
     public Animal m_aUnlockedAnimal;
     public Transform m_tCenter;
-    public TutBox m_tBox;
 
     public AnimalCardShow m_CardShow;
     public RotatingObject m_Rotator;
@@ -51,7 +50,6 @@ public class AnimalReveal : ActionObject
     {
         if (!Done)
         {
-            m_tBox.Trigger();
             Done = true;
         }
 
@@ -70,7 +68,6 @@ public class AnimalReveal : ActionObject
 
         if (m_CardShow != null)
         {
-            m_CardShow.m_tutReveal = m_tBox;
             m_CardShow.Show();
         }
     }

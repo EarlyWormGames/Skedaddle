@@ -12,8 +12,6 @@ public class AnimalCardShow : MonoBehaviour
     public bool m_MoveCamera = false;
     public Animator m_Animator;
 
-    internal TutBox m_tutReveal;
-
     private bool m_bShowing = false;
     private bool m_CameraMoved = false;
     private bool m_bDone = false;
@@ -50,11 +48,6 @@ public class AnimalCardShow : MonoBehaviour
 
         m_bShowing = false;
         AnimalController.Instance.Reselect();
-        if (!m_bDone && m_tutReveal != null)
-        {
-            m_tutReveal.Trigger();
-            m_bDone = true;
-        }
 
         if (m_CameraMoved)
         {

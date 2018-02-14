@@ -3,7 +3,7 @@ using System.Collections;
 
 public class LevelDoor : MonoBehaviour
 {
-    //public MovingObject m_Door;
+    public MovingObject m_Door;
     public float m_WaitTime = 1f;
 
     private float m_Timer = -1f;
@@ -14,8 +14,7 @@ public class LevelDoor : MonoBehaviour
     {
         if (m_DoOnce)
         {
-            //m_Door.DoActionOn();
-            //m_Door.m_OnMoveEnd.AddListener(SlideEnd);
+            m_Door.Move(true);
             m_DoOnce = false;
         }
 
@@ -25,13 +24,13 @@ public class LevelDoor : MonoBehaviour
             if (m_Timer >= m_WaitTime)
             {
                 m_Timer = -1f;
-                //m_Door.DoActionOff();
+                m_Door.Move(false);
                 enabled = false;
             }
         }
     }
 
-    void SlideEnd()
+    public void SlideEnd()
     {
         m_Timer = 0f;
     }

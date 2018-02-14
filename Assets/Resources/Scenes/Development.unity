@@ -4194,6 +4194,7 @@ GameObject:
   m_Component:
   - component: {fileID: 197658705}
   - component: {fileID: 197658704}
+  - component: {fileID: 197658706}
   m_Layer: 0
   m_Name: CameraSpline
   m_TagString: Untagged
@@ -4238,6 +4239,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &197658706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 197658703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c1411ff7d2ea804fb8f36be7a8492f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MySpline: {fileID: 197658704}
+  AnimalSpline: {fileID: 1104794225}
+  MyAnimal: {fileID: 1387730986}
 --- !u!1 &250287065
 GameObject:
   m_ObjectHideFlags: 0
@@ -4773,23 +4788,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &442628079 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 194930, guid: 9538de56fc5561843b11b0ee608c0cc3, type: 2}
-  m_PrefabInternal: {fileID: 1137656936}
---- !u!114 &442628080
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 442628079}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c1411ff7d2ea804fb8f36be7a8492f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MySpline: {fileID: 197658704}
-  AnimalSpline: {fileID: 1104794225}
 --- !u!1 &443941778
 GameObject:
   m_ObjectHideFlags: 0
@@ -10728,11 +10726,6 @@ Prefab:
       propertyPath: m_Name
       value: Main Camera (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 114517869615431904, guid: 9538de56fc5561843b11b0ee608c0cc3,
-        type: 2}
-      propertyPath: Scale
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9538de56fc5561843b11b0ee608c0cc3, type: 2}
   m_IsPrefabParent: 0
@@ -15121,6 +15114,12 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 423376, guid: f98253888c8cae8498d5b4fe3c7b6f7e, type: 2}
   m_PrefabInternal: {fileID: 1387730984}
+--- !u!114 &1387730986 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11486266, guid: f98253888c8cae8498d5b4fe3c7b6f7e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1387730984}
+  m_Script: {fileID: 11500000, guid: 468a25c63db597e409a852a3ac4c854d, type: 3}
 --- !u!1 &1391165857
 GameObject:
   m_ObjectHideFlags: 0

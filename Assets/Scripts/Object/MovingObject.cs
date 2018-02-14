@@ -10,6 +10,9 @@ public class MovingObject : MonoBehaviour
     public float Speed = 1;
     public AnimationCurve MovingCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
 
+    public UnityEvent ForwardEnd;
+    public UnityEvent BackwardEnd;
+
     protected bool isLerping;
     protected float lerpTimer = 0;
     protected bool movingForward = true;
@@ -43,6 +46,11 @@ public class MovingObject : MonoBehaviour
 
         if (lerpTimer >= Speed)
             Stop();
+
+        if (movingForward)
+            ForwardEnd.Invoke();
+        else
+            BackwardEnd.Invoke();
     }
 
     public virtual void Move(bool forward)

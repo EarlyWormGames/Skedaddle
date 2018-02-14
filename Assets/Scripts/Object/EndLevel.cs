@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Analytics;
+using UnityEngine.InputNew;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 
@@ -13,7 +14,6 @@ public class EndLevel : MonoBehaviour
     public float m_fColorLerpSpeed = 1f;
     public Color m_cInColor;
     public Color m_cFullColor;
-
     public int m_iAnimalInCount = 0;
 
     internal int m_iRequiredCount;
@@ -27,6 +27,7 @@ public class EndLevel : MonoBehaviour
     private float m_fGazeTimer = 0f;
 
     private EWGazeObject m_GazeObject;
+    private ButtonInputControl ExitKey;
 
     // Use this for initialization
     void Start()
@@ -38,6 +39,8 @@ public class EndLevel : MonoBehaviour
             m_Door.enabled = false;
 
         m_GazeObject = GetComponent<EWGazeObject>();
+
+        ExitKey = GameManager.Instance.GetComponent<PlayerInput>().GetActions<MainMapping>().interact;
     }
 
     // Update is called once per frame
@@ -70,21 +73,21 @@ public class EndLevel : MonoBehaviour
             else
                 m_fGazeTimer = 0f;
 
-            //if (Keybinding.GetKey("Action") || Controller.GetButtonDown(ControllerButtons.A) || m_fGazeTimer >= EWEyeTracking.holdTime)
-            //{
-            //    Analytics.CustomEvent("Level Ended", new Dictionary<string, object>
-            //    {
-            //        { "Level", SceneManager.GetActiveScene().name },
-            //        { "Time", m_fLevelTimer }
-            //    });
-            //
-            //    //EXIT LEVEL
-            //    EWApplication.LoadLevel(m_sLoadScene);
-            //    enabled = false;
-            //
-            //    if (m_Door != null)
-            //        m_Door.enabled = true;
-            //}
+            if (ExitKey.wasJustPressed || m_fGazeTimer >= EWEyeTracking.holdTime)
+            {
+                Analytics.CustomEvent("Level Ended", new Dictionary<string, object>
+                {
+                    { "Level", SceneManager.GetActiveScene().name },
+                    { "Time", m_fLevelTimer }
+                });
+            
+                //EXIT LEVEL
+                EWApplication.LoadLevel(m_sLoadScene);
+                enabled = false;
+            
+                if (m_Door != null)
+                    m_Door.enabled = true;
+            }
         }
     }
 

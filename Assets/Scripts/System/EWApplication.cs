@@ -11,7 +11,6 @@ public class EWApplication : Singleton<EWApplication>
     //       Public Vars
     //============================
     public string       m_sLoadLevelName;
-    public Image        m_iFadeImage;
     public float        m_fFadeSpeed = 1f;
 
     public OnLevelCallback m_olCallbacks;
@@ -30,21 +29,18 @@ public class EWApplication : Singleton<EWApplication>
     void Start ()
     {
         DontDestroy();
-        enabled = false;
         SceneManager.sceneLoaded += SceneLoaded;
+
+        m_sLoadLevelName = SceneManager.GetActiveScene().name;
+        TransitionEffect.instance.value = 1;
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        if (!enabled)
-        {
-            return;
-        }
-
         if (SceneManager.GetActiveScene().name != m_sLoadLevelName || m_bRefresh || m_bQuit)
         {
-            if (m_iFadeImage.color.a >= 1f)
+            if (TransitionEffect.instance.value >= 1f)
             {
                 if (m_bQuit)
                 {
@@ -61,15 +57,13 @@ public class EWApplication : Singleton<EWApplication>
             else
             {
                 m_fTimer += Time.deltaTime;
-                //Make it more visible
-                Color col = m_iFadeImage.color;
-                col.a = m_fTimer / m_fFadeSpeed;
-                m_iFadeImage.color = col;
+                //Make the game less visible
+                TransitionEffect.instance.value = (m_fTimer / m_fFadeSpeed);
             }
         }
         else
         {
-            if (m_iFadeImage.color.a <= 0f)
+            if (TransitionEffect.instance.value <= 0f)
             {
                 //Disable this script since we don't need to do anymore work
                 enabled = false;
@@ -77,10 +71,8 @@ public class EWApplication : Singleton<EWApplication>
             else if (m_iWaitFrames <= 0)
             {
                 m_fTimer += Time.deltaTime;
-                //Make it less visible
-                Color col = m_iFadeImage.color;
-                col.a = 1 - (m_fTimer / m_fFadeSpeed);
-                m_iFadeImage.color = col;
+                //Make the game more visible
+                TransitionEffect.instance.value = 1 - (m_fTimer / m_fFadeSpeed);
             }
             else
             {

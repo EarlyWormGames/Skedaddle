@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputNew;
 
+[RequireComponent(typeof(BezierSpline))]
 public class SplineMovement : MonoBehaviour
 {
     [System.Serializable]
@@ -25,9 +26,7 @@ public class SplineMovement : MonoBehaviour
         }
     }
 
-    public BezierSpline m_Spline;
-
-    public int NumPoints = 100;
+    public int NumPoints = 30;
     [Tooltip("Will regenerate keypoints if set to true")]
     public bool RegeneratePoints = false;
     public bool HighExit = true;
@@ -42,8 +41,12 @@ public class SplineMovement : MonoBehaviour
     [HideInInspector]
     public Point[] points;
 
+    private BezierSpline m_Spline;
+
     public void Start()
     {
+        m_Spline = GetComponent<BezierSpline>();
+
         if (MoveAxisKey.action != null)
             MoveAxisKey.Bind(GameManager.Instance.GetComponent<PlayerInput>().handle);
 
@@ -104,7 +107,9 @@ public class SplineMovement : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         if (m_Spline == null)
-            return;
+        {
+            m_Spline = GetComponent<BezierSpline>();
+        }
 
         if (RegeneratePoints)
         {

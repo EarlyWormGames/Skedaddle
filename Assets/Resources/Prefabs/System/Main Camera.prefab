@@ -116,6 +116,8 @@ GameObject:
   - component: {fileID: 11463448}
   - component: {fileID: 114355741093068044}
   - component: {fileID: 114649289026399742}
+  - component: {fileID: 114476538363192892}
+  - component: {fileID: 114121936319760040}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -146,8 +148,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 194930}
-  m_LocalRotation: {x: 0.057683237, y: 0, z: 0, w: 0.99833494}
-  m_LocalPosition: {x: 51.038, y: -0.296, z: 4.079}
+  m_LocalRotation: {x: 0.084553294, y: 0.03209576, z: 0.0015284269, w: 0.99590075}
+  m_LocalPosition: {x: 20.624, y: -0.54, z: 4.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 453490}
@@ -544,9 +546,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_fMicroOffset: 0.2
   m_fMicroDuration: 0.5
-  m_bDontDeactivate: 0
+  m_bDontDeactivate: 1
   m_fShakeIntensity: 0.1
-  m_fShakeSpeed: 20
+  m_fShakeSpeed: 0.5
   m_fNoiseFrequency: 0
   m_fNoiseIntensity: 0
 --- !u!114 &11475110
@@ -680,6 +682,19 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &114121936319760040
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 194930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68c9790aa1a259f46b46540f2ceb085e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FadeShader: {fileID: 4800000, guid: 50866f5806aae8d43ad0c2abab825678, type: 3}
+  value: 0
 --- !u!114 &114198620707449980
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -704,7 +719,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 97ac2252c6a22df48a3d61944e04c938, type: 2}
-  m_Amount: 0
+  m_Amount: 0.608
   m_Multiplier: 1
   m_Invert: 0
 --- !u!114 &114355741093068044
@@ -722,6 +737,18 @@ MonoBehaviour:
   m_Amount: 0
   m_Multiplier: 0.5
   m_Invert: 0
+--- !u!114 &114476538363192892
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 194930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b49a33a25d6224a9d00198512b2f1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LerpSpeed: 3
 --- !u!114 &114501776225968304
 MonoBehaviour:
   m_ObjectHideFlags: 1
