@@ -141,14 +141,15 @@ namespace RootMotion.FinalIK {
 				    case Grounding.Quality.Best:
 
                         StepTry(Vector3.zero, prediction);
-                        float currentScan = 0;
                         if(groundObject == "")
                         {
                             RaycastHit hit = new RaycastHit();
-                            Physics.Raycast(transform.position - grounding.maxStep * up, grounding.root.forward, out hit, grounding.maxGapDistance * 2, grounding.layers);
+                            Quaternion orientation = Quaternion.LookRotation(grounding.root.forward, grounding.root.up);
+                            Physics.BoxCast(transform.position - up * grounding.maxStep * 0.5f, new Vector3(0.01f, grounding.maxStep * 0.5f, 0.01f), grounding.root.forward, out hit, orientation, grounding.maxGapDistance, grounding.layers);
                             if(hit.collider != null)
                             {
-                                StepTry(grounding.root.forward * (hit.distance + 0.01f), prediction);
+                                float dist = Vector3.Distance(transform.position, hit.point);
+                                StepTry(grounding.root.forward * (dist + 0.01f), prediction);
                                 if (groundObject != "")
                                 {
                                     if (isGrounded)
@@ -159,10 +160,11 @@ namespace RootMotion.FinalIK {
                             }
                             else
                             {
-                                Physics.Raycast(transform.position - grounding.maxStep * up, -grounding.root.forward, out hit, grounding.maxGapDistance * 2, grounding.layers);
+                                Physics.BoxCast(transform.position - up * grounding.maxStep * 0.5f, new Vector3(0.01f, grounding.maxStep * 0.5f, 0.01f), -grounding.root.forward, out hit, orientation, grounding.maxGapDistance, grounding.layers);
                                 if (hit.collider != null)
                                 {
-                                    StepTry(-grounding.root.forward * (hit.distance + 0.01f), prediction);
+                                    float dist = Vector3.Distance(transform.position, hit.point);
+                                    StepTry(-grounding.root.forward * (dist + 0.01f), prediction);
                                     if (groundObject != "")
                                     {
                                         if (isGrounded)
