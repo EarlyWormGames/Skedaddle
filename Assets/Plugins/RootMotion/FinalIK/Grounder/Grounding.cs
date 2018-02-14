@@ -56,10 +56,20 @@ namespace RootMotion.FinalIK {
 		/// </summary>
 		[Tooltip("Amount of velocity based prediction of the foot positions.")]
 		public float prediction = 0.05f;
-		/// <summary>
-		/// Weight of rotating the feet to the ground normal offset.
-		/// </summary>
-		[Tooltip("Weight of rotating the feet to the ground normal offset.")]
+        /// <summary>
+        /// The maximum distance a platform can be from the foot before the IK no longer finds it
+        /// </summary>
+        [Tooltip("The maximum distance a platform can be from the foot before the IK no longer finds it.")]
+        public float maxGapDistance = 0.1f;
+        /// <summary>
+        /// Speed which the IK snaps to edges over gaps
+        /// </summary>
+        [Tooltip("Speed which the IK snaps to edges over gaps.")]
+        public float GapSnapSpeed = 2;
+        /// <summary>
+        /// Weight of rotating the feet to the ground normal offset.
+        /// </summary>
+        [Tooltip("Weight of rotating the feet to the ground normal offset.")]
 		[Range(0f, 1f)]
 		public float footRotationWeight = 1f;
 		/// <summary>

@@ -263,7 +263,7 @@ public class Poodle : Animal
             {
                 if (m_rBody.velocity.x < 0.1f && m_rBody.velocity.x > -0.1f)
                 {
-                    if (!((m_gqGrounder.solver.rootHit.point.y - m_gqGrounder.forelegSolver.rootHit.point.y < 0.33f) && m_bFrontGroundDetected))
+                    if (!((m_gqGrounder.solver.rootHit.point.y - m_gqGrounder.forelegSolver.rootHit.point.y < 0.33f)))
                     {
                         if (!m_bPushOffDetected)
                         {

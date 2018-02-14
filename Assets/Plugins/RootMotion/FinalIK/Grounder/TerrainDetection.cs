@@ -12,7 +12,6 @@ namespace RootMotion.FinalIK
         public IK effectedIK;
         public Vector3 raycastOffset = new Vector3(0f, 2f, 1.5f); // Offset from the character, in local space, to raycast from
         public LayerMask raycastLayers; // The layers we want to raycast at
-        public float min = -2f, max = 2f; // Min and max for the offset
         public float lerpSpeed = 10f; // The speed of lerping the IKPosition to make things nice and smooth
         public float heightOffset = 0f;
         public float angleBuffer = 1;

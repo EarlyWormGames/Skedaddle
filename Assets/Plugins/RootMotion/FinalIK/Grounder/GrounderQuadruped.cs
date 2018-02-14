@@ -237,6 +237,7 @@ namespace RootMotion.FinalIK {
             {
                 forefeetRoot = new GameObject().transform;
                 forefeetRoot.parent = transform;
+                forefeetRoot.transform.localRotation = Quaternion.Euler(Vector3.zero);
                 forefeetRoot.name = "Forefeet Root";
             }
 			

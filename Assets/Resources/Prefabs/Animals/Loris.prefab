@@ -1687,7 +1687,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &127784
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
@@ -6578,7 +6578,6 @@ Transform:
   - {fileID: 463310}
   - {fileID: 455996}
   - {fileID: 486902}
-  - {fileID: 461508}
   - {fileID: 4984212974349418}
   - {fileID: 4000012980386568}
   - {fileID: 4000011369627124}
@@ -8401,16 +8400,16 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 127784}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: -0.604, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.010000268, z: 0}
+  m_LocalScale: {x: 1.6666682, y: 1.6666664, z: 1.6666682}
   m_Children:
   - {fileID: 430174}
   - {fileID: 411036}
   - {fileID: 490090}
   - {fileID: 462036}
   - {fileID: 4482752086468242}
-  m_Father: {fileID: 423376}
-  m_RootOrder: 10
+  m_Father: {fileID: 486628}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &461972
 Transform:
@@ -9636,6 +9635,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 483674}
+  - {fileID: 461508}
   m_Father: {fileID: 466434}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10573,12 +10573,14 @@ MonoBehaviour:
     layers:
       serializedVersion: 2
       m_Bits: 5242885
-    GroundTheshold: 0.35
-    maxStep: 0.4
+    GroundTheshold: 0.2
+    maxStep: 0.2
     heightOffset: 0
     footSpeed: 10
     footRadius: 0.05
     prediction: 0.05
+    maxGapDistance: 0.2
+    GapSnapSpeed: 5
     footRotationWeight: 1
     footRotationSpeed: 7
     maxFootRotationAngle: 45
@@ -10593,12 +10595,14 @@ MonoBehaviour:
     layers:
       serializedVersion: 2
       m_Bits: 5242885
-    GroundTheshold: 0.35
-    maxStep: 0.4
+    GroundTheshold: 0.2
+    maxStep: 0.2
     heightOffset: 0
     footSpeed: 10
     footRadius: 0.05
     prediction: 0.05
+    maxGapDistance: 0.2
+    GapSnapSpeed: 5
     footRotationWeight: 1
     footRotationSpeed: 7
     maxFootRotationAngle: 45
@@ -11209,70 +11213,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce4b050ca8ddb5e43b1a21c77de8c821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Layer:
-    serializedVersion: 2
-    m_Bits: 262144
-  m_IgnoreFirstSound: 0
-  m_DestroyTime: 3
-  m_tFrontRight: {fileID: 436820}
-  m_tFrontLeft: {fileID: 411170}
-  m_tBackRight: {fileID: 414456}
-  m_tBackLeft: {fileID: 499986}
-  m_Events:
-  - Name: WalkFoot
-    Sounds:
-    - Event: event:/SFX/FTS/LORIS/WALK_WOOD
-      SurfaceType: 0
-    - Event: event:/SFX/FTS/LORIS/WALK_METAL
-      SurfaceType: 1
-    - Event: event:/SFX/FTS/LORIS/WALK_SHELF
-      SurfaceType: 2
-    - Event: event:/SFX/FTS/LORIS/WALK_BOX_LARGE
-      SurfaceType: 4
-    - Event: event:/SFX/FTS/LORIS/WALK_SUITCASE
-      SurfaceType: 3
-  - Name: PullFoot
-    Sounds:
-    - Event: event:/SFX/MVS/LORIS/WALK
-      SurfaceType: 0
-  - Name: PushFoot
-    Sounds:
-    - Event: event:/SFX/FTS/LORIS/PUSH_WOOD
-      SurfaceType: 0
-  - Name: ClimbRope
-    Sounds:
-    - Event: event:/SFX/FTS/LORIS/CLIMB_ROPE
-      SurfaceType: 0
-  - Name: ClimbLadder
-    Sounds:
-    - Event: event:/SFX/FTS/LORIS/CLIMB_LADDER
-      SurfaceType: 0
-  - Name: Slide
-    Sounds:
-    - Event: event:/SFX/OBJECTS/ENVIRONMENTAL/SLIDE
-      SurfaceType: 0
-  - Name: ClimbFoot
-    Sounds:
-    - Event: event:/SFX/FTS/LORIS/CLIMB_BOX_LARGE
-      SurfaceType: 0
-    - Event: event:/SFX/FTS/LORIS/CLIMB_METAL
-      SurfaceType: 1
-    - Event: event:/SFX/FTS/LORIS/CLIMB_SHELF
-      SurfaceType: 2
-    - Event: event:/SFX/FTS/LORIS/CLIMB_SUITCASE
-      SurfaceType: 3
-  - Name: WalkMVS
-    Sounds:
-    - Event: event:/SFX/MVS/LORIS/WALK
-      SurfaceType: 0
-  - Name: ClimbMVS
-    Sounds:
-    - Event: event:/SFX/MVS/LORIS/CLIMB
-      SurfaceType: 0
-  - Name: IdleClimbMVS
-    Sounds:
-    - Event: event:/SFX/MVS/LORIS/IDLE_CLIMB
-      SurfaceType: 0
 --- !u!114 &11498748
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11284,22 +11224,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ce5c7e92d9751142bd0dbbdce2b1bc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layer:
-    serializedVersion: 2
-    m_Bits: 262144
-  sounds:
-  - sound: {fileID: 11410856}
-    surface: 0
-  - sound: {fileID: 11470410}
-    surface: 2
-  - sound: {fileID: 11462436}
-    surface: 1
-  - sound: {fileID: 11414554}
-    surface: 4
-  - sound: {fileID: 11454794}
-    surface: 3
-  - sound: {fileID: 11414554}
-    surface: 4
 --- !u!114 &11499244
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13091,7 +13015,7 @@ Transform:
   m_LocalScale: {x: 2.7545528, y: 2.754553, z: 2.7545545}
   m_Children: []
   m_Father: {fileID: 423376}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4000012980386568
 Transform:
@@ -13104,7 +13028,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 423376}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4482752086468242
 Transform:
@@ -13132,7 +13056,7 @@ Transform:
   - {fileID: 476400}
   - {fileID: 401570}
   m_Father: {fileID: 423376}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &65269219848172802
 BoxCollider:
@@ -13331,6 +13255,6 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.30941144
-  m_Height: 0.9684915
+  m_Height: 0.8884264
   m_Direction: 2
-  m_Center: {x: 0, y: -0.29, z: 0.13}
+  m_Center: {x: -1.7103353e-16, y: -0.29, z: 0.08996742}

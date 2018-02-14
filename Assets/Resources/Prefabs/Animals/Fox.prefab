@@ -1209,7 +1209,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &166394
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
@@ -2256,7 +2256,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 488302}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &429052
 Transform:
@@ -2535,6 +2535,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 403192}
+  - {fileID: 483374}
   m_Father: {fileID: 428360}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3041,7 +3042,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 166394}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.545, z: -0}
+  m_LocalPosition: {x: 0, y: -0.015000045, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 496368}
@@ -3051,8 +3052,8 @@ Transform:
   - {fileID: 4000011341369960}
   - {fileID: 4000012154202506}
   - {fileID: 4669183625765882}
-  m_Father: {fileID: 488302}
-  m_RootOrder: 4
+  m_Father: {fileID: 446514}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &484394
 Transform:
@@ -3146,7 +3147,6 @@ Transform:
   - {fileID: 402470}
   - {fileID: 474616}
   - {fileID: 471970}
-  - {fileID: 483374}
   - {fileID: 4000012421916572}
   - {fileID: 4000013787042748}
   - {fileID: 428702}
@@ -3418,9 +3418,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebbe9388b2a33914686eab1731c03c0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Events:
-  - Name: PrisIdle
-    Sound: {fileID: 11432376}
 --- !u!114 &11411546
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3554,86 +3551,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce4b050ca8ddb5e43b1a21c77de8c821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Layer:
-    serializedVersion: 2
-    m_Bits: 0
-  m_IgnoreFirstSound: 0
-  m_DestroyTime: 3
-  m_tFrontRight: {fileID: 443388}
-  m_tFrontLeft: {fileID: 465232}
-  m_tBackRight: {fileID: 453804}
-  m_tBackLeft: {fileID: 410596}
-  m_Events:
-  - Name: WalkFoot
-    Sounds:
-    - Event: event:/SFX/FTS/PRIS/WALK_WOOD
-      SurfaceType: 0
-    - Event: event:/SFX/FTS/PRIS/WALK_METAL
-      SurfaceType: 1
-    - Event: event:/SFX/FTS/PRIS/WALK_SUITCASE
-      SurfaceType: 3
-    - Event: event:/SFX/FTS/PRIS/WALK_BOX_LARGE
-      SurfaceType: 4
-    - Event: 
-      SurfaceType: 0
-  - Name: SprintFoot
-    Sounds:
-    - Event: event:/SFX/FTS/PRIS/RUN_WOOD
-      SurfaceType: 0
-  - Name: SitFoot
-    Sounds:
-    - Event: event:/SFX/FTS/PRIS/SIT_WOOD
-      SurfaceType: 0
-    - Event: event:/SFX/FTS/PRIS/SIT_METAL
-      SurfaceType: 1
-    - Event: event:/SFX/FTS/PRIS/SIT_SUITCASE
-      SurfaceType: 3
-    - Event: event:/SFX/FTS/PRIS/SIT_BOX_LARGE
-      SurfaceType: 4
-    - Event: event:/SFX/FTS/PRIS/SIT_WOOD
-      SurfaceType: 0
-  - Name: PullFoot
-    Sounds:
-    - Event: event:/SFX/FTS/PRIS/PULL_WOOD
-      SurfaceType: 0
-  - Name: PushFoot
-    Sounds:
-    - Event: event:/SFX/FTS/PRIS/PUSH_WOOD
-      SurfaceType: 0
-  - Name: JumpFoot
-    Sounds:
-    - Event: event:/SFX/FTS/PRIS/JUMP_WOOD
-      SurfaceType: 0
-    - Event: event:/SFX/FTS/PRIS/JUMP_METAL
-      SurfaceType: 1
-    - Event: event:/SFX/FTS/PRIS/JUMP_SUITCASE
-      SurfaceType: 3
-    - Event: event:/SFX/FTS/PRIS/JUMP_BOX_LARGE
-      SurfaceType: 4
-  - Name: ClimbFoot
-    Sounds:
-    - Event: event:/SFX/FTS/PRIS/CLIMB_BOX_LARGE
-      SurfaceType: 4
-    - Event: event:/SFX/FTS/PRIS/CLIMB_METAL
-      SurfaceType: 1
-    - Event: event:/SFX/FTS/PRIS/CLIMB_SUITCASE
-      SurfaceType: 3
-  - Name: WalkMVS
-    Sounds:
-    - Event: event:/SFX/MVS/PRIS/WALK
-      SurfaceType: 0
-  - Name: RunMVS
-    Sounds:
-    - Event: event:/SFX/MVS/PRIS/RUN
-      SurfaceType: 0
-  - Name: SitMVS
-    Sounds:
-    - Event: event:/SFX/MVS/PRIS/SIT
-      SurfaceType: 0
-  - Name: PullMVS
-    Sounds:
-    - Event: event:/SFX/MVS/PRIS/PULL
-      SurfaceType: 0
 --- !u!114 &11420146
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3733,16 +3650,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ce5c7e92d9751142bd0dbbdce2b1bc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layer:
-    serializedVersion: 2
-    m_Bits: 262144
-  sounds:
-  - sound: {fileID: 11439886}
-    surface: 0
-  - sound: {fileID: 11466372}
-    surface: 1
-  - sound: {fileID: 11440474}
-    surface: 3
 --- !u!114 &11439886
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3904,6 +3811,8 @@ MonoBehaviour:
     footSpeed: 10
     footRadius: 0.05
     prediction: 0.05
+    maxGapDistance: 0.3
+    GapSnapSpeed: 5
     footRotationWeight: 1
     footRotationSpeed: 7
     maxFootRotationAngle: 45
@@ -3924,6 +3833,8 @@ MonoBehaviour:
     footSpeed: 10
     footRadius: 0.05
     prediction: 0.05
+    maxGapDistance: 0.3
+    GapSnapSpeed: 5
     footRotationWeight: 1
     footRotationSpeed: 7
     maxFootRotationAngle: 45
@@ -6574,7 +6485,7 @@ Transform:
   - {fileID: 414432}
   - {fileID: 4000011134792786}
   m_Father: {fileID: 488302}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4000012833550638
 Transform:
@@ -6600,7 +6511,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 488302}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4223320622662132
 Transform:
@@ -6613,7 +6524,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 488302}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4227470131306410
 Transform:
@@ -6626,7 +6537,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 488302}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4669183625765882
 Transform:
@@ -6652,7 +6563,7 @@ Transform:
   m_LocalScale: {x: 0.9650569, y: 0.965057, z: 0.965057}
   m_Children: []
   m_Father: {fileID: 488302}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &65114760447295026
 BoxCollider:
@@ -6727,9 +6638,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebbe9388b2a33914686eab1731c03c0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Events:
-  - Name: IDLE
-    Sound: {fileID: 114000011225450748}
 --- !u!114 &114000014002788006
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -3426,8 +3426,6 @@ MonoBehaviour:
   raycastLayers:
     serializedVersion: 2
     m_Bits: 1048577
-  min: -2
-  max: 2
   lerpSpeed: 10
   heightOffset: 0
   angleBuffer: 1
@@ -3623,8 +3621,6 @@ MonoBehaviour:
   raycastLayers:
     serializedVersion: 2
     m_Bits: 1048577
-  min: -2
-  max: 2
   lerpSpeed: 4
   heightOffset: 0.05
   angleBuffer: 1
@@ -3841,6 +3837,8 @@ MonoBehaviour:
     footSpeed: 10
     footRadius: 0.1
     prediction: 0.05
+    maxGapDistance: 0.1
+    GapSnapSpeed: 2
     footRotationWeight: 1
     footRotationSpeed: 7
     maxFootRotationAngle: 0
@@ -3861,6 +3859,8 @@ MonoBehaviour:
     footSpeed: 10
     footRadius: 0.15
     prediction: 0.05
+    maxGapDistance: 0.1
+    GapSnapSpeed: 2
     footRotationWeight: 1
     footRotationSpeed: 7
     maxFootRotationAngle: 45
@@ -5446,9 +5446,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.19000001
-  m_Height: 0.9372284
+  m_Height: 0.73053974
   m_Direction: 2
-  m_Center: {x: 0.069999985, y: 0.59, z: 0.14945772}
+  m_Center: {x: 0.069999985, y: 0.59, z: 0.04611337}
 --- !u!136 &136000013984171198
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -5459,6 +5459,6 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.19000001
-  m_Height: 0.9485008
+  m_Height: 0.74271244
   m_Direction: 2
-  m_Center: {x: 0.06999999, y: 0.19999999, z: 0.14382152}
+  m_Center: {x: 0.06999999, y: 0.19999999, z: 0.04092729}

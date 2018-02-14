@@ -51,9 +51,11 @@ namespace RootMotion.FinalIK {
 			/// Gets the current IK offset.
 			/// </summary>
 			public float IKOffset { get; private set; }
+            public Vector3 IKOffsetPosition { get; private set; }
 
 			private Grounding grounding;
-			private float lastTime, deltaTime;
+            private bool UseYOnly;
+            private float switchlerp = 0;
 			private Vector3 lastPosition;
 			private Quaternion toHitNormal, r;
 			private RaycastHit heelHit;
@@ -77,14 +79,13 @@ namespace RootMotion.FinalIK {
 				if (!initiated) return;
 				
 				lastPosition = transform.position;
-				lastTime = Time.deltaTime;
 			}
 
 			// Set everything to 0
 			public void Reset() {
 				lastPosition = transform.position;
-				lastTime = Time.deltaTime;
 				IKOffset = 0f;
+                IKOffsetPosition = Vector3.zero;
 				IKPosition = transform.position;
 				rotationOffset = Quaternion.identity;
 			}
@@ -94,15 +95,14 @@ namespace RootMotion.FinalIK {
 				if (!initiated) return;
 				if (grounding.maxStep <= 0) return;
 
-				deltaTime = Time.time - lastTime;
-				lastTime = Time.time;
-				if (deltaTime == 0f) return;
+				if (Time.deltaTime == 0f) return;
 
+                UseYOnly = true;
 				up = grounding.up;
 				heightFromGround = Mathf.Infinity;
 				
 				// Calculating velocity
-				velocity = (transform.position - lastPosition) / deltaTime;
+				velocity = (transform.position - lastPosition) / Time.deltaTime;
 				velocity = grounding.Flatten(velocity);
 				lastPosition = transform.position;
 
@@ -113,47 +113,68 @@ namespace RootMotion.FinalIK {
 				// Raycasting
 				switch(grounding.quality) {
 
-				// The fastest, single raycast
-				case Grounding.Quality.Fastest:
+				    // The fastest, single raycast
+				    case Grounding.Quality.Fastest:
 
-					RaycastHit predictedHit = GetRaycastHit(prediction);
-					SetFootToPoint(predictedHit.normal, predictedHit.point);
-                    groundLayer = predictedHit.collider.gameObject.layer;
+					    RaycastHit predictedHit = GetRaycastHit(prediction);
+					    SetFootToPoint(predictedHit.normal, predictedHit.point);
+                        groundLayer = predictedHit.collider.gameObject.layer;
                         groundObject = predictedHit.collider.gameObject.name;
-                    break;
+                        break;
 
-				// Medium, 3 raycasts
-				case Grounding.Quality.Simple:
+				    // Medium, 3 raycasts
+				    case Grounding.Quality.Simple:
 
-					heelHit = GetRaycastHit(Vector3.zero);
-					RaycastHit toeHit = GetRaycastHit(grounding.root.forward * grounding.footRadius + prediction);
-					RaycastHit sideHit = GetRaycastHit(grounding.root.right * grounding.footRadius * 0.5f);
+					    heelHit = GetRaycastHit(Vector3.zero);
+					    RaycastHit toeHit = GetRaycastHit(grounding.root.forward * grounding.footRadius + prediction);
+					    RaycastHit sideHit = GetRaycastHit(grounding.root.right * grounding.footRadius * 0.5f);
 					
-					Vector3 planeNormal = Vector3.Cross(toeHit.point - heelHit.point, sideHit.point - heelHit.point).normalized;
-					if (Vector3.Dot(planeNormal, up) < 0) planeNormal = -planeNormal;
+					    Vector3 planeNormal = Vector3.Cross(toeHit.point - heelHit.point, sideHit.point - heelHit.point).normalized;
+					    if (Vector3.Dot(planeNormal, up) < 0) planeNormal = -planeNormal;
 					
-					SetFootToPlane(planeNormal, heelHit.point, heelHit.point);
-                    groundLayer = heelHit.collider.gameObject.layer;
+					    SetFootToPlane(planeNormal, heelHit.point, heelHit.point);
+                        groundLayer = heelHit.collider.gameObject.layer;
                         groundObject = heelHit.collider.gameObject.name;
-                    break;
+                        break;
 				
-				// The slowest, raycast and a capsule cast
-				case Grounding.Quality.Best:
+				    // The slowest, raycast and a capsule cast
+				    case Grounding.Quality.Best:
 
-					heelHit = GetRaycastHit(Vector3.zero);
-					RaycastHit capsuleHit = GetCapsuleHit(prediction);
-
-					SetFootToPoint(capsuleHit.normal, capsuleHit.point);
-                        if (capsuleHit.collider != null)
+                        StepTry(Vector3.zero, prediction);
+                        float currentScan = 0;
+                        if(groundObject == "")
                         {
-                            groundLayer = capsuleHit.collider.gameObject.layer;
-                            groundObject = capsuleHit.collider.gameObject.name;
+                            RaycastHit hit = new RaycastHit();
+                            Physics.Raycast(transform.position - grounding.maxStep * up, grounding.root.forward, out hit, grounding.maxGapDistance * 2, grounding.layers);
+                            if(hit.collider != null)
+                            {
+                                StepTry(grounding.root.forward * (hit.distance + 0.01f), prediction);
+                                if (groundObject != "")
+                                {
+                                    if (isGrounded)
+                                    {
+                                        UseYOnly = false;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                Physics.Raycast(transform.position - grounding.maxStep * up, -grounding.root.forward, out hit, grounding.maxGapDistance * 2, grounding.layers);
+                                if (hit.collider != null)
+                                {
+                                    StepTry(-grounding.root.forward * (hit.distance + 0.01f), prediction);
+                                    if (groundObject != "")
+                                    {
+                                        if (isGrounded)
+                                        {
+                                            UseYOnly = false;
+                                        }
+                                    }
+                                }
+                            }
                         }
-                        else
-                        {
-                            groundObject = "";
-                        }
-                    break;
+                        SetFootToPoint(heelHit.normal, heelHit.point);
+                        break;
 				}
 
 				// Is the foot grounded?
@@ -164,25 +185,60 @@ namespace RootMotion.FinalIK {
                 }
 
                 float offsetTarget = stepHeightFromGround;
-				if (!grounding.rootGrounded) offsetTarget = 0f;
+                Vector3 offsetPosition = IKRaycast.position;
+				//if (!grounding.rootGrounded) offsetTarget = 0f;
 
                 //IKOffset = Interp.LerpValue(IKOffset, offsetTarget, grounding.footSpeed, grounding.footSpeed);
-                IKOffset = Mathf.Lerp(IKOffset, offsetTarget, deltaTime * grounding.footSpeed);
+                IKOffset = Mathf.Lerp(IKOffset, offsetTarget, Time.deltaTime * grounding.footSpeed);
+                IKOffsetPosition = Vector3.Lerp(IKOffsetPosition, offsetPosition, Time.deltaTime * grounding.footSpeed);
 
                 float legHeight = grounding.GetVerticalOffset(transform.position, grounding.root.position);
 				float currentMaxOffset = Mathf.Clamp(grounding.maxStep - legHeight, 0f, grounding.maxStep);
 
 				IKOffset = Mathf.Clamp(IKOffset, -currentMaxOffset, IKOffset);
+                IKOffsetPosition = new Vector3(IKOffsetPosition.x, Mathf.Clamp(IKOffsetPosition.y, -currentMaxOffset, IKOffsetPosition.y), IKOffsetPosition.z);
 
 				RotateFoot();
+                if (UseYOnly)
+                {
+                    if(switchlerp > 0)
+                    {
+                        switchlerp -= Time.deltaTime * grounding.GapSnapSpeed;
+                    }
+                }
+                else
+                {
+                    if(switchlerp < 1)
+                    {
+                        switchlerp += Time.deltaTime * grounding.GapSnapSpeed;
+                    }
+                }
 
+                switchlerp = Mathf.Clamp01(switchlerp);
 				// Update IK values
-				IKPosition = transform.position - up * IKOffset;
+				IKPosition = Vector3.Lerp(transform.position - up * IKOffset, IKOffsetPosition, switchlerp);
                 
 
 				float rW = grounding.footRotationWeight;
 				rotationOffset = rW >= 1? r: Quaternion.Slerp(Quaternion.identity, r, rW);
 			}
+
+            void StepTry(Vector3 Offset, Vector3 prediction)
+            {
+                heelHit = GetRaycastHit(Offset);
+                RaycastHit capsuleHit = GetCapsuleHit(prediction);
+
+                
+                if (heelHit.collider != null)
+                {
+                    groundLayer = heelHit.collider.gameObject.layer;
+                    groundObject = heelHit.collider.gameObject.name;
+                }
+                else
+                {
+                    groundObject = "";
+                }
+            }
 
 			// Gets the height from ground clamped between min and max step height
 			public float stepHeightFromGround {
@@ -222,7 +278,7 @@ namespace RootMotion.FinalIK {
 			// Rotates ground normal with respect to maxFootRotationAngle
 			private Vector3 RotateNormal(Vector3 normal) {
 				if (grounding.quality == Grounding.Quality.Best) return normal;
-				return Vector3.RotateTowards(up, normal, grounding.maxFootRotationAngle * Mathf.Deg2Rad, deltaTime);
+				return Vector3.RotateTowards(up, normal, grounding.maxFootRotationAngle * Mathf.Deg2Rad, Time.deltaTime);
 			}
 			
 			// Set foot height from ground relative to a point
@@ -263,7 +319,7 @@ namespace RootMotion.FinalIK {
 				Quaternion rotationOffsetTarget = GetRotationOffsetTarget();
 				
 				// Slerping the rotation offset
-				r = Quaternion.Slerp(r, rotationOffsetTarget, deltaTime * grounding.footRotationSpeed);
+				r = Quaternion.Slerp(r, rotationOffsetTarget, Time.deltaTime * grounding.footRotationSpeed);
 			}
 			
 			// Gets the target hit normal offset as a Quaternion
