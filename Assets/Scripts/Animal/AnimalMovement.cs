@@ -49,7 +49,11 @@ public class AnimalMovement : MonoBehaviour
 
         currentInput = currentAxis.control.value;
         if (FollowSpline != null)
+        {
+            if (FollowSpline.ForceMovement)
+                currentInput = 1;
             currentInput *= FollowSpline.InvertAxis ? -1 : 1;
+        }
 
         float[] speed = animal.CalculateMoveSpeed();
         moveVelocity += currentInput * Time.deltaTime * speed[0];

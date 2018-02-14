@@ -34,6 +34,7 @@ public class SplineMovement : MonoBehaviour
     public bool LowExit = true;
     public AxisAction MoveAxisKey;
     public bool InvertAxis = false;
+    public bool ForceMovement = false;
 
     public Vector3 IgnoreAxis = new Vector3(0, 1, 0);
     public bool DisableGravity;
