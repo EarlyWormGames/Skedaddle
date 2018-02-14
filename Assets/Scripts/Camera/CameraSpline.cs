@@ -18,7 +18,6 @@ public class CameraSpline : MonoBehaviour
     {
         if (Animal.CurrentAnimal != null)
         {
-            SplineMovement.Point first = null;
             float firstDist = -1;
             int firstIndex = 0;
             for (int i = 0; i < AnimalSpline.points.Length; ++i)
@@ -28,12 +27,10 @@ public class CameraSpline : MonoBehaviour
                 if (dist < firstDist || firstDist < 0)
                 {
                     firstIndex = i;
-                    first = AnimalSpline.points[i];
                     firstDist = dist;
                 }
             }
 
-            SplineMovement.Point second = null;
             float secondDist = -1;
             int secondIndex = firstIndex;
             for (int i = firstIndex == 0? 0 : firstIndex - 1; i < AnimalSpline.points.Length; ++i)
@@ -42,13 +39,26 @@ public class CameraSpline : MonoBehaviour
 
                 if ((dist < secondDist || secondDist < 0) && firstIndex != i)
                 {
-                    second = AnimalSpline.points[i];
                     secondDist = dist;
                     secondIndex = i;
                 }
             }
 
-            float t = firstDist / secondDist;
+            float t = firstDist / (firstDist + secondDist);
+            float coreDist = Vector3.Distance(AnimalSpline.GetPosition(firstIndex), AnimalSpline.GetPosition(secondIndex));
+            float ab = firstDist + secondDist;
+            float mult = (coreDist / ab);
+            t = t * mult;
+
+            SplineMovement.Point first = AnimalSpline.points[firstIndex];
+            SplineMovement.Point second = AnimalSpline.points[secondIndex];
+
+            if (firstIndex > secondIndex)
+            {
+                t = 1 - t;
+                first = AnimalSpline.points[secondIndex];
+                second = AnimalSpline.points[firstIndex];
+            }
 
             float splineT = Mathf.Lerp(first.time, second.time, t);
             transform.position = MySpline.GetPoint(splineT);
