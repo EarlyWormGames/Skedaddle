@@ -14,8 +14,10 @@ Shader "EW/DeferredNightVisionShader" {
 
 	Properties {
 		_MainTex ("Base (RGB) Trans (A)", 2D) = "white" {}
+		_CookieTex ("Cookie", 2D) = "white" {}
 		_NVColor ("NV Color", Color) = (0,1,0.1724138,0)
-		_LightSensitivityMultiplier ("SensitivityMultiplier", Range(0,4)) = 0
+		_LightSensitivityMultiplier ("SensitivityMultiplier", Range(2,4)) = 0
+		_CookieSensitivityMultiplier ("CookieMultiplier", Range(0, 2)) = 0
 	}
 	
 SubShader {
@@ -42,6 +44,7 @@ SubShader {
 			};
 
 			sampler2D _MainTex;
+			sampler2D _CookieTex;
 			sampler2D _CameraGBufferTexture0;
 			//NOTE: If you're super keen to optimize, change all these floats to fixeds.
 			float4 _MainTex_ST;
@@ -49,6 +52,7 @@ SubShader {
 			float4 _TargetWhiteColor;
 			float _BaseLightingContribution;
 			float _LightSensitivityMultiplier;
+			float _CookieSensitivityMultiplier;
 
 			v2f vert (appdata_t v)
 			{
@@ -63,6 +67,7 @@ SubShader {
 			{
 				//fixed4 is cheapest, half4 second, float4 expensive (but really doesn't matter here)
 				float4 col = tex2D(_MainTex, i.texcoord);
+				float4 Ccol = tex2D(_CookieTex, i.texcoord);
 				float4 dfse = tex2D(_CameraGBufferTexture0, i.texcoord);			
 				
 				//Get the luminance of the pixel				
@@ -83,6 +88,8 @@ SubShader {
 				col *= smoothstep(0.5,0.45,dist);
 				#endif				
 				
+				col.rgb *= Ccol * _CookieSensitivityMultiplier;
+
 				//Increase the brightness of all normal areas by a certain amount
 				col.rb = max (col.r - 0.75, 0)*4;
 				
