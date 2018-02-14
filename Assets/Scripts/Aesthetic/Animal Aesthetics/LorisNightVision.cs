@@ -1,33 +1,52 @@
 ﻿using UnityEngine;
-
+using UnityEngine.UI;
+using System;
 [ExecuteInEditMode]
 [AddComponentMenu("Image Effects/Night Vision")]
 
-public class NightVision1 : MonoBehaviour
+public class LorisNightVision : MonoBehaviour
 {
-    // public data
-    public Shader shader;
-    public Color luminence;
-    public float noiseFactor = 0.005f;
-    //private data
-    private Material mat;
+    public bool NightVisionOn = false;
+    public GameObject NightVisionObject;
+    public float TranssionSpeed = 1.0f;
 
-    //-----------------------------------------
-    // start 
+    private RawImage NV_Image;
+    private Material Temp_NV_Material;
+
+
+
+    private float NV_ActiveSensitivity = 0;
+    private float NV_SensitivityMin = 2;
+    private float NV_SensitivityMax = 4;
+
     void Start()
     {
-        shader = Shader.Find("Image Effects/Night Vision");
-        mat = new Material(shader);
-        mat.SetVector("lum", new Vector4(luminence.g, luminence.g, luminence.g, luminence.g));
-        mat.SetFloat("noiseFactor", noiseFactor);
+        NV_Image = NightVisionObject.GetComponent<RawImage>();
+        Temp_NV_Material = Instantiate(NV_Image.material);
+        NV_Image.material = Temp_NV_Material;
+
+        if (NightVisionOn)
+            NV_ActiveSensitivity = NV_SensitivityMin;
+        else
+            NV_ActiveSensitivity = NV_SensitivityMax;
+
+
     }
 
-    //-----------------------------------------
-    // Called by camera to apply image effect
-    void OnRenderImage(RenderTexture source, RenderTexture destination)
+    void Update()
     {
-        mat.SetFloat("time", Mathf.Sin(Time.time * Time.deltaTime));
-        Graphics.Blit(source, destination, mat);
+        if (NightVisionOn)
+        {
+            NV_ActiveSensitivity = NV_ActiveSensitivity - Time.deltaTime * TranssionSpeed;
+        }
+        else
+        {
+            NV_ActiveSensitivity = NV_ActiveSensitivity + Time.deltaTime * TranssionSpeed;
+        }
+
+        NV_ActiveSensitivity = Mathf.Clamp(NV_ActiveSensitivity, NV_SensitivityMin, NV_SensitivityMax);
+
+        Temp_NV_Material.SetFloat("_LightSensitivityMultiplier", NV_ActiveSensitivity);
     }
 
 }

@@ -327,7 +327,7 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 111396, guid: f98253888c8cae8498d5b4fe3c7b6f7e, type: 2}
   m_PrefabInternal: {fileID: 1387730984}
---- !u!114 &294537067
+--- !u!114 &294537065
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -335,12 +335,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 294537064}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c297c0287ab65f6459897df13270c3b8, type: 3}
+  m_Script: {fileID: 11500000, guid: 25f999d9c343dff40995593e3029a404, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_fTimeOfNight: 0
-  m_matEffectedMaterials:
-  - {fileID: 2100000, guid: 4dd0c8e5c3f6223498e8572dcbf32861, type: 2}
+  NightVisionOn: 0
+  NightVisionObject: {fileID: 533818517}
+  TranssionSpeed: 4
 --- !u!1 &304015471
 GameObject:
   m_ObjectHideFlags: 0
@@ -704,6 +704,11 @@ Transform:
   m_Father: {fileID: 1303157809}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &533818517 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1459152015525456, guid: 3002b47b72782b84a866b91ef0231d28,
+    type: 2}
+  m_PrefabInternal: {fileID: 322686331}
 --- !u!1 &541116364
 GameObject:
   m_ObjectHideFlags: 0
@@ -1504,11 +1509,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Spline: {fileID: 1160051005}
   NumPoints: 100
+  RegeneratePoints: 0
   HighExit: 1
   LowExit: 1
+  MoveAxisKey:
+    action: {fileID: 0}
+  InvertAxis: 0
   IgnoreAxis: {x: 0, y: 1, z: 0}
   DisableGravity: 0
-  MaxLength: 0
+  points: []
 --- !u!114 &1160051005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1568,6 +1577,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RequiredAnimal: 1
   Spline: {fileID: 1160051004}
+  RequiredKey:
+    action: {fileID: 0}
 --- !u!65 &1160051009
 BoxCollider:
   m_ObjectHideFlags: 0
