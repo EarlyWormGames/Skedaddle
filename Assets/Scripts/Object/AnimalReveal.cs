@@ -12,7 +12,7 @@ public class AnimalReveal : ActionObject
     public Transform m_tCenter;
 
     public AnimalCardShow m_CardShow;
-    public RotatingObject m_Rotator;
+    //public RotatingObject m_Rotator;
 
     //==================================
     //          Internal Vars
@@ -55,13 +55,13 @@ public class AnimalReveal : ActionObject
 
         m_aUnlockedAnimal.m_bCanBeSelected = true;
 
-        if (m_Rotator == null)
+        if (true)//m_Rotator == null)
         {
             m_aAnimator.SetBool("Raise", true);
         }
         else
         {
-            m_Rotator.DoActionOn();
+            //m_Rotator.DoActionOn();
         }
 
         SaveManager.UnlockAnimal(m_aUnlockedAnimal.m_eName);

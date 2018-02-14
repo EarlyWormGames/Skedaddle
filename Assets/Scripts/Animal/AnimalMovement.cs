@@ -67,8 +67,13 @@ public class AnimalMovement : MonoBehaviour
 
     void Move(float[] a_speeds)
     {
-        if (!animal.m_bSelected)
+        if (!animal.m_bSelected && FollowSpline == null)
             return;
+        if (FollowSpline != null)
+        {
+            if (!FollowSpline.ForceMovement && !animal.m_bSelected)
+                return;
+        }
 
         if (currentInput == 0)
         {

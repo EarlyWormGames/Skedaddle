@@ -17,6 +17,8 @@ MonoBehaviour:
   - {fileID: 114552692680613328}
   - {fileID: 114697485102394638}
   - {fileID: 114849224920998010}
+  - {fileID: 114635399481819864}
+  - {fileID: 114934836087056614}
   m_ControlSchemes:
   - m_Name: KeyboardMouse
     m_SerializableDeviceTypes:
@@ -141,6 +143,28 @@ MonoBehaviour:
       sensitivity: 1000
       snap: 1
       primaryIsButtonAxis: 0
+    - sources:
+      - controlIndex: 114
+        deviceType:
+          m_TypeName: UnityEngine.InputNew.Keyboard, NewInput, Version=0.0.0.0, Culture=neutral,
+            PublicKeyToken=null
+      deadZone: 0.3
+      buttonAxisSources: []
+      gravity: 1000
+      sensitivity: 1000
+      snap: 1
+      primaryIsButtonAxis: 0
+    - sources:
+      - controlIndex: 9
+        deviceType:
+          m_TypeName: UnityEngine.InputNew.Keyboard, NewInput, Version=0.0.0.0, Culture=neutral,
+            PublicKeyToken=null
+      deadZone: 0.3
+      buttonAxisSources: []
+      gravity: 1000
+      sensitivity: 1000
+      snap: 1
+      primaryIsButtonAxis: 0
   m_MapTypeName: MainMapping, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &114332852716363806
 MonoBehaviour:
@@ -177,6 +201,24 @@ MonoBehaviour:
     componentControlIndices: 
     controlType: 0
     name: Interact
+    defaultValue: 0
+--- !u!114 &114635399481819864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eba7b4b2e3ea134991ccbff5f47c2c8, type: 3}
+  m_Name: Restart
+  m_EditorClassIdentifier: 
+  m_ActionMap: {fileID: 11400000}
+  m_ActionIndex: 5
+  m_ControlData:
+    componentControlIndices: 
+    controlType: 0
+    name: Restart
     defaultValue: 0
 --- !u!114 &114697485102394638
 MonoBehaviour:
@@ -231,4 +273,22 @@ MonoBehaviour:
     componentControlIndices: 
     controlType: 0
     name: LeftRightButton
+    defaultValue: 0
+--- !u!114 &114934836087056614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eba7b4b2e3ea134991ccbff5f47c2c8, type: 3}
+  m_Name: NextAnimal
+  m_EditorClassIdentifier: 
+  m_ActionMap: {fileID: 11400000}
+  m_ActionIndex: 6
+  m_ControlData:
+    componentControlIndices: 
+    controlType: 0
+    name: NextAnimal
     defaultValue: 0

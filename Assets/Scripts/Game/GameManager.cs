@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Analytics;
+using UnityEngine.InputNew;
 using UnityEngine.SceneManagement;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,8 @@ public class GameManager : Singleton<GameManager>
     public bool m_bUseDoF = true;
     public string[] m_asDebugScenes;
     public string[] m_asNonGameScenes;
+
+    public MainMapping input;
 
     private bool m_bDoOnce = false;
 
@@ -28,6 +31,7 @@ public class GameManager : Singleton<GameManager>
         DontDestroy();
         SceneManager.sceneLoaded += SceneLoaded;
         SceneLoaded(SceneManager.GetActiveScene(), LoadSceneMode.Single);
+        input = GetComponent<PlayerInput>().GetActions<MainMapping>();
     }
 
     void SceneLoaded(Scene a_scene, LoadSceneMode a_mode)
@@ -42,7 +46,9 @@ public class GameManager : Singleton<GameManager>
     // Update is called once per frame
     void Update()
     {
-        //m_fGameTimer += Time.deltaTime;
+#if !UNITY_EDITOR
+        m_fGameTimer += Time.deltaTime;
+#endif
 
         if (m_bDoOnce)
         {
@@ -59,10 +65,10 @@ public class GameManager : Singleton<GameManager>
             m_bDoOnce = false;
         }
 
-        //if (Keybinding.GetKeyDown("Restart"))
-        //{
-        //    EWApplication.ReloadLevel();
-        //}
+        if (input.restart.wasJustPressed)
+        {
+            EWApplication.ReloadLevel();
+        }
     }
 
     void OnDestroy()

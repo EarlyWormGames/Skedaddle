@@ -58,10 +58,10 @@ public class AnimalController : Singleton<AnimalController>
         //    ChangeAnimal(m_iSelectedNumber - 1);
         //}
         //
-        //if (Keybinding.GetKeyDown("NextAnimal") || Controller.GetButtonDown(ControllerButtons.RightShoulder))
-        //{
-        //    ChangeAnimal(m_iSelectedNumber + 1);
-        //}
+        if (GameManager.Instance.input.nextAnimal.wasJustPressed)
+        {
+            ChangeAnimal(m_iSelectedNumber + 1);
+        }
 
         for (int i = 1; i <= 5; ++i)
         {
