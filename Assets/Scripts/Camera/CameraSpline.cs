@@ -18,49 +18,99 @@ public class CameraSpline : MonoBehaviour
     {
         if (Animal.CurrentAnimal != null)
         {
-            float firstDist = -1;
+            float distance = -1;
             int firstIndex = 0;
             for (int i = 0; i < AnimalSpline.points.Length; ++i)
             {
                 float dist = Vector3.Distance(Animal.CurrentAnimal.transform.position, AnimalSpline.GetPosition(i));
 
-                if (dist < firstDist || firstDist < 0)
+                if (dist < distance || distance < 0)
                 {
                     firstIndex = i;
-                    firstDist = dist;
+                    distance = dist;
                 }
             }
 
-            float secondDist = -1;
-            int secondIndex = firstIndex;
-            for (int i = firstIndex == 0? 0 : firstIndex - 1; i < AnimalSpline.points.Length; ++i)
-            {
-                float dist = Vector3.Distance(Animal.CurrentAnimal.transform.position, AnimalSpline.GetPosition(i));
+            SplineMovement.Point startPoint = null, endPoint = null;
 
-                if ((dist < secondDist || secondDist < 0) && firstIndex != i)
+            Vector3 AB = Vector3.zero;
+            Vector3 XB = Vector3.zero;
+
+            if (firstIndex != 0 && firstIndex < AnimalSpline.points.Length - 1)
+            {
+                AB = AnimalSpline.GetPosition(firstIndex) - AnimalSpline.GetPosition(firstIndex - 1);
+                XB = AnimalSpline.GetPosition(firstIndex) - Animal.CurrentAnimal.transform.position;
+
+                float dot = Vector3.Dot(AB.normalized, XB.normalized);
+
+                if (dot < 0)
                 {
-                    secondDist = dist;
-                    secondIndex = i;
+                    startPoint = AnimalSpline.points[firstIndex];
+                    endPoint = AnimalSpline.points[firstIndex + 1];
+                }
+                else
+                {
+                    startPoint = AnimalSpline.points[firstIndex - 1];
+                    endPoint = AnimalSpline.points[firstIndex];
+                }
+            }
+            else
+            {
+                if (firstIndex == 0)
+                {
+                    startPoint = AnimalSpline.points[firstIndex];
+                    endPoint = AnimalSpline.points[firstIndex + 1];
+
+                    AB = AnimalSpline.GetPosition(endPoint) - AnimalSpline.GetPosition(startPoint);
+                    XB = AnimalSpline.GetPosition(endPoint) - Animal.CurrentAnimal.transform.position;
+
+                    float dot = Vector3.Dot(AB.normalized, XB.normalized);
+
+                    if (dot <= 0)
+                    {
+                        transform.position = MySpline.GetPoint(0);
+                        return;
+                    }
+                }
+                else
+                {
+                    startPoint = AnimalSpline.points[firstIndex - 1];
+                    endPoint = AnimalSpline.points[firstIndex];
+
+                    AB = AnimalSpline.GetPosition(endPoint) - AnimalSpline.GetPosition(startPoint);
+                    XB = AnimalSpline.GetPosition(endPoint) - Animal.CurrentAnimal.transform.position;
+
+                    float dot = Vector3.Dot(AB.normalized, XB.normalized);
+
+                    if (dot <= 0)
+                    {
+                        transform.position = MySpline.GetPoint(1);
+                        return;
+                    }
                 }
             }
 
-            float t = firstDist / (firstDist + secondDist);
-            float coreDist = Vector3.Distance(AnimalSpline.GetPosition(firstIndex), AnimalSpline.GetPosition(secondIndex));
-            float ab = firstDist + secondDist;
-            float mult = (coreDist / ab);
-            t = t * mult;
+            float firstDist = Vector3.Distance(Animal.CurrentAnimal.transform.position, AnimalSpline.GetPosition(startPoint));
+            float secondDist = Vector3.Distance(Animal.CurrentAnimal.transform.position, AnimalSpline.GetPosition(endPoint));
 
-            SplineMovement.Point first = AnimalSpline.points[firstIndex];
-            SplineMovement.Point second = AnimalSpline.points[secondIndex];
+            AB = AnimalSpline.GetPosition(endPoint) - AnimalSpline.GetPosition(startPoint);
+            XB = AnimalSpline.GetPosition(endPoint) - Animal.CurrentAnimal.transform.position;
 
-            if (firstIndex > secondIndex)
-            {
-                t = 1 - t;
-                first = AnimalSpline.points[secondIndex];
-                second = AnimalSpline.points[firstIndex];
-            }
+            float angle = Vector3.Angle(AB, XB);
+            angle = Mathf.Cos(angle * Mathf.Deg2Rad);
 
-            float splineT = Mathf.Lerp(first.time, second.time, t);
+            float a = angle * XB.magnitude;
+
+            if (a < 0)
+                a *= -1;
+
+            float t = 1 - (a / AB.magnitude);
+            //float coreDist = Vector3.Distance(AnimalSpline.GetPosition(startPoint.index), AnimalSpline.GetPosition(endPoint.index));
+            //float ab = firstDist + secondDist;
+            //float mult = (coreDist / ab);
+            //t = t / mult;
+            
+            float splineT = Mathf.Lerp(startPoint.time, endPoint.time, t);
             transform.position = MySpline.GetPoint(splineT);
         }
     }

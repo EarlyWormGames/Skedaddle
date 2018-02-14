@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -4195,7 +4195,7 @@ GameObject:
   - component: {fileID: 197658705}
   - component: {fileID: 197658704}
   m_Layer: 0
-  m_Name: AnimalSplineLevel (1)
+  m_Name: CameraSpline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4218,9 +4218,12 @@ MonoBehaviour:
   points:
   - {x: 1, y: 0, z: 0}
   - {x: 2, y: 0, z: 0}
-  - {x: 40.454758, y: 0, z: 0}
-  - {x: 41.454758, y: 0, z: 0}
-  modes: 0000000000000000
+  - {x: 18.880169, y: 0, z: 0}
+  - {x: 19.880169, y: 0, z: 0}
+  - {x: 23.80944, y: -1.985139, z: 0}
+  - {x: 39.76307, y: 3.3541794, z: 0}
+  - {x: 40.76307, y: 0, z: 0}
+  modes: 000000000000000000000000
   loop: 0
 --- !u!4 &197658705
 Transform:
@@ -4233,7 +4236,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &250287065
 GameObject:
@@ -4786,7 +4789,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MySpline: {fileID: 197658704}
-  AnimalSpline: {fileID: 457571525}
+  AnimalSpline: {fileID: 1104794225}
 --- !u!1 &443941778
 GameObject:
   m_ObjectHideFlags: 0
@@ -4828,112 +4831,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &457571524
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 457571527}
-  - component: {fileID: 457571526}
-  - component: {fileID: 457571525}
-  m_Layer: 0
-  m_Name: AnimalSplineLevel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &457571525
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 457571524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 576a420f9a8e3f24fb0c7e263d232988, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Spline: {fileID: 457571526}
-  NumPoints: 10
-  RegeneratePoints: 0
-  HighExit: 1
-  LowExit: 1
-  MoveAxisKey:
-    action: {fileID: 0}
-  InvertAxis: 0
-  IgnoreAxis: {x: 0, y: 1, z: 0}
-  DisableGravity: 0
-  points:
-  - current: {x: 1, y: 0, z: 0}
-    totalDistance: 0
-    time: 0
-  - current: {x: 2.348732, y: 0, z: 0}
-    totalDistance: 1.348732
-    time: 0.1
-  - current: {x: 5.4952927, y: 0, z: 0}
-    totalDistance: 4.4952927
-    time: 0.2
-  - current: {x: 9.990227, y: 0, z: 0}
-    totalDistance: 8.990227
-    time: 0.3
-  - current: {x: 15.384075, y: 0, z: 0}
-    totalDistance: 14.384075
-    time: 0.4
-  - current: {x: 21.227379, y: 0, z: 0}
-    totalDistance: 20.227379
-    time: 0.5
-  - current: {x: 27.070683, y: 0, z: 0}
-    totalDistance: 26.070683
-    time: 0.6
-  - current: {x: 32.46453, y: 0, z: 0}
-    totalDistance: 31.46453
-    time: 0.7
-  - current: {x: 36.959465, y: 0, z: 0}
-    totalDistance: 35.959465
-    time: 0.8
-  - current: {x: 40.106018, y: 0, z: 0}
-    totalDistance: 39.106018
-    time: 0.9
-  - current: {x: 41.454758, y: 0, z: 0}
-    totalDistance: 40.454758
-    time: 1
---- !u!114 &457571526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 457571524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dd1b4d79b499e14b8257323e4d1d8bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DrawTangents: 0
-  AllowReverse: 1
-  splineCount: 1
-  points:
-  - {x: 1, y: 0, z: 0}
-  - {x: 2, y: 0, z: 0}
-  - {x: 40.454758, y: 0, z: 0}
-  - {x: 41.454758, y: 0, z: 0}
-  modes: 0000000000000000
-  loop: 0
---- !u!4 &457571527
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 457571524}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 32.83, y: -1.4, z: 9.98}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 18
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &472213281
 GameObject:
   m_ObjectHideFlags: 0
@@ -10554,6 +10451,166 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1104794222
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1104794224}
+  - component: {fileID: 1104794223}
+  - component: {fileID: 1104794225}
+  m_Layer: 0
+  m_Name: AnimalSpline
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1104794223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1104794222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dd1b4d79b499e14b8257323e4d1d8bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DrawTangents: 0
+  AllowReverse: 1
+  splineCount: 1
+  points:
+  - {x: 1, y: 0, z: 0}
+  - {x: 2, y: 0, z: 0}
+  - {x: 18.880169, y: 0, z: 0}
+  - {x: 19.880169, y: 0, z: 0}
+  - {x: 23.80944, y: 0, z: 0}
+  - {x: 39.76307, y: 0, z: 0}
+  - {x: 40.76307, y: 0, z: 0}
+  modes: 000000000000000000000000
+  loop: 0
+--- !u!4 &1104794224
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1104794222}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 32.83, y: -1.4, z: 9.99}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1104794225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1104794222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 576a420f9a8e3f24fb0c7e263d232988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Spline: {fileID: 1104794223}
+  NumPoints: 20
+  RegeneratePoints: 0
+  HighExit: 1
+  LowExit: 1
+  MoveAxisKey:
+    action: {fileID: 0}
+  InvertAxis: 0
+  IgnoreAxis: {x: 0, y: 1, z: 0}
+  DisableGravity: 0
+  points:
+  - current: {x: 1, y: 0, z: 0}
+    totalDistance: 0
+    time: 0
+    index: 0
+  - current: {x: 1.7446442, y: 0, z: 0}
+    totalDistance: 0.74464417
+    time: 0.05
+    index: 1
+  - current: {x: 3.2515373, y: 0, z: 0}
+    totalDistance: 2.2515373
+    time: 0.1
+    index: 2
+  - current: {x: 5.3301163, y: 0, z: 0}
+    totalDistance: 4.3301163
+    time: 0.15
+    index: 3
+  - current: {x: 7.7898216, y: 0, z: 0}
+    totalDistance: 6.7898216
+    time: 0.2
+    index: 4
+  - current: {x: 10.440086, y: 0, z: 0}
+    totalDistance: 9.440086
+    time: 0.25
+    index: 5
+  - current: {x: 13.090351, y: 0, z: 0}
+    totalDistance: 12.090351
+    time: 0.3
+    index: 6
+  - current: {x: 15.550053, y: 0, z: 0}
+    totalDistance: 14.550053
+    time: 0.35
+    index: 7
+  - current: {x: 17.628632, y: 0, z: 0}
+    totalDistance: 16.628632
+    time: 0.4
+    index: 8
+  - current: {x: 19.13552, y: 0, z: 0}
+    totalDistance: 18.13552
+    time: 0.45
+    index: 9
+  - current: {x: 19.880169, y: 0, z: 0}
+    totalDistance: 18.880169
+    time: 0.5
+    index: 10
+  - current: {x: 21.3927, y: 0, z: 0}
+    totalDistance: 20.3927
+    time: 0.55
+    index: 11
+  - current: {x: 23.464832, y: 0, z: 0}
+    totalDistance: 22.464832
+    time: 0.6
+    index: 12
+  - current: {x: 25.934685, y: 0, z: 0}
+    totalDistance: 24.934685
+    time: 0.65
+    index: 13
+  - current: {x: 28.640396, y: 0, z: 0}
+    totalDistance: 27.640396
+    time: 0.7
+    index: 14
+  - current: {x: 31.42009, y: 0, z: 0}
+    totalDistance: 30.42009
+    time: 0.75
+    index: 15
+  - current: {x: 34.111923, y: 0, z: 0}
+    totalDistance: 33.111923
+    time: 0.8
+    index: 16
+  - current: {x: 36.554, y: 0, z: 0}
+    totalDistance: 35.554
+    time: 0.85
+    index: 17
+  - current: {x: 38.584457, y: 0, z: 0}
+    totalDistance: 37.584457
+    time: 0.9
+    index: 18
+  - current: {x: 40.041435, y: 0, z: 0}
+    totalDistance: 39.041435
+    time: 0.95
+    index: 19
+  - current: {x: 40.76307, y: 0, z: 0}
+    totalDistance: 39.76307
+    time: 1
+    index: 20
 --- !u!1 &1114481191
 GameObject:
   m_ObjectHideFlags: 0
@@ -10722,36 +10779,47 @@ MonoBehaviour:
   - current: {x: 0.6877785, y: 0, z: 0}
     totalDistance: 0
     time: 0
+    index: 0
   - current: {x: 1.3722763, y: 0, z: -0.050269127}
     totalDistance: 0.6863412
     time: 0
+    index: 0
   - current: {x: 1.797287, y: 0, z: -0.2006588}
     totalDistance: 1.1371751
     time: 0
+    index: 0
   - current: {x: 2.025692, y: 0, z: -0.42119312}
     totalDistance: 1.4546719
     time: 0
+    index: 0
   - current: {x: 2.1203728, y: 0, z: -0.681901}
     totalDistance: 1.7320399
     time: 0
+    index: 0
   - current: {x: 2.1442108, y: 0, z: -0.9528065}
     totalDistance: 2.003992
     time: 0
+    index: 0
   - current: {x: 2.1600952, y: 0, z: -1.2039366}
     totalDistance: 2.255624
     time: 0
+    index: 0
   - current: {x: 2.2308998, y: 0, z: -1.4053164}
     totalDistance: 2.4690886
     time: 0
+    index: 0
   - current: {x: 2.4195137, y: 0, z: -1.5269737}
     totalDistance: 2.693534
     time: 0
+    index: 0
   - current: {x: 2.7888145, y: 0, z: -1.5389328}
     totalDistance: 3.0630283
     time: 0
+    index: 0
   - current: {x: 3.4016914, y: 0, z: -1.4112215}
     totalDistance: 3.68907
     time: 0
+    index: 0
 --- !u!114 &1160051005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15010,7 +15078,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 423376, guid: f98253888c8cae8498d5b4fe3c7b6f7e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 53.789
+      value: 71.58
       objectReference: {fileID: 0}
     - target: {fileID: 423376, guid: f98253888c8cae8498d5b4fe3c7b6f7e, type: 2}
       propertyPath: m_LocalPosition.y
@@ -17444,36 +17512,47 @@ MonoBehaviour:
   - current: {x: 0.6877785, y: 0, z: -0.000000059604645}
     totalDistance: 0
     time: 0
+    index: 0
   - current: {x: 1.3722773, y: 0, z: -0.0502702}
     totalDistance: 0.68634224
     time: 0
+    index: 0
   - current: {x: 1.797288, y: 0, z: -0.20065701}
     totalDistance: 1.1371751
     time: 0
+    index: 0
   - current: {x: 2.025692, y: 0, z: -0.4211924}
     totalDistance: 1.454672
     time: 0
+    index: 0
   - current: {x: 2.1203728, y: 0, z: -0.68190026}
     totalDistance: 1.73204
     time: 0
+    index: 0
   - current: {x: 2.1442118, y: 0, z: -0.9528048}
     totalDistance: 2.0039914
     time: 0
+    index: 0
   - current: {x: 2.1600943, y: 0, z: -1.2039378}
     totalDistance: 2.255626
     time: 0
+    index: 0
   - current: {x: 2.2308998, y: 0, z: -1.4053156}
     totalDistance: 2.469089
     time: 0
+    index: 0
   - current: {x: 2.4195127, y: 0, z: -1.526974}
     totalDistance: 2.6935341
     time: 0
+    index: 0
   - current: {x: 2.7888155, y: 0, z: -1.538933}
     totalDistance: 3.0630305
     time: 0
+    index: 0
   - current: {x: 3.4016914, y: 0, z: -1.4112208}
     totalDistance: 3.6890714
     time: 0
+    index: 0
 --- !u!114 &2144303971
 MonoBehaviour:
   m_ObjectHideFlags: 0

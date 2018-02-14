@@ -11,13 +11,16 @@ public class SplineMovement : MonoBehaviour
         public Vector3 current;
         public float totalDistance;
         public float time;
+        public int index;
 
-        public float SetPoint(Vector3 current, Vector3 next, float distanceTraveled, float time)
+        public float SetPoint(Vector3 current, Vector3 next, float distanceTraveled, float time, int index)
         {
             this.current = next;
             float distance = (next - current).magnitude;
             this.totalDistance = distanceTraveled + distance;
             this.time = time;
+            this.index = index;
+
             return distanceTraveled + distance;
         }
     }
@@ -61,7 +64,7 @@ public class SplineMovement : MonoBehaviour
             Vector3 current = m_Spline.GetPoint(i / (float)NumPoints);
             current = m_Spline.transform.InverseTransformPoint(current);
             points[i] = new Point();
-            MaxLength = points[i].SetPoint(last, current, MaxLength, i / (float)NumPoints);
+            MaxLength = points[i].SetPoint(last, current, MaxLength, i / (float)NumPoints, i);
             last = current;
         }
 
@@ -90,6 +93,11 @@ public class SplineMovement : MonoBehaviour
             return m_Spline.transform.position;
 
         return m_Spline.transform.TransformPoint(points[index].current);
+    }
+
+    public Vector3 GetPosition(Point point)
+    {
+        return GetPosition(point.index);
     }
 
     private void OnDrawGizmosSelected()
