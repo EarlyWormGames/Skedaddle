@@ -82,6 +82,7 @@ public class PPObject : ActionObject
 
     public override void Detach()
     {
+        base.Detach();
         m_aCurrentAnimal.m_bPullingObject = false;
         m_aCurrentAnimal.m_oCurrentObject = null;
 

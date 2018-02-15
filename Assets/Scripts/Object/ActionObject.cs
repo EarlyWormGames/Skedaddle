@@ -45,6 +45,7 @@ public class ActionObject : MonoBehaviour
 
     [Header("Events")]
     public UnityEvent OnDoAction;
+    public UnityEvent OnDetach;
     public UnityEvent OnAnimalEnter;
     public UnityEvent OnAnimalExit;
     public UnityEvent OnWrongAnimalEnter;
@@ -231,7 +232,10 @@ public class ActionObject : MonoBehaviour
     public virtual void DoActionOn() { }
     public virtual void DoActionOff() { }
 
-    public virtual void Detach() { }
+    public virtual void Detach()
+    {
+        OnDetach.Invoke();
+    }
 
     public void SetTimer(bool a_Run)
     {

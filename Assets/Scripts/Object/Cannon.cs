@@ -129,7 +129,7 @@ public class Cannon : ActionObject
         OnShoot.Invoke();
     }
 
-    void SplineEnd()
+    void SplineEnd(BezierSplineFollower sender)
     {
         loris.m_tCollider.gameObject.layer = LayerMask.NameToLayer("Animal");
 

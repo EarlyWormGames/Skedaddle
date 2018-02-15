@@ -77,6 +77,7 @@ public class Lever : ActionObject
 
     public override void Detach()
     {
+        base.Detach();
         m_aCurrentAnimal.SetDirection(FACING_DIR.NONE);
         m_aCurrentAnimal.m_oCurrentObject = null;
         m_aCurrentAnimal = null;

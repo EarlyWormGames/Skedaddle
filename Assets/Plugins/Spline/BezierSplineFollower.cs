@@ -9,9 +9,10 @@ public enum BezierControlPointMode
     Mirrored
 }
 
-[RequireComponent(typeof(BezierSpline))]
 public class BezierSplineFollower : MonoBehaviour
 {
+    public class FollowerEvent : UnityEvent<BezierSplineFollower> { }
+
     public enum eLoopType
     {
         None,
@@ -28,7 +29,7 @@ public class BezierSplineFollower : MonoBehaviour
     public bool m_FollowOnStart = false;
     public bool m_Lookat = false;
 
-    public UnityEvent OnPathEnd;
+    public FollowerEvent OnPathEnd;
 
 
     private int m_iLoopCount = 0;
@@ -62,7 +63,7 @@ public class BezierSplineFollower : MonoBehaviour
                         {
                             m_bRunning = false;
                             m_fTime = 0;
-                            OnPathEnd.Invoke();
+                            OnPathEnd.Invoke(this);
                             break;
                         }
                     case eLoopType.Loop:
@@ -72,7 +73,7 @@ public class BezierSplineFollower : MonoBehaviour
                             {
                                 m_bRunning = false;
                                 m_fTime = 0;
-                                OnPathEnd.Invoke();
+                                OnPathEnd.Invoke(this);
                             }
                             else
                             {
@@ -87,7 +88,7 @@ public class BezierSplineFollower : MonoBehaviour
                             {
                                 m_bRunning = false;
                                 m_fTime = 0;
-                                OnPathEnd.Invoke();
+                                OnPathEnd.Invoke(this);
                             }
                             else
                             {

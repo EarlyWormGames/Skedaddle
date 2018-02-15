@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LadderObject : ActionObject
 {
-    public bool LowExit, HighExit;
+    public bool LowExit = true, HighExit = true;
     public float RotateSpeed = 5;
     public ActionObject TopTransition, BottomTransition;
     public Vector3 IgnoreAxes = new Vector3(1, 0, 1);
@@ -142,6 +142,7 @@ public class LadderObject : ActionObject
         if (!TryDetach())
             return;
 
+        base.DoAction();
         m_aCurrentAnimal = Animal.CurrentAnimal;
         m_aCurrentAnimal.m_oCurrentObject = this;
         m_aCurrentAnimal.transform.SetParent(transform);
@@ -160,6 +161,7 @@ public class LadderObject : ActionObject
 
     public override void Detach()
     {
+        base.Detach();
         moveVelocity = 0;
 
         m_aCurrentAnimal.m_oCurrentObject = null;
