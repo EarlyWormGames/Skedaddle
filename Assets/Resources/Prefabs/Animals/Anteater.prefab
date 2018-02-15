@@ -1281,8 +1281,8 @@ GameObject:
   - component: {fileID: 446564}
   - component: {fileID: 5404774}
   - component: {fileID: 11418200}
-  - component: {fileID: 11460120}
   - component: {fileID: 114000012165987014}
+  - component: {fileID: 114776052870564358}
   m_Layer: 8
   m_Name: Anteater
   m_TagString: Animal
@@ -3561,16 +3561,16 @@ MonoBehaviour:
   m_goIKSwitch: {fileID: 127790}
   m_tJointRoot: {fileID: 443276}
   m_tCollider: {fileID: 4000010847711744}
-  m_fWalkSpeed: 30
-  m_fTopSpeed: 1.5
-  m_fPushTopMult: 0.75
+  m_fWalkSpeed: 0.3
+  m_fTopSpeed: 0.5
   m_fPullSpeedMult: 0.5
   m_fFallSpeedMult: 0.5
-  m_fRunSpeedMult: 1.5
   m_fTurnSpeedMult: 0.2
   m_fTurnAxis: 0
   m_fRotSpeed: 4.5
   m_fSplineRotSpeed: 1
+  m_fWalkAnimMult: 20
+  m_fPushAnimMult: 5
   m_fForwardRotation: 180
   m_fBackRotation: 0
   m_fLeftRotation: 270
@@ -3585,9 +3585,6 @@ MonoBehaviour:
     m_Bits: 4258298589
   m_atGroundCheckPoints: {fileID: 406460}
   m_atPushOffCheckPoint: {fileID: 0}
-  m_v3WalkingOffset: {x: 0.08, y: 0.39, z: 0}
-  m_v3WalkingSize: {x: 0.42, y: 0.5, z: 1.16}
-  m_fWalkingDistance: 0.2
   m_XBuffer: 1
   m_YBuffer: 1
   m_fMaxFallDist: 4.31
@@ -3736,18 +3733,6 @@ MonoBehaviour:
     maintainRotationWeight: 0
     bendModifierWeight: 1
     bendGoal: {fileID: 0}
---- !u!114 &11460120
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 170866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5d6c7ad8be4ae64ab3daaf81be7e2b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_fStopDist: 0.1
 --- !u!114 &11464442
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5438,6 +5423,25 @@ MonoBehaviour:
       length: 0
       sqrMag: 0
       axis: {x: -0.5407459, y: 0.084136106, z: 0.00000007788764}
+--- !u!114 &114776052870564358
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 170866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8b8b7cc5a8d9d54695ad890164f0baa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DecelerationRate: 0.1
+  MoveMin: 0.01
+  ForwardDictator: {fileID: 498468}
+  FollowSpline: {fileID: 0}
+  RotateLerpSpeed: 60
+  MoveAxisKey:
+    action: {fileID: 114741689078800838, guid: 80f2df7e1586bc94aa1bbea872f6ca3b, type: 2}
+  moveVelocity: 0
 --- !u!136 &136000010318450984
 CapsuleCollider:
   m_ObjectHideFlags: 1
