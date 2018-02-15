@@ -67,6 +67,11 @@ namespace RootMotion.FinalIK {
         [Tooltip("Speed which the IK snaps to edges over gaps.")]
         public float GapSnapSpeed = 2;
         /// <summary>
+        /// When over a gap, prioritise front raycast over back raycast.
+        /// </summary>
+        [Tooltip("When over a gap, prioritise front raycast over back raycast.")]
+        public bool PrioritiseForward;
+        /// <summary>
         /// Weight of rotating the feet to the ground normal offset.
         /// </summary>
         [Tooltip("Weight of rotating the feet to the ground normal offset.")]
@@ -269,12 +274,19 @@ namespace RootMotion.FinalIK {
             currentGroundLayer = -1;
             int raycastIndex = 0;
 
-			// Process legs
-			foreach (Leg leg in legs) {
-				leg.Process();
-
-				if (leg.IKOffset > lowestOffset) lowestOffset = leg.IKOffset;
-				if (leg.IKOffset < highestOffset) highestOffset = leg.IKOffset;
+            // Process legs
+            foreach (Leg leg in legs)
+            {
+                leg.Process();
+                if (leg.UseYOnly) { 
+                    if (leg.IKOffset > lowestOffset) lowestOffset = leg.IKOffset;
+                    if (leg.IKOffset < highestOffset) highestOffset = leg.IKOffset;
+                }
+                else
+                {
+                    if (leg.IKPosition.y > lowestOffset) lowestOffset = leg.transform.position.y - leg.IKPosition.y;
+                    if (leg.IKPosition.y < highestOffset) highestOffset = leg.transform.position.y - leg.IKPosition.y;
+                }
                 LegRaycast[raycastIndex] = leg.IKRaycast;
                 raycastIndex++;
 
