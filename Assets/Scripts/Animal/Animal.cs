@@ -85,6 +85,10 @@ public class Animal : MonoBehaviour
     public float            m_fRotSpeed = 1f;
     public float            m_fSplineRotSpeed = 1f;
 
+    [Header("Animation")]
+    public float            m_fWalkAnimMult = 20;
+    public float            m_fPushAnimMult = 5;
+
     [Header("Rotation Settings")]
     public float            m_fForwardRotation = 180;
     public float            m_fBackRotation = 0;

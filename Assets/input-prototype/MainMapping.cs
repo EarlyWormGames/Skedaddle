@@ -12,4 +12,5 @@ public class MainMapping : ActionMapInput {
 	public ButtonInputControl @leftRightButton { get { return (ButtonInputControl)this[4]; } }
 	public ButtonInputControl @restart { get { return (ButtonInputControl)this[5]; } }
 	public ButtonInputControl @nextAnimal { get { return (ButtonInputControl)this[6]; } }
+	public ButtonInputControl @sprint { get { return (ButtonInputControl)this[7]; } }
 }

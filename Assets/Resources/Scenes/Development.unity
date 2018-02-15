@@ -4252,7 +4252,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MySpline: {fileID: 197658704}
   AnimalSpline: {fileID: 1104794225}
-  MyAnimal: {fileID: 1387730986}
+  MyAnimals:
+  - {fileID: 1387730986}
+  - {fileID: 1560277043}
 --- !u!1 &250287065
 GameObject:
   m_ObjectHideFlags: 0
@@ -10514,7 +10516,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 576a420f9a8e3f24fb0c7e263d232988, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Spline: {fileID: 1104794223}
   NumPoints: 20
   RegeneratePoints: 0
   HighExit: 1
@@ -10759,7 +10760,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 576a420f9a8e3f24fb0c7e263d232988, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Spline: {fileID: 1160051005}
   NumPoints: 10
   RegeneratePoints: 0
   HighExit: 1
@@ -15698,6 +15698,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1560277043 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11411546, guid: 3e83ca2a442de284eb381eda929279e5,
+    type: 2}
+  m_PrefabInternal: {fileID: 1863653862}
+  m_Script: {fileID: 11500000, guid: 4dfe1531154c6f24593f34907d51e279, type: 3}
 --- !u!1 &1560632364
 GameObject:
   m_ObjectHideFlags: 0
@@ -16499,8 +16505,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abc0af1aa71582e4689411e385ac9043, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PointA: {fileID: 1451016783}
-  PointB: {fileID: 1325512752}
   Speed: 2
   MovingCurve:
     serializedVersion: 2
@@ -16520,6 +16524,16 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  ForwardEnd:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  BackwardEnd:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!23 &1829240126
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16650,6 +16664,48 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.0033963397, y: 0.37167013, z: -0.0016927198}
     m_Extent: {x: 0.06825611, y: 0.30321866, z: 0.067835815}
   m_DirtyAABB: 0
+--- !u!1001 &1863653862
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 488302, guid: 3e83ca2a442de284eb381eda929279e5, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 36.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 488302, guid: 3e83ca2a442de284eb381eda929279e5, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.847
+      objectReference: {fileID: 0}
+    - target: {fileID: 488302, guid: 3e83ca2a442de284eb381eda929279e5, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 10.014
+      objectReference: {fileID: 0}
+    - target: {fileID: 488302, guid: 3e83ca2a442de284eb381eda929279e5, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488302, guid: 3e83ca2a442de284eb381eda929279e5, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 488302, guid: 3e83ca2a442de284eb381eda929279e5, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488302, guid: 3e83ca2a442de284eb381eda929279e5, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 488302, guid: 3e83ca2a442de284eb381eda929279e5, type: 2}
+      propertyPath: m_RootOrder
+      value: 20
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 3e83ca2a442de284eb381eda929279e5, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1873566366
 GameObject:
   m_ObjectHideFlags: 0
@@ -17499,7 +17555,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 576a420f9a8e3f24fb0c7e263d232988, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Spline: {fileID: 2144303971}
   NumPoints: 10
   RegeneratePoints: 0
   HighExit: 1

@@ -6,19 +6,25 @@ public class CameraSpline : MonoBehaviour
 {
     public BezierSpline MySpline;
     public SplineMovement AnimalSpline;
-    public Animal MyAnimal;
+    public Animal[] MyAnimals;
 
     public static Vector3 CurrentPoint;
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
+    private Animal MyAnimal;
 
     // Update is called once per frame
     void Update()
     {
+        MyAnimal = null;
+        foreach (var item in MyAnimals)
+        {
+            if (item == Animal.CurrentAnimal)
+            {
+                MyAnimal = item;
+                break;
+            }
+        }
+
         if (MyAnimal == null)
             return;
 

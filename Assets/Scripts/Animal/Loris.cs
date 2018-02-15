@@ -15,9 +15,6 @@ public class Loris : Animal
     public Light[] m_lVisionLight = new Light[0];
     public float m_fOnIntensity = 1.68f;
     public float m_fLightSpeed = 1f;
-    public float m_fWalkAnimMult = 20;
-    public float m_fPushAnimMult = 5;
-
     public Vector2 m_v2IdleChangeTime;
 
     public float m_fDropTime = 0.3f;
