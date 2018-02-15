@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PPObject : ActionObject
 {
+    public bool MaintainY = false;
+
     private Rigidbody rig;
     private bool isKinematic;
     private float mass, drag, angularDrag;
@@ -13,6 +15,7 @@ public class PPObject : ActionObject
 
     private List<Collider> triggers = new List<Collider>();
     private bool waitOne = false;
+    private float startY;
 
     protected override void OnStart()
     {
@@ -43,6 +46,13 @@ public class PPObject : ActionObject
     {
         if (m_aCurrentAnimal != null)
         {
+            if (MaintainY)
+            {
+                var v3 = transform.position;
+                v3.y = startY;
+                transform.position = v3;
+            }
+
             if (input.interact.wasJustPressed && !waitOne)
                 Detach();
             waitOne = false;
@@ -60,6 +70,8 @@ public class PPObject : ActionObject
         }
 
         base.DoAction();
+        startY = transform.position.y;
+
         m_aCurrentAnimal = Animal.CurrentAnimal;
         m_aCurrentAnimal.m_bPullingObject = true;
         m_aCurrentAnimal.m_oCurrentObject = this;
