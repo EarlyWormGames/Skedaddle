@@ -23,6 +23,16 @@ public class LadderObject : ActionObject
     private bool moveDown = true, moveUp = true;
     private bool justEnter;
 
+    protected override void OnStart()
+    {
+        base.OnStart();
+
+        m_CanBeDetached = false;
+        m_CanDetach = false;
+        m_bBlocksMovement = true;
+        m_bBlocksTurn = true;
+    }
+
     protected override void OnCanTrigger()
     {
         if ((input.moveY.positive.wasJustPressed || input.moveY.negative.wasJustPressed || input.interact.wasJustPressed) && m_aCurrentAnimal == null)

@@ -17,6 +17,11 @@ public class ClimbJump : ActionObject
     protected override void OnStart()
     {
         base.OnStart();
+
+        m_CanBeDetached = false;
+        m_CanDetach = true;
+        m_bBlocksMovement = true;
+        m_bBlocksTurn = true;
     }
 
     protected override void OnCanTrigger()
@@ -28,7 +33,13 @@ public class ClimbJump : ActionObject
                 DoAction();
             }
         }
-        else
+    }
+
+    public override void AnimalEnter(Animal a_animal)
+    {
+        base.AnimalEnter(a_animal);
+
+        if (DoOnTrigger)
         {
             DoAction();
         }

@@ -15,6 +15,6 @@ public class AnimalTrigger : MonoBehaviour
 
     private void Update()
     {
-        col.enabled = parent.m_oCurrentObject == null;
+        //col.enabled = parent.m_oCurrentObject == null;
     }
 }

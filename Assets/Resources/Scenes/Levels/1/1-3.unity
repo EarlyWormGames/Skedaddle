@@ -2052,14 +2052,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 72
       objectReference: {fileID: 0}
-    - target: {fileID: 11409140, guid: 6ac26916394ca4e4caa5daf8346f4a48, type: 2}
-      propertyPath: m_bUseDoF
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11479158, guid: 6ac26916394ca4e4caa5daf8346f4a48, type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ac26916394ca4e4caa5daf8346f4a48, type: 2}
   m_IsPrefabParent: 0
@@ -3989,6 +3981,36 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 64551843}
   m_Mesh: {fileID: 4300008, guid: 478dcd6b40e199e4eacaf885517bf026, type: 3}
+--- !u!1 &64724210
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 64724211}
+  m_Layer: 0
+  m_Name: StartCameraSpline
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &64724211
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 64724210}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 26.39, y: -1.155, z: 6.3845005}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1297977073}
+  - {fileID: 347431864}
+  m_Father: {fileID: 0}
+  m_RootOrder: 136
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &66525056
 GameObject:
   m_ObjectHideFlags: 0
@@ -9599,7 +9621,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 423376, guid: f98253888c8cae8498d5b4fe3c7b6f7e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 28.62
+      value: 30.303
       objectReference: {fileID: 0}
     - target: {fileID: 423376, guid: f98253888c8cae8498d5b4fe3c7b6f7e, type: 2}
       propertyPath: m_LocalPosition.y
@@ -9629,24 +9651,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 48
       objectReference: {fileID: 0}
-    - target: {fileID: 108000011435722088, guid: f98253888c8cae8498d5b4fe3c7b6f7e,
-        type: 2}
-      propertyPath: m_Shadows.m_Type
-      value: 0
+    - target: {fileID: 11486266, guid: f98253888c8cae8498d5b4fe3c7b6f7e, type: 2}
+      propertyPath: m_fClimbSpeed
+      value: 0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 11486266, guid: f98253888c8cae8498d5b4fe3c7b6f7e, type: 2}
+      propertyPath: m_fClimbTopSpeed
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11486266, guid: f98253888c8cae8498d5b4fe3c7b6f7e, type: 2}
+      propertyPath: m_tPelvis
+      value: 
+      objectReference: {fileID: 1612883777}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f98253888c8cae8498d5b4fe3c7b6f7e, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &150833873 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11486266, guid: f98253888c8cae8498d5b4fe3c7b6f7e,
-    type: 2}
-  m_PrefabInternal: {fileID: 150833872}
-  m_Script: {fileID: 11500000, guid: 468a25c63db597e409a852a3ac4c854d, type: 3}
---- !u!1 &150833874 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 111396, guid: f98253888c8cae8498d5b4fe3c7b6f7e, type: 2}
-  m_PrefabInternal: {fileID: 150833872}
 --- !u!1 &151436121
 GameObject:
   m_ObjectHideFlags: 0
@@ -10403,24 +10422,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb48362aec8fc7f48bda2f762f6d819a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_sGPText: Press A to grab certain objects and interact with them
-  m_sKeyText: Press Action (Space) to grab certain objects and interact with them
-  m_atItems:
-  - gameObject: {fileID: 0}
-    type: {fileID: 0}
-    names:
-    - m_aPushingAnimal
-    values:
-    - type: Animal, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      f: 0
-      b: 0
-      i: 0
-      s: 
-      v2: {x: 0, y: 0}
-      v3: {x: 0, y: 0, z: 0}
-      o: {fileID: 150833873}
-    typeIndex: 1
-  m_bAnimalOnly: 1
 --- !u!65 &171453937
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10879,27 +10880,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81e32fb2570bfe44991ed89b19aad32d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_aRequiredSize: 0
-  m_aRequiredAnimal: 0
-  m_aMaximumSize: 0
-  m_aCurrentAnimal: {fileID: 0}
-  m_rBody: {fileID: 0}
-  m_GazeObject: {fileID: 0}
-  m_aSoundEvents: []
-  OnAnimalEnter:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnAnimalExit:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  m_bIsTop: 1
-  m_isFrayedRope: 0
-  m_rFrayedRope: {fileID: 0}
-  m_cEndClimb: {fileID: 1728138562}
 --- !u!65 &179651544
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11133,72 +11113,6 @@ MeshFilter:
 Transform:
   m_PrefabParentObject: {fileID: 400004, guid: e621c9fd0a24dd0438d3a29a6d9dbbbd, type: 3}
   m_PrefabInternal: {fileID: 1362960603}
---- !u!1 &189882043
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 198840, guid: 73594af5744a53644b56dc6589625700, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 189882044}
-  - component: {fileID: 189882045}
-  m_Layer: 0
-  m_Name: AutoClimbTrigger XS
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &189882044
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 473258, guid: 73594af5744a53644b56dc6589625700, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 189882043}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.49, y: 1.047, z: -0.23911762}
-  m_LocalScale: {x: 0.15954278, y: 0.4956322, z: 0.7445331}
-  m_Children:
-  - {fileID: 1944086277}
-  - {fileID: 276899689}
-  m_Father: {fileID: 255278101}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &189882045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 189882043}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1a92d34f0c7d474aaab1f944bd4482b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_aRequiredSize: 1
-  m_aRequiredAnimal: 1
-  m_aMaximumSize: 0
-  m_aCurrentAnimal: {fileID: 0}
-  m_rBody: {fileID: 0}
-  m_GazeObject: {fileID: 0}
-  m_aSoundEvents: []
-  OnAnimalEnter:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnAnimalExit:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  m_tAnchorPoint: {fileID: 1944086277}
-  m_fDirection: 4
-  m_FinishDirection: 0
-  m_aClimbingAnimal: {fileID: 0}
-  m_bDoOnTrigger: 0
-  m_bDoOnKeyPress: 0
-  m_TransitionTo: {fileID: 0}
 --- !u!1 &190003465
 GameObject:
   m_ObjectHideFlags: 0
@@ -12624,6 +12538,72 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 108
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &216607301
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 216607302}
+  - component: {fileID: 216607304}
+  - component: {fileID: 216607303}
+  m_Layer: 0
+  m_Name: upperspline
+  m_TagString: Untagged
+  m_Icon: {fileID: 4660412927644837186, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &216607302
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 216607301}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.9050007, y: 0.20950001, z: -2.3384995}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 551756833}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &216607303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 216607301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c1411ff7d2ea804fb8f36be7a8492f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnimalSpline: {fileID: 388528914}
+  IsDefaultSpline: 0
+  UseAnimalYSettings: 1
+  MyAnimals: 01000000
+--- !u!114 &216607304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 216607301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dd1b4d79b499e14b8257323e4d1d8bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DrawTangents: 0
+  AllowReverse: 1
+  splineCount: 1
+  points:
+  - {x: 4.305891, y: 0.7640815, z: 0}
+  - {x: 4.810087, y: 0.758684, z: 0}
+  - {x: 6.369177, y: 0.7753074, z: 0}
+  - {x: 6.603121, y: 0.7713496, z: 0}
+  modes: 0000000000000000
+  loop: 0
 --- !u!1 &217557524
 GameObject:
   m_ObjectHideFlags: 0
@@ -14672,6 +14652,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 255278101}
+  - component: {fileID: 255278102}
+  - component: {fileID: 255278103}
   m_Layer: 0
   m_Name: Ladder
   m_TagString: Untagged
@@ -14690,12 +14672,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1804834841}
-  - {fileID: 490207818}
   - {fileID: 2034802980}
-  - {fileID: 1363093791}
-  - {fileID: 1922291629}
-  - {fileID: 1016503366}
-  - {fileID: 189882044}
   - {fileID: 292600569}
   - {fileID: 1654257549}
   - {fileID: 1112077722}
@@ -14703,9 +14680,82 @@ Transform:
   - {fileID: 1514486781}
   - {fileID: 1189921704}
   - {fileID: 2075062312}
+  - {fileID: 1387816956}
+  - {fileID: 510559957}
+  - {fileID: 1512829109}
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &255278102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 255278100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9921df7f8ceb034389c73d0688258f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_aRequiredSize: 0
+  m_aRequiredAnimal: 1
+  m_aMaximumSize: 0
+  m_lAnimalsIn: []
+  m_rBody: {fileID: 0}
+  m_GazeObject: {fileID: 0}
+  m_aSoundEvents: []
+  OnDoAction:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnAnimalEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnAnimalExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnWrongAnimalEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnWrongAnimalExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  LowExit: 1
+  HighExit: 1
+  RotateSpeed: 5
+  TopTransition: {fileID: 1387816957}
+  BottomTransition: {fileID: 0}
+  IgnoreAxes: {x: 0, y: 0, z: 1}
+  Direction: 2
+  IsRope: 0
+  Points:
+  - {fileID: 510559957}
+  - {fileID: 1512829109}
+  moveVelocity: 0
+--- !u!54 &255278103
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 255278100}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &257060132
 GameObject:
   m_ObjectHideFlags: 0
@@ -15377,6 +15427,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1de84109141a1fb41a5295018df0d122, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &268233870
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1042661560396102, guid: 73594af5744a53644b56dc6589625700,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 268233871}
+  m_Layer: 0
+  m_Name: AutoClimbAnchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &268233871
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 4661234588656702, guid: 73594af5744a53644b56dc6589625700,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 268233870}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.92, y: 0.53, z: -0.007}
+  m_LocalScale: {x: 5.3496447, y: 1.6985928, z: 1.1463523}
+  m_Children: []
+  m_Father: {fileID: 1387816956}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &268627697
 GameObject:
   m_ObjectHideFlags: 0
@@ -15887,34 +15967,6 @@ MonoBehaviour:
     m_RotationOrder: 4
   m_fShowTime: 2
   m_fHideTime: 1
---- !u!1 &276899688
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 183808, guid: 73594af5744a53644b56dc6589625700, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 276899689}
-  m_Layer: 0
-  m_Name: AutoClimbFinish
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &276899689
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 494418, guid: 73594af5744a53644b56dc6589625700, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 276899688}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.51, y: 1.1116071, z: -0.0070003103}
-  m_LocalScale: {x: 5.3496447, y: 1.6985928, z: 1.1463523}
-  m_Children: []
-  m_Father: {fileID: 189882044}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &276966783
 GameObject:
   m_ObjectHideFlags: 0
@@ -17016,7 +17068,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 0.71072334}
   m_Children: []
   m_Father: {fileID: 255278101}
-  m_RootOrder: 7
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 6.372, y: -87.39001, z: -1.345}
 --- !u!23 &292600570
 MeshRenderer:
@@ -19852,9 +19904,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c1411ff7d2ea804fb8f36be7a8492f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MySpline: {fileID: 347431863}
   AnimalSpline: {fileID: 1297977071}
-  MyAnimal: {fileID: 150833873}
+  IsDefaultSpline: 1
+  UseAnimalYSettings: 1
+  MyAnimals: 01000000
 --- !u!114 &347431863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19872,8 +19925,8 @@ MonoBehaviour:
   points:
   - {x: 4.249131, y: 0, z: 0}
   - {x: 5.249131, y: 0, z: 0}
-  - {x: 12.377411, y: 0, z: 0}
-  - {x: 13.377411, y: 0, z: 0}
+  - {x: 6.692356, y: -0.1917888, z: 0}
+  - {x: 6.7233124, y: 0.31444716, z: 0}
   modes: 0000000000000000
   loop: 0
 --- !u!4 &347431864
@@ -19882,12 +19935,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 347431861}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26.39, y: -0.65, z: 4.294}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.505, z: -2.0905004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 134
+  m_Father: {fileID: 64724211}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &347838773
 Prefab:
@@ -21317,6 +21370,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 360843874}
   m_Mesh: {fileID: 4300060, guid: cecd7a1b3d3f1b04a96589cef167d3eb, type: 3}
+--- !u!1 &361001615
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 129198683}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 361001616}
+  m_Layer: 0
+  m_Name: Missing Prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &361001616
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 129198683}
+  m_GameObject: {fileID: 361001615}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 131
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &361062558
 GameObject:
   m_ObjectHideFlags: 0
@@ -23451,6 +23532,103 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 388257783}
   m_Mesh: {fileID: 4300000, guid: ac57c759c84ee15428195cd0d7a3eaf5, type: 3}
+--- !u!1 &388528913
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 388528916}
+  - component: {fileID: 388528915}
+  - component: {fileID: 388528914}
+  m_Layer: 0
+  m_Name: AnimalSpline (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 7240890024493199768, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &388528914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 388528913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 576a420f9a8e3f24fb0c7e263d232988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NumPoints: 5
+  RegeneratePoints: 0
+  HighExit: 1
+  LowExit: 1
+  MoveAxisKey:
+    action: {fileID: 0}
+  InvertAxis: 0
+  ForceMovement: 0
+  IgnoreAxis: {x: 0, y: 1, z: 0}
+  DisableGravity: 0
+  points:
+  - current: {x: 0.7163658, y: 1.9818013, z: 0}
+    totalDistance: 0
+    time: 0
+    index: 0
+  - current: {x: 1.1879578, y: 1.9821794, z: 0}
+    totalDistance: 0.4715921
+    time: 0.2
+    index: 1
+  - current: {x: 1.7574654, y: 1.9843507, z: 0}
+    totalDistance: 1.0411038
+    time: 0.4
+    index: 2
+  - current: {x: 2.3471527, y: 1.9867456, z: 0}
+    totalDistance: 1.630796
+    time: 0.6
+    index: 3
+  - current: {x: 2.8792763, y: 1.9877951, z: 0}
+    totalDistance: 2.1629205
+    time: 0.8
+    index: 4
+  - current: {x: 3.2761078, y: 1.9859295, z: 0}
+    totalDistance: 2.5597563
+    time: 1
+    index: 5
+--- !u!114 &388528915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 388528913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dd1b4d79b499e14b8257323e4d1d8bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DrawTangents: 0
+  AllowReverse: 1
+  splineCount: 1
+  points:
+  - {x: 0.7163658, y: 1.9818013, z: 0}
+  - {x: 1.3775711, y: 1.9800651, z: 0}
+  - {x: 2.7706566, y: 1.9923398, z: 0}
+  - {x: 3.2761078, y: 1.9859295, z: 0}
+  modes: 0000000000000000
+  loop: 0
+--- !u!4 &388528916
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 388528913}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.9049988, y: -0.20950001, z: 2.3385}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 551756833}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &389395768
 GameObject:
   m_ObjectHideFlags: 0
@@ -27336,30 +27514,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1a92d34f0c7d474aaab1f944bd4482b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_aRequiredSize: 1
-  m_aRequiredAnimal: 1
-  m_aMaximumSize: 0
-  m_aCurrentAnimal: {fileID: 0}
-  m_rBody: {fileID: 0}
-  m_GazeObject: {fileID: 0}
-  m_aSoundEvents: []
-  OnAnimalEnter:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnAnimalExit:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  m_tAnchorPoint: {fileID: 878026712}
-  m_fDirection: 3
-  m_FinishDirection: 0
-  m_aClimbingAnimal: {fileID: 0}
-  m_bDoOnTrigger: 0
-  m_bDoOnKeyPress: 1
-  m_TransitionTo: {fileID: 0}
 --- !u!65 &445906643
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29932,48 +30086,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 489809202}
   m_Mesh: {fileID: 4300000, guid: ac57c759c84ee15428195cd0d7a3eaf5, type: 3}
---- !u!1 &490207817
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 142854, guid: 1201a437a80001345899c6d5fe0eaaf0, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 490207818}
-  - component: {fileID: 490207819}
-  m_Layer: 0
-  m_Name: BufferCollider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &490207818
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 459256, guid: 1201a437a80001345899c6d5fe0eaaf0, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 490207817}
-  m_LocalRotation: {x: -0.00885931, y: -0.7095118, z: -0.0124427965, w: 0.704528}
-  m_LocalPosition: {x: -5.595, y: 0.225, z: -0.03999996}
-  m_LocalScale: {x: 0.83073217, y: 1.0010968, z: 17.253424}
-  m_Children: []
-  m_Father: {fileID: 255278101}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -1.7270001, y: -90.4, z: -0.284}
---- !u!65 &490207819
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6554976, guid: 1201a437a80001345899c6d5fe0eaaf0,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 490207817}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.6616651, y: 2.1837196, z: -0.05}
-  m_Center: {x: -0.21399868, y: 0.07129244, z: -0.38683656}
 --- !u!1 &490878401
 GameObject:
   m_ObjectHideFlags: 0
@@ -30912,6 +31024,34 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &510559956
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 510559957}
+  m_Layer: 0
+  m_Name: MovePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &510559957
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 510559956}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.155, y: -0.535, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 255278101}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &513020228
 GameObject:
   m_ObjectHideFlags: 0
@@ -32395,6 +32535,103 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 530224169}
   m_Mesh: {fileID: 4300000, guid: ac57c759c84ee15428195cd0d7a3eaf5, type: 3}
+--- !u!1 &531156096
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 531156099}
+  - component: {fileID: 531156098}
+  - component: {fileID: 531156097}
+  m_Layer: 0
+  m_Name: AnimalSpline (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 7240890024493199768, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &531156097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 531156096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 576a420f9a8e3f24fb0c7e263d232988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NumPoints: 5
+  RegeneratePoints: 0
+  HighExit: 1
+  LowExit: 1
+  MoveAxisKey:
+    action: {fileID: 0}
+  InvertAxis: 0
+  ForceMovement: 0
+  IgnoreAxis: {x: 0, y: 1, z: 0}
+  DisableGravity: 0
+  points:
+  - current: {x: 0.7163658, y: -0.22683477, z: 0}
+    totalDistance: 0
+    time: 0
+    index: 0
+  - current: {x: 0.7133217, y: 0.23794937, z: 0}
+    totalDistance: 0.4647941
+    time: 0.2
+    index: 1
+  - current: {x: 0.7132492, y: 0.8120047, z: 0}
+    totalDistance: 1.0388494
+    time: 0.4
+    index: 2
+  - current: {x: 0.7499504, y: 1.3749442, z: 0}
+    totalDistance: 1.602984
+    time: 0.6
+    index: 3
+  - current: {x: 0.8572273, y: 1.8063815, z: 0}
+    totalDistance: 2.0475583
+    time: 0.8
+    index: 4
+  - current: {x: 1.068882, y: 1.9859295, z: 0}
+    totalDistance: 2.3251104
+    time: 1
+    index: 5
+--- !u!114 &531156098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 531156096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dd1b4d79b499e14b8257323e4d1d8bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DrawTangents: 0
+  AllowReverse: 1
+  splineCount: 1
+  points:
+  - {x: 0.7163658, y: -0.22683477, z: 0}
+  - {x: 0.72759247, y: 0.38986474, z: 0}
+  - {x: 0.6103668, y: 1.9634719, z: 0}
+  - {x: 1.068882, y: 1.9859295, z: 0}
+  modes: 0000000000000000
+  loop: 0
+--- !u!4 &531156099
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 531156096}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.9049988, y: -0.20950001, z: 2.3385}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1606292614}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &531449997
 Prefab:
   m_ObjectHideFlags: 0
@@ -33525,6 +33762,36 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 551118012}
   m_Mesh: {fileID: 4300000, guid: ac57c759c84ee15428195cd0d7a3eaf5, type: 3}
+--- !u!1 &551756831
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 551756833}
+  m_Layer: 0
+  m_Name: UpperLevelSpline
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &551756833
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 551756831}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 31.07, y: -0.8595, z: 6.6324997}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 388528916}
+  - {fileID: 216607302}
+  m_Father: {fileID: 0}
+  m_RootOrder: 137
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &551762817
 Prefab:
   m_ObjectHideFlags: 0
@@ -34060,6 +34327,102 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 454468, guid: d2980f2613b0bb64c81f2319dde1402e, type: 2}
   m_PrefabInternal: {fileID: 564631926}
+--- !u!1 &565513757
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 565513760}
+  - component: {fileID: 565513759}
+  - component: {fileID: 565513758}
+  m_Layer: 11
+  m_Name: CameraSplineSetterladder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &565513758
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 565513757}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &565513759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 565513757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be4a30d72ac3f3c4e8be92c53db10bc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_aRequiredSize: 0
+  m_aRequiredAnimal: 1
+  m_aMaximumSize: 0
+  m_lAnimalsIn: []
+  m_rBody: {fileID: 0}
+  m_GazeObject: {fileID: 0}
+  m_aSoundEvents: []
+  OnDoAction:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnAnimalEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1249162910}
+        m_MethodName: EnableSplineLoris
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1352618581}
+          m_ObjectArgumentAssemblyTypeName: CameraSpline, SkedaddleCore
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnAnimalExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnWrongAnimalEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnWrongAnimalExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!4 &565513760
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 565513757}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 33.204, y: -0.831, z: 9.056}
+  m_LocalScale: {x: 1, y: 0.16973518, z: 0.6980157}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 133
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &566810096
 GameObject:
   m_ObjectHideFlags: 0
@@ -34539,26 +34902,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4d925a31fe24d4f9b656d78f67cd42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_aRequiredSize: 0
-  m_aRequiredAnimal: 0
-  m_aMaximumSize: 0
-  m_aCurrentAnimal: {fileID: 0}
-  m_rBody: {fileID: 0}
-  m_GazeObject: {fileID: 0}
-  m_aSoundEvents: []
-  OnAnimalEnter:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnAnimalExit:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  m_cLauncher: {fileID: 0}
-  m_tLauncher: {fileID: 1067649494}
-  m_bForAnimal: 1
 --- !u!65 &571582782
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37248,7 +37591,7 @@ Transform:
   m_PrefabParentObject: {fileID: 410570, guid: 1201a437a80001345899c6d5fe0eaaf0, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 631414702}
-  m_LocalRotation: {x: -0.017425427, y: 0.7187692, z: 0.6949701, w: 0.0091658095}
+  m_LocalRotation: {x: -0.017425425, y: 0.71876913, z: 0.69497, w: 0.009165809}
   m_LocalPosition: {x: 1.6319118, y: -1.2574166, z: 9.784031}
   m_LocalScale: {x: 0.40406483, y: 0.40406337, z: 0.404063}
   m_Children: []
@@ -42672,25 +43015,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb48362aec8fc7f48bda2f762f6d819a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_sGPText: Push the DPAD or Left Stick Up or Down to climb Ladders and Ropes
-  m_sKeyText: Press the W or S keys, or Up and Down Arrow keys, to climb Ladders and
-    Ropes
-  m_atItems:
-  - gameObject: {fileID: 150833874}
-    type: {fileID: 150833873}
-    names:
-    - m_bClimbing
-    values:
-    - type: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-      f: 0
-      b: 1
-      i: 0
-      s: 
-      v2: {x: 0, y: 0}
-      v3: {x: 0, y: 0, z: 0}
-      o: {fileID: 0}
-    typeIndex: 2
-  m_bAnimalOnly: 1
 --- !u!65 &733038722
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43226,12 +43550,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fa5e2e356952c1489e13051d50acb0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_pPath: {fileID: 746316424}
-  m_RequiredFollower: {fileID: 0}
-  m_bForceMove: 1
-  m_WalkDirection: 4
-  m_FinishDirection: 0
-  hit: 0
 --- !u!114 &746316424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43243,8 +43561,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32c7052f2e7d174ba7b44233860ad88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_cPointColor: {r: 0, g: 0, b: 1, a: 0.5}
-  m_cLineColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!4 &746316425
 Transform:
   m_ObjectHideFlags: 0
@@ -45432,84 +45748,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de26c6e034d831942b9ad0f9f07a3628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_aRequiredSize: 0
-  m_aRequiredAnimal: 0
-  m_aMaximumSize: 0
-  m_aCurrentAnimal: {fileID: 0}
-  m_rBody: {fileID: 0}
-  m_GazeObject: {fileID: 0}
-  m_aSoundEvents: []
-  OnAnimalEnter:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnAnimalExit:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  m_tEndPoint: {fileID: 1569013043}
-  m_tRopes: {fileID: 0}
-  m_fEndScale: 0
-  m_fSlideTime: 2
-  m_bRotate: 0
-  m_bDontDeactivate: 0
-  m_tMovePoint: {fileID: 0}
-  m_tLookAt: {fileID: 0}
-  m_bLook: 1
-  m_oActivate: {fileID: 0}
-  m_fWaitTimer: 1
-  m_fLookTime: 1
-  m_aAnimator: {fileID: 0}
-  m_aCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-    - serializedVersion: 2
-      time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  m_aReverseCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-    - serializedVersion: 2
-      time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  m_bUseReverse: 0
-  m_BoxCaster: {fileID: 0}
-  m_Layer:
-    serializedVersion: 2
-    m_Bits: 0
-  m_OnMoveEnd:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OpenEvent: 
-  CloseEvent: 
 --- !u!114 &817603420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47520,7 +47758,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 0.71072245}
   m_Children: []
   m_Father: {fileID: 255278101}
-  m_RootOrder: 10
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: -82.867004, y: 0, z: 6.6720004}
 --- !u!23 &864543509
 MeshRenderer:
@@ -47943,6 +48181,102 @@ Transform:
   m_Father: {fileID: 466485324}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &873986173
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 873986176}
+  - component: {fileID: 873986175}
+  - component: {fileID: 873986174}
+  m_Layer: 11
+  m_Name: CameraSplineSetterUpper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &873986174
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 873986173}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &873986175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 873986173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be4a30d72ac3f3c4e8be92c53db10bc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_aRequiredSize: 0
+  m_aRequiredAnimal: 1
+  m_aMaximumSize: 0
+  m_lAnimalsIn: []
+  m_rBody: {fileID: 0}
+  m_GazeObject: {fileID: 0}
+  m_aSoundEvents: []
+  OnDoAction:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnAnimalEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1249162910}
+        m_MethodName: EnableSplineLoris
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 216607303}
+          m_ObjectArgumentAssemblyTypeName: CameraSpline, SkedaddleCore
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnAnimalExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnWrongAnimalEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnWrongAnimalExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!4 &873986176
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 873986173}
+  m_LocalRotation: {x: -0, y: -0, z: -0.70710677, w: 0.7071068}
+  m_LocalPosition: {x: 34.163, y: 0.988, z: 9.056}
+  m_LocalScale: {x: 1, y: 0.16973518, z: 0.6980157}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 134
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90.00001}
 --- !u!1 &877768827
 GameObject:
   m_ObjectHideFlags: 0
@@ -55536,6 +55870,34 @@ Transform:
   m_Father: {fileID: 9054416}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1001965351
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 1286067858}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1001965352}
+  m_Layer: 0
+  m_Name: Missing Prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1001965352
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 1286067858}
+  m_GameObject: {fileID: 1001965351}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 119
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1003594528
 GameObject:
   m_ObjectHideFlags: 0
@@ -56135,48 +56497,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1016219634}
   m_Mesh: {fileID: 4300182, guid: 6ea5377bf3fc24447b06c35216b1ec52, type: 3}
---- !u!1 &1016503365
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 147668, guid: 1201a437a80001345899c6d5fe0eaaf0, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1016503366}
-  - component: {fileID: 1016503367}
-  m_Layer: 0
-  m_Name: BufferCollider (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1016503366
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 447582, guid: 1201a437a80001345899c6d5fe0eaaf0, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1016503365}
-  m_LocalRotation: {x: 0.0018357396, y: -0.70956486, z: -0.0018224551, w: 0.70463544}
-  m_LocalPosition: {x: -5.417, y: 0.11100006, z: -0.039}
-  m_LocalScale: {x: 0.8307322, y: 1.0010967, z: 17.253424}
-  m_Children: []
-  m_Father: {fileID: 255278101}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1016503367
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6587024, guid: 1201a437a80001345899c6d5fe0eaaf0,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1016503365}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.6616651, y: 2.1837196, z: -0.05}
-  m_Center: {x: -0.21399868, y: 0.07129244, z: -0.38683656}
 --- !u!1 &1017035763
 GameObject:
   m_ObjectHideFlags: 0
@@ -59222,40 +59542,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030eac5246f26864fbd51849aa85f6ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_aRequiredSize: 0
-  m_aRequiredAnimal: 1
-  m_aMaximumSize: 0
-  m_aCurrentAnimal: {fileID: 0}
-  m_rBody: {fileID: 0}
-  m_GazeObject: {fileID: 0}
-  m_aSoundEvents: []
-  OnAnimalEnter:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnAnimalExit:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  m_tPoint: {fileID: 521396220}
-  m_tRightShootDir: {fileID: 0}
-  m_tLeftShootDir: {fileID: 0}
-  m_fRightShootForce: 0
-  m_fLeftShootForce: 0
-  m_aController: {fileID: 120882730}
-  m_bWaitForMove: 0
-  m_bBounceOnMove: 1
-  m_tEnterPoint: {fileID: 739105494}
-  m_tExitPoint: {fileID: 891158333}
-  m_fBounceForce: 5
-  m_fLerpSpeed: 1
-  m_fWaitTime: 1
-  m_cBufferCollider: {fileID: 0}
-  m_goAutoClimb: {fileID: 0}
-  m_tChestShootDir: {fileID: 1398982646}
-  m_fChestShootForce: 3.5
 --- !u!1 &1068389281
 GameObject:
   m_ObjectHideFlags: 0
@@ -60036,6 +60322,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsParent: 0
+--- !u!1 &1087372693
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 267674074}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1087372694}
+  m_Layer: 0
+  m_Name: Missing Prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1087372694
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 267674074}
+  m_GameObject: {fileID: 1087372693}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 130
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1087994372
 GameObject:
   m_ObjectHideFlags: 0
@@ -61654,7 +61968,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 0.71072227}
   m_Children: []
   m_Father: {fileID: 255278101}
-  m_RootOrder: 9
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -81.069, y: -327.529, z: 166.30501}
 --- !u!23 &1112077723
 MeshRenderer:
@@ -63896,34 +64210,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aae3848a2d602234ab86f31bc5d1b682, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_aRequiredSize: 0
-  m_aRequiredAnimal: 0
-  m_aMaximumSize: 0
-  m_aCurrentAnimal: {fileID: 0}
-  m_rBody: {fileID: 0}
-  m_GazeObject: {fileID: 42359047}
-  m_aSoundEvents: []
-  OnAnimalEnter:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnAnimalExit:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  m_tCentre: {fileID: 1442482958}
-  m_LeftRope: {fileID: 0}
-  m_RightRope: {fileID: 0}
-  m_tSteps: []
-  m_lFacing: 2
-  m_bIsRope: 1
-  m_bIsTop: 0
-  m_bMoveBack: 0
-  m_bCanShimmy: 0
-  m_StopperBottom: {fileID: 1220660169}
-  m_StopperTop: {fileID: 179651543}
 --- !u!54 &1151644472
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -65763,7 +66049,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 0.7107227}
   m_Children: []
   m_Father: {fileID: 255278101}
-  m_RootOrder: 12
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: -82.867004, y: 0, z: 13.056001}
 --- !u!23 &1189921705
 MeshRenderer:
@@ -67225,27 +67511,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81e32fb2570bfe44991ed89b19aad32d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_aRequiredSize: 0
-  m_aRequiredAnimal: 0
-  m_aMaximumSize: 0
-  m_aCurrentAnimal: {fileID: 0}
-  m_rBody: {fileID: 0}
-  m_GazeObject: {fileID: 0}
-  m_aSoundEvents: []
-  OnAnimalEnter:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnAnimalExit:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  m_bIsTop: 0
-  m_isFrayedRope: 0
-  m_rFrayedRope: {fileID: 0}
-  m_cEndClimb: {fileID: 0}
 --- !u!65 &1220660170
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -68488,6 +68753,12 @@ Transform:
   m_Father: {fileID: 1630712674}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1249162910 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114270724486313066, guid: 6ac26916394ca4e4caa5daf8346f4a48,
+    type: 2}
+  m_PrefabInternal: {fileID: 30439171}
+  m_Script: {fileID: 11500000, guid: 75bb356239bfaed43a335024f174d350, type: 3}
 --- !u!1 &1250331638
 GameObject:
   m_ObjectHideFlags: 0
@@ -71033,8 +71304,8 @@ MonoBehaviour:
   points:
   - {x: 3.8835936, y: 0, z: 0}
   - {x: 4.8835936, y: 0, z: 0}
-  - {x: 12.377411, y: 0, z: 0}
-  - {x: 13.377411, y: 0, z: 0}
+  - {x: 5.7763176, y: 0, z: 0}
+  - {x: 6.7763176, y: 0, z: 0}
   modes: 0000000000000000
   loop: 0
 --- !u!4 &1297977073
@@ -71043,12 +71314,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1297977070}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26.39, y: -1.66, z: 8.475}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.505, z: 2.0904999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 133
+  m_Father: {fileID: 64724211}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1299064512
 GameObject:
@@ -71239,30 +71510,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1a92d34f0c7d474aaab1f944bd4482b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_aRequiredSize: 1
-  m_aRequiredAnimal: 1
-  m_aMaximumSize: 0
-  m_aCurrentAnimal: {fileID: 0}
-  m_rBody: {fileID: 0}
-  m_GazeObject: {fileID: 0}
-  m_aSoundEvents: []
-  OnAnimalEnter:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnAnimalExit:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  m_tAnchorPoint: {fileID: 60454852}
-  m_fDirection: 3
-  m_FinishDirection: 0
-  m_aClimbingAnimal: {fileID: 0}
-  m_bDoOnTrigger: 0
-  m_bDoOnKeyPress: 1
-  m_TransitionTo: {fileID: 0}
 --- !u!65 &1301225761
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -71955,6 +72202,34 @@ Transform:
   - {fileID: 836554669}
   m_Father: {fileID: 2105472408}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1311543782
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 916244855}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1311543783}
+  m_Layer: 0
+  m_Name: Missing Prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1311543783
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 916244855}
+  m_GameObject: {fileID: 1311543782}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 120
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1311752513
 GameObject:
@@ -74906,6 +75181,72 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: af571ab11268d824e8b348139d7dfe2c, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &1352618579
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1352618580}
+  - component: {fileID: 1352618582}
+  - component: {fileID: 1352618581}
+  m_Layer: 0
+  m_Name: ladderspline
+  m_TagString: Untagged
+  m_Icon: {fileID: 4660412927644837186, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1352618580
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1352618579}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.9050007, y: 0.20950001, z: -2.3384995}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1606292614}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1352618581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1352618579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c1411ff7d2ea804fb8f36be7a8492f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnimalSpline: {fileID: 531156097}
+  IsDefaultSpline: 0
+  UseAnimalYSettings: 1
+  MyAnimals: 01000000
+--- !u!114 &1352618582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1352618579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dd1b4d79b499e14b8257323e4d1d8bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DrawTangents: 0
+  AllowReverse: 1
+  splineCount: 1
+  points:
+  - {x: 4.367609, y: 0, z: 0}
+  - {x: 4.444579, y: 0.5835083, z: 0}
+  - {x: 4.4935284, y: 0.3851161, z: 0}
+  - {x: 4.7274723, y: 0.7713496, z: 0}
+  modes: 0000000000000000
+  loop: 0
 --- !u!1 &1354110965
 GameObject:
   m_ObjectHideFlags: 0
@@ -75188,97 +75529,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: e621c9fd0a24dd0438d3a29a6d9dbbbd, type: 3}
   m_PrefabInternal: {fileID: 1362960603}
---- !u!1 &1363093790
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 167514, guid: 1201a437a80001345899c6d5fe0eaaf0, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1363093791}
-  - component: {fileID: 1363093793}
-  - component: {fileID: 1363093794}
-  - component: {fileID: 1363093792}
-  m_Layer: 11
-  m_Name: StopperBottom
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1363093791
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 422054, guid: 1201a437a80001345899c6d5fe0eaaf0, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1363093790}
-  m_LocalRotation: {x: 0.0018357396, y: -0.70956486, z: -0.0018224551, w: 0.70463544}
-  m_LocalPosition: {x: 0.64, y: -0.183, z: 0}
-  m_LocalScale: {x: 0.83073217, y: 1.0010968, z: 1.2028996}
-  m_Children: []
-  m_Father: {fileID: 255278101}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1363093792
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1363093790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81e32fb2570bfe44991ed89b19aad32d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_aRequiredSize: 0
-  m_aRequiredAnimal: 0
-  m_aMaximumSize: 0
-  m_aCurrentAnimal: {fileID: 0}
-  m_rBody: {fileID: 0}
-  m_GazeObject: {fileID: 0}
-  m_aSoundEvents: []
-  OnAnimalEnter:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnAnimalExit:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  m_bIsTop: 0
-  m_isFrayedRope: 0
-  m_rFrayedRope: {fileID: 0}
-  m_cEndClimb: {fileID: 0}
---- !u!65 &1363093793
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6518174, guid: 1201a437a80001345899c6d5fe0eaaf0,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1363093790}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.53408986, y: 0.30671832, z: 1}
-  m_Center: {x: -0.23293796, y: -0.5807311, z: -0.000000024775403}
---- !u!54 &1363093794
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1363093790}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1363635958
 GameObject:
   m_ObjectHideFlags: 0
@@ -76602,6 +76852,87 @@ Transform:
   m_Father: {fileID: 2055097381}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1387816955
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1667817584812894, guid: 73594af5744a53644b56dc6589625700,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1387816956}
+  - component: {fileID: 1387816957}
+  m_Layer: 11
+  m_Name: ClimbJumpLoris (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1387816956
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 4362123503089786, guid: 73594af5744a53644b56dc6589625700,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1387816955}
+  m_LocalRotation: {x: -0, y: -0.000002682209, z: -0, w: 1}
+  m_LocalPosition: {x: 0.384, y: 1.018, z: -0.194}
+  m_LocalScale: {x: 0.22514999, y: 0.85687, z: 0.94193}
+  m_Children:
+  - {fileID: 268233871}
+  m_Father: {fileID: 255278101}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1387816957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114794663300859998, guid: 73594af5744a53644b56dc6589625700,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1387816955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6025807fdd746444697919ac043fb005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_aRequiredSize: 0
+  m_aRequiredAnimal: 0
+  m_aMaximumSize: 0
+  m_lAnimalsIn: []
+  m_rBody: {fileID: 0}
+  m_GazeObject: {fileID: 0}
+  m_aSoundEvents: []
+  OnDoAction:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnAnimalEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnAnimalExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnWrongAnimalEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnWrongAnimalExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  DoOnTrigger: 1
+  Direction: 2
+  FinishDirection: 2
+  AnchorPoint: {fileID: 268233871}
+  TransitionTo: {fileID: 0}
 --- !u!1001 &1388927499
 Prefab:
   m_ObjectHideFlags: 0
@@ -79839,6 +80170,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1458785656}
   m_Mesh: {fileID: 4300060, guid: 54d01688f546d564eb394c08b545f4e1, type: 3}
+--- !u!1 &1458788955
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 751731671}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1458788956}
+  m_Layer: 0
+  m_Name: Missing Prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1458788956
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 751731671}
+  m_GameObject: {fileID: 1458788955}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 121
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1460799505
 GameObject:
   m_ObjectHideFlags: 0
@@ -82910,6 +83269,34 @@ Transform:
   m_Father: {fileID: 698136137}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1512829108
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1512829109}
+  m_Layer: 0
+  m_Name: MoveEndPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1512829109
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1512829108}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.15499836, y: 1.141, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 255278101}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1514486780
 GameObject:
   m_ObjectHideFlags: 0
@@ -82938,7 +83325,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 0.71072227}
   m_Children: []
   m_Father: {fileID: 255278101}
-  m_RootOrder: 11
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: -81.069, y: -327.529, z: 166.30501}
 --- !u!23 &1514486782
 MeshRenderer:
@@ -88893,6 +89280,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 88
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1606292613
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1606292614}
+  m_Layer: 0
+  m_Name: LaddderCameraSpline
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1606292614
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1606292613}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 30.645, y: -0.8595, z: 6.6324997}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 531156099}
+  - {fileID: 1352618580}
+  m_Father: {fileID: 0}
+  m_RootOrder: 135
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1606387956
 GameObject:
   m_ObjectHideFlags: 0
@@ -89067,6 +89484,10 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1608461596}
   m_Mesh: {fileID: 4300106, guid: cecd7a1b3d3f1b04a96589cef167d3eb, type: 3}
+--- !u!4 &1612883777 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 466434, guid: f98253888c8cae8498d5b4fe3c7b6f7e, type: 2}
+  m_PrefabInternal: {fileID: 150833872}
 --- !u!1 &1614873165
 GameObject:
   m_ObjectHideFlags: 0
@@ -91378,7 +91799,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 0.7107227}
   m_Children: []
   m_Father: {fileID: 255278101}
-  m_RootOrder: 8
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 8.459001, y: -37.742, z: -2.421}
 --- !u!23 &1654257550
 MeshRenderer:
@@ -94744,30 +95165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1a92d34f0c7d474aaab1f944bd4482b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_aRequiredSize: 1
-  m_aRequiredAnimal: 1
-  m_aMaximumSize: 0
-  m_aCurrentAnimal: {fileID: 0}
-  m_rBody: {fileID: 0}
-  m_GazeObject: {fileID: 0}
-  m_aSoundEvents: []
-  OnAnimalEnter:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnAnimalExit:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  m_tAnchorPoint: {fileID: 159480068}
-  m_fDirection: 4
-  m_FinishDirection: 4
-  m_aClimbingAnimal: {fileID: 0}
-  m_bDoOnTrigger: 0
-  m_bDoOnKeyPress: 0
-  m_TransitionTo: {fileID: 0}
 --- !u!1 &1728376283
 GameObject:
   m_ObjectHideFlags: 0
@@ -97881,6 +98278,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1780518036}
   m_Mesh: {fileID: 4300002, guid: 6ea5377bf3fc24447b06c35216b1ec52, type: 3}
+--- !u!1 &1782684204
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 1376287623}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1782684205}
+  m_Layer: 0
+  m_Name: Missing Prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1782684205
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 1376287623}
+  m_GameObject: {fileID: 1782684204}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 118
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1782807785
 GameObject:
   m_ObjectHideFlags: 0
@@ -105046,97 +105471,6 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: c11f2604534c4fd499245938627c167a, type: 3}
   m_PrefabInternal: {fileID: 1842398308}
---- !u!1 &1922291628
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 168676, guid: 1201a437a80001345899c6d5fe0eaaf0, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1922291629}
-  - component: {fileID: 1922291631}
-  - component: {fileID: 1922291632}
-  - component: {fileID: 1922291630}
-  m_Layer: 11
-  m_Name: StopperTop
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1922291629
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 422040, guid: 1201a437a80001345899c6d5fe0eaaf0, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1922291628}
-  m_LocalRotation: {x: 0.0018357396, y: -0.70956486, z: -0.0018224551, w: 0.70463544}
-  m_LocalPosition: {x: 0.45, y: 1.531, z: 0.01}
-  m_LocalScale: {x: 0.83073217, y: 1.0010968, z: 1.2028996}
-  m_Children: []
-  m_Father: {fileID: 255278101}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1922291630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1922291628}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81e32fb2570bfe44991ed89b19aad32d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_aRequiredSize: 0
-  m_aRequiredAnimal: 0
-  m_aMaximumSize: 0
-  m_aCurrentAnimal: {fileID: 0}
-  m_rBody: {fileID: 0}
-  m_GazeObject: {fileID: 0}
-  m_aSoundEvents: []
-  OnAnimalEnter:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnAnimalExit:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  m_bIsTop: 1
-  m_isFrayedRope: 0
-  m_rFrayedRope: {fileID: 0}
-  m_cEndClimb: {fileID: 189882045}
---- !u!65 &1922291631
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6528364, guid: 1201a437a80001345899c6d5fe0eaaf0,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1922291628}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.53409, y: 0.12694223, z: 1}
-  m_Center: {x: -0.23295532, y: -0.49084225, z: -0.00000006305395}
---- !u!54 &1922291632
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1922291628}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1922452851
 GameObject:
   m_ObjectHideFlags: 0
@@ -106413,34 +106747,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1877187979}
   m_RootOrder: 60
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1944086276
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 142058, guid: 73594af5744a53644b56dc6589625700, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1944086277}
-  m_Layer: 0
-  m_Name: AutoClimbAnchor
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1944086277
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 472032, guid: 73594af5744a53644b56dc6589625700, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1944086276}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.809, y: 0.526, z: -0.0070003103}
-  m_LocalScale: {x: 5.3496447, y: 1.6985928, z: 1.1463523}
-  m_Children: []
-  m_Father: {fileID: 189882044}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1944465648
 GameObject:
@@ -109172,84 +109478,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de26c6e034d831942b9ad0f9f07a3628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_aRequiredSize: 0
-  m_aRequiredAnimal: 0
-  m_aMaximumSize: 0
-  m_aCurrentAnimal: {fileID: 0}
-  m_rBody: {fileID: 0}
-  m_GazeObject: {fileID: 0}
-  m_aSoundEvents: []
-  OnAnimalEnter:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnAnimalExit:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  m_tEndPoint: {fileID: 226528381}
-  m_tRopes: {fileID: 0}
-  m_fEndScale: 0
-  m_fSlideTime: 3
-  m_bRotate: 0
-  m_bDontDeactivate: 0
-  m_tMovePoint: {fileID: 0}
-  m_tLookAt: {fileID: 0}
-  m_bLook: 1
-  m_oActivate: {fileID: 0}
-  m_fWaitTimer: 1
-  m_fLookTime: 1
-  m_aAnimator: {fileID: 0}
-  m_aCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-    - serializedVersion: 2
-      time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  m_aReverseCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  m_bUseReverse: 0
-  m_BoxCaster: {fileID: 0}
-  m_Layer:
-    serializedVersion: 2
-    m_Bits: 0
-  m_OnMoveEnd:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OpenEvent: 
-  CloseEvent: 
 --- !u!4 &1991894278
 Transform:
   m_ObjectHideFlags: 0
@@ -112724,8 +112952,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2034802980}
   - component: {fileID: 2034802982}
-  - component: {fileID: 2034802981}
-  - component: {fileID: 2034802983}
   - component: {fileID: 2034802984}
   m_Layer: 11
   m_Name: ClimbTrigger
@@ -112747,48 +112973,8 @@ Transform:
   - {fileID: 444636504}
   - {fileID: 596966885}
   m_Father: {fileID: 255278101}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2034802981
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11471042, guid: 1201a437a80001345899c6d5fe0eaaf0,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2034802979}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aae3848a2d602234ab86f31bc5d1b682, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_aRequiredSize: 1
-  m_aRequiredAnimal: 1
-  m_aMaximumSize: 0
-  m_aCurrentAnimal: {fileID: 0}
-  m_rBody: {fileID: 0}
-  m_GazeObject: {fileID: 0}
-  m_aSoundEvents: []
-  OnAnimalEnter:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnAnimalExit:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  m_tCentre: {fileID: 1804834841}
-  m_LeftRope: {fileID: 0}
-  m_RightRope: {fileID: 0}
-  m_tSteps: []
-  m_lFacing: 4
-  m_bIsRope: 0
-  m_bIsTop: 0
-  m_bMoveBack: 0
-  m_bCanShimmy: 0
-  m_StopperBottom: {fileID: 1363093792}
-  m_StopperTop: {fileID: 1922291630}
 --- !u!65 &2034802982
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -112802,21 +112988,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 3.742599, z: 0.81}
   m_Center: {x: 0, y: -0.31870055, z: 0.0000004172325}
---- !u!54 &2034802983
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2034802979}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!114 &2034802984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114593,7 +114764,7 @@ Transform:
   m_LocalScale: {x: 1.3054999, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 255278101}
-  m_RootOrder: 13
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &2075062313
 MeshRenderer:
