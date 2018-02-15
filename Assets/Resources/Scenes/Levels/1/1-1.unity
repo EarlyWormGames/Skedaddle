@@ -4823,33 +4823,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 30
       objectReference: {fileID: 0}
-    - target: {fileID: 114355741093068044, guid: 9538de56fc5561843b11b0ee608c0cc3,
-        type: 2}
-      propertyPath: m_Amount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114317303632901466, guid: 9538de56fc5561843b11b0ee608c0cc3,
-        type: 2}
-      propertyPath: m_Amount
-      value: 0.608
-      objectReference: {fileID: 0}
-    - target: {fileID: 114355741093068044, guid: 9538de56fc5561843b11b0ee608c0cc3,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11463448, guid: 9538de56fc5561843b11b0ee608c0cc3, type: 2}
-      propertyPath: m_bDontDeactivate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11463448, guid: 9538de56fc5561843b11b0ee608c0cc3, type: 2}
-      propertyPath: m_fHeightOffset
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 11463448, guid: 9538de56fc5561843b11b0ee608c0cc3, type: 2}
-      propertyPath: m_fShakeSpeed
-      value: 0.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9538de56fc5561843b11b0ee608c0cc3, type: 2}
   m_IsPrefabParent: 0
@@ -34732,13 +34705,13 @@ MonoBehaviour:
   m_fMicroDuration: 7
   m_bDontDeactivate: 1
   m_bBounce: 1
-  m_mAnimatedUV: {fileID: 2100000, guid: 947e99864bac5af46a3a1aad2834d90b, type: 2}
   m_tJitterObject: {fileID: 841488761}
   m_v2Speed: {x: 10, y: 0}
   m_fJitterStrength: 0.1
   m_fJitterSpeed: 16
   m_tMovePoint: {fileID: 0}
   m_tResetPoint: {fileID: 0}
+  m_Renderers: []
 --- !u!1 &841851613
 GameObject:
   m_ObjectHideFlags: 0
@@ -41067,6 +41040,96 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1005790279}
   m_Mesh: {fileID: 4300066, guid: c8a6db1034ebaf9429482a7341d2c005, type: 3}
+--- !u!1 &1005901640
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1005901642}
+  - component: {fileID: 1005901641}
+  - component: {fileID: 1005901643}
+  m_Layer: 0
+  m_Name: AnimalSpline
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1005901641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1005901640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dd1b4d79b499e14b8257323e4d1d8bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DrawTangents: 0
+  AllowReverse: 1
+  splineCount: 1
+  points:
+  - {x: 3.3343956, y: -0.23718417, z: 0}
+  - {x: 4.3343945, y: -0.23718417, z: 0}
+  - {x: 6.419192, y: -0.32321608, z: 0}
+  - {x: 7.419192, y: -0.32321608, z: 0}
+  modes: 0000000000000000
+  loop: 0
+--- !u!4 &1005901642
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1005901640}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.744, y: -1.53, z: 7.48}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 52
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1005901643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1005901640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 576a420f9a8e3f24fb0c7e263d232988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Spline: {fileID: 1005901641}
+  NumPoints: 3
+  RegeneratePoints: 0
+  HighExit: 1
+  LowExit: 1
+  MoveAxisKey:
+    action: {fileID: 0}
+  InvertAxis: 0
+  ForceMovement: 0
+  IgnoreAxis: {x: 0, y: 1, z: 0}
+  DisableGravity: 0
+  points:
+  - current: {x: 1.4978491, y: -0.23718417, z: 0}
+    totalDistance: 0
+    time: 0
+    index: 0
+  - current: {x: 3.496138, y: -0.2594887, z: 0}
+    totalDistance: 1.9984134
+    time: 0.33333334
+    index: 1
+  - current: {x: 6.3501043, y: -0.30091155, z: 0}
+    totalDistance: 4.85268
+    time: 0.6666667
+    index: 2
+  - current: {x: 8.348393, y: -0.32321608, z: 0}
+    totalDistance: 6.851094
+    time: 1
+    index: 3
 --- !u!1 &1012461409
 GameObject:
   m_ObjectHideFlags: 0
@@ -45250,13 +45313,13 @@ MonoBehaviour:
   m_fMicroDuration: 7
   m_bDontDeactivate: 1
   m_bBounce: 0
-  m_mAnimatedUV: {fileID: 2100000, guid: c80e14df983d3b74f819ac8c6e728c6b, type: 2}
   m_tJitterObject: {fileID: 1124293321}
   m_v2Speed: {x: 7, y: 0}
   m_fJitterStrength: 0.05
   m_fJitterSpeed: 4
   m_tMovePoint: {fileID: 0}
   m_tResetPoint: {fileID: 0}
+  m_Renderers: []
 --- !u!1 &1127141388
 GameObject:
   m_ObjectHideFlags: 0
@@ -45375,7 +45438,7 @@ Prefab:
       objectReference: {fileID: 1796339031}
     - target: {fileID: 11473602, guid: d2980f2613b0bb64c81f2319dde1402e, type: 2}
       propertyPath: m_sLoadScene
-      value: 1-1
+      value: 1-2
       objectReference: {fileID: 0}
     - target: {fileID: 10892952, guid: d2980f2613b0bb64c81f2319dde1402e, type: 2}
       propertyPath: m_Intensity
@@ -45405,6 +45468,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 11473602, guid: d2980f2613b0bb64c81f2319dde1402e, type: 2}
+      propertyPath: ExitKey.action
+      value: 
+      objectReference: {fileID: 114552692680613328, guid: 80f2df7e1586bc94aa1bbea872f6ca3b,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d2980f2613b0bb64c81f2319dde1402e, type: 2}
   m_IsPrefabParent: 0
@@ -50097,11 +50165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e0ed875f0505c4418242275bbb43ee4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TrackName: Area1-1
-  m_ParameterName: 
-  m_ParameterValue: 1
-  m_Type: 0
-  m_TrackType: 0
 --- !u!4 &1166847547
 Transform:
   m_ObjectHideFlags: 0
@@ -50126,11 +50189,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e0ed875f0505c4418242275bbb43ee4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TrackName: 1-0
-  m_ParameterName: 
-  m_ParameterValue: 1
-  m_Type: 0
-  m_TrackType: 1
 --- !u!1001 &1169889449
 Prefab:
   m_ObjectHideFlags: 0
@@ -60200,6 +60258,71 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1429478496}
   m_Mesh: {fileID: 4300164, guid: 78394c98325dfdb47b59165c8021bd46, type: 3}
+--- !u!1 &1431256540
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1431256543}
+  - component: {fileID: 1431256542}
+  - component: {fileID: 1431256541}
+  m_Layer: 0
+  m_Name: CameraSpline
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1431256541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1431256540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c1411ff7d2ea804fb8f36be7a8492f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MySpline: {fileID: 1431256542}
+  AnimalSpline: {fileID: 1005901643}
+  MyAnimal: {fileID: 207754412}
+--- !u!114 &1431256542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1431256540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dd1b4d79b499e14b8257323e4d1d8bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DrawTangents: 0
+  AllowReverse: 1
+  splineCount: 1
+  points:
+  - {x: 3.486895, y: 0.0637089, z: 0}
+  - {x: 4.4868956, y: 0.0637089, z: 0}
+  - {x: 6.0689683, y: 0.012555242, z: 0}
+  - {x: 7.0689683, y: 0.012555242, z: 0}
+  modes: 0000000000000000
+  loop: 0
+--- !u!4 &1431256543
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1431256540}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.744, y: -0.63, z: 3.52}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 53
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1443009222
 Prefab:
   m_ObjectHideFlags: 0
@@ -66932,11 +67055,11 @@ MonoBehaviour:
   m_aRequiredSize: 0
   m_aRequiredAnimal: 0
   m_aMaximumSize: 0
-  m_aCurrentAnimal: {fileID: 0}
+  m_lAnimalsIn: []
   m_rBody: {fileID: 0}
   m_GazeObject: {fileID: 0}
   m_aSoundEvents:
-  - m_Event: 2
+  - m_EventKey: 
     m_eFunction:
       m_PersistentCalls:
         m_Calls:
@@ -66953,6 +67076,20 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
+  OnAnimalEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnAnimalExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  m_CanDetach: 0
+  m_CanBeDetached: 1
+  m_bBlocksTurn: 0
+  m_bBlocksMovement: 0
   m_hjRope:
   - {fileID: 211905792}
   - {fileID: 1926857448}
@@ -74527,7 +74664,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5611ce35f8a41e74f88e155ebd9935b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Door: {fileID: 1796339032}
   m_WaitTime: 0
 --- !u!114 &1796339032
 MonoBehaviour:
@@ -74540,60 +74676,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de26c6e034d831942b9ad0f9f07a3628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_aRequiredSize: 0
-  m_aRequiredAnimal: 0
-  m_aMaximumSize: 0
-  m_aCurrentAnimal: {fileID: 0}
-  m_rBody: {fileID: 0}
-  m_GazeObject: {fileID: 0}
-  m_aSoundEvents: []
-  m_tEndPoint: {fileID: 776812264}
-  m_tRopes: {fileID: 0}
-  m_fEndScale: 0
-  m_fSlideTime: 3
-  m_bRotate: 0
-  m_bDontDeactivate: 0
-  m_tMovePoint: {fileID: 0}
-  m_tLookAt: {fileID: 0}
-  m_bLook: 1
-  m_oActivate: {fileID: 0}
-  m_fWaitTimer: 1
-  m_fLookTime: 1
-  m_aAnimator: {fileID: 0}
-  m_aCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-    - serializedVersion: 2
-      time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  m_aReverseCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  m_bUseReverse: 0
-  m_BoxCaster: {fileID: 0}
-  m_Layer:
-    serializedVersion: 2
-    m_Bits: 0
-  m_OnMoveEnd:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!23 &1796339033
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -77106,8 +77188,8 @@ Transform:
   m_PrefabParentObject: {fileID: 466284, guid: 240094b5b9004974cbc17c22d44309f7, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1919824913}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.0000000012236397, y: -0.0000000052328413, z: 0.7390287, w: 0.673674}
+  m_LocalPosition: {x: -0.794, y: 0.137, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1708164365}
@@ -77116,7 +77198,7 @@ Transform:
   - {fileID: 1495086836}
   m_Father: {fileID: 1307215969}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 95.297005}
 --- !u!65 &1919824915
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -79631,13 +79713,13 @@ MonoBehaviour:
   m_fMicroDuration: 0
   m_bDontDeactivate: 1
   m_bBounce: 0
-  m_mAnimatedUV: {fileID: 0}
   m_tJitterObject: {fileID: 1988549810}
   m_v2Speed: {x: 0, y: 0}
   m_fJitterStrength: 0.1
   m_fJitterSpeed: 3
   m_tMovePoint: {fileID: 0}
   m_tResetPoint: {fileID: 0}
+  m_Renderers: []
 --- !u!4 &1988549810
 Transform:
   m_ObjectHideFlags: 0

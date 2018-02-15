@@ -67,63 +67,11 @@ public class BezierSplineInspector : Editor
         }
 
         EditorGUI.BeginChangeCheck();
-        int increments = EditorGUILayout.IntField("Increments Count", spline.ArcIncrements);
-        if (EditorGUI.EndChangeCheck())
-        {
-            Undo.RecordObject(spline, "Increments Count");
-            EditorUtility.SetDirty(spline);
-            spline.ArcIncrements = increments;
-        }
-
-        EditorGUI.BeginChangeCheck();
-        int divs = EditorGUILayout.IntField("Sub Divisions", spline.ArcSubDivs);
-        if(EditorGUI.EndChangeCheck())
-        {
-            Undo.RecordObject(spline, "Divs");
-            EditorUtility.SetDirty(spline);
-            spline.ArcSubDivs = divs;
-        }
-
-        if (GUILayout.Button("Calculate Increments"))
-        {
-            Undo.RecordObject(spline, "Calc Increments");
-            spline.ArcLength();
-            EditorUtility.SetDirty(spline);
-        }
-
-        EditorGUI.BeginChangeCheck();
-        bool drawincrements = EditorGUILayout.Toggle("Draw Increments", spline.DrawIncrements);
-        if (EditorGUI.EndChangeCheck())
-        {
-            Undo.RecordObject(spline, "Draw Increments");
-            spline.DrawIncrements = drawincrements;
-            EditorUtility.SetDirty(spline);
-        }
-
-        EditorGUI.BeginChangeCheck();
         bool tangents = EditorGUILayout.Toggle("Draw Tangents", spline.DrawTangents);
         if (EditorGUI.EndChangeCheck())
         {
             Undo.RecordObject(spline, "Draw Tangents");
             spline.DrawTangents = tangents;
-            EditorUtility.SetDirty(spline);
-        }
-
-        EditorGUI.BeginChangeCheck();
-        bool lowexit = EditorGUILayout.Toggle("Allow Low Exit", spline.LowExit);
-        if (EditorGUI.EndChangeCheck())
-        {
-            Undo.RecordObject(spline, "Allow Low Exit");
-            spline.LowExit = lowexit;
-            EditorUtility.SetDirty(spline);
-        }
-
-        EditorGUI.BeginChangeCheck();
-        bool highexit = EditorGUILayout.Toggle("Allow High Exit", spline.HighExit);
-        if (EditorGUI.EndChangeCheck())
-        {
-            Undo.RecordObject(spline, "Allow High Exit");
-            spline.LowExit = highexit;
             EditorUtility.SetDirty(spline);
         }
 
