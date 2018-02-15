@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Analytics;
 using UnityEngine.InputNew;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 
@@ -15,6 +16,8 @@ public class EndLevel : MonoBehaviour
     public Color m_cInColor;
     public Color m_cFullColor;
     public int m_iAnimalInCount = 0;
+
+    public UnityEvent OnSceneEnd;
 
     internal int m_iRequiredCount;
 
@@ -87,6 +90,8 @@ public class EndLevel : MonoBehaviour
             
                 if (m_Door != null)
                     m_Door.enabled = true;
+
+                OnSceneEnd.Invoke();
             }
         }
     }
