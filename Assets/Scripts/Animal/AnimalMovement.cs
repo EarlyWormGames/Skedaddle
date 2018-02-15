@@ -62,6 +62,9 @@ public class AnimalMovement : MonoBehaviour
         if (currentInput == 0)
             moveVelocity = Mathf.MoveTowards(moveVelocity, 0, DecelerationRate * Time.deltaTime);
 
+        //Debug.Log("Move Velocity: " + moveVelocity);
+        //Debug.Log("Rig Velocity: " + animal.m_rBody.velocity.x);
+
         Move(speed);
     }
 
