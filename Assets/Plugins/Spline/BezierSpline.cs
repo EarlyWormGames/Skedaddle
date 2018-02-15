@@ -10,8 +10,8 @@ public class BezierSpline : MonoBehaviour
     [HideInInspector]
     public int splineCount = 1;
 
-    [SerializeField]
-    private Vector3[] points;
+    [HideInInspector]
+    public Vector3[] points;
 
     [SerializeField]
     private BezierControlPointMode[] modes;

@@ -41,7 +41,8 @@ public class SplineMovement : MonoBehaviour
     [HideInInspector]
     public Point[] points;
 
-    private BezierSpline m_Spline;
+    [HideInInspector]
+    public BezierSpline m_Spline;
 
     public void Start()
     {
