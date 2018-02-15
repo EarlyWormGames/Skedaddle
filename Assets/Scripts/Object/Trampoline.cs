@@ -28,7 +28,7 @@ public class Trampoline : ActionObject
         base.OnStart();
 
         if (!LaunchOnTrigger)
-            LaunchAxis.Bind(GameManager.Instance.GetComponent<PlayerInput>().handle);
+            LaunchAxis.Bind(GameManager.Instance.input.handle);
 
         m_CanBeDetached = false;
         m_CanDetach = true;

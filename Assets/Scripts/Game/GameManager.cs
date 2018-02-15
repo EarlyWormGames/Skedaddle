@@ -12,13 +12,13 @@ public class GameManager : Singleton<GameManager>
     public string[] m_asDebugScenes;
     public string[] m_asNonGameScenes;
 
-    public MainMapping input;
+    public MainMapping mainMap;
+    public PlayerInput input;
 
     private bool m_bDoOnce = false;
-
     private float m_fGameTimer = 0;
-
     private float m_fGCTimer = 0f;
+    private PlayerInput pInput;
 
     protected override void OnAwake()
     {
@@ -29,9 +29,11 @@ public class GameManager : Singleton<GameManager>
     void Start()
     {
         DontDestroy();
+
+        pInput = GetComponent<PlayerInput>();
+
         SceneManager.sceneLoaded += SceneLoaded;
         SceneLoaded(SceneManager.GetActiveScene(), LoadSceneMode.Single);
-        input = GetComponent<PlayerInput>().GetActions<MainMapping>();
     }
 
     void SceneLoaded(Scene a_scene, LoadSceneMode a_mode)
@@ -41,6 +43,14 @@ public class GameManager : Singleton<GameManager>
         {
             Instantiate(m_goMenuPrefab);
         }
+
+        pInput = GetComponent<PlayerInput>();
+
+        var obj = new GameObject();
+        input = Utilities.CopyComponent(pInput, obj);
+        input.autoAssignGlobal = pInput.autoAssignGlobal;
+        input.actionMaps = pInput.actionMaps;
+        mainMap = input.GetActions<MainMapping>();
     }
 
     // Update is called once per frame
@@ -65,7 +75,7 @@ public class GameManager : Singleton<GameManager>
             m_bDoOnce = false;
         }
 
-        if (input.restart.wasJustPressed)
+        if (mainMap.restart.wasJustPressed)
         {
             EWApplication.ReloadLevel();
         }

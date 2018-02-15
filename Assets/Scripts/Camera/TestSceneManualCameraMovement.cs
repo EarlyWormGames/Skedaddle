@@ -13,7 +13,7 @@ public class TestSceneManualCameraMovement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         OriginalPosition = transform.position;
-        cameraInput.Bind(GameManager.Instance.GetComponent<PlayerInput>().handle);
+        cameraInput.Bind(GameManager.Instance.input.handle);
 	}
 	
 	// Update is called once per frame

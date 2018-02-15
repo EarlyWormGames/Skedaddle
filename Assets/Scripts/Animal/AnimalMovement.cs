@@ -32,7 +32,7 @@ public class AnimalMovement : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        MoveAxisKey.Bind(GameManager.Instance.GetComponent<PlayerInput>().handle);
+        MoveAxisKey.Bind(GameManager.Instance.input.handle);
         rig = GetComponent<Rigidbody>();
         animal = GetComponent<Animal>();
     }

@@ -77,7 +77,7 @@ public class ActionObject : MonoBehaviour
         if (m_GazeObject == null)
             m_GazeObject = GetComponent<EWGazeObject>();
 
-        input = GameManager.Instance.GetComponent<PlayerInput>().GetActions<MainMapping>();
+        input = GameManager.Instance.mainMap;
 
         OnStart();
     }

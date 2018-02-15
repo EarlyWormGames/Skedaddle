@@ -49,7 +49,7 @@ public class SplineMovement : MonoBehaviour
         m_Spline = GetComponent<BezierSpline>();
 
         if (MoveAxisKey.action != null)
-            MoveAxisKey.Bind(GameManager.Instance.GetComponent<PlayerInput>().handle);
+            MoveAxisKey.Bind(GameManager.Instance.input.handle);
 
         GeneratePoints();
     }
