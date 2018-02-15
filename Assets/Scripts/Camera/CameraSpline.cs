@@ -10,12 +10,13 @@ public class CameraSpline : MonoBehaviour
     public bool IsDefaultSpline;
     [Tooltip("Should the spline use the Animal's \"Camera Y\" value?")]
     public bool UseAnimalYSettings = true;
-    public ANIMAL_NAME[] MyAnimals;
+    public List<ANIMAL_NAME> MyAnimals = new List<ANIMAL_NAME>();
 
     public static Vector3 CurrentPoint;
 
+    internal bool[] EnableForAnimals;
+
     private BezierSpline MySpline;
-    private Animal MyAnimal;
 
     private void Start()
     {
@@ -33,24 +34,25 @@ public class CameraSpline : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MyAnimal = null;
-        foreach (var item in MyAnimals)
+        Animal currentAnimal = null;
+        for(int i = 0; i < MyAnimals.Count; ++i)
         {
-            if (item == Animal.CurrentAnimal.m_eName)
+            if (MyAnimals[i] == Animal.CurrentAnimal.m_eName &&
+                EnableForAnimals[i])
             {
-                MyAnimal = Animal.CurrentAnimal;
+                currentAnimal = Animal.CurrentAnimal;
                 break;
             }
         }
 
-        if (MyAnimal == null)
+        if (currentAnimal == null)
             return;
 
         float distance = -1;
         int firstIndex = 0;
         for (int i = 0; i < AnimalSpline.points.Length; ++i)
         {
-            float dist = Vector3.Distance(MyAnimal.transform.position, AnimalSpline.GetPosition(i));
+            float dist = Vector3.Distance(currentAnimal.transform.position, AnimalSpline.GetPosition(i));
 
             if (dist < distance || distance < 0)
             {
@@ -67,7 +69,7 @@ public class CameraSpline : MonoBehaviour
         if (firstIndex != 0 && firstIndex < AnimalSpline.points.Length - 1)
         {
             AB = AnimalSpline.GetPosition(firstIndex) - AnimalSpline.GetPosition(firstIndex - 1);
-            XB = AnimalSpline.GetPosition(firstIndex) - MyAnimal.transform.position;
+            XB = AnimalSpline.GetPosition(firstIndex) - currentAnimal.transform.position;
 
             float dot = Vector3.Dot(AB.normalized, XB.normalized);
 
@@ -90,7 +92,7 @@ public class CameraSpline : MonoBehaviour
                 endPoint = AnimalSpline.points[firstIndex + 1];
 
                 AB = AnimalSpline.GetPosition(endPoint) - AnimalSpline.GetPosition(startPoint);
-                XB = AnimalSpline.GetPosition(endPoint) - MyAnimal.transform.position;
+                XB = AnimalSpline.GetPosition(endPoint) - currentAnimal.transform.position;
 
                 float dot = Vector3.Dot(AB.normalized, XB.normalized);
 
@@ -106,7 +108,7 @@ public class CameraSpline : MonoBehaviour
                 endPoint = AnimalSpline.points[firstIndex];
 
                 AB = AnimalSpline.GetPosition(endPoint) - AnimalSpline.GetPosition(startPoint);
-                XB = AnimalSpline.GetPosition(endPoint) - MyAnimal.transform.position;
+                XB = AnimalSpline.GetPosition(endPoint) - currentAnimal.transform.position;
 
                 float dot = Vector3.Dot(AB.normalized, XB.normalized);
 
@@ -118,11 +120,11 @@ public class CameraSpline : MonoBehaviour
             }
         }
 
-        float firstDist = Vector3.Distance(MyAnimal.transform.position, AnimalSpline.GetPosition(startPoint));
-        float secondDist = Vector3.Distance(MyAnimal.transform.position, AnimalSpline.GetPosition(endPoint));
+        float firstDist = Vector3.Distance(currentAnimal.transform.position, AnimalSpline.GetPosition(startPoint));
+        float secondDist = Vector3.Distance(currentAnimal.transform.position, AnimalSpline.GetPosition(endPoint));
 
         AB = AnimalSpline.GetPosition(endPoint) - AnimalSpline.GetPosition(startPoint);
-        XB = AnimalSpline.GetPosition(endPoint) - MyAnimal.transform.position;
+        XB = AnimalSpline.GetPosition(endPoint) - currentAnimal.transform.position;
 
         float angle = Vector3.Angle(AB, XB);
         angle = Mathf.Cos(angle * Mathf.Deg2Rad);
@@ -140,5 +142,13 @@ public class CameraSpline : MonoBehaviour
 
         float splineT = Mathf.Lerp(startPoint.time, endPoint.time, t);
         CurrentPoint = MySpline.GetPoint(splineT);
+    }
+
+    public void SetAnimalEnabled(ANIMAL_NAME a_name, bool a_enabled)
+    {
+        if (!MyAnimals.Contains(a_name))
+            return;
+
+        EnableForAnimals[MyAnimals.IndexOf(a_name)] = a_enabled;
     }
 }

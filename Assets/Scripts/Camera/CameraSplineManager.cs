@@ -19,7 +19,7 @@ public class CameraSplineManager : MonoBehaviour
             CurrentSplines.Add(animal.m_eName, null);
         }
 
-        DisableAllSplines();
+        SetupSplines();
         foreach (var spline in Splines)
         {
             if (spline.IsDefaultSpline)
@@ -27,21 +27,23 @@ public class CameraSplineManager : MonoBehaviour
         }
     }
 
-    public void DisableAllSplines()
+    public void SetupSplines()
     {
         foreach (var spline in Splines)
         {
-            spline.enabled = false;
+            spline.EnableForAnimals = new bool[spline.MyAnimals.Count];
         }
     }
 
     public void EnableSpline(ANIMAL_NAME a_name, CameraSpline spline)
     {
         if (CurrentSplines[a_name] != null)
-            CurrentSplines[a_name].enabled = false;
+        {
+            CurrentSplines[a_name].SetAnimalEnabled(a_name, false);
+        }
 
         CurrentSplines[a_name] = spline;
-        spline.enabled = true;
+        CurrentSplines[a_name].SetAnimalEnabled(a_name, true);
     }
 
     public void EnableSplineLoris(CameraSpline spline)
