@@ -6,6 +6,8 @@ public class CameraSpline : MonoBehaviour
 {
     public BezierSpline MySpline;
     public SplineMovement AnimalSpline;
+    [Tooltip("Should the spline use the Animal's \"Camera Y\" value?")]
+    public bool UseAnimalYSettings = true;
     public Animal[] MyAnimals;
 
     public static Vector3 CurrentPoint;

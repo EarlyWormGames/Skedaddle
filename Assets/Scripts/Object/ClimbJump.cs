@@ -131,6 +131,7 @@ public class ClimbJump : ActionObject
         if (!TryDetach())
             return;
 
+        base.DoAction();
         m_aCurrentAnimal = Animal.CurrentAnimal;
         timer = m_aCurrentAnimal.m_fJumpWaitTime;
 

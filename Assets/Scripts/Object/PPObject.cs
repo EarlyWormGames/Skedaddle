@@ -43,6 +43,7 @@ public class PPObject : ActionObject
             return;
         }
 
+        base.DoAction();
         m_aCurrentAnimal = Animal.CurrentAnimal;
         m_aCurrentAnimal.m_bPullingObject = true;
         m_aCurrentAnimal.m_oCurrentObject = this;

@@ -9,6 +9,7 @@ public enum BezierControlPointMode
     Mirrored
 }
 
+[RequireComponent(typeof(BezierSpline))]
 public class BezierSplineFollower : MonoBehaviour
 {
     public enum eLoopType
