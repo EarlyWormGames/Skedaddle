@@ -112,6 +112,7 @@ namespace RootMotion.FinalIK {
 		/// When using GrounderQuadruped on a spherical object, update this vector to always point towards the center of that object.
 		/// </summary>
 		[HideInInspector] public Vector3 gravity = Vector3.down;
+        [HideInInspector] public Quaternion PelvisRotation;
 		
 		#endregion Main Interface
 
@@ -387,6 +388,8 @@ namespace RootMotion.FinalIK {
 			Vector3 newDirection = newSpinePosition - pelvis.position;
 			
 			Quaternion f = Quaternion.FromToRotation(spineDirection, newDirection);
+            PelvisRotation.eulerAngles = f.eulerAngles + characterRoot.forward;
+            PelvisRotation  = Quaternion.Euler(PelvisRotation.eulerAngles.z, PelvisRotation.eulerAngles.y, PelvisRotation.eulerAngles.x);
 			pelvis.rotation = Quaternion.Slerp(Quaternion.identity, f, weight) * pelvis.rotation;
 			
 			// Update the IKPositions and IKPositonWeights of the legs

@@ -6451,7 +6451,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 111396}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 52.24, y: -1.272, z: 9.91}
+  m_LocalPosition: {x: 30.303, y: -1.836, z: 9.082}
   m_LocalScale: {x: 0.401, y: 0.401, z: 0.401}
   m_Children:
   - {fileID: 427722}
@@ -10450,6 +10450,7 @@ MonoBehaviour:
   - {fileID: 11404352}
   - {fileID: 11433188}
   gravity: {x: 0, y: -1, z: 0}
+  PelvisRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &11409500
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10705,9 +10706,11 @@ MonoBehaviour:
   m_eExtras: {fileID: 11474848}
   m_goIKSwitch: {fileID: 127784}
   m_tJointRoot: {fileID: 486628}
+  m_tPelvis: {fileID: 466434}
+  m_v3PelvisOffset: {x: 0, y: -90, z: 0}
   m_tCollider: {fileID: 4984212974349418}
   m_fWalkSpeed: 0.1
-  m_fTopSpeed: 0.01
+  m_fTopSpeed: 0.013
   m_fPullSpeedMult: 0.9
   m_fFallSpeedMult: 0.2
   m_fTurnSpeedMult: 0.8
@@ -10808,8 +10811,8 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-  m_fClimbSpeed: 1.5
-  m_fClimbTopSpeed: 5
+  m_fClimbSpeed: 0.01
+  m_fClimbTopSpeed: 0.1
   m_fClimbStopSpeed: 0.2
   m_lVisionLight: []
   m_fOnIntensity: 1

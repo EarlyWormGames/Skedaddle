@@ -13,4 +13,8 @@ public class MainMapping : ActionMapInput {
 	public ButtonInputControl @restart { get { return (ButtonInputControl)this[5]; } }
 	public ButtonInputControl @nextAnimal { get { return (ButtonInputControl)this[6]; } }
 	public ButtonInputControl @sprint { get { return (ButtonInputControl)this[7]; } }
+	public Vector3InputControl @moveCamera { get { return (Vector3InputControl)this[8]; } }
+	public AxisInputControl @moveCameraX { get { return (AxisInputControl)this[9]; } }
+	public AxisInputControl @moveCameraY { get { return (AxisInputControl)this[10]; } }
+	public AxisInputControl @moveCameraZ { get { return (AxisInputControl)this[11]; } }
 }

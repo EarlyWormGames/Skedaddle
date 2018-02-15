@@ -182,7 +182,7 @@ namespace RootMotion.FinalIK {
 				float currentMaxOffset = Mathf.Clamp(grounding.maxStep - legHeight, 0f, grounding.maxStep);
 
 				IKOffset = Mathf.Clamp(IKOffset, -currentMaxOffset, IKOffset);
-                IKOffsetPosition = new Vector3(IKOffsetPosition.x, Mathf.Clamp(IKOffsetPosition.y, -currentMaxOffset, IKOffsetPosition.y), IKOffsetPosition.z);
+                IKOffsetPosition = new Vector3(IKOffsetPosition.x, Mathf.Clamp(IKOffsetPosition.y, -currentMaxOffset + transform.position.y, IKOffsetPosition.y), IKOffsetPosition.z);
 
 				RotateFoot();
                 if (UseYOnly)

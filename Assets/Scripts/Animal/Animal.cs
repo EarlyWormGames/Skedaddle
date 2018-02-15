@@ -419,7 +419,7 @@ public class Animal : MonoBehaviour
 
         if (m_tJointRoot != null)
         {
-            m_tCollider.eulerAngles = m_tPelvis.eulerAngles + m_v3PelvisOffset;
+            m_tCollider.localRotation = Quaternion.Euler(m_gqGrounder.PelvisRotation.x + m_v3PelvisOffset.x, m_tJointRoot.rotation.eulerAngles.y + m_v3PelvisOffset.y, m_v3PelvisOffset.z);
         }
 
         //IK sWitch
