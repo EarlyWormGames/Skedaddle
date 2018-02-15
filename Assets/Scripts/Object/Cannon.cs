@@ -29,6 +29,11 @@ public class Cannon : ActionObject
     {
         base.OnStart();
         startRotation = RotateObject.rotation;
+
+        m_CanBeDetached = false;
+        m_CanDetach = false;
+        m_bBlocksMovement = true;
+        m_bBlocksTurn = true;
     }
 
     private void OnEnable()

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[AddComponentMenu("")]
 public class MovingObject : MonoBehaviour
 {
     [Tooltip("Time (in s) to transition from point A to B")]

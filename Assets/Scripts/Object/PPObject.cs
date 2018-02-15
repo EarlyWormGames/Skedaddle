@@ -11,10 +11,16 @@ public class PPObject : ActionObject
     private CollisionDetectionMode collisionDetectionMode;
 
     private List<Collider> triggers = new List<Collider>();
+    private bool waitOne = false;
 
     protected override void OnStart()
     {
         base.OnStart();
+        m_CanBeDetached = true;
+        m_CanDetach = false;
+        m_bBlocksMovement = false;
+        m_bBlocksTurn = true;
+
         rig = GetComponent<Rigidbody>();
         rig.isKinematic = false;
         mass = rig.mass;
@@ -32,6 +38,16 @@ public class PPObject : ActionObject
         }
     }
 
+    protected override void OnUpdate()
+    {
+        if (m_aCurrentAnimal != null)
+        {
+            if (input.interact.wasJustPressed && !waitOne)
+                Detach();
+            waitOne = false;
+        }
+    }
+
     public override void DoAction()
     {
         if (!TryDetach())
@@ -39,7 +55,6 @@ public class PPObject : ActionObject
 
         if (m_aCurrentAnimal != null)
         {
-            Detach();
             return;
         }
 
@@ -52,6 +67,8 @@ public class PPObject : ActionObject
 
         foreach (var trigger in triggers)
             trigger.enabled = false;
+
+        waitOne = true;
 
         Destroy(rig);
     }

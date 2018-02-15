@@ -71,6 +71,8 @@ public class Animal : MonoBehaviour
     public AnimationExtras  m_eExtras;
     public GameObject       m_goIKSwitch;
     public Transform        m_tJointRoot;
+    public Transform        m_tPelvis;
+    public Vector3          m_v3PelvisOffset;
     public Transform        m_tCollider;
 
     [Header("Speeds")]
@@ -417,7 +419,7 @@ public class Animal : MonoBehaviour
 
         if (m_tJointRoot != null)
         {
-            m_tCollider.rotation = m_tJointRoot.rotation;
+            m_tCollider.eulerAngles = m_tPelvis.eulerAngles + m_v3PelvisOffset;
         }
 
         //IK sWitch

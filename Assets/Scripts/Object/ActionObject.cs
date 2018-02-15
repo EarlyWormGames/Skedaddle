@@ -50,11 +50,10 @@ public class ActionObject : MonoBehaviour
     public UnityEvent OnWrongAnimalEnter;
     public UnityEvent OnWrongAnimalExit;
 
-    [Header("Settings")]
-    public bool m_CanDetach;
-    public bool m_CanBeDetached = true;
-    public bool m_bBlocksTurn = false;
-    public bool m_bBlocksMovement = false;
+    internal bool m_CanDetach;
+    internal bool m_CanBeDetached = true;
+    internal bool m_bBlocksTurn = false;
+    internal bool m_bBlocksMovement = false;
 
     protected bool m_bEyetrackSelected = false;
     protected bool m_bQuickExitFix = false;
@@ -125,6 +124,8 @@ public class ActionObject : MonoBehaviour
 
     protected virtual void OnCanTrigger()
     {
+        if (m_aCurrentAnimal != null)
+            return;
         if (input.interact.wasJustPressed)
         {
             DoAction();
