@@ -5,6 +5,7 @@ using UnityEngine;
 public class PPObject : ActionObject
 {
     private Rigidbody rig;
+    private bool isKinematic;
     private float mass, drag, angularDrag;
     private RigidbodyConstraints constraints;
     private RigidbodyInterpolation interpolation;
@@ -22,7 +23,7 @@ public class PPObject : ActionObject
         m_bBlocksTurn = true;
 
         rig = GetComponent<Rigidbody>();
-        rig.isKinematic = false;
+        isKinematic = rig.isKinematic;
         mass = rig.mass;
         drag = rig.drag;
         angularDrag = rig.angularDrag;
@@ -89,6 +90,7 @@ public class PPObject : ActionObject
         transform.parent = null;
 
         rig = gameObject.AddComponent<Rigidbody>();
+        rig.isKinematic = isKinematic;
         rig.mass = mass;
         rig.drag = drag;
         rig.angularDrag = angularDrag;
