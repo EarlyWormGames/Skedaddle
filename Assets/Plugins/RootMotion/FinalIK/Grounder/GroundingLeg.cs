@@ -52,9 +52,10 @@ namespace RootMotion.FinalIK {
 			/// </summary>
 			public float IKOffset { get; private set; }
             public Vector3 IKOffsetPosition { get; private set; }
+            public bool UseYOnly { get; private set; }
 
-			private Grounding grounding;
-            private bool UseYOnly;
+            private Grounding grounding;
+            
             private float switchlerp = 0;
 			private Vector3 lastPosition;
 			private Quaternion toHitNormal, r;
@@ -143,35 +144,18 @@ namespace RootMotion.FinalIK {
                         StepTry(Vector3.zero, prediction);
                         if(groundObject == "")
                         {
-                            RaycastHit hit = new RaycastHit();
-                            Quaternion orientation = Quaternion.LookRotation(grounding.root.forward, grounding.root.up);
-                            Physics.BoxCast(transform.position - up * grounding.maxStep * 0.5f, new Vector3(0.01f, grounding.maxStep * 0.5f, 0.01f), grounding.root.forward, out hit, orientation, grounding.maxGapDistance, grounding.layers);
-                            if(hit.collider != null)
+                            if (grounding.PrioritiseForward)
                             {
-                                float dist = Vector3.Distance(transform.position, hit.point);
-                                StepTry(grounding.root.forward * (dist + 0.01f), prediction);
-                                if (groundObject != "")
+                                if(!HoriztonalGapScan(grounding.root.forward, prediction, Color.blue))
                                 {
-                                    if (isGrounded)
-                                    {
-                                        UseYOnly = false;
-                                    }
+                                    HoriztonalGapScan(-grounding.root.forward, prediction, Color.red);
                                 }
                             }
                             else
                             {
-                                Physics.BoxCast(transform.position - up * grounding.maxStep * 0.5f, new Vector3(0.01f, grounding.maxStep * 0.5f, 0.01f), -grounding.root.forward, out hit, orientation, grounding.maxGapDistance, grounding.layers);
-                                if (hit.collider != null)
+                                if (!HoriztonalGapScan(-grounding.root.forward, prediction, Color.red))
                                 {
-                                    float dist = Vector3.Distance(transform.position, hit.point);
-                                    StepTry(-grounding.root.forward * (dist + 0.01f), prediction);
-                                    if (groundObject != "")
-                                    {
-                                        if (isGrounded)
-                                        {
-                                            UseYOnly = false;
-                                        }
-                                    }
+                                    HoriztonalGapScan(grounding.root.forward, prediction, Color.blue);
                                 }
                             }
                         }
@@ -336,7 +320,30 @@ namespace RootMotion.FinalIK {
 				get {
 					return grounding.GetVerticalOffset(transform.position, grounding.root.position - up * grounding.heightOffset);
 				}
-			}		
+			}
+            
+            bool HoriztonalGapScan(Vector3 direction, Vector3 prediction, Color DebugColor)
+            {
+                RaycastHit hit = new RaycastHit();
+                Quaternion orientation = Quaternion.LookRotation(grounding.root.forward, grounding.root.up);
+                Vector3 boxCastSize = new Vector3(0.001f, grounding.maxStep * 0.5f, 0.001f);
+                Vector3 BoxCastCenter = transform.position - up * grounding.maxStep * 0.5f;
+                Physics.BoxCast(BoxCastCenter, boxCastSize, direction, out hit, orientation, grounding.maxGapDistance, grounding.layers);
+                if (hit.collider != null)
+                {
+                    float dist = Vector3.Distance(transform.position - up * grounding.maxStep * 0.5f, hit.point);
+                    StepTry(direction * (dist + 0.01f), prediction);
+                    if (groundObject != "")
+                    {
+                        if (isGrounded)
+                        {
+                            UseYOnly = false;
+                            return true;
+                        }
+                    }
+                }
+                return false;
+            }
 		}
 	}
 }

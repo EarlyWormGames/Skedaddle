@@ -271,11 +271,11 @@ public class Poodle : Animal
                         {
                             if (!m_bTurning)
                             {
-                                m_rBody.AddForce(m_tCollider.transform.forward * m_fPushForce, ForceMode.Impulse);
+                                //m_rBody.AddForce(m_tCollider.transform.forward * m_fPushForce, ForceMode.Impulse);
                             }
                             else
                             {
-                                m_rBody.AddForce(m_bFacingLeft ? Vector3.left * m_fPushForce : Vector3.right * m_fPushForce, ForceMode.Impulse);
+                               //m_rBody.AddForce(m_bFacingLeft ? Vector3.left * m_fPushForce : Vector3.right * m_fPushForce, ForceMode.Impulse);
                             }
                         }
                     }
