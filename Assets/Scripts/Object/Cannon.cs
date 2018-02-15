@@ -60,6 +60,7 @@ public class Cannon : ActionObject
         if (m_aCurrentAnimal != null)
             return;
 
+        base.DoAction();
         m_aCurrentAnimal = Animal.CurrentAnimal;
         loris = (Loris)m_aCurrentAnimal;
         loris.m_oCurrentObject = this;

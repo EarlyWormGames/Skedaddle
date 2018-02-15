@@ -84,11 +84,11 @@ public class Poodle : Animal
                         m_bRunning = false;
                 }
 
-                //if (Keybinding.GetKey("SecondaryAction") || Controller.GetButton(ControllerButtons.X))
-                //{
-                //    m_fCurrentSpeed = m_fWalkSpeed * m_fRunSpeedMult;
-                //    m_bRunning = true;
-                //}
+                if (GameManager.Instance.input.sprint.isHeld)
+                {
+                    m_fCurrentSpeed = m_fWalkSpeed * m_fRunSpeedMult;
+                    m_bRunning = true;
+                }
             }
             else if (m_bPullingObject)
             {
@@ -101,7 +101,7 @@ public class Poodle : Animal
 
         //set horozontal velocity
         m_aAnimalAnimator.SetFloat("Vertical Velocity", m_rBody.velocity.y);
-        m_aAnimalAnimator.SetFloat("Horizontal Velocity", m_rBody.velocity.x);
+        m_aAnimalAnimator.SetFloat("Horizontal Velocity", m_aMovement.moveVelocity * m_fWalkAnimMult);
 
         
         if (!m_bOnSlope)
@@ -186,7 +186,7 @@ public class Poodle : Animal
             {
                 m_aAnimalAnimator.SetBool("Walking", false);
             }
-            if (m_bRunning && m_rBody.velocity.magnitude > 0.10f)
+            if (m_bRunning && (m_aMovement.moveVelocity > m_fTopSpeed || m_aMovement.moveVelocity < -m_fTopSpeed))
             {
                 m_aAnimalAnimator.SetBool("Sprint", true);
             } else
@@ -291,5 +291,21 @@ public class Poodle : Animal
                 PlaySound(SOUND_EVENT.FALL_DEATH);
                 break;
         }
+    }
+
+    public override float[] CalculateMoveSpeed()
+    {
+        float[] speedMinMax = new float[3];
+        speedMinMax[0] = m_fCurrentSpeed;
+
+        float mult = (m_bRunning ? m_fRunSpeedMult : 1);
+        mult *= m_bPullingObject ? m_fPullSpeedMult : 1;
+
+        if (m_bCanWalkLeft)
+            speedMinMax[1] = -m_fTopSpeed * mult;
+        if (m_bCanWalkRight)
+            speedMinMax[2] = m_fTopSpeed * mult;
+
+        return speedMinMax;
     }
 }

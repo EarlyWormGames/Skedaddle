@@ -44,8 +44,11 @@ public class ActionObject : MonoBehaviour
     public NamedEvent[] m_aSoundEvents;
 
     [Header("Events")]
+    public UnityEvent OnDoAction;
     public UnityEvent OnAnimalEnter;
     public UnityEvent OnAnimalExit;
+    public UnityEvent OnWrongAnimalEnter;
+    public UnityEvent OnWrongAnimalExit;
 
     [Header("Settings")]
     public bool m_CanDetach;
@@ -171,13 +174,17 @@ public class ActionObject : MonoBehaviour
             return;
 
         if (CheckCorrectAnimal(anim))
+        {
             AnimalEnter(anim);
+            OnAnimalEnter.Invoke();
+        }
         else
+        {
             WrongAnimalEnter(anim);
+            OnWrongAnimalEnter.Invoke();
+        }
 
         m_lAnimalsIn.Add(anim);
-
-        OnAnimalEnter.Invoke();
     }
 
     protected virtual void ObjectEnter(Collider a_col) { }
@@ -203,7 +210,10 @@ public class ActionObject : MonoBehaviour
         if (anim != null)
         {
             AnimalExit(anim);
-            OnAnimalExit.Invoke();
+            if (CheckCorrectAnimal(anim))
+                OnAnimalExit.Invoke();
+            else
+                OnWrongAnimalExit.Invoke();
         }
     }
 
@@ -212,7 +222,11 @@ public class ActionObject : MonoBehaviour
     protected virtual void WrongAnimalExit(Animal a_animal) { }
     public virtual void DoAnimation() { }
 
-    public virtual void DoAction() { }
+    public virtual void DoAction()
+    {
+        OnDoAction.Invoke();
+    }
+
     public virtual void DoActionOn() { }
     public virtual void DoActionOff() { }
 

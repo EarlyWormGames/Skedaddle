@@ -22,6 +22,7 @@ public class Lever : ActionObject
 
         if (triggered && OnlyOnce)
             return;
+        base.DoAction();
         triggered = true;
 
         m_aCurrentAnimal = Animal.CurrentAnimal;

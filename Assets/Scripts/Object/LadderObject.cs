@@ -9,6 +9,7 @@ public class LadderObject : ActionObject
     public ActionObject TopTransition, BottomTransition;
     public Vector3 IgnoreAxes = new Vector3(1, 0, 1);
     public FACING_DIR Direction;
+    public bool IsRope = false;
 
     [Tooltip("First = Bottom, Last = Top :: THESE MUST BE IN CORRECT ORDER!")]
     public Transform[] Points;
@@ -138,6 +139,8 @@ public class LadderObject : ActionObject
 
         loris = (Loris)m_aCurrentAnimal;
         loris.m_bClimbing = true;
+        if (IsRope)
+            loris.m_bHorizontalRope = true;
 
         pointIndex = FindClosestPoint(transform.position);
         justEnter = true;
@@ -155,6 +158,9 @@ public class LadderObject : ActionObject
 
         loris.m_bClimbing = false;
         loris.SetDirection(FACING_DIR.NONE);
+
+        if (IsRope)
+            loris.m_bHorizontalRope = false;
 
         if (TopTransition != null && pointIndex > Points.Length - 1)
             TopTransition.AnimalEnter(m_aCurrentAnimal);

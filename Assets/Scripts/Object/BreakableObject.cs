@@ -34,6 +34,8 @@ public class BreakableObject : ActionObject
     //protected override void AnimalExit(Animal a_animal) { }
     public override void DoAction()
     {
+        base.DoAction();
+
         //This object should have the box collider on it
         foreach (Rigidbody x in m_rShards)
         {
