@@ -53,6 +53,15 @@ public class SplineMovement : MonoBehaviour
         GeneratePoints();
     }
 
+    private void Update()
+    {
+        if (RegeneratePoints)
+        {
+            GeneratePoints();
+            RegeneratePoints = false;
+        }
+    }
+
     public void GeneratePoints()
     {
         if (m_Spline == null)
