@@ -1515,6 +1515,7 @@ MonoBehaviour:
   MoveAxisKey:
     action: {fileID: 0}
   InvertAxis: 0
+  ForceMovement: 0
   IgnoreAxis: {x: 0, y: 1, z: 0}
   DisableGravity: 0
   points: []
@@ -1656,6 +1657,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1197711137 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 193460, guid: 6ac26916394ca4e4caa5daf8346f4a48, type: 2}
+  m_PrefabInternal: {fileID: 1776634969}
+--- !u!114 &1197711138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1197711137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ab91b944def036439e3610310fb785b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FadeOutTexture: {fileID: 2800000, guid: f5576858c8e25b443b8793f51b815394, type: 3}
+  FadeSpeed: 0.8
 --- !u!224 &1200383385 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224656955652335990, guid: 3002b47b72782b84a866b91ef0231d28,
@@ -2775,6 +2793,87 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ac26916394ca4e4caa5daf8346f4a48, type: 2}
   m_IsPrefabParent: 0
+--- !u!21 &1780892145
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: NightVision(Clone)
+  m_Shader: {fileID: 4800000, guid: a8d55b4f029bffc4997f9640d13d5587, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CookieTex:
+        m_Texture: {fileID: 2800000, guid: 2cb0c743f21931b458efb869d571eba0, type: 3}
+        m_Scale: {x: 10, y: 10}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 628c21b59d11155468832b50f1966741, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _BumpScale: 1
+    - _CookieSensitivityMultiplier: 0.8
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _GlossMapScale: 1
+    - _Glossiness: 0
+    - _GlossyReflections: 1
+    - _LightSensitivityMultiplier: 4
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _UVSec: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _Color: {r: 0, g: 0, b: 0, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _NVColor: {r: 0.52205884, g: 0.52205884, b: 0.52205884, a: 0.615}
 --- !u!1 &1780931764
 GameObject:
   m_ObjectHideFlags: 0
