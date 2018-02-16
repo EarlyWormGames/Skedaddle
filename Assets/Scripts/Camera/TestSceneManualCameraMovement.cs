@@ -7,6 +7,7 @@ public class TestSceneManualCameraMovement : MonoBehaviour {
 
     private Vector3 OriginalPosition;
     private Vector3 CameraOffset;
+    private Animal currentAnimal;
     public Vector3Action cameraInput;
     public float Speed;
     public float lerpSpeed;
@@ -18,7 +19,10 @@ public class TestSceneManualCameraMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        currentAnimal = GameManager.Instance.GetComponent<AnimalController>().GetCurrentAnimal();
+        Vector3 AnimalOffset = currentAnimal.transform.position;
         CameraOffset += cameraInput.control.vector3 * Speed;
-        transform.position = Vector3.Lerp(transform.position, OriginalPosition + CameraOffset, Time.deltaTime * lerpSpeed);
+        AnimalOffset += CameraOffset;
+        transform.position = Vector3.Lerp(transform.position, OriginalPosition + AnimalOffset, Time.deltaTime * lerpSpeed);
     }
 }

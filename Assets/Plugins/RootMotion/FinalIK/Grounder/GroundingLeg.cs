@@ -53,6 +53,7 @@ namespace RootMotion.FinalIK {
 			public float IKOffset { get; private set; }
             public Vector3 IKOffsetPosition { get; private set; }
             public bool UseYOnly { get; private set; }
+            public float PositionPelivsOffset { get; private set; }
 
             private Grounding grounding;
             
@@ -184,7 +185,21 @@ namespace RootMotion.FinalIK {
 				IKOffset = Mathf.Clamp(IKOffset, -currentMaxOffset, IKOffset);
                 IKOffsetPosition = new Vector3(IKOffsetPosition.x, Mathf.Clamp(IKOffsetPosition.y, -currentMaxOffset + transform.position.y, IKOffsetPosition.y), IKOffsetPosition.z);
 
-				RotateFoot();
+                //ExtDebug.DrawBox(transform.position, Vector3.one * 0.01f, Quaternion.Euler(grounding.root.forward), Color.blue);
+
+                float currentdistanceOffset = Vector3.Distance(transform.position, IKOffsetPosition);
+                if (currentdistanceOffset > grounding.maxGapPelvisMaintain)
+                {
+                    Vector3 MaxDecreaseDistance = transform.position + grounding.root.forward * grounding.maxGapPelvisDecrease;
+                    Vector3 MinDecreaseDistance = transform.position + grounding.root.forward * grounding.maxGapPelvisMaintain;
+                    PositionPelivsOffset = Mathf.Lerp(IKOffsetPosition.y, IKOffsetPosition.y - grounding.maxGapPelvisDecrease, Mathf.Clamp01((currentdistanceOffset - Vector3.Distance(transform.position, MinDecreaseDistance)) / Vector3.Distance(MinDecreaseDistance, MaxDecreaseDistance)));
+                }
+                else
+                {
+                    PositionPelivsOffset = IKOffsetPosition.y;
+                }
+
+                RotateFoot();
                 if (UseYOnly)
                 {
                     if(switchlerp > 0)

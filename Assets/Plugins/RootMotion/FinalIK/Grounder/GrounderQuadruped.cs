@@ -388,7 +388,7 @@ namespace RootMotion.FinalIK {
 			Vector3 newDirection = newSpinePosition - pelvis.position;
 			
 			Quaternion f = Quaternion.FromToRotation(spineDirection, newDirection);
-            PelvisRotation.eulerAngles = f.eulerAngles + characterRoot.forward;
+            PelvisRotation.eulerAngles = f.eulerAngles;
             PelvisRotation  = Quaternion.Euler(PelvisRotation.eulerAngles.z, PelvisRotation.eulerAngles.y, PelvisRotation.eulerAngles.x);
 			pelvis.rotation = Quaternion.Slerp(Quaternion.identity, f, weight) * pelvis.rotation;
 			

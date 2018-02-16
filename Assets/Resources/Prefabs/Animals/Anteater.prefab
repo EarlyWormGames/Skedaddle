@@ -3560,6 +3560,8 @@ MonoBehaviour:
   m_eExtras: {fileID: 11464442}
   m_goIKSwitch: {fileID: 127790}
   m_tJointRoot: {fileID: 443276}
+  m_tPelvis: {fileID: 481924}
+  m_v3PelvisOffset: {x: 0, y: 0, z: 0}
   m_tCollider: {fileID: 4000010847711744}
   m_fWalkSpeed: 0.3
   m_fTopSpeed: 0.5
@@ -3825,6 +3827,9 @@ MonoBehaviour:
     maxGapDistance: 0.3
     GapSnapSpeed: 2
     PrioritiseForward: 0
+    maxGapPelvisMaintain: 0.1
+    maxGapPelvisDecrease: 0.2
+    maxgapPelvisDecreaseDistance: 0.3
     footRotationWeight: 1
     footRotationSpeed: 7
     maxFootRotationAngle: 0
@@ -3848,6 +3853,9 @@ MonoBehaviour:
     maxGapDistance: 0.3
     GapSnapSpeed: 2
     PrioritiseForward: 1
+    maxGapPelvisMaintain: 0.1
+    maxGapPelvisDecrease: 0.2
+    maxgapPelvisDecreaseDistance: 0.3
     footRotationWeight: 1
     footRotationSpeed: 7
     maxFootRotationAngle: 45
@@ -3878,6 +3886,8 @@ MonoBehaviour:
   - {fileID: 11436124}
   - {fileID: 11470238}
   gravity: {x: 0, y: -1, z: 0}
+  PelvisRotation: {x: 0, y: 0, z: 0, w: 0}
+  ReadablePelvisRotation: {x: 0, y: 0, z: 0}
 --- !u!137 &13703844
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -5439,8 +5449,15 @@ MonoBehaviour:
   ForwardDictator: {fileID: 498468}
   FollowSpline: {fileID: 0}
   RotateLerpSpeed: 60
+  SweepYAdd: 0.1
   MoveAxisKey:
     action: {fileID: 114741689078800838, guid: 80f2df7e1586bc94aa1bbea872f6ca3b, type: 2}
+  MoveWithGround: 1
+  RotateWithGround: 1
+  GroundLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  RaycastDistance: 0.1
   moveVelocity: 0
 --- !u!136 &136000010318450984
 CapsuleCollider:

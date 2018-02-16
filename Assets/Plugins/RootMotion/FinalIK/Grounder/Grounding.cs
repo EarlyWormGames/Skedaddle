@@ -71,6 +71,9 @@ namespace RootMotion.FinalIK {
         /// </summary>
         [Tooltip("When over a gap, prioritise front raycast over back raycast.")]
         public bool PrioritiseForward;
+        public float maxGapPelvisMaintain;
+        public float maxGapPelvisDecrease;
+        public float maxgapPelvisDecreaseDistance;
         /// <summary>
         /// Weight of rotating the feet to the ground normal offset.
         /// </summary>
@@ -160,11 +163,13 @@ namespace RootMotion.FinalIK {
 		/// Ground height at the root position.
 		/// </summary>
 		public RaycastHit rootHit { get; private set; }
+        public bool useYOnly { get; private set; }
         /// <summary>
         /// Is the RaycastHit from the root grounded?
         /// </summary>
 		public bool rootGrounded {
 			get {
+                if (!useYOnly) return true;
 				return rootHit.distance < maxStep * 2f;
 			}
 		}
@@ -273,6 +278,7 @@ namespace RootMotion.FinalIK {
 			isGrounded = false;
             currentGroundLayer = -1;
             int raycastIndex = 0;
+            useYOnly = true;
 
             // Process legs
             foreach (Leg leg in legs)
@@ -284,8 +290,9 @@ namespace RootMotion.FinalIK {
                 }
                 else
                 {
-                    if (leg.IKPosition.y > lowestOffset) lowestOffset = leg.transform.position.y - leg.IKPosition.y;
-                    if (leg.IKPosition.y < highestOffset) highestOffset = leg.transform.position.y - leg.IKPosition.y;
+                    if (leg.IKPosition.y > lowestOffset) lowestOffset = leg.transform.position.y - leg.PositionPelivsOffset;
+                    if (leg.IKPosition.y < highestOffset) highestOffset = leg.transform.position.y - leg.PositionPelivsOffset;
+                    useYOnly = false;
                 }
                 LegRaycast[raycastIndex] = leg.IKRaycast;
                 raycastIndex++;
