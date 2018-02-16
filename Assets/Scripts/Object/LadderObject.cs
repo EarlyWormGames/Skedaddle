@@ -7,7 +7,7 @@ public class LadderObject : ActionObject
     public bool LowExit = true, HighExit = true;
     public float RotateSpeed = 5;
     public ActionObject TopTransition, BottomTransition;
-    public IgnoreAxis AxesToIgnore = IgnoreAxis.X | IgnoreAxis.Z;
+    [EnumFlag] public IgnoreAxis AxesToIgnore = IgnoreAxis.X | IgnoreAxis.Z;
     public FACING_DIR Direction;
     public bool IsRope = false;
 

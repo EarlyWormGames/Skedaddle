@@ -35,7 +35,7 @@ public class SplineMovement : MonoBehaviour
     public bool InvertAxis = false;
     public bool ForceMovement = false;
 
-    public IgnoreAxis AxesToIgnore = IgnoreAxis.Y;
+    [EnumFlag] public IgnoreAxis AxesToIgnore = IgnoreAxis.Y;
     public bool DisableGravity;
     
     [HideInInspector]
