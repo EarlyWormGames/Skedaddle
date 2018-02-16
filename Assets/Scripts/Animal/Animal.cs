@@ -873,6 +873,9 @@ public class Animal : MonoBehaviour
         if (m_oCurrentObject != null)
             objOkay = !m_oCurrentObject.m_bBlocksTurn;
 
+        if (!Alive)
+            return false;
+
         return !m_bTurning && !m_bPullingObject && objOkay;
     }
 
@@ -881,6 +884,9 @@ public class Animal : MonoBehaviour
         bool objOkay = true;
         if (m_oCurrentObject != null)
             objOkay = !m_oCurrentObject.m_bBlocksMovement;
+
+        if (!Alive)
+            return false;
 
         return (m_bCanWalkLeft || m_bCanWalkRight) && objOkay;
     }

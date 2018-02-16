@@ -273,7 +273,6 @@ public class CameraController : Singleton<CameraController>
         //            {
         //                m_bReload = false;
         //                m_fWaitTime = 10f;
-        //                EWApplication.ReloadLevel();
         //            }
         //            else
         //            {
@@ -305,6 +304,7 @@ public class CameraController : Singleton<CameraController>
         m_v3LerpStart = transform.position;
         m_bEnded = false;
         m_bTimeLerp = false;
+
     }
 
     public void ViewThenReload(Vector3 a_pos, float a_waitTimer = 1f, float a_lookTime = 1f)
@@ -318,6 +318,8 @@ public class CameraController : Singleton<CameraController>
         m_fLookTimer = 0f;
         m_bEnded = false;
         m_bTimeLerp = true;
+
+        EWApplication.ReloadLevel();
     }
 
     public void GoToPoint(Vector3 a_point, float a_waitTimer = float.PositiveInfinity, float a_lookTime = 1f)
