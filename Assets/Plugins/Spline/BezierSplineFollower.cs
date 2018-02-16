@@ -31,6 +31,9 @@ public class BezierSplineFollower : MonoBehaviour
 
     public FollowerEvent OnPathEnd;
 
+    [EnumFlag]
+    public IgnoreAxis AxesToIgnore;
+
 
     private int m_iLoopCount = 0;
     private float m_fTime = 0;
@@ -39,6 +42,9 @@ public class BezierSplineFollower : MonoBehaviour
 
     void Start()
     {
+        if (m_Spline == null)
+            GetComponent<BezierSpline>();
+
         if (m_FollowOnStart) Follow();
     }
 
@@ -53,7 +59,10 @@ public class BezierSplineFollower : MonoBehaviour
             if (m_Lookat)
                 m_MoveObject.LookAt(m_Spline.GetPoint(t));
             else
-                m_MoveObject.position = m_Spline.GetPoint(t);
+            {
+                Vector3 pos = m_Spline.GetPoint(t);
+                m_MoveObject.position = IgnoreUtils.Calculate(AxesToIgnore, m_MoveObject.position, pos);
+            }
 
             if (m_fTime >= m_FollowTime)
             {

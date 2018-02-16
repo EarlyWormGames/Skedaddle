@@ -168,12 +168,7 @@ public class AnimalMovement : MonoBehaviour
             currentPoint = Mathf.Clamp(currentPoint, 0, FollowSpline.points.Length - 1);
             splinePos = FollowSpline.GetPosition(currentPoint);
 
-            if (FollowSpline.IgnoreAxis.x > 0)
-                splinePos.x = transform.position.x;
-            if (FollowSpline.IgnoreAxis.y > 0)
-                splinePos.y = transform.position.y;
-            if (FollowSpline.IgnoreAxis.z > 0)
-                splinePos.z = transform.position.z;
+            splinePos = IgnoreUtils.Calculate(FollowSpline.AxesToIgnore, transform.position, splinePos);
 
             Vector3 dir = splinePos - transform.position;
             float move = moveVelocity;

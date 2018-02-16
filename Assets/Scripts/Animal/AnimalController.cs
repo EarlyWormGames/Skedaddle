@@ -60,7 +60,7 @@ public class AnimalController : Singleton<AnimalController>
         //
         if (GameManager.Instance.mainMap.nextAnimal.wasJustPressed)
         {
-            ChangeAnimal(m_iSelectedNumber + 1);
+            ChangeAnimal();
         }
 
         for (int i = 1; i <= 5; ++i)
@@ -85,6 +85,11 @@ public class AnimalController : Singleton<AnimalController>
         m_lAnimals[m_iSelectedNumber].m_bSelected = true;
         m_lAnimals[m_iSelectedNumber].OnSelectChange();
         m_bControlling = true;
+    }
+
+    public void ChangeAnimal()
+    {
+        ChangeAnimal(m_iSelectedNumber + 1);
     }
 
     public void ChangeAnimal(int a_index)

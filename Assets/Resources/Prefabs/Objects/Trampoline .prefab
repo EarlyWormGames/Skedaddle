@@ -611,7 +611,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 162466}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 37.36, y: -2.012, z: 7.471}
+  m_LocalPosition: {x: 65.29, y: -2.2000008, z: 7.985}
   m_LocalScale: {x: 0.5547924, y: 0.5547924, z: 0.5547924}
   m_Children:
   - {fileID: 4000010066128324}
@@ -1607,6 +1607,11 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  OnDetach:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   OnAnimalEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -1627,10 +1632,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_CanDetach: 0
-  m_CanBeDetached: 0
-  m_bBlocksTurn: 1
-  m_bBlocksMovement: 1
   DoOnTrigger: 0
   Direction: 2
   FinishDirection: 2
@@ -1714,11 +1715,6 @@ MonoBehaviour:
   m_LoopTimes: 5
   m_FollowOnStart: 0
   m_Lookat: 0
-  OnPathEnd:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114594296656694726
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1738,6 +1734,11 @@ MonoBehaviour:
   m_GazeObject: {fileID: 0}
   m_aSoundEvents: []
   OnDoAction:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnDetach:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -1762,40 +1763,16 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_CanDetach: 0
-  m_CanBeDetached: 1
-  m_bBlocksTurn: 0
-  m_bBlocksMovement: 0
-  RotateTime: 0.01
-  RotateObject: {fileID: 434054}
-  LorisSitPoint: {fileID: 424100}
-  RotateCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  SplineLeft: {fileID: 114884159174135800}
-  SplineRight: {fileID: 114538740645272890}
-  LeftFacing: {fileID: 408410}
-  RightFacing: {fileID: 465802}
-  OnShoot:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+  LaunchOnTrigger: 1
+  AllowObjects: 0
+  AnimatorController: {fileID: 9575688}
+  LaunchSpline: {fileID: 114511642343602630}
+  ExitSpline: {fileID: 114454289448453386}
+  LaunchSplineSpeed: 1
+  ExitSplineSpeed: 0.5
+  LaunchAxis:
+    action: {fileID: 114741689078800838, guid: 80f2df7e1586bc94aa1bbea872f6ca3b, type: 2}
+  InvertAxis: 0
 --- !u!114 &114884159174135800
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1832,8 +1809,3 @@ MonoBehaviour:
   m_LoopTimes: 5
   m_FollowOnStart: 0
   m_Lookat: 0
-  OnPathEnd:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null

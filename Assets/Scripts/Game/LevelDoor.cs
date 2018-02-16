@@ -34,4 +34,16 @@ public class LevelDoor : MonoBehaviour
     {
         m_Timer = 0f;
     }
+
+    private void OnEnable()
+    {
+        if (m_Door != null)
+            m_Door.ForwardEnd.AddListener(SlideEnd);
+    }
+
+    private void OnDisable()
+    {
+        if (m_Door != null)
+            m_Door.ForwardEnd.RemoveListener(SlideEnd);
+    }
 }

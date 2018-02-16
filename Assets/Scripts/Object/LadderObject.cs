@@ -7,7 +7,7 @@ public class LadderObject : ActionObject
     public bool LowExit = true, HighExit = true;
     public float RotateSpeed = 5;
     public ActionObject TopTransition, BottomTransition;
-    public Vector3 IgnoreAxes = new Vector3(1, 0, 1);
+    public IgnoreAxis AxesToIgnore = IgnoreAxis.X | IgnoreAxis.Z;
     public FACING_DIR Direction;
     public bool IsRope = false;
 
@@ -86,12 +86,7 @@ public class LadderObject : ActionObject
         pointIndex = Mathf.Clamp(pointIndex, 0, Points.Length - 1);
         splinePos = Points[pointIndex].position;
 
-        if (IgnoreAxes.x > 0)
-            splinePos.x = loris.transform.position.x;
-        if (IgnoreAxes.y > 0)
-            splinePos.y = loris.transform.position.y;
-        if (IgnoreAxes.z > 0)
-            splinePos.z = loris.transform.position.z;
+        splinePos = IgnoreUtils.Calculate(AxesToIgnore, loris.transform.position, splinePos);
 
         Vector3 dir = splinePos - loris.transform.position;
         float move = moveVelocity;

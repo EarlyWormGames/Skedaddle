@@ -896,4 +896,14 @@ public class Animal : MonoBehaviour
         if (m_aMovement.FollowSpline == null)
             m_fFacingDir = direction;
     }
+
+    public void AllowSelection(bool allow)
+    {
+        m_bCanBeSelected = allow;
+
+        if (!allow && m_bSelected)
+        {
+            AnimalController.Instance.ChangeAnimal();
+        }
+    }
 }
