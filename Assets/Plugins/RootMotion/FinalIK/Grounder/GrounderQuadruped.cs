@@ -388,12 +388,13 @@ namespace RootMotion.FinalIK {
 			Vector3 newDirection = newSpinePosition - pelvis.position;
 			
 			Quaternion f = Quaternion.FromToRotation(spineDirection, newDirection);
-            PelvisRotation.eulerAngles = f.eulerAngles;
-            PelvisRotation  = Quaternion.Euler(PelvisRotation.eulerAngles.z, PelvisRotation.eulerAngles.y, PelvisRotation.eulerAngles.x);
+            //PelvisRotation = pelvis.rotation * f;
 			pelvis.rotation = Quaternion.Slerp(Quaternion.identity, f, weight) * pelvis.rotation;
-			
-			// Update the IKPositions and IKPositonWeights of the legs
-			for (int i = 0; i < feet.Length; i++) SetFootIK(feet[i], (i < 2? maxLegOffset: maxForeLegOffset));
+            PelvisRotation  = Quaternion.Euler(pelvis.eulerAngles.z, pelvis.eulerAngles.y, pelvis.eulerAngles.x);
+            //PelvisRotation = pelvis.rotation;
+
+            // Update the IKPositions and IKPositonWeights of the legs
+            for (int i = 0; i < feet.Length; i++) SetFootIK(feet[i], (i < 2? maxLegOffset: maxForeLegOffset));
 			
 			solved = true;
 			solvedFeet = 0;
