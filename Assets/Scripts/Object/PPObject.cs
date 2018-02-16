@@ -5,6 +5,7 @@ using UnityEngine;
 public class PPObject : ActionObject
 {
     public bool MaintainY = false;
+    public List<Collider> TriggersToDisable = new List<Collider>();
 
     private Rigidbody rig;
     private bool isKinematic;
@@ -13,7 +14,6 @@ public class PPObject : ActionObject
     private RigidbodyInterpolation interpolation;
     private CollisionDetectionMode collisionDetectionMode;
 
-    private List<Collider> triggers = new List<Collider>();
     private bool waitOne = false;
     private float startY;
 
@@ -33,13 +33,6 @@ public class PPObject : ActionObject
         constraints = rig.constraints;
         interpolation = rig.interpolation;
         collisionDetectionMode = rig.collisionDetectionMode;
-
-        Collider[] cols = GetComponentsInChildren<Collider>();
-        foreach (var item in cols)
-        {
-            if (item.isTrigger)
-                triggers.Add(item);
-        }
     }
 
     protected override void OnUpdate()
@@ -53,7 +46,7 @@ public class PPObject : ActionObject
                 transform.position = v3;
             }
 
-            if (input.interact.wasJustPressed && !waitOne)
+            if (input.interact.wasJustPressed && !waitOne && m_aCurrentAnimal.m_bSelected)
                 Detach();
             waitOne = false;
         }
@@ -78,7 +71,7 @@ public class PPObject : ActionObject
 
         transform.SetParent(m_aCurrentAnimal.transform, true);
 
-        foreach (var trigger in triggers)
+        foreach (var trigger in TriggersToDisable)
             trigger.enabled = false;
 
         waitOne = true;
@@ -110,7 +103,7 @@ public class PPObject : ActionObject
         rig.interpolation = interpolation;
         rig.collisionDetectionMode = collisionDetectionMode;
 
-        foreach (var trigger in triggers)
+        foreach (var trigger in TriggersToDisable)
             trigger.enabled = true;
 
         m_lAnimalsIn.Remove(m_aCurrentAnimal);

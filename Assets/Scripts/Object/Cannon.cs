@@ -107,6 +107,9 @@ public class Cannon : ActionObject
         if (loris == null)
             return;
 
+        if (!loris.m_bSelected)
+            return;
+
         if (isLerping && !shooting)
         {
             loris.transform.position = LorisSitPoint.position;

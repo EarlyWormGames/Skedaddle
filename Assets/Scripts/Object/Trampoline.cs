@@ -22,7 +22,6 @@ public class Trampoline : ActionObject
     public AxisAction LaunchAxis;
     public bool InvertAxis;
 
-    private bool CanLaunch = true;
     private Rigidbody lastLaunched;
     private List<Transform> WrongIn = new List<Transform>();
 

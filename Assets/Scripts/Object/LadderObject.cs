@@ -31,7 +31,7 @@ public class LadderObject : ActionObject
     {
         base.OnStart();
 
-        m_CanBeDetached = false;
+        m_CanBeDetached = true;
         m_CanDetach = false;
         m_bBlocksMovement = true;
         m_bBlocksTurn = true;
@@ -50,7 +50,7 @@ public class LadderObject : ActionObject
         if (loris == null)
             return;
 
-        if (input.interact.wasJustPressed && !justEnter)
+        if (input.interact.wasJustPressed && !justEnter && m_aCurrentAnimal.m_bSelected)
         {
             Detach();
             return;
