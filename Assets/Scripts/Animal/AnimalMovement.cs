@@ -13,8 +13,16 @@ public class AnimalMovement : MonoBehaviour
     public SplineMovement FollowSpline;
 
     public float RotateLerpSpeed = 60;
-
+    public float SweepYAdd = 0.1f;
     public AxisAction MoveAxisKey;
+
+    [Header("Ground Movement")]
+    [Tooltip("Will the animal move when the ground moves?")]
+    public bool MoveWithGround = true;
+    [Tooltip("Will the animal rotate when the ground rotates?")]
+    public bool RotateWithGround = true;
+    public LayerMask GroundLayers;
+    public float RaycastDistance = 0.1f;
 
     [HideInInspector]
     public float moveVelocity;
@@ -28,6 +36,9 @@ public class AnimalMovement : MonoBehaviour
 
     private AxisAction currentAxis;
     private float currentInput;
+
+    private Collider groundCollider;
+    private Vector3 lastPos;
 
     // Use this for initialization
     void Start()
@@ -64,6 +75,27 @@ public class AnimalMovement : MonoBehaviour
 
         //Debug.Log("Move Velocity: " + moveVelocity);
         //Debug.Log("Rig Velocity: " + animal.m_rBody.velocity.x);
+
+        if (MoveWithGround && groundCollider != null)
+        {
+            Vector3 dir = groundCollider.transform.position - lastPos;
+            transform.position += dir;
+            lastPos = groundCollider.transform.position;
+        }
+
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, -transform.up, out hit, RaycastDistance, GroundLayers))
+        {
+            if (hit.collider != groundCollider)
+            {
+                groundCollider = hit.collider;
+                lastPos = groundCollider.transform.position;
+            }
+        }
+        else
+        {
+            groundCollider = null;
+        }
 
         Move(speed);
     }
@@ -115,7 +147,7 @@ public class AnimalMovement : MonoBehaviour
         if (FollowSpline == null)
         {
             Vector3 newPoint = transform.position + (ForwardDictator.forward * moveVelocity);
-            if (!TryMove(newPoint))
+            if (!TryMove(newPoint, SweepYAdd))
                 moveVelocity = 0;
             Vector3 rotation = transform.eulerAngles;
             rotation.y = 90;
@@ -147,7 +179,7 @@ public class AnimalMovement : MonoBehaviour
 
             Vector3 moveDir = dir.normalized * move;
 
-            TryMove(transform.position + moveDir);
+            TryMove(transform.position + moveDir, SweepYAdd);
 
             float rotateMult = 1;
             if (moveVelocity < 0)
@@ -189,15 +221,21 @@ public class AnimalMovement : MonoBehaviour
     /// </summary>
     /// <param name="point"></param>
     /// <returns></returns>
-    public bool TryMove(Vector3 point)
+    public bool TryMove(Vector3 point, float addY = 0.01f)
     {
         Vector3 dir = point - transform.position;
         RaycastHit hit;
+        Vector3 v3Temp = transform.position;
+        v3Temp.y += addY;
+        transform.position = v3Temp;
+
         if (!rig.SweepTest(dir.normalized, out hit, dir.magnitude, QueryTriggerInteraction.Ignore))
         {
             transform.position = point;
             return true;
         }
+        v3Temp.y -= addY;
+        transform.position = v3Temp;
         return false;
     }
 

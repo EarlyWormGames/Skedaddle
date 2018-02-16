@@ -9,6 +9,7 @@ public class Cannon : ActionObject
     public Transform RotateObject, LorisSitPoint;
     public AnimationCurve RotateCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
     public BezierSplineFollower SplineLeft, SplineRight;
+    public bool InvertKeys;
 
     [Tooltip("Uses the forward of this transform for this direction")]
     public Transform LeftFacing, RightFacing;
@@ -39,9 +40,19 @@ public class Cannon : ActionObject
     private void OnEnable()
     {
         if (SplineLeft != null)
+        {
+            if (SplineLeft.OnPathEnd == null)
+                SplineLeft.OnPathEnd = new BezierSplineFollower.FollowerEvent();
+
             SplineLeft.OnPathEnd.AddListener(SplineEnd);
+        }
         if (SplineRight != null)
+        {
+            if (SplineRight.OnPathEnd == null)
+                SplineRight.OnPathEnd = new BezierSplineFollower.FollowerEvent();
+
             SplineRight.OnPathEnd.AddListener(SplineEnd);
+        }
     }
 
     private void OnDisable()
@@ -102,8 +113,8 @@ public class Cannon : ActionObject
         }
         else if (input.interact.wasJustPressed && !isLerping)
             Shoot();
-        else if ((input.moveX.negative.wasJustPressed && !facingLeft ||
-            input.moveX.positive.wasJustPressed && facingLeft && !isLerping) || firstpress)
+        else if ((input.moveX.negative.wasJustPressed && (!facingLeft || InvertKeys) ||
+            input.moveX.positive.wasJustPressed && (facingLeft || InvertKeys) && !isLerping) || firstpress)
         {
             Switch();
             firstpress = false;
