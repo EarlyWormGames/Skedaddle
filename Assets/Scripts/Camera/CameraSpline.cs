@@ -13,6 +13,7 @@ public class CameraSpline : MonoBehaviour
     public List<ANIMAL_NAME> MyAnimals = new List<ANIMAL_NAME>();
 
     public static Vector3 CurrentPoint;
+    public static Vector3 LookAtPoint;
 
     internal bool[] EnableForAnimals;
 
@@ -98,7 +99,7 @@ public class CameraSpline : MonoBehaviour
 
                 if (dot <= 0)
                 {
-                    CurrentPoint = MySpline.GetPoint(0);
+                    SetCurrentPoint(0);
                     return;
                 }
             }
@@ -114,7 +115,7 @@ public class CameraSpline : MonoBehaviour
 
                 if (dot <= 0)
                 {
-                    CurrentPoint = MySpline.GetPoint(1);
+                    SetCurrentPoint(1);
                     return;
                 }
             }
@@ -141,7 +142,19 @@ public class CameraSpline : MonoBehaviour
         //t = t / mult;
 
         float splineT = Mathf.Lerp(startPoint.time, endPoint.time, t);
-        CurrentPoint = MySpline.GetPoint(splineT);
+        SetCurrentPoint(splineT);
+    }
+
+    private void SetCurrentPoint(float time)
+    {
+        CurrentPoint = MySpline.GetPoint(time);
+        LookAtPoint = AnimalSpline.m_Spline.GetPoint(time);
+
+        if (UseAnimalYSettings)
+        {
+            CurrentPoint.y += Animal.CurrentAnimal.m_fCameraY;
+            LookAtPoint.y += Animal.CurrentAnimal.m_fCameraY;
+        }
     }
 
     public void SetAnimalEnabled(ANIMAL_NAME a_name, bool a_enabled)

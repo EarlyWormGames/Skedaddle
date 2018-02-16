@@ -11,6 +11,7 @@ public enum BezierControlPointMode
 
 public class BezierSplineFollower : MonoBehaviour
 {
+    [System.Serializable]
     public class FollowerEvent : UnityEvent<BezierSplineFollower> { }
 
     public enum eLoopType

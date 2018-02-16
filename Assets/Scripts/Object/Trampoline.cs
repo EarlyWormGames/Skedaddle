@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputNew;
 
 public class Trampoline : ActionObject
 {
+    public UnityEvent OnSplineEnd;
+
     [Header("Misc Settings")]
     public bool LaunchOnTrigger = false;
     public bool AllowObjects = false;
@@ -146,7 +149,10 @@ public class Trampoline : ActionObject
     {
         Destroy(sender);
         if (m_aCurrentAnimal != null)
+        {
             m_aCurrentAnimal.m_oCurrentObject = null;
+            OnSplineEnd.Invoke();
+        }
         else if (lastLaunched != null)
             lastLaunched.useGravity = true;
     }
