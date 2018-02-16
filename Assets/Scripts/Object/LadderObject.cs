@@ -11,12 +11,13 @@ public class LadderObject : ActionObject
     public FACING_DIR Direction;
     public bool IsRope = false;
 
+    public bool ForceMoveToClosest = true;
+
     [Tooltip("First = Bottom, Last = Top :: THESE MUST BE IN CORRECT ORDER!")]
     public Transform[] Points;
 
     [HideInInspector]
     public float moveVelocity;
-
 
     private int pointIndex;
     private Loris loris;
@@ -149,6 +150,15 @@ public class LadderObject : ActionObject
             loris.m_bHorizontalRope = true;
 
         pointIndex = FindClosestPoint(transform.position);
+
+        Vector3 dir = Points[pointIndex].position - loris.transform.position;
+
+        if ((pointIndex == 0 && Vector3.Dot(dir.normalized, Vector3.up) >= 0) ||
+            (pointIndex == Points.Length - 1 && Vector3.Dot(dir.normalized, Vector3.up) <= 0))
+        {
+            loris.transform.position = IgnoreUtils.Calculate(AxesToIgnore, loris.transform.position, Points[pointIndex].position);
+        }
+
         justEnter = true;
 
         loris.SetDirection(Direction);
@@ -185,7 +195,7 @@ public class LadderObject : ActionObject
         for (int i = 0; i < Points.Length; ++i)
         {
             float dist = Vector3.Distance(Points[i].position, position);
-            if (dist < closeDist || dist < 0)
+            if (dist < closeDist || closeDist < 0)
             {
                 index = i;
                 closeDist = dist;
