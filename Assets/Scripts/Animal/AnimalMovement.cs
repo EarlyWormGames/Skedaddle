@@ -12,7 +12,7 @@ public class AnimalMovement : MonoBehaviour
     public Transform ForwardDictator;
     public SplineMovement FollowSpline;
 
-    public float RotateLerpSpeed = 60;
+    public float RotateLerpSpeed = 5;
     public float SweepYAdd = 0.1f;
     public AxisAction MoveAxisKey;
 
@@ -21,6 +21,7 @@ public class AnimalMovement : MonoBehaviour
     public bool MoveWithGround = true;
     [Tooltip("Will the animal rotate when the ground rotates?")]
     public bool RotateWithGround = true;
+    [EnumFlag] public IgnoreAxis RotateIgnore = IgnoreAxis.X | IgnoreAxis.Z;
     public LayerMask GroundLayers;
     public float RaycastDistance = 0.1f;
 
@@ -39,6 +40,7 @@ public class AnimalMovement : MonoBehaviour
 
     private Collider groundCollider;
     private Vector3 lastPos;
+    private Vector3 lastRot;
 
     // Use this for initialization
     void Start()
@@ -59,10 +61,14 @@ public class AnimalMovement : MonoBehaviour
             currentAxis = FollowSpline.MoveAxisKey;
 
         currentInput = currentAxis.control.value;
+        animal.m_bForceWalk = false;
         if (FollowSpline != null)
         {
             if (FollowSpline.ForceMovement)
+            {
                 currentInput = 1;
+                animal.m_bForceWalk = true;
+            }
             currentInput *= FollowSpline.InvertAxis ? -1 : 1;
         }
 
@@ -81,11 +87,20 @@ public class AnimalMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (MoveWithGround && groundCollider != null)
+        if (groundCollider != null)
         {
-            Vector3 dir = groundCollider.transform.position - lastPos;
-            transform.position += dir;
-            lastPos = groundCollider.transform.position;
+            if (MoveWithGround)
+            {
+                Vector3 dir = groundCollider.transform.position - lastPos;
+                transform.position += dir;
+                lastPos = groundCollider.transform.position;
+            }
+            if (RotateWithGround)
+            {
+                Vector3 dir = groundCollider.transform.eulerAngles - lastRot;
+                transform.eulerAngles = IgnoreUtils.Calculate(RotateIgnore, transform.eulerAngles, transform.eulerAngles + dir);
+                lastRot = groundCollider.transform.eulerAngles;
+            }
         }
 
         RaycastHit hit;
