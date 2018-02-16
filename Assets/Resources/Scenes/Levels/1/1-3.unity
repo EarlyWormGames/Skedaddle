@@ -15451,12 +15451,23 @@ MonoBehaviour:
   RotateSpeed: 5
   TopTransition: {fileID: 1387816957}
   BottomTransition: {fileID: 0}
-  IgnoreAxes: {x: 0, y: 0, z: 1}
+  AxesToIgnore: 5
   Direction: 2
   IsRope: 0
+  ForceMoveToClosest: 1
   Points:
   - {fileID: 510559957}
   - {fileID: 1512829109}
+  OnLowExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnHighExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   moveVelocity: 0
 --- !u!54 &255278103
 Rigidbody:
@@ -17962,7 +17973,7 @@ MonoBehaviour:
   OnAnimalEnter:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1249162910}
+      - m_Target: {fileID: 377129585}
         m_MethodName: EnableSplineLoris
         m_Mode: 2
         m_Arguments:
@@ -19199,7 +19210,7 @@ MonoBehaviour:
   OnAnimalEnter:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1249162910}
+      - m_Target: {fileID: 377129585}
         m_MethodName: EnableSplineLoris
         m_Mode: 2
         m_Arguments:
@@ -23277,9 +23288,20 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 16.74687
       objectReference: {fileID: 0}
+    - target: {fileID: 194930, guid: 9538de56fc5561843b11b0ee608c0cc3, type: 2}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000,
+        type: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9538de56fc5561843b11b0ee608c0cc3, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &377129585 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114412501214504596, guid: 9538de56fc5561843b11b0ee608c0cc3,
+    type: 2}
+  m_PrefabInternal: {fileID: 377129584}
+  m_Script: {fileID: 11500000, guid: 75bb356239bfaed43a335024f174d350, type: 3}
 --- !u!1001 &377153185
 Prefab:
   m_ObjectHideFlags: 0
@@ -38104,7 +38126,7 @@ Transform:
   m_PrefabParentObject: {fileID: 410570, guid: 1201a437a80001345899c6d5fe0eaaf0, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 631414702}
-  m_LocalRotation: {x: -0.017425427, y: 0.7187692, z: 0.6949701, w: 0.0091658095}
+  m_LocalRotation: {x: -0.017425425, y: 0.71876913, z: 0.69497, w: 0.009165809}
   m_LocalPosition: {x: 1.6319118, y: -1.2574166, z: 9.784031}
   m_LocalScale: {x: 0.40406483, y: 0.40406337, z: 0.404063}
   m_Children: []
@@ -48774,7 +48796,7 @@ MonoBehaviour:
   OnAnimalEnter:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1249162910}
+      - m_Target: {fileID: 377129585}
         m_MethodName: EnableSplineLoris
         m_Mode: 2
         m_Arguments:
@@ -64716,7 +64738,7 @@ MonoBehaviour:
   OnDoAction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1249162910}
+      - m_Target: {fileID: 0}
         m_MethodName: EnableSplineLoris
         m_Mode: 2
         m_Arguments:
@@ -64732,7 +64754,7 @@ MonoBehaviour:
   OnDetach:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1249162910}
+      - m_Target: {fileID: 0}
         m_MethodName: EnableSplineLoris
         m_Mode: 2
         m_Arguments:
@@ -64770,12 +64792,23 @@ MonoBehaviour:
   RotateSpeed: 5
   TopTransition: {fileID: 1905835057}
   BottomTransition: {fileID: 0}
-  IgnoreAxes: {x: 0, y: 0, z: 1}
+  AxesToIgnore: 5
   Direction: 3
   IsRope: 1
+  ForceMoveToClosest: 1
   Points:
   - {fileID: 815630740}
   - {fileID: 1442482958}
+  OnLowExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnHighExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   moveVelocity: 0
 --- !u!54 &1151644472
 Rigidbody:
@@ -69295,12 +69328,6 @@ Transform:
   m_Father: {fileID: 1630712674}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1249162910 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114270724486313066, guid: 6ac26916394ca4e4caa5daf8346f4a48,
-    type: 2}
-  m_PrefabInternal: {fileID: 30439171}
-  m_Script: {fileID: 11500000, guid: 75bb356239bfaed43a335024f174d350, type: 3}
 --- !u!1 &1250331638
 GameObject:
   m_ObjectHideFlags: 0
@@ -106017,7 +106044,7 @@ MonoBehaviour:
   OnDoAction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1249162910}
+      - m_Target: {fileID: 0}
         m_MethodName: EnableSplineLoris
         m_Mode: 2
         m_Arguments:
@@ -118663,7 +118690,7 @@ MonoBehaviour:
     action: {fileID: 0}
   InvertAxis: 0
   ForceMovement: 1
-  IgnoreAxis: {x: 0, y: 1, z: 0}
+  AxesToIgnore: 2
   DisableGravity: 0
   points:
   - current: {x: 1, y: 0, z: 0}

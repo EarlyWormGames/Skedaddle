@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class LadderObject : ActionObject
 {
@@ -15,6 +16,8 @@ public class LadderObject : ActionObject
 
     [Tooltip("First = Bottom, Last = Top :: THESE MUST BE IN CORRECT ORDER!")]
     public Transform[] Points;
+
+    public UnityEvent OnLowExit, OnHighExit;
 
     [HideInInspector]
     public float moveVelocity;
@@ -122,11 +125,17 @@ public class LadderObject : ActionObject
             if (pointIndex < 0 && !LowExit)
                 moveDown = false;
             else if (pointIndex < 0 && LowExit)
+            {
                 Detach();
+                OnLowExit.Invoke();
+            }
             else if (pointIndex > Points.Length - 1 && !HighExit)
                 moveUp = false;
             else if (pointIndex > Points.Length - 1 && HighExit)
+            {
                 Detach();
+                OnHighExit.Invoke();
+            }
         }
     }
 
