@@ -76,6 +76,11 @@ public class AnimalMovement : MonoBehaviour
         //Debug.Log("Move Velocity: " + moveVelocity);
         //Debug.Log("Rig Velocity: " + animal.m_rBody.velocity.x);
 
+        Move(speed);
+    }
+
+    private void FixedUpdate()
+    {
         if (MoveWithGround && groundCollider != null)
         {
             Vector3 dir = groundCollider.transform.position - lastPos;
@@ -96,8 +101,6 @@ public class AnimalMovement : MonoBehaviour
         {
             groundCollider = null;
         }
-
-        Move(speed);
     }
 
     void Move(float[] a_speeds)
