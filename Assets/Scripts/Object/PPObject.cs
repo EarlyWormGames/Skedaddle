@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PPObject : ActionObject
 {
-    public bool MaintainY = false;
+    [EnumFlag] public IgnoreAxis MaintainPosition;
+    [EnumFlag] public IgnoreAxis MaintainRotation;
     public List<Collider> TriggersToDisable = new List<Collider>();
 
     private Rigidbody rig;
@@ -15,7 +16,8 @@ public class PPObject : ActionObject
     private CollisionDetectionMode collisionDetectionMode;
 
     private bool waitOne = false;
-    private float startY;
+    private Vector3 startPosition;
+    private Vector3 startRotation;
 
     protected override void OnStart()
     {
@@ -39,15 +41,12 @@ public class PPObject : ActionObject
     {
         if (m_aCurrentAnimal != null)
         {
-            if (MaintainY)
-            {
-                var v3 = transform.position;
-                v3.y = startY;
-                transform.position = v3;
-            }
+            transform.position = IgnoreUtils.Calculate(MaintainPosition, startPosition, transform.position);
+            transform.eulerAngles = IgnoreUtils.Calculate(MaintainPosition, startRotation, transform.eulerAngles);
 
             if (input.interact.wasJustPressed && !waitOne && m_aCurrentAnimal.m_bSelected)
                 Detach();
+
             waitOne = false;
         }
     }
@@ -63,11 +62,14 @@ public class PPObject : ActionObject
         }
 
         base.DoAction();
-        startY = transform.position.y;
+
+        startPosition = transform.position;
+        startRotation = transform.eulerAngles;
 
         m_aCurrentAnimal = Animal.CurrentAnimal;
         m_aCurrentAnimal.m_bPullingObject = true;
         m_aCurrentAnimal.m_oCurrentObject = this;
+        m_aCurrentAnimal.OnPushChange();
 
         transform.SetParent(m_aCurrentAnimal.transform, true);
 
@@ -91,6 +93,7 @@ public class PPObject : ActionObject
         base.Detach();
         m_aCurrentAnimal.m_bPullingObject = false;
         m_aCurrentAnimal.m_oCurrentObject = null;
+        m_aCurrentAnimal.OnPushChange();
 
         transform.parent = null;
 

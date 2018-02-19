@@ -9,19 +9,35 @@ public class Killer : ActionObject
     public class KillEvent : UnityEvent<Animal, DEATH_TYPE> { };
 
     public DEATH_TYPE KillType;
+    public bool OnTrigger = true;
 
     public KillEvent OnKill;
 
     protected override void OnCanTrigger()
     {
+        if (!OnTrigger)
+        {
+            if (input.interact.wasJustPressed)
+            {
+                if (!Animal.CurrentAnimal.Alive)
+                    return;
+
+                m_aCurrentAnimal = Animal.CurrentAnimal;
+                DoAction();
+            }
+        }
     }
 
     public override void AnimalEnter(Animal a_animal)
     {
         base.AnimalEnter(a_animal);
-        if (CheckCorrectAnimal(a_animal))
+        if (OnTrigger)
         {
+            if (!a_animal.Alive)
+                return;
+
             m_aCurrentAnimal = a_animal;
+            DoAction();
         }
     }
 

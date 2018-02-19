@@ -5,6 +5,13 @@ using UnityEngine;
 
 public static class IgnoreUtils
 {
+    /// <summary>
+    /// Calculate the newPosition, while ignoring the axes defined in settings and defaulting to currentPosition
+    /// </summary>
+    /// <param name="settings">The axes to ignore</param>
+    /// <param name="currrentPosition">The Vector3 to default to</param>
+    /// <param name="newPosition">The new Vector3 to edit</param>
+    /// <returns></returns>
     public static Vector3 Calculate(IgnoreAxis settings, Vector3 currrentPosition, Vector3 newPosition)
     {        
         if (settings.HasFlag(IgnoreAxis.X))
