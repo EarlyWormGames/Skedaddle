@@ -6451,7 +6451,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 111396}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 81.721, y: -1.73, z: 8.634}
+  m_LocalPosition: {x: 11.75, y: -1.76, z: 7.48}
   m_LocalScale: {x: 0.401, y: 0.401, z: 0.401}
   m_Children:
   - {fileID: 427722}
@@ -10716,8 +10716,8 @@ MonoBehaviour:
   m_tPelvis: {fileID: 466754}
   m_v3PelvisOffset: {x: 0, y: 0, z: 0}
   m_tCollider: {fileID: 4984212974349418}
-  m_fWalkSpeed: 0.1
-  m_fTopSpeed: 0.013
+  m_fWalkSpeed: 2
+  m_fTopSpeed: 0.65
   m_fPullSpeedMult: 0.9
   m_fFallSpeedMult: 0.2
   m_fTurnSpeedMult: 0.8
@@ -12875,7 +12875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8b8b7cc5a8d9d54695ad890164f0baa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DecelerationRate: 0.03
+  DecelerationRate: 2
   MoveMin: 0.01
   ForwardDictator: {fileID: 466434}
   FollowSpline: {fileID: 0}
@@ -12885,11 +12885,13 @@ MonoBehaviour:
     action: {fileID: 114741689078800838, guid: 80f2df7e1586bc94aa1bbea872f6ca3b, type: 2}
   MoveWithGround: 1
   RotateWithGround: 0
+  RotateIgnore: 5
   GroundLayers:
     serializedVersion: 2
     m_Bits: 1
   RaycastDistance: 0.1
   moveVelocity: 0
+  currentSpeed: 0
 --- !u!114 &114387679875425834
 MonoBehaviour:
   m_ObjectHideFlags: 1

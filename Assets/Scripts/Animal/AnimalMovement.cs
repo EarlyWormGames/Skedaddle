@@ -27,6 +27,8 @@ public class AnimalMovement : MonoBehaviour
 
     [HideInInspector]
     public float moveVelocity;
+    [HideInInspector]
+    public float currentSpeed;
 
     private float lastMove;
     private Animal animal;
@@ -73,11 +75,14 @@ public class AnimalMovement : MonoBehaviour
         }
 
         float[] speed = animal.CalculateMoveSpeed();
-        moveVelocity += currentInput * Time.deltaTime * speed[0];
+        float acceleration = currentInput * speed[0];
+        moveVelocity += acceleration * Time.deltaTime;
         moveVelocity = Mathf.Clamp(moveVelocity, speed[1], speed[2]);
 
         if (currentInput == 0)
             moveVelocity = Mathf.MoveTowards(moveVelocity, 0, DecelerationRate * Time.deltaTime);
+
+        currentSpeed = (moveVelocity * Time.deltaTime) + (acceleration * Time.deltaTime * (Time.deltaTime / 2f));
 
         //Debug.Log("Move Velocity: " + moveVelocity);
         //Debug.Log("Rig Velocity: " + animal.m_rBody.velocity.x);
@@ -164,7 +169,7 @@ public class AnimalMovement : MonoBehaviour
 
         if (FollowSpline == null)
         {
-            Vector3 newPoint = transform.position + (ForwardDictator.forward * moveVelocity);
+            Vector3 newPoint = transform.position + (ForwardDictator.forward * currentSpeed);
             if (!TryMove(newPoint, SweepYAdd))
                 moveVelocity = 0;
             Vector3 rotation = transform.eulerAngles;
@@ -186,7 +191,7 @@ public class AnimalMovement : MonoBehaviour
             splinePos = IgnoreUtils.Calculate(FollowSpline.AxesToIgnore, transform.position, splinePos);
 
             Vector3 dir = splinePos - transform.position;
-            float move = moveVelocity;
+            float move = currentSpeed;
             if (move < 0)
                 move *= -1;
 
@@ -195,7 +200,7 @@ public class AnimalMovement : MonoBehaviour
             TryMove(transform.position + moveDir, SweepYAdd);
 
             float rotateMult = 1;
-            if (moveVelocity < 0)
+            if (currentSpeed < 0)
                 rotateMult = -1;
 
             Vector3 rotation = transform.eulerAngles;

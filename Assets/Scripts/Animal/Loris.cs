@@ -60,6 +60,9 @@ public class Loris : Animal
 
     protected override void OnUpdate()
     {
+        Debug.Log("Move velocity: " + m_aMovement.moveVelocity);
+        Debug.Log("Rig velocity: " + m_rBody.velocity.x);
+
         if (EWEyeTracking.active)
         {
             if (EWEyeTracking.worldPosition.y > transform.position.y + m_fClimbBuffer)
