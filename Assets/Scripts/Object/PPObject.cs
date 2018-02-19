@@ -18,6 +18,7 @@ public class PPObject : ActionObject
     private bool waitOne = false;
     private Vector3 startPosition;
     private Vector3 startRotation;
+    private Transform defaultParent;
 
     protected override void OnStart()
     {
@@ -35,6 +36,8 @@ public class PPObject : ActionObject
         constraints = rig.constraints;
         interpolation = rig.interpolation;
         collisionDetectionMode = rig.collisionDetectionMode;
+
+        defaultParent = transform.parent;
     }
 
     protected override void OnUpdate()
@@ -95,7 +98,10 @@ public class PPObject : ActionObject
         m_aCurrentAnimal.m_oCurrentObject = null;
         m_aCurrentAnimal.OnPushChange();
 
-        transform.parent = null;
+        if (defaultParent != null)
+            transform.SetParent(defaultParent, true);
+        else
+            transform.parent = defaultParent;
 
         rig = gameObject.AddComponent<Rigidbody>();
         rig.isKinematic = isKinematic;

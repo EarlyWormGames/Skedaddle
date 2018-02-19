@@ -55,6 +55,22 @@ public class AnimalMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (groundCollider != null)
+        {
+            if (MoveWithGround)
+            {
+                Vector3 dir = groundCollider.transform.position - lastPos;
+                transform.position += dir;
+                lastPos = groundCollider.transform.position;
+            }
+            if (RotateWithGround)
+            {
+                Vector3 dir = groundCollider.transform.eulerAngles - lastRot;
+                transform.eulerAngles = IgnoreUtils.Calculate(RotateIgnore, transform.eulerAngles, transform.eulerAngles + dir);
+                lastRot = groundCollider.transform.eulerAngles;
+            }
+        }
+
         if (FollowSpline == null)
             currentAxis = MoveAxisKey;
         else if (FollowSpline.MoveAxisKey.control == null)
@@ -92,22 +108,6 @@ public class AnimalMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (groundCollider != null)
-        {
-            if (MoveWithGround)
-            {
-                Vector3 dir = groundCollider.transform.position - lastPos;
-                transform.position += dir;
-                lastPos = groundCollider.transform.position;
-            }
-            if (RotateWithGround)
-            {
-                Vector3 dir = groundCollider.transform.eulerAngles - lastRot;
-                transform.eulerAngles = IgnoreUtils.Calculate(RotateIgnore, transform.eulerAngles, transform.eulerAngles + dir);
-                lastRot = groundCollider.transform.eulerAngles;
-            }
-        }
-
         RaycastHit hit;
         if (Physics.Raycast(transform.position, -transform.up, out hit, RaycastDistance, GroundLayers))
         {
