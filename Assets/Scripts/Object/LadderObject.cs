@@ -1,27 +1,41 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class LadderObject : ActionObject
 {
-    public bool LowExit, HighExit;
+    public bool LowExit = true, HighExit = true;
     public float RotateSpeed = 5;
     public ActionObject TopTransition, BottomTransition;
-    public Vector3 IgnoreAxes = new Vector3(1, 0, 1);
+    [EnumFlag] public IgnoreAxis AxesToIgnore = IgnoreAxis.X | IgnoreAxis.Z;
     public FACING_DIR Direction;
     public bool IsRope = false;
+
+    public bool ForceMoveToClosest = true;
 
     [Tooltip("First = Bottom, Last = Top :: THESE MUST BE IN CORRECT ORDER!")]
     public Transform[] Points;
 
+    public UnityEvent OnLowExit, OnHighExit;
+
     [HideInInspector]
     public float moveVelocity;
-
 
     private int pointIndex;
     private Loris loris;
     private bool moveDown = true, moveUp = true;
     private bool justEnter;
+
+    protected override void OnStart()
+    {
+        base.OnStart();
+
+        m_CanBeDetached = true;
+        m_CanDetach = false;
+        m_bBlocksMovement = true;
+        m_bBlocksTurn = true;
+    }
 
     protected override void OnCanTrigger()
     {
@@ -36,7 +50,7 @@ public class LadderObject : ActionObject
         if (loris == null)
             return;
 
-        if (input.interact.wasJustPressed && !justEnter)
+        if (input.interact.wasJustPressed && !justEnter && m_aCurrentAnimal.m_bSelected)
         {
             Detach();
             return;
@@ -76,12 +90,7 @@ public class LadderObject : ActionObject
         pointIndex = Mathf.Clamp(pointIndex, 0, Points.Length - 1);
         splinePos = Points[pointIndex].position;
 
-        if (IgnoreAxes.x > 0)
-            splinePos.x = loris.transform.position.x;
-        if (IgnoreAxes.y > 0)
-            splinePos.y = loris.transform.position.y;
-        if (IgnoreAxes.z > 0)
-            splinePos.z = loris.transform.position.z;
+        splinePos = IgnoreUtils.Calculate(AxesToIgnore, loris.transform.position, splinePos);
 
         Vector3 dir = splinePos - loris.transform.position;
         float move = moveVelocity;
@@ -116,11 +125,17 @@ public class LadderObject : ActionObject
             if (pointIndex < 0 && !LowExit)
                 moveDown = false;
             else if (pointIndex < 0 && LowExit)
+            {
                 Detach();
+                OnLowExit.Invoke();
+            }
             else if (pointIndex > Points.Length - 1 && !HighExit)
                 moveUp = false;
             else if (pointIndex > Points.Length - 1 && HighExit)
+            {
                 Detach();
+                OnHighExit.Invoke();
+            }
         }
     }
 
@@ -132,6 +147,7 @@ public class LadderObject : ActionObject
         if (!TryDetach())
             return;
 
+        base.DoAction();
         m_aCurrentAnimal = Animal.CurrentAnimal;
         m_aCurrentAnimal.m_oCurrentObject = this;
         m_aCurrentAnimal.transform.SetParent(transform);
@@ -143,6 +159,15 @@ public class LadderObject : ActionObject
             loris.m_bHorizontalRope = true;
 
         pointIndex = FindClosestPoint(transform.position);
+
+        Vector3 dir = Points[pointIndex].position - loris.transform.position;
+
+        if ((pointIndex == 0 && Vector3.Dot(dir.normalized, Vector3.up) >= 0) ||
+            (pointIndex == Points.Length - 1 && Vector3.Dot(dir.normalized, Vector3.up) <= 0))
+        {
+            loris.transform.position = IgnoreUtils.Calculate(AxesToIgnore, loris.transform.position, Points[pointIndex].position);
+        }
+
         justEnter = true;
 
         loris.SetDirection(Direction);
@@ -150,6 +175,7 @@ public class LadderObject : ActionObject
 
     public override void Detach()
     {
+        base.Detach();
         moveVelocity = 0;
 
         m_aCurrentAnimal.m_oCurrentObject = null;
@@ -178,7 +204,7 @@ public class LadderObject : ActionObject
         for (int i = 0; i < Points.Length; ++i)
         {
             float dist = Vector3.Distance(Points[i].position, position);
-            if (dist < closeDist || dist < 0)
+            if (dist < closeDist || closeDist < 0)
             {
                 index = i;
                 closeDist = dist;

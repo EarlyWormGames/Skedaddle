@@ -12,6 +12,16 @@ public class Lever : ActionObject
     protected bool IsOn;
     protected bool triggered;
 
+    protected override void OnStart()
+    {
+        base.OnStart();
+
+        m_CanBeDetached = false;
+        m_CanDetach = false;
+        m_bBlocksMovement = true;
+        m_bBlocksTurn = true;
+    }
+
     public override void DoAction()
     {
         if (!TryDetach())
@@ -67,6 +77,7 @@ public class Lever : ActionObject
 
     public override void Detach()
     {
+        base.Detach();
         m_aCurrentAnimal.SetDirection(FACING_DIR.NONE);
         m_aCurrentAnimal.m_oCurrentObject = null;
         m_aCurrentAnimal = null;

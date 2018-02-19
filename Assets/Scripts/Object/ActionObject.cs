@@ -45,16 +45,16 @@ public class ActionObject : MonoBehaviour
 
     [Header("Events")]
     public UnityEvent OnDoAction;
+    public UnityEvent OnDetach;
     public UnityEvent OnAnimalEnter;
     public UnityEvent OnAnimalExit;
     public UnityEvent OnWrongAnimalEnter;
     public UnityEvent OnWrongAnimalExit;
 
-    [Header("Settings")]
-    public bool m_CanDetach;
-    public bool m_CanBeDetached = true;
-    public bool m_bBlocksTurn = false;
-    public bool m_bBlocksMovement = false;
+    internal bool m_CanDetach;
+    internal bool m_CanBeDetached = true;
+    internal bool m_bBlocksTurn = false;
+    internal bool m_bBlocksMovement = false;
 
     protected bool m_bEyetrackSelected = false;
     protected bool m_bQuickExitFix = false;
@@ -77,7 +77,7 @@ public class ActionObject : MonoBehaviour
         if (m_GazeObject == null)
             m_GazeObject = GetComponent<EWGazeObject>();
 
-        input = GameManager.Instance.GetComponent<PlayerInput>().GetActions<MainMapping>();
+        input = GameManager.Instance.mainMap;
 
         OnStart();
     }
@@ -125,6 +125,8 @@ public class ActionObject : MonoBehaviour
 
     protected virtual void OnCanTrigger()
     {
+        if (m_aCurrentAnimal != null)
+            return;
         if (input.interact.wasJustPressed)
         {
             DoAction();
@@ -230,7 +232,10 @@ public class ActionObject : MonoBehaviour
     public virtual void DoActionOn() { }
     public virtual void DoActionOff() { }
 
-    public virtual void Detach() { }
+    public virtual void Detach()
+    {
+        OnDetach.Invoke();
+    }
 
     public void SetTimer(bool a_Run)
     {

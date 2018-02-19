@@ -84,7 +84,7 @@ public class Poodle : Animal
                         m_bRunning = false;
                 }
 
-                if (GameManager.Instance.input.sprint.isHeld)
+                if (GameManager.Instance.mainMap.sprint.isHeld)
                 {
                     m_fCurrentSpeed = m_fWalkSpeed * m_fRunSpeedMult;
                     m_bRunning = true;

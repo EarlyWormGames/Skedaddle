@@ -4,31 +4,50 @@ using UnityEngine;
 
 public class PPObject : ActionObject
 {
+    [EnumFlag] public IgnoreAxis MaintainPosition;
+    [EnumFlag] public IgnoreAxis MaintainRotation;
+    public List<Collider> TriggersToDisable = new List<Collider>();
+
     private Rigidbody rig;
+    private bool isKinematic;
     private float mass, drag, angularDrag;
     private RigidbodyConstraints constraints;
     private RigidbodyInterpolation interpolation;
     private CollisionDetectionMode collisionDetectionMode;
 
-    private List<Collider> triggers = new List<Collider>();
+    private bool waitOne = false;
+    private Vector3 startPosition;
+    private Vector3 startRotation;
 
     protected override void OnStart()
     {
         base.OnStart();
+        m_CanBeDetached = true;
+        m_CanDetach = false;
+        m_bBlocksMovement = false;
+        m_bBlocksTurn = true;
+
         rig = GetComponent<Rigidbody>();
-        rig.isKinematic = false;
+        isKinematic = rig.isKinematic;
         mass = rig.mass;
         drag = rig.drag;
         angularDrag = rig.angularDrag;
         constraints = rig.constraints;
         interpolation = rig.interpolation;
         collisionDetectionMode = rig.collisionDetectionMode;
+    }
 
-        Collider[] cols = GetComponentsInChildren<Collider>();
-        foreach (var item in cols)
+    protected override void OnUpdate()
+    {
+        if (m_aCurrentAnimal != null)
         {
-            if (item.isTrigger)
-                triggers.Add(item);
+            transform.position = IgnoreUtils.Calculate(MaintainPosition, startPosition, transform.position);
+            transform.eulerAngles = IgnoreUtils.Calculate(MaintainPosition, startRotation, transform.eulerAngles);
+
+            if (input.interact.wasJustPressed && !waitOne && m_aCurrentAnimal.m_bSelected)
+                Detach();
+
+            waitOne = false;
         }
     }
 
@@ -39,19 +58,25 @@ public class PPObject : ActionObject
 
         if (m_aCurrentAnimal != null)
         {
-            Detach();
             return;
         }
 
         base.DoAction();
+
+        startPosition = transform.position;
+        startRotation = transform.eulerAngles;
+
         m_aCurrentAnimal = Animal.CurrentAnimal;
         m_aCurrentAnimal.m_bPullingObject = true;
         m_aCurrentAnimal.m_oCurrentObject = this;
+        m_aCurrentAnimal.OnPushChange();
 
         transform.SetParent(m_aCurrentAnimal.transform, true);
 
-        foreach (var trigger in triggers)
+        foreach (var trigger in TriggersToDisable)
             trigger.enabled = false;
+
+        waitOne = true;
 
         Destroy(rig);
     }
@@ -65,12 +90,15 @@ public class PPObject : ActionObject
 
     public override void Detach()
     {
+        base.Detach();
         m_aCurrentAnimal.m_bPullingObject = false;
         m_aCurrentAnimal.m_oCurrentObject = null;
+        m_aCurrentAnimal.OnPushChange();
 
         transform.parent = null;
 
         rig = gameObject.AddComponent<Rigidbody>();
+        rig.isKinematic = isKinematic;
         rig.mass = mass;
         rig.drag = drag;
         rig.angularDrag = angularDrag;
@@ -78,7 +106,7 @@ public class PPObject : ActionObject
         rig.interpolation = interpolation;
         rig.collisionDetectionMode = collisionDetectionMode;
 
-        foreach (var trigger in triggers)
+        foreach (var trigger in TriggersToDisable)
             trigger.enabled = true;
 
         m_lAnimalsIn.Remove(m_aCurrentAnimal);

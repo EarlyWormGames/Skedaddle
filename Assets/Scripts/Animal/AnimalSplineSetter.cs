@@ -44,7 +44,7 @@ public class AnimalSplineSetter : MonoBehaviour
     private void Start()
     {
         if (RequiredKey.action != null)
-            RequiredKey.Bind(GameManager.Instance.GetComponent<PlayerInput>().handle);
+            RequiredKey.Bind(GameManager.Instance.input.handle);
     }
 
     private void Update()

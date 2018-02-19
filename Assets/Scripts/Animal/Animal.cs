@@ -71,6 +71,8 @@ public class Animal : MonoBehaviour
     public AnimationExtras  m_eExtras;
     public GameObject       m_goIKSwitch;
     public Transform        m_tJointRoot;
+    public Transform        m_tPelvis;
+    public Vector3          m_v3PelvisOffset;
     public Transform        m_tCollider;
 
     [Header("Speeds")]
@@ -417,7 +419,7 @@ public class Animal : MonoBehaviour
 
         if (m_tJointRoot != null)
         {
-            m_tCollider.rotation = m_tJointRoot.rotation;
+            m_tCollider.eulerAngles = new Vector3(m_gqGrounder.PelvisRotation.eulerAngles.x + m_v3PelvisOffset.x, m_tJointRoot.rotation.eulerAngles.y + m_v3PelvisOffset.y, m_v3PelvisOffset.z);
         }
 
         //IK sWitch
@@ -871,6 +873,9 @@ public class Animal : MonoBehaviour
         if (m_oCurrentObject != null)
             objOkay = !m_oCurrentObject.m_bBlocksTurn;
 
+        if (!Alive)
+            return false;
+
         return !m_bTurning && !m_bPullingObject && objOkay;
     }
 
@@ -880,6 +885,9 @@ public class Animal : MonoBehaviour
         if (m_oCurrentObject != null)
             objOkay = !m_oCurrentObject.m_bBlocksMovement;
 
+        if (!Alive)
+            return false;
+
         return (m_bCanWalkLeft || m_bCanWalkRight) && objOkay;
     }
 
@@ -887,5 +895,15 @@ public class Animal : MonoBehaviour
     {
         if (m_aMovement.FollowSpline == null)
             m_fFacingDir = direction;
+    }
+
+    public void AllowSelection(bool allow)
+    {
+        m_bCanBeSelected = allow;
+
+        if (!allow && m_bSelected)
+        {
+            AnimalController.Instance.ChangeAnimal();
+        }
     }
 }

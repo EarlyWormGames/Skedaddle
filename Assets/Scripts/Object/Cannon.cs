@@ -9,6 +9,7 @@ public class Cannon : ActionObject
     public Transform RotateObject, LorisSitPoint;
     public AnimationCurve RotateCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
     public BezierSplineFollower SplineLeft, SplineRight;
+    public bool InvertKeys;
 
     [Tooltip("Uses the forward of this transform for this direction")]
     public Transform LeftFacing, RightFacing;
@@ -29,14 +30,29 @@ public class Cannon : ActionObject
     {
         base.OnStart();
         startRotation = RotateObject.rotation;
+
+        m_CanBeDetached = false;
+        m_CanDetach = false;
+        m_bBlocksMovement = true;
+        m_bBlocksTurn = true;
     }
 
     private void OnEnable()
     {
         if (SplineLeft != null)
+        {
+            if (SplineLeft.OnPathEnd == null)
+                SplineLeft.OnPathEnd = new BezierSplineFollower.FollowerEvent();
+
             SplineLeft.OnPathEnd.AddListener(SplineEnd);
+        }
         if (SplineRight != null)
+        {
+            if (SplineRight.OnPathEnd == null)
+                SplineRight.OnPathEnd = new BezierSplineFollower.FollowerEvent();
+
             SplineRight.OnPathEnd.AddListener(SplineEnd);
+        }
     }
 
     private void OnDisable()
@@ -91,14 +107,17 @@ public class Cannon : ActionObject
         if (loris == null)
             return;
 
+        if (!loris.m_bSelected)
+            return;
+
         if (isLerping && !shooting)
         {
             loris.transform.position = LorisSitPoint.position;
         }
         else if (input.interact.wasJustPressed && !isLerping)
             Shoot();
-        else if ((input.moveX.negative.wasJustPressed && !facingLeft ||
-            input.moveX.positive.wasJustPressed && facingLeft && !isLerping) || firstpress)
+        else if ((input.moveX.negative.wasJustPressed && (!facingLeft || InvertKeys) ||
+            input.moveX.positive.wasJustPressed && (facingLeft || InvertKeys) && !isLerping) || firstpress)
         {
             Switch();
             firstpress = false;
@@ -124,7 +143,7 @@ public class Cannon : ActionObject
         OnShoot.Invoke();
     }
 
-    void SplineEnd()
+    void SplineEnd(BezierSplineFollower sender)
     {
         loris.m_tCollider.gameObject.layer = LayerMask.NameToLayer("Animal");
 

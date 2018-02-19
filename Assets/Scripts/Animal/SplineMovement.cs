@@ -35,22 +35,32 @@ public class SplineMovement : MonoBehaviour
     public bool InvertAxis = false;
     public bool ForceMovement = false;
 
-    public Vector3 IgnoreAxis = new Vector3(0, 1, 0);
+    [EnumFlag] public IgnoreAxis AxesToIgnore = IgnoreAxis.Y;
     public bool DisableGravity;
     
     [HideInInspector]
     public Point[] points;
 
-    private BezierSpline m_Spline;
+    [HideInInspector]
+    public BezierSpline m_Spline;
 
     public void Start()
     {
         m_Spline = GetComponent<BezierSpline>();
 
         if (MoveAxisKey.action != null)
-            MoveAxisKey.Bind(GameManager.Instance.GetComponent<PlayerInput>().handle);
+            MoveAxisKey.Bind(GameManager.Instance.input.handle);
 
         GeneratePoints();
+    }
+
+    private void Update()
+    {
+        if (RegeneratePoints)
+        {
+            GeneratePoints();
+            RegeneratePoints = false;
+        }
     }
 
     public void GeneratePoints()

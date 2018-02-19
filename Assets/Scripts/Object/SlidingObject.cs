@@ -10,6 +10,12 @@ public class SlidingObject : MovingObject
     {
         base.DoSlide();
 
+        if (PointA == null)
+        {
+            PointA = new GameObject().transform;
+            PointA.position = transform.position;
+        }
+
         Vector3 start = movingForward ? PointA.position : PointB.position;
         Vector3 end = !movingForward ? PointA.position : PointB.position;
 

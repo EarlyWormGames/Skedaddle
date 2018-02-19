@@ -20,6 +20,10 @@ MonoBehaviour:
   - {fileID: 114635399481819864}
   - {fileID: 114934836087056614}
   - {fileID: 114802865668214636}
+  - {fileID: 114740669562295436}
+  - {fileID: 114656512613460334}
+  - {fileID: 114411117302691238}
+  - {fileID: 114756429010601924}
   m_ControlSchemes:
   - m_Name: KeyboardMouse
     m_SerializableDeviceTypes:
@@ -177,6 +181,64 @@ MonoBehaviour:
       sensitivity: 1000
       snap: 1
       primaryIsButtonAxis: 0
+    - sources: []
+      deadZone: 0.3
+      buttonAxisSources: []
+      gravity: 1000
+      sensitivity: 1000
+      snap: 1
+      primaryIsButtonAxis: 0
+    - sources: []
+      deadZone: 0.3
+      buttonAxisSources:
+      - negative:
+          controlIndex: 106
+          deviceType:
+            m_TypeName: UnityEngine.InputNew.Keyboard, NewInput, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+        positive:
+          controlIndex: 108
+          deviceType:
+            m_TypeName: UnityEngine.InputNew.Keyboard, NewInput, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+      gravity: 1000
+      sensitivity: 1000
+      snap: 1
+      primaryIsButtonAxis: 0
+    - sources: []
+      deadZone: 0.3
+      buttonAxisSources:
+      - negative:
+          controlIndex: 117
+          deviceType:
+            m_TypeName: UnityEngine.InputNew.Keyboard, NewInput, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+        positive:
+          controlIndex: 111
+          deviceType:
+            m_TypeName: UnityEngine.InputNew.Keyboard, NewInput, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+      gravity: 1000
+      sensitivity: 1000
+      snap: 1
+      primaryIsButtonAxis: 0
+    - sources: []
+      deadZone: 0.3
+      buttonAxisSources:
+      - negative:
+          controlIndex: 107
+          deviceType:
+            m_TypeName: UnityEngine.InputNew.Keyboard, NewInput, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+        positive:
+          controlIndex: 105
+          deviceType:
+            m_TypeName: UnityEngine.InputNew.Keyboard, NewInput, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+      gravity: 1000
+      sensitivity: 1000
+      snap: 1
+      primaryIsButtonAxis: 0
   m_MapTypeName: MainMapping, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &114332852716363806
 MonoBehaviour:
@@ -195,6 +257,24 @@ MonoBehaviour:
     componentControlIndices: 
     controlType: 2
     name: MoveY
+    defaultValue: 0
+--- !u!114 &114411117302691238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eba7b4b2e3ea134991ccbff5f47c2c8, type: 3}
+  m_Name: MoveCameraY
+  m_EditorClassIdentifier: 
+  m_ActionMap: {fileID: 11400000}
+  m_ActionIndex: 10
+  m_ControlData:
+    componentControlIndices: 
+    controlType: 2
+    name: MoveCameraY
     defaultValue: 0
 --- !u!114 &114552692680613328
 MonoBehaviour:
@@ -232,6 +312,24 @@ MonoBehaviour:
     controlType: 0
     name: Restart
     defaultValue: 0
+--- !u!114 &114656512613460334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eba7b4b2e3ea134991ccbff5f47c2c8, type: 3}
+  m_Name: MoveCameraX
+  m_EditorClassIdentifier: 
+  m_ActionMap: {fileID: 11400000}
+  m_ActionIndex: 9
+  m_ControlData:
+    componentControlIndices: 
+    controlType: 2
+    name: MoveCameraX
+    defaultValue: 0
 --- !u!114 &114697485102394638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,6 +348,24 @@ MonoBehaviour:
     controlType: 0
     name: UpDownButton
     defaultValue: 0
+--- !u!114 &114740669562295436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eba7b4b2e3ea134991ccbff5f47c2c8, type: 3}
+  m_Name: MoveCamera
+  m_EditorClassIdentifier: 
+  m_ActionMap: {fileID: 11400000}
+  m_ActionIndex: 8
+  m_ControlData:
+    componentControlIndices: 090000000a0000000b000000
+    controlType: 4
+    name: MoveCamera
+    defaultValue: 0
 --- !u!114 &114741689078800838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,6 +383,24 @@ MonoBehaviour:
     componentControlIndices: 
     controlType: 2
     name: MoveX
+    defaultValue: 0
+--- !u!114 &114756429010601924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eba7b4b2e3ea134991ccbff5f47c2c8, type: 3}
+  m_Name: MoveCameraZ
+  m_EditorClassIdentifier: 
+  m_ActionMap: {fileID: 11400000}
+  m_ActionIndex: 11
+  m_ControlData:
+    componentControlIndices: 
+    controlType: 1
+    name: MoveCameraZ
     defaultValue: 0
 --- !u!114 &114802865668214636
 MonoBehaviour:

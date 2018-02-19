@@ -7,6 +7,7 @@ using TMPro;
 public class BoxGapTesting : MonoBehaviour {
 
     public TextMeshProUGUI SliderValue;
+    public SplineMovement splinePoints;
     public Slider DistanceSlider;
     public Dropdown LeftBoxList;
     public Dropdown RightBoxList;
@@ -14,6 +15,8 @@ public class BoxGapTesting : MonoBehaviour {
     public GameObject[] RightBoxes;
     public GameObject LeftTeleport;
     public GameObject RightTeleport;
+    public Vector3 LeftOffset;
+    public Vector3 RightOffset;
 
     internal GameObject currentLeftBox;
     internal GameObject currentRightBox;
@@ -82,6 +85,11 @@ public class BoxGapTesting : MonoBehaviour {
                                                         currentLeftBox.transform.position.z);
         LeftTeleport.transform.position = new Vector3(currentLeftBox.transform.position.x, currentLeftBox.transform.position.y + LeftBoxCol.bounds.size.y * 0.5f + 0.001f, currentLeftBox.transform.position.z);
         RightTeleport.transform.position = new Vector3(currentRightBox.transform.position.x, currentRightBox.transform.position.y + RightBoxCol.bounds.size.y * 0.5f + 0.001f, currentRightBox.transform.position.z);
+        splinePoints.m_Spline.points[0] = splinePoints.m_Spline.transform.InverseTransformPoint(LeftTeleport.transform.position + LeftOffset);
+        splinePoints.m_Spline.points[1] = splinePoints.m_Spline.points[0];
+        splinePoints.m_Spline.points[3] = splinePoints.m_Spline.transform.InverseTransformPoint(RightTeleport.transform.position + RightOffset);
+        splinePoints.m_Spline.points[2] = splinePoints.m_Spline.points[3];
+        splinePoints.RegeneratePoints = true;
         SliderValue.text = distance.ToString();
     }
 }

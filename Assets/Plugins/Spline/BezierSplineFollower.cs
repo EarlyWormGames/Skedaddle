@@ -9,9 +9,11 @@ public enum BezierControlPointMode
     Mirrored
 }
 
-[RequireComponent(typeof(BezierSpline))]
 public class BezierSplineFollower : MonoBehaviour
 {
+    [System.Serializable]
+    public class FollowerEvent : UnityEvent<BezierSplineFollower> { }
+
     public enum eLoopType
     {
         None,
@@ -28,7 +30,10 @@ public class BezierSplineFollower : MonoBehaviour
     public bool m_FollowOnStart = false;
     public bool m_Lookat = false;
 
-    public UnityEvent OnPathEnd;
+    public FollowerEvent OnPathEnd;
+
+    [EnumFlag]
+    public IgnoreAxis AxesToIgnore;
 
 
     private int m_iLoopCount = 0;
@@ -38,6 +43,9 @@ public class BezierSplineFollower : MonoBehaviour
 
     void Start()
     {
+        if (m_Spline == null)
+            GetComponent<BezierSpline>();
+
         if (m_FollowOnStart) Follow();
     }
 
@@ -52,7 +60,10 @@ public class BezierSplineFollower : MonoBehaviour
             if (m_Lookat)
                 m_MoveObject.LookAt(m_Spline.GetPoint(t));
             else
-                m_MoveObject.position = m_Spline.GetPoint(t);
+            {
+                Vector3 pos = m_Spline.GetPoint(t);
+                m_MoveObject.position = IgnoreUtils.Calculate(AxesToIgnore, m_MoveObject.position, pos);
+            }
 
             if (m_fTime >= m_FollowTime)
             {
@@ -62,7 +73,7 @@ public class BezierSplineFollower : MonoBehaviour
                         {
                             m_bRunning = false;
                             m_fTime = 0;
-                            OnPathEnd.Invoke();
+                            OnPathEnd.Invoke(this);
                             break;
                         }
                     case eLoopType.Loop:
@@ -72,7 +83,7 @@ public class BezierSplineFollower : MonoBehaviour
                             {
                                 m_bRunning = false;
                                 m_fTime = 0;
-                                OnPathEnd.Invoke();
+                                OnPathEnd.Invoke(this);
                             }
                             else
                             {
@@ -87,7 +98,7 @@ public class BezierSplineFollower : MonoBehaviour
                             {
                                 m_bRunning = false;
                                 m_fTime = 0;
-                                OnPathEnd.Invoke();
+                                OnPathEnd.Invoke(this);
                             }
                             else
                             {

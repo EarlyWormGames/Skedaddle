@@ -12,12 +12,23 @@ public class AnimalMovement : MonoBehaviour
     public Transform ForwardDictator;
     public SplineMovement FollowSpline;
 
-    public float RotateLerpSpeed = 60;
-
+    public float RotateLerpSpeed = 5;
+    public float SweepYAdd = 0.1f;
     public AxisAction MoveAxisKey;
+
+    [Header("Ground Movement")]
+    [Tooltip("Will the animal move when the ground moves?")]
+    public bool MoveWithGround = true;
+    [Tooltip("Will the animal rotate when the ground rotates?")]
+    public bool RotateWithGround = true;
+    [EnumFlag] public IgnoreAxis RotateIgnore = IgnoreAxis.X | IgnoreAxis.Z;
+    public LayerMask GroundLayers;
+    public float RaycastDistance = 0.1f;
 
     [HideInInspector]
     public float moveVelocity;
+    [HideInInspector]
+    public float currentSpeed;
 
     private float lastMove;
     private Animal animal;
@@ -29,10 +40,14 @@ public class AnimalMovement : MonoBehaviour
     private AxisAction currentAxis;
     private float currentInput;
 
+    private Collider groundCollider;
+    private Vector3 lastPos;
+    private Vector3 lastRot;
+
     // Use this for initialization
     void Start()
     {
-        MoveAxisKey.Bind(GameManager.Instance.GetComponent<PlayerInput>().handle);
+        MoveAxisKey.Bind(GameManager.Instance.input.handle);
         rig = GetComponent<Rigidbody>();
         animal = GetComponent<Animal>();
     }
@@ -48,21 +63,64 @@ public class AnimalMovement : MonoBehaviour
             currentAxis = FollowSpline.MoveAxisKey;
 
         currentInput = currentAxis.control.value;
+        animal.m_bForceWalk = false;
         if (FollowSpline != null)
         {
             if (FollowSpline.ForceMovement)
+            {
                 currentInput = 1;
+                animal.m_bForceWalk = true;
+            }
             currentInput *= FollowSpline.InvertAxis ? -1 : 1;
         }
 
         float[] speed = animal.CalculateMoveSpeed();
-        moveVelocity += currentInput * Time.deltaTime * speed[0];
+        float acceleration = currentInput * speed[0];
+        moveVelocity += acceleration * Time.deltaTime;
         moveVelocity = Mathf.Clamp(moveVelocity, speed[1], speed[2]);
 
         if (currentInput == 0)
             moveVelocity = Mathf.MoveTowards(moveVelocity, 0, DecelerationRate * Time.deltaTime);
 
+        currentSpeed = (moveVelocity * Time.deltaTime) + (acceleration * Time.deltaTime * (Time.deltaTime / 2f));
+
+        //Debug.Log("Move Velocity: " + moveVelocity);
+        //Debug.Log("Rig Velocity: " + animal.m_rBody.velocity.x);
+
         Move(speed);
+    }
+
+    private void FixedUpdate()
+    {
+        if (groundCollider != null)
+        {
+            if (MoveWithGround)
+            {
+                Vector3 dir = groundCollider.transform.position - lastPos;
+                transform.position += dir;
+                lastPos = groundCollider.transform.position;
+            }
+            if (RotateWithGround)
+            {
+                Vector3 dir = groundCollider.transform.eulerAngles - lastRot;
+                transform.eulerAngles = IgnoreUtils.Calculate(RotateIgnore, transform.eulerAngles, transform.eulerAngles + dir);
+                lastRot = groundCollider.transform.eulerAngles;
+            }
+        }
+
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, -transform.up, out hit, RaycastDistance, GroundLayers))
+        {
+            if (hit.collider != groundCollider)
+            {
+                groundCollider = hit.collider;
+                lastPos = groundCollider.transform.position;
+            }
+        }
+        else
+        {
+            groundCollider = null;
+        }
     }
 
     void Move(float[] a_speeds)
@@ -111,8 +169,8 @@ public class AnimalMovement : MonoBehaviour
 
         if (FollowSpline == null)
         {
-            Vector3 newPoint = transform.position + (ForwardDictator.forward * moveVelocity);
-            if (!TryMove(newPoint))
+            Vector3 newPoint = transform.position + (ForwardDictator.forward * currentSpeed);
+            if (!TryMove(newPoint, SweepYAdd))
                 moveVelocity = 0;
             Vector3 rotation = transform.eulerAngles;
             rotation.y = 90;
@@ -130,24 +188,19 @@ public class AnimalMovement : MonoBehaviour
             currentPoint = Mathf.Clamp(currentPoint, 0, FollowSpline.points.Length - 1);
             splinePos = FollowSpline.GetPosition(currentPoint);
 
-            if (FollowSpline.IgnoreAxis.x > 0)
-                splinePos.x = transform.position.x;
-            if (FollowSpline.IgnoreAxis.y > 0)
-                splinePos.y = transform.position.y;
-            if (FollowSpline.IgnoreAxis.z > 0)
-                splinePos.z = transform.position.z;
+            splinePos = IgnoreUtils.Calculate(FollowSpline.AxesToIgnore, transform.position, splinePos);
 
             Vector3 dir = splinePos - transform.position;
-            float move = moveVelocity;
+            float move = currentSpeed;
             if (move < 0)
                 move *= -1;
 
             Vector3 moveDir = dir.normalized * move;
 
-            TryMove(transform.position + moveDir);
+            TryMove(transform.position + moveDir, SweepYAdd);
 
             float rotateMult = 1;
-            if (moveVelocity < 0)
+            if (currentSpeed < 0)
                 rotateMult = -1;
 
             Vector3 rotation = transform.eulerAngles;
@@ -186,15 +239,21 @@ public class AnimalMovement : MonoBehaviour
     /// </summary>
     /// <param name="point"></param>
     /// <returns></returns>
-    public bool TryMove(Vector3 point)
+    public bool TryMove(Vector3 point, float addY = 0.01f)
     {
         Vector3 dir = point - transform.position;
         RaycastHit hit;
+        Vector3 v3Temp = transform.position;
+        v3Temp.y += addY;
+        transform.position = v3Temp;
+
         if (!rig.SweepTest(dir.normalized, out hit, dir.magnitude, QueryTriggerInteraction.Ignore))
         {
             transform.position = point;
             return true;
         }
+        v3Temp.y -= addY;
+        transform.position = v3Temp;
         return false;
     }
 
