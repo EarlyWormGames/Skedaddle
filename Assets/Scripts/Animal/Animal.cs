@@ -650,27 +650,27 @@ public class Animal : MonoBehaviour
         switch (direction)
         {
             case FACING_DIR.RIGHT:
-                angle = 90f;
+                angle = 0;
                 turned = false;
                 m_bTurned = false;
                 break;
 
             case FACING_DIR.LEFT:
-                angle = -90f;
+                angle = -180;
                 turned = true;
                 m_bTurned = true;
                 break;
 
             case FACING_DIR.FRONT:
-                angle = 180f;
+                angle = 90;
                 break;
             case FACING_DIR.BACK:
-                angle = 0f;
+                angle = -90;
                 break;
             default:
                 break;
         }
-        m_fTurnStartRotation = m_tJointRoot.eulerAngles.y;
+        m_fTurnStartRotation = m_tJointRoot.localEulerAngles.y;
         m_fTurnAngle = angle - m_fTurnStartRotation;
         if (Mathf.Abs(m_fTurnAngle) > 0.01f)
         {
@@ -891,10 +891,16 @@ public class Animal : MonoBehaviour
         return (m_bCanWalkLeft || m_bCanWalkRight) && objOkay;
     }
 
-    public void SetDirection(FACING_DIR direction)
+    public void SetDirection(FACING_DIR direction, bool detach)
     {
-        if (m_aMovement.FollowSpline == null)
-            m_fFacingDir = direction;
+        if (m_aMovement.FollowSpline != null)
+        {
+            if (detach)
+                m_aMovement.FollowSpline = null;
+            else
+                return;
+        }
+        m_fFacingDir = direction;
     }
 
     public void AllowSelection(bool allow)

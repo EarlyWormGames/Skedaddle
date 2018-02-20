@@ -41,7 +41,7 @@ public class LadderObject : ActionObject
 
     protected override void OnCanTrigger()
     {
-        if ((input.moveY.positive.wasJustPressed || input.moveY.negative.wasJustPressed || input.interact.wasJustPressed) && m_aCurrentAnimal == null)
+        if ((KeyCheck(Animal.CurrentAnimal.transform) || input.interact.wasJustPressed) && m_aCurrentAnimal == null)
         {
             DoAction();
         }
@@ -175,7 +175,7 @@ public class LadderObject : ActionObject
 
         justEnter = true;
 
-        loris.SetDirection(Direction);
+        loris.SetDirection(Direction, true);
     }
 
     public override void Detach()
@@ -188,7 +188,7 @@ public class LadderObject : ActionObject
         m_aCurrentAnimal.m_rBody.isKinematic = false;
 
         loris.m_bClimbing = false;
-        loris.SetDirection(FACING_DIR.NONE);
+        loris.SetDirection(FACING_DIR.NONE, false);
 
         if (IsRope)
             loris.m_bHorizontalRope = false;
@@ -216,5 +216,23 @@ public class LadderObject : ActionObject
             }
         }
         return index;
+    }
+
+    bool KeyCheck(Transform animal)
+    {
+        if (animal.position.y <= Points[0].position.y)
+        {
+            if (input.moveY.positive.isHeld)
+                return true;
+        }
+        else if (animal.position.y >= Points[Points.Length - 1].position.y)
+        {
+            if (input.moveY.negative.isHeld)
+                return true;
+        }
+        else if (input.moveY.negative.isHeld || input.moveY.positive.isHeld)
+            return true;
+
+        return false;
     }
 }

@@ -38,7 +38,7 @@ public class Lever : ActionObject
         m_aCurrentAnimal = Animal.CurrentAnimal;
         m_aCurrentAnimal.m_oCurrentObject = this;
 
-        m_aCurrentAnimal.SetDirection(Direction);
+        m_aCurrentAnimal.SetDirection(Direction, false);
 
         IsOn = !IsOn;
     }
@@ -78,7 +78,7 @@ public class Lever : ActionObject
     public override void Detach()
     {
         base.Detach();
-        m_aCurrentAnimal.SetDirection(FACING_DIR.NONE);
+        m_aCurrentAnimal.SetDirection(FACING_DIR.NONE, false);
         m_aCurrentAnimal.m_oCurrentObject = null;
         m_aCurrentAnimal = null;
     }

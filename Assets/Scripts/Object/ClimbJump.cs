@@ -57,7 +57,7 @@ public class ClimbJump : ActionObject
 
             float climbMult = GetMultiplier(Direction);
             
-            m_aCurrentAnimal.SetDirection(Direction);
+            m_aCurrentAnimal.SetDirection(Direction, false);
 
             //Calculate the position of the animal (based on the animation)
             if (Direction == FACING_DIR.RIGHT || Direction == FACING_DIR.LEFT)
