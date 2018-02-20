@@ -21,6 +21,8 @@ public class LadderObject : ActionObject
 
     [HideInInspector]
     public float moveVelocity;
+    [HideInInspector]
+    public float currentSpeed;
 
     private int pointIndex;
     private Loris loris;
@@ -58,13 +60,16 @@ public class LadderObject : ActionObject
         justEnter = false;
 
         float[] speed = loris.CalculateMoveSpeed();
-        moveVelocity += input.moveY.value * Time.deltaTime * speed[0];
+        float acceleration = input.moveY.value * speed[0];
+        moveVelocity += acceleration * Time.deltaTime;
         moveVelocity = Mathf.Clamp(moveVelocity, speed[1], speed[2]);
 
         if (input.moveY.value == 0)
         {
             moveVelocity = Mathf.MoveTowards(moveVelocity, 0, loris.m_fClimbStopSpeed * Time.deltaTime);
         }
+
+        currentSpeed = (moveVelocity * Time.deltaTime) + (acceleration * Time.deltaTime * (Time.deltaTime / 2f));
 
         Move();
     }
@@ -93,7 +98,7 @@ public class LadderObject : ActionObject
         splinePos = IgnoreUtils.Calculate(AxesToIgnore, loris.transform.position, splinePos);
 
         Vector3 dir = splinePos - loris.transform.position;
-        float move = moveVelocity;
+        float move = currentSpeed;
         if (move < 0)
             move *= -1;
 
@@ -102,7 +107,7 @@ public class LadderObject : ActionObject
         Debug.Log(loris.m_aMovement.TryMove(loris.transform.position + moveDir));
 
         float rotateMult = 1;
-        if (moveVelocity < 0)
+        if (currentSpeed < 0)
             rotateMult = -1;
 
         //Vector3 rotation = transform.eulerAngles;

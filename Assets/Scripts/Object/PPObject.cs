@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PPObject : ActionObject
 {
-    [EnumFlag] public IgnoreAxis MaintainPosition;
-    [EnumFlag] public IgnoreAxis MaintainRotation;
+    [EnumFlag] public IgnoreAxis MaintainPosition = IgnoreAxis.Y | IgnoreAxis.Z;
+    [EnumFlag] public IgnoreAxis MaintainRotation = IgnoreAxis.Everything;
     public List<Collider> TriggersToDisable = new List<Collider>();
 
     private Rigidbody rig;
