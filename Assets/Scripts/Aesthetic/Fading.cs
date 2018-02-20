@@ -12,10 +12,10 @@ public class Fading : MonoBehaviour {
     public UnityEvent EventToCall;
 
     private int drawDepth = -1000;      // the texture's order in the draw hierarchy: Low numbers means its renders on top
-    public float alpha = 1.0f;         // the texture's alpha value between 0 and 1 
+    private float alpha = 1.0f;         // the texture's alpha value between 0 and 1 
     private int FadeDir = -1;           // the direction to fade : in = -1 or out = 1
     private bool m_bFinishedFade = true;// has the fade completed its current fade.
-    public bool DrawShit = true;
+    private bool DrawShit = true;
 
     public bool HasFinishedFade() { return m_bFinishedFade; }
 

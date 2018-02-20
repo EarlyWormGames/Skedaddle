@@ -17,19 +17,18 @@ public class LorisNightVision : MonoBehaviour
     public GameObject NightVisionObject;
     public float TranssionSpeed = 1.0f;
 
-    public bool PreviousNVStatus;
+    private bool PreviousNVStatus;
     private RawImage NV_Image;
     private Material Temp_NV_Material;
 
-    public  EStatus m_eCurrentStatus;
-    public EStatus m_ePreviousStatus;
-    private bool m_bNVStatusJustChanged = false;
+    private EStatus m_eCurrentStatus;
+    private EStatus m_ePreviousStatus;
     private bool m_bBeginNV = false;
 
     private GameManager GM;
     private Fading m_Fade;
 
-    public float NV_ActiveSensitivity = 0;
+    private float NV_ActiveSensitivity = 0;
     private float NV_SensitivityMin = 2;
     private float NV_SensitivityMax = 4;
 
