@@ -88,6 +88,7 @@ SubShader {
 				col *= smoothstep(0.5,0.45,dist);
 				#endif				
 				
+				//add cookie Mulit from texture
 				col.rgb *= Ccol * _CookieSensitivityMultiplier;
 
 				//Increase the brightness of all normal areas by a certain amount
