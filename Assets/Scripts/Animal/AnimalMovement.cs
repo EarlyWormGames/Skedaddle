@@ -79,7 +79,10 @@ public class AnimalMovement : MonoBehaviour
             currentAxis = FollowSpline.MoveAxisKey;
 
         currentInput = currentAxis.control.value;
+
         animal.m_bForceWalk = false;
+        animal.m_gqGrounder.enabled = true;
+
         if (FollowSpline != null)
         {
             if (FollowSpline.ForceMovement)
@@ -87,6 +90,9 @@ public class AnimalMovement : MonoBehaviour
                 currentInput = 1;
                 animal.m_bForceWalk = true;
             }
+            if(FollowSpline.DisableGrounder)
+                animal.m_gqGrounder.enabled = false;
+
             currentInput *= FollowSpline.InvertAxis ? -1 : 1;
         }
 
@@ -172,6 +178,7 @@ public class AnimalMovement : MonoBehaviour
             Vector3 newPoint = transform.position + (ForwardDictator.forward * currentSpeed);
             if (!TryMove(newPoint, SweepYAdd))
                 moveVelocity = 0;
+
             Vector3 rotation = transform.eulerAngles;
             rotation.y = 90;
             rotation.z = 0;
@@ -204,10 +211,8 @@ public class AnimalMovement : MonoBehaviour
                 rotateMult = -1;
 
             Vector3 rotation = transform.eulerAngles;
-            Vector3 newRotation = transform.eulerAngles;
-            transform.forward = dir.normalized * rotateMult;
-            newRotation.x = transform.eulerAngles.x;
-            newRotation.y = transform.eulerAngles.y;
+            Vector3 newRotation = Quaternion.LookRotation(dir.normalized * rotateMult, Vector3.up).eulerAngles;           
+            newRotation.z = transform.eulerAngles.z;
 
             transform.rotation = Quaternion.Lerp(Quaternion.Euler(rotation), Quaternion.Euler(newRotation), Time.deltaTime * RotateLerpSpeed);
 

@@ -37,7 +37,8 @@ public class SplineMovement : MonoBehaviour
 
     [EnumFlag] public IgnoreAxis AxesToIgnore = IgnoreAxis.Y;
     public bool DisableGravity;
-    
+    public bool DisableGrounder;
+
     [HideInInspector]
     public Point[] points;
 
