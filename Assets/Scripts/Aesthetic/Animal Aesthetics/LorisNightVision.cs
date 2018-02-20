@@ -27,6 +27,7 @@ public class LorisNightVision : MonoBehaviour
 
     private GameManager GM;
     private Fading m_Fade;
+    private bool m_bNVStatusJustChanged = false;
 
     private float NV_ActiveSensitivity = 0;
     private float NV_SensitivityMin = 2;
