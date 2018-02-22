@@ -26,9 +26,6 @@ public class CombineMeshes
         List<CombineInstance> combine = new List<CombineInstance>();
         for (int i = 0; i < objs.Length; ++i)
         {
-            if (PrefabUtility.GetPrefabParent(objs[i]) != null)
-                continue;
-
             var childFilter = objs[i].GetComponent<MeshFilter>();
             if (childFilter == null)
                 continue;
