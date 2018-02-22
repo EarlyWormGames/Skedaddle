@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputNew;
 
+/// <summary>
+/// <para>Linear movement for animals. Uses the Animal's movement speeds to add velocity and uses a sweeptest to ensure movement is possible.</para>
+/// Can also utilize SplineMovement settings to follow a BezierSpline using velocity rather than time.
+/// </summary>
 [RequireComponent(typeof(Animal))]
 [RequireComponent(typeof(Rigidbody))]
 public class AnimalMovement : MonoBehaviour
