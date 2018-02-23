@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputNew;
 
-/* @brief Allows an Animal to move
+/*! @brief Allows an Animal to move
 * @details Attach this script to any GameObject that has an Animal script attached.  
     This will allow for linear movement, as well as following a SplineMovement.
     <br>It also has many helpful features, such as the @ref MoveWithGround property, which will allow
