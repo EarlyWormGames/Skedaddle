@@ -17,6 +17,7 @@ public class Trampoline : ActionObject
     public BezierSpline LaunchSpline;
     public BezierSpline ExitSpline;
     public float LaunchSplineSpeed = 1, ExitSplineSpeed = 0.5f;
+    public AnimationCurve LaunchCurve = AnimationCurve.Linear(0, 0, 1, 1);
 
     [Header("Input")]
     public AxisAction LaunchAxis;
@@ -126,8 +127,11 @@ public class Trampoline : ActionObject
         follower.m_Spline = LaunchSpline;
         follower.m_MoveObject = item.transform;
         follower.m_FollowTime = LaunchSplineSpeed;
+        follower.m_Curve = LaunchCurve;
+
         follower.OnPathEnd = new BezierSplineFollower.FollowerEvent();
         follower.OnPathEnd.AddListener(SplineEnd);
+
         follower.Follow();
     }
 

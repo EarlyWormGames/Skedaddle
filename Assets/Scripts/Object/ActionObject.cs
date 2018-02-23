@@ -164,13 +164,18 @@ public class ActionObject : MonoBehaviour
     void OnTriggerEnter(Collider a_col)
     {
         AnimalTrigger animtrig = a_col.GetComponent<AnimalTrigger>();
+        Animal anim;
         if (animtrig == null)
         {
-            ObjectEnter(a_col);
-            return;
+            anim = a_col.GetComponentInParent<Animal>();
+            if (anim == null)
+            {
+                ObjectEnter(a_col);
+                return;
+            }
         }
-
-        Animal anim = animtrig.parent;
+        else
+            anim = animtrig.parent;
 
         if (m_lAnimalsIn.Contains(anim))
             return;
@@ -196,13 +201,18 @@ public class ActionObject : MonoBehaviour
     void OnTriggerExit(Collider a_col)
     {
         AnimalTrigger animtrig = a_col.GetComponent<AnimalTrigger>();
+        Animal anim;
         if (animtrig == null)
         {
-            ObjectExit(a_col);
-            return;
+            anim = a_col.GetComponentInParent<Animal>();
+            if (anim == null)
+            {
+                ObjectExit(a_col);
+                return;
+            }
         }
-
-        Animal anim = animtrig.parent;
+        else
+            anim = animtrig.parent;
 
         if (!m_lAnimalsIn.Contains(anim))
             return;
