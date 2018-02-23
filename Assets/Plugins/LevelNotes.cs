@@ -18,5 +18,9 @@ public class LevelNotes : MonoBehaviour
         }
     }
 
+    public int MaximumFontSize = 20;
+    public float DistanceMultiplier = 5;
+    public bool ShrinkOverDistance = true;
+
     public List<TextPoint> points = new List<TextPoint>();
 }

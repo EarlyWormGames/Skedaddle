@@ -28,12 +28,22 @@ public class LevelNotesEditor
         GUIStyle mystyle = new GUIStyle(GUI.skin.label);
         mystyle.normal.textColor = Color.white;
 
+        int fontSize = currentFlow.MaximumFontSize;
+        float dist = currentFlow.DistanceMultiplier;
+
+        mystyle.fontSize = fontSize;
+
         foreach (var item in currentFlow.points)
         {
-            float size = HandleUtility.GetHandleSize(item.position) * 0.05f;
+            float size = HandleUtility.GetHandleSize(item.position);
+
+            if (currentFlow.ShrinkOverDistance)
+                mystyle.fontSize = fontSize - Mathf.Clamp((int)(size * dist), 0, fontSize - 1);
 
             if (item.showText)
+            {
                 Handles.Label(item.position, item.text, mystyle);
+            }
         }
     }
 
