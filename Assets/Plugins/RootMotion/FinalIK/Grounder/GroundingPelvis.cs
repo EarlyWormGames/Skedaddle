@@ -56,8 +56,8 @@ namespace RootMotion.FinalIK {
 				float deltaTime = Time.time - lastTime;
 				lastTime = Time.time;
 				if (deltaTime <= 0f) return;
-				
-				float offsetTarget = lowestOffset + highestOffset;
+
+                float offsetTarget = lowestOffset + highestOffset;
 				if (!grounding.rootGrounded) offsetTarget = 0f;
 				
 				// Interpolating the offset

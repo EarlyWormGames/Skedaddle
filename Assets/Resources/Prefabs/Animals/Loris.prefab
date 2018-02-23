@@ -6451,7 +6451,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 111396}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 81.721, y: -1.73, z: 8.634}
+  m_LocalPosition: {x: -28.46, y: 0.77046394, z: -2.32}
   m_LocalScale: {x: 0.401, y: 0.401, z: 0.401}
   m_Children:
   - {fileID: 427722}
@@ -6461,6 +6461,7 @@ Transform:
   - {fileID: 4984212974349418}
   - {fileID: 4000012980386568}
   - {fileID: 4000011369627124}
+  - {fileID: 4514565672941364}
   - {fileID: 4588508676643126}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -10401,6 +10402,28 @@ MonoBehaviour:
     maxGapPelvisMaintain: 0.01
     maxGapPelvisDecrease: 0.01
     maxgapPelvisDecreaseDistance: 0.03
+    pelvisRaycastSize: {x: 0.01, y: 0.1, z: 0.01}
+    pelvisRaycastDistance: 1
+    PelvisLowerAmount:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 1
+        inSlope: -1
+        outSlope: -1
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: -1
+        outSlope: -1
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    pelvisRaycastOffset: {x: 0, y: 0, z: 0}
+    pevlisLowerOffset: 0
     footRotationWeight: 1
     footRotationSpeed: 7
     maxFootRotationAngle: 45
@@ -10427,6 +10450,28 @@ MonoBehaviour:
     maxGapPelvisMaintain: 0.01
     maxGapPelvisDecrease: 0.01
     maxgapPelvisDecreaseDistance: 0.03
+    pelvisRaycastSize: {x: 0.01, y: 0.1, z: 0.01}
+    pelvisRaycastDistance: 1
+    PelvisLowerAmount:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 1
+        inSlope: -1
+        outSlope: -1
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: -1
+        outSlope: -1
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    pelvisRaycastOffset: {x: 0, y: 0, z: 0}
+    pevlisLowerOffset: 0
     footRotationWeight: 1
     footRotationSpeed: 7
     maxFootRotationAngle: 45
@@ -10439,6 +10484,10 @@ MonoBehaviour:
     quality: 2
   PelvisStraightenWeight: 0.5
   ShoulderStraightenWeight: 0.5
+  PelvisLowerSpeed: 9
+  ShoulderLowerSpeed: 9
+  HeadLowerAmount: 0
+  HeadLowerSpeed: 1
   rootRotationWeight: 0
   minRootRotation: -25
   maxRootRotation: 45
@@ -12658,6 +12707,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1443211765053462
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4514565672941364}
+  m_Layer: 8
+  m_Name: Pelvis Rotation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &4000011369627124
 Transform:
   m_ObjectHideFlags: 1
@@ -12697,6 +12761,19 @@ Transform:
   m_Father: {fileID: 461508}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4514565672941364
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1443211765053462}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 423376}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4588508676643126
 Transform:
   m_ObjectHideFlags: 1
@@ -12708,7 +12785,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 423376}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4984212974349418
 Transform:
@@ -12876,7 +12953,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DecelerationRate: 2
-  MoveMin: 0.01
   ForwardDictator: {fileID: 466434}
   FollowSpline: {fileID: 0}
   RotateLerpSpeed: 5

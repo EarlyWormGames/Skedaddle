@@ -16,10 +16,10 @@ namespace RootMotion.FinalIK {
 		/// The target Transform.
 		/// </summary>
 		public Transform target;
-		/// <summary>
-		/// The %IK rotation weight (rotation of the last bone).
-		/// </summary>
-		[Range(0f, 1f)]
+        /// <summary>
+        /// The %IK rotation weight (rotation of the last bone).
+        /// </summary>
+        [Range(0f, 1f)]
 		public float IKRotationWeight = 1f;
 		/// <summary>
 		/// The %IK rotation target.
@@ -343,7 +343,7 @@ namespace RootMotion.FinalIK {
 				IKRotation = target.rotation;
 			}
 
-			OnUpdateVirtual();
+            OnUpdateVirtual();
 			
 			if (IKPositionWeight > 0) {
 
@@ -380,8 +380,11 @@ namespace RootMotion.FinalIK {
 			if (IKRotationWeight > 0) {
 				bone3.transform.rotation = Quaternion.Slerp(bone3.transform.rotation, IKRotation, IKRotationWeight);
 			}
-			
-			OnPostSolveVirtual();
+            
+
+            OnPostSolveVirtual();
+            
+            
 		}
 		
 		protected Vector3 weightIKPosition;
