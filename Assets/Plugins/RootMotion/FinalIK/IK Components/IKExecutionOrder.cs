@@ -15,7 +15,7 @@ namespace RootMotion.FinalIK {
 
 		// Disable the IK components
 		void Start() {
-			for (int i = 0; i < IKComponents.Length; i++) IKComponents[i].enabled = false;
+			//for (int i = 0; i < IKComponents.Length; i++) IKComponents[i].enabled = false;
 		}
 
 		// Update the IK components in a specific order

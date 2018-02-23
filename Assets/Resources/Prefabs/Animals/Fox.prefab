@@ -3021,7 +3021,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 180850}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -8.4, y: 1.12, z: 6.038}
+  m_LocalPosition: {x: -29.05, y: 1.035, z: -6.352}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 428360}
@@ -3244,6 +3244,8 @@ MonoBehaviour:
     IKPositionWeight: 0.9941698
     root: {fileID: 402448}
     target: {fileID: 0}
+    targetPosition: {x: 0, y: 0, z: 0}
+    currentIKPosition: {x: 0, y: 0, z: 0}
     IKRotationWeight: 1
     IKRotation: {x: -0.99858874, y: 0.04015795, z: -0.03382784, w: -0.007997593}
     bendNormal: {x: -0.0028983934, y: 0.0030578184, z: -0.012443317}
@@ -3313,7 +3315,7 @@ MonoBehaviour:
   m_v3PelvisOffset: {x: 0, y: 0, z: 0}
   m_tCollider: {fileID: 4000012421916572}
   m_fWalkSpeed: 4
-  m_fTopSpeed: 1.2
+  m_fTopSpeed: 2
   m_fPullSpeedMult: 1
   m_fFallSpeedMult: 0.2
   m_fTurnSpeedMult: 0.85
@@ -3433,6 +3435,8 @@ MonoBehaviour:
     IKPositionWeight: 0.9941698
     root: {fileID: 429052}
     target: {fileID: 0}
+    targetPosition: {x: 0, y: 0, z: 0}
+    currentIKPosition: {x: 0, y: 0, z: 0}
     IKRotationWeight: 1
     IKRotation: {x: 0.009045929, y: -0.009050633, z: -0.99956846, w: 0.02645624}
     bendNormal: {x: 0.010338252, y: 0.002727117, z: -0.023319144}
@@ -3500,6 +3504,8 @@ MonoBehaviour:
     IKPositionWeight: 1
     root: {fileID: 411804}
     target: {fileID: 0}
+    targetPosition: {x: 0, y: 0, z: 0}
+    currentIKPosition: {x: 0, y: 0, z: 0}
     IKRotationWeight: 1
     IKRotation: {x: 0.00929421, y: 0.007979959, z: 0.02644373, w: 0.9995754}
     bendNormal: {x: -0.009324806, y: -0.004883483, z: -0.022091936}
@@ -3578,6 +3584,28 @@ MonoBehaviour:
     maxGapPelvisMaintain: 0.3
     maxGapPelvisDecrease: 0.12
     maxgapPelvisDecreaseDistance: 0.4
+    pelvisRaycastSize: {x: 0.01, y: 0.3, z: 0.01}
+    pelvisRaycastDistance: 1.5
+    PelvisLowerAmount:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 1
+        inSlope: -1
+        outSlope: -1
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: -1
+        outSlope: -1
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    pelvisRaycastOffset: {x: 0, y: 0, z: 0}
+    pevlisLowerOffset: 0.1
     footRotationWeight: 1
     footRotationSpeed: 7
     maxFootRotationAngle: 45
@@ -3604,6 +3632,28 @@ MonoBehaviour:
     maxGapPelvisMaintain: 0.15
     maxGapPelvisDecrease: 0.12
     maxgapPelvisDecreaseDistance: 0.3
+    pelvisRaycastSize: {x: 0.01, y: 0.3, z: 0.01}
+    pelvisRaycastDistance: 1.5
+    PelvisLowerAmount:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 1
+        inSlope: -1
+        outSlope: -1
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: -1
+        outSlope: -1
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    pelvisRaycastOffset: {x: 0, y: 0, z: 0}
+    pevlisLowerOffset: -0.05
     footRotationWeight: 1
     footRotationSpeed: 7
     maxFootRotationAngle: 45
@@ -3616,6 +3666,10 @@ MonoBehaviour:
     quality: 2
   PelvisStraightenWeight: 0.5
   ShoulderStraightenWeight: 0.5
+  PelvisLowerSpeed: 9
+  ShoulderLowerSpeed: 9
+  HeadLowerAmount: 0.03
+  HeadLowerSpeed: 9
   rootRotationWeight: 0
   minRootRotation: -25
   maxRootRotation: 45
@@ -3653,6 +3707,8 @@ MonoBehaviour:
     IKPositionWeight: 0.9941698
     root: {fileID: 496368}
     target: {fileID: 0}
+    targetPosition: {x: 0, y: 0, z: 0}
+    currentIKPosition: {x: 0, y: 0, z: 0}
     IKRotationWeight: 1
     IKRotation: {x: -0.040154584, y: -0.9985893, z: -0.007996263, w: 0.03381434}
     bendNormal: {x: 0.026486564, y: -0.0070338887, z: -0.037032466}
@@ -6668,7 +6724,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DecelerationRate: 4
-  MoveMin: 0.1
   ForwardDictator: {fileID: 428360}
   FollowSpline: {fileID: 0}
   RotateLerpSpeed: 5
@@ -7111,7 +7166,7 @@ SphereCollider:
   m_GameObject: {fileID: 1000011167643408}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.16
   m_Center: {x: 0, y: 0.15, z: 0.37}

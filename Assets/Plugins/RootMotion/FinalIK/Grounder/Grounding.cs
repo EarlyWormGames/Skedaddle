@@ -74,6 +74,11 @@ namespace RootMotion.FinalIK {
         public float maxGapPelvisMaintain;
         public float maxGapPelvisDecrease;
         public float maxgapPelvisDecreaseDistance;
+        public Vector3 pelvisRaycastSize;
+        public float pelvisRaycastDistance;
+        public AnimationCurve PelvisLowerAmount;
+        public Vector3 pelvisRaycastOffset;
+        public float pevlisLowerOffset;
         /// <summary>
         /// Weight of rotating the feet to the ground normal offset.
         /// </summary>
@@ -307,9 +312,9 @@ namespace RootMotion.FinalIK {
                 }
                 if (leg.groundObject != "") currentGround = leg.groundObject;
             }
-			
-			// Precess pelvis
-			pelvis.Process(-lowestOffset * lowerPelvisWeight, -highestOffset * liftPelvisWeight, isGrounded);
+
+            // Precess pelvis
+            pelvis.Process(-lowestOffset * lowerPelvisWeight, -highestOffset * liftPelvisWeight, isGrounded);
 		}
 
 		// Calculate the normal of the plane defined by leg positions, so we know how to rotate the body
@@ -393,6 +398,47 @@ namespace RootMotion.FinalIK {
 				return true;
 			}
 		}
+
+        public float ForwardRaycastRoof(Transform pelvis, Color cast)
+        {
+            RaycastHit hit = new RaycastHit();
+            Physics.BoxCast(pelvis.position + pelvisRaycastOffset, pelvisRaycastSize, root.forward, out hit, Quaternion.LookRotation(root.forward, root.up), pelvisRaycastDistance, layers);
+            //ExtDebug.DrawBoxCastBox(pelvis.position + pelvisRaycastOffset, pelvisRaycastSize, Quaternion.LookRotation(root.forward, root.up), root.forward, pelvisRaycastDistance, cast);
+            float Distancecast;
+            if (hit.collider != null)
+            {
+                float amountDecrease = Vector3.Distance(pelvis.position + pelvisRaycastOffset, hit.point) / pelvisRaycastDistance;
+                
+                Distancecast = RaycastUp(pelvis.position + pelvisRaycastOffset + root.forward * Vector3.Distance(pelvis.position, hit.point), cast) * PelvisLowerAmount.Evaluate(amountDecrease);
+            }
+            else
+            {
+                Distancecast = 0;
+            }
+            float upCast = RaycastUp(pelvis.position + pelvisRaycastOffset, cast) * PelvisLowerAmount.Evaluate(0);
+            if(upCast >= Distancecast)
+            {
+                return upCast;
+            }
+            else
+            {
+                return Distancecast;
+            }
+        }
+
+        float RaycastUp(Vector3 center, Color cast)
+        {
+            RaycastHit hit = new RaycastHit();
+            Vector3 newCenter = center - new Vector3(0, pelvisRaycastSize.y, 0);
+            Vector3 endCast = new Vector3(newCenter.x, newCenter.y + pelvisRaycastSize.y * 2, newCenter.z);
+            Physics.Raycast(newCenter, root.up, out hit, pelvisRaycastSize.y * 2, layers);
+            Debug.DrawLine(newCenter, endCast, cast);
+            if(hit.collider != null)
+            {
+                return Vector3.Distance(endCast,hit.point) - pevlisLowerOffset;
+            }
+            return 0;
+        }
 	}
 }
 

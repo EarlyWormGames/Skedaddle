@@ -41,6 +41,10 @@ namespace RootMotion.FinalIK {
         [Tooltip("/// The weight of how much the shoulders are pulled down by the pelvis when the shoulders are higher")]
         [Range(0f, 1f)]
         public float ShoulderStraightenWeight = 0.5f;
+        public float PelvisLowerSpeed = 1;
+        public float ShoulderLowerSpeed = 1;
+        public float HeadLowerAmount;
+        public float HeadLowerSpeed = 1;
 		/// <summary>
 		/// The weight of rotating the character root to the ground angle (range: 0 - 1).
 		/// </summary>
@@ -142,6 +146,8 @@ namespace RootMotion.FinalIK {
 		private Quaternion animatedPelvisLocalRotation;
 		private Quaternion animatedHeadLocalRotation;
 		private Vector3 solvedPelvisLocalPosition;
+        private float PelvisLowerPosition;
+        private float ShoulderLowerPosition;
 		private Quaternion solvedPelvisLocalRotation;
 		private Quaternion solvedHeadLocalRotation;
 		private int solvedFeet;
@@ -149,6 +155,7 @@ namespace RootMotion.FinalIK {
 		private float angle;
 		private Transform forefeetRoot;
 		private Quaternion headRotation;
+        private Quaternion HeadLowerChange;
 		private float lastWeight;
 		
 		// Can we initiate the Grounding?
@@ -371,8 +378,19 @@ namespace RootMotion.FinalIK {
                 forelegStraighten = 0;
             }
 
-            Vector3 NewSolverIKOffset = new Vector3(solver.pelvis.IKOffset.x, solver.pelvis.IKOffset.y - backLegStraighten, solver.pelvis.IKOffset.z);
-            Vector3 NewForelegSolverIKOffset = new Vector3(forelegSolver.pelvis.IKOffset.x, forelegSolver.pelvis.IKOffset.y - forelegStraighten, forelegSolver.pelvis.IKOffset.z);
+            PelvisLowerPosition = Mathf.Lerp(PelvisLowerPosition, solver.ForwardRaycastRoof(pelvis, Color.green), Time.fixedDeltaTime * PelvisLowerSpeed);
+            ShoulderLowerPosition = Mathf.Lerp(ShoulderLowerPosition, forelegSolver.ForwardRaycastRoof(lastSpineBone, Color.gray), Time.fixedDeltaTime * ShoulderLowerSpeed);
+            Vector3 NewSolverIKOffset = new Vector3(solver.pelvis.IKOffset.x, solver.pelvis.IKOffset.y - backLegStraighten - PelvisLowerPosition, solver.pelvis.IKOffset.z);
+
+            Vector3 NewHeadDirection = forelegSolver.root.right;
+            Quaternion NewheadRotation = Quaternion.Slerp(headRotation, Quaternion.LookRotation(NewHeadDirection, Vector3.up), Mathf.Clamp01(1 - (HeadLowerAmount - ShoulderLowerPosition)/HeadLowerAmount));
+            HeadLowerChange = Quaternion.Slerp(HeadLowerChange, NewheadRotation, Time.deltaTime * HeadLowerSpeed);
+
+            if (HeadLowerAmount > 0 && ShoulderLowerPosition >= 0)
+            {
+                headRotation = HeadLowerChange;
+                ShoulderLowerPosition = Mathf.Clamp(ShoulderLowerPosition - HeadLowerAmount, 0, Mathf.Infinity);
+            }
 
             // Move the pelvis
             pelvis.position += NewSolverIKOffset * weight;
@@ -382,12 +400,14 @@ namespace RootMotion.FinalIK {
 			
 			Vector3 newSpinePosition = 
 				lastSpineBone.position + 
-					forelegSolver.root.up * Mathf.Clamp(forelegSolver.pelvis.heightOffset - forelegStraighten, Mathf.NegativeInfinity, 0f) -
-					solver.root.up * (solver.pelvis.heightOffset - backLegStraighten);
+					forelegSolver.root.up * Mathf.Clamp(forelegSolver.pelvis.heightOffset - forelegStraighten - ShoulderLowerPosition, Mathf.NegativeInfinity, 0f) -
+					solver.root.up * (solver.pelvis.heightOffset - backLegStraighten - PelvisLowerPosition);
 			
 			Vector3 newDirection = newSpinePosition - pelvis.position;
 			
 			Quaternion f = Quaternion.FromToRotation(spineDirection, newDirection);
+
+           
             //PelvisRotation = pelvis.rotation * f;
 			pelvis.rotation = Quaternion.Slerp(Quaternion.identity, f, weight) * pelvis.rotation;
             PelvisRotation  = Quaternion.Euler(pelvis.eulerAngles.z, pelvis.eulerAngles.y, pelvis.eulerAngles.x);
