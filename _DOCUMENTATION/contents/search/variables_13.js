@@ -3,7 +3,6 @@ var searchData=
   ['unjittercolorsamples',['unjitterColorSamples',['../d6/d49/class_temporal_reprojection.html#aeaba2237b1425f7c5b70e6b80a9d33ba',1,'TemporalReprojection']]],
   ['unjitterneighborhood',['unjitterNeighborhood',['../d6/d49/class_temporal_reprojection.html#a2fc9ced5dc3ab49a5aa092f0a8818fb0',1,'TemporalReprojection']]],
   ['unjitterreprojection',['unjitterReprojection',['../d6/d49/class_temporal_reprojection.html#a9c344d41248eeac0563ae57ea0f46f2c',1,'TemporalReprojection']]],
-  ['updateinterval',['UpdateInterval',['../d8/d50/class_t_m_pro_1_1_examples_1_1_t_m_p___frame_rate_counter.html#ae8d84e2e21d6d819d48f594b09b0319b',1,'TMPro.Examples.TMP_FrameRateCounter.UpdateInterval()'],['../d1/d1e/class_t_m_pro_1_1_examples_1_1_t_m_p___ui_frame_rate_counter.html#a826c5dd240c35cc3cec70d82d0e6d76e',1,'TMPro.Examples.TMP_UiFrameRateCounter.UpdateInterval()']]],
   ['useanimalysettings',['UseAnimalYSettings',['../d9/d65/class_camera_spline.html#a2d886ed83b154eba17d8d3f7900af697',1,'CameraSpline']]],
   ['useclipping',['useClipping',['../d6/d49/class_temporal_reprojection.html#ae788c37659836b4f9b83f7c7a91b4fa4',1,'TemporalReprojection']]],
   ['usedilation',['useDilation',['../d6/d49/class_temporal_reprojection.html#a8a1f9e58baaebc49f71508de4f662dad',1,'TemporalReprojection']]],

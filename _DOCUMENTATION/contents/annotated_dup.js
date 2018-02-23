@@ -1,8 +1,6 @@
 var annotated_dup =
 [
     [ "Assets", "d6/d2b/namespace_assets.html", "d6/d2b/namespace_assets" ],
-    [ "RootMotion", "d7/d5d/namespace_root_motion.html", "d7/d5d/namespace_root_motion" ],
-    [ "TMPro", "d8/de8/namespace_t_m_pro.html", "d8/de8/namespace_t_m_pro" ],
     [ "Tobii", "d5/d9b/namespace_tobii.html", "d5/d9b/namespace_tobii" ],
     [ "UnityEditor", "d8/d5f/namespace_unity_editor.html", "d8/d5f/namespace_unity_editor" ],
     [ "UnityStandardAssets", "d3/db6/namespace_unity_standard_assets.html", "d3/db6/namespace_unity_standard_assets" ],
@@ -57,7 +55,6 @@ var annotated_dup =
     [ "CameraSplineManager", "dc/d6d/class_camera_spline_manager.html", "dc/d6d/class_camera_spline_manager" ],
     [ "Cannon", "dc/de6/class_cannon.html", "dc/de6/class_cannon" ],
     [ "CentreOfMass", "db/d07/class_centre_of_mass.html", null ],
-    [ "ChatController", "df/d8f/class_chat_controller.html", "df/d8f/class_chat_controller" ],
     [ "CircleOutline", "d0/db8/class_circle_outline.html", "d0/db8/class_circle_outline" ],
     [ "Claw", "dd/d5c/class_claw.html", "dd/d5c/class_claw" ],
     [ "ClimbJump", "d7/d7d/class_climb_jump.html", "d7/d7d/class_climb_jump" ],
@@ -81,7 +78,6 @@ var annotated_dup =
     [ "EndLevel", "db/ddd/class_end_level.html", "db/ddd/class_end_level" ],
     [ "EnumFlagAttribute", "d7/d5c/class_enum_flag_attribute.html", "d7/d5c/class_enum_flag_attribute" ],
     [ "EnumFlagDrawer", "d4/da8/class_enum_flag_drawer.html", "d4/da8/class_enum_flag_drawer" ],
-    [ "EnvMapAnimator", "dd/dc8/class_env_map_animator.html", "dd/dc8/class_env_map_animator" ],
     [ "EWAnalytics", "d2/d5d/class_e_w_analytics.html", "d2/d5d/class_e_w_analytics" ],
     [ "EWApplication", "d9/d41/class_e_w_application.html", "d9/d41/class_e_w_application" ],
     [ "EWArrayUtil", "dd/d9f/class_e_w_array_util.html", null ],

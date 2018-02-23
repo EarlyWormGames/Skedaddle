@@ -1,16 +1,13 @@
 var searchData=
 [
-  ['textmeshpro',['TextMeshPro',['../dc/dea/class_t_m_pro_1_1_examples_1_1_t_m_p___example_script__01.html#a7581fa07718f773bf9347019769d2c80aa84491abd0130dee520f3055918599dd',1,'TMPro::Examples::TMP_ExampleScript_01']]],
-  ['textmeshprougui',['TextMeshProUGUI',['../dc/dea/class_t_m_pro_1_1_examples_1_1_t_m_p___example_script__01.html#a7581fa07718f773bf9347019769d2c80a4d47004d3bec07be8a80226b462ec62e',1,'TMPro::Examples::TMP_ExampleScript_01']]],
   ['tilesize10',['TileSize10',['../d1/d47/class_velocity_buffer.html#a2ab38673d716b1fe0286001d9545841aa98e0ce3c121a83857e055a5a8f6b83d4',1,'VelocityBuffer']]],
   ['tilesize20',['TileSize20',['../d1/d47/class_velocity_buffer.html#a2ab38673d716b1fe0286001d9545841aa83363948170f4d30fa8409dde65992b4',1,'VelocityBuffer']]],
   ['tilesize40',['TileSize40',['../d1/d47/class_velocity_buffer.html#a2ab38673d716b1fe0286001d9545841aa9404ba2f79e5361455b69f792f1c019d',1,'VelocityBuffer']]],
   ['top_5fwait',['TOP_WAIT',['../de/da1/class_stomper.html#aae04e54d13bcee7c7b32dbea23aebcb3a691340ccb1f6550c9bdda6a1466b5537',1,'Stomper']]],
   ['tophalf',['TopHalf',['../d7/d46/class_create_plane.html#a9355b690af33c2b449c1ce539006ecfca51f9ab089e0b40e3f7aa46e5291f30cb',1,'CreatePlane']]],
-  ['topleft',['TopLeft',['../d7/d46/class_create_plane.html#a9355b690af33c2b449c1ce539006ecfcab32beb056fbfe36afbabc6c88c81ab36',1,'CreatePlane.TopLeft()'],['../d8/d50/class_t_m_pro_1_1_examples_1_1_t_m_p___frame_rate_counter.html#af5d815df33bfd48fcbca765dbdc1a6e5ab32beb056fbfe36afbabc6c88c81ab36',1,'TMPro.Examples.TMP_FrameRateCounter.TopLeft()'],['../d1/d1e/class_t_m_pro_1_1_examples_1_1_t_m_p___ui_frame_rate_counter.html#acd8edef652a3eca75ad3e389002d2eceab32beb056fbfe36afbabc6c88c81ab36',1,'TMPro.Examples.TMP_UiFrameRateCounter.TopLeft()'],['../d9/d7a/class_t_m_pro_1_1_examples_1_1_t_m_pro___instruction_overlay.html#a857c25d1c96e819dc39011d143ce3415ab32beb056fbfe36afbabc6c88c81ab36',1,'TMPro.Examples.TMPro_InstructionOverlay.TopLeft()']]],
-  ['topright',['TopRight',['../d7/d46/class_create_plane.html#a9355b690af33c2b449c1ce539006ecfca1d85a557894c340c318493f33bfa8efb',1,'CreatePlane.TopRight()'],['../d8/d50/class_t_m_pro_1_1_examples_1_1_t_m_p___frame_rate_counter.html#af5d815df33bfd48fcbca765dbdc1a6e5a1d85a557894c340c318493f33bfa8efb',1,'TMPro.Examples.TMP_FrameRateCounter.TopRight()'],['../d1/d1e/class_t_m_pro_1_1_examples_1_1_t_m_p___ui_frame_rate_counter.html#acd8edef652a3eca75ad3e389002d2ecea1d85a557894c340c318493f33bfa8efb',1,'TMPro.Examples.TMP_UiFrameRateCounter.TopRight()'],['../d9/d7a/class_t_m_pro_1_1_examples_1_1_t_m_pro___instruction_overlay.html#a857c25d1c96e819dc39011d143ce3415a1d85a557894c340c318493f33bfa8efb',1,'TMPro.Examples.TMPro_InstructionOverlay.TopRight()']]],
+  ['topleft',['TopLeft',['../d7/d46/class_create_plane.html#a9355b690af33c2b449c1ce539006ecfcab32beb056fbfe36afbabc6c88c81ab36',1,'CreatePlane']]],
+  ['topright',['TopRight',['../d7/d46/class_create_plane.html#a9355b690af33c2b449c1ce539006ecfca1d85a557894c340c318493f33bfa8efb',1,'CreatePlane']]],
   ['toptobottom',['TopToBottom',['../de/df3/_title_lights_8cs.html#a87e3f8652ad535a03a2b448824edab1caf2b1a19a8d0f523d042f9ede79a80804',1,'TitleLights.cs']]],
-  ['translation',['Translation',['../d3/d41/class_t_m_pro_1_1_examples_1_1_object_spin.html#a45f51bc7820e9bbc91c1806bcaded7fca6dd08874f83507e9c7b23f1a46b7fa7c',1,'TMPro::Examples::ObjectSpin']]],
   ['triangledepthnormals',['TriangleDepthNormals',['../d7/d31/class_highlighter.html#a585a556fee5d14c362fbf2fada52a073a7d24919ed28094f0202232ee6d708fa4',1,'Highlighter']]],
   ['triangleluminance',['TriangleLuminance',['../d7/d31/class_highlighter.html#a585a556fee5d14c362fbf2fada52a073a1707b04c2953253bad60f979add23dea',1,'Highlighter']]]
 ];

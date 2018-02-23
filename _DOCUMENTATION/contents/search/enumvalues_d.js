@@ -6,6 +6,5 @@ var searchData=
   ['robertscrossdepthnormals',['RobertsCrossDepthNormals',['../d7/d31/class_highlighter.html#a585a556fee5d14c362fbf2fada52a073ac2b6fd3b6c9c392cd93579f3be952a8f',1,'Highlighter']]],
   ['rotated4',['Rotated4',['../db/d5a/class_frustum_jitter.html#a11a9007fdc6ca37500098c619213e3d3afeb79f3b8b43a39afb81b01af86e6808',1,'FrustumJitter']]],
   ['rotated4_5fhelix',['Rotated4_Helix',['../db/d5a/class_frustum_jitter.html#a11a9007fdc6ca37500098c619213e3d3ac12cd514fa46f96069012dfb20a7fcda',1,'FrustumJitter']]],
-  ['rotated4_5fhelix2',['Rotated4_Helix2',['../db/d5a/class_frustum_jitter.html#a11a9007fdc6ca37500098c619213e3d3a8b8b3ef6da4842f8f0b7e8b282bd694a',1,'FrustumJitter']]],
-  ['rotation',['Rotation',['../d3/d41/class_t_m_pro_1_1_examples_1_1_object_spin.html#a45f51bc7820e9bbc91c1806bcaded7fcaf1a42bd417390fc63b030a519624607a',1,'TMPro::Examples::ObjectSpin']]]
+  ['rotated4_5fhelix2',['Rotated4_Helix2',['../db/d5a/class_frustum_jitter.html#a11a9007fdc6ca37500098c619213e3d3a8b8b3ef6da4842f8f0b7e8b282bd694a',1,'FrustumJitter']]]
 ];

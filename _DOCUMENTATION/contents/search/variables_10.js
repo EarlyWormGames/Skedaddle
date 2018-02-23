@@ -17,10 +17,5 @@ var searchData=
   ['rotateobject',['RotateObject',['../dc/de6/class_cannon.html#a058c26253647d4f92ddcb8da7ea5ec15',1,'Cannon']]],
   ['rotatespeed',['RotateSpeed',['../d5/d50/class_ladder_object.html#a7fab140049f0d2a427a9778fff4553b3',1,'LadderObject']]],
   ['rotatetime',['RotateTime',['../dc/de6/class_cannon.html#a9516c36d3a448bad28896f332fcedf53',1,'Cannon']]],
-  ['rotatewithground',['RotateWithGround',['../df/d1c/class_animal_movement.html#a82027772be00ed9b175e7a65848d88a2',1,'AnimalMovement']]],
-  ['rotationmultiplier',['RotationMultiplier',['../dd/d7f/class_t_m_pro_1_1_examples_1_1_vertex_shake_a.html#ab4bd4cb50926999b1a1ac59da8fcf7f1',1,'TMPro::Examples::VertexShakeA']]],
-  ['rotationrange',['RotationRange',['../d3/d41/class_t_m_pro_1_1_examples_1_1_object_spin.html#a802c4f5441264532dd2b379c48dfa012',1,'TMPro::Examples::ObjectSpin']]],
-  ['rotationsmoothing',['RotationSmoothing',['../d2/db6/class_t_m_pro_1_1_examples_1_1_camera_controller.html#a3e2c0e89101934e95f27fa271ff05d14',1,'TMPro::Examples::CameraController']]],
-  ['rotationsmoothingvalue',['RotationSmoothingValue',['../d2/db6/class_t_m_pro_1_1_examples_1_1_camera_controller.html#a004e199cff2c8738cc9584087357444d',1,'TMPro::Examples::CameraController']]],
-  ['rotationspeeds',['RotationSpeeds',['../dd/dc8/class_env_map_animator.html#a0e8af1e7df113e4ca34b2ffbb6a603e7',1,'EnvMapAnimator']]]
+  ['rotatewithground',['RotateWithGround',['../df/d1c/class_animal_movement.html#a82027772be00ed9b175e7a65848d88a2',1,'AnimalMovement']]]
 ];

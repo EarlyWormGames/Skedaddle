@@ -1,8 +1,6 @@
 var searchData=
 [
   ['actionobject',['ActionObject',['../da/d27/class_action_object.html',1,'']]],
-  ['aimikinspector',['AimIKInspector',['../d3/dab/class_root_motion_1_1_final_i_k_1_1_aim_i_k_inspector.html',1,'RootMotion::FinalIK']]],
-  ['aimposerinspector',['AimPoserInspector',['../dd/d93/class_root_motion_1_1_final_i_k_1_1_aim_poser_inspector.html',1,'RootMotion::FinalIK']]],
   ['animal',['Animal',['../d0/d24/class_animal.html',1,'']]],
   ['animalcardshow',['AnimalCardShow',['../dc/d1c/class_animal_card_show.html',1,'']]],
   ['animalcollider',['AnimalCollider',['../da/df2/class_animal_collider.html',1,'']]],

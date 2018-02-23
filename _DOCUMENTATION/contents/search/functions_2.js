@@ -1,7 +1,7 @@
 var searchData=
 [
   ['calculatemovespeed',['CalculateMoveSpeed',['../d0/d24/class_animal.html#ad1033798d72c010a822937be75c5bdde',1,'Animal.CalculateMoveSpeed()'],['../de/df4/class_loris.html#a5356c9fe0717f3c6fe10be650cbe3c48',1,'Loris.CalculateMoveSpeed()'],['../db/d47/class_poodle.html#afded59108342a9d5c41b91305911752b',1,'Poodle.CalculateMoveSpeed()']]],
-  ['cameraenddelegate',['CameraEndDelegate',['../d4/ddc/_scripts_2_game_2_camera_controller_8cs.html#a2329f0155caaad919c97c5f57e062b81',1,'CameraController.cs']]],
+  ['cameraenddelegate',['CameraEndDelegate',['../d5/d0f/_camera_controller_8cs.html#a2329f0155caaad919c97c5f57e062b81',1,'CameraController.cs']]],
   ['canmove',['CanMove',['../d0/d24/class_animal.html#a50a5002837a408f0032cc6d84ba60d1e',1,'Animal.CanMove()'],['../de/df4/class_loris.html#a58dcb13392476fa95e7f9f26c5f46ce6',1,'Loris.CanMove()']]],
   ['canturn',['CanTurn',['../d0/d24/class_animal.html#a4fe2d98f1c17c588fc8f3dc8c1667972',1,'Animal']]],
   ['changeanimal',['ChangeAnimal',['../d6/d59/class_animal_controller.html#afcab1e5b036dc710a090cd7dac94090e',1,'AnimalController.ChangeAnimal()'],['../d6/d59/class_animal_controller.html#af0ae4eaa20fdc725a225b8062d5f6007',1,'AnimalController.ChangeAnimal(int a_index)'],['../d6/d59/class_animal_controller.html#aac3d9d5df568e50019de0c8dd39245a3',1,'AnimalController.ChangeAnimal(ANIMAL_NAME a_animal)'],['../d2/d41/class_in_game_g_u_i.html#aeb8c5780050c59cd445fa3281bcdcee6',1,'InGameGUI.ChangeAnimal()']]],
@@ -17,7 +17,6 @@ var searchData=
   ['climbchange',['ClimbChange',['../de/df4/class_loris.html#aa7b28f6b9624e4a55e63c77a077dc6ad',1,'Loris']]],
   ['clonescript',['CloneScript',['../de/d23/class_create_items.html#a046eeb575a0946230f48a9c8da08f798',1,'CreateItems']]],
   ['closepause',['ClosePause',['../d1/d35/class_pause.html#a63448644fd5e8810e48686afcf7e2cb0',1,'Pause']]],
-  ['colordirection',['ColorDirection',['../d5/dd6/struct_root_motion_1_1_final_i_k_1_1_aim_poser_inspector_1_1_color_direction.html#a05088eaf6bca7ba943cd6fcc0d12e23d',1,'RootMotion::FinalIK::AimPoserInspector::ColorDirection']]],
   ['combine',['Combine',['../df/d92/class_combine_meshes.html#afdc5e210d71e3b6dc400d2aa8d860ebb',1,'CombineMeshes']]],
   ['containslevel',['ContainsLevel',['../d5/d7e/class_script_controller.html#af6d363e91530835cb06a29ae66cfdeb3',1,'ScriptController']]],
   ['createanimal',['CreateAnimal',['../de/d23/class_create_items.html#aa1e66423bdf3a3da33f8b7d8b32cc7b9',1,'CreateItems']]],

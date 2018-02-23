@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['demos',['Demos',['../d9/d6e/namespace_root_motion_1_1_demos.html',1,'RootMotion']]],
-  ['finalik',['FinalIK',['../d3/d0d/namespace_root_motion_1_1_final_i_k.html',1,'RootMotion']]],
   ['raise',['Raise',['../d3/d8e/class_scissor_lift.html#a47374be94fb3d0f9a627c26deaec392b',1,'ScissorLift']]],
   ['raiseeventkey',['RaiseEventKey',['../d3/d8e/class_scissor_lift.html#a25efb79f82e3c4623c51f55f7cb6e397',1,'ScissorLift']]],
   ['random',['Random',['../de/df3/_title_lights_8cs.html#a87e3f8652ad535a03a2b448824edab1ca64663f4646781c9c0110838b905daa23',1,'TitleLights.cs']]],
@@ -44,7 +42,6 @@ var searchData=
   ['robertscrossdepthnormals',['RobertsCrossDepthNormals',['../d7/d31/class_highlighter.html#a585a556fee5d14c362fbf2fada52a073ac2b6fd3b6c9c392cd93579f3be952a8f',1,'Highlighter']]],
   ['roofdustparticles',['RoofDustParticles',['../df/db8/class_roof_dust_particles.html',1,'']]],
   ['roofdustparticles_2ecs',['RoofDustParticles.cs',['../db/dcb/_roof_dust_particles_8cs.html',1,'']]],
-  ['rootmotion',['RootMotion',['../d7/d5d/namespace_root_motion.html',1,'']]],
   ['rotate',['Rotate',['../d9/d24/struct_ext_debug_1_1_box.html#ae76be224e6a60930f3ede6b37502e537',1,'ExtDebug::Box']]],
   ['rotatecurve',['RotateCurve',['../dc/de6/class_cannon.html#a5c22134c62741c089a8ae471c7afee29',1,'Cannon']]],
   ['rotated4',['Rotated4',['../db/d5a/class_frustum_jitter.html#a11a9007fdc6ca37500098c619213e3d3afeb79f3b8b43a39afb81b01af86e6808',1,'FrustumJitter']]],
@@ -58,20 +55,5 @@ var searchData=
   ['rotatewithground',['RotateWithGround',['../df/d1c/class_animal_movement.html#a82027772be00ed9b175e7a65848d88a2',1,'AnimalMovement']]],
   ['rotatingobject',['RotatingObject',['../d2/d78/class_rotating_object.html',1,'']]],
   ['rotatingobject_2ecs',['RotatingObject.cs',['../db/d72/_rotating_object_8cs.html',1,'']]],
-  ['rotation',['Rotation',['../d3/d41/class_t_m_pro_1_1_examples_1_1_object_spin.html#a45f51bc7820e9bbc91c1806bcaded7fcaf1a42bd417390fc63b030a519624607a',1,'TMPro.Examples.ObjectSpin.Rotation()'],['../d2/d7f/class_cutscene_object.html#a746d5bfdbf4be010a5696f76c2a15255',1,'CutsceneObject.rotation()']]],
-  ['rotationlimitangleinspector',['RotationLimitAngleInspector',['../d9/d0f/class_root_motion_1_1_final_i_k_1_1_rotation_limit_angle_inspector.html',1,'RootMotion::FinalIK']]],
-  ['rotationlimitangleinspector_2ecs',['RotationLimitAngleInspector.cs',['../d7/d59/_rotation_limit_angle_inspector_8cs.html',1,'']]],
-  ['rotationlimithingeinspector',['RotationLimitHingeInspector',['../d2/ddb/class_root_motion_1_1_final_i_k_1_1_rotation_limit_hinge_inspector.html',1,'RootMotion::FinalIK']]],
-  ['rotationlimithingeinspector_2ecs',['RotationLimitHingeInspector.cs',['../da/d06/_rotation_limit_hinge_inspector_8cs.html',1,'']]],
-  ['rotationlimitinspector',['RotationLimitInspector',['../d4/d68/class_root_motion_1_1_final_i_k_1_1_rotation_limit_inspector.html',1,'RootMotion::FinalIK']]],
-  ['rotationlimitinspector_2ecs',['RotationLimitInspector.cs',['../d1/d75/_rotation_limit_inspector_8cs.html',1,'']]],
-  ['rotationlimitpolygonalinspector',['RotationLimitPolygonalInspector',['../d6/d9b/class_root_motion_1_1_final_i_k_1_1_rotation_limit_polygonal_inspector.html',1,'RootMotion::FinalIK']]],
-  ['rotationlimitpolygonalinspector_2ecs',['RotationLimitPolygonalInspector.cs',['../d2/d80/_rotation_limit_polygonal_inspector_8cs.html',1,'']]],
-  ['rotationlimitsplineinspector',['RotationLimitSplineInspector',['../d6/d82/class_root_motion_1_1_final_i_k_1_1_rotation_limit_spline_inspector.html',1,'RootMotion::FinalIK']]],
-  ['rotationlimitsplineinspector_2ecs',['RotationLimitSplineInspector.cs',['../dc/dcc/_rotation_limit_spline_inspector_8cs.html',1,'']]],
-  ['rotationmultiplier',['RotationMultiplier',['../dd/d7f/class_t_m_pro_1_1_examples_1_1_vertex_shake_a.html#ab4bd4cb50926999b1a1ac59da8fcf7f1',1,'TMPro::Examples::VertexShakeA']]],
-  ['rotationrange',['RotationRange',['../d3/d41/class_t_m_pro_1_1_examples_1_1_object_spin.html#a802c4f5441264532dd2b379c48dfa012',1,'TMPro::Examples::ObjectSpin']]],
-  ['rotationsmoothing',['RotationSmoothing',['../d2/db6/class_t_m_pro_1_1_examples_1_1_camera_controller.html#a3e2c0e89101934e95f27fa271ff05d14',1,'TMPro::Examples::CameraController']]],
-  ['rotationsmoothingvalue',['RotationSmoothingValue',['../d2/db6/class_t_m_pro_1_1_examples_1_1_camera_controller.html#a004e199cff2c8738cc9584087357444d',1,'TMPro::Examples::CameraController']]],
-  ['rotationspeeds',['RotationSpeeds',['../dd/dc8/class_env_map_animator.html#a0e8af1e7df113e4ca34b2ffbb6a603e7',1,'EnvMapAnimator']]]
+  ['rotation',['rotation',['../d2/d7f/class_cutscene_object.html#a746d5bfdbf4be010a5696f76c2a15255',1,'CutsceneObject']]]
 ];

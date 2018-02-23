@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['cameramodes',['CameraModes',['../d2/db6/class_t_m_pro_1_1_examples_1_1_camera_controller.html#a8180251e92d62266c8a026f0b77452ce',1,'TMPro::Examples::CameraController']]]
+  ['death_5ftype',['DEATH_TYPE',['../d0/dd3/_animal_8cs.html#aa09ea87b75a706096f010aef7b9b1826',1,'Animal.cs']]]
 ];

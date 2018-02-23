@@ -1,6 +1,6 @@
 var dir_b7496194a4578d98d0695316e294b4c8 =
 [
-    [ "CameraController.cs", "d4/ddc/_scripts_2_game_2_camera_controller_8cs.html", "d4/ddc/_scripts_2_game_2_camera_controller_8cs" ],
+    [ "CameraController.cs", "d5/d0f/_camera_controller_8cs.html", "d5/d0f/_camera_controller_8cs" ],
     [ "CameraLimits.cs", "d1/de4/_camera_limits_8cs.html", [
       [ "CameraLimits", "d7/d1c/class_camera_limits.html", "d7/d1c/class_camera_limits" ]
     ] ],

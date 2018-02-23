@@ -2,8 +2,6 @@ var searchData=
 [
   ['actionobject_2ecs',['ActionObject.cs',['../d7/dfe/_action_object_8cs.html',1,'']]],
   ['actionobjectsettings_2ecs',['ActionObjectSettings.cs',['../d0/da0/_action_object_settings_8cs.html',1,'']]],
-  ['aimikinspector_2ecs',['AimIKInspector.cs',['../d3/d56/_aim_i_k_inspector_8cs.html',1,'']]],
-  ['aimposerinspector_2ecs',['AimPoserInspector.cs',['../d6/da6/_aim_poser_inspector_8cs.html',1,'']]],
   ['animal_2ecs',['Animal.cs',['../d0/dd3/_animal_8cs.html',1,'']]],
   ['animalcardshow_2ecs',['AnimalCardShow.cs',['../df/dc6/_animal_card_show_8cs.html',1,'']]],
   ['animalcollider_2ecs',['AnimalCollider.cs',['../d9/d29/_animal_collider_8cs.html',1,'']]],

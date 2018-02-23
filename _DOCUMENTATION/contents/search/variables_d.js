@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['objectstats',['ObjectStats',['../d8/d8f/class_t_m_pro_1_1_examples_1_1_t_m_p___text_info_debug_tool.html#a007fc0b0f0ceb591f1ace245de17f2bc',1,'TMPro::Examples::TMP_TextInfoDebugTool']]],
   ['objectstoreplace',['ObjectsToReplace',['../da/dcb/class_replace_game_objects.html#a6a8b17b8c4a7e533fe9c1b1f818853d6',1,'ReplaceGameObjects']]],
-  ['objecttype',['ObjectType',['../dc/dea/class_t_m_pro_1_1_examples_1_1_t_m_p___example_script__01.html#aeb3d9e7c797f07f254f4f280467b7cee',1,'TMPro::Examples::TMP_ExampleScript_01']]],
   ['onanimalenter',['OnAnimalEnter',['../da/d27/class_action_object.html#ad9e2fddb4480c3d217b15c9dd1be61dd',1,'ActionObject']]],
   ['onanimalexit',['OnAnimalExit',['../da/d27/class_action_object.html#ac7dee1267ce8b75422ae88c3ae18f7db',1,'ActionObject']]],
   ['ondetach',['OnDetach',['../da/d27/class_action_object.html#abca6e17313a226452adb4ec755cee783',1,'ActionObject']]],
@@ -27,7 +25,6 @@ var searchData=
   ['onwronganimalenter',['OnWrongAnimalEnter',['../da/d27/class_action_object.html#ac400e3ebcab9a8becd67c4431ac5ad8a',1,'ActionObject']]],
   ['onwronganimalexit',['OnWrongAnimalExit',['../da/d27/class_action_object.html#a8302642610ae65e137c02d8b70d4edbd',1,'ActionObject']]],
   ['optionalname',['optionalName',['../d7/d46/class_create_plane.html#a12c6b16b4c4ec02fc502ac73d28d235b',1,'CreatePlane']]],
-  ['orbitalangle',['OrbitalAngle',['../d2/db6/class_t_m_pro_1_1_examples_1_1_camera_controller.html#ac480ba2a3715f19d27dabb126ebb9a55',1,'TMPro::Examples::CameraController']]],
   ['orientation',['orientation',['../d7/d46/class_create_plane.html#af21e407adb4901ade91a4d054cb8524c',1,'CreatePlane']]],
   ['other',['other',['../d8/dfc/class_e_w_fog.html#ada6e4e6a7b5060f00ca4c3ef3d87f484',1,'EWFog']]]
 ];

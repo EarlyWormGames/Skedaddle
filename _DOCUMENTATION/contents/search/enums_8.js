@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lightpattern',['LightPattern',['../de/df3/_title_lights_8cs.html#a87e3f8652ad535a03a2b448824edab1c',1,'TitleLights.cs']]]
+  ['method',['Method',['../d2/d37/class_soft_normals_to_vertex_color.html#afea4b6b831460b2128f2b0a0dc12dafa',1,'SoftNormalsToVertexColor']]]
 ];
