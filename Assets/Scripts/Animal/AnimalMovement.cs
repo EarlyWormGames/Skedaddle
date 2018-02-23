@@ -3,32 +3,58 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputNew;
 
-/// <summary>
-/// <para>Linear movement for animals. Uses the Animal's movement speeds to add velocity and uses a sweeptest to ensure movement is possible.</para>
-/// Can also utilize SplineMovement settings to follow a BezierSpline using velocity rather than time.
-/// </summary>
+/* @brief Allows an Animal to move
+* @details Attach this script to any GameObject that has an Animal script attached.  
+    This will allow for linear movement, as well as following a SplineMovement.
+    <br>It also has many helpful features, such as the @ref MoveWithGround property, which will allow
+    an Animal to stick to the current Collider the Animal is sitting on.
+*/
 [RequireComponent(typeof(Animal))]
 [RequireComponent(typeof(Rigidbody))]
 public class AnimalMovement : MonoBehaviour
 {
     public float DecelerationRate = 1;
-    public float MoveMin = 0.00001f;
+
+    /*  @brief The forward direction for the Animal to follow
+        @details The Animal will follow the forward of this Transform when not
+        following a SplineMovement object.
+    */
     public Transform ForwardDictator;
+
+    /*  @brief The current spline to follow
+        @details The AnimalMovement will follow this SplineMovement while it is not null.
+    */
     public SplineMovement FollowSpline;
 
     public float RotateLerpSpeed = 5;
     public float SweepYAdd = 0.1f;
     public AxisAction MoveAxisKey;
 
+    /*  @brief Sets if the Animal will move with the Collider it is sitting on
+        @details Enabling this will cause this script to raycast beneath the Animal every FixedUpdate
+        and get the current Collider it is sitting on.
+        <br>Every FixedUpdate the Collider remains the same,
+        the Animal will move the same amount in the same direction that the current Collider moves
+    */
     [Header("Ground Movement")]
     [Tooltip("Will the animal move when the ground moves?")]
     public bool MoveWithGround = true;
+
+    /*  @brief Sets if the Animal will rotate with the Collider it is sitting on
+        @details This has a similar function to @ref MoveWithGround, except allowing it to rotate
+    */
     [Tooltip("Will the animal rotate when the ground rotates?")]
     public bool RotateWithGround = true;
+
     [EnumFlag] public IgnoreAxis RotateIgnore = IgnoreAxis.X | IgnoreAxis.Z;
     public LayerMask GroundLayers;
     public float RaycastDistance = 0.1f;
 
+    /*  @brief The current movement velocity of the Animal
+        @details This value is relative to either:
+        -The forward direction, determined by @ref ForwardDictator
+        -The direction the Animal is moving along the @ref FollowSpline
+    */
     [HideInInspector]
     public float moveVelocity;
     [HideInInspector]
@@ -246,8 +272,9 @@ public class AnimalMovement : MonoBehaviour
     /// <summary>
     /// Try to move the body to a position, sweepcasting along the way
     /// </summary>
-    /// <param name="point"></param>
-    /// <returns></returns>
+    /// <param name="point">The point to move the Animal to</param>
+    /// <param name="addY">The point to move the Animal to</param>
+    /// <returns>Returns true when no collision occurs and the Animal has moved</returns>
     public bool TryMove(Vector3 point, float addY = 0.01f)
     {
         Vector3 dir = point - transform.position;
@@ -266,6 +293,10 @@ public class AnimalMovement : MonoBehaviour
         return false;
     }
 
+    /// <summary>
+    /// Sets the current SplineMovement for this object to follow
+    /// </summary>
+    /// <param name="spline">The SplineMovement to follow</param>
     public void SetSpline(SplineMovement spline)
     {
         if (FollowSpline == spline)
@@ -278,6 +309,9 @@ public class AnimalMovement : MonoBehaviour
             animal.m_rBody.useGravity = false;
     }
 
+    /// <summary>
+    /// Stop this object from following a spline and reset any values
+    /// </summary>
     public void StopSpline()
     {
         FollowSpline = null;
