@@ -114,7 +114,7 @@ public class LevelNotesEditor
             {
                 case EventType.KeyDown:
                     {
-                        if (Event.current.keyCode == (KeyCode.Delete))
+                        if (e.keyCode == KeyCode.Delete)
                         {
                             DeleteNote();
                         }
@@ -133,21 +133,22 @@ public class LevelNotesEditor
     static void AddPoint()
     {
         LevelNotes[] flowArray = FindObjectsOfTypeAll<LevelNotes>().ToArray();
-        LevelNotes flow = null;
-        if (flowArray.Length != 0)
-            flow = flowArray[0];
+        if (currentFlow == null && flowArray.Length > 0)
+            currentFlow = flowArray[0];
         else
         {
-            flow = new GameObject("Level Notes").AddComponent<LevelNotes>();
+            currentFlow = new GameObject("Level Notes").AddComponent<LevelNotes>();
+            Undo.RegisterCreatedObjectUndo(currentFlow.gameObject, "Create Notes");
         }
 
         Vector3 pos = SceneView.lastActiveSceneView.camera.transform.position;
         pos += SceneView.lastActiveSceneView.camera.transform.forward * 2;
 
-        flow.points.Add(new LevelNotes.TextPoint(pos, "Level Note"));
+        Undo.RecordObject(currentFlow, "Add Note");
+        currentFlow.points.Add(new LevelNotes.TextPoint(pos, "Level Note"));
 
-        currentPoint = flow.points[flow.points.Count - 1];
-        EditText();
+        currentPoint = currentFlow.points[currentFlow.points.Count - 1];
+        EditNote();
     }
 
     [MenuItem("Tools/Level Notes/Hide All Notes")]
@@ -172,39 +173,27 @@ public class LevelNotesEditor
         flow[0].gameObject.SetActive(true);
     }
 
-    [MenuItem("Tools/Level Notes/Hide Selected Note")]
-    static void HideText()
+    [MenuItem("Tools/Level Notes/Toggle Note #t")]
+    static void ToggleNote()
     {
         if (currentPoint != null)
         {
-            Undo.RecordObject(currentFlow, "Hide Note");
-
-            currentPoint.showText = false;
+            Undo.RecordObject(currentFlow, "Toggle Note");
+            currentPoint.showText = !currentPoint.showText;
         }
     }
 
-    [MenuItem("Tools/Level Notes/Show Selected Note")]
-    static void ShowText()
-    {
-        if (currentPoint != null)
-        {
-            Undo.RecordObject(currentFlow, "Show Note");
-
-            currentPoint.showText = true;
-        }
-    }
-
-    [MenuItem("Tools/Level Notes/Edit Selected Note")]
-    static void EditText()
+    [MenuItem("Tools/Level Notes/Edit Note #e")]
+    static void EditNote()
     {
         if (currentPoint == null)
             return;
 
         editPoint = currentPoint;
-        InputWindow.Show(EditCallback, editPoint.text);
+        EditNodeWindow.Show(EditCallback, editPoint.text, editPoint.color);
     }
 
-    static void EditCallback(string text)
+    static void EditCallback(string text, Color color)
     {
         if (editPoint == null)
             return;
@@ -212,34 +201,11 @@ public class LevelNotesEditor
         Undo.RecordObject(currentFlow, "Edit Note");
 
         editPoint.text = text;
+        editPoint.color = color;
         editPoint = null;
     }
 
-    [MenuItem("Tools/Level Notes/Delete Selected Note")]
-    static void DeleteNote()
-    {
-        if (currentPoint == null)
-            return;
-
-        deletePoint = currentPoint;
-        ConfirmWindow.Show(DeleteCallback, "Are you sure you want to delete this note?",
-            "The note with the following text will be deleted: " + deletePoint.text);
-    }
-
-    static void DeleteCallback(bool confirmed)
-    {
-        if (confirmed)
-        {
-            Undo.RecordObject(currentFlow, "Delete Note");
-
-            currentFlow.RemoveItem(deletePoint);
-        }
-
-        deletePoint = null;
-        currentPoint = null;
-    }
-
-    [MenuItem("Tools/Level Notes/Connect Note")]
+    [MenuItem("Tools/Level Notes/Rope Note #r")]
     static void JoinNote()
     {
         if (currentPoint == null)
@@ -268,6 +234,42 @@ public class LevelNotesEditor
         joinNode = null;
     }
 
+    [MenuItem("Tools/Level Notes/Duplicate Note #d")]
+    static void DuplicateNote()
+    {
+        if (currentPoint == null)
+            return;
+
+        Undo.RecordObject(currentFlow, "Duplicate Note");
+        currentFlow.points.Add(new LevelNotes.TextPoint(currentPoint));
+    }
+
+    [MenuItem("Tools/Level Notes/Delete Note")]
+    static void DeleteNote()
+    {
+        if (currentPoint == null)
+            return;
+
+        deletePoint = currentPoint;
+        //ConfirmWindow.Show(DeleteCallback, "Are you sure you want to delete this note?",
+        //    "The note with the following text will be deleted: " + deletePoint.text);
+        Undo.RecordObject(currentFlow, "Delete Note");
+        currentFlow.RemoveItem(deletePoint);
+        deletePoint = null;
+    }
+
+    static void DeleteCallback(bool confirmed)
+    {
+        if (confirmed)
+        {
+            Undo.RecordObject(currentFlow, "Delete Note");
+
+            currentFlow.RemoveItem(deletePoint);
+        }
+
+        deletePoint = null;
+        currentPoint = null;
+    }
 
     /// Use this method to get all loaded objects of some type, including inactive objects. 
     /// This is an alternative to Resources.FindObjectsOfTypeAll (returns project assets, including prefabs), and GameObject.FindObjectsOfTypeAll (deprecated).
@@ -291,18 +293,20 @@ public class LevelNotesEditor
     }
 }
 
-public class InputWindow : EditorWindow
+public class EditNodeWindow : EditorWindow
 {
-    private UnityAction<string> onFinish;
+    private UnityAction<string, Color> onFinish;
     private string text = "Level Note";
+    private Color color;
 
-    public static void Show(UnityAction<string> finishEvent, string text)
+    public static void Show(UnityAction<string, Color> finishEvent, string text, Color color)
     {
-        var window = GetWindow<InputWindow>();
+        var window = GetWindow<EditNodeWindow>();
         window.onFinish = finishEvent;
         window.position = new Rect(window.position.x, window.position.y, 400, 200);
         window.CenterOnMainWin();
         window.text = text;
+        window.color = color;
 
         window.ShowPopup();
     }
@@ -311,9 +315,12 @@ public class InputWindow : EditorWindow
     {
         float halfHeight = position.height / 2;
         text = EditorGUI.TextArea(new Rect(5, 5, position.width - 10, halfHeight - 10), text);
-        if (GUI.Button(new Rect(5, halfHeight + 5, position.width - 10, halfHeight - 10), "Submit"))
+
+        color = EditorGUI.ColorField(new Rect(5, halfHeight, position.width - 10, 20), color);
+
+        if (GUI.Button(new Rect(5, halfHeight + 35, position.width - 10, halfHeight - 10 - 30), "Submit"))
         {
-            onFinish(text);
+            onFinish(text, color);
             Close();
         }
     }
@@ -341,7 +348,10 @@ public class ConfirmWindow : EditorWindow
         float halfWidth = position.width / 2;
         float halfHeight = position.height / 2;
 
-        GUI.Label(new Rect(5, 5, position.width - 10, halfHeight - 10), text);
+        GUIStyle labelstyle = new GUIStyle(GUI.skin.label);
+        labelstyle.wordWrap = true;
+
+        GUI.Label(new Rect(5, 5, position.width - 10, halfHeight - 10), text, labelstyle);
         if (GUI.Button(new Rect(5, halfHeight + 5, halfWidth - 10, halfHeight - 10), "Yes"))
         {
             onFinish(true);
@@ -387,9 +397,12 @@ public class SelectorWindow : EditorWindow
             return;
         }
 
+        GUIStyle buttonstyle = new GUIStyle(GUI.skin.button);
+        buttonstyle.wordWrap = true;
+
         for (int i = 0; i < texts.Length; ++i)
         {
-            if (GUI.Button(new Rect(0, (i + 1) * itemHeight, width, itemHeight), texts[i]))
+            if (GUI.Button(new Rect(0, (i + 1) * itemHeight, width, itemHeight), texts[i], buttonstyle))
             {
                 onFinish(i);
                 Close();

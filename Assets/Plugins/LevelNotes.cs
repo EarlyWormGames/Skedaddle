@@ -18,6 +18,15 @@ public class LevelNotes : MonoBehaviour
             this.position = position;
             this.text = text;
         }
+
+        public TextPoint(TextPoint other)
+        {
+            position = other.position;
+            text = other.text;
+            showText = other.showText;
+            joinedPoint = other.joinedPoint;
+            color = other.color;
+        }
     }
 
     public int MaximumFontSize = 20;
