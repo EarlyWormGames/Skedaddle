@@ -14,6 +14,8 @@ public class LevelNotesEditor
     private static LevelNotes.TextPoint editPoint, deletePoint, joinNode;
     private static List<LevelNotes.TextPoint> otherNotes;
 
+    private static EditorWindow currentWindow;
+
     static LevelNotesEditor()
     {
         SceneView.onSceneGUIDelegate += ShowGUI;
@@ -129,16 +131,22 @@ public class LevelNotesEditor
         currentPoint = null;
     }
 
-    [MenuItem("Tools/Level Notes/Add Note")]
+    [MenuItem("Tools/Level Notes/Add Note %#a")]
     static void AddPoint()
     {
-        LevelNotes[] flowArray = FindObjectsOfTypeAll<LevelNotes>().ToArray();
-        if (currentFlow == null && flowArray.Length > 0)
-            currentFlow = flowArray[0];
-        else
+        if (currentWindow != null)
+            return;
+
+        if (currentFlow == null)
         {
-            currentFlow = new GameObject("Level Notes").AddComponent<LevelNotes>();
-            Undo.RegisterCreatedObjectUndo(currentFlow.gameObject, "Create Notes");
+            LevelNotes[] flowArray = FindObjectsOfTypeAll<LevelNotes>().ToArray();
+            if (flowArray.Length > 0)
+                currentFlow = flowArray[0];
+            else
+            {
+                currentFlow = new GameObject("Level Notes").AddComponent<LevelNotes>();
+                Undo.RegisterCreatedObjectUndo(currentFlow.gameObject, "Create Notes");
+            }
         }
 
         Vector3 pos = SceneView.lastActiveSceneView.camera.transform.position;
@@ -154,6 +162,9 @@ public class LevelNotesEditor
     [MenuItem("Tools/Level Notes/Hide All Notes")]
     static void HideFlow()
     {
+        if (currentWindow != null)
+            return;
+
         LevelNotes[] flow = FindObjectsOfTypeAll<LevelNotes>().ToArray();
         if (flow.Length == 0)
             return;
@@ -165,6 +176,9 @@ public class LevelNotesEditor
     [MenuItem("Tools/Level Notes/Show All Notes")]
     static void ShowFlow()
     {
+        if (currentWindow != null)
+            return;
+
         LevelNotes[] flow = FindObjectsOfTypeAll<LevelNotes>().ToArray();
         if (flow.Length == 0)
             return;
@@ -173,9 +187,12 @@ public class LevelNotesEditor
         flow[0].gameObject.SetActive(true);
     }
 
-    [MenuItem("Tools/Level Notes/Toggle Note #t")]
+    [MenuItem("Tools/Level Notes/Toggle Note %#t")]
     static void ToggleNote()
     {
+        if (currentWindow != null)
+            return;
+
         if (currentPoint != null)
         {
             Undo.RecordObject(currentFlow, "Toggle Note");
@@ -183,14 +200,17 @@ public class LevelNotesEditor
         }
     }
 
-    [MenuItem("Tools/Level Notes/Edit Note #e")]
+    [MenuItem("Tools/Level Notes/Edit Note %#e")]
     static void EditNote()
     {
         if (currentPoint == null)
             return;
 
+        if (currentWindow != null)
+            return;
+
         editPoint = currentPoint;
-        EditNodeWindow.Show(EditCallback, editPoint.text, editPoint.color);
+        currentWindow = EditNodeWindow.Show(EditCallback, editPoint.text, editPoint.color);
     }
 
     static void EditCallback(string text, Color color)
@@ -205,10 +225,13 @@ public class LevelNotesEditor
         editPoint = null;
     }
 
-    [MenuItem("Tools/Level Notes/Rope Note #r")]
+    [MenuItem("Tools/Level Notes/Rope Note %#r")]
     static void JoinNote()
     {
         if (currentPoint == null)
+            return;
+
+        if (currentWindow != null)
             return;
 
         List<string> notes = new List<string>();
@@ -223,7 +246,7 @@ public class LevelNotesEditor
         }
 
         joinNode = currentPoint;
-        SelectorWindow.Show(JoinCallback, notes.ToArray());
+        currentWindow = SelectorWindow.Show(JoinCallback, notes.ToArray());
     }
 
     static void JoinCallback(int index)
@@ -234,10 +257,13 @@ public class LevelNotesEditor
         joinNode = null;
     }
 
-    [MenuItem("Tools/Level Notes/Duplicate Note #d")]
+    [MenuItem("Tools/Level Notes/Duplicate Note %#d")]
     static void DuplicateNote()
     {
         if (currentPoint == null)
+            return;
+
+        if (currentWindow != null)
             return;
 
         Undo.RecordObject(currentFlow, "Duplicate Note");
@@ -248,6 +274,9 @@ public class LevelNotesEditor
     static void DeleteNote()
     {
         if (currentPoint == null)
+            return;
+
+        if (currentWindow != null)
             return;
 
         deletePoint = currentPoint;
@@ -299,7 +328,7 @@ public class EditNodeWindow : EditorWindow
     private string text = "Level Note";
     private Color color;
 
-    public static void Show(UnityAction<string, Color> finishEvent, string text, Color color)
+    public static EditorWindow Show(UnityAction<string, Color> finishEvent, string text, Color color)
     {
         var window = GetWindow<EditNodeWindow>();
         window.onFinish = finishEvent;
@@ -309,6 +338,8 @@ public class EditNodeWindow : EditorWindow
         window.color = color;
 
         window.ShowPopup();
+
+        return window;
     }
 
     private void OnGUI()
@@ -331,7 +362,7 @@ public class ConfirmWindow : EditorWindow
     private UnityAction<bool> onFinish;
     private string text;
 
-    public static void Show(UnityAction<bool> finishEvent, string titleText, string messageText)
+    public static EditorWindow Show(UnityAction<bool> finishEvent, string titleText, string messageText)
     {
         var window = GetWindow<ConfirmWindow>();
         window.onFinish = finishEvent;
@@ -341,6 +372,8 @@ public class ConfirmWindow : EditorWindow
         window.CenterOnMainWin();
 
         window.ShowPopup();
+
+        return window;
     }
 
     private void OnGUI()
@@ -373,7 +406,7 @@ public class SelectorWindow : EditorWindow
     private float itemHeight = 100;
     private Vector2 scrollPos;
 
-    public static void Show(UnityAction<int> finishEvent, string[] texts)
+    public static EditorWindow Show(UnityAction<int> finishEvent, string[] texts)
     {
         var window = GetWindow<SelectorWindow>();
         window.onFinish = finishEvent;
@@ -382,6 +415,8 @@ public class SelectorWindow : EditorWindow
         window.texts = texts;
 
         window.ShowPopup();
+
+        return window;
     }
 
     private void OnGUI()
