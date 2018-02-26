@@ -8484,6 +8484,95 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: d05759bb961d83a459abbd00b4b39243, type: 3}
   m_PrefabInternal: {fileID: 651458435}
+--- !u!1 &658176122
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 658176124}
+  - component: {fileID: 658176123}
+  m_Layer: 0
+  m_Name: Level Notes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &658176123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 658176122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea3337ef5f31f5549a91fa332a04634a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaximumFontSize: 20
+  DistanceMultiplier: 5
+  ShrinkOverDistance: 1
+  points:
+  - position: {x: -9.409657, y: 0.9894905, z: 4.6310744}
+    text: 1. Level Start
+    showText: 1
+    joinedPoint: 1
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - position: {x: -5.8994455, y: 1.2747993, z: 5.6871753}
+    text: 2. Animals Pull Drawers & Climb On Top
+    showText: 1
+    joinedPoint: 2
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - position: {x: -3.787478, y: 2.7028015, z: 6.161258}
+    text: 3. Animals Climb Onto Fireplace
+    showText: 1
+    joinedPoint: 4
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - position: {x: 0.5206723, y: 2.9379911, z: 6.433756}
+    text: 4. Loris Climbs Onto Top Of Vanity
+    showText: 1
+    joinedPoint: 6
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - position: {x: 1.3304266, y: 1.7883964, z: 6.1544228}
+    text: 4. Poodle Climbs Onto Vanity Desk
+    showText: 1
+    joinedPoint: 5
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - position: {x: 9.567505, y: 1.33443, z: 6.6086016}
+    text: 5/7. Poodle Toggles Power
+    showText: 1
+    joinedPoint: 8
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - position: {x: 3.6195416, y: 3.210246, z: 6.467702}
+    text: 6. Loris Moves Past Disabled Electric Star
+    showText: 1
+    joinedPoint: 5
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - position: {x: 3.5223315, y: 4.0733967, z: 2.149589}
+    text: Level Note
+    showText: 1
+    joinedPoint: -1
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - position: {x: 12.456918, y: 0.49382997, z: 5.138198}
+    text: 8. Animals Exit Level
+    showText: 1
+    joinedPoint: -1
+    color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!4 &658176124
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 658176122}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 42
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &662260987
 Prefab:
   m_ObjectHideFlags: 0
@@ -11183,6 +11272,7 @@ MonoBehaviour:
   ForceMovement: 0
   AxesToIgnore: 2
   DisableGravity: 0
+  DisableGrounder: 0
   points:
   - current: {x: 0.26300412, y: 0, z: 0}
     totalDistance: 0
@@ -20106,7 +20196,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh680894
+  m_Name: pb_Mesh723586
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
