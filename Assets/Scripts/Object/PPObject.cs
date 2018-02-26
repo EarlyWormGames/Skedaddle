@@ -91,31 +91,34 @@ public class PPObject : ActionObject
             Physics.IgnoreCollision(col, GetComponent<Collider>(), true);
     }
 
-    public override void Detach()
+    public override void Detach(bool destroy = false)
     {
         base.Detach();
         m_aCurrentAnimal.m_bPullingObject = false;
         m_aCurrentAnimal.m_oCurrentObject = null;
         m_aCurrentAnimal.OnPushChange();
 
-        if (defaultParent != null)
-            transform.SetParent(defaultParent, true);
-        else
-            transform.parent = defaultParent;
+        if (!destroy)
+        {
+            if (defaultParent != null)
+                transform.SetParent(defaultParent, true);
+            else
+                transform.parent = defaultParent;
 
-        rig = gameObject.AddComponent<Rigidbody>();
-        rig.isKinematic = isKinematic;
-        rig.mass = mass;
-        rig.drag = drag;
-        rig.angularDrag = angularDrag;
-        rig.constraints = constraints;
-        rig.interpolation = interpolation;
-        rig.collisionDetectionMode = collisionDetectionMode;
+            rig = gameObject.AddComponent<Rigidbody>();
+            rig.isKinematic = isKinematic;
+            rig.mass = mass;
+            rig.drag = drag;
+            rig.angularDrag = angularDrag;
+            rig.constraints = constraints;
+            rig.interpolation = interpolation;
+            rig.collisionDetectionMode = collisionDetectionMode;
 
-        foreach (var trigger in TriggersToDisable)
-            trigger.enabled = true;
+            foreach (var trigger in TriggersToDisable)
+                trigger.enabled = true;
 
-        m_lAnimalsIn.Remove(m_aCurrentAnimal);
-        m_aCurrentAnimal = null;
+            m_lAnimalsIn.Remove(m_aCurrentAnimal);
+            m_aCurrentAnimal = null;
+        }
     }
 }

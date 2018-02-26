@@ -178,7 +178,7 @@ public class LadderObject : ActionObject
         loris.SetDirection(Direction, true);
     }
 
-    public override void Detach()
+    public override void Detach(bool destroy = false)
     {
         base.Detach();
         moveVelocity = 0;

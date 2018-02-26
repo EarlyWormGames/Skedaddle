@@ -50,7 +50,7 @@ public class AnimalSplineMover : ActionObject
         SplineFollower.Follow();
     }
 
-    public override void Detach()
+    public override void Detach(bool destroy = false)
     {
         base.Detach();
 

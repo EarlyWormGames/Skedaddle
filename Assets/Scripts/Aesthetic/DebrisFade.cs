@@ -1,40 +1,49 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DebrisFade : MonoBehaviour {
-
-    public Material m_matFadeMaterial;
+public class DebrisFade : MonoBehaviour
+{
     public float m_fSpeed;
+    public Material m_matFadeMaterial;
 
     private float m_fTimer;
+    private Material m_realFadeMat;
+    private bool done;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         m_fTimer = -2;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        if(GetComponent<Collider>().enabled)
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (GetComponent<Collider>().enabled)
         {
             m_fTimer += Time.deltaTime;
             if (m_fTimer > 0)
             {
+                if (!done)
+                {
+                    GetComponent<MeshRenderer>().material = Instantiate(m_matFadeMaterial);
+                    m_realFadeMat = GetComponent<MeshRenderer>().material;
+                    done = true;
+                }
+
                 FadeOut();
             }
         }
-	
-	}
+
+    }
 
     void FadeOut()
     {
-        GetComponent<MeshRenderer>().material = m_matFadeMaterial;
-
-        Color newColor = m_matFadeMaterial.color;
+        Color newColor = m_realFadeMat.color;
         newColor.a = Mathf.Lerp(1, 0, m_fTimer * m_fSpeed);
-        m_matFadeMaterial.SetColor("_Color", newColor);
+        m_realFadeMat.SetColor("_Color", newColor);
 
-        if(m_fTimer * m_fSpeed > 1)
+        if (m_fTimer * m_fSpeed > 1)
         {
             Destroy(gameObject);
         }

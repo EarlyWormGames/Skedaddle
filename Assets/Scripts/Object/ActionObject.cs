@@ -242,7 +242,7 @@ public class ActionObject : MonoBehaviour
     public virtual void DoActionOn() { }
     public virtual void DoActionOff() { }
 
-    public virtual void Detach()
+    public virtual void Detach(bool destroyed = false)
     {
         OnDetach.Invoke();
     }
@@ -265,5 +265,11 @@ public class ActionObject : MonoBehaviour
             Animal.CurrentAnimal.m_oCurrentObject.Detach();
         }
         return true;
+    }
+
+    private void OnDestroy()
+    {
+        if (m_aCurrentAnimal != null)
+            Detach(true);
     }
 }
