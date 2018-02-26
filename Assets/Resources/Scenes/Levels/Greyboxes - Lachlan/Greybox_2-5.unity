@@ -9314,7 +9314,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 423376, guid: f98253888c8cae8498d5b4fe3c7b6f7e, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 466434, guid: f98253888c8cae8498d5b4fe3c7b6f7e, type: 2}
       propertyPath: m_LocalPosition.x
@@ -10243,7 +10243,7 @@ Transform:
   - {fileID: 2088286186}
   - {fileID: 1866466819}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &527218838
 Prefab:
@@ -11912,7 +11912,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh625250
+  m_Name: pb_Mesh770816
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -15508,7 +15508,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4907385561553182, guid: 5560e5968db641b46adde14dd1aec203, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4907385561553182, guid: 5560e5968db641b46adde14dd1aec203, type: 2}
       propertyPath: m_LocalScale.y
@@ -17456,7 +17456,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &895347565
 Prefab:
@@ -22872,6 +22872,16 @@ MonoBehaviour:
     maxGapPelvisMaintain: 0
     maxGapPelvisDecrease: 0
     maxgapPelvisDecreaseDistance: 0
+    pelvisRaycastSize: {x: 0, y: 0, z: 0}
+    pelvisRaycastDistance: 0
+    PelvisLowerAmount:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    pelvisRaycastOffset: {x: 0, y: 0, z: 0}
+    pevlisLowerOffset: 0
     footRotationWeight: 1
     footRotationSpeed: 7
     maxFootRotationAngle: 45
@@ -22898,6 +22908,16 @@ MonoBehaviour:
     maxGapPelvisMaintain: 0
     maxGapPelvisDecrease: 0
     maxgapPelvisDecreaseDistance: 0
+    pelvisRaycastSize: {x: 0, y: 0, z: 0}
+    pelvisRaycastDistance: 0
+    PelvisLowerAmount:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    pelvisRaycastOffset: {x: 0, y: 0, z: 0}
+    pevlisLowerOffset: 0
     footRotationWeight: 1
     footRotationSpeed: 7
     maxFootRotationAngle: 45
@@ -22910,6 +22930,10 @@ MonoBehaviour:
     quality: 2
   PelvisStraightenWeight: 0.5
   ShoulderStraightenWeight: 0.5
+  PelvisLowerSpeed: 1
+  ShoulderLowerSpeed: 1
+  HeadLowerAmount: 0
+  HeadLowerSpeed: 1
   rootRotationWeight: 0
   minRootRotation: -25
   maxRootRotation: 45
@@ -23558,7 +23582,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 36
+  m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1078891411
 GameObject:
@@ -25077,7 +25101,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4896184642994460, guid: 71988bdbcde2ad046870dc176412c3c3, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 64288511126336710, guid: 71988bdbcde2ad046870dc176412c3c3,
         type: 2}
@@ -28026,7 +28050,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1226364277}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.19, y: -1.177, z: 5.177}
+  m_LocalPosition: {x: -2.19, y: -1.177, z: 6.289}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -30912,7 +30936,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0dcc54e6bc7525740967075bb48afb0e, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0dcc54e6bc7525740967075bb48afb0e, type: 3}
@@ -31447,7 +31471,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22405858, guid: 23e013c25d38a514fbbfdd06c631627f, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 22405858, guid: 23e013c25d38a514fbbfdd06c631627f, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -33381,7 +33405,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 466302, guid: 8691c581cbaeb7d4dbaa69ad23fb09bc, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6594672, guid: 8691c581cbaeb7d4dbaa69ad23fb09bc, type: 2}
       propertyPath: m_Enabled
@@ -33894,6 +33918,52 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1550607672}
   m_Mesh: {fileID: 4300000, guid: f4f9950aba9db29478339917d5a804fa, type: 3}
+--- !u!1001 &1551841362
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 432278, guid: d2e13cf27d1a5da488fbc2bae21dddea, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 7.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 432278, guid: d2e13cf27d1a5da488fbc2bae21dddea, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.522
+      objectReference: {fileID: 0}
+    - target: {fileID: 432278, guid: d2e13cf27d1a5da488fbc2bae21dddea, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 6.008
+      objectReference: {fileID: 0}
+    - target: {fileID: 432278, guid: d2e13cf27d1a5da488fbc2bae21dddea, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 432278, guid: d2e13cf27d1a5da488fbc2bae21dddea, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 432278, guid: d2e13cf27d1a5da488fbc2bae21dddea, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 432278, guid: d2e13cf27d1a5da488fbc2bae21dddea, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 432278, guid: d2e13cf27d1a5da488fbc2bae21dddea, type: 2}
+      propertyPath: m_RootOrder
+      value: 44
+      objectReference: {fileID: 0}
+    - target: {fileID: 134446, guid: d2e13cf27d1a5da488fbc2bae21dddea, type: 2}
+      propertyPath: m_Name
+      value: PressureButtonNew (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: d2e13cf27d1a5da488fbc2bae21dddea, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1553060888
 Prefab:
   m_ObjectHideFlags: 0
@@ -34664,7 +34734,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 448486, guid: 6ac26916394ca4e4caa5daf8346f4a48, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 193460, guid: 6ac26916394ca4e4caa5daf8346f4a48, type: 2}
       propertyPath: m_IsActive
@@ -35572,6 +35642,130 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1643995359}
   m_Mesh: {fileID: 4300000, guid: f4f9950aba9db29478339917d5a804fa, type: 3}
+--- !u!1 &1648059637
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1648059639}
+  - component: {fileID: 1648059638}
+  m_Layer: 0
+  m_Name: Level Notes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1648059638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1648059637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea3337ef5f31f5549a91fa332a04634a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaximumFontSize: 20
+  DistanceMultiplier: 5
+  ShrinkOverDistance: 1
+  points:
+  - position: {x: -9.120613, y: 0.699286, z: 5.725431}
+    text: 1. Animals Start Here
+    showText: 1
+    ropes: 01000000
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - position: {x: -1.9605036, y: 1.9500784, z: 6.302011}
+    text: 2. Loris Climbs onto Vanity
+    showText: 1
+    ropes: 02000000
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - position: {x: 0.012970448, y: 3.4631052, z: 6.2126656}
+    text: 3. Loris Climbs Rope
+    showText: 1
+    ropes: 03000000
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - position: {x: -1.5571874, y: 5.2080126, z: 6.012223}
+    text: '4. Loris Sits on Button,
+
+      Opens Trapdoor'
+    showText: 1
+    ropes: 04000000
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - position: {x: -4.9793935, y: 0.09324449, z: 4.838344}
+    text: 5. Poodle Climbs down Stairs
+    showText: 1
+    ropes: 05000000
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - position: {x: -0.9987198, y: -1.0240499, z: 4.9152093}
+    text: '6. Poodle Sits on Button,
+
+      Opens Trapdoor'
+    showText: 1
+    ropes: 06000000
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - position: {x: -4.1826763, y: 1.0594448, z: 5.530344}
+    text: "7. Loris Climbs/Jumps Down, \nClimbs Down Stairs"
+    showText: 1
+    ropes: 07000000
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - position: {x: -2.361683, y: -0.8060538, z: 5.9324393}
+    text: 8. Loris Climbs into Magician's Hat
+    showText: 1
+    ropes: 08000000
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - position: {x: 6.6909194, y: 3.8082066, z: 6.003739}
+    text: 9. Loris climbs out of Magician's Hat
+    showText: 1
+    ropes: 09000000
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - position: {x: 7.1924872, y: 0.7220552, z: 5.993031}
+    text: '10. Loris Jumps down,
+
+      Sits on Button, Opens Trapdoor'
+    showText: 1
+    ropes: 0a000000
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - position: {x: 2.1394382, y: 0.8516196, z: 5.4463916}
+    text: '11. Poodle Climbs Stairs,
+
+      Poodle Enters Trick Wardrobe'
+    showText: 1
+    ropes: 0b000000
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - position: {x: 9.024818, y: 1.0037174, z: 6.31653}
+    text: '12. Loris Pulls Lever,
+
+      Switches Trick Wardrobe'
+    showText: 1
+    ropes: 0c000000
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - position: {x: 4.6614184, y: 0.8193376, z: 5.558326}
+    text: 13. Poodle Exits Trick Wardrobe
+    showText: 1
+    ropes: 0d000000
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - position: {x: 12.461847, y: 0.8003411, z: 4.9954433}
+    text: 14. Animals Exit Level
+    showText: 1
+    ropes: 
+    color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!4 &1648059639
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1648059637}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 43
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1651685473
 GameObject:
   m_ObjectHideFlags: 0
@@ -36202,7 +36396,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 35
+  m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1660138747
 GameObject:
@@ -38345,7 +38539,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 454468, guid: d2980f2613b0bb64c81f2319dde1402e, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d2980f2613b0bb64c81f2319dde1402e, type: 2}
@@ -40787,7 +40981,7 @@ Transform:
   - {fileID: 1491966969}
   - {fileID: 1847891427}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1823117359
 Prefab:
