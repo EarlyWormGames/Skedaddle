@@ -129,11 +129,11 @@ public class LevelNotesEditor
                         {
                             DeleteNote();
                         }
-                        else if (e.modifiers == EventModifiers.Shift)
+                        else if (e.modifiers == (EventModifiers.Shift | EventModifiers.Control))
                         {
                             switch (e.keyCode)
                             {
-                                case KeyCode.A:
+                                case KeyCode.F:
                                     AddPoint();
                                     break;
                                 case KeyCode.E:
