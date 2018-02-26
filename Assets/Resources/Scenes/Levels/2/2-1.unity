@@ -62669,6 +62669,7 @@ GameObject:
   - component: {fileID: 1237218381}
   - component: {fileID: 1237218384}
   - component: {fileID: 1237218382}
+  - component: {fileID: 1237218380}
   m_Layer: 0
   m_Name: PPStaticObject
   m_TagString: PhysicalObject
@@ -62676,6 +62677,57 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1237218380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1237218379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0289cb2ca39a0ea4c8c572aa7e2a15a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_aRequiredSize: 0
+  m_aRequiredAnimal: 0
+  m_aMaximumSize: 0
+  m_lAnimalsIn: []
+  m_rBody: {fileID: 0}
+  m_GazeObject: {fileID: 0}
+  m_aSoundEvents: []
+  OnDoAction:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnDetach:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnAnimalEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnAnimalExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnWrongAnimalEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnWrongAnimalExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  MaintainPosition: 6
+  MaintainRotation: -1
+  TriggersToDisable: []
 --- !u!65 &1237218381
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -70007,7 +70059,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1336973591}
-  - component: {fileID: 1336973593}
   - component: {fileID: 1336973592}
   m_Layer: 11
   m_Name: PushTrigger
@@ -70042,18 +70093,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0205071, y: 0.5348384, z: 0.7267876}
   m_Center: {x: -0.010530702, y: -0.09597457, z: 0}
---- !u!114 &1336973593
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11476962, guid: 73594af5744a53644b56dc6589625700,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1336973590}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e538b3fe3d8b8141869b9ce867549a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1337438251
 GameObject:
   m_ObjectHideFlags: 0
@@ -70122,8 +70161,9 @@ MonoBehaviour:
     action: {fileID: 0}
   InvertAxis: 0
   ForceMovement: 1
-  IgnoreAxis: {x: 0, y: 1, z: 0}
+  AxesToIgnore: 2
   DisableGravity: 0
+  DisableGrounder: 0
   points:
   - current: {x: 1, y: 0, z: 0}
     totalDistance: 0
@@ -77829,8 +77869,9 @@ MonoBehaviour:
     action: {fileID: 0}
   InvertAxis: 0
   ForceMovement: 1
-  IgnoreAxis: {x: 0, y: 1, z: 0}
+  AxesToIgnore: 2
   DisableGravity: 0
+  DisableGrounder: 0
   points:
   - current: {x: 1, y: 0, z: 0}
     totalDistance: 0

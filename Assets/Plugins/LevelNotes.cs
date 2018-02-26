@@ -10,7 +10,7 @@ public class LevelNotes : MonoBehaviour
         public Vector3 position;
         [Multiline] public string text;
         public bool showText = true;
-        public int joinedPoint = -1;
+        public List<int> ropes = new List<int>();
         public Color color = Color.white;
 
         public TextPoint(Vector3 position, string text)
@@ -24,7 +24,7 @@ public class LevelNotes : MonoBehaviour
             position = other.position;
             text = other.text;
             showText = other.showText;
-            joinedPoint = other.joinedPoint;
+            ropes = other.ropes;
             color = other.color;
         }
     }
@@ -41,10 +41,17 @@ public class LevelNotes : MonoBehaviour
 
         foreach (var point in points)
         {
-            if (point.joinedPoint == index)
-                point.joinedPoint = -1;
-            else if (point.joinedPoint > index)
-                --point.joinedPoint;
+            for (int i = 0; i < point.ropes.Count; ++i)
+            {
+                if (point.ropes[i] == index)
+                {
+                    point.ropes.RemoveAt(i);
+                    --i;
+                    continue;
+                }
+                else if (point.ropes[i] > index)
+                    --point.ropes[i];
+            }
         }
 
         points.Remove(item);
