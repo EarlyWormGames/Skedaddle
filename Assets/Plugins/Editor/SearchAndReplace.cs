@@ -5,7 +5,7 @@ using UnityEditor;
 
 public class SearchAndReplace : EditorWindow
 {
-    [MenuItem("Tools/Search And Replace %#r")]
+    [MenuItem("Tools/Search And Replace %#&r")]
     public static void OpenWindow()
     {
         var window = GetWindow<SearchAndReplace>();
