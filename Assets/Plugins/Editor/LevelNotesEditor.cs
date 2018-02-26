@@ -133,7 +133,7 @@ public class LevelNotesEditor
                         {
                             switch (e.keyCode)
                             {
-                                case KeyCode.F:
+                                case KeyCode.G:
                                     AddPoint();
                                     break;
                                 case KeyCode.E:
