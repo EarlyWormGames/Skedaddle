@@ -85,7 +85,7 @@ public class LevelNotesEditor
                     //    p2 = p3 - (Vector3.up * (p3 - p0).magnitude * (dotUp < 0 ? -1 : 1));
                     //}
 
-                    Handles.DrawBezier(p0, p3, p1, p2, new Color(0.7f, 0.7f, 0.7f), null, 2f);
+                    Handles.DrawBezier(p0, p3, p1, p2, currentFlow.CurvesColor, null, 2f);
                 }
             }
         }
