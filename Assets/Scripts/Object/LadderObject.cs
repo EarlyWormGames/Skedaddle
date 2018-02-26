@@ -5,19 +5,27 @@ using UnityEngine.Events;
 
 public class LadderObject : ActionObject
 {
-    public bool LowExit = true, HighExit = true;
-    public float RotateSpeed = 5;
+    [Header("Exit Settings")]
+    public bool LowExit = true;
+    public bool HighExit = true;
     public ActionObject TopTransition, BottomTransition;
+
+    [Header("Movement")]
+    public float RotateSpeed = 5;
     [EnumFlag] public IgnoreAxis AxesToIgnore = IgnoreAxis.X | IgnoreAxis.Z;
     public FACING_DIR Direction;
     public bool IsRope = false;
 
-    public bool ForceMoveToClosest = true;
-
     [Tooltip("First = Bottom, Last = Top :: THESE MUST BE IN CORRECT ORDER!")]
     public Transform[] Points;
-
     public UnityEvent OnLowExit, OnHighExit;
+
+    [Header("Misc")]
+    public bool ForceMoveToClosest = true;
+    public bool DisableCollision;
+    public bool UseExitZ = true;
+    public float ExitZ = 0;
+
 
     [HideInInspector]
     public float moveVelocity;
@@ -104,7 +112,10 @@ public class LadderObject : ActionObject
 
         Vector3 moveDir = dir.normalized * move;
 
-        Debug.Log(loris.m_aMovement.TryMove(loris.transform.position + moveDir));
+        if (!DisableCollision)
+            Debug.Log(loris.m_aMovement.TryMove(loris.transform.position + moveDir));
+        else
+            loris.transform.position += moveDir;
 
         float rotateMult = 1;
         if (currentSpeed < 0)
@@ -158,6 +169,9 @@ public class LadderObject : ActionObject
         m_aCurrentAnimal.transform.SetParent(transform);
         m_aCurrentAnimal.m_rBody.isKinematic = true;
 
+        if (DisableCollision)
+            m_aCurrentAnimal.m_tCollider.gameObject.SetActive(false);
+
         loris = (Loris)m_aCurrentAnimal;
         loris.m_bClimbing = true;
         if (IsRope)
@@ -171,6 +185,12 @@ public class LadderObject : ActionObject
             (pointIndex == Points.Length - 1 && Vector3.Dot(dir.normalized, Vector3.up) <= 0))
         {
             loris.transform.position = IgnoreUtils.Calculate(AxesToIgnore, loris.transform.position, Points[pointIndex].position);
+        }
+        else
+        {
+            Vector3 pos = IgnoreUtils.Calculate(AxesToIgnore, loris.transform.position, Points[pointIndex].position);
+            pos.y = loris.transform.position.y;
+            loris.transform.position = pos;
         }
 
         justEnter = true;
@@ -186,6 +206,16 @@ public class LadderObject : ActionObject
         m_aCurrentAnimal.m_oCurrentObject = null;
         m_aCurrentAnimal.transform.parent = null;
         m_aCurrentAnimal.m_rBody.isKinematic = false;
+
+        if (UseExitZ)
+        {
+            Vector3 pos = m_aCurrentAnimal.transform.position;
+            pos.z = ExitZ;
+            m_aCurrentAnimal.transform.position = pos;
+        }
+
+        if (DisableCollision)
+            m_aCurrentAnimal.m_tCollider.gameObject.SetActive(true);
 
         loris.m_bClimbing = false;
         loris.SetDirection(FACING_DIR.NONE, false);
