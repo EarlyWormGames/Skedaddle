@@ -119,6 +119,14 @@ public class BezierSplineFollower : MonoBehaviour
         m_fTime = 0;
     }
 
+    public void Follow(bool reverse)
+    {
+        m_bRunning = true;
+        m_iLoopCount = 0;
+        m_fTime = 0;
+        m_bReverse = reverse;
+    }
+
     void OnDrawGizmosSelected()
     {
         if (m_Curve == null || m_Spline == null)

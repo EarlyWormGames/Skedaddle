@@ -164,8 +164,6 @@ public class Animal : MonoBehaviour
     internal bool           m_bPullingLeverOn = false;
     internal bool           m_bPullingLeverOff = false;
 
-    internal bool           m_bDigging = false;
-
     internal bool           m_bCanRotate = true;
     internal bool           m_bAllowAutoRotate = true;
     internal bool           m_bAutoClimbing = false;

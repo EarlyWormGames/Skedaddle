@@ -17,6 +17,8 @@ public class Anteater : Animal
     //          Internal Vars
     //==================================
 
+    internal bool m_bDigging = false;
+
     //==================================
     //          Private Vars
     //================================== 
@@ -50,25 +52,31 @@ public class Anteater : Animal
         {
             m_aAnimalAnimator.SetBool("Walking", false);
         }
- 
 
-        if(m_fIdleTimer < 0)
+        m_aAnimalAnimator.SetBool("Dig", m_bDigging);
+
+        if (!m_bDigging)
         {
-            if(m_iCurrentIdle == 1)
+            if (m_fIdleTimer < 0)
             {
-                float randomIdle = Random.Range(1.6f, m_iNumberOfIdles + 0.4f);
-                m_iCurrentIdle = Mathf.RoundToInt(randomIdle);
-                m_fIdleTimer = 3f;
-            } else
-            {
-                m_iCurrentIdle = 1;
-                m_fIdleTimer = Random.Range(m_fIdleSwapTime - m_fIdleSwapVarience, m_fIdleSwapTime + m_fIdleSwapVarience);
+                if (m_iCurrentIdle == 1)
+                {
+                    float randomIdle = Random.Range(1.6f, m_iNumberOfIdles + 0.4f);
+                    m_iCurrentIdle = Mathf.RoundToInt(randomIdle);
+                    m_fIdleTimer = 3f;
+                }
+                else
+                {
+                    m_iCurrentIdle = 1;
+                    m_fIdleTimer = Random.Range(m_fIdleSwapTime - m_fIdleSwapVarience, m_fIdleSwapTime + m_fIdleSwapVarience);
+                }
             }
+
+
+            //m_ikHead.solver.axis.z = m_bFacingLeft ? 1 : -1;
+
+            m_aAnimalAnimator.SetInteger("IdleNo", m_iCurrentIdle);
         }
-
-        //m_ikHead.solver.axis.z = m_bFacingLeft ? 1 : -1;
-
-        m_aAnimalAnimator.SetInteger("IdleNo", m_iCurrentIdle);
     }
     //protected override void OnFixedUpdate() { }
     //protected override void OnDeath(DEATH_TYPE a_type) { }

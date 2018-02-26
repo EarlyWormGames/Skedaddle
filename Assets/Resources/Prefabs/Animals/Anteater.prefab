@@ -2114,7 +2114,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 164052}
-  m_LocalRotation: {x: 0.74759007, y: -0.63451034, z: 0.12718244, w: 0.14943342}
+  m_LocalRotation: {x: 0.7475901, y: -0.6345104, z: 0.12718245, w: 0.14943343}
   m_LocalPosition: {x: -0.050108913, y: -0.0313999, z: 0.0387831}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2660,8 +2660,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 170866}
-  m_LocalRotation: {x: 0, y: 0.7075702, z: 0, w: 0.70664316}
-  m_LocalPosition: {x: -28.81, y: 0.5, z: -1.78}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -13.56, y: -2.309, z: -5.385}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 498468}
@@ -3563,8 +3563,8 @@ MonoBehaviour:
   m_tPelvis: {fileID: 481924}
   m_v3PelvisOffset: {x: 0, y: 0, z: 0}
   m_tCollider: {fileID: 4000010847711744}
-  m_fWalkSpeed: 0.3
-  m_fTopSpeed: 0.5
+  m_fWalkSpeed: 5
+  m_fTopSpeed: 2
   m_fPullSpeedMult: 0.5
   m_fFallSpeedMult: 0.5
   m_fTurnSpeedMult: 0.2
@@ -3830,6 +3830,16 @@ MonoBehaviour:
     maxGapPelvisMaintain: 0.1
     maxGapPelvisDecrease: 0.2
     maxgapPelvisDecreaseDistance: 0.3
+    pelvisRaycastSize: {x: 0, y: 0, z: 0}
+    pelvisRaycastDistance: 0
+    PelvisLowerAmount:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    pelvisRaycastOffset: {x: 0, y: 0, z: 0}
+    pevlisLowerOffset: 0
     footRotationWeight: 1
     footRotationSpeed: 7
     maxFootRotationAngle: 0
@@ -3856,6 +3866,16 @@ MonoBehaviour:
     maxGapPelvisMaintain: 0.1
     maxGapPelvisDecrease: 0.2
     maxgapPelvisDecreaseDistance: 0.3
+    pelvisRaycastSize: {x: 0, y: 0, z: 0}
+    pelvisRaycastDistance: 0
+    PelvisLowerAmount:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    pelvisRaycastOffset: {x: 0, y: 0, z: 0}
+    pevlisLowerOffset: 0
     footRotationWeight: 1
     footRotationSpeed: 7
     maxFootRotationAngle: 45
@@ -3868,6 +3888,10 @@ MonoBehaviour:
     quality: 2
   PelvisStraightenWeight: 0.5
   ShoulderStraightenWeight: 0.5
+  PelvisLowerSpeed: 1
+  ShoulderLowerSpeed: 1
+  HeadLowerAmount: 0
+  HeadLowerSpeed: 1
   rootRotationWeight: 0
   minRootRotation: -25
   maxRootRotation: 45
@@ -5443,8 +5467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8b8b7cc5a8d9d54695ad890164f0baa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DecelerationRate: 0.1
-  MoveMin: 0.01
+  DecelerationRate: 5
   ForwardDictator: {fileID: 498468}
   FollowSpline: {fileID: 0}
   RotateLerpSpeed: 60
@@ -5453,11 +5476,13 @@ MonoBehaviour:
     action: {fileID: 114741689078800838, guid: 80f2df7e1586bc94aa1bbea872f6ca3b, type: 2}
   MoveWithGround: 1
   RotateWithGround: 1
+  RotateIgnore: 5
   GroundLayers:
     serializedVersion: 2
     m_Bits: 0
   RaycastDistance: 0.1
   moveVelocity: 0
+  currentSpeed: 0
 --- !u!136 &136000010318450984
 CapsuleCollider:
   m_ObjectHideFlags: 1

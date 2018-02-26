@@ -22,4 +22,15 @@ public class AnimationExtras : MonoBehaviour
     {
         GetComponentInParent<Poodle>();
     }
+
+    public void StartDig()
+    {
+        GetComponentInParent<Animal>().m_oCurrentObject.DoAction();
+    }
+
+    public void FinishDig()
+    {
+        var dig = (Dig)GetComponentInParent<Animal>().m_oCurrentObject;
+        dig.Finish();
+    }
 }
