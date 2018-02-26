@@ -211,8 +211,6 @@ public class AnimalMovement : MonoBehaviour
 
             Vector3 rotation = transform.eulerAngles;
             rotation.y = 90;
-            rotation.z = 0;
-            rotation.x = 0;
             transform.eulerAngles = rotation;
         }
         else
