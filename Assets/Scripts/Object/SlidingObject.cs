@@ -6,10 +6,8 @@ public class SlidingObject : MovingObject
 {
     public Transform PointA, PointB;
 
-    protected override void DoSlide()
+    protected override bool DoSlide(float time)
     {
-        base.DoSlide();
-
         if (PointA == null)
         {
             PointA = new GameObject().transform;
@@ -20,6 +18,12 @@ public class SlidingObject : MovingObject
         Vector3 end = !movingForward ? PointA.position : PointB.position;
 
         float t = MovingCurve.Evaluate(lerpTimer / Speed);
-        transform.position = Vector3.Lerp(start, end, t);
+        return DoMove(Vector3.Lerp(start, end, t));
+    }
+
+    protected virtual bool DoMove(Vector3 position)
+    {
+        transform.position = position;
+        return true;
     }
 }

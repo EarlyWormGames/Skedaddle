@@ -27,26 +27,47 @@ public class MovingObject : MonoBehaviour
     void Update()
     {
         if (isLerping)
-            DoSlide();
+            Slide();
 
         OnUpdate();
     }
 
-    protected virtual void OnUpdate() { }
-
-    protected virtual void DoSlide()
+    void Slide()
     {
-        lerpTimer = Mathf.Clamp(lerpTimer + Time.deltaTime, 0, Speed);
+        float timer = Mathf.Clamp(lerpTimer + Time.deltaTime, 0, Speed);
+        if (DoSlide(timer))
+        {
+            lerpTimer = timer;         
+        }
 
         if (lerpTimer >= Speed)
+        {
             Stop();
 
-        if (movingForward)
-            ForwardEnd.Invoke();
-        else
-            BackwardEnd.Invoke();
+            if (movingForward)
+                ForwardEnd.Invoke();
+            else
+                BackwardEnd.Invoke();
+        }
     }
 
+    /// <summary>
+    /// For generic update usage (animations etc)
+    /// </summary>
+    protected virtual void OnUpdate() { }
+
+    /// <summary>
+    /// Called for every frame the object is moving
+    /// </summary>
+    protected virtual bool DoSlide(float time)
+    {
+        return true;
+    }
+
+    /// <summary>
+    /// Begin movement, starting at 0 (or inverse percentage of current time)
+    /// </summary>
+    /// <param name="forward">The direction to move in</param>
     public virtual void Move(bool forward)
     {
         if (forward != movingForward)
@@ -58,6 +79,9 @@ public class MovingObject : MonoBehaviour
         movingForward = forward;
     }
 
+    /// <summary>
+    /// Begin movement, starting at 0 (or inverse percentage of current time), and switch direction
+    /// </summary>
     public virtual void Move()
     {
         movingForward = !movingForward;
@@ -65,8 +89,19 @@ public class MovingObject : MonoBehaviour
         lerpTimer = Speed - lerpTimer;
     }
 
+    /// <summary>
+    /// Stop movement
+    /// </summary>
     public virtual void Stop()
     {
         isLerping = false;
+    }
+
+    /// <summary>
+    /// Begin/continue to move in the current direction at the current time
+    /// </summary>
+    public virtual void Play()
+    {
+        isLerping = true;
     }
 }
