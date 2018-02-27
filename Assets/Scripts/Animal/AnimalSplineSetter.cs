@@ -20,6 +20,9 @@ public class AnimalSplineSetter : MonoBehaviour
         if (trig.m_eName != RequiredAnimal)
             return;
 
+        if (trig.m_aMovement.FollowSpline == this)
+            return;
+
         if (RequiredKey.control == null)
             trig.GetComponent<AnimalMovement>().SetSpline(Spline);
         else
@@ -35,7 +38,7 @@ public class AnimalSplineSetter : MonoBehaviour
         if (trig == null)
             return;
 
-        if (trig!= animalIn)
+        if (trig != animalIn)
             return;
 
         animalIn = null;
@@ -51,10 +54,12 @@ public class AnimalSplineSetter : MonoBehaviour
     {
         if (animalIn != null)
         {
-            if (RequiredKey.control.isHeld)
+            if (animalIn.m_aMovement.FollowSpline != Spline)
             {
-                animalIn.GetComponent<AnimalMovement>().SetSpline(Spline);
-                animalIn = null;
+                if (RequiredKey.control.isHeld)
+                {
+                    animalIn.GetComponent<AnimalMovement>().SetSpline(Spline);
+                }
             }
         }
     }
