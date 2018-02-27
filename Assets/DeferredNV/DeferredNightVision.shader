@@ -88,43 +88,24 @@ SubShader {
 				col *= smoothstep(0.5,0.45,dist);
 				#endif				
 				
+				//add cookie Mulit from texture
 				col.rgb *= Ccol * _CookieSensitivityMultiplier;
 
 				//Increase the brightness of all normal areas by a certain amount
-				col.rb = max (col.r - 0.75, 0)*4;
+				//col.rb = max (col.r - 0.75, 0)*4;
 				
+
+				//Add Greyscale
+				col.rgb = dot(col.rgb, float3(0.3, 0.59, 0.11));
+
+				// apply NV COlour
+				col *= _NVColor;
+
 				return col;
 			}
 		ENDCG
 	}
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	FallBack "Diffuse"
 }
