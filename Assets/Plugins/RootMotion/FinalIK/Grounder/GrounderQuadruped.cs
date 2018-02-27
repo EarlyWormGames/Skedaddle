@@ -104,7 +104,6 @@ namespace RootMotion.FinalIK {
 		/// </summary>
 		[Tooltip("The head (optional, if you intend to maintain it's rotation).")]
 		public Transform head;
-        public Transform ForwardRaycastRoot;
 		/// <summary>
 		/// %IK componets of the hindlegs. Can be any type of IK components.
 		/// </summary>
@@ -379,8 +378,8 @@ namespace RootMotion.FinalIK {
                 forelegStraighten = 0;
             }
 
-            PelvisLowerPosition = Mathf.Lerp(PelvisLowerPosition, solver.ForwardRaycastRoof(pelvis, ForwardRaycastRoot, Color.green), Time.fixedDeltaTime * PelvisLowerSpeed);
-            ShoulderLowerPosition = Mathf.Lerp(ShoulderLowerPosition, forelegSolver.ForwardRaycastRoof(lastSpineBone, ForwardRaycastRoot, Color.gray), Time.fixedDeltaTime * ShoulderLowerSpeed);
+            PelvisLowerPosition = Mathf.Lerp(PelvisLowerPosition, solver.ForwardRaycastRoof(pelvis, Color.green), Time.fixedDeltaTime * PelvisLowerSpeed);
+            ShoulderLowerPosition = Mathf.Lerp(ShoulderLowerPosition, forelegSolver.ForwardRaycastRoof(lastSpineBone, Color.gray), Time.fixedDeltaTime * ShoulderLowerSpeed);
             Vector3 NewSolverIKOffset = new Vector3(solver.pelvis.IKOffset.x, solver.pelvis.IKOffset.y - backLegStraighten - PelvisLowerPosition, solver.pelvis.IKOffset.z);
 
             Vector3 NewHeadDirection = forelegSolver.root.right;

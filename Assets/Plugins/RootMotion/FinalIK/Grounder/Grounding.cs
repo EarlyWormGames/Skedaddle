@@ -400,17 +400,17 @@ namespace RootMotion.FinalIK {
 			}
 		}
 
-        public float ForwardRaycastRoof(Transform pelvis, Transform newRoot, Color cast)
+        public float ForwardRaycastRoof(Transform pelvis, Color cast)
         {
             RaycastHit hit = new RaycastHit();
-            Physics.BoxCast(pelvis.position + pelvisRaycastOffset, pelvisRaycastSize, newRoot.forward, out hit, Quaternion.LookRotation(newRoot.forward, newRoot.up), pelvisRaycastDistance, Headlayers);
+            Physics.BoxCast(pelvis.position + pelvisRaycastOffset, pelvisRaycastSize, root.forward, out hit, Quaternion.LookRotation(root.forward, root.up), pelvisRaycastDistance, Headlayers);
             //ExtDebug.DrawBoxCastBox(pelvis.position + pelvisRaycastOffset, pelvisRaycastSize, Quaternion.LookRotation(newRoot.forward, newRoot.up), newRoot.forward, pelvisRaycastDistance, cast);
             float Distancecast;
             if (hit.collider != null)
             {
                 float amountDecrease = Vector3.Distance(pelvis.position + pelvisRaycastOffset, hit.point) / pelvisRaycastDistance;
                 
-                Distancecast = RaycastUp(pelvis.position + pelvisRaycastOffset + newRoot.forward * Vector3.Distance(pelvis.position, hit.point), cast) * PelvisLowerAmount.Evaluate(amountDecrease);
+                Distancecast = RaycastUp(pelvis.position + pelvisRaycastOffset + root.forward * Vector3.Distance(pelvis.position, hit.point), cast) * PelvisLowerAmount.Evaluate(amountDecrease);
             }
             else
             {
