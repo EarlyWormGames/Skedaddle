@@ -445,8 +445,6 @@ namespace RootMotion.FinalIK {
 		
 		// Set the IK position and weight for a limb
 		private void SetFootIK(Foot foot, float maxOffset) {
-			Vector3 direction = foot.leg.IKPosition - foot.transform.position;
-			
 			foot.solver.IKPosition = foot.leg.IKPosition;
 			foot.solver.IKPositionWeight = weight;
 		}
