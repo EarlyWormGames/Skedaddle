@@ -26,6 +26,7 @@ namespace RootMotion.FinalIK {
 		/// </summary>
 		[Tooltip("Layers to ground the character to. Make sure to exclude the layer of the character controller.")]
 		public LayerMask layers;
+        public LayerMask Headlayers;
         /// <summary>
         /// Maximum distance from the ground before the ground is no longer detected.
         /// </summary>
@@ -399,17 +400,17 @@ namespace RootMotion.FinalIK {
 			}
 		}
 
-        public float ForwardRaycastRoof(Transform pelvis, Color cast)
+        public float ForwardRaycastRoof(Transform pelvis, Transform newRoot, Color cast)
         {
             RaycastHit hit = new RaycastHit();
-            Physics.BoxCast(pelvis.position + pelvisRaycastOffset, pelvisRaycastSize, root.forward, out hit, Quaternion.LookRotation(root.forward, root.up), pelvisRaycastDistance, layers);
-            //ExtDebug.DrawBoxCastBox(pelvis.position + pelvisRaycastOffset, pelvisRaycastSize, Quaternion.LookRotation(root.forward, root.up), root.forward, pelvisRaycastDistance, cast);
+            Physics.BoxCast(pelvis.position + pelvisRaycastOffset, pelvisRaycastSize, newRoot.forward, out hit, Quaternion.LookRotation(newRoot.forward, newRoot.up), pelvisRaycastDistance, Headlayers);
+            //ExtDebug.DrawBoxCastBox(pelvis.position + pelvisRaycastOffset, pelvisRaycastSize, Quaternion.LookRotation(newRoot.forward, newRoot.up), newRoot.forward, pelvisRaycastDistance, cast);
             float Distancecast;
             if (hit.collider != null)
             {
                 float amountDecrease = Vector3.Distance(pelvis.position + pelvisRaycastOffset, hit.point) / pelvisRaycastDistance;
                 
-                Distancecast = RaycastUp(pelvis.position + pelvisRaycastOffset + root.forward * Vector3.Distance(pelvis.position, hit.point), cast) * PelvisLowerAmount.Evaluate(amountDecrease);
+                Distancecast = RaycastUp(pelvis.position + pelvisRaycastOffset + newRoot.forward * Vector3.Distance(pelvis.position, hit.point), cast) * PelvisLowerAmount.Evaluate(amountDecrease);
             }
             else
             {
@@ -431,7 +432,7 @@ namespace RootMotion.FinalIK {
             RaycastHit hit = new RaycastHit();
             Vector3 newCenter = center - new Vector3(0, pelvisRaycastSize.y, 0);
             Vector3 endCast = new Vector3(newCenter.x, newCenter.y + pelvisRaycastSize.y * 2, newCenter.z);
-            Physics.Raycast(newCenter, root.up, out hit, pelvisRaycastSize.y * 2, layers);
+            Physics.Raycast(newCenter, root.up, out hit, pelvisRaycastSize.y * 2, Headlayers);
             Debug.DrawLine(newCenter, endCast, cast);
             if(hit.collider != null)
             {
