@@ -43,7 +43,8 @@ public class OpenScene : EditorWindow
         int i = 0;
         foreach (var path in paths)
         {
-            if (GUI.Button(new Rect(0, i * buttonHeight, width, buttonHeight), path, btnStyle))
+            string pathname = path.Remove(0, "Assets/Resources/Scenes/Levels".Length + 1);
+            if (GUI.Button(new Rect(0, i * buttonHeight, width, buttonHeight), pathname, btnStyle))
             {
                 if (EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
                 {
