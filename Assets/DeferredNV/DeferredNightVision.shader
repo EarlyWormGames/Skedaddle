@@ -95,7 +95,7 @@ SubShader {
 				//col.rb = max (col.r - 0.75, 0)*4;
 				
 
-				//Greyscale
+				//Add Greyscale
 				col.rgb = dot(col.rgb, float3(0.3, 0.59, 0.11));
 
 				// apply NV COlour
