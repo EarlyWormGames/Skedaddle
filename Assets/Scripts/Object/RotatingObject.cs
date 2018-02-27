@@ -7,18 +7,18 @@ public class RotatingObject : MovingObject
     public Vector3 EndRotation;
     public bool UseLocal;
 
-    protected override void DoSlide()
+    protected override bool DoSlide(float time)
     {
-        base.DoSlide();
-
-        Quaternion start = Quaternion.Euler(movingForward ? StartRotation : EndRotation);
-        Quaternion end = Quaternion.Euler(!movingForward ? StartRotation : EndRotation);
+        Vector3 start = movingForward ? StartRotation : EndRotation;
+        Vector3 end = !movingForward ? StartRotation : EndRotation;
 
         float t = MovingCurve.Evaluate(lerpTimer / Speed);
 
         if (!UseLocal)
-            transform.rotation = Quaternion.Lerp(start, end, t);
+            transform.eulerAngles = Vector3.Lerp(start, end, t);
         else
-            transform.localRotation = Quaternion.Lerp(start, end, t);
+            transform.localEulerAngles = Vector3.Lerp(start, end, t);
+
+        return true;
     }
 }
