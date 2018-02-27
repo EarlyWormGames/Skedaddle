@@ -17,4 +17,8 @@ public class MainMapping : ActionMapInput {
 	public AxisInputControl @moveCameraX { get { return (AxisInputControl)this[9]; } }
 	public AxisInputControl @moveCameraY { get { return (AxisInputControl)this[10]; } }
 	public AxisInputControl @moveCameraZ { get { return (AxisInputControl)this[11]; } }
+	public ButtonInputControl @upButton { get { return (ButtonInputControl)this[12]; } }
+	public ButtonInputControl @downButton { get { return (ButtonInputControl)this[13]; } }
+	public ButtonInputControl @leftButton { get { return (ButtonInputControl)this[14]; } }
+	public ButtonInputControl @rightButton { get { return (ButtonInputControl)this[15]; } }
 }
