@@ -3,7 +3,7 @@ guid: e5e0631a2b9dad54982761a9ca9835f0
 timeCreated: 1470888890
 licenseType: Free
 ModelImporter:
-  serializedVersion: 19
+  serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     100002: RatTrapBase
@@ -26,6 +26,28 @@ ModelImporter:
     100036: RatTrapPiece16
     100038: RatTrapPiece17
     100040: RatTrapPiece18
+    100042: Body_Container
+    100044: Front_Pivot
+    100046: Joint_Axis
+    100048: Joint_Body
+    100050: Joint_Latch
+    100052: Joint_Root
+    100054: Joint_Spring_1
+    100056: Joint_Spring_10
+    100058: Joint_Spring_11
+    100060: Joint_Spring_2
+    100062: Joint_Spring_3
+    100064: Joint_Spring_4
+    100066: Joint_Spring_5
+    100068: Joint_Spring_6
+    100070: Joint_Spring_7
+    100072: Joint_Spring_8
+    100074: Joint_Spring_9
+    100076: Joint_Trigger
+    100078: polySurface1
+    100080: polySurface2
+    100082: RatTrap_Reduced
+    100084: Rear_Pivot
     400000: //RootNode
     400002: RatTrapBase
     400004: RatTrapPiece1
@@ -47,6 +69,28 @@ ModelImporter:
     400036: RatTrapPiece16
     400038: RatTrapPiece17
     400040: RatTrapPiece18
+    400042: Body_Container
+    400044: Front_Pivot
+    400046: Joint_Axis
+    400048: Joint_Body
+    400050: Joint_Latch
+    400052: Joint_Root
+    400054: Joint_Spring_1
+    400056: Joint_Spring_10
+    400058: Joint_Spring_11
+    400060: Joint_Spring_2
+    400062: Joint_Spring_3
+    400064: Joint_Spring_4
+    400066: Joint_Spring_5
+    400068: Joint_Spring_6
+    400070: Joint_Spring_7
+    400072: Joint_Spring_8
+    400074: Joint_Spring_9
+    400076: Joint_Trigger
+    400078: polySurface1
+    400080: polySurface2
+    400082: RatTrap_Reduced
+    400084: Rear_Pivot
     2300000: RatTrapBase
     2300002: RatTrapPiece1
     2300004: RatTrapPiece2
@@ -67,6 +111,8 @@ ModelImporter:
     2300034: RatTrapPiece16
     2300036: RatTrapPiece17
     2300038: RatTrapPiece18
+    2300040: polySurface1
+    2300042: polySurface2
     3300000: RatTrapBase
     3300002: RatTrapPiece1
     3300004: RatTrapPiece2
@@ -87,6 +133,8 @@ ModelImporter:
     3300034: RatTrapPiece16
     3300036: RatTrapPiece17
     3300038: RatTrapPiece18
+    3300040: polySurface1
+    3300042: polySurface2
     4300000: RatTrapBase
     4300002: RatTrapPiece1
     4300004: RatTrapPiece2
@@ -107,40 +155,123 @@ ModelImporter:
     4300034: RatTrapPiece16
     4300036: RatTrapPiece17
     4300038: RatTrapPiece18
+    4300040: polySurface2
+    4300042: polySurface1
+    7400000: Armed
+    7400002: Trigger
+    9500000: //RootNode
+    13700000: polySurface1
+    13700002: polySurface2
+    13700004: RatTrapBase1
+    13700006: RatTrapPiece10
+    13700008: RatTrapPiece11
+    13700010: RatTrapPiece13
+    13700012: RatTrapPiece14
+    13700014: RatTrapPiece15
+    13700016: RatTrapPiece16
+    13700018: RatTrapPiece17
+    13700020: RatTrapPiece18
+  externalObjects: {}
   materials:
     importMaterials: 0
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
-    resampleCurves: 1
+    resampleCurves: 0
     optimizeGameObjects: 0
     motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    animationCompression: 1
-    animationRotationError: 0.5
-    animationPositionError: 0.5
-    animationScaleError: 0.5
+    importAnimatedCustomProperties: 0
+    animationCompression: 3
+    animationRotationError: 0
+    animationPositionError: 0
+    animationScaleError: 0
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Armed
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 28
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Trigger
+      takeName: Take 001
+      firstFrame: 32
+      lastFrame: 67
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 3
     meshCompression: 0
     addColliders: 0
+    importVisibility: 0
     importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
@@ -150,9 +281,11 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
+    normalCalculationMode: 0
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
+    serializedVersion: 2
     human: []
     skeleton: []
     armTwist: 0.5
@@ -163,9 +296,12 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
