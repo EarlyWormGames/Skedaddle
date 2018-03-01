@@ -11,7 +11,7 @@ public class LevelNotes : MonoBehaviour
         [Multiline] public string text;
         public bool showText = true;
         public List<int> ropes = new List<int>();
-        public Color color = Color.white;
+        public Color color = Color.grey;
 
         public TextPoint(Vector3 position, string text)
         {
