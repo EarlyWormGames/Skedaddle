@@ -21,6 +21,9 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!CameraSplineManager.HasAnySplines)
+            return;
+
         Vector3 target = transform.position + transform.forward;
         if (UseSpline)
         {

@@ -24,18 +24,21 @@ public class LadderObject : ActionObject
     public bool ForceMoveToClosest = true;
     public bool DisableCollision;
     public bool UseExitZ = true;
-    public float ExitZ = 0;
-
+    public LayerMask ShimmyLayer = 1 << 11;
 
     [HideInInspector]
     public float moveVelocity;
     [HideInInspector]
     public float currentSpeed;
 
+    [HideInInspector]
+    public bool TryShimmyLeft, TryShimmyRight;
+
     private int pointIndex;
     private Loris loris;
     private bool moveDown = true, moveUp = true;
     private bool justEnter;
+    private float entryZ;
 
     protected override void OnStart()
     {
@@ -60,8 +63,36 @@ public class LadderObject : ActionObject
         if (loris == null)
             return;
 
+        LadderObject shimmyLeft = GetShimmyObject(loris.transform.position, Vector3.left, 1, Vector3.one * 0.5f, Color.red);
+        LadderObject shimmyRight = GetShimmyObject(loris.transform.position, Vector3.right, 1, Vector3.one * 0.5f, Color.blue);
+
+        TryShimmyLeft = false;
+        TryShimmyRight = false;
+
+        if (shimmyLeft != null)
+        {
+            if (shimmyLeft.IsPointInRange(loris.transform.position.y) && input.leftButton.isHeld)
+                TryShimmyLeft = true;
+        }
+        if (shimmyRight != null)
+        {
+            if (shimmyRight.IsPointInRange(loris.transform.position.y) && input.rightButton.isHeld)
+                TryShimmyRight = true;
+        }
+
         if (input.interact.wasJustPressed && !justEnter && m_aCurrentAnimal.m_bSelected)
         {
+            if (TryShimmyLeft)
+            {
+                Shimmy(shimmyLeft);
+                return;
+            }
+            else if (TryShimmyRight)
+            {
+                Shimmy(shimmyRight);
+                return;
+            }
+
             Detach();
             return;
         }
@@ -169,6 +200,8 @@ public class LadderObject : ActionObject
         m_aCurrentAnimal.transform.SetParent(transform);
         m_aCurrentAnimal.m_rBody.isKinematic = true;
 
+        entryZ = m_aCurrentAnimal.transform.position.z;
+
         if (DisableCollision)
             m_aCurrentAnimal.m_tCollider.gameObject.SetActive(false);
 
@@ -210,7 +243,7 @@ public class LadderObject : ActionObject
         if (UseExitZ)
         {
             Vector3 pos = m_aCurrentAnimal.transform.position;
-            pos.z = ExitZ;
+            pos.z = entryZ;
             m_aCurrentAnimal.transform.position = pos;
         }
 
@@ -264,5 +297,65 @@ public class LadderObject : ActionObject
             return true;
 
         return false;
+    }
+
+    public LadderObject GetShimmyObject(Vector3 position, Vector3 direction, float distance, Vector3 boxSize, Color debugColor)
+    {
+        if (loris == null)
+            return null;
+
+        position = position + (direction * distance);
+
+        var colliders = Physics.OverlapBox(position, boxSize, Quaternion.LookRotation(direction), ShimmyLayer, QueryTriggerInteraction.Collide);
+        ExtDebug.DrawBox(position, boxSize, Quaternion.LookRotation(direction), debugColor);
+
+        float dist = -1;
+        LadderObject shimmyObject = null;
+        foreach (var collider in colliders)
+        {
+            var ladder = collider.GetComponent<LadderObject>();
+            if (ladder == null)
+            {
+                if (collider.attachedRigidbody == null)
+                    continue;
+                ladder = collider.attachedRigidbody.GetComponent<LadderObject>();
+            }
+            if (ladder == null || ladder == this)
+                continue;
+
+            float d = Vector3.Distance(position, collider.bounds.center);
+            if (d < dist || dist < 0)
+            {
+                dist = d;
+                shimmyObject = ladder;
+            }
+        }
+
+        return shimmyObject;
+    }
+
+    /// <summary>
+    /// Check if a y position is within this ladder's range
+    /// </summary>
+    /// <param name="yPoint"></param>
+    /// <returns></returns>
+    public bool IsPointInRange(float yPoint)
+    {
+        if (yPoint < Points[0].position.y - 0.1f)
+            return false;
+        if (yPoint > Points[Points.Length - 1].position.y + 0.1f)
+            return false;
+
+        return true;
+    }
+
+
+    public void Shimmy(LadderObject shimmyObject)
+    {
+        if (shimmyObject == null)
+            return;
+
+        Detach();
+        shimmyObject.DoAction();
     }
 }

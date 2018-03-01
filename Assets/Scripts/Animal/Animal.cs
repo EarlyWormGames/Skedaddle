@@ -4,6 +4,7 @@ using UnityEngine.Analytics;
 using System;
 using System.Collections.Generic;
 using RootMotion.FinalIK;
+using UnityEngine.InputNew;
 
 public enum DEATH_TYPE
 {
@@ -236,6 +237,7 @@ public class Animal : MonoBehaviour
 
     protected Dictionary<Collider, Type> m_dChildColliders;
 
+    protected MainMapping   m_input;
 
     //==================================
     //          Private Vars
@@ -284,6 +286,8 @@ public class Animal : MonoBehaviour
                 m_dChildColliders.Add(col, col.GetType());
             }
         }
+
+        m_input = GameManager.Instance.input.GetActions<MainMapping>();
 
         OnStart();
     }

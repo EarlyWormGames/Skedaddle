@@ -5,15 +5,15 @@ using UnityEngine;
 [RequireComponent(typeof(BezierSpline))]
 public class CameraSpline : MonoBehaviour
 {
+    public static Vector3 CurrentPoint;
+    public static Vector3 LookAtPoint;
+
     public SplineMovement AnimalSpline;
     [Tooltip("Will the spline be active on level start?")]
     public bool IsDefaultSpline;
     [Tooltip("Should the spline use the Animal's \"Camera Y\" value?")]
     public bool UseAnimalYSettings = true;
-    public List<ANIMAL_NAME> MyAnimals = new List<ANIMAL_NAME>();
-
-    public static Vector3 CurrentPoint;
-    public static Vector3 LookAtPoint;
+    public List<ANIMAL_NAME> MyAnimals = new List<ANIMAL_NAME>();  
 
     internal bool[] EnableForAnimals;
 

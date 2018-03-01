@@ -80,16 +80,22 @@ public class Loris : Animal
         }
         //All animations here
 
-        //if (m_pFollower.m_bFollow)
-        //{
-        //    m_aAnimalAnimator.SetBool("Controlled", true);
-        //    m_bWasFollow = true;
-        //}
-        //else if (m_bWasFollow)
-        //{
-        //    m_bWasFollow = false;
-        //    m_aAnimalAnimator.SetBool("Controlled", m_bSelected);
-        //}
+        bool forceMove = false;
+        if (m_aMovement.FollowSpline != null)
+        {
+            if (m_aMovement.FollowSpline.ForceMovement)
+            {
+                m_aAnimalAnimator.SetBool("Controlled", true);
+                m_bWasFollow = true;
+                forceMove = true;
+            }
+        }
+
+        if (m_bWasFollow && !forceMove)
+        {
+            m_bWasFollow = false;
+            m_aAnimalAnimator.SetBool("Controlled", m_bSelected);
+        }
 
         //set horozontal velocity
         m_aAnimalAnimator.SetFloat("Velocity", m_aMovement.moveVelocity * m_fWalkAnimMult);
@@ -279,33 +285,24 @@ public class Loris : Animal
             m_aAnimalAnimator.SetBool("OnGround", false);
             m_aAnimalAnimator.SetBool("Walking", false);
 
-            if (m_oCurrentObject != null)
+            LadderObject ladder = (LadderObject)m_oCurrentObject;
+            if (ladder != null)
             {
-                //if (m_aAnimalAnimator.GetFloat("OnRope") == 1 && m_oCurrentObject.GetComponent<LadderObject>().m_bCanShimmy)
-                //{
-                //    
-                //        if (Keybinding.GetKey("MoveLeft") || Controller.GetDpad(ControllerDpad.Left) || Controller.GetStick(true).x < -0.2f)
-                //        {
-                //            m_aAnimalAnimator.SetBool("Shimmy Left", true);
-                //            m_aAnimalAnimator.SetBool("Shimmy Right", false);
-                //        }
-                //        else if (Keybinding.GetKey("MoveRight") || Controller.GetDpad(ControllerDpad.Right) || Controller.GetStick(true).x > 0.2f)
-                //        {
-                //            m_aAnimalAnimator.SetBool("Shimmy Right", true);
-                //            m_aAnimalAnimator.SetBool("Shimmy Left", false);
-                //        }
-                //        else
-                //        {
-                //            m_aAnimalAnimator.SetBool("Shimmy Left", false);
-                //            m_aAnimalAnimator.SetBool("Shimmy Right", false);
-                //        }
-                //    
-                //}
-                //else
-                //{
-                //    m_aAnimalAnimator.SetBool("Shimmy Left", false);
-                //    m_aAnimalAnimator.SetBool("Shimmy Right", false);
-                //}
+                if (ladder.TryShimmyLeft)
+                {
+                    m_aAnimalAnimator.SetBool("Shimmy Left", true);
+                    m_aAnimalAnimator.SetBool("Shimmy Right", false);
+                }
+                else if (ladder.TryShimmyRight)
+                {
+                    m_aAnimalAnimator.SetBool("Shimmy Right", true);
+                    m_aAnimalAnimator.SetBool("Shimmy Left", false);
+                }
+                else
+                {
+                    m_aAnimalAnimator.SetBool("Shimmy Left", false);
+                    m_aAnimalAnimator.SetBool("Shimmy Right", false);
+                }
             }
             else
             {

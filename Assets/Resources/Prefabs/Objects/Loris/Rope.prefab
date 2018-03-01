@@ -78,37 +78,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1452710622042766
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4762404783707270}
-  - component: {fileID: 114912702065647814}
-  m_Layer: 11
-  m_Name: ClimbJumpLoris (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1818130509738356
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4037507222066972}
-  m_Layer: 0
-  m_Name: AutoClimbAnchor
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1864396737022500
 GameObject:
   m_ObjectHideFlags: 1
@@ -124,19 +93,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4037507222066972
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1818130509738356}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.07, y: 0.191, z: -0.007}
-  m_LocalScale: {x: 5.3496447, y: 1.6985928, z: 1.1463523}
-  m_Children: []
-  m_Father: {fileID: 4762404783707270}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4604151944344214
 Transform:
   m_ObjectHideFlags: 1
@@ -163,23 +119,8 @@ Transform:
   - {fileID: 4604151944344214}
   - {fileID: 4879449930105376}
   - {fileID: 4791288679817488}
-  - {fileID: 4762404783707270}
   m_Father: {fileID: 4907385561553182}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4762404783707270
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1452710622042766}
-  m_LocalRotation: {x: -0, y: -0.0000039041042, z: -0, w: 1}
-  m_LocalPosition: {x: 0.001, y: 0.1993, z: -0.076}
-  m_LocalScale: {x: 0.073293276, y: 0.11659777, z: 0.30662692}
-  m_Children:
-  - {fileID: 4037507222066972}
-  m_Father: {fileID: 4634262443943130}
-  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4791288679817488
 Transform:
@@ -214,7 +155,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1219603470800148}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 37.69, y: 0.411, z: 9.601}
+  m_LocalPosition: {x: -2.91, y: 4.48, z: 6.681}
   m_LocalScale: {x: 2.2577922, y: 4.1466618, z: 2.257794}
   m_Children:
   - {fileID: 4634262443943130}
@@ -384,14 +325,13 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   LowExit: 1
-  HighExit: 1
-  RotateSpeed: 5
-  TopTransition: {fileID: 114912702065647814}
+  HighExit: 0
+  TopTransition: {fileID: 0}
   BottomTransition: {fileID: 0}
-  AxesToIgnore: 5
+  RotateSpeed: 5
+  AxesToIgnore: 0
   Direction: 3
   IsRope: 1
-  ForceMoveToClosest: 1
   Points:
   - {fileID: 4879449930105376}
   - {fileID: 4791288679817488}
@@ -405,68 +345,12 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  ForceMoveToClosest: 1
+  DisableCollision: 0
+  UseExitZ: 1
+  ExitZ: 0
+  ShimmyLayer:
+    serializedVersion: 2
+    m_Bits: 2048
   moveVelocity: 0
---- !u!114 &114912702065647814
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1452710622042766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6025807fdd746444697919ac043fb005, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_aRequiredSize: 0
-  m_aRequiredAnimal: 0
-  m_aMaximumSize: 0
-  m_lAnimalsIn: []
-  m_rBody: {fileID: 0}
-  m_GazeObject: {fileID: 0}
-  m_aSoundEvents: []
-  OnDoAction:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: EnableSplineLoris
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: CameraSpline, SkedaddleCore
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnDetach:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnAnimalEnter:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnAnimalExit:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnWrongAnimalEnter:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnWrongAnimalExit:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  DoOnTrigger: 1
-  Direction: 2
-  FinishDirection: 2
-  AnchorPoint: {fileID: 4037507222066972}
-  TransitionTo: {fileID: 0}
+  currentSpeed: 0

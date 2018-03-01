@@ -5,6 +5,16 @@ using UnityEngine;
 public class CameraSplineManager : MonoBehaviour
 {
     public static CameraSplineManager instance;
+    public static bool HasAnySplines
+    {
+        get
+        {
+            if (instance == null)
+                return false;
+
+            return instance.Splines.Count > 0;
+        }
+    }
 
     private List<CameraSpline> Splines = new List<CameraSpline>();
     private Dictionary<ANIMAL_NAME, CameraSpline> CurrentSplines = new Dictionary<ANIMAL_NAME, CameraSpline>();
