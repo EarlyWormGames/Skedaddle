@@ -25,7 +25,6 @@ public class LorisNightVision : MonoBehaviour
     private EStatus m_ePreviousStatus;
     private bool m_bBeginNV = false;
 
-    private GameManager GM;
     private Fading m_Fade;
     private bool m_bNVStatusJustChanged = false;
 
