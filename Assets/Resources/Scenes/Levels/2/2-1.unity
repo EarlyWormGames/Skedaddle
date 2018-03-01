@@ -21516,6 +21516,7 @@ MonoBehaviour:
   MaximumFontSize: 20
   DistanceMultiplier: 5
   ShrinkOverDistance: 1
+  CurvesColor: {r: 1, g: 1, b: 1, a: 1}
   points: []
 --- !u!4 &355543907
 Transform:
@@ -48326,6 +48327,11 @@ Transform:
   m_Father: {fileID: 2058173558}
   m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &850312519 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1459152015525456, guid: 3002b47b72782b84a866b91ef0231d28,
+    type: 2}
+  m_PrefabInternal: {fileID: 879368142}
 --- !u!1 &855859433
 GameObject:
   m_ObjectHideFlags: 0
@@ -49739,20 +49745,6 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114833396152617382, guid: 3002b47b72782b84a866b91ef0231d28,
-        type: 2}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 1791223407}
-    - target: {fileID: 114833396152617382, guid: 3002b47b72782b84a866b91ef0231d28,
-        type: 2}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1459152015525456, guid: 3002b47b72782b84a866b91ef0231d28, type: 2}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3002b47b72782b84a866b91ef0231d28, type: 2}
@@ -51406,10 +51398,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 11486266, guid: f98253888c8cae8498d5b4fe3c7b6f7e, type: 2}
-      propertyPath: m_v3PelvisOffset.y
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 114859081449444836, guid: f98253888c8cae8498d5b4fe3c7b6f7e,
+        type: 2}
+      propertyPath: NightVisionObject
+      value: 
+      objectReference: {fileID: 850312519}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f98253888c8cae8498d5b4fe3c7b6f7e, type: 2}
   m_IsPrefabParent: 0
@@ -80712,10 +80705,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 12
       objectReference: {fileID: 0}
-    - target: {fileID: 193460, guid: 6ac26916394ca4e4caa5daf8346f4a48, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ac26916394ca4e4caa5daf8346f4a48, type: 2}
   m_IsPrefabParent: 0
@@ -89677,87 +89666,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1788068278}
   m_Mesh: {fileID: 4300000, guid: fcd74f6e47402cf4990fc8f489adf9d3, type: 3}
---- !u!21 &1791223407
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: NightVision(Clone)
-  m_Shader: {fileID: 4800000, guid: a8d55b4f029bffc4997f9640d13d5587, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _BumpMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _CookieTex:
-        m_Texture: {fileID: 2800000, guid: 2cb0c743f21931b458efb869d571eba0, type: 3}
-        m_Scale: {x: 10, y: 10}
-        m_Offset: {x: 0, y: 0}
-    - _DetailAlbedoMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailMask:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailNormalMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _EmissionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 628c21b59d11155468832b50f1966741, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _OcclusionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _ParallaxMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _BumpScale: 1
-    - _CookieSensitivityMultiplier: 0.65
-    - _Cutoff: 0.5
-    - _DetailNormalMapScale: 1
-    - _DstBlend: 0
-    - _GlossMapScale: 1
-    - _Glossiness: 0
-    - _GlossyReflections: 1
-    - _LightSensitivityMultiplier: 4
-    - _Metallic: 0
-    - _Mode: 0
-    - _OcclusionStrength: 1
-    - _Parallax: 0.02
-    - _SmoothnessTextureChannel: 0
-    - _SpecularHighlights: 1
-    - _SrcBlend: 1
-    - _UVSec: 0
-    - _ZWrite: 1
-    m_Colors:
-    - _Color: {r: 0, g: 0, b: 0, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _NVColor: {r: 0.52205884, g: 0.52205884, b: 0.52205884, a: 0.615}
 --- !u!1 &1793037075
 GameObject:
   m_ObjectHideFlags: 0

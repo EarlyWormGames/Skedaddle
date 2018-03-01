@@ -42,6 +42,8 @@ public class Loris : Animal
     private bool m_bIgnoreCheck = false;
 
     private bool m_bUseLight = false;
+    private bool m_bUseNightVision = false;
+    private LorisNightVision NV;
 
     private float m_fDropTimer = 0.3f;
     private float m_fElectroTimer = 0.3f;
@@ -56,6 +58,8 @@ public class Loris : Animal
     {
         m_eName = ANIMAL_NAME.LORIS;
         m_eSize = ANIMAL_SIZE.XS;
+
+        NV = GetComponent<LorisNightVision>();
     }
 
     protected override void OnUpdate()
@@ -342,11 +346,13 @@ public class Loris : Animal
         {
             if (m_bUseLight && !m_bSelected)
             {
+                // LIGHT ON
                 for(int i = 0; i < m_lVisionLight.Length; ++i)
                     m_lVisionLight[i].intensity = Mathf.Lerp(m_lVisionLight[i].intensity, m_fOnIntensity, m_fLightSpeed * Time.deltaTime);
             }
             else
             {
+                // LIGHT OFF
                 for(int i = 0; i < m_lVisionLight.Length; ++i)
                     m_lVisionLight[i].intensity = Mathf.Lerp(m_lVisionLight[i].intensity, -1f, m_fLightSpeed * Time.deltaTime);
             }
