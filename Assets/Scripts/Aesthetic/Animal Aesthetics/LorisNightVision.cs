@@ -88,7 +88,7 @@ public class LorisNightVision : MonoBehaviour
                     if (m_ePreviousStatus == EStatus.eFADEOUT)
                     {
                         NightVisionObject.SetActive(false);
-                        EndNV();
+                       // EndNV();
                     }
                     m_ePreviousStatus = m_eCurrentStatus;
                     m_eCurrentStatus = EStatus.eFADEOUT;
