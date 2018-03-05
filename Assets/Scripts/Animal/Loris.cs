@@ -346,12 +346,14 @@ public class Loris : Animal
                 // LIGHT ON
                 for(int i = 0; i < m_lVisionLight.Length; ++i)
                     m_lVisionLight[i].intensity = Mathf.Lerp(m_lVisionLight[i].intensity, m_fOnIntensity, m_fLightSpeed * Time.deltaTime);
+                NV.NightVisionOn = false;
             }
             else
             {
                 // LIGHT OFF
                 for(int i = 0; i < m_lVisionLight.Length; ++i)
                     m_lVisionLight[i].intensity = Mathf.Lerp(m_lVisionLight[i].intensity, -1f, m_fLightSpeed * Time.deltaTime);
+                NV.NightVisionOn = true;
             }
         }
 
@@ -424,6 +426,7 @@ public class Loris : Animal
     {
         CameraController.Instance.m_bUseNightVision = a_On;
         m_bUseLight = a_On;
+        NV.NightVisionOn = a_On;
     }
 
     public override float[] CalculateMoveSpeed()
