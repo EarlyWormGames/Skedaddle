@@ -13,6 +13,9 @@ public class LorisNightVision : MonoBehaviour
         eIDLE,
     };
 
+    public GameObject NVCanvas;
+    private GameObject Temp_NV_Canvas;
+
     public bool NightVisionOn = false;
     public GameObject NightVisionObject;
     public float TranssionSpeed = 1.0f;
@@ -32,8 +35,27 @@ public class LorisNightVision : MonoBehaviour
     private float NV_SensitivityMin = 2;
     private float NV_SensitivityMax = 4;
 
+    
+
     void Start()
     {
+        
+    }
+
+    void Awake()
+    {
+        GameObject NV_GO = GameObject.FindGameObjectWithTag("NVCanvas");
+        if (NV_GO == null)
+        {
+            Temp_NV_Canvas = Instantiate(NVCanvas);
+            NightVisionObject = Temp_NV_Canvas.transform.GetChild(0).gameObject;
+        }
+        else
+        {
+            NightVisionObject = NV_GO.transform.GetChild(0).gameObject;
+        }
+
+
         m_eCurrentStatus = EStatus.eIDLE;
         m_ePreviousStatus = m_eCurrentStatus;   //simulating as if the scene had just faded out.
 
@@ -57,6 +79,7 @@ public class LorisNightVision : MonoBehaviour
     private void OnDestroy()
     {
         DestroyImmediate(Temp_NV_Material);
+        DestroyImmediate(Temp_NV_Canvas);
     }
     void Update()
     {

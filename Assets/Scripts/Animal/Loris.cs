@@ -339,8 +339,9 @@ public class Loris : Animal
         // NIGHT VISION
         //=====================================
 
-        if (m_lVisionLight.Length > 0)
-        {
+        ///Lorius light Array, obsalete? - Bernard
+        //if (m_lVisionLight.Length > 0)
+        //{
             if (m_bUseLight && !m_bSelected)
             {
                 // LIGHT ON
@@ -355,7 +356,7 @@ public class Loris : Animal
                     m_lVisionLight[i].intensity = Mathf.Lerp(m_lVisionLight[i].intensity, -1f, m_fLightSpeed * Time.deltaTime);
                 NV.NightVisionOn = true;
             }
-        }
+        //}
 
         //=====================================
         bool climbDown = false;
