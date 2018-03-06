@@ -158,7 +158,15 @@ public class LorisNightVision : MonoBehaviour
         }
         NV_ActiveSensitivity = Mathf.Clamp(NV_ActiveSensitivity, NV_SensitivityMin, NV_SensitivityMax);
 
-        Temp_NV_Material.SetFloat("_LightSensitivityMultiplier", NV_ActiveSensitivity);
+
+        if (Temp_NV_Material == null)
+        {
+            Debug.LogWarning("The Temp_NV_Material is null." +"\n" + "It doesnt exsist until Run time");
+        }
+        else
+        {
+            Temp_NV_Material.SetFloat("_LightSensitivityMultiplier", NV_ActiveSensitivity);
+        }
 
 
         m_bNVStatusJustChanged = false;
