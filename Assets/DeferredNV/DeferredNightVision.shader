@@ -74,7 +74,7 @@ SubShader {
 				float lumc = Luminance (col.rgb);
 				
 				//Desat + green the image
-				col = dot(col, _NVColor);	
+				col = dot(col , _NVColor);	
 				
 				//Make bright areas/lights too bright
 				col.rgb = lerp(col.rgb, _TargetWhiteColor, lumc * _LightSensitivityMultiplier);

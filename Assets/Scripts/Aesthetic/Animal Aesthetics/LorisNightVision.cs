@@ -35,8 +35,6 @@ public class LorisNightVision : MonoBehaviour
     private float NV_SensitivityMin = 2;
     private float NV_SensitivityMax = 4;
 
-    
-
     void Start()
     {
         
