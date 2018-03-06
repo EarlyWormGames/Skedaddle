@@ -18,6 +18,7 @@ Shader "EW/DeferredNightVisionShader" {
 		_NVColor ("NV Color", Color) = (0,1,0.1724138,0)
 		_LightSensitivityMultiplier ("SensitivityMultiplier", Range(2,4)) = 0
 		_CookieSensitivityMultiplier ("CookieMultiplier", Range(0, 2)) = 0
+		_Boost ("luminocity boost", range(0, 10)) = 0
 	}
 	
 SubShader {
@@ -53,6 +54,7 @@ SubShader {
 			float _BaseLightingContribution;
 			float _LightSensitivityMultiplier;
 			float _CookieSensitivityMultiplier;
+			float _Boost;
 
 			v2f vert (appdata_t v)
 			{
@@ -74,13 +76,13 @@ SubShader {
 				float lumc = Luminance (col.rgb);
 				
 				//Desat + green the image
-				col = dot(col , _NVColor);	
+				//col = dot(col, _NVColor);	
 				
 				//Make bright areas/lights too bright
 				col.rgb = lerp(col.rgb, _TargetWhiteColor, lumc * _LightSensitivityMultiplier);
 				
 				//Add some of the regular diffuse texture based off how bright each pixel is
-				col.rgb = lerp(col.rgb, dfse.rgb, lumc+_BaseLightingContribution);
+				col.rgb = lerp(col.rgb, dfse.rgb, (lumc * _Boost )  + _BaseLightingContribution);
 				
 				#if USE_VIGNETTE
 				//Add vignette
