@@ -7,9 +7,11 @@ using TMPro;
 public class SliderTag : MonoBehaviour {
 
     public TextMeshProUGUI SliderValueLabel;
+    public int NoifDecimals = 1;
 
     public void ChangeLabel(float value)
     {
-        SliderValueLabel.text = value.ToString("0.0");
+        string format = "F" + NoifDecimals.ToString();
+        SliderValueLabel.text = value.ToString(format);
     }
 }
