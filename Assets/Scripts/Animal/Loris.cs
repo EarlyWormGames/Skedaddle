@@ -342,7 +342,7 @@ public class Loris : Animal
         ///Lorius light Array, obsalete? - Bernard
         //if (m_lVisionLight.Length > 0)
         //{
-            if (m_bUseLight && !m_bSelected)
+            if (m_bUseLight && m_bSelected)
             {
                 // LIGHT ON
                 for(int i = 0; i < m_lVisionLight.Length; ++i)
