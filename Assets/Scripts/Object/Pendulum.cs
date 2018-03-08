@@ -150,7 +150,7 @@ public class Pendulum : MonoBehaviour
         if (a_col.collider.GetComponent<BreakableObject>())
         {
             //Smash any breakable objects
-            a_col.collider.GetComponent<BreakableObject>().DoAction();
+            a_col.collider.GetComponent<BreakableObject>().Break();
             if (m_bDestroyOnSmash)
             {
                 m_psExplosion.Play();

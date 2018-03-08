@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BreakableObject : ActionObject
+public class BreakableObject : MonoBehaviour
 {
     //==================================
     //          Public Vars
@@ -21,21 +21,16 @@ public class BreakableObject : ActionObject
 
     //Inherited functions
 
-    protected override void OnStart()
+    void Start()
     {
-        m_aRequiredAnimal = ANIMAL_NAME.ZEBRA;
         if (m_goObject != null)
         {
             m_rShards = m_goObject.GetComponentsInChildren<Rigidbody>();
         }
     }
-    protected override void OnCanTrigger() { }
-    //protected override void AnimalEnter(Animal a_animal) { }
-    //protected override void AnimalExit(Animal a_animal) { }
-    public override void DoAction()
-    {
-        base.DoAction();
 
+    public void Break()
+    {
         //This object should have the box collider on it
         foreach (Rigidbody x in m_rShards)
         {
@@ -50,6 +45,4 @@ public class BreakableObject : ActionObject
         m_psExplosion.Play();
         Destroy(gameObject);
     }
-    //public override void DoActionOn() { }
-    //public override void DoActionOff() { }
 }

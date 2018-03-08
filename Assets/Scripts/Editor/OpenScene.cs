@@ -9,6 +9,7 @@ public class OpenScene : EditorWindow
     Vector2 scrollPos;
     float buttonHeight = 80;
     string search = "";
+    bool firstTime = true;
 
     [MenuItem("File/Open Level %#o")]
     public static void OpenLevel()
@@ -18,8 +19,15 @@ public class OpenScene : EditorWindow
     }
 
     private void OnGUI()
-    {
+    {       
+        GUI.SetNextControlName("textarea");
         search = GUI.TextField(new Rect(5, 5, position.width - 10, 20), search);
+
+        if (firstTime)
+        {
+            firstTime = false;
+            GUI.FocusControl("textarea");
+        }
 
         float width = position.width - 25;
         float height = position.height - 35;

@@ -6580,9 +6580,67 @@ Prefab:
       propertyPath: m_RootOrder
       value: 19
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114859081449444836, guid: f98253888c8cae8498d5b4fe3c7b6f7e,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114000013904348872, guid: f98253888c8cae8498d5b4fe3c7b6f7e, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: f98253888c8cae8498d5b4fe3c7b6f7e, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &207754407 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 111396, guid: f98253888c8cae8498d5b4fe3c7b6f7e, type: 2}
+  m_PrefabInternal: {fileID: 207754406}
+--- !u!114 &207754408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 207754407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ade3ea8f284411d41b5b6f08d26ea8e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MinimumMoveDist: 0.1
+  Character: 0
+  RefreshData: 0
+  DrawGizmos: 1
+  HeatmapGradient:
+    serializedVersion: 2
+    key0: {r: 0.4896555, g: 0, b: 1, a: 0.12941177}
+    key1: {r: 0, g: 0.7328197, b: 0.18699525, a: 0.5647059}
+    key2: {r: 1, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 33153
+    ctime2: 65535
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 3
+    m_NumAlphaKeys: 2
+  HotTime: 5
+  DynamicHotTime: 1
+  ColdSize: {x: 0.2, y: 0.2, z: 0.2}
+  HotSize: {x: 0.2, y: 0.2, z: 0.2}
 --- !u!1 &208234842
 GameObject:
   m_ObjectHideFlags: 0
@@ -29412,8 +29470,9 @@ MonoBehaviour:
     action: {fileID: 0}
   InvertAxis: 0
   ForceMovement: 1
-  IgnoreAxis: {x: 0, y: 1, z: 0}
+  AxesToIgnore: 2
   DisableGravity: 0
+  DisableGrounder: 0
   points:
   - current: {x: 1, y: 0, z: 0}
     totalDistance: 0
@@ -37936,6 +37995,47 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 908866114}
   m_Mesh: {fileID: 4300000, guid: ac57c759c84ee15428195cd0d7a3eaf5, type: 3}
+--- !u!1 &909514621
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 909514623}
+  - component: {fileID: 909514622}
+  m_Layer: 0
+  m_Name: HeatmapSettings
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &909514622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 909514621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9b946575fa9414449c9489df6a0ebec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelName: 1_1
+--- !u!4 &909514623
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 909514621}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.057455, y: -2.1539943, z: 13.256397}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 53
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &910643883
 GameObject:
   m_ObjectHideFlags: 0
@@ -41280,8 +41380,9 @@ MonoBehaviour:
     action: {fileID: 0}
   InvertAxis: 0
   ForceMovement: 0
-  IgnoreAxis: {x: 0, y: 1, z: 0}
+  AxesToIgnore: 2
   DisableGravity: 0
+  DisableGrounder: 0
   points:
   - current: {x: 1.4978491, y: -0.23718417, z: 0}
     totalDistance: 0

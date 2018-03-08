@@ -55,6 +55,7 @@ public class ActionObject : MonoBehaviour
     internal bool m_CanBeDetached = true;
     internal bool m_bBlocksTurn = false;
     internal bool m_bBlocksMovement = false;
+    internal Animal m_aCurrentAnimal;
 
     protected bool m_bEyetrackSelected = false;
     protected bool m_bQuickExitFix = false;
@@ -62,7 +63,6 @@ public class ActionObject : MonoBehaviour
     protected float m_fGazeTimer = 0f;
     protected bool m_bGazeRunning = false;
 
-    protected Animal m_aCurrentAnimal;
     protected MainMapping input;
 
 

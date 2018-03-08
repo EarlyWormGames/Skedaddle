@@ -115,6 +115,8 @@ public class Trampoline : ActionObject
     {
         lastLaunched.useGravity = false;
         lastLaunched.velocity = Vector3.zero;
+        lastLaunched.angularVelocity = Vector3.zero;
+        lastLaunched.isKinematic = true;
 
         LaunchItem(lastLaunched.transform);
     }
@@ -157,6 +159,9 @@ public class Trampoline : ActionObject
             OnSplineEnd.Invoke();
         }
         else if (lastLaunched != null)
+        {
             lastLaunched.useGravity = true;
+            lastLaunched.isKinematic = false;
+        }
     }
 }

@@ -15,8 +15,9 @@ public class GameManager : Singleton<GameManager>
     public MainMapping mainMap;
     public PlayerInput input;
 
+    internal float m_fGameTimer = 0;
+
     private bool m_bDoOnce = false;
-    private float m_fGameTimer = 0;
     private float m_fGCTimer = 0f;
     private PlayerInput pInput;
 
@@ -56,9 +57,7 @@ public class GameManager : Singleton<GameManager>
     // Update is called once per frame
     void Update()
     {
-#if !UNITY_EDITOR
         m_fGameTimer += Time.deltaTime;
-#endif
 
         if (m_bDoOnce)
         {
