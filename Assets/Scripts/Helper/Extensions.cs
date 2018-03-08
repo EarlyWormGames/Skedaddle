@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Reflection;
 using System.Collections.Generic;
+using UnityEngine;
 
 //Extension methods must be defined in a static class
 public static class ArrayExtension
