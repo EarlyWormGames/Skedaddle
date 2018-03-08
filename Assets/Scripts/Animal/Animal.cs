@@ -129,6 +129,8 @@ public class Animal : MonoBehaviour
     [Header("Sounds")]
     public NamedEvent[]     m_aSoundEvents;
 
+    public bool             WasTeleport { get; set; }
+
     //==================================
     //          Internal Vars
     //    (Public use for scripts)
@@ -545,9 +547,7 @@ public class Animal : MonoBehaviour
                     //Was falling
                     float dist = m_fFallStartY - transform.position.y;
 
-
-
-                    if (dist > m_fMaxFallDist && !m_bOnTrampoline)
+                    if (dist > m_fMaxFallDist && (!m_bOnTrampoline || !WasTeleport))
                     {
                         Kill(DEATH_TYPE.FALL);
                         PlaySound(SOUND_EVENT.FALL_STOP);
@@ -582,6 +582,8 @@ public class Animal : MonoBehaviour
         }
         OnUpdate();
         Move();
+
+        WasTeleport = false;
     }
 
     void FixedUpdate()

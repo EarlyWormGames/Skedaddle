@@ -17,7 +17,7 @@ public class AnimalSplineSetter : MonoBehaviour
         if (trig == null)
             return;
 
-        if (trig.m_eName != RequiredAnimal)
+        if (trig.m_eName != RequiredAnimal && RequiredAnimal != ANIMAL_NAME.NONE)
             return;
 
         if (trig.m_aMovement.FollowSpline == this)
