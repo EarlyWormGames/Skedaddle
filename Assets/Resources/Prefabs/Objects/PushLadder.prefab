@@ -11,6 +11,21 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1702080042238804}
   m_IsPrefabParent: 1
+--- !u!1 &1082708420988420
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4883175473440578}
+  m_Layer: 0
+  m_Name: LadderLow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1110891065779080
 GameObject:
   m_ObjectHideFlags: 1
@@ -74,6 +89,21 @@ GameObject:
   - component: {fileID: 23066554223508376}
   m_Layer: 22
   m_Name: pCube33
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1208829100210528
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4664153258480000}
+  m_Layer: 0
+  m_Name: LadderHigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -454,6 +484,7 @@ GameObject:
   - component: {fileID: 4628755282069542}
   - component: {fileID: 65495663269614388}
   - component: {fileID: 54316395190410308}
+  - component: {fileID: 114347624804561452}
   m_Layer: 11
   m_Name: ClimbTrigger
   m_TagString: Untagged
@@ -758,6 +789,19 @@ Transform:
   m_Father: {fileID: 4134455111469048}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4664153258480000
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1208829100210528}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.00000035673557, y: 0.857, z: -0.18400271}
+  m_LocalScale: {x: 1.0000036, y: 1.0000013, z: 1.0000033}
+  m_Children: []
+  m_Father: {fileID: 4702268400938012}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4702268400938012
 Transform:
   m_ObjectHideFlags: 1
@@ -775,6 +819,8 @@ Transform:
   - {fileID: 4924687492306064}
   - {fileID: 4083264467833572}
   - {fileID: 4246328679142166}
+  - {fileID: 4883175473440578}
+  - {fileID: 4664153258480000}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -803,6 +849,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4702268400938012}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4883175473440578
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1082708420988420}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.495, z: -0.184}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4702268400938012}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4921740065266252
 Transform:
@@ -1815,6 +1874,86 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  MaintainY: 1
+  MaintainPosition: 6
+  MaintainRotation: -1
   TriggersToDisable:
   - {fileID: 65641473205676738}
+--- !u!114 &114347624804561452
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1958946585226208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9921df7f8ceb034389c73d0688258f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_aRequiredSize: 0
+  m_aRequiredAnimal: 1
+  m_aMaximumSize: 0
+  m_lAnimalsIn: []
+  m_rBody: {fileID: 0}
+  m_GazeObject: {fileID: 0}
+  m_aSoundEvents: []
+  OnDoAction:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnDetach:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnAnimalEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnAnimalExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnWrongAnimalEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnWrongAnimalExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  LowExit: 1
+  HighExit: 0
+  TopTransition: {fileID: 0}
+  BottomTransition: {fileID: 0}
+  RotateSpeed: 5
+  AxesToIgnore: 4
+  Direction: 3
+  IsRope: 0
+  Points:
+  - {fileID: 4883175473440578}
+  - {fileID: 4664153258480000}
+  OnLowExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnHighExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  ForceMoveToClosest: 1
+  DisableCollision: 0
+  UseExitZ: 1
+  ShimmyLayer:
+    serializedVersion: 2
+    m_Bits: 2048
+  moveVelocity: 0
+  currentSpeed: 0
+  TryShimmyLeft: 0
+  TryShimmyRight: 0

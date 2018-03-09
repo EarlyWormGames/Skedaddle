@@ -58,10 +58,10 @@ public class BridgeMaker : ActionObject
             }
             if (m_fTimer >= 0.2f)
             {
-                if (m_headTerrain != null)
-                    m_headTerrain.overrideTarget = false;
-                m_headIK.solver.IKPositionWeight = Mathf.Lerp(m_headIK.solver.IKPositionWeight, m_fHeadWeight, Time.deltaTime * 3);
-                m_headIK.solver.target.transform.position = m_tJoints[3].transform.position;
+                //if (m_headTerrain != null)
+                //    m_headTerrain.overrideTarget = false;
+                //m_headIK.solver.IKPositionWeight = Mathf.Lerp(m_headIK.solver.IKPositionWeight, m_fHeadWeight, Time.deltaTime * 3);
+                //m_headIK.solver.target.transform.position = m_tJoints[3].transform.position;
             }
         }
         else if (m_goBridge.activeInHierarchy)
@@ -82,6 +82,9 @@ public class BridgeMaker : ActionObject
                 m_aCurrentAnimal.m_aAnimalAnimator.SetBool("TongueBridge", false);
                 m_aCurrentAnimal.m_oCurrentObject = null;
                 m_aCurrentAnimal = null;
+
+                m_headTerrain = null;
+                m_headIK = null;
             }
 
         }
@@ -91,6 +94,14 @@ public class BridgeMaker : ActionObject
             {
                 x.localScale = new Vector3(0, 1, 1);
             }
+        }
+    }
+
+    protected override void OnCanTrigger()
+    {
+        if (input.interact.wasJustPressed)
+        {
+            DoAction();
         }
     }
 
@@ -108,6 +119,9 @@ public class BridgeMaker : ActionObject
             m_aCurrentAnimal.m_aAnimalAnimator.SetBool("TongueBridge", true);
             m_aCurrentAnimal.m_bCanWalkLeft = false;
             m_aCurrentAnimal.m_bCanWalkRight = false;
+
+            //m_headTerrain = m_aCurrentAnimal.m_tCollider.Find("Head Offset").GetComponent<TerrainDetection>();
+            //m_headIK = (AimIK)m_headTerrain.effectedIK;
         }
     }
 
@@ -116,19 +130,5 @@ public class BridgeMaker : ActionObject
         m_goBridge.SetActive(true);
         m_bBridgeMade = true;
         m_fTimer = 0;
-    }
-
-    public override void AnimalEnter(Animal a_animal)
-    {
-        //a_animal.m_eExtras.m_bmTongueBridge = this;
-        //m_headTerrain = a_animal.m_tCollider.Find("Head Offset").GetComponent<TerrainDetection>();
-        //m_headIK = (AimIK)m_headTerrain.effectedIK;
-    }
-
-    protected override void AnimalExit(Animal a_animal)
-    {
-        //a_animal.m_eExtras.m_bmTongueBridge = null;
-        //m_headTerrain = null;
-        //m_headIK = null;
     }
 }

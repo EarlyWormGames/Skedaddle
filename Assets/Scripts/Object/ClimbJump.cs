@@ -37,6 +37,9 @@ public class ClimbJump : ActionObject
 
     public override void AnimalEnter(Animal a_animal)
     {
+        if (!enabled)
+            return;
+
         base.AnimalEnter(a_animal);
 
         if (DoOnTrigger)

@@ -33,4 +33,13 @@ public class AnimationExtras : MonoBehaviour
         var dig = (Dig)GetComponentInParent<Animal>().m_oCurrentObject;
         dig.Finish();
     }
+
+    public void BuildBridge()
+    {
+        var bridge = (BridgeMaker)GetComponentInParent<Animal>().m_oCurrentObject;
+        if (bridge == null)
+            return;
+
+        bridge.BuildBridge();
+    }
 }

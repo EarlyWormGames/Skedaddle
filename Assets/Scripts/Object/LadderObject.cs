@@ -5,6 +5,9 @@ using UnityEngine.Events;
 
 public class LadderObject : ActionObject
 {
+    public bool AllowLowExit { get { return LowExit; } set { LowExit = value; } }
+    public bool AllowHighExit { get { return HighExit; } set { HighExit = value; } }
+
     [Header("Exit Settings")]
     public bool LowExit = true;
     public bool HighExit = true;

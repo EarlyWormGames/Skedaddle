@@ -585,6 +585,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4979853788548884}
   - component: {fileID: 95308573250921650}
+  - component: {fileID: 114629189229332698}
   m_Layer: 0
   m_Name: Breakable Crate
   m_TagString: Untagged
@@ -729,7 +730,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1306184632143616}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.718, y: 4.602, z: 5.779459}
+  m_LocalPosition: {x: -5.6292243, y: 0.919, z: 7.790928}
   m_LocalScale: {x: 0.87, y: 0.87, z: 0.87}
   m_Children:
   - {fileID: 4848396308782400}
@@ -898,7 +899,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1805253883152182}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.117, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4069053734538208}
@@ -2700,8 +2701,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ca9127c82b5f83489929fb24045c482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_goObject: {fileID: 1912843253963302}
-  m_psExplosion: {fileID: 198851750596833314}
+  OnBreak:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114629189229332698}
+        m_MethodName: DestroyShards
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 198851750596833314}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &114629189229332698
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1912843253963302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8383fc46bc521542b066ddaeb38d79d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_fShardForce: 0
 --- !u!114 &114742271703004470
 MonoBehaviour:
@@ -2728,7 +2765,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_aRequiredSize: 0
-  m_aRequiredAnimal: 1
+  m_aRequiredAnimal: 0
   m_aMaximumSize: 0
   m_lAnimalsIn: []
   m_rBody: {fileID: 0}
