@@ -7,7 +7,6 @@ public class ClimbJump : ActionObject
 {
     public bool DoOnTrigger = false;
     public FACING_DIR Direction = FACING_DIR.RIGHT;
-    public FACING_DIR FinishDirection = FACING_DIR.RIGHT;
     public Transform AnchorPoint;
     public ActionObject TransitionTo;
     
@@ -96,10 +95,6 @@ public class ClimbJump : ActionObject
                 m_aCurrentAnimal.m_bCheckGround = true;
                 m_aCurrentAnimal.m_bAutoClimbing = false;
 
-                //Turn the animal
-                if ((m_aCurrentAnimal.m_bTurned && FinishDirection == FACING_DIR.RIGHT) || (!m_aCurrentAnimal.m_bTurned && FinishDirection == FACING_DIR.LEFT))
-                    m_aCurrentAnimal.Turn(FinishDirection);
-
                 //In case the trigger doesn't get called on the TransitionTo object
                 if (TransitionTo != null)
                     TransitionTo.AnimalEnter(m_aCurrentAnimal);
@@ -122,10 +117,6 @@ public class ClimbJump : ActionObject
                 m_aCurrentAnimal.m_bOnGround = true;
                 m_aCurrentAnimal.m_bCheckGround = true;
                 m_aCurrentAnimal.m_bAutoClimbing = false;
-
-                //Turn the animal
-                if ((m_aCurrentAnimal.m_bTurned && FinishDirection == FACING_DIR.RIGHT) || (!m_aCurrentAnimal.m_bTurned && FinishDirection == FACING_DIR.LEFT))
-                    m_aCurrentAnimal.Turn(FinishDirection);
 
                 //In case the trigger doesn't get called on the TransitionTo object
                 if (TransitionTo != null)
