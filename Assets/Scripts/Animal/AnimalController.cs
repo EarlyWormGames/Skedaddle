@@ -10,6 +10,7 @@ public class AnimalController : Singleton<AnimalController>
     //==================================
     //          Public Vars
     //==================================
+    public bool CanSwap = true;
 
     //==================================
     //          Internal Vars
@@ -98,6 +99,9 @@ public class AnimalController : Singleton<AnimalController>
         {
             return;
         }
+
+        if (!CanSwap)
+            return;
 
         if (a_index >= m_lAnimals.Count)
         {
