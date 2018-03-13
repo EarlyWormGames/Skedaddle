@@ -52,15 +52,7 @@ Shader "EW/FadeOutEffect"
 				float4 col = tex2D(_MainTex, i.uv);
 
 				float amount = _Amount * _Mult;
-
-				//remove black areas at lower amounts
-				if (all(col == float4(0, 0, 0, 1)))
-				{
-					col = float4(1, 1, 1, amount);
-				}
-				else
-				{
-					col = float4(1 - amount, 1 - amount, 1 - amount, amount);
+				//z
 				}
 				return col;
 			}

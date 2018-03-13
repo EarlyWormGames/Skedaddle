@@ -184,7 +184,7 @@ public class LorisNightVision : MonoBehaviour
     void AddListner(Action listner)
     {
         m_Fade.EventToCall.AddListener(StartNV);
-    }
+    }   
     void RemoveListner()
     {
         m_Fade.EventToCall.RemoveListener(StartNV);
