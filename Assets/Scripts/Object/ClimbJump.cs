@@ -10,7 +10,8 @@ public class ClimbJump : ActionObject
     public FACING_DIR Direction = FACING_DIR.RIGHT;
     public Transform AnchorPoint;
     public ActionObject TransitionTo;
-    
+    public ButtonAction RequiredKey;
+
     private Vector3 ClimbCurve;
     private float timer;
 
@@ -22,13 +23,21 @@ public class ClimbJump : ActionObject
         m_CanDetach = true;
         m_bBlocksMovement = true;
         m_bBlocksTurn = true;
+
+        if (RequiredKey.action == null)
+        {
+            int defaultIndex = input.upButton.index;
+            RequiredKey.action = input.actionMap.actions[defaultIndex];
+        }
+
+        RequiredKey.Bind(GameManager.Instance.input.handle);
     }
 
     protected override void OnCanTrigger()
     {
         if (!DoOnTrigger)
         {
-            if (input.moveY.value > 0)
+            if (RequiredKey.control.isHeld)
             {
                 DoAction();
             }
