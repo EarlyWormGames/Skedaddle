@@ -6,6 +6,7 @@ using UnityEngine.InputNew;
 public class ClimbJump : ActionObject
 {
     public bool DoOnTrigger = false;
+    public bool BreakSplineConnection = false;
     public FACING_DIR Direction = FACING_DIR.RIGHT;
     public Transform AnchorPoint;
     public ActionObject TransitionTo;
@@ -145,6 +146,9 @@ public class ClimbJump : ActionObject
         m_aCurrentAnimal.m_bCheckGround = false;
         m_aCurrentAnimal.m_bAutoClimbing = true;
         m_aCurrentAnimal.m_rBody.isKinematic = true;
+
+        if (BreakSplineConnection)
+            m_aCurrentAnimal.m_aMovement.StopSpline();
 
         m_lAnimalsIn.Remove(m_aCurrentAnimal);
     }
