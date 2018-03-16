@@ -12,7 +12,7 @@ public class RotatingObject : MovingObject
         Vector3 start = movingForward ? StartRotation : EndRotation;
         Vector3 end = !movingForward ? StartRotation : EndRotation;
 
-        float t = MovingCurve.Evaluate(lerpTimer / Speed);
+        float t = MovingCurve.Evaluate(time / Speed);
 
         if (!UseLocal)
             transform.eulerAngles = Vector3.Lerp(start, end, t);

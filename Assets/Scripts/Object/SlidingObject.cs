@@ -17,7 +17,7 @@ public class SlidingObject : MovingObject
         Vector3 start = movingForward ? PointA.position : PointB.position;
         Vector3 end = !movingForward ? PointA.position : PointB.position;
 
-        float t = MovingCurve.Evaluate(lerpTimer / Speed);
+        float t = MovingCurve.Evaluate(time / Speed);
         return DoMove(Vector3.Lerp(start, end, t));
     }
 

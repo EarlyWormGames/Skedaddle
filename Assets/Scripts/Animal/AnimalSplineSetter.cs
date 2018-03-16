@@ -8,6 +8,7 @@ public class AnimalSplineSetter : MonoBehaviour
     public ANIMAL_NAME RequiredAnimal;
     public SplineMovement Spline;
     public ButtonAction RequiredKey;
+    public bool StopOnExit;
 
     private Animal animalIn;
 
@@ -37,6 +38,9 @@ public class AnimalSplineSetter : MonoBehaviour
         Animal trig = other.GetComponentInParent<Animal>();
         if (trig == null)
             return;
+
+        if (StopOnExit)
+            trig.m_aMovement.StopSpline();
 
         if (trig != animalIn)
             return;
