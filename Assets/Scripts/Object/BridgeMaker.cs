@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 using RootMotion.FinalIK;
 using System.Collections;
 
@@ -11,6 +12,8 @@ public class BridgeMaker : ActionObject
     public Transform m_tMovePoint;
     public GameObject m_aTongue;
     [Range(0, 1)] public float m_fHeadWeight;
+
+    public UnityEvent OnBuildBridge, OnRemoveBridge;
 
 
     //==================================
@@ -111,6 +114,8 @@ public class BridgeMaker : ActionObject
         {
             m_bBridgeMade = false;
             m_fTimer = 0;
+
+            OnRemoveBridge.Invoke();
         }
         else
         {
@@ -119,6 +124,8 @@ public class BridgeMaker : ActionObject
             m_aCurrentAnimal.m_aAnimalAnimator.SetBool("TongueBridge", true);
             m_aCurrentAnimal.m_bCanWalkLeft = false;
             m_aCurrentAnimal.m_bCanWalkRight = false;
+
+            OnBuildBridge.Invoke();
 
             //m_headTerrain = m_aCurrentAnimal.m_tCollider.Find("Head Offset").GetComponent<TerrainDetection>();
             //m_headIK = (AimIK)m_headTerrain.effectedIK;
