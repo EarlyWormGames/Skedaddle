@@ -21,6 +21,9 @@ public class Fading : MonoBehaviour {
 
     private void OnGUI()
     {
+        if (FadeOutTexture == null)
+            return;
+
         // fade in/out in the alpha value using a direction at a speed set by the Fade speed variable - Converted into seconds with Time.deltaTime
         alpha += FadeDir * FadeSpeed * Time.deltaTime;
 

@@ -62,7 +62,7 @@ public class Trampoline : ActionObject
     {
         base.OnUpdate();
 
-        AnimatorController.SetBool("Too Heavy", WrongIn.Count > 0);
+        AnimatorController.SetBool("TooHeavy", WrongIn.Count > 0);
     }
 
     public override void AnimalEnter(Animal a_animal)
