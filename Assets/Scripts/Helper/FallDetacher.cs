@@ -17,7 +17,7 @@ public class FallDetacher : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.Log(DetachTest());
+        DetachTest(true);
     }
 
     /// <summary>

@@ -247,10 +247,10 @@ GameObject:
   - component: {fileID: 9522352}
   - component: {fileID: 5410330}
   - component: {fileID: 6587290}
-  - component: {fileID: 11460730}
   - component: {fileID: 65000011973789544}
   - component: {fileID: 114000012124049742}
   - component: {fileID: 114963238657738538}
+  - component: {fileID: 114752260976536768}
   m_Layer: 11
   m_Name: Chest Animations
   m_TagString: PeanutChest
@@ -424,14 +424,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 194054}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0.000002221265}
-  m_LocalPosition: {x: 2.972, y: 2.304, z: 8.687}
+  m_LocalPosition: {x: 5.759, y: 2.533, z: 6.107758}
   m_LocalScale: {x: 1.1714325, y: 1.1714326, z: 1.1714326}
   m_Children:
   - {fileID: 459424}
   - {fileID: 435048}
-  - {fileID: 4000010255953822}
-  - {fileID: 4000011086527304}
-  - {fileID: 4000010769192332}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -629,48 +626,6 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &11460730
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 194054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e238cd097cf65724a9ff00bd337aa842, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_aRequiredSize: 0
-  m_aRequiredAnimal: 0
-  m_aMaximumSize: 0
-  m_aCurrentAnimal: {fileID: 0}
-  m_rBody: {fileID: 0}
-  m_GazeObject: {fileID: 0}
-  m_aSoundEvents:
-  - m_Event: 13
-    m_eFunction:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 114000011280563100}
-          m_MethodName: Play
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-  m_bResetChest: 0
-  m_goPeanutJoint: {fileID: 132426}
-  m_lPeanutHalo: {fileID: 10808156}
-  m_lPeanutLight: {fileID: 10802748}
-  m_matLock: {fileID: 2100000, guid: a40075d3cbc31c942ab7c7a86fd297f7, type: 2}
-  m_psPlus1: {fileID: 19806556}
-  m_fRotateSpeed: 5.4
 --- !u!137 &13702980
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -1088,7 +1043,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 0
+  randomSeed: -788743345
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -4505,95 +4460,6 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 194054}
   m_IsPrefabParent: 1
---- !u!1 &1000010303933678
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4000010255953822}
-  - component: {fileID: 114000010534834952}
-  - component: {fileID: 114000013130639286}
-  m_Layer: 0
-  m_Name: ChestOpen
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1000011499698066
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4000010769192332}
-  - component: {fileID: 114000011280563100}
-  m_Layer: 11
-  m_Name: SoundChestLand
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1000013796439638
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4000011086527304}
-  - component: {fileID: 114000013803452662}
-  - component: {fileID: 114000011584702046}
-  m_Layer: 0
-  m_Name: ChestRattle
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4000010255953822
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010303933678}
-  m_LocalRotation: {x: 0, y: 0.30855784, z: 0, w: -0.9512056}
-  m_LocalPosition: {x: 0.5710851, y: -0.9658528, z: 2.1275153}
-  m_LocalScale: {x: 0.60139644, y: 0.60139656, z: 0.60139656}
-  m_Children: []
-  m_Father: {fileID: 468160}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4000010769192332
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011499698066}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 468160}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4000011086527304
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013796439638}
-  m_LocalRotation: {x: 0, y: 0.30855784, z: 0, w: -0.9512056}
-  m_LocalPosition: {x: 0.570561, y: -1.1300341, z: 2.1323354}
-  m_LocalScale: {x: 1.0642895, y: 1.0642896, z: 1.0642896}
-  m_Children: []
-  m_Father: {fileID: 468160}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &65000011973789544
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -4606,57 +4472,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.37799093, y: 0.33292252, z: 0.27959898}
   m_Center: {x: 0.002557971, y: 0.15646127, z: 0.010200695}
---- !u!114 &114000010534834952
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010303933678}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: event:/SFX/ChestOpen
-  PlayEvent: 0
-  StopEvent: 0
-  CollisionTag: 
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Params: []
-  PlayVolume: 1
-  Group: 0
---- !u!114 &114000011280563100
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011499698066}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: event:/SFX/OBJECTS/INTERACTIVE/CHEST/LAND
-  PlayEvent: 0
-  StopEvent: 0
-  CollisionTag: 
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Params: []
-  PlayVolume: 1
-  Group: 0
---- !u!114 &114000011584702046
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013796439638}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114000012124049742
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4668,37 +4483,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce4b050ca8ddb5e43b1a21c77de8c821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114000013130639286
+--- !u!114 &114752260976536768
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010303933678}
+  m_GameObject: {fileID: 194054}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: a21756b9b44852c47bd21832a915cbae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114000013803452662
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013796439638}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: event:/SFX/ChestRattle
-  PlayEvent: 0
-  StopEvent: 0
-  CollisionTag: 
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Params: []
-  PlayVolume: 1
-  Group: 0
+  m_aRequiredSize: 0
+  m_aRequiredAnimal: 0
+  m_aMaximumSize: 0
+  m_lAnimalsIn: []
+  m_rBody: {fileID: 0}
+  m_GazeObject: {fileID: 0}
+  m_aSoundEvents: []
+  OnDoAction:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnDetach:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnAnimalEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnAnimalExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnWrongAnimalEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnWrongAnimalExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  Manager: {fileID: 11400000, guid: 06f3f57da96380c4488cbaee0f1153f0, type: 2}
+  m_Animator: {fileID: 9522352}
+  m_RattleTime: 4
+  GUID: 1
 --- !u!114 &114963238657738538
 MonoBehaviour:
   m_ObjectHideFlags: 1
