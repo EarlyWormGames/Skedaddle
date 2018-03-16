@@ -39,6 +39,10 @@ public class LeverAnimated : Lever
         if (!IsPlug)
         {
             float curve = m_aCurrentAnimal.m_aAnimalAnimator.GetFloat("Root_Curve_Y");
+
+            if (m_aCurrentAnimal.m_eName != ANIMAL_NAME.LORIS)
+                curve = IsOn? 1 : 0;
+
             AnimController.SetFloat("Position", curve);
 
             if (IsOn && curve >= 1)
