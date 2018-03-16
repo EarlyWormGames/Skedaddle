@@ -14,6 +14,9 @@ public class ChestEditor : Editor
         base.OnInspectorGUI();
         self = target as Chest;
 
+        if (AssetDatabase.Contains(self.gameObject))
+            return;
+
         if (self.Manager != null)
         {
             if (self.GUID == 0)
