@@ -17,10 +17,15 @@ public class ChestEditor : Editor
 
     static void NewID(Chest chest)
     {
-        chest.Manager.chests.Add(chest);
+        if (!chest.Manager.AddChest(chest))
+            return;
+
         chest.GUID = chest.Manager.chests.Count;
         EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
         EditorSceneManager.SaveScene(EditorSceneManager.GetActiveScene());
+
+        EditorUtility.SetDirty(chest.Manager);
+        AssetDatabase.SaveAssets();
     }
 
     static void CheckGUID(Chest chest)
@@ -30,21 +35,7 @@ public class ChestEditor : Editor
 
         if (chest.Manager != null)
         {
-            if (chest.GUID == 0)
-            {
-                NewID(chest);
-            }
-            else
-            {
-                if (chest.Manager.chests.Count < chest.GUID)
-                {
-                    NewID(chest);
-                }
-                else if (chest.Manager.chests[chest.GUID - 1] != chest)
-                {
-                    NewID(chest);
-                }
-            }
+            NewID(chest);
         }
     }
 
