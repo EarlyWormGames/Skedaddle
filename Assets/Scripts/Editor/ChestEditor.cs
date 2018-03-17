@@ -7,40 +7,50 @@ using UnityEditor.SceneManagement;
 [CustomEditor(typeof(Chest))]
 public class ChestEditor : Editor
 {
-    Chest self;
-
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
-        self = target as Chest;
+        var chest = target as Chest;
 
-        if (AssetDatabase.Contains(self.gameObject))
+        CheckGUID(chest);
+    }
+
+    static void NewID(Chest chest)
+    {
+        chest.Manager.chests.Add(chest);
+        chest.GUID = chest.Manager.chests.Count;
+        EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
+        EditorSceneManager.SaveScene(EditorSceneManager.GetActiveScene());
+    }
+
+    static void CheckGUID(Chest chest)
+    {
+        if (AssetDatabase.Contains(chest.gameObject))
             return;
 
-        if (self.Manager != null)
+        if (chest.Manager != null)
         {
-            if (self.GUID == 0)
+            if (chest.GUID == 0)
             {
-                NewID();
+                NewID(chest);
             }
             else
             {
-                if (self.Manager.chests.Count < self.GUID)
+                if (chest.Manager.chests.Count < chest.GUID)
                 {
-                    NewID();
+                    NewID(chest);
                 }
-                else if (self.Manager.chests[self.GUID - 1] != self)
+                else if (chest.Manager.chests[chest.GUID - 1] != chest)
                 {
-                    NewID();
+                    NewID(chest);
                 }
             }
         }
     }
 
-    void NewID()
+    [DrawGizmo(GizmoType.NonSelected | GizmoType.Selected)]
+    static void DrawGizmoForChest(Chest scr, GizmoType type)
     {
-        self.Manager.chests.Add(self);
-        self.GUID = self.Manager.chests.Count;
-        EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
+        CheckGUID(scr);
     }
 }

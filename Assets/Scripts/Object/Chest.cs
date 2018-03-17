@@ -18,6 +18,12 @@ public class Chest : ActionObject
     protected override void OnStart()
     {
         base.OnStart();
+
+        if (SaveData.ChestUnlocked(GUID))
+        {
+            isOpen = true;
+            m_Animator.SetBool("Start_Opened", true);
+        }
     }
 
     protected override void OnUpdate()
@@ -40,8 +46,11 @@ public class Chest : ActionObject
             return;
 
         base.DoAction();
-        
+
         m_Animator.SetTrigger("Open");
         isOpen = true;
+
+        SaveData.AddPeanut();
+        SaveData.ChestUnlocked(GUID);
     }
 }

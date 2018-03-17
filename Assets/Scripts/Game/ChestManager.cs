@@ -7,16 +7,4 @@ public class ChestManager : ScriptableObject
 {
     [HideInInspector]
     public List<Chest> chests = new List<Chest>();
-    [HideInInspector]
-    public List<int> unlockedChests = new List<int>();
-
-    public void LoadData()
-    {
-
-    }
-
-    public void UnlockChest()
-    {
-
-    }
 }
