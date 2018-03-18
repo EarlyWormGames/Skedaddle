@@ -52,8 +52,6 @@ Shader "EW/FadeOutEffect"
 				float4 col = tex2D(_MainTex, i.uv);
 
 				float amount = _Amount * _Mult;
-				//z
-				}
 				return col;
 			}
 			ENDCG
