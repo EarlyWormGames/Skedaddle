@@ -1,13 +1,21 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 
+[Serializable]
+public class ChestReference
+{
+    [SerializeField]
+    public ExposedReference<Chest> reference;
+}
+
 [CreateAssetMenu(fileName = "Chest Manager", menuName = "Chest Manager")]
 public class ChestManager : ScriptableObject
 {
-    [HideInNormalInspector]
-    public List<ExposedReference<Chest>> chests = new List<ExposedReference<Chest>>();
+    [HideInInspector]
+    public List<ChestReference> chests = new List<ChestReference>();
     [SerializeField]
     public int ChestLength { get { return chests.Count; } }
 
@@ -24,7 +32,7 @@ public class ChestManager : ScriptableObject
             UnityEditor.Undo.RegisterCreatedObjectUndo(resolver, "New resolver");
 #endif
 
-            Add(item, resolver, new PropertyName("Chest GUID: " + chests.Count.ToString()));
+            Add(item, resolver, new PropertyName("Chest GUID: " + DateTime.Now.Ticks));
             i = chests.Count - 1;
             return true;
         }
@@ -32,13 +40,10 @@ public class ChestManager : ScriptableObject
         PropertyName oName;
         if (resolver.HasReference(item, out oName))
         {
-            var exref = new ExposedReference<Chest>();
-            exref.exposedName = new PropertyName(oName);
-
-            int index = chests.IndexOf(exref);
+            int index = IndexOf(oName);
             if (index < 0)
             {
-                Add(item, resolver, exref.exposedName);
+                Add(item, resolver, oName);
                 i = chests.Count - 1;
                 return true;
             }
@@ -49,7 +54,7 @@ public class ChestManager : ScriptableObject
             }
         }
 
-        Add(item, resolver, new PropertyName("Chest GUID: " + chests.Count.ToString()));
+        Add(item, resolver, new PropertyName("Chest GUID: " + DateTime.Now.Ticks));
         i = chests.Count - 1;
         return true;
     }
@@ -64,6 +69,18 @@ public class ChestManager : ScriptableObject
 #endif
 
         resolver.SetReferenceValue(exref.exposedName, item);
-        chests.Add(exref);
+        chests.Add(new ChestReference() { reference = exref });
+    }
+
+    int IndexOf(PropertyName name)
+    {
+        int index = 0;
+        foreach (var item in chests)
+        {
+            if (item.reference.exposedName == name)
+                return index;
+            ++index;
+        }
+        return -1;
     }
 }
