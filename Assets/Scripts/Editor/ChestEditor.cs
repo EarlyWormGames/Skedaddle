@@ -27,8 +27,6 @@ public class ChestEditor : Editor
         Undo.RecordObject(chest, "change GUID");
         chest.GUID = id;
         EditorSceneManager.SaveScene(EditorSceneManager.GetActiveScene());
-
-        EditorUtility.SetDirty(chest.Manager);
     }
 
     static void CheckGUID(Chest chest)

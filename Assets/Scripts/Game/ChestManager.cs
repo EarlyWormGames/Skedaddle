@@ -59,17 +59,22 @@ public class ChestManager : ScriptableObject
         return true;
     }
 
-    void Add(Chest item, Referencer resolver, PropertyName customName)
+    public void Add(Chest item, Referencer resolver, PropertyName customName)
     {
         var exref = new ExposedReference<Chest>();
         exref.exposedName = customName;
 
 #if UNITY_EDITOR
         UnityEditor.Undo.RecordObject(resolver, "Add reference to resolver");
+        UnityEditor.EditorUtility.SetDirty(this);
 #endif
 
         resolver.SetReferenceValue(exref.exposedName, item);
         chests.Add(new ChestReference() { reference = exref });
+
+#if UNITY_EDITOR
+        UnityEditor.AssetDatabase.SaveAssets();
+#endif
     }
 
     int IndexOf(PropertyName name)

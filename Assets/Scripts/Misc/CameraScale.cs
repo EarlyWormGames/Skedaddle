@@ -17,54 +17,56 @@ public class CameraScale : MonoBehaviour
 
     int lastW, lastH;
 
-    private void OnEnable()
-    {
-        cam = GetComponent<Camera>();
-        targ = new RenderTexture(Width, Height, 24, RenderTextureFormat.ARGBFloat);
-        if (Scale)
-        {
-            cam.targetTexture = targ;
-        }
-
-        lastW = Width;
-        lastH = Height;
-    }
-
-    private void OnPreRender()
-    {
-        if (lastH != Height || lastW != Width)
-        {
-            lastW = Width;
-            lastH = Height;
-            if (targ != null)
-                targ.Release();
-            targ = new RenderTexture(Width, Height, 24, RenderTextureFormat.ARGBFloat);
-        }
-
-        if(Scale)
-        {
-            cam.targetTexture = targ;
-            wasScale = true;
-        }
-        else
-        {
-            cam.targetTexture = null;
-            wasScale = false;
-        }
-
-    }
-
-    private void OnPostRender()
-    {
-        if (wasScale)
-        {
-            cam.targetTexture = null;
-            Graphics.Blit(targ, null as RenderTexture);
-        }
-    }
-
-    private void OnDestroy()
-    {
-        targ.Release();
-    }
+    //private void OnEnable()
+    //{
+    //    cam = GetComponent<Camera>();
+    //    targ = new RenderTexture(Width, Height, 24, RenderTextureFormat.ARGBFloat);
+    //    if (Scale)
+    //    {
+    //        cam.targetTexture = targ;
+    //    }
+    //
+    //    lastW = Width;
+    //    lastH = Height;
+    //}
+    //
+    //private void OnPreRender()
+    //{
+    //    if (lastH != Height || lastW != Width)
+    //    {
+    //        lastW = Width;
+    //        lastH = Height;
+    //        if (targ != null)
+    //            targ.Release();
+    //        targ = new RenderTexture(Width, Height, 24, RenderTextureFormat.ARGBFloat);
+    //    }
+    //
+    //    if(Scale)
+    //    {
+    //        cam.targetTexture = targ;
+    //        wasScale = true;
+    //    }
+    //    else
+    //    {
+    //        cam.targetTexture = null;
+    //        wasScale = false;
+    //    }
+    //
+    //}
+    //
+    //private void OnPostRender()
+    //{
+    //    if (wasScale)
+    //    {
+    //        cam.targetTexture = null;
+    //        Graphics.Blit(targ, null as RenderTexture);
+    //    }
+    //}
+    //
+    //private void OnDestroy()
+    //{
+    //    if (!Application.isPlaying)
+    //        return;
+    //    targ.Release();
+    //}
 }
