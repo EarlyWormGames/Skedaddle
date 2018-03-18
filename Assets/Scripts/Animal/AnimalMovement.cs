@@ -120,7 +120,7 @@ public class AnimalMovement : MonoBehaviour
                 currentInput = 1;
                 animal.m_bForceWalk = true;
             }
-            if(FollowSpline.DisableGrounder)
+            if (FollowSpline.DisableGrounder)
                 animal.m_gqGrounder.enabled = false;
 
             currentInput *= FollowSpline.InvertAxis ? -1 : 1;
@@ -210,6 +210,8 @@ public class AnimalMovement : MonoBehaviour
                 moveVelocity = 0;
 
             Vector3 rotation = transform.eulerAngles;
+            rotation.x = 0;
+            rotation.z = 0;
             rotation.y = 90;
             transform.eulerAngles = rotation;
         }

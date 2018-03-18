@@ -35,6 +35,8 @@ public class Loris : Animal
 
     internal bool m_bHorizontalRope;
 
+    internal bool m_bHeldByPoodle = false;
+
     //==================================
     //          Private Vars
     //==================================
@@ -64,7 +66,6 @@ public class Loris : Animal
 
     protected override void OnUpdate()
     {
-
         if (EWEyeTracking.active)
         {
             if (EWEyeTracking.worldPosition.y > transform.position.y + m_fClimbBuffer)
@@ -371,12 +372,29 @@ public class Loris : Animal
 
         m_aAnimalAnimator.SetBool("Controlled", m_bSelected);
 
+        if (m_bSelected)
+            LetGoOfPoodle();
+
         if (m_fSelectionTimer > 0)
         {
             Analytics.CustomEvent(gameObject.name + " deselected", new Dictionary<string, object>
             {
                 { "Time", m_fSelectionTimer }
             });
+        }
+    }
+
+    public void LetGoOfPoodle()
+    {
+        if (m_bHeldByPoodle)
+        {
+            transform.parent = null;
+            var poodle = AnimalController.Instance.GetAnimal(ANIMAL_NAME.POODLE) as Poodle;
+            m_bHeldByPoodle = false;
+            poodle.m_bHoldingLoris = false;
+
+            m_rBody.useGravity = true;
+            m_tCollider.gameObject.layer = LayerMask.NameToLayer("Animal");
         }
     }
 

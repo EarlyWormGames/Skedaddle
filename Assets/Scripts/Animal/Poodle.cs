@@ -18,11 +18,21 @@ public class Poodle : Animal
     public float m_RunBuffer = 2f;
     public float m_fRunSpeedMult = 1.5f;
 
+    [Header("Loris Carry Settings")]
+    [Tooltip("The size of the box check for the Loris")]
+    public Vector3 BoxCastSize = Vector3.one;
+    [Tooltip("How far from the Poodle the cast will occur")]
+    public float BoxCastDistance = 1;
+    public float BoxCastY_Offset;
+    public Transform LorisHolder;
+    public LayerMask LorisCheckLayer;
+
 
     //==================================
     //          Internal Vars
     //==================================
     internal bool m_bRunning = false;
+    internal bool m_bHoldingLoris = false;
 
     //==================================
     //          Private Vars
@@ -32,8 +42,8 @@ public class Poodle : Animal
     private float m_fDampen = 1;
     
     private float m_fIKBackLegsDampen;
+    private bool m_bInteractPressed = false;
 
-    
 
     //Inherited functions
     protected override void OnAwake()
@@ -240,6 +250,47 @@ public class Poodle : Animal
         {
             m_aAnimalAnimator.SetFloat("Push Direction", 0);
         }
+
+        if (m_bSelected && GameManager.Instance.mainMap.interact.wasJustPressed)
+            m_bInteractPressed = true;
+        else if (m_bSelected && m_bInteractPressed)
+        {
+            m_bInteractPressed = false;
+            if (m_oCurrentObject == null)
+            {
+                if (!m_bHoldingLoris)
+                {
+                    Vector3 castPos = transform.position;
+                    castPos += m_tJointRoot.forward * BoxCastDistance;
+                    castPos.y += BoxCastY_Offset;
+
+                    var cols = Physics.OverlapBox(castPos, BoxCastSize, m_tJointRoot.rotation, LorisCheckLayer);
+                    foreach (var item in cols)
+                    {
+                        Loris loris = item.GetComponentInParent<Loris>();
+                        if (loris == null)
+                            continue;
+
+                        if (loris.transform.parent != null)
+                            break;
+
+                        loris.m_tCollider.gameObject.layer = LayerMask.NameToLayer("AnimalNoCollide");
+                        loris.m_rBody.useGravity = false;
+                        loris.m_bHeldByPoodle = true;
+
+                        loris.transform.SetParent(LorisHolder);
+                        loris.transform.localPosition = Vector3.zero;
+
+                        m_bHoldingLoris = true;
+                    }
+                }
+                else
+                {
+                    var loris = AnimalController.Instance.GetAnimal(ANIMAL_NAME.LORIS) as Loris;
+                    loris.LetGoOfPoodle();
+                }
+            }
+        }
     }
 
     public override void OnPushChange()
@@ -307,5 +358,20 @@ public class Poodle : Animal
             speedMinMax[2] = m_fTopSpeed * mult;
 
         return speedMinMax;
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (m_tJointRoot != null)
+        {
+            Vector3 castPos = transform.position;
+            castPos += m_tJointRoot.forward * BoxCastDistance;
+            castPos.y += BoxCastY_Offset;
+
+            Gizmos.matrix = Matrix4x4.TRS(castPos, m_tJointRoot.rotation, BoxCastSize * 2);
+            Gizmos.color = Color.blue;
+
+            Gizmos.DrawWireCube(Vector3.zero, Vector3.one);
+        }
     }
 }
