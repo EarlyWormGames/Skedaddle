@@ -6,48 +6,63 @@ using UnityEngine.Playables;
 [CreateAssetMenu(fileName = "Chest Manager", menuName = "Chest Manager")]
 public class ChestManager : ScriptableObject
 {
-    [HideInInspector]
+    [HideInNormalInspector]
     public List<ExposedReference<Chest>> chests = new List<ExposedReference<Chest>>();
+    [SerializeField]
+    public int ChestLength { get { return chests.Count; } }
 
-    public bool AddChest(Chest item)
+    public bool AddChest(Chest item, out int i)
     {
+        i = -1;
+
         var resolver = FindObjectOfType<Referencer>();
         if (resolver == null)
         {
             resolver = new GameObject("Reference Resolver").AddComponent<Referencer>();
-            Add(item, resolver);
+
+#if UNITY_EDITOR
+            UnityEditor.Undo.RegisterCreatedObjectUndo(resolver, "New resolver");
+#endif
+
+            Add(item, resolver, new PropertyName("Chest GUID: " + chests.Count.ToString()));
+            i = chests.Count - 1;
             return true;
         }
 
-        if (resolver.HasReference(item))
+        PropertyName oName;
+        if (resolver.HasReference(item, out oName))
         {
-            if (item.GUID > chests.Count)
+            var exref = new ExposedReference<Chest>();
+            exref.exposedName = new PropertyName(oName);
+
+            int index = chests.IndexOf(exref);
+            if (index < 0)
             {
-                Add(item, resolver);
+                Add(item, resolver, exref.exposedName);
+                i = chests.Count - 1;
                 return true;
             }
-            bool valid = false;
-            var val = resolver.GetReferenceValue(chests[item.GUID - 1].exposedName, out valid);
-            if (val == null)
+            else
             {
-                Add(item, resolver);
+                i = index;
                 return true;
             }
-            else if (val != item)
-            {
-                Add(item, resolver);
-                return true;
-            }
-            return false;
         }
 
-        Add(item, resolver);
+        Add(item, resolver, new PropertyName("Chest GUID: " + chests.Count.ToString()));
+        i = chests.Count - 1;
         return true;
     }
 
-    void Add(Chest item, Referencer resolver)
+    void Add(Chest item, Referencer resolver, PropertyName customName)
     {
         var exref = new ExposedReference<Chest>();
+        exref.exposedName = customName;
+
+#if UNITY_EDITOR
+        UnityEditor.Undo.RecordObject(resolver, "Add reference to resolver");
+#endif
+
         resolver.SetReferenceValue(exref.exposedName, item);
         chests.Add(exref);
     }

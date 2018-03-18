@@ -17,19 +17,25 @@ public class ChestEditor : Editor
 
     static void NewID(Chest chest)
     {
-        if (!chest.Manager.AddChest(chest))
+        int id = -1;
+        if (!chest.Manager.AddChest(chest, out id))
             return;
 
-        chest.GUID = chest.Manager.chests.Count;
-        EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
+        if (id == chest.GUID)
+            return;
+
+        Undo.RecordObject(chest, "change GUID");
+        chest.GUID = id;
         EditorSceneManager.SaveScene(EditorSceneManager.GetActiveScene());
 
         EditorUtility.SetDirty(chest.Manager);
-        AssetDatabase.SaveAssets();
     }
 
     static void CheckGUID(Chest chest)
     {
+        if (Application.isPlaying)
+            return;
+
         if (AssetDatabase.Contains(chest.gameObject))
             return;
 
@@ -43,5 +49,16 @@ public class ChestEditor : Editor
     static void DrawGizmoForChest(Chest scr, GizmoType type)
     {
         CheckGUID(scr);
+    }
+}
+
+[CustomEditor(typeof(ChestManager))]
+public class ChestManagerEditor : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        base.OnInspectorGUI();
+        EditorGUILayout.PrefixLabel("Count: ");
+        EditorGUILayout.LabelField((target as ChestManager).ChestLength.ToString());
     }
 }

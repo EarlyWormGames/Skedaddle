@@ -19,7 +19,7 @@ public class Chest : ActionObject
     {
         base.OnStart();
 
-        if (SaveData.ChestUnlocked(GUID))
+        if (SaveData.IsChestUnlocked(GUID))
         {
             isOpen = true;
             m_Animator.SetBool("Start_Opened", true);
@@ -51,6 +51,6 @@ public class Chest : ActionObject
         isOpen = true;
 
         SaveData.AddPeanut();
-        SaveData.ChestUnlocked(GUID);
+        SaveData.UnlockChest(GUID);
     }
 }

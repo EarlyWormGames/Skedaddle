@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Referencer : MonoBehaviour, IExposedPropertyTable
 {
+    [SerializeField]
     private List<PropertyName> _names = new List<PropertyName>();
+    [SerializeField]
     private List<Object> _objects = new List<Object>();
 
     public void SetReferenceValue(PropertyName id, Object obj)
@@ -44,9 +46,14 @@ public class Referencer : MonoBehaviour, IExposedPropertyTable
         }
     }
 
-    public bool HasReference(Object obj)
+    public bool HasReference(Object obj, out PropertyName name)
     {
+        name = null;
         int index = _objects.IndexOf(obj);
+
+        if (index > -1)
+            name = _names[index];
+
         return index > -1;
     }
 }

@@ -76,7 +76,7 @@ public class SaveData
     public static int Area() { return instance._UnlockedArea; }
     public static int Level() { return instance._UnlockedLevel; }
     public static int Peanuts() { return instance._Peanuts; }
-    public static bool ChestUnlocked(int i) { return instance._UnlockedChests.Contains(i); }
+    public static bool IsChestUnlocked(int i) { return instance._UnlockedChests.Contains(i); }
     //==============================================================
 
     //==============================================================
@@ -87,6 +87,8 @@ public class SaveData
             instance._UnlockedArea = area;
         if (instance._UnlockedLevel < level)
             instance._UnlockedLevel = level;
+
+        instance.Save();
     }
 
     public static void AddPeanut()
@@ -98,7 +100,10 @@ public class SaveData
     public static void UnlockChest(int i)
     {
         if (!instance._UnlockedChests.Contains(i))
+        {
             instance._UnlockedChests.Add(i);
+            instance.Save();
+        }
     }
     //==============================================================
 
