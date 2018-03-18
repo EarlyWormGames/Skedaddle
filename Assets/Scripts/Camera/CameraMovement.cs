@@ -34,7 +34,7 @@ public class CameraMovement : MonoBehaviour
 
         if (LookAtAnimal && Animal.CurrentAnimal != null)
         {
-            target = Animal.CurrentAnimal.m_tCameraPivot.position;
+            target = Animal.CurrentAnimal.transform.position;
         }
 
         if (!IgnoreAllRotation)

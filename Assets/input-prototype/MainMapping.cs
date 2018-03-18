@@ -21,4 +21,5 @@ public class MainMapping : ActionMapInput {
 	public ButtonInputControl @downButton { get { return (ButtonInputControl)this[13]; } }
 	public ButtonInputControl @leftButton { get { return (ButtonInputControl)this[14]; } }
 	public ButtonInputControl @rightButton { get { return (ButtonInputControl)this[15]; } }
+	public ButtonInputControl @pause { get { return (ButtonInputControl)this[16]; } }
 }

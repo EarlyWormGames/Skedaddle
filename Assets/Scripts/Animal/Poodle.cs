@@ -256,9 +256,10 @@ public class Poodle : Animal
         else if (m_bSelected && m_bInteractPressed)
         {
             m_bInteractPressed = false;
-            if (m_oCurrentObject == null)
+
+            if (!m_bHoldingLoris)
             {
-                if (!m_bHoldingLoris)
+                if (m_oCurrentObject == null)
                 {
                     Vector3 castPos = transform.position;
                     castPos += m_tJointRoot.forward * BoxCastDistance;
@@ -284,11 +285,11 @@ public class Poodle : Animal
                         m_bHoldingLoris = true;
                     }
                 }
-                else
-                {
-                    var loris = AnimalController.Instance.GetAnimal(ANIMAL_NAME.LORIS) as Loris;
-                    loris.LetGoOfPoodle();
-                }
+            }
+            else
+            {
+                var loris = AnimalController.Instance.GetAnimal(ANIMAL_NAME.LORIS) as Loris;
+                loris.LetGoOfPoodle();
             }
         }
     }

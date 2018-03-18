@@ -115,7 +115,7 @@ public class ClimbJump : ActionObject
         }
         else
         {
-            if (m_aCurrentAnimal.m_aAnimalAnimator.GetFloat("Stop_Lerp") > 0 && m_aCurrentAnimal.m_bAutoClimbing)
+            if (/*m_aCurrentAnimal.m_aAnimalAnimator.GetFloat("Stop_Lerp") > 0 &&*/ m_aCurrentAnimal.m_bAutoClimbing)
             {
                 //Stop climbing, reset values
                 m_aCurrentAnimal.m_fFacingDir = FACING_DIR.NONE;

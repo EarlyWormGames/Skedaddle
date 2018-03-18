@@ -55,6 +55,8 @@ public class Anteater : Animal
 
         m_aAnimalAnimator.SetBool("Dig", m_bDigging);
 
+        m_aAnimalAnimator.SetBool("AutoClimb", m_bAutoClimbing);
+
         if (!m_bDigging)
         {
             if (m_fIdleTimer < 0)

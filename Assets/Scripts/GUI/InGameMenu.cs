@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.EventSystems;
@@ -34,6 +35,8 @@ public class InGameMenu : MonoBehaviour
     public CanvasGroup m_PauseButton;
     public CustomSlider m_ContrastSlider;
     public Menutab[] m_Tabs;
+
+    public UnityEvent OnPause;
 
     private bool m_bPaused;
     private float m_fAnimationTime = 0f;
@@ -98,26 +101,26 @@ public class InGameMenu : MonoBehaviour
             }
         }
 
-        //if ((Keybinding.GetKeyDown("Pause") || Controller.GetButtonDown(ControllerButtons.Start)))
-        //{
-        //    if (!m_bPaused)
-        //    {
-        //        Pause();
-        //    }
-        //    else if (m_SelectedTab.m_Name == TabName.MAIN)
-        //    {
-        //        Return();
-        //    }
-        //    else
-        //    {
-        //        SwitchTab(TabName.MAIN);
-        //    }
-        //}
+        if (GameManager.Instance.mainMap.pause.wasJustPressed)
+        {
+            if (!m_bPaused)
+            {
+                Pause();
+            }
+            else if (m_SelectedTab.m_Name == TabName.MAIN)
+            {
+                Return();
+            }
+            else
+            {
+                SwitchTab(TabName.MAIN);
+            }
+        }
     }
 
     public void Menu()
     {
-        EWApplication.LoadLevel("1-0");
+        EWApplication.LoadLevel("2-1");
         Time.timeScale = 1f;
         if (m_Animator != null)
             m_Animator.SetTrigger("Close");
