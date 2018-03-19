@@ -60,7 +60,7 @@ public class LorisNightVision : MonoBehaviour
         PreviousNVStatus = NightVisionOn;
 
         m_Fade = GameManager.Instance.GetComponent<Fading>();
-        AddListner(StartNV);
+        //AddListner(StartNV);
 
         NV_Image = NightVisionObject.GetComponent<RawImage>();
         Temp_NV_Material = Instantiate(NV_Image.material);
@@ -80,7 +80,7 @@ public class LorisNightVision : MonoBehaviour
         DestroyImmediate(Temp_NV_Canvas);
     }
     void Update()
-    {
+        {
         if (PreviousNVStatus != NightVisionOn)
         {
             PreviousNVStatus = NightVisionOn;
