@@ -47,7 +47,7 @@ public class PPObject : ActionObject
             transform.position = IgnoreUtils.Calculate(MaintainPosition, startPosition, transform.position);
             transform.eulerAngles = IgnoreUtils.Calculate(MaintainPosition, startRotation, transform.eulerAngles);
 
-            if (input.interact.wasJustPressed && !waitOne && m_aCurrentAnimal.m_bSelected)
+            if (input.interact.wasJustPressed && !waitOne && m_aCurrentAnimal.m_bSelected && !m_aCurrentAnimal.m_bTurning)
                 Detach();
 
             waitOne = false;
