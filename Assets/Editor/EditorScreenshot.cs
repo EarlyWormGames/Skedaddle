@@ -93,16 +93,16 @@ public class EditorScreenshot : EditorWindow
             settings.cam = Camera.main;
 
         settings.cam = EditorGUILayout.ObjectField("Camera:", settings.cam, typeof(Camera), true) as Camera;
-        settings.useSceneCamera = EditorGUILayout.Toggle("Use Scene Camera: ", settings.useSceneCamera); 
+        settings.useSceneCamera = EditorGUILayout.Toggle("Use Scene Camera: ", settings.useSceneCamera);
+
+        settings.useDefaultCamera = settings.cam == Camera.main;
+        settings.Save();
 
         //TAKE SCREENSHOT
         if (GUILayout.Button("Take Screenshot"))
         {
             DoScreenshot();
         }
-
-        settings.useDefaultCamera = settings.cam == Camera.main;
-        settings.Save();
 
         GUILayout.EndVertical();
     }
@@ -129,6 +129,8 @@ public class EditorScreenshot : EditorWindow
 
         if (settings.useSceneCamera)
             cam = SceneView.lastActiveSceneView.camera;
+        else if (settings.useDefaultCamera)
+            cam = Camera.main;
 
         if (cam == null)
         {
