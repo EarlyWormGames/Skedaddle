@@ -123,7 +123,7 @@ public class Animal : MonoBehaviour
     public float            m_fCameraY = 0;
     public Vector3          m_v3DefaultForward;
     public Vector3          m_v3DeathDistance = new Vector3(0, 0.5f, -2.5f);
-
+    public float            m_fCrushForce = 5;
     public DEATH_TYPE[]     m_NoDeaths;
 
     [Header("Sounds")]
@@ -754,23 +754,28 @@ public class Animal : MonoBehaviour
         m_bUseXTarget = false;
     }
 
-    void OnCollisionEnter(Collision a_col)
+    void OnCollisionEnter(Collision collision)
     {
-        
-        //if (a_col.impulse.magnitude > m_fHitResist && !a_col.collider.gameObject.CompareTag("Ground"))
-        //{
-        //    Kill(DEATH_TYPE.SQUASH);
-        //}
+        Vector3 collisionDir = collision.contacts[0].point - transform.position;
+        float dot = Vector3.Dot(Vector3.up, collisionDir.normalized);
+
+        if (dot > 0)
+        {
+            float impactVelocity = collision.contacts[0].otherCollider.attachedRigidbody.velocity.magnitude * collision.contacts[0].otherCollider.attachedRigidbody.mass;
+            Debug.Log("Crush force: " + impactVelocity.ToString());
+
+            //It's above the animal, check for crush death
+            if (impactVelocity >= m_fCrushForce)
+            {
+                Kill(DEATH_TYPE.SQUASH);
+            }
+        }
     }
 
-    void OnCollisionExit(Collision a_col)
+    void OnCollisionExit(Collision collision)
     {
         m_bWallOnLeft = false;
         m_bWallOnRight = false;
-        //if (a_col.impulse.magnitude > m_fHitResist && !a_col.collider.gameObject.CompareTag("Ground"))
-        //{
-        //    Kill(DEATH_TYPE.SQUASH);
-        //}
     }
 
     public virtual void Kill(DEATH_TYPE a_death)
