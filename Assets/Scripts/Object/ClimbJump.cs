@@ -143,6 +143,9 @@ public class ClimbJump : ActionObject
         if (m_aCurrentAnimal != null)
             return;
 
+        if (!TryClimb(Animal.CurrentAnimal))
+            return;
+
         if (!TryDetach())
             return;
 
@@ -160,6 +163,11 @@ public class ClimbJump : ActionObject
             m_aCurrentAnimal.m_aMovement.StopSpline();
 
         m_lAnimalsIn.Remove(m_aCurrentAnimal);
+    }
+
+    protected virtual bool TryClimb(Animal animal)
+    {
+        return true;
     }
 
     public static float GetMultiplier(FACING_DIR direction)
