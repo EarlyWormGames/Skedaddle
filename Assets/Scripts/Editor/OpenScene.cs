@@ -6,7 +6,7 @@ using UnityEditor.SceneManagement;
 
 public class OpenScene : EditorWindow
 {
-    Vector2 scrollPos;
+    static Vector2 scrollPos;
     float buttonHeight = 80;
     string search = "";
     bool firstTime = true;
@@ -21,7 +21,7 @@ public class OpenScene : EditorWindow
     private void OnGUI()
     {       
         GUI.SetNextControlName("textarea");
-        search = GUI.TextField(new Rect(5, 5, position.width - 10, 20), search);
+        search = EditorGUI.TextField(new Rect(5, 5, position.width - 10, 20), search);
 
         if (firstTime)
         {

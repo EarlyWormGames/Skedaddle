@@ -10,8 +10,15 @@ using System.Runtime.Serialization;
 
 public class EditorScreenshot : EditorWindow
 {
-    [MenuItem("Tools/Screenshot")]
+    [MenuItem("Tools/Screenshot %#&s")]
     public static void OpenWindow()
+    {
+        var window = GetWindow<EditorScreenshot>();
+        window.titleContent = new GUIContent("Screenshot");
+    }
+
+    [MenuItem("Tools/Screenshot %&s")]
+    public static void TakeScreenshot()
     {
         var window = GetWindow<EditorScreenshot>();
         window.titleContent = new GUIContent("Screenshot");
@@ -87,11 +94,17 @@ public class EditorScreenshot : EditorWindow
             settings.cam = Camera.main;
 
         settings.cam = EditorGUILayout.ObjectField("Camera:", settings.cam, typeof(Camera), true) as Camera;
+        settings.useSceneCamera = EditorGUILayout.Toggle("Use Scene Camera: ", settings.useSceneCamera); 
 
         //TAKE SCREENSHOT
         if (GUILayout.Button("Take Screenshot"))
         {
-            if (settings.cam == null)
+            Camera cam = settings.cam;
+
+            if (settings.useSceneCamera)
+                cam = SceneView.lastActiveSceneView.camera;
+
+            if (cam == null)
             {
                 Debug.LogWarning("Screenshot camera was null!");
                 return;
@@ -101,20 +114,20 @@ public class EditorScreenshot : EditorWindow
             RenderTexture rt = new RenderTexture(settings.width, settings.height, 24, RenderTextureFormat.ARGB32);
 
             //Store the old texture
-            var oldTex = settings.cam.targetTexture;
-            settings.cam.targetTexture = rt;
+            var oldTex = cam.targetTexture;
+            cam.targetTexture = rt;
 
             try
             {
-                settings.cam.Render();
+                cam.Render();
             }
             catch
             {
                 Debug.LogError("Screenshot camera render failed!");
-                settings.cam.targetTexture = oldTex;
+                cam.targetTexture = oldTex;
                 return;
             }
-            settings.cam.targetTexture = oldTex;
+            cam.targetTexture = oldTex;
 
             //Store old render texture
             var oldrt = RenderTexture.active;
@@ -169,6 +182,7 @@ public class ScreenshotSettings
     [NonSerialized]
     public Camera cam;
     public bool useDefaultCamera;
+    public bool useSceneCamera;
 
     public static ScreenshotSettings Load(out bool wasDefault)
     {
