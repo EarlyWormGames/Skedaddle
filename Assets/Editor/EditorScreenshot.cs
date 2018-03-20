@@ -57,10 +57,16 @@ public class EditorScreenshot : EditorWindow
 
         if (GUILayout.Button("Reset"))
         {
-            if (settings.cam != null)
-            {
-                settings.width = settings.cam.pixelWidth;
-                settings.height = settings.cam.pixelHeight;
+            Camera cam = settings.cam;
+            if (settings.useSceneCamera)
+                cam = SceneView.lastActiveSceneView.camera;
+            else if (settings.useDefaultCamera)
+                cam = Camera.main;
+
+            if (cam != null)
+            {             
+                settings.width = cam.pixelWidth;
+                settings.height = cam.pixelHeight;
             }
         }
         var screenRect = new Rect(settings.rectPos, settings.rectSize);
@@ -77,6 +83,16 @@ public class EditorScreenshot : EditorWindow
 
         GUILayout.Space(5);
 
+        if (settings.cam == null && settings.useDefaultCamera)
+            settings.cam = Camera.main;
+
+        settings.cam = EditorGUILayout.ObjectField("Camera:", settings.cam, typeof(Camera), true) as Camera;
+        settings.useSceneCamera = EditorGUILayout.Toggle("Use Scene Camera: ", settings.useSceneCamera);
+
+        settings.useDefaultCamera = settings.cam == Camera.main;
+
+        GUILayout.Space(5);
+
         //SELECT FOLDER
         EditorGUILayout.LabelField("Folder settings", EditorStyles.boldLabel);
         GUILayout.BeginHorizontal();
@@ -88,14 +104,7 @@ public class EditorScreenshot : EditorWindow
         GUILayout.EndHorizontal();
 
         GUILayout.Space(5);
-
-        if (settings.cam == null && settings.useDefaultCamera)
-            settings.cam = Camera.main;
-
-        settings.cam = EditorGUILayout.ObjectField("Camera:", settings.cam, typeof(Camera), true) as Camera;
-        settings.useSceneCamera = EditorGUILayout.Toggle("Use Scene Camera: ", settings.useSceneCamera);
-
-        settings.useDefaultCamera = settings.cam == Camera.main;
+ 
         settings.Save();
 
         //TAKE SCREENSHOT
