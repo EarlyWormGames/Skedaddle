@@ -759,7 +759,7 @@ public class Animal : MonoBehaviour
         Vector3 collisionDir = collision.contacts[0].point - transform.position;
         float dot = Vector3.Dot(Vector3.up, collisionDir.normalized);
 
-        if (dot > 0)
+        if (dot > 0 && collision.contacts[0].otherCollider.attachedRigidbody != null)
         {
             float impactVelocity = collision.contacts[0].otherCollider.attachedRigidbody.velocity.magnitude * collision.contacts[0].otherCollider.attachedRigidbody.mass;
             Debug.Log("Crush force: " + impactVelocity.ToString());
