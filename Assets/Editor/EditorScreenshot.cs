@@ -10,18 +10,17 @@ using System.Runtime.Serialization;
 
 public class EditorScreenshot : EditorWindow
 {
-    [MenuItem("Tools/Screenshot %#&s")]
+    [MenuItem("Tools/Screenshot/Screenshot Settings %#&s")]
     public static void OpenWindow()
     {
         var window = GetWindow<EditorScreenshot>();
         window.titleContent = new GUIContent("Screenshot");
     }
 
-    [MenuItem("Tools/Screenshot %&s")]
+    [MenuItem("Tools/Screenshot/Take Screenshot %&s")]
     public static void TakeScreenshot()
     {
-        var window = GetWindow<EditorScreenshot>();
-        window.titleContent = new GUIContent("Screenshot");
+        DoScreenshot();
     }
 
     private ScreenshotSettings settings;
@@ -99,77 +98,98 @@ public class EditorScreenshot : EditorWindow
         //TAKE SCREENSHOT
         if (GUILayout.Button("Take Screenshot"))
         {
-            Camera cam = settings.cam;
-
-            if (settings.useSceneCamera)
-                cam = SceneView.lastActiveSceneView.camera;
-
-            if (cam == null)
-            {
-                Debug.LogWarning("Screenshot camera was null!");
-                return;
-            }
-
-            Texture2D tex = new Texture2D(settings.width, settings.height, TextureFormat.ARGB32, false);
-            RenderTexture rt = new RenderTexture(settings.width, settings.height, 24, RenderTextureFormat.ARGB32);
-
-            //Store the old texture
-            var oldTex = cam.targetTexture;
-            cam.targetTexture = rt;
-
-            try
-            {
-                cam.Render();
-            }
-            catch
-            {
-                Debug.LogError("Screenshot camera render failed!");
-                cam.targetTexture = oldTex;
-                return;
-            }
-            cam.targetTexture = oldTex;
-
-            //Store old render texture
-            var oldrt = RenderTexture.active;
-            RenderTexture.active = rt;
-            try
-            {
-                var rect = new Rect(settings.rectPos, settings.rectSize);
-                rect.width = rect.width * settings.width;
-                rect.height = rect.height * settings.height;
-
-                tex.ReadPixels(rect, 0, 0);
-                tex.Apply();
-            }
-            catch
-            {
-                Debug.LogError("Failed to read pixels from screen!");
-                RenderTexture.active = oldrt;
-                return;
-            }
-            RenderTexture.active = oldrt;
-
-            try
-            {
-                byte[] bytes = tex.EncodeToPNG();
-                DestroyImmediate(tex);
-                DestroyImmediate(rt);
-
-                File.WriteAllBytes(settings.folder + "/Screenshot_" + DateTime.Now.Ticks + ".png", bytes);
-            }
-            catch
-            {
-                Debug.LogError("Failed to write screenshot to file!");
-                return;
-            }
-
-            AssetDatabase.Refresh();
+            DoScreenshot();
         }
 
         settings.useDefaultCamera = settings.cam == Camera.main;
         settings.Save();
 
         GUILayout.EndVertical();
+    }
+
+    public static void DoScreenshot()
+    {
+        ScreenshotSettings settings = null;
+        bool useDefault = true;
+        settings = ScreenshotSettings.Load(out useDefault);
+
+        if (useDefault)
+        {
+            settings.cam = Camera.main;
+            if (settings.cam != null)
+            {
+                settings.width = settings.cam.pixelWidth;
+                settings.height = settings.cam.pixelHeight;
+            }
+            settings.rectPos = Vector2.zero;
+            settings.rectSize = Vector2.one;
+        }
+
+        Camera cam = settings.cam;
+
+        if (settings.useSceneCamera)
+            cam = SceneView.lastActiveSceneView.camera;
+
+        if (cam == null)
+        {
+            Debug.LogWarning("Screenshot camera was null!");
+            return;
+        }
+
+        Texture2D tex = new Texture2D(settings.width, settings.height, TextureFormat.ARGB32, false);
+        RenderTexture rt = new RenderTexture(settings.width, settings.height, 24, RenderTextureFormat.ARGB32);
+
+        //Store the old texture
+        var oldTex = cam.targetTexture;
+        cam.targetTexture = rt;
+
+        try
+        {
+            cam.Render();
+        }
+        catch
+        {
+            Debug.LogError("Screenshot camera render failed!");
+            cam.targetTexture = oldTex;
+            return;
+        }
+        cam.targetTexture = oldTex;
+
+        //Store old render texture
+        var oldrt = RenderTexture.active;
+        RenderTexture.active = rt;
+        try
+        {
+            var rect = new Rect(settings.rectPos, settings.rectSize);
+            rect.width = rect.width * settings.width;
+            rect.height = rect.height * settings.height;
+
+            tex.ReadPixels(rect, 0, 0);
+            tex.Apply();
+        }
+        catch
+        {
+            Debug.LogError("Failed to read pixels from screen!");
+            RenderTexture.active = oldrt;
+            return;
+        }
+        RenderTexture.active = oldrt;
+
+        try
+        {
+            byte[] bytes = tex.EncodeToPNG();
+            DestroyImmediate(tex);
+            DestroyImmediate(rt);
+
+            File.WriteAllBytes(settings.folder + "/Screenshot_" + DateTime.Now.Ticks + ".png", bytes);
+        }
+        catch
+        {
+            Debug.LogError("Failed to write screenshot to file!");
+            return;
+        }
+
+        AssetDatabase.Refresh();
     }
 }
 
