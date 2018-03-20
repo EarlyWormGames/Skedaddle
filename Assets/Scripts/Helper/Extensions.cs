@@ -220,3 +220,19 @@ public static class ReflectionUtils
 
     }
 }
+
+public static class VectorExtensions
+{
+    /// <summary>
+    /// Returns the vector with absolute x,y,z values
+    /// </summary>
+    /// <param name="vec"></param>
+    /// <returns></returns>
+    public static Vector3 Abs(this Vector3 vec)
+    {
+        vec.x = Mathf.Abs(vec.x);
+        vec.y = Mathf.Abs(vec.y);
+        vec.z = Mathf.Abs(vec.z);
+        return vec;
+    }
+}

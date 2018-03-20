@@ -15,6 +15,10 @@ public class Killer : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         var animal = other.attachedRigidbody.GetComponent<Animal>();
+
+        if (animal == null)
+            return;
+
         if (!animal.Alive)
             return;
 
