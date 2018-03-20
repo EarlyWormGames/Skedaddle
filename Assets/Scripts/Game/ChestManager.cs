@@ -32,7 +32,7 @@ public class ChestManager : ScriptableObject
             UnityEditor.Undo.RegisterCreatedObjectUndo(resolver, "New resolver");
 #endif
 
-            Add(item, resolver, new PropertyName("Chest GUID: " + DateTime.Now.Ticks));
+            Add(item, resolver, new PropertyName("Chest GUID: " + DateTime.UtcNow.Ticks));
             i = chests.Count - 1;
             return true;
         }
@@ -54,7 +54,7 @@ public class ChestManager : ScriptableObject
             }
         }
 
-        Add(item, resolver, new PropertyName("Chest GUID: " + DateTime.Now.Ticks));
+        Add(item, resolver, new PropertyName("Chest GUID: " + DateTime.UtcNow.Ticks));
         i = chests.Count - 1;
         return true;
     }
