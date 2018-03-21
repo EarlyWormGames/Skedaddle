@@ -10,7 +10,7 @@ public class AnimalSplineSetter : MonoBehaviour
     public ButtonAction RequiredKey;
     public bool StopOnExit;
 
-    private Animal animalIn;
+    private List<Animal> animalsIn = new List<Animal>();
 
     private void OnTriggerEnter(Collider other)
     {
@@ -27,25 +27,25 @@ public class AnimalSplineSetter : MonoBehaviour
         if (RequiredKey.control == null)
             trig.GetComponent<AnimalMovement>().SetSpline(Spline);
         else
-            animalIn = trig;
+            animalsIn.Add(trig);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (animalIn == null)
+        if (animalsIn == null)
             return;
 
         Animal trig = other.GetComponentInParent<Animal>();
         if (trig == null)
             return;
 
+        if (!animalsIn.Contains(trig))
+            return;
+
         if (StopOnExit)
             trig.m_aMovement.StopSpline();
 
-        if (trig != animalIn)
-            return;
-
-        animalIn = null;
+        animalsIn.Remove(trig);
     }
 
     private void Start()
@@ -56,13 +56,16 @@ public class AnimalSplineSetter : MonoBehaviour
 
     private void Update()
     {
-        if (animalIn != null)
+        if (animalsIn != null)
         {
-            if (animalIn.m_aMovement.FollowSpline != Spline)
+            foreach (var animal in animalsIn)
             {
-                if (RequiredKey.control.isHeld)
+                if (animal.m_aMovement.FollowSpline != Spline)
                 {
-                    animalIn.GetComponent<AnimalMovement>().SetSpline(Spline);
+                    if (RequiredKey.control.isHeld)
+                    {
+                        animal.m_aMovement.SetSpline(Spline);
+                    }
                 }
             }
         }
