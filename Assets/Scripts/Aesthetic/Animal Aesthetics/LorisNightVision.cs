@@ -1,9 +1,15 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System;
+
+
+/// <summary>  Night Vision (NV)
+/// Will use the default settings from the NV_Pannle on the NV_Canvas Prefab ( ( ( IF ) ) ) the NV_Canvas doesn't exsist in the scene
+/// 
+/// Change the Luminocity setting on the NV_Pannle material to increase the visibility of the Night Vision
+/// </summary>
 [ExecuteInEditMode]
 [AddComponentMenu("Image Effects/Night Vision")]
-
 public class LorisNightVision : MonoBehaviour
 {
     public enum EStatus
@@ -12,7 +18,7 @@ public class LorisNightVision : MonoBehaviour
         eFADEOUT,
         eIDLE,
     };
-
+   
     public GameObject NVCanvas;
     private GameObject Temp_NV_Canvas;
 
