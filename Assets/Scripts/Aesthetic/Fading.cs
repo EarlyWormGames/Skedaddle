@@ -75,23 +75,17 @@ public class Fading : MonoBehaviour {
         m_bFinishedFade = false;
         //set the fadeDir to the direciton paremeter making the scene fade in if -1 and out if 1
         FadeDir = direction;
+        alpha = direction * -1; // make the alpha the opposite of whatever the direction is
         StartCoroutine(BeginTransition());
         return (FadeSpeed);
     }
 
-    public float BeginFadeCut(int direction)
+    public float BeginFadeInOut()
     {
         m_bFinishedFade = false;
-        FadeDir = direction;
-        StartCoroutine(BeginTransitionCut(direction));
+        FadeDir = 1;
+        StartCoroutine(BeginTransitionCut(FadeDir));
         return (FadeSpeed);
-    }
-
-    // is called when a level is loaded
-    private void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
-    {
-        // Fade out on a level Loaded
-        FadeOut();
     }
 
     IEnumerator BeginTransition(string TargetScene)
@@ -121,7 +115,6 @@ public class Fading : MonoBehaviour {
         m_bFinishedFade = true;
         EventToCall.Invoke();
 
-       
         FadeDir = direction * -1; // Invert current fade dir;
     }
 
@@ -129,6 +122,12 @@ public class Fading : MonoBehaviour {
     {
         alpha = 1;
         FadeDir = -1;
+    }
+
+    public void FadeIn()
+    {
+        alpha = 0;
+        FadeDir = 1;
     }
 
    

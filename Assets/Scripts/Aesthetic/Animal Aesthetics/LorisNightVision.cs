@@ -31,6 +31,9 @@ public class LorisNightVision : MonoBehaviour
     private Fading m_Fade;
     private bool m_bNVStatusJustChanged = false;
 
+    private bool m_bBeginGreenFadeIn = false;
+    private bool m_bBeginGreenFadeOut = false;
+
     private float NV_ActiveSensitivity = 0;
     private float NV_SensitivityMin = 2;
     private float NV_SensitivityMax = 4;
@@ -60,10 +63,10 @@ public class LorisNightVision : MonoBehaviour
         PreviousNVStatus = NightVisionOn;
 
         m_Fade = GameManager.Instance.GetComponent<Fading>();
-        //AddListner(StartNV);
 
         NV_Image = NightVisionObject.GetComponent<RawImage>();
         Temp_NV_Material = Instantiate(NV_Image.material);
+        Temp_NV_Material.name = "TEMP NV MATERIAL";
         NV_Image.material = Temp_NV_Material;
 
         NightVisionObject.SetActive(false);
@@ -87,9 +90,17 @@ public class LorisNightVision : MonoBehaviour
             m_bNVStatusJustChanged = true;
 
             if (NightVisionOn)
-                m_Fade.BeginFadeCut(1);
+            {
+                m_Fade.BeginFadeInOut();
+                RemoveListner(EndNV);
+                AddListner(StartNV);
+            }
             else
-                m_Fade.BeginFadeCut(-1);
+            {
+                m_Fade.BeginFadeInOut();
+                RemoveListner(StartNV);
+                AddListner(EndNV);
+            }
         }
 
         if (m_bBeginNV)
@@ -109,7 +120,6 @@ public class LorisNightVision : MonoBehaviour
                     if (m_ePreviousStatus == EStatus.eFADEOUT)
                     {
                         NightVisionObject.SetActive(false);
-                       // EndNV();
                     }
                     m_ePreviousStatus = m_eCurrentStatus;
                     m_eCurrentStatus = EStatus.eFADEOUT;
@@ -128,18 +138,20 @@ public class LorisNightVision : MonoBehaviour
                     break;
 
                 case EStatus.eFADEIN:
-
-                    NV_ActiveSensitivity = NV_ActiveSensitivity - Time.deltaTime * TranssionSpeed;
-
-                    if (NV_ActiveSensitivity <= NV_SensitivityMin)
+                    if (m_bBeginGreenFadeIn)
                     {
-                        m_ePreviousStatus = m_eCurrentStatus;
-                        m_eCurrentStatus = EStatus.eIDLE;
-                    }
+                        NV_ActiveSensitivity = NV_ActiveSensitivity - Time.deltaTime * TranssionSpeed;
 
+                        if (NV_ActiveSensitivity <= NV_SensitivityMin)
+                        {
+                            m_ePreviousStatus = m_eCurrentStatus;
+                            m_eCurrentStatus = EStatus.eIDLE;
+                        }
+                    }
                     break;
 
                 case EStatus.eFADEOUT:
+                     
                     NV_ActiveSensitivity = NV_ActiveSensitivity + Time.deltaTime * TranssionSpeed;
 
                     if (NV_ActiveSensitivity >= NV_SensitivityMax)
@@ -173,20 +185,21 @@ public class LorisNightVision : MonoBehaviour
     public void StartNV()
     {
         m_bBeginNV = true;
+        NightVisionObject.SetActive(true);
     }
 
     public void EndNV()
     {
         m_bBeginNV = false;
-        m_Fade.FadeOut();
+        NightVisionObject.SetActive(false);
     }
 
-    void AddListner(Action listner)
+    void AddListner(UnityEngine.Events.UnityAction listner)
     {
-        m_Fade.EventToCall.AddListener(StartNV);
+        m_Fade.EventToCall.AddListener(listner);
     }   
-    void RemoveListner()
+    void RemoveListner(UnityEngine.Events.UnityAction listner)
     {
-        m_Fade.EventToCall.RemoveListener(StartNV);
+        m_Fade.EventToCall.RemoveListener(listner);
     }
 }
