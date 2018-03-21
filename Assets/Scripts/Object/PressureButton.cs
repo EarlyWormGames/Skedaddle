@@ -17,6 +17,9 @@ public class PressureButton : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.isTrigger)
+            return;
+
         var rig = other.GetComponentInParent<Rigidbody>();
 
         if (!inBodies.Contains(rig))
