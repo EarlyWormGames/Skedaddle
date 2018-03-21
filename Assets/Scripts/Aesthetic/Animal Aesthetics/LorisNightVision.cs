@@ -29,10 +29,6 @@ public class LorisNightVision : MonoBehaviour
     private bool m_bBeginNV = false;
 
     private Fading m_Fade;
-    private bool m_bNVStatusJustChanged = false;
-
-    private bool m_bBeginGreenFadeIn = false;
-    private bool m_bBeginGreenFadeOut = false;
 
     private float NV_ActiveSensitivity = 0;
     private float NV_SensitivityMin = 2;
@@ -87,7 +83,6 @@ public class LorisNightVision : MonoBehaviour
         if (PreviousNVStatus != NightVisionOn)
         {
             PreviousNVStatus = NightVisionOn;
-            m_bNVStatusJustChanged = true;
 
             if (NightVisionOn)
             {
@@ -100,6 +95,7 @@ public class LorisNightVision : MonoBehaviour
                 m_Fade.BeginFadeInOut();
                 RemoveListner(StartNV);
                 AddListner(EndNV);
+                
             }
         }
 
@@ -138,27 +134,30 @@ public class LorisNightVision : MonoBehaviour
                     break;
 
                 case EStatus.eFADEIN:
-                    if (m_bBeginGreenFadeIn)
-                    {
-                        NV_ActiveSensitivity = NV_ActiveSensitivity - Time.deltaTime * TranssionSpeed;
 
-                        if (NV_ActiveSensitivity <= NV_SensitivityMin)
-                        {
-                            m_ePreviousStatus = m_eCurrentStatus;
-                            m_eCurrentStatus = EStatus.eIDLE;
-                        }
-                    }
+                    //Honestly I just wanna die, why'd I write all this bullshit
+
+                    //if (m_bBeginGreenFadeIn)
+                    //{
+                    //    NV_ActiveSensitivity = NV_ActiveSensitivity - Time.deltaTime * TranssionSpeed;
+
+                    //    if (NV_ActiveSensitivity <= NV_SensitivityMin)
+                    //    {
+                    //        m_ePreviousStatus = m_eCurrentStatus;
+                    //        m_eCurrentStatus = EStatus.eIDLE;
+                    //    }
+                    //}
                     break;
 
                 case EStatus.eFADEOUT:
                      
-                    NV_ActiveSensitivity = NV_ActiveSensitivity + Time.deltaTime * TranssionSpeed;
+                    //NV_ActiveSensitivity = NV_ActiveSensitivity + Time.deltaTime * TranssionSpeed;
 
-                    if (NV_ActiveSensitivity >= NV_SensitivityMax)
-                    {
-                        m_ePreviousStatus = m_eCurrentStatus;
-                        m_eCurrentStatus = EStatus.eIDLE;
-                    }
+                    //if (NV_ActiveSensitivity >= NV_SensitivityMax)
+                    //{
+                    //    m_ePreviousStatus = m_eCurrentStatus;
+                    //    m_eCurrentStatus = EStatus.eIDLE;
+                    //}
                     break;
 
                 default:
@@ -177,9 +176,6 @@ public class LorisNightVision : MonoBehaviour
         {
             Temp_NV_Material.SetFloat("_LightSensitivityMultiplier", NV_ActiveSensitivity);
         }
-
-
-        m_bNVStatusJustChanged = false;
     }
 
     public void StartNV()
