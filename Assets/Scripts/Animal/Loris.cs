@@ -8,10 +8,14 @@ public class Loris : Animal
     //==================================
     //          Public Vars
     //==================================
+    [Header("Climb Settings")]
     public float m_fClimbSpeed = 1f;
     public float m_fClimbTopSpeed = 1.5f;
     public float m_fClimbStopSpeed = 0.2f;
+    public Vector3 m_fShimmyBoxSize = new Vector3(0.1f, 0.1f, 0.1f);
+    public float m_fShimmyDistance = 0.6f;
 
+    [Header("Loris Misc")]
     public Light[] m_lVisionLight = new Light[0];
     public float m_fOnIntensity = 1.68f;
     public float m_fLightSpeed = 1f;

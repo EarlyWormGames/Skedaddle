@@ -66,8 +66,8 @@ public class LadderObject : ActionObject
         if (loris == null)
             return;
 
-        LadderObject shimmyLeft = GetShimmyObject(loris.transform.position, Vector3.left, 1, Vector3.one * 0.5f, Color.red);
-        LadderObject shimmyRight = GetShimmyObject(loris.transform.position, Vector3.right, 1, Vector3.one * 0.5f, Color.blue);
+        LadderObject shimmyLeft = GetShimmyObject(loris.transform.position, Vector3.left, loris.m_fShimmyDistance, loris.m_fShimmyBoxSize, Color.red);
+        LadderObject shimmyRight = GetShimmyObject(loris.transform.position, Vector3.right, loris.m_fShimmyDistance, loris.m_fShimmyBoxSize, Color.blue);
 
         TryShimmyLeft = false;
         TryShimmyRight = false;
