@@ -29,6 +29,7 @@ public class SplineMovement : MonoBehaviour
     public int NumPoints = 30;
     [Tooltip("Will regenerate keypoints if set to true")]
     public bool RegeneratePoints = false;
+    public bool ConstantRegenerate = false;
     public bool HighExit = true;
     public bool LowExit = true;
     public AxisAction MoveAxisKey;
@@ -57,7 +58,7 @@ public class SplineMovement : MonoBehaviour
 
     private void Update()
     {
-        if (RegeneratePoints)
+        if (RegeneratePoints || ConstantRegenerate)
         {
             GeneratePoints();
             RegeneratePoints = false;
