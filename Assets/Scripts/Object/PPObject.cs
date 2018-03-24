@@ -124,4 +124,9 @@ public class PPObject : ActionObject
             m_aCurrentAnimal = null;
         }
     }
+
+    protected override void AnimalExit(Animal a_animal)
+    {
+        base.AnimalExit(a_animal);
+    }
 }

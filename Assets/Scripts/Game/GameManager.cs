@@ -35,6 +35,8 @@ public class GameManager : Singleton<GameManager>
 
         SceneManager.sceneLoaded += SceneLoaded;
         SceneLoaded(SceneManager.GetActiveScene(), LoadSceneMode.Single);
+
+        Application.targetFrameRate = 120;
     }
 
     void SceneLoaded(Scene a_scene, LoadSceneMode a_mode)
