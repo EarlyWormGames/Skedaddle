@@ -118,7 +118,10 @@ public class Trampoline : ActionObject
         foreach (var item in AnimalSplines)
         {
             if (item.AnimalName == m_aCurrentAnimal.m_eName)
+            {
                 spline = item.Spline;
+                break;
+            }
         }
 
         m_aCurrentAnimal.m_oCurrentObject = this;
