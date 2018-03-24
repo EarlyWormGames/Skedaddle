@@ -186,7 +186,7 @@ GameObject:
   - component: {fileID: 4831257635878010}
   - component: {fileID: 114114089273110834}
   m_Layer: 0
-  m_Name: SplineRight
+  m_Name: PoodleSpline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -263,6 +263,22 @@ GameObject:
   - component: {fileID: 4980106007795306}
   m_Layer: 0
   m_Name: ChestDir
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1350037751567782
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4380602005688732}
+  - component: {fileID: 114528131169131390}
+  m_Layer: 0
+  m_Name: SplineRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -746,6 +762,7 @@ Transform:
   - {fileID: 4321136296964256}
   - {fileID: 4743189174672456}
   - {fileID: 4328268892327176}
+  - {fileID: 4380602005688732}
   - {fileID: 4831257635878010}
   m_Father: {fileID: 4289147145161390}
   m_RootOrder: 3
@@ -818,6 +835,19 @@ Transform:
   m_Father: {fileID: 4288510722040190}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 179.99998, z: 0}
+--- !u!4 &4380602005688732
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1350037751567782}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.011, y: 0.075, z: 0}
+  m_LocalScale: {x: 0.9999956, y: 0.9999956, z: 0.9999956}
+  m_Children: []
+  m_Father: {fileID: 4288510722040190}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4382542287455224
 Transform:
   m_ObjectHideFlags: 1
@@ -1068,12 +1098,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1280816657263620}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.011, y: 0.075, z: 0}
-  m_LocalScale: {x: 0.9999956, y: 0.9999956, z: 0.9999956}
+  m_LocalRotation: {x: -0, y: -0.00000005960463, z: -0.000000014901158, w: 1}
+  m_LocalPosition: {x: -1.0110003, y: 0.07499986, z: 0.00000010743594}
+  m_LocalScale: {x: 0.9999956, y: 0.9999956, z: 0.9999957}
   m_Children: []
   m_Father: {fileID: 4288510722040190}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4847096117658710
 Transform:
@@ -1445,7 +1475,10 @@ MonoBehaviour:
   LaunchOnTrigger: 1
   AllowObjects: 0
   AnimatorController: {fileID: 95773617664408508}
-  LaunchSpline: {fileID: 114114089273110834}
+  AnimalSplines:
+  - AnimalName: 2
+    Spline: {fileID: 114114089273110834}
+  ObjectSpline: {fileID: 114528131169131390}
   ExitSpline: {fileID: 114568550517740138}
   LaunchSplineSpeed: 1
   ExitSplineSpeed: 0.5
@@ -1487,8 +1520,8 @@ MonoBehaviour:
   points:
   - {x: 1, y: 0, z: 0}
   - {x: 3.0396738, y: 9.157005, z: 0.07777923}
-  - {x: 8.48111, y: 8.846369, z: 0.26491153}
-  - {x: 15.250086, y: 4.789999, z: 0.080137245}
+  - {x: 6.57175, y: 8.023603, z: 0.26491055}
+  - {x: 12.852948, y: 4.529944, z: 0.080136456}
   modes: 0000000000000000
   loop: 0
 --- !u!114 &114159153093359768
@@ -1555,6 +1588,27 @@ MonoBehaviour:
   TriggersToDisable:
   - {fileID: 65592053131399850}
   - {fileID: 65262194178205800}
+--- !u!114 &114528131169131390
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1350037751567782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dd1b4d79b499e14b8257323e4d1d8bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DrawTangents: 0
+  AllowReverse: 1
+  splineCount: 1
+  points:
+  - {x: 1, y: 0, z: 0}
+  - {x: 3.0396738, y: 9.157005, z: 0.07777923}
+  - {x: 8.48111, y: 8.846369, z: 0.26491153}
+  - {x: 15.250086, y: 4.789999, z: 0.080137245}
+  modes: 0000000000000000
+  loop: 0
 --- !u!114 &114568550517740138
 MonoBehaviour:
   m_ObjectHideFlags: 1
