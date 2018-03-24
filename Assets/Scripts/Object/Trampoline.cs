@@ -6,6 +6,13 @@ using UnityEngine.InputNew;
 
 public class Trampoline : ActionObject
 {
+    [System.Serializable]
+    public class TrampSpline
+    {
+        public ANIMAL_NAME AnimalName;
+        public BezierSpline Spline;
+    }
+
     public UnityEvent OnSplineEnd;
 
     [Header("Misc Settings")]
@@ -14,7 +21,8 @@ public class Trampoline : ActionObject
     public Animator AnimatorController;
 
     [Header("Spline Settings")]
-    public BezierSpline LaunchSpline;
+    public TrampSpline[] AnimalSplines;
+    public BezierSpline ObjectSpline;
     public BezierSpline ExitSpline;
     public float LaunchSplineSpeed = 1, ExitSplineSpeed = 0.5f;
     public AnimationCurve LaunchCurve = AnimationCurve.Linear(0, 0, 1, 1);
@@ -106,9 +114,16 @@ public class Trampoline : ActionObject
 
     private void LaunchAnimal()
     {
+        BezierSpline spline = ObjectSpline;
+        foreach (var item in AnimalSplines)
+        {
+            if (item.AnimalName == m_aCurrentAnimal.m_eName)
+                spline = item.Spline;
+        }
+
         m_aCurrentAnimal.m_oCurrentObject = this;
 
-        LaunchItem(m_aCurrentAnimal.transform);
+        LaunchItem(m_aCurrentAnimal.transform, spline);
     }
 
     private void LaunchObject()
@@ -118,15 +133,15 @@ public class Trampoline : ActionObject
         lastLaunched.angularVelocity = Vector3.zero;
         lastLaunched.isKinematic = true;
 
-        LaunchItem(lastLaunched.transform);
+        LaunchItem(lastLaunched.transform, ObjectSpline);
     }
 
-    private void LaunchItem(Transform item)
+    private void LaunchItem(Transform item, BezierSpline spline)
     {
         AnimatorController.SetTrigger("Launch");
 
         var follower = item.gameObject.AddComponent<BezierSplineFollower>();
-        follower.m_Spline = LaunchSpline;
+        follower.m_Spline = spline;
         follower.m_MoveObject = item.transform;
         follower.m_FollowTime = LaunchSplineSpeed;
         follower.m_Curve = LaunchCurve;

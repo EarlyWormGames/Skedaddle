@@ -33,8 +33,8 @@ public class TrampolineTesting : MonoBehaviour {
         RightSplineStartPos = new Vector3[4];
         LeftStartPosition = LeftTrampoline.transform.position;
         RightStartPosition = RightTrampoline.transform.position;
-        LeftSplinePoints = LeftTrampoline.LaunchSpline;
-        RightSplinePoints = RightTrampoline.LaunchSpline;
+        LeftSplinePoints = LeftTrampoline.ObjectSpline;
+        RightSplinePoints = RightTrampoline.ObjectSpline;
         LeftStartSpeed = LeftTrampoline.LaunchSplineSpeed;
         RightStartSpeed = RightTrampoline.LaunchSplineSpeed;
         for(int i = 0; i < LeftSplineStartPos.Length; i++)
