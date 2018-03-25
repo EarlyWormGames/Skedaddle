@@ -10,7 +10,7 @@ public class CameraSpline : MonoBehaviour
 
     public SplineMovement AnimalSpline;
     [Tooltip("Will the spline be active on level start?")]
-    public bool IsDefaultSpline;
+    public List<ANIMAL_NAME> DefaultAnimals;
     [Tooltip("Should the spline use the Animal's \"Camera Y\" value?")]
     public bool UseAnimalYSettings = true;
     public List<ANIMAL_NAME> MyAnimals = new List<ANIMAL_NAME>();  
@@ -23,9 +23,9 @@ public class CameraSpline : MonoBehaviour
     {
         MySpline = GetComponent<BezierSpline>();
 
-        if (IsDefaultSpline)
+        if (DefaultAnimals.Count > 0)
         {
-            foreach (var item in MyAnimals)
+            foreach (var item in DefaultAnimals)
             {
                 CameraSplineManager.instance.EnableSpline(item, this);
             }

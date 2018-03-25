@@ -30,11 +30,11 @@ public class CameraSplineManager : MonoBehaviour
         }
 
         SetupSplines();
-        foreach (var spline in Splines)
-        {
-            if (spline.IsDefaultSpline)
-                spline.enabled = true;
-        }
+        //foreach (var spline in Splines)
+        //{
+        //    if (spline.IsDefaultSpline)
+        //        spline.enabled = true;
+        //}
     }
 
     public void SetupSplines()

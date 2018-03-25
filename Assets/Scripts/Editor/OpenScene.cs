@@ -26,7 +26,7 @@ public class OpenScene : EditorWindow
         if (firstTime)
         {
             firstTime = false;
-            GUI.FocusControl("textarea");
+            EditorGUI.FocusTextInControl("textarea");
         }
 
         float width = position.width - 25;
@@ -66,5 +66,8 @@ public class OpenScene : EditorWindow
         GUI.EndScrollView();
 
         Repaint();
+
+        if (Event.current.keyCode == KeyCode.Escape)
+            Close();
     }
 }

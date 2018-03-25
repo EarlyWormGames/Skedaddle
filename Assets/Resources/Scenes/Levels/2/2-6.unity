@@ -5941,6 +5941,16 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114135597173468048, guid: 555839984db1b7848b8f95c471ea7afe,
+        type: 2}
+      propertyPath: OnDirtExplode.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114681574191054192, guid: 555839984db1b7848b8f95c471ea7afe,
+        type: 2}
+      propertyPath: OnDirtExplode.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4000012975435078, guid: 555839984db1b7848b8f95c471ea7afe, type: 2}
       propertyPath: m_LocalPosition.x
       value: -2.029
@@ -6013,6 +6023,66 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 3.593
       objectReference: {fileID: 0}
+    - target: {fileID: 114135597173468048, guid: 555839984db1b7848b8f95c471ea7afe,
+        type: 2}
+      propertyPath: OnDirtExplode.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114135597173468048, guid: 555839984db1b7848b8f95c471ea7afe,
+        type: 2}
+      propertyPath: OnDirtExplode.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114135597173468048, guid: 555839984db1b7848b8f95c471ea7afe,
+        type: 2}
+      propertyPath: OnDirtExplode.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1993427416}
+    - target: {fileID: 114135597173468048, guid: 555839984db1b7848b8f95c471ea7afe,
+        type: 2}
+      propertyPath: OnDirtExplode.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: EnableSplineAnteater
+      objectReference: {fileID: 0}
+    - target: {fileID: 114135597173468048, guid: 555839984db1b7848b8f95c471ea7afe,
+        type: 2}
+      propertyPath: OnDirtExplode.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: CameraSpline, SkedaddleCore
+      objectReference: {fileID: 0}
+    - target: {fileID: 114135597173468048, guid: 555839984db1b7848b8f95c471ea7afe,
+        type: 2}
+      propertyPath: OnDirtExplode.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 2002182282}
+    - target: {fileID: 114681574191054192, guid: 555839984db1b7848b8f95c471ea7afe,
+        type: 2}
+      propertyPath: OnDirtExplode.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114681574191054192, guid: 555839984db1b7848b8f95c471ea7afe,
+        type: 2}
+      propertyPath: OnDirtExplode.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114681574191054192, guid: 555839984db1b7848b8f95c471ea7afe,
+        type: 2}
+      propertyPath: OnDirtExplode.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1993427416}
+    - target: {fileID: 114681574191054192, guid: 555839984db1b7848b8f95c471ea7afe,
+        type: 2}
+      propertyPath: OnDirtExplode.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: EnableSplineAnteater
+      objectReference: {fileID: 0}
+    - target: {fileID: 114681574191054192, guid: 555839984db1b7848b8f95c471ea7afe,
+        type: 2}
+      propertyPath: OnDirtExplode.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: CameraSpline, SkedaddleCore
+      objectReference: {fileID: 0}
+    - target: {fileID: 114681574191054192, guid: 555839984db1b7848b8f95c471ea7afe,
+        type: 2}
+      propertyPath: OnDirtExplode.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1788423601}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 555839984db1b7848b8f95c471ea7afe, type: 2}
   m_IsPrefabParent: 0
@@ -48020,6 +48090,7 @@ MonoBehaviour:
   m_aRequiredSize: 0
   m_aRequiredAnimal: 0
   m_aMaximumSize: 0
+  m_bOnlyHeadTrigger: 1
   m_lAnimalsIn: []
   m_rBody: {fileID: 0}
   m_GazeObject: {fileID: 0}
@@ -48227,38 +48298,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: a337c07cc37ef504896a20d82ef34df2, type: 3}
   m_PrefabInternal: {fileID: 803416622}
---- !u!21 &804560427
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: TEMP NV MATERIAL
-  m_Shader: {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &805594714
 GameObject:
   m_ObjectHideFlags: 0
@@ -61262,7 +61301,7 @@ MonoBehaviour:
   m_Script: {fileID: -98529514, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 804560427}
+  m_Material: {fileID: 1276308477}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -70098,7 +70137,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4002966793797348, guid: 4cc0396ec5aa1b448ba150d903409ab0, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.66
+      value: 1.21
       objectReference: {fileID: 0}
     - target: {fileID: 4002966793797348, guid: 4cc0396ec5aa1b448ba150d903409ab0, type: 2}
       propertyPath: m_LocalPosition.z
@@ -73021,6 +73060,38 @@ MeshFilter:
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: f4f9950aba9db29478339917d5a804fa, type: 3}
   m_PrefabInternal: {fileID: 313553546}
+--- !u!21 &1276308477
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: TEMP NV MATERIAL
+  m_Shader: {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1276506924
 Prefab:
   m_ObjectHideFlags: 0
@@ -87694,7 +87765,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4684955925826908, guid: d5441789a4371544e9e90479cbb2cc8b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.11
+      value: -0.475
       objectReference: {fileID: 0}
     - target: {fileID: 114232445785049344, guid: d5441789a4371544e9e90479cbb2cc8b,
         type: 2}
@@ -100177,6 +100248,11 @@ Prefab:
       propertyPath: MyAnimals.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114855571005294734, guid: 757c0ffdb7ef0c245a62aab60bfeb725,
+        type: 2}
+      propertyPath: DefaultAnimals.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4359408926900482, guid: 757c0ffdb7ef0c245a62aab60bfeb725, type: 2}
       propertyPath: m_LocalPosition.x
       value: -18.5
@@ -100265,6 +100341,21 @@ Prefab:
     - target: {fileID: 1167302733411640, guid: 757c0ffdb7ef0c245a62aab60bfeb725, type: 2}
       propertyPath: m_Name
       value: lowerCameraSpline
+      objectReference: {fileID: 0}
+    - target: {fileID: 114855571005294734, guid: 757c0ffdb7ef0c245a62aab60bfeb725,
+        type: 2}
+      propertyPath: DefaultAnimals.Array.data[1]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114855571005294734, guid: 757c0ffdb7ef0c245a62aab60bfeb725,
+        type: 2}
+      propertyPath: DefaultAnimals.Array.data[2]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114855571005294734, guid: 757c0ffdb7ef0c245a62aab60bfeb725,
+        type: 2}
+      propertyPath: DefaultAnimals.Array.data[0]
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 757c0ffdb7ef0c245a62aab60bfeb725, type: 2}
@@ -109182,7 +109273,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4002966793797348, guid: 4cc0396ec5aa1b448ba150d903409ab0, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -3.092
+      value: -3.299
       objectReference: {fileID: 0}
     - target: {fileID: 4002966793797348, guid: 4cc0396ec5aa1b448ba150d903409ab0, type: 2}
       propertyPath: m_LocalRotation.x
@@ -111986,8 +112077,8 @@ Prefab:
     m_Modifications:
     - target: {fileID: 114855571005294734, guid: 757c0ffdb7ef0c245a62aab60bfeb725,
         type: 2}
-      propertyPath: MyAnimals.Array.size
-      value: 3
+      propertyPath: DefaultAnimals.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4359408926900482, guid: 757c0ffdb7ef0c245a62aab60bfeb725, type: 2}
       propertyPath: m_LocalPosition.x
@@ -112021,44 +112112,15 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114551186039253092, guid: 757c0ffdb7ef0c245a62aab60bfeb725,
-        type: 2}
-      propertyPath: points.Array.data[2].x
-      value: 18.289667
-      objectReference: {fileID: 0}
-    - target: {fileID: 114551186039253092, guid: 757c0ffdb7ef0c245a62aab60bfeb725,
-        type: 2}
-      propertyPath: points.Array.data[3].x
-      value: 19.289667
-      objectReference: {fileID: 0}
-    - target: {fileID: 114415215251113736, guid: 757c0ffdb7ef0c245a62aab60bfeb725,
-        type: 2}
-      propertyPath: points.Array.data[2].x
-      value: 17.208069
-      objectReference: {fileID: 0}
-    - target: {fileID: 114415215251113736, guid: 757c0ffdb7ef0c245a62aab60bfeb725,
-        type: 2}
-      propertyPath: points.Array.data[3].x
-      value: 17.239025
-      objectReference: {fileID: 0}
     - target: {fileID: 114855571005294734, guid: 757c0ffdb7ef0c245a62aab60bfeb725,
         type: 2}
-      propertyPath: MyAnimals.Array.data[0]
+      propertyPath: UseAnimalYSettings
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114855571005294734, guid: 757c0ffdb7ef0c245a62aab60bfeb725,
         type: 2}
-      propertyPath: MyAnimals.Array.data[1]
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114855571005294734, guid: 757c0ffdb7ef0c245a62aab60bfeb725,
-        type: 2}
-      propertyPath: MyAnimals.Array.data[2]
+      propertyPath: DefaultAnimals.Array.data[2]
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4858121683733166, guid: 757c0ffdb7ef0c245a62aab60bfeb725, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -3.449
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 757c0ffdb7ef0c245a62aab60bfeb725, type: 2}

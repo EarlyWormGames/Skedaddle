@@ -69,7 +69,7 @@ public class ClimbJump : ActionObject
 
             float climbMult = GetMultiplier(Direction);
             
-            m_aCurrentAnimal.SetDirection(Direction, false);
+            m_aCurrentAnimal.SetDirection(Direction, BreakSplineConnection);
 
             //Calculate the position of the animal (based on the animation)
             if (Direction == FACING_DIR.RIGHT || Direction == FACING_DIR.LEFT)
@@ -105,6 +105,9 @@ public class ClimbJump : ActionObject
                 m_aCurrentAnimal.m_bCheckGround = true;
                 m_aCurrentAnimal.m_bAutoClimbing = false;
 
+                if (BreakSplineConnection)
+                    m_aCurrentAnimal.m_aMovement.StopSpline();
+
                 //In case the trigger doesn't get called on the TransitionTo object
                 if (TransitionTo != null)
                     TransitionTo.AnimalEnter(m_aCurrentAnimal);
@@ -127,6 +130,9 @@ public class ClimbJump : ActionObject
                 m_aCurrentAnimal.m_bOnGround = true;
                 m_aCurrentAnimal.m_bCheckGround = true;
                 m_aCurrentAnimal.m_bAutoClimbing = false;
+
+                if (BreakSplineConnection)
+                    m_aCurrentAnimal.m_aMovement.StopSpline();
 
                 //In case the trigger doesn't get called on the TransitionTo object
                 if (TransitionTo != null)
