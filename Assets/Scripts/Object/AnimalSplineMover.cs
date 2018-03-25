@@ -58,7 +58,7 @@ public class AnimalSplineMover : ActionObject
         m_aCurrentAnimal = null;
     }
 
-    void SplineEnd(BezierSplineFollower sender)
+    void SplineEnd(BezierSplineFollower sender, Transform trackedObject)
     {
         Detach();
     }

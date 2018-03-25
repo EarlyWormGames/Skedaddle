@@ -34,6 +34,7 @@ public class ActionObject : MonoBehaviour
     public ANIMAL_SIZE m_aRequiredSize;
     public ANIMAL_NAME m_aRequiredAnimal;
     public ANIMAL_SIZE m_aMaximumSize;
+    public bool m_bOnlyHeadTrigger = true;
 
     [Header("Links")]
     public List<Animal> m_lAnimalsIn = new List<Animal>();
@@ -167,7 +168,8 @@ public class ActionObject : MonoBehaviour
         Animal anim = null;
         if (animtrig == null)
         {
-            //anim = a_col.GetComponentInParent<Animal>();
+            if (!m_bOnlyHeadTrigger)
+                anim = a_col.GetComponentInParent<Animal>();
             if (anim == null)
             {
                 ObjectEnter(a_col);
@@ -204,7 +206,8 @@ public class ActionObject : MonoBehaviour
         Animal anim = null;
         if (animtrig == null)
         {
-            //anim = a_col.GetComponentInParent<Animal>();
+            if (!m_bOnlyHeadTrigger)
+                anim = a_col.GetComponentInParent<Animal>();
             if (anim == null)
             {
                 ObjectExit(a_col);

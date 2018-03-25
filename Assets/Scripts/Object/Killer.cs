@@ -9,11 +9,14 @@ public class Killer : MonoBehaviour
     public class KillEvent : UnityEvent<Animal, DEATH_TYPE> { };
     
     public DEATH_TYPE KillType;
-
+    public LayerMask AllowLayers;
     public KillEvent OnKill;
 
     void OnTriggerEnter(Collider other)
     {
+        if (!AllowLayers.Contains(other.gameObject.layer))
+            return;
+
         var animal = other.attachedRigidbody.GetComponent<Animal>();
 
         if (animal == null)

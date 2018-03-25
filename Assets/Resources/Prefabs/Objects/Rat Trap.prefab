@@ -853,7 +853,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1321629116303564}
   m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: 9.152, y: 0.59691817, z: 5.85}
+  m_LocalPosition: {x: 9.152, y: 0.508, z: 5.85}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4551281881595414}
@@ -1023,6 +1023,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54365fe8bbcc44f44bf68a61d7c9bd81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AllowTriggers: 0
   TriggerEnter:
     m_PersistentCalls:
       m_Calls:
@@ -1045,7 +1046,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Trigger
+          m_StringArgument: Triggered
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: BasicTrigger+ColliderEvent, SkedaddleCore, Version=0.0.0.0, Culture=neutral,
@@ -1078,6 +1079,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KillType: 1
+  AllowLayers:
+    serializedVersion: 2
+    m_Bits: 524544
   OnKill:
     m_PersistentCalls:
       m_Calls: []

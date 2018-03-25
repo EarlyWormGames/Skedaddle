@@ -168,18 +168,24 @@ public class Trampoline : ActionObject
         follower.Follow();
     }
 
-    private void SplineEnd(BezierSplineFollower sender)
+    private void SplineEnd(BezierSplineFollower sender, Transform item)
     {
         Destroy(sender);
-        if (m_aCurrentAnimal != null)
+
+        Rigidbody rig = item.GetComponent<Rigidbody>();
+        Animal animal = item.GetComponent<Animal>();
+
+        if (animal != null)
         {
-            m_aCurrentAnimal.m_oCurrentObject = null;
+            animal.m_oCurrentObject = null;
             OnSplineEnd.Invoke();
+            return;
         }
-        else if (lastLaunched != null)
+
+        if (rig != null)
         {
-            lastLaunched.useGravity = true;
-            lastLaunched.isKinematic = false;
+            rig.useGravity = true;
+            rig.isKinematic = false;
         }
     }
 }

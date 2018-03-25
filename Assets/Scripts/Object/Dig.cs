@@ -80,7 +80,7 @@ public class Dig : ActionObject
         OnDirtExplode.Invoke();
     }
 
-    void SplineEnd(BezierSplineFollower sender)
+    void SplineEnd(BezierSplineFollower sender, Transform trackedItem)
     {
         if (m_aCurrentAnimal == null)
             return;

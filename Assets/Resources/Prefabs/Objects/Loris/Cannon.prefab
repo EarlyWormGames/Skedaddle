@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - component: {fileID: 448904}
   m_Layer: 0
-  m_Name: RightFacing
+  m_Name: LeftFacing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108,7 +108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 497736}
   m_Layer: 0
-  m_Name: LeftFacing
+  m_Name: RightFacing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -372,7 +372,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 102320}
   m_LocalRotation: {x: -0, y: -0, z: 0, w: -1}
-  m_LocalPosition: {x: -1.28, y: 3.021, z: -0.29}
+  m_LocalPosition: {x: -0.13, y: 3.021, z: -0.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 420502}
@@ -486,7 +486,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 159056}
   m_LocalRotation: {x: -0, y: -0, z: 0, w: -1}
-  m_LocalPosition: {x: -0.08, y: 2.527, z: -0.01}
+  m_LocalPosition: {x: -1.56, y: 2.83, z: -0.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 420502}
@@ -11936,6 +11936,7 @@ MonoBehaviour:
   m_aRequiredSize: 0
   m_aRequiredAnimal: 1
   m_aMaximumSize: 0
+  m_bOnlyHeadTrigger: 0
   m_lAnimalsIn: []
   m_rBody: {fileID: 0}
   m_GazeObject: {fileID: 0}
@@ -11994,8 +11995,8 @@ MonoBehaviour:
   SplineLeft: {fileID: 114047042691236074}
   SplineRight: {fileID: 114431404336281616}
   InvertKeys: 1
-  LeftFacing: {fileID: 497736}
-  RightFacing: {fileID: 448904}
+  LeftFacing: {fileID: 448904}
+  RightFacing: {fileID: 497736}
   OnShoot:
     m_PersistentCalls:
       m_Calls:
@@ -12005,6 +12006,17 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: EnableSplineLoris
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: CameraSpline, SkedaddleCore
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -12028,9 +12040,9 @@ MonoBehaviour:
   splineCount: 1
   points:
   - {x: 0.8187758, y: 0.72946125, z: 0.0000009898041}
-  - {x: 0.68458366, y: 3.4492016, z: 0.0000014140091}
-  - {x: 1.1807393, y: 11.205371, z: -1.033927}
-  - {x: 1.5796353, y: 7.045512, z: -2.8555768}
+  - {x: 0.7462277, y: 3.2547765, z: 0.000001793998}
+  - {x: -6.9113564, y: 6.9256186, z: -1.5921576}
+  - {x: -10.405281, y: 3.6145337, z: -2.4926713}
   modes: 0000000000000000
   loop: 0
 --- !u!114 &114431404336281616
@@ -12046,7 +12058,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Spline: {fileID: 114162177225830670}
   m_MoveObject: {fileID: 0}
-  m_FollowTime: 0.8
+  m_FollowTime: 1.1
   m_Curve:
     serializedVersion: 2
     m_Curve:
@@ -12091,9 +12103,9 @@ MonoBehaviour:
   splineCount: 1
   points:
   - {x: 0.8187758, y: 0.72946125, z: 0.0000009898041}
-  - {x: -0.09993398, y: 3.2547762, z: 0.0000015674689}
-  - {x: -8.067316, y: 13.929027, z: -2.6387374}
-  - {x: -10.507139, y: 3.5297754, z: -2.6387362}
+  - {x: 0.7462277, y: 3.2547765, z: 0.000001793998}
+  - {x: 0.7371638, y: 10.673051, z: -1.7306116}
+  - {x: 0.81022096, y: 6.6143584, z: -2.6311257}
   modes: 0000000000000000
   loop: 0
 --- !u!114 &114818309631884936
@@ -12110,6 +12122,7 @@ MonoBehaviour:
   m_aRequiredSize: 0
   m_aRequiredAnimal: 0
   m_aMaximumSize: 0
+  m_bOnlyHeadTrigger: 1
   m_lAnimalsIn: []
   m_rBody: {fileID: 0}
   m_GazeObject: {fileID: 0}
@@ -12146,7 +12159,7 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   DoOnTrigger: 0
   BreakSplineConnection: 1
-  Direction: 4
+  Direction: 2
   AnchorPoint: {fileID: 4989658026345072}
   TransitionTo: {fileID: 0}
   RequiredKey:

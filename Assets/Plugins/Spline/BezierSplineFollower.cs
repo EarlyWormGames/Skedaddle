@@ -12,7 +12,7 @@ public enum BezierControlPointMode
 public class BezierSplineFollower : MonoBehaviour
 {
     [System.Serializable]
-    public class FollowerEvent : UnityEvent<BezierSplineFollower> { }
+    public class FollowerEvent : UnityEvent<BezierSplineFollower, Transform> { }
 
     public enum eLoopType
     {
@@ -73,7 +73,7 @@ public class BezierSplineFollower : MonoBehaviour
                         {
                             m_bRunning = false;
                             m_fTime = 0;
-                            OnPathEnd.Invoke(this);
+                            OnPathEnd.Invoke(this, m_MoveObject);
                             break;
                         }
                     case eLoopType.Loop:
@@ -83,7 +83,7 @@ public class BezierSplineFollower : MonoBehaviour
                             {
                                 m_bRunning = false;
                                 m_fTime = 0;
-                                OnPathEnd.Invoke(this);
+                                OnPathEnd.Invoke(this, m_MoveObject);
                             }
                             else
                             {
@@ -98,7 +98,7 @@ public class BezierSplineFollower : MonoBehaviour
                             {
                                 m_bRunning = false;
                                 m_fTime = 0;
-                                OnPathEnd.Invoke(this);
+                                OnPathEnd.Invoke(this, m_MoveObject);
                             }
                             else
                             {

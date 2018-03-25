@@ -19,7 +19,7 @@ public class OpenScene : EditorWindow
     }
 
     private void OnGUI()
-    {       
+    {
         GUI.SetNextControlName("textarea");
         search = EditorGUI.TextField(new Rect(5, 5, position.width - 10, 20), search);
 
