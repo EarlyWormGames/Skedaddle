@@ -33,6 +33,7 @@ public class Trampoline : ActionObject
 
     private Rigidbody lastLaunched;
     private List<Transform> WrongIn = new List<Transform>();
+    private Dictionary<Transform, RigidbodySettings> tempSettings = new Dictionary<Transform, RigidbodySettings>();
 
     protected override void OnStart()
     {
@@ -131,10 +132,19 @@ public class Trampoline : ActionObject
 
     private void LaunchObject()
     {
+        if (tempSettings.ContainsKey(lastLaunched.transform))
+            return;
+
+        RigidbodySettings settings = new RigidbodySettings()
+        {
+            constraints = lastLaunched.constraints
+        };
+        tempSettings.Add(lastLaunched.transform, settings);
+
         lastLaunched.useGravity = false;
         lastLaunched.velocity = Vector3.zero;
         lastLaunched.angularVelocity = Vector3.zero;
-        lastLaunched.isKinematic = true;
+        lastLaunched.constraints = RigidbodyConstraints.FreezeAll;
 
         LaunchItem(lastLaunched.transform, ObjectSpline);
     }
@@ -186,6 +196,8 @@ public class Trampoline : ActionObject
         {
             rig.useGravity = true;
             rig.isKinematic = false;
+            rig.constraints = tempSettings[item].constraints;
+            tempSettings.Remove(item);
         }
     }
 }

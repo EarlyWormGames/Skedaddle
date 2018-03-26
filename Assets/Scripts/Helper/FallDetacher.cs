@@ -47,12 +47,35 @@ public class FallDetacher : MonoBehaviour
         if (Trigger == null)
             return 100;
 
-        var cols = Physics.OverlapBox(Trigger.transform.position, Trigger.transform.TransformVector(Trigger.size / 2), Trigger.transform.rotation, Layer, TriggerInteraction);
+        List<Collider> cols = new List<Collider>(Physics.OverlapBox(Trigger.transform.position, Trigger.transform.TransformVector(Trigger.size), Trigger.transform.rotation, Layer, TriggerInteraction));
+        for(int i = 0; i < cols.Count; ++i)
+        {
+            var item = cols[i];
+            if (transform.parent != null)
+            {
+                if (item.transform == transform.parent || item.transform.parent == transform.parent)
+                {
+                    cols.RemoveAt(i);
+                    --i;
+                    continue;
+                }
+            }
+            else
+            {
+                if (item.transform == transform || item.transform.parent == transform)
+                {
+                    cols.RemoveAt(i);
+                    --i;
+                    continue;
+                }
+            }
+        }
+
         Bounds b = new Bounds();
-        if (cols.Length > 0)
+        if (cols.Count > 0)
             b = cols[0].bounds;
 
-        for (int i = 1; i < cols.Length; ++i)
+        for (int i = 1; i < cols.Count; ++i)
         {
             b.Encapsulate(cols[i].bounds);
         }

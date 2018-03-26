@@ -47,6 +47,9 @@ public class CameraSplineManager : MonoBehaviour
 
     public void EnableSpline(ANIMAL_NAME a_name, CameraSpline spline)
     {
+        if (!CurrentSplines.ContainsKey(a_name))
+            return;
+
         if (CurrentSplines[a_name] != null)
         {
             CurrentSplines[a_name].SetAnimalEnabled(a_name, false);

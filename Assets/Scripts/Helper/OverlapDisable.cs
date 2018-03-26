@@ -22,7 +22,7 @@ public class OverlapDisable : MonoBehaviour
 
     bool Check()
     {
-        var colliders = Physics.OverlapBox(Trigger.transform.position, Trigger.transform.TransformVector(Trigger.size / 2), Trigger.transform.rotation, Layer, TriggerInteraction);
+        var colliders = Physics.OverlapBox(Trigger.transform.position, Trigger.transform.TransformVector(Trigger.size), Trigger.transform.rotation, Layer, TriggerInteraction);
         foreach (var item in colliders)
         {
             if (!item.isTrigger)
