@@ -75,7 +75,7 @@ public class BridgeMaker : ActionObject
             }
             if (m_fTimer >= 0.7f)
             {
-                m_headTerrain.overrideTarget = true;
+                //m_headTerrain.overrideTarget = true;
             }
             if (m_fTimer >= 1)
             {
