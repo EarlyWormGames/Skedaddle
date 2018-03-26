@@ -47,7 +47,7 @@ public class FallDetacher : MonoBehaviour
         if (Trigger == null)
             return 100;
 
-        var cols = Physics.OverlapBox(Trigger.transform.position, Trigger.size / 2, Trigger.transform.rotation, Layer, TriggerInteraction);
+        var cols = Physics.OverlapBox(Trigger.transform.position, Trigger.transform.TransformVector(Trigger.size / 2), Trigger.transform.rotation, Layer, TriggerInteraction);
         Bounds b = new Bounds();
         if (cols.Length > 0)
             b = cols[0].bounds;
