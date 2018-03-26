@@ -11,13 +11,13 @@ public class Anteater : Animal
     public float            m_fIdleSwapTime;
     public float            m_fIdleSwapVarience;
     public int              m_iNumberOfIdles;
-    public AimIK            m_ikHead;
 
     //==================================
     //          Internal Vars
     //==================================
 
     internal bool m_bDigging = false;
+    internal bool m_bDigInWall = false;
 
     //==================================
     //          Private Vars
@@ -54,8 +54,27 @@ public class Anteater : Animal
         }
 
         m_aAnimalAnimator.SetBool("Dig", m_bDigging);
+        m_aAnimalAnimator.SetBool("DigInWall", m_bDigInWall);
 
         m_aAnimalAnimator.SetBool("AutoClimb", m_bAutoClimbing);
+
+        if (m_bPullingLeverOn)
+        {
+            m_aAnimalAnimator.SetBool("PullingLeverOn", true);
+        }
+        else
+        {
+            m_aAnimalAnimator.SetBool("PullingLeverOn", false);
+        }
+
+        if (m_bPullingLeverOff)
+        {
+            m_aAnimalAnimator.SetBool("PullingLeverOff", true);
+        }
+        else
+        {
+            m_aAnimalAnimator.SetBool("PullingLeverOff", false);
+        }
 
         if (!m_bDigging)
         {

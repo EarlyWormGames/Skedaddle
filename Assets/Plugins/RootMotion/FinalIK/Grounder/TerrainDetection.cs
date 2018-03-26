@@ -9,6 +9,9 @@ namespace RootMotion.FinalIK
         public bool showDebug = true;
         public bool overrideTarget = true;
         public bool UseLocal = false;
+        public Transform FirstBone;
+        public Transform ForwardDirection;
+        public float IKDistance;
         public IK effectedIK;
         public Vector3 raycastOffset = new Vector3(0f, 2f, 1.5f); // Offset from the character, in local space, to raycast from
         public LayerMask raycastLayers; // The layers we want to raycast at
@@ -17,7 +20,9 @@ namespace RootMotion.FinalIK
         public float angleBuffer = 1;
 
         private RaycastHit hit;
-        private Vector3 offset;
+        private Vector3 direction;
+        private Vector3 FirstHit;
+        private Vector3 finalHit;
         private IKSolverHeuristic detectedIK; // Reference to the IK component
         private float IKtoggle = 1;
 
@@ -44,7 +49,7 @@ namespace RootMotion.FinalIK
                 // Move Target To Ground Point
                 if (IKtoggle == 1)
                 {
-                    detectedIK.target.transform.position = Vector3.Lerp(detectedIK.target.transform.position, hit.point + Vector3.up * heightOffset, Time.deltaTime * lerpSpeed);
+                    detectedIK.target.transform.position = Vector3.Lerp(detectedIK.target.transform.position, finalHit + Vector3.up * heightOffset, Time.deltaTime * lerpSpeed);
                 }
 
                 detectedIK.IKPositionWeight = Mathf.Lerp(detectedIK.IKPositionWeight, IKtoggle, Time.deltaTime * lerpSpeed);
@@ -53,27 +58,41 @@ namespace RootMotion.FinalIK
 
         private void GetGroundHeightOffset(Vector3 worldPosition)
         {
-            if (Physics.Raycast(worldPosition, UseLocal ? (Vector3.down - new Vector3(transform.rotation.x * angleBuffer, 0, 0)) : Vector3.down, out hit, raycastOffset.y * 2f, raycastLayers))
+            RaycastHit preHit;
+            Physics.Raycast(FirstBone.position, -ForwardDirection.right + raycastOffset, out preHit, IKDistance, raycastLayers);
+            FirstHit = preHit.point;
+            if (preHit.collider != null)
             {
-                if (hit.point.y + heightOffset < worldPosition.y)
+                float pythag = Mathf.Pow(IKDistance, 2) - Mathf.Pow(Vector3.Distance(FirstBone.position, preHit.point), 2);
+                float newHeight = Mathf.Sqrt(pythag >= 0 ? pythag : 0);
+                IKtoggle = 1;
+                if (Physics.Raycast(preHit.point + new Vector3(0, newHeight, 0), UseLocal ? (Vector3.down - new Vector3(transform.rotation.x * angleBuffer, 0, 0)) : Vector3.down, out hit, newHeight * 2, raycastLayers))
                 {
-                    IKtoggle = 1;
-                    return;
+                    finalHit = hit.point;
+                }
+                else
+                {
+                    finalHit = preHit.point + new Vector3(0, newHeight, 0);
                 }
             }
-
-            IKtoggle = 0.0001f;
+            else
+            {
+                IKtoggle = 0.0001f;
+            }
         }
 
         void OnDrawGizmos()
         {
             if (showDebug)
             {
-                Vector3 origin = transform.position + transform.rotation * raycastOffset;
-                Vector3 endpoint = origin + (Vector3.down - new Vector3(transform.rotation.x * angleBuffer, 0, 0)) * raycastOffset.y * 2;
+                Vector3 origin = FirstBone.position;
+                Vector3 endpoint = origin + Vector3.Normalize(-ForwardDirection.right + raycastOffset) * IKDistance;
                 Gizmos.color = Color.green;
-                Gizmos.DrawLine(origin, endpoint);
                 Gizmos.DrawSphere(hit.point, 0.01f);
+                Gizmos.color = Color.yellow;
+                Gizmos.DrawLine(origin, endpoint);
+                Gizmos.color = Color.red;
+                Gizmos.DrawSphere(FirstHit, 0.01f);
                 if (Application.isPlaying)
                 {
                     Gizmos.color = Color.blue;

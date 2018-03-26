@@ -15,6 +15,8 @@ public class Dig : ActionObject
     public UnityEvent OnDirtExplode;
 
     public bool Reverse;
+    public bool WallDigStart;
+    public bool WallDigEnd;
 
     private void OnEnable()
     {
@@ -60,6 +62,7 @@ public class Dig : ActionObject
 
         Anteater anteater = (Anteater)m_aCurrentAnimal;
         anteater.m_bDigging = true;
+        anteater.m_bDigInWall = WallDigStart;
         anteater.m_rBody.useGravity = false;
         anteater.SetDirection(StartDirection, false);
 
@@ -73,7 +76,9 @@ public class Dig : ActionObject
 
     public override void DoAction()
     {
+        Anteater anteater = (Anteater)m_aCurrentAnimal;
         Spline.m_MoveObject = m_aCurrentAnimal.transform;
+        anteater.m_bDigInWall = WallDigEnd;
         Spline.Follow(Reverse);
 
         OnSplineStart.Invoke();
