@@ -97,7 +97,6 @@ public class Dig : ActionObject
         Anteater anteater = (Anteater)m_aCurrentAnimal;
         anteater.m_bDigging = false;
         anteater.SetDirection(EndDirection, false);
-        anteater.m_ForceTurnImmediate = true;
         anteater.transform.position = FinishPoint.position;
     }
 
@@ -107,7 +106,6 @@ public class Dig : ActionObject
         m_aCurrentAnimal.m_bCheckGround = true;
         m_aCurrentAnimal.m_rBody.useGravity = true;
         m_aCurrentAnimal.m_oCurrentObject = null;
-        m_aCurrentAnimal.m_ForceTurnImmediate = false;
         m_aCurrentAnimal.SetDirection(FACING_DIR.NONE, false);
         m_aCurrentAnimal = null;
 
