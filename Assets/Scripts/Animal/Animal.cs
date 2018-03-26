@@ -761,6 +761,9 @@ public class Animal : MonoBehaviour
 
         if (dot > 0 && collision.contacts[0].otherCollider.attachedRigidbody != null)
         {
+            if (collision.contacts[0].otherCollider.attachedRigidbody.velocity.magnitude < 0.1f)
+                return;
+
             float impactVelocity = collision.contacts[0].otherCollider.attachedRigidbody.velocity.magnitude * collision.contacts[0].otherCollider.attachedRigidbody.mass;
             Debug.Log("Crush force: " + impactVelocity.ToString());
 

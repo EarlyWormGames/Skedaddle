@@ -125,7 +125,16 @@ public class Trampoline : ActionObject
             }
         }
 
+        RigidbodySettings settings = new RigidbodySettings()
+        {
+            constraints = m_aCurrentAnimal.m_rBody.constraints
+        };
+        tempSettings.Add(m_aCurrentAnimal.transform, settings);
         m_aCurrentAnimal.m_oCurrentObject = this;
+        m_aCurrentAnimal.m_rBody.constraints = RigidbodyConstraints.FreezeAll;
+        m_aCurrentAnimal.m_rBody.velocity = Vector3.zero;
+        m_aCurrentAnimal.m_rBody.angularVelocity = Vector3.zero;
+        m_aCurrentAnimal.m_rBody.useGravity = false;
 
         LaunchItem(m_aCurrentAnimal.transform, spline);
     }
@@ -188,6 +197,10 @@ public class Trampoline : ActionObject
         if (animal != null)
         {
             animal.m_oCurrentObject = null;
+            animal.m_rBody.useGravity = true;
+            animal.m_rBody.constraints = tempSettings[item].constraints;
+            tempSettings.Remove(item);
+
             OnSplineEnd.Invoke();
             return;
         }
