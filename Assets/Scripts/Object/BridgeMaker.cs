@@ -121,6 +121,7 @@ public class BridgeMaker : ActionObject
         {
             m_aCurrentAnimal = Animal.CurrentAnimal;
             m_aCurrentAnimal.m_oCurrentObject = this;
+            m_aCurrentAnimal.m_aAnimalAnimator.SetTrigger("TongueStart");
             m_aCurrentAnimal.m_aAnimalAnimator.SetBool("TongueBridge", true);
             m_aCurrentAnimal.m_bCanWalkLeft = false;
             m_aCurrentAnimal.m_bCanWalkRight = false;
