@@ -289,7 +289,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013400450414}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.1150355, y: 0.6533148, z: -7.168431}
+  m_LocalPosition: {x: -5, y: 0.53, z: 3.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4000013945092380}
@@ -346,8 +346,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1160975972838670}
-  m_LocalRotation: {x: -0.508411, y: 0.49415153, z: 0.49748114, w: 0.49984512}
-  m_LocalPosition: {x: 8.598, y: 3.323, z: 0.81}
+  m_LocalRotation: {x: -0.70891875, y: -0.010082788, z: -0.0016713169, w: 0.70521617}
+  m_LocalPosition: {x: 5.29, y: 10.8, z: 2.75}
   m_LocalScale: {x: 1, y: 1.2351288, z: 1}
   m_Children:
   - {fileID: 4842413882277718}
@@ -356,7 +356,7 @@ Transform:
   - {fileID: 4431732870606320}
   m_Father: {fileID: 4000012975435078}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -89.256004, y: 245.76498, z: -156.718}
+  m_LocalEulerAnglesHint: {x: -89.256004, y: 245.76498, z: -246.71799}
 --- !u!4 &4260608385637706
 Transform:
   m_ObjectHideFlags: 1
@@ -525,9 +525,9 @@ MonoBehaviour:
   splineCount: 1
   points:
   - {x: -0.011523247, y: -0.70934916, z: 0}
-  - {x: -0.039914608, y: -4.2797694, z: 1.0261226}
-  - {x: 0.2501638, y: 3.3529916, z: 9.167069}
-  - {x: 0.14988852, y: 3.5818443, z: 4.3010597}
+  - {x: -0.039914608, y: -7.7656975, z: 5.028864}
+  - {x: 5.4103765, y: 10.51388, z: 10.402326}
+  - {x: 5.310101, y: 10.742732, z: 3.717799}
   modes: 000000000000000000000000
   loop: 0
 --- !u!114 &114135597173468048
@@ -544,6 +544,7 @@ MonoBehaviour:
   m_aRequiredSize: 0
   m_aRequiredAnimal: 3
   m_aMaximumSize: 0
+  m_bOnlyHeadTrigger: 0
   m_lAnimalsIn: []
   m_rBody: {fileID: 0}
   m_GazeObject: {fileID: 0}
@@ -608,6 +609,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: EnableSplineAnteater
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: CameraSpline, SkedaddleCore
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   OnDirtExplode:
@@ -641,6 +653,7 @@ MonoBehaviour:
   m_aRequiredSize: 0
   m_aRequiredAnimal: 3
   m_aMaximumSize: 0
+  m_bOnlyHeadTrigger: 0
   m_lAnimalsIn: []
   m_rBody: {fileID: 0}
   m_GazeObject: {fileID: 0}

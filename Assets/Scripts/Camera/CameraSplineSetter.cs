@@ -8,10 +8,11 @@ public class CameraSplineSetter : MonoBehaviour
 {
     public CameraSpline Spline;
     public ANIMAL_NAME RequiredAnimal;
+    public LayerMask RequiredLayer;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.attachedRigidbody == null)
+        if (other.attachedRigidbody == null || other.isTrigger || !RequiredLayer.Contains(other.gameObject.layer))
             return;
         Animal animal = other.attachedRigidbody.GetComponent<Animal>();
 

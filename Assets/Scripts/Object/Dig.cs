@@ -65,6 +65,8 @@ public class Dig : ActionObject
 
         anteater.transform.position = StartPoint.position;
         m_aCurrentAnimal.m_tCollider.gameObject.SetActive(false);
+
+        AnimalController.Instance.CanSwap = false;
     }
 
     public override void DoAction()
@@ -99,5 +101,7 @@ public class Dig : ActionObject
         m_aCurrentAnimal.m_oCurrentObject = null;
         m_aCurrentAnimal.SetDirection(FACING_DIR.NONE, false);
         m_aCurrentAnimal = null;
+
+        AnimalController.Instance.CanSwap = true;
     }
 }
