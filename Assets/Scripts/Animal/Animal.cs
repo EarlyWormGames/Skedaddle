@@ -81,7 +81,7 @@ public class Animal : MonoBehaviour
     public float            m_fTopSpeed = 0.05f;
     public float            m_fPullSpeedMult = 0.5f;
     public float            m_fFallSpeedMult = 0.5f;
-    public float            m_fTurnSpeedMult = 0.95f;
+    
 
     public float            m_fTurnAxis;
 
@@ -179,6 +179,8 @@ public class Animal : MonoBehaviour
 
     internal float          m_fAnimationSpeed;
     internal float          m_fAnimationLength;
+
+    internal bool           m_ForceTurnImmediate = false;
 
     internal float          m_fFallStartY = 0f;
     internal bool           m_bTurning = false;
@@ -404,19 +406,19 @@ public class Animal : MonoBehaviour
                         }
                 }
 
-                m_tJointRoot.rotation = Quaternion.Lerp(m_tJointRoot.rotation, rot, Time.deltaTime * m_fRotSpeed);
+                m_tJointRoot.rotation = Quaternion.Lerp(m_tJointRoot.rotation, rot, m_ForceTurnImmediate ? 1 : Time.deltaTime * m_fRotSpeed);
             }
             else if (!m_bTurning)
             {
                 Quaternion rot = Quaternion.Euler(m_tJointRoot.localRotation.eulerAngles.x, m_bTurned ? 180 + m_fTurnAxis : 0 + m_fTurnAxis, m_tJointRoot.localRotation.eulerAngles.z);
-                m_tJointRoot.localRotation = Quaternion.Lerp(m_tJointRoot.localRotation, rot, Time.deltaTime * m_fRotSpeed);
+                m_tJointRoot.localRotation = Quaternion.Lerp(m_tJointRoot.localRotation, rot, m_ForceTurnImmediate ? 1 : Time.deltaTime * m_fRotSpeed);
             }
         }
         else
         {
             Vector3 rot = Quaternion.LookRotation(m_v3ForwardTarg.normalized).eulerAngles;
             rot.z = m_v3UpTarget.z;
-            m_tJointRoot.rotation = Quaternion.Lerp(m_tJointRoot.rotation, Quaternion.Euler(rot), Time.deltaTime * m_fRotSpeed);
+            m_tJointRoot.rotation = Quaternion.Lerp(m_tJointRoot.rotation, Quaternion.Euler(rot), m_ForceTurnImmediate ? 1 : Time.deltaTime * m_fRotSpeed);
         }
         #endregion
         //=================================================
