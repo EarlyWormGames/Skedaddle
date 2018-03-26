@@ -66,6 +66,8 @@ public class Dig : ActionObject
         anteater.transform.position = StartPoint.position;
         m_aCurrentAnimal.m_tCollider.gameObject.SetActive(false);
 
+        m_lAnimalsIn.Remove(anteater);
+
         AnimalController.Instance.CanSwap = false;
     }
 
