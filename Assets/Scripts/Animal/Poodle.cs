@@ -59,9 +59,9 @@ public class Poodle : Animal
 
         m_aAnimalAnimator.SetBool("Controlled", m_bSelected);
 
-        if (m_fSelectionTimer > 0)
+        if (!m_bSelected)
         {
-            Analytics.CustomEvent(gameObject.name + " deselected", new Dictionary<string, object>
+            Analytics.CustomEvent(m_eName.ToString() + " deselected", new Dictionary<string, object>
             {
                 { "Time", m_fSelectionTimer }
             });

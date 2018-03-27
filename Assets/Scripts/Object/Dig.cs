@@ -59,6 +59,7 @@ public class Dig : ActionObject
         m_aCurrentAnimal.m_oCurrentObject = this;
         m_aCurrentAnimal.m_aMovement.moveVelocity = 0;
         m_aCurrentAnimal.m_bCheckGround = false;
+        m_aCurrentAnimal.m_aMovement.StopSpline();
 
         Anteater anteater = (Anteater)m_aCurrentAnimal;
         anteater.m_bDigging = true;

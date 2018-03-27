@@ -203,6 +203,8 @@ public class LadderObject : ActionObject
         m_aCurrentAnimal.transform.SetParent(transform);
         m_aCurrentAnimal.m_rBody.isKinematic = true;
 
+        m_aCurrentAnimal.m_aMovement.StopSpline();
+
         entryZ = m_aCurrentAnimal.transform.position.z;
 
         if (DisableCollision)
