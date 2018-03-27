@@ -48,8 +48,9 @@ public class Loris : Animal
     private bool m_bIgnoreCheck = false;
 
     private bool m_bUseLight = false;
+    public bool GetLightStatus() { return m_bUseLight; }
     private bool m_bUseNightVision = false;
-    private LorisNightVision NV;
+    private NightVision NV;
 
     private float m_fDropTimer = 0.3f;
     private float m_fElectroTimer = 0.3f;
@@ -65,7 +66,7 @@ public class Loris : Animal
         m_eName = ANIMAL_NAME.LORIS;
         m_eSize = ANIMAL_SIZE.XS;
 
-        NV = GetComponent<LorisNightVision>();
+        NV = GetComponent<NightVision>();
     }
 
     protected override void OnUpdate()
@@ -343,25 +344,14 @@ public class Loris : Animal
         //=====================================
         // NIGHT VISION
         //=====================================
-
-        ///Lorius light Array, obsalete? - Bernard
-        //if (m_lVisionLight.Length > 0)
-        //{
-            if (m_bUseLight && m_bSelected)
-            {
-                // LIGHT ON
-                for(int i = 0; i < m_lVisionLight.Length; ++i)
-                    m_lVisionLight[i].intensity = Mathf.Lerp(m_lVisionLight[i].intensity, m_fOnIntensity, m_fLightSpeed * Time.deltaTime);
-                NV.NightVisionOn = true;
-            }
-            else
-            {
-                // LIGHT OFF
-                for(int i = 0; i < m_lVisionLight.Length; ++i)
-                    m_lVisionLight[i].intensity = Mathf.Lerp(m_lVisionLight[i].intensity, -1f, m_fLightSpeed * Time.deltaTime);
-                NV.NightVisionOn = false;
-            }
-        //}
+        if (m_bUseLight && m_bSelected)
+        {
+            NV.NightVisionOn = true;
+        }
+        else
+        {
+            NV.NightVisionOn = false;
+        }
 
         //=====================================
         bool climbDown = false;
@@ -480,4 +470,6 @@ public class Loris : Animal
         bool canmove = base.CanMove();
         return canmove && !m_bClimbing && !m_bInCannon;
     }
+    
+
 }

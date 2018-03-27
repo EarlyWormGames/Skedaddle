@@ -10,7 +10,7 @@ using System;
 /// </summary>
 [ExecuteInEditMode]
 [AddComponentMenu("Image Effects/Night Vision")]
-public class LorisNightVision : MonoBehaviour
+public class NightVision : MonoBehaviour
 {
     public enum EStatus
     {
@@ -18,13 +18,17 @@ public class LorisNightVision : MonoBehaviour
         eFADEOUT,
         eIDLE,
     };
-   
+
     public GameObject NVCanvas;
     private GameObject Temp_NV_Canvas;
 
     public bool NightVisionOn = false;
     public GameObject NightVisionObject;
-    public float TranssionSpeed = 1.0f;
+    public float NVTranssionSpeed = 1.0f;
+
+    public Light[] ActiveLights;
+    private float[] ActiveLightIntencity;
+    public float LightTransitionSpeed = 0.2f;
 
     private bool PreviousNVStatus;
     private RawImage NV_Image;
@@ -42,7 +46,7 @@ public class LorisNightVision : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     void Awake()
@@ -57,13 +61,13 @@ public class LorisNightVision : MonoBehaviour
         {
             NightVisionObject = NV_GO.transform.GetChild(0).gameObject;
         }
-
-
+        
+        
         m_eCurrentStatus = EStatus.eIDLE;
         m_ePreviousStatus = m_eCurrentStatus;   //simulating as if the scene had just faded out.
 
         PreviousNVStatus = NightVisionOn;
-
+        
         m_Fade = GameManager.Instance.GetComponent<Fading>();
 
         NV_Image = NightVisionObject.GetComponent<RawImage>();
@@ -77,15 +81,26 @@ public class LorisNightVision : MonoBehaviour
             NV_ActiveSensitivity = NV_SensitivityMin;
         else
             NV_ActiveSensitivity = NV_SensitivityMax;
+
+        if (ActiveLights.Length != 0)
+        {
+            ActiveLightIntencity = new float[ActiveLights.Length];
+            for (int i = 0; i < ActiveLights.Length; i++)
+            {
+                ActiveLightIntencity[i] = ActiveLights[i].intensity;
+            }
+        }
+
     }
 
     private void OnDestroy()
     {
         DestroyImmediate(Temp_NV_Material);
         DestroyImmediate(Temp_NV_Canvas);
+        
     }
     void Update()
-        {
+    {
         if (PreviousNVStatus != NightVisionOn)
         {
             PreviousNVStatus = NightVisionOn;
@@ -101,7 +116,19 @@ public class LorisNightVision : MonoBehaviour
                 m_Fade.BeginFadeInOut();
                 RemoveListner(StartNV);
                 AddListner(EndNV);
-                
+
+            }
+        }
+
+        if (NightVisionOn)
+        {
+            LightsOFF();
+        }
+        else
+        {
+            if (!AnimalController.Instance.GetCurrentAnimal().GetComponent<Loris>().GetLightStatus()) //// THIS IS A TERRIBLE LINE OF CODE :Bernard:
+            {
+                LightsON();
             }
         }
 
@@ -141,7 +168,7 @@ public class LorisNightVision : MonoBehaviour
 
                 case EStatus.eFADEIN:
 
-                    //Honestly I just wanna die, why'd I write all this bullshit
+                    //Honestly I just dont know why I'd write all this bullshit
 
                     //if (m_bBeginGreenFadeIn)
                     //{
@@ -156,7 +183,7 @@ public class LorisNightVision : MonoBehaviour
                     break;
 
                 case EStatus.eFADEOUT:
-                     
+
                     //NV_ActiveSensitivity = NV_ActiveSensitivity + Time.deltaTime * TranssionSpeed;
 
                     //if (NV_ActiveSensitivity >= NV_SensitivityMax)
@@ -176,7 +203,7 @@ public class LorisNightVision : MonoBehaviour
 
         if (Temp_NV_Material == null)
         {
-            Debug.LogWarning("The Temp_NV_Material is null." +"\n" + "It doesnt exsist until Run time");
+            Debug.LogWarning("The Temp_NV_Material is null." + "\n" + "It doesnt exsist until Run time");
         }
         else
         {
@@ -199,9 +226,37 @@ public class LorisNightVision : MonoBehaviour
     void AddListner(UnityEngine.Events.UnityAction listner)
     {
         m_Fade.EventToCall.AddListener(listner);
-    }   
+    }
     void RemoveListner(UnityEngine.Events.UnityAction listner)
     {
         m_Fade.EventToCall.RemoveListener(listner);
+    }
+
+    void LightsON()
+    {
+        //blend intencity up
+        for (int i = 0; i < ActiveLights.Length; i++)
+        {
+            ActiveLights[i].intensity += LightTransitionSpeed;
+
+            if (ActiveLights[i].intensity > ActiveLightIntencity[i])
+            {
+                ActiveLights[i].intensity = ActiveLightIntencity[i];
+            }
+        }
+    }
+    void LightsOFF()
+    {
+        //blend intencity down
+        for (int i = 0; i < ActiveLights.Length; i++)
+        {
+            ActiveLights[i].intensity -= LightTransitionSpeed;
+
+            if (ActiveLights[i].intensity < 0.0f)
+            {
+                ActiveLights[i].intensity = 0.0f;
+            }
+        }
+
     }
 }
