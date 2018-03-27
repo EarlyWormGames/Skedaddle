@@ -267,7 +267,7 @@ public class AnimalController : Singleton<AnimalController>
         if (m_lAnimals == null)
             return null;
 
-        if (m_lAnimals.Count < 0)
+        if (m_lAnimals.Count <= 0)
             return null;
 
         return m_lAnimals[m_iSelectedNumber];
