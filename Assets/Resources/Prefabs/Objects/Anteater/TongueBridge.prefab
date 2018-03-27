@@ -1296,15 +1296,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1283322634679826}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
-  m_LocalPosition: {x: 3.147, y: 5.196, z: -6.498}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0.00000028312206, z: -0, w: -1}
+  m_LocalPosition: {x: 0.17404114, y: 0.012353625, z: -0.0025449474}
+  m_LocalScale: {x: 0.36334267, y: 0.36334276, z: 0.36334276}
   m_Children:
   - {fileID: 4774427279792800}
   - {fileID: 4170187780945604}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 360, z: 0}
 --- !u!4 &4502250029635960
 Transform:
   m_ObjectHideFlags: 1
@@ -2401,6 +2401,7 @@ MonoBehaviour:
   m_aRequiredSize: 0
   m_aRequiredAnimal: 2
   m_aMaximumSize: 0
+  m_bOnlyHeadTrigger: 1
   m_lAnimalsIn: []
   m_rBody: {fileID: 0}
   m_GazeObject: {fileID: 0}
@@ -2436,10 +2437,12 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   DoOnTrigger: 0
-  Direction: 2
-  FinishDirection: 2
+  BreakSplineConnection: 0
+  Direction: 4
   AnchorPoint: {fileID: 4586201257157202}
   TransitionTo: {fileID: 0}
+  RequiredKey:
+    action: {fileID: 0}
 --- !u!114 &114516104201645996
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2454,6 +2457,7 @@ MonoBehaviour:
   m_aRequiredSize: 0
   m_aRequiredAnimal: 1
   m_aMaximumSize: 0
+  m_bOnlyHeadTrigger: 1
   m_lAnimalsIn: []
   m_rBody: {fileID: 0}
   m_GazeObject: {fileID: 0}
@@ -2489,10 +2493,12 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   DoOnTrigger: 0
-  Direction: 4
-  FinishDirection: 4
+  BreakSplineConnection: 0
+  Direction: 2
   AnchorPoint: {fileID: 4255372011671574}
   TransitionTo: {fileID: 0}
+  RequiredKey:
+    action: {fileID: 0}
 --- !u!114 &114780830750092208
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2507,6 +2513,7 @@ MonoBehaviour:
   m_aRequiredSize: 0
   m_aRequiredAnimal: 2
   m_aMaximumSize: 0
+  m_bOnlyHeadTrigger: 1
   m_lAnimalsIn: []
   m_rBody: {fileID: 0}
   m_GazeObject: {fileID: 0}
@@ -2542,10 +2549,12 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   DoOnTrigger: 0
+  BreakSplineConnection: 0
   Direction: 2
-  FinishDirection: 2
   AnchorPoint: {fileID: 4958695315756764}
   TransitionTo: {fileID: 0}
+  RequiredKey:
+    action: {fileID: 0}
 --- !u!114 &114838777288631094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2560,6 +2569,7 @@ MonoBehaviour:
   m_aRequiredSize: 0
   m_aRequiredAnimal: 3
   m_aMaximumSize: 0
+  m_bOnlyHeadTrigger: 1
   m_lAnimalsIn: []
   m_rBody: {fileID: 0}
   m_GazeObject: {fileID: 0}
@@ -2598,6 +2608,18 @@ MonoBehaviour:
   m_tMovePoint: {fileID: 0}
   m_aTongue: {fileID: 1505581997999866}
   m_fHeadWeight: 0
+  m_BridgeTongueScale: 0.992
+  m_BridgeEndAnimationStart: 0
+  OnBuildBridge:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnRemoveBridge:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114937902366450394
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2612,6 +2634,7 @@ MonoBehaviour:
   m_aRequiredSize: 0
   m_aRequiredAnimal: 1
   m_aMaximumSize: 0
+  m_bOnlyHeadTrigger: 1
   m_lAnimalsIn: []
   m_rBody: {fileID: 0}
   m_GazeObject: {fileID: 0}
@@ -2647,10 +2670,12 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   DoOnTrigger: 0
+  BreakSplineConnection: 0
   Direction: 4
-  FinishDirection: 4
   AnchorPoint: {fileID: 4584385673298112}
   TransitionTo: {fileID: 0}
+  RequiredKey:
+    action: {fileID: 0}
 --- !u!137 &137189755391980538
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
