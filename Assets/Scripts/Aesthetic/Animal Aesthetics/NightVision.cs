@@ -126,9 +126,14 @@ public class NightVision : MonoBehaviour
         }
         else
         {
-            if (!AnimalController.Instance.GetCurrentAnimal().GetComponent<Loris>().GetLightStatus()) //// THIS IS A TERRIBLE LINE OF CODE :Bernard:
+            var currentAnimal = (Loris)AnimalController.Instance.GetCurrentAnimal();
+            if (currentAnimal != null)
             {
-                LightsON();
+                //I fixed it for you :YEET:
+                if (!currentAnimal.GetLightStatus()) //// THIS IS A TERRIBLE LINE OF CODE :Bernard:
+                {
+                    LightsON();
+                }
             }
         }
 
