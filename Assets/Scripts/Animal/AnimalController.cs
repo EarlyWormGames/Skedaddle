@@ -19,7 +19,7 @@ public class AnimalController : Singleton<AnimalController>
     //==================================
     //          Private Vars
     //==================================
-    private List<Animal> m_lAnimals;
+    private List<Animal> m_lAnimals = new List<Animal>();
     private int m_iSelectedNumber = 0;
 
     private InGameGUI m_iAnimalGui;
@@ -264,6 +264,9 @@ public class AnimalController : Singleton<AnimalController>
 
     public Animal GetCurrentAnimal()
     {
+        if (m_lAnimals == null)
+            return null;
+
         if (m_lAnimals.Count < 0)
             return null;
 
