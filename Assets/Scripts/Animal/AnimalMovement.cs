@@ -74,6 +74,8 @@ public class AnimalMovement : MonoBehaviour
     private Vector3 lastPos;
     private Vector3 lastRot;
 
+    private bool canMoveForward = true, canMoveBackward = true;
+
     // Use this for initialization
     void Start()
     {
@@ -124,6 +126,16 @@ public class AnimalMovement : MonoBehaviour
                 animal.m_gqGrounder.enabled = false;
 
             currentInput *= FollowSpline.InvertAxis ? -1 : 1;
+
+            if (!canMoveForward && currentInput > 0)
+                currentInput = 0;
+            else if (!canMoveForward && currentInput < 0)
+                canMoveForward = true;
+
+            if (!canMoveBackward && currentInput < 0)
+                currentInput = 0;
+            else if (!canMoveBackward && currentInput > 0)
+                canMoveBackward = true;
         }
 
         float[] speed = animal.CalculateMoveSpeed();
@@ -260,10 +272,20 @@ public class AnimalMovement : MonoBehaviour
                 else
                     ++currentPoint;
 
-                if (currentPoint < 0 && FollowSpline.LowExit)
-                    StopSpline();
-                else if (currentPoint > FollowSpline.points.Length - 1 && FollowSpline.HighExit)
-                    StopSpline();
+                if (currentPoint < 0)
+                {
+                    if (FollowSpline.LowExit)
+                        StopSpline();
+                    else
+                        canMoveBackward = false;
+                }
+                else if (currentPoint > FollowSpline.points.Length - 1)
+                {
+                    if (FollowSpline.HighExit)
+                        StopSpline();
+                    else
+                        canMoveForward = false;
+                }
             }
         }
         lastMove = moveVelocity;
@@ -304,6 +326,9 @@ public class AnimalMovement : MonoBehaviour
 
         FollowSpline = spline;
         currentPoint = FollowSpline.GetClosestPoint(transform.position);
+
+        canMoveBackward = true;
+        canMoveForward = true;
 
         if (FollowSpline.DisableGravity)
             animal.m_rBody.useGravity = false;
