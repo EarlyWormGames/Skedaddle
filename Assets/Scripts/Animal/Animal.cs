@@ -842,6 +842,14 @@ public class Animal : MonoBehaviour
         }
         else
             m_fSitTimer = 0f;
+
+        if (!m_bSelected)
+        {
+            Analytics.CustomEvent(m_eName.ToString() + " deselected", new Dictionary<string, object>
+            {
+                { "Time", m_fSelectionTimer }
+            });
+        }
     }
 
     public virtual void OnPushChange() { }
