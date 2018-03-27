@@ -756,6 +756,14 @@ public class Animal : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        if (m_oCurrentObject != null)
+        {
+            if (m_oCurrentObject.GetType() == typeof(Trampoline))
+            {
+                m_oCurrentObject.Detach(this);
+            }
+        }
+
         Vector3 collisionDir = collision.contacts[0].point - transform.position;
         float dot = Vector3.Dot(Vector3.up, collisionDir.normalized);
 
