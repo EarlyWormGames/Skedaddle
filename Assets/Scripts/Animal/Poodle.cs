@@ -70,6 +70,11 @@ public class Poodle : Animal
 
     protected override void OnUpdate()
     {
+        if (m_bHoldingLoris)
+        {
+            AnimalController.Instance.GetAnimal(ANIMAL_NAME.LORIS).transform.position = LorisHolder.position;
+        }
+
         m_aAnimalAnimator.SetBool("Controlled", m_bSelected);
         m_aAnimalAnimator.SetBool("Dead", !Alive);
 
