@@ -42,7 +42,7 @@ public class Trampoline : ActionObject
         if (!LaunchOnTrigger)
             LaunchAxis.Bind(GameManager.Instance.input.handle);
 
-        m_CanBeDetached = false;
+        m_CanBeDetached = true;
         m_CanDetach = true;
         m_bBlocksMovement = true;
         m_bBlocksTurn = true;
@@ -78,6 +78,9 @@ public class Trampoline : ActionObject
     {
         if (!LaunchOnTrigger)
             return;
+
+        TryDetach(a_animal);
+
         m_aCurrentAnimal = a_animal;
         LaunchAnimal();
     }
@@ -191,6 +194,9 @@ public class Trampoline : ActionObject
     {
         Destroy(sender);
 
+        if (!tempSettings.ContainsKey(item))
+            return;
+
         Rigidbody rig = item.GetComponent<Rigidbody>();
         Animal animal = item.GetComponent<Animal>();
 
@@ -212,5 +218,19 @@ public class Trampoline : ActionObject
             rig.constraints = tempSettings[item].constraints;
             tempSettings.Remove(item);
         }
+    }
+    public override void Detach(Animal anim, bool destroyed = false)
+    {
+        base.Detach(anim, destroyed);
+
+        if (!tempSettings.ContainsKey(anim.transform))
+            return;
+
+        Destroy(anim.GetComponent<BezierSplineFollower>());
+
+        anim.m_oCurrentObject = null;
+        anim.m_rBody.useGravity = true;
+        anim.m_rBody.constraints = tempSettings[anim.transform].constraints;
+        tempSettings.Remove(anim.transform);
     }
 }

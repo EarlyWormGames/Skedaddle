@@ -48,7 +48,7 @@ public class PPObject : ActionObject
             transform.eulerAngles = IgnoreUtils.Calculate(MaintainPosition, startRotation, transform.eulerAngles);
 
             if (input.interact.wasJustPressed && !waitOne && m_aCurrentAnimal.m_bSelected)
-                Detach();
+                Detach(m_aCurrentAnimal);
 
             waitOne = false;
         }
@@ -94,9 +94,9 @@ public class PPObject : ActionObject
             Physics.IgnoreCollision(col, GetComponent<Collider>(), true);
     }
 
-    public override void Detach(bool destroy = false)
+    public override void Detach(Animal anim, bool destroy = false)
     {
-        base.Detach();
+        base.Detach(anim, destroy);
         m_aCurrentAnimal.m_bPullingObject = false;
         m_aCurrentAnimal.m_oCurrentObject = null;
         m_aCurrentAnimal.OnPushChange();

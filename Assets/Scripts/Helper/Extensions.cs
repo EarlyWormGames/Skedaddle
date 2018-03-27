@@ -248,6 +248,6 @@ public static class UnityExtensions
     /// <returns></returns>
     public static bool Contains(this LayerMask mask, int layer)
     {
-        return mask == (mask | (1 << layer));
+        return ((mask.value & (1 << layer)) > 0);
     }
 }

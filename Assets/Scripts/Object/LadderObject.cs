@@ -96,7 +96,7 @@ public class LadderObject : ActionObject
                 return;
             }
 
-            Detach();
+            Detach(m_aCurrentAnimal);
             return;
         }
         justEnter = false;
@@ -176,14 +176,14 @@ public class LadderObject : ActionObject
                 moveDown = false;
             else if (pointIndex < 0 && LowExit)
             {
-                Detach();
+                Detach(m_aCurrentAnimal);
                 OnLowExit.Invoke();
             }
             else if (pointIndex > Points.Length - 1 && !HighExit)
                 moveUp = false;
             else if (pointIndex > Points.Length - 1 && HighExit)
             {
-                Detach();
+                Detach(m_aCurrentAnimal);
                 OnHighExit.Invoke();
             }
         }
@@ -202,6 +202,8 @@ public class LadderObject : ActionObject
         m_aCurrentAnimal.m_oCurrentObject = this;
         m_aCurrentAnimal.transform.SetParent(transform);
         m_aCurrentAnimal.m_rBody.isKinematic = true;
+
+        m_aCurrentAnimal.m_aMovement.StopSpline();
 
         entryZ = m_aCurrentAnimal.transform.position.z;
 
@@ -234,9 +236,9 @@ public class LadderObject : ActionObject
         loris.SetDirection(Direction, true);
     }
 
-    public override void Detach(bool destroy = false)
+    public override void Detach(Animal anim, bool destroy = false)
     {
-        base.Detach();
+        base.Detach(anim, destroy);
         moveVelocity = 0;
 
         m_aCurrentAnimal.m_oCurrentObject = null;
@@ -358,7 +360,7 @@ public class LadderObject : ActionObject
         if (shimmyObject == null)
             return;
 
-        Detach();
+        Detach(m_aCurrentAnimal);
         shimmyObject.DoAction();
     }
 }

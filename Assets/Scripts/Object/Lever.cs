@@ -66,18 +66,18 @@ public class Lever : ActionObject
     protected virtual void DoSwitchOff()
     {
         OnSwitchOff.Invoke();
-        Detach();
+        Detach(m_aCurrentAnimal);
     }
 
     protected virtual void DoSwitchOn()
     {
         OnSwitchOn.Invoke();
-        Detach();
+        Detach(m_aCurrentAnimal);
     }
 
-    public override void Detach(bool destroy = false)
+    public override void Detach(Animal anim, bool destroy = false)
     {
-        base.Detach();
+        base.Detach(anim, destroy);
         m_aCurrentAnimal.SetDirection(FACING_DIR.NONE, false);
         m_aCurrentAnimal.m_oCurrentObject = null;
         m_aCurrentAnimal = null;

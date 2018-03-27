@@ -89,7 +89,7 @@ public class FallDetacher : MonoBehaviour
         if (percent * 100 < DetachPercent && detach)
         {
             if (ToDetach.m_aCurrentAnimal != null)
-                ToDetach.Detach();
+                ToDetach.Detach(ToDetach.m_aCurrentAnimal);
             if (DisableWhenDetach)
                 ToDetach.enabled = false;
         }

@@ -14,6 +14,11 @@ public class Killer : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        if (AllowLayers == 0)
+        {
+            AllowLayers = (1 << LayerMask.NameToLayer("Animal")) | (1 << LayerMask.NameToLayer("AnimalTrigger"));
+        }
+
         if (!AllowLayers.Contains(other.gameObject.layer))
             return;
 

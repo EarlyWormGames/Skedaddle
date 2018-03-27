@@ -348,7 +348,7 @@ public class Animal : MonoBehaviour
 
                 if (m_fGazeTimer >= EWEyeTracking.holdTime)
                 {
-                    m_oCurrentObject.Detach();
+                    m_oCurrentObject.Detach(this);
                     SetTimer(false);
                 }
             }
@@ -756,10 +756,25 @@ public class Animal : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        if (m_oCurrentObject != null)
+        {
+            if (m_oCurrentObject.GetType() == typeof(Trampoline))
+            {
+                m_oCurrentObject.Detach(this);
+            }
+        }
+
         Vector3 collisionDir = collision.contacts[0].point - transform.position;
         float dot = Vector3.Dot(Vector3.up, collisionDir.normalized);
 
-        if (dot > 0 && collision.contacts[0].otherCollider.attachedRigidbody != null)
+        foreach (var collider in collision.contacts)
+        {
+            var selfCol = collider.thisCollider;
+            if (selfCol.transform.parent != m_tCollider || selfCol.transform != m_tCollider)
+                return;
+        }
+
+        if (dot > 0.3f && collision.contacts[0].otherCollider.attachedRigidbody != null)
         {
             if (collision.contacts[0].otherCollider.attachedRigidbody.velocity.magnitude < 0.1f)
                 return;
@@ -835,6 +850,14 @@ public class Animal : MonoBehaviour
         }
         else
             m_fSitTimer = 0f;
+
+        if (!m_bSelected)
+        {
+            Analytics.CustomEvent(m_eName.ToString() + " deselected", new Dictionary<string, object>
+            {
+                { "Time", m_fSelectionTimer }
+            });
+        }
     }
 
     public virtual void OnPushChange() { }

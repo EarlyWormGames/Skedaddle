@@ -83,6 +83,8 @@ public class Cannon : ActionObject
         loris.m_bInCannon = true;
         loris.m_rBody.isKinematic = true;
 
+        loris.m_aMovement.StopSpline();
+
         loris.m_tCollider.gameObject.layer = LayerMask.NameToLayer("AnimalNoCollide");
         loris.transform.position = LorisSitPoint.position;
         shooting = false;

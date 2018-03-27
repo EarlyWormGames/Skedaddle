@@ -59,6 +59,7 @@ public class Dig : ActionObject
         m_aCurrentAnimal.m_oCurrentObject = this;
         m_aCurrentAnimal.m_aMovement.moveVelocity = 0;
         m_aCurrentAnimal.m_bCheckGround = false;
+        m_aCurrentAnimal.m_aMovement.StopSpline();
 
         Anteater anteater = (Anteater)m_aCurrentAnimal;
         anteater.m_bDigging = true;
@@ -107,7 +108,16 @@ public class Dig : ActionObject
         m_aCurrentAnimal.m_rBody.useGravity = true;
         m_aCurrentAnimal.m_oCurrentObject = null;
         m_aCurrentAnimal.SetDirection(FACING_DIR.NONE, false);
+
+        m_aCurrentAnimal.m_rBody.WakeUp();
         m_aCurrentAnimal = null;
+
+        var root = transform.parent.parent.gameObject;
+        var rigs = root.GetComponentsInChildren<Rigidbody>();
+        foreach (var rig in rigs)
+        {
+            rig.WakeUp();
+        }
 
         AnimalController.Instance.CanSwap = true;
     }

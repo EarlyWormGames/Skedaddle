@@ -368,14 +368,6 @@ public class Loris : Animal
 
         if (m_bSelected)
             LetGoOfPoodle();
-
-        if (m_fSelectionTimer > 0)
-        {
-            Analytics.CustomEvent(gameObject.name + " deselected", new Dictionary<string, object>
-            {
-                { "Time", m_fSelectionTimer }
-            });
-        }
     }
 
     public void LetGoOfPoodle()
@@ -386,6 +378,20 @@ public class Loris : Animal
             var poodle = AnimalController.Instance.GetAnimal(ANIMAL_NAME.POODLE) as Poodle;
             m_bHeldByPoodle = false;
             poodle.m_bHoldingLoris = false;
+
+            transform.position = poodle.transform.position;
+
+            var dir = poodle.LorisHolder.position - transform.position;
+
+            RaycastHit hitInfo;
+            if (m_rBody.SweepTest(dir.normalized, out hitInfo, dir.magnitude))
+            {
+                dir.y = 0;
+                var inverseLength = dir.magnitude - hitInfo.distance;
+                transform.position = hitInfo.point + (dir.normalized * -inverseLength);
+            }
+            else
+                transform.position = poodle.LorisHolder.position;
 
             m_rBody.useGravity = true;
             m_tCollider.gameObject.layer = LayerMask.NameToLayer("Animal");

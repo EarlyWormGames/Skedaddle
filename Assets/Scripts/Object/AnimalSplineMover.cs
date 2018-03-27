@@ -50,9 +50,9 @@ public class AnimalSplineMover : ActionObject
         SplineFollower.Follow();
     }
 
-    public override void Detach(bool destroy = false)
+    public override void Detach(Animal anim, bool destroy = false)
     {
-        base.Detach();
+        base.Detach(anim, destroy);
 
         m_aCurrentAnimal.m_oCurrentObject = null;
         m_aCurrentAnimal = null;
@@ -60,7 +60,7 @@ public class AnimalSplineMover : ActionObject
 
     void SplineEnd(BezierSplineFollower sender, Transform trackedObject)
     {
-        Detach();
+        Detach(m_aCurrentAnimal);
     }
 
     private void OnEnable()
