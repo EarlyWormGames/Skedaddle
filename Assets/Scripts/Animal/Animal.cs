@@ -348,7 +348,7 @@ public class Animal : MonoBehaviour
 
                 if (m_fGazeTimer >= EWEyeTracking.holdTime)
                 {
-                    m_oCurrentObject.Detach();
+                    m_oCurrentObject.Detach(this);
                     SetTimer(false);
                 }
             }

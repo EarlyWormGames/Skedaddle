@@ -70,7 +70,7 @@ public class LeverAnimated : Lever
             m_aCurrentAnimal.m_bPullingLeverOff = false;
         }
 
-        Detach();
+        Detach(m_aCurrentAnimal);
     }
 
     protected override void DoSwitchOff()

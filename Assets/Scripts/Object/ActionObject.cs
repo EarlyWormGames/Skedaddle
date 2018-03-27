@@ -245,7 +245,7 @@ public class ActionObject : MonoBehaviour
     public virtual void DoActionOn() { }
     public virtual void DoActionOff() { }
 
-    public virtual void Detach(bool destroyed = false)
+    public virtual void Detach(Animal anim, bool destroyed = false)
     {
         OnDetach.Invoke();
     }
@@ -259,13 +259,16 @@ public class ActionObject : MonoBehaviour
         m_bGazeRunning = a_Run;
     }
 
-    protected bool TryDetach()
+    protected bool TryDetach(Animal anim = null)
     {
-        if (Animal.CurrentAnimal.m_oCurrentObject != null)
+        if (anim == null)
+            anim = Animal.CurrentAnimal;
+
+        if (anim.m_oCurrentObject != null)
         {
-            if (!m_CanDetach || !Animal.CurrentAnimal.m_oCurrentObject.m_CanBeDetached)
+            if (!m_CanDetach || !anim.m_oCurrentObject.m_CanBeDetached)
                 return false;
-            Animal.CurrentAnimal.m_oCurrentObject.Detach();
+            anim.m_oCurrentObject.Detach(anim);
         }
         return true;
     }
@@ -273,6 +276,6 @@ public class ActionObject : MonoBehaviour
     private void OnDestroy()
     {
         if (m_aCurrentAnimal != null)
-            Detach(true);
+            Detach(m_aCurrentAnimal, true);
     }
 }

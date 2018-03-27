@@ -112,6 +112,13 @@ public class Dig : ActionObject
         m_aCurrentAnimal.m_rBody.WakeUp();
         m_aCurrentAnimal = null;
 
+        var root = transform.parent.parent.gameObject;
+        var rigs = root.GetComponentsInChildren<Rigidbody>();
+        foreach (var rig in rigs)
+        {
+            rig.WakeUp();
+        }
+
         AnimalController.Instance.CanSwap = true;
     }
 }
