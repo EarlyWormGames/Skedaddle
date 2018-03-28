@@ -107,8 +107,8 @@ public class Loris : Animal
             m_aAnimalAnimator.SetBool("Controlled", m_bSelected);
         }
 
-        //set horozontal velocity
-        m_aAnimalAnimator.SetFloat("Velocity", m_aMovement.moveVelocity * m_fWalkAnimMult);
+        //set horizontal velocity
+        m_aAnimalAnimator.SetFloat("Velocity", (!m_bSelected && !m_bForceWalk) ? 0 : m_aMovement.moveVelocity * m_fWalkAnimMult);
         m_aAnimalAnimator.SetBool("Climbing", m_bClimbing);
 
         float verticalVelocity = 0;
@@ -117,7 +117,7 @@ public class Loris : Animal
             m_aAnimalAnimator.SetFloat("Vertical Velocity", m_rBody.velocity.y);
         else
         {
-            verticalVelocity = ((LadderObject)m_oCurrentObject).moveVelocity;
+            verticalVelocity = !m_bSelected ? 0 : ((LadderObject)m_oCurrentObject).moveVelocity;
             m_aAnimalAnimator.SetFloat("Vertical Velocity", verticalVelocity * m_fClimbAnimMult);
         }
 
@@ -213,7 +213,7 @@ public class Loris : Animal
         {
             m_aAnimalAnimator.SetBool("Pushing", true);
             float rot = m_tJointRoot.localEulerAngles.y;
-            m_aAnimalAnimator.SetFloat("Horizontal Velocity", (rot < 180 ? m_aMovement.moveVelocity : -m_aMovement.moveVelocity) * m_fPushAnimMult);
+            m_aAnimalAnimator.SetFloat("Horizontal Velocity", !m_bSelected ? 0 : (rot < 180 ? m_aMovement.moveVelocity : -m_aMovement.moveVelocity) * m_fPushAnimMult);
         }
         else
         {

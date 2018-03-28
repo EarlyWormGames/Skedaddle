@@ -116,7 +116,7 @@ public class Poodle : Animal
 
         //set horozontal velocity
         m_aAnimalAnimator.SetFloat("Vertical Velocity", m_rBody.velocity.y);
-        m_aAnimalAnimator.SetFloat("Horizontal Velocity", m_aMovement.moveVelocity * m_fWalkAnimMult);
+        m_aAnimalAnimator.SetFloat("Horizontal Velocity", !m_bSelected ? 0 : m_aMovement.moveVelocity * m_fWalkAnimMult);
 
         
         if (!m_bOnSlope)
