@@ -168,7 +168,7 @@ public class ClimbJump : ActionObject
         if (BreakSplineConnection)
             m_aCurrentAnimal.m_aMovement.StopSpline();
 
-        m_lAnimalsIn.Remove(m_aCurrentAnimal);
+        m_lAnimalsIn.RemoveAll(m_aCurrentAnimal);
     }
 
     protected virtual bool TryClimb(Animal animal)

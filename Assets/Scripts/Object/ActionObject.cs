@@ -162,7 +162,7 @@ public class ActionObject : MonoBehaviour
         return true;
     }
 
-    void OnTriggerEnter(Collider a_col)
+    public void OnTriggerEnter(Collider a_col)
     {
         AnimalTrigger animtrig = a_col.GetComponent<AnimalTrigger>();
         Animal anim = null;
@@ -179,13 +179,13 @@ public class ActionObject : MonoBehaviour
         else
             anim = animtrig.parent;
 
-        if (m_lAnimalsIn.Contains(anim))
-            return;
-
         if (CheckCorrectAnimal(anim))
         {
-            AnimalEnter(anim);
-            OnAnimalEnter.Invoke();
+            if (!m_lAnimalsIn.Contains(anim))
+            {
+                AnimalEnter(anim);
+                OnAnimalEnter.Invoke();
+            }
         }
         else
         {
@@ -200,7 +200,7 @@ public class ActionObject : MonoBehaviour
     public virtual void AnimalEnter(Animal a_animal) { }
     protected virtual void WrongAnimalEnter(Animal a_animal) { }
 
-    void OnTriggerExit(Collider a_col)
+    public void OnTriggerExit(Collider a_col)
     {
         AnimalTrigger animtrig = a_col.GetComponent<AnimalTrigger>();
         Animal anim = null;
@@ -224,9 +224,14 @@ public class ActionObject : MonoBehaviour
 
         if (anim != null)
         {
-            AnimalExit(anim);
             if (CheckCorrectAnimal(anim))
-                OnAnimalExit.Invoke();
+            {
+                if (!m_lAnimalsIn.Contains(anim))
+                {
+                    AnimalExit(anim);
+                    OnAnimalExit.Invoke();
+                }
+            }
             else
                 OnWrongAnimalExit.Invoke();
         }

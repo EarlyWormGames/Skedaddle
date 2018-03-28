@@ -6244,6 +6244,26 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: 0.106
       objectReference: {fileID: 0}
+    - target: {fileID: 65236446262428104, guid: 555839984db1b7848b8f95c471ea7afe,
+        type: 2}
+      propertyPath: m_Size.z
+      value: 0.9618514
+      objectReference: {fileID: 0}
+    - target: {fileID: 65236446262428104, guid: 555839984db1b7848b8f95c471ea7afe,
+        type: 2}
+      propertyPath: m_Center.x
+      value: 0.00002498831
+      objectReference: {fileID: 0}
+    - target: {fileID: 65236446262428104, guid: 555839984db1b7848b8f95c471ea7afe,
+        type: 2}
+      propertyPath: m_Center.y
+      value: -0.000043345524
+      objectReference: {fileID: 0}
+    - target: {fileID: 65236446262428104, guid: 555839984db1b7848b8f95c471ea7afe,
+        type: 2}
+      propertyPath: m_Center.z
+      value: 0.019074647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 555839984db1b7848b8f95c471ea7afe, type: 2}
   m_IsPrefabParent: 0
@@ -50547,38 +50567,6 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: f4f9950aba9db29478339917d5a804fa, type: 3}
   m_PrefabInternal: {fileID: 1872416367}
---- !u!21 &856773497
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: TEMP NV MATERIAL
-  m_Shader: {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &857565902
 GameObject:
   m_ObjectHideFlags: 0
@@ -61556,7 +61544,7 @@ MonoBehaviour:
   m_Script: {fileID: -98529514, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 856773497}
+  m_Material: {fileID: 1242201916}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -68148,6 +68136,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114516380391760796, guid: b79b2aba2b06cf44eb3ca81480cf3215,
+        type: 2}
+      propertyPath: points.Array.size
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4711431855261962, guid: b79b2aba2b06cf44eb3ca81480cf3215, type: 2}
       propertyPath: m_LocalPosition.x
       value: -1.743
@@ -68245,6 +68238,141 @@ Prefab:
         type: 2}
       propertyPath: RequiredAnimal
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114516380391760796, guid: b79b2aba2b06cf44eb3ca81480cf3215,
+        type: 2}
+      propertyPath: HighExit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114499436664095120, guid: b79b2aba2b06cf44eb3ca81480cf3215,
+        type: 2}
+      propertyPath: points.Array.data[0].x
+      value: -0.43263412
+      objectReference: {fileID: 0}
+    - target: {fileID: 114499436664095120, guid: b79b2aba2b06cf44eb3ca81480cf3215,
+        type: 2}
+      propertyPath: points.Array.data[0].z
+      value: -0.000000059604645
+      objectReference: {fileID: 0}
+    - target: {fileID: 114499436664095120, guid: b79b2aba2b06cf44eb3ca81480cf3215,
+        type: 2}
+      propertyPath: points.Array.data[1].x
+      value: 0.5673659
+      objectReference: {fileID: 0}
+    - target: {fileID: 114499436664095120, guid: b79b2aba2b06cf44eb3ca81480cf3215,
+        type: 2}
+      propertyPath: points.Array.data[1].z
+      value: -0.000000059604645
+      objectReference: {fileID: 0}
+    - target: {fileID: 114516380391760796, guid: b79b2aba2b06cf44eb3ca81480cf3215,
+        type: 2}
+      propertyPath: NumPoints
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114516380391760796, guid: b79b2aba2b06cf44eb3ca81480cf3215,
+        type: 2}
+      propertyPath: RegeneratePoints
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114516380391760796, guid: b79b2aba2b06cf44eb3ca81480cf3215,
+        type: 2}
+      propertyPath: points.Array.data[0].current.x
+      value: -0.43263412
+      objectReference: {fileID: 0}
+    - target: {fileID: 114516380391760796, guid: b79b2aba2b06cf44eb3ca81480cf3215,
+        type: 2}
+      propertyPath: points.Array.data[0].current.z
+      value: -0.000000059604645
+      objectReference: {fileID: 0}
+    - target: {fileID: 114516380391760796, guid: b79b2aba2b06cf44eb3ca81480cf3215,
+        type: 2}
+      propertyPath: points.Array.data[1].current.x
+      value: 0.004994869
+      objectReference: {fileID: 0}
+    - target: {fileID: 114516380391760796, guid: b79b2aba2b06cf44eb3ca81480cf3215,
+        type: 2}
+      propertyPath: points.Array.data[1].current.z
+      value: -0.0000000144355
+      objectReference: {fileID: 0}
+    - target: {fileID: 114516380391760796, guid: b79b2aba2b06cf44eb3ca81480cf3215,
+        type: 2}
+      propertyPath: points.Array.data[1].totalDistance
+      value: 0.43762898
+      objectReference: {fileID: 0}
+    - target: {fileID: 114516380391760796, guid: b79b2aba2b06cf44eb3ca81480cf3215,
+        type: 2}
+      propertyPath: points.Array.data[1].time
+      value: 0.14285715
+      objectReference: {fileID: 0}
+    - target: {fileID: 114516380391760796, guid: b79b2aba2b06cf44eb3ca81480cf3215,
+        type: 2}
+      propertyPath: points.Array.data[2].current.x
+      value: 0.45692563
+      objectReference: {fileID: 0}
+    - target: {fileID: 114516380391760796, guid: b79b2aba2b06cf44eb3ca81480cf3215,
+        type: 2}
+      propertyPath: points.Array.data[2].totalDistance
+      value: 0.88955975
+      objectReference: {fileID: 0}
+    - target: {fileID: 114516380391760796, guid: b79b2aba2b06cf44eb3ca81480cf3215,
+        type: 2}
+      propertyPath: points.Array.data[2].time
+      value: 0.2857143
+      objectReference: {fileID: 0}
+    - target: {fileID: 114516380391760796, guid: b79b2aba2b06cf44eb3ca81480cf3215,
+        type: 2}
+      propertyPath: points.Array.data[2].index
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114516380391760796, guid: b79b2aba2b06cf44eb3ca81480cf3215,
+        type: 2}
+      propertyPath: points.Array.data[3].current.x
+      value: 0.91743684
+      objectReference: {fileID: 0}
+    - target: {fileID: 114516380391760796, guid: b79b2aba2b06cf44eb3ca81480cf3215,
+        type: 2}
+      propertyPath: points.Array.data[3].totalDistance
+      value: 1.350071
+      objectReference: {fileID: 0}
+    - target: {fileID: 114516380391760796, guid: b79b2aba2b06cf44eb3ca81480cf3215,
+        type: 2}
+      propertyPath: points.Array.data[3].time
+      value: 0.42857143
+      objectReference: {fileID: 0}
+    - target: {fileID: 114516380391760796, guid: b79b2aba2b06cf44eb3ca81480cf3215,
+        type: 2}
+      propertyPath: points.Array.data[3].index
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114516380391760796, guid: b79b2aba2b06cf44eb3ca81480cf3215,
+        type: 2}
+      propertyPath: points.Array.data[4].current.x
+      value: 1.3808086
+      objectReference: {fileID: 0}
+    - target: {fileID: 114516380391760796, guid: b79b2aba2b06cf44eb3ca81480cf3215,
+        type: 2}
+      propertyPath: points.Array.data[4].totalDistance
+      value: 1.8134427
+      objectReference: {fileID: 0}
+    - target: {fileID: 114516380391760796, guid: b79b2aba2b06cf44eb3ca81480cf3215,
+        type: 2}
+      propertyPath: points.Array.data[4].time
+      value: 0.5714286
+      objectReference: {fileID: 0}
+    - target: {fileID: 114516380391760796, guid: b79b2aba2b06cf44eb3ca81480cf3215,
+        type: 2}
+      propertyPath: points.Array.data[4].index
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114516380391760796, guid: b79b2aba2b06cf44eb3ca81480cf3215,
+        type: 2}
+      propertyPath: points.Array.data[2].current.z
+      value: -0.000000029802322
+      objectReference: {fileID: 0}
+    - target: {fileID: 114516380391760796, guid: b79b2aba2b06cf44eb3ca81480cf3215,
+        type: 2}
+      propertyPath: points.Array.data[3].current.z
+      value: -0.000000059604645
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114491395087709314, guid: b79b2aba2b06cf44eb3ca81480cf3215, type: 2}
@@ -71902,6 +72030,38 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: e43580104dedb6746a8068c6b6433906, type: 3}
   m_PrefabInternal: {fileID: 1241919161}
+--- !u!21 &1242201916
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: TEMP NV MATERIAL
+  m_Shader: {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1242613999
 GameObject:
   m_ObjectHideFlags: 0

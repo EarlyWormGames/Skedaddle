@@ -18,6 +18,9 @@ public class Dig : ActionObject
     public bool WallDigStart;
     public bool WallDigEnd;
 
+    private Collider trigger;
+    private Dig otherDig;
+
     private void OnEnable()
     {
         Spline.OnPathEnd.AddListener(SplineEnd);
@@ -36,6 +39,15 @@ public class Dig : ActionObject
         m_bBlocksTurn = true;
         m_CanBeDetached = false;
         m_CanDetach = false;
+
+        trigger = GetComponent<Collider>();
+
+        var digs = transform.parent.parent.GetComponentsInChildren<Dig>();
+        foreach (var dig in digs)
+        {
+            if (dig != this)
+                otherDig = dig;
+        }
     }
 
     protected override void OnCanTrigger()
@@ -70,7 +82,7 @@ public class Dig : ActionObject
         anteater.transform.position = StartPoint.position;
         m_aCurrentAnimal.m_tCollider.gameObject.SetActive(false);
 
-        m_lAnimalsIn.Remove(anteater);
+        m_lAnimalsIn.RemoveAll(anteater);
 
         AnimalController.Instance.CanSwap = false;
     }
@@ -110,15 +122,9 @@ public class Dig : ActionObject
         m_aCurrentAnimal.m_oCurrentObject = null;
         m_aCurrentAnimal.SetDirection(FACING_DIR.NONE, false);
 
-        m_aCurrentAnimal.m_rBody.WakeUp();
-        m_aCurrentAnimal = null;
+        otherDig.m_lAnimalsIn.Add(m_aCurrentAnimal);
 
-        var root = transform.parent.parent.gameObject;
-        var rigs = root.GetComponentsInChildren<Rigidbody>();
-        foreach (var rig in rigs)
-        {
-            rig.WakeUp();
-        }
+        m_aCurrentAnimal = null;
 
         AnimalController.Instance.CanSwap = true;
     }

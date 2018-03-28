@@ -90,7 +90,7 @@ public class Cannon : ActionObject
         shooting = false;
         firstpress = true;
 
-        m_lAnimalsIn.Remove(loris);
+        m_lAnimalsIn.RemoveAll(loris);
     }
 
     protected override void OnUpdate()

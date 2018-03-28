@@ -120,7 +120,7 @@ public class PPObject : ActionObject
             foreach (var trigger in TriggersToDisable)
                 trigger.enabled = true;
 
-            m_lAnimalsIn.Remove(m_aCurrentAnimal);
+            m_lAnimalsIn.RemoveAll(m_aCurrentAnimal);
             m_aCurrentAnimal = null;
         }
     }

@@ -235,9 +235,25 @@ public static class VectorExtensions
         vec.z = Mathf.Abs(vec.z);
         return vec;
     }
+
+    /// <summary>
+    /// Returns the largest of the x,y,z values
+    /// </summary>
+    /// <param name="vec"></param>
+    /// <returns></returns>
+    public static float Largest(this Vector3 vec)
+    {
+        vec = vec.Abs();
+        float l = vec.x;
+        if (vec.y > l)
+            l = vec.y;
+        if (vec.z > l)
+            l = vec.z;
+        return l;
+    }
 }
 
-public static class UnityExtensions
+public static class LayerExtensions
 {
 
     /// <summary>
@@ -249,5 +265,65 @@ public static class UnityExtensions
     public static bool Contains(this LayerMask mask, int layer)
     {
         return ((mask.value & (1 << layer)) > 0);
+    }
+}
+
+public static class ColliderExtensions
+{
+    public static Collider[] Overlap(this Collider col)
+    {
+        if (col == null)
+            return new Collider[0];
+
+        if (col.GetType() == typeof(BoxCollider))
+            return ((BoxCollider)col).OverlapBox();
+        else if (col.GetType() == typeof(SphereCollider))
+            return ((SphereCollider)col).OverlapSphere();
+
+        return new Collider[0];
+    }
+
+    public static Collider[] OverlapBox(this BoxCollider col)
+    {
+        var pos = col.transform.TransformPoint(col.center);
+        var size = col.transform.TransformVector(col.size);
+
+        return Physics.OverlapBox(pos, size, col.transform.rotation);
+    }
+
+    public static Collider[] OverlapSphere(this SphereCollider col)
+    {
+        var pos = col.transform.TransformPoint(col.center);
+        var size = col.radius * col.transform.lossyScale.Largest();
+        
+        return Physics.OverlapSphere(pos, size);
+    }
+
+    public static Collider[] OverlapCapsule(this CapsuleCollider col)
+    {
+        var size = col.transform.rotation * (Vector3.up * ((col.height / 2f) - (col.radius / 2f)));
+        var p0 = col.transform.TransformPoint(col.center + size);
+        var p1 = col.transform.TransformPoint(col.center - size);
+        var radius = col.radius * col.transform.lossyScale.Largest();
+
+        return Physics.OverlapCapsule(p0, p1, radius);
+    }
+}
+
+public static class ListExtensions
+{
+    public static List<T> RemoveAll<T>(this List<T> list, T item)
+    {
+        var l = list;
+        for (int i = 0; i < l.Count; ++i)
+        {
+            if (l[i].Equals(item))
+            {
+                l.RemoveAt(i);
+                --i;
+                continue;
+            }
+        }
+        return l;
     }
 }
