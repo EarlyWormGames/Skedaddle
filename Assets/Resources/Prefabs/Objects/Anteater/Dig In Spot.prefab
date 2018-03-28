@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 4000012975435078}
   - component: {fileID: 114000011288677094}
   - component: {fileID: 114000012563312870}
+  - component: {fileID: 114920958593509724}
   m_Layer: 11
   m_Name: Dig In Spot
   m_TagString: Untagged
@@ -289,7 +290,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013400450414}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 0.53, z: 3.76}
+  m_LocalPosition: {x: -5, y: 0.53, z: 3.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4000013945092380}
@@ -334,7 +335,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1131925694504426}
   m_LocalRotation: {x: 0.7112732, y: 0.004025042, z: 0.007727504, w: 0.70286167}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.018, y: 0.408, z: -0.089}
   m_LocalScale: {x: 0.9999476, y: 0.9999729, z: 0.80971164}
   m_Children: []
   m_Father: {fileID: 4212725028402576}
@@ -347,7 +348,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1160975972838670}
   m_LocalRotation: {x: -0.70891875, y: -0.010082788, z: -0.0016713169, w: 0.70521617}
-  m_LocalPosition: {x: 1.671, y: 5.814, z: 2.868}
+  m_LocalPosition: {x: 5.947, y: 10.462, z: 2.753}
   m_LocalScale: {x: 1, y: 1.2351288, z: 1}
   m_Children:
   - {fileID: 4842413882277718}
@@ -377,7 +378,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1792370200348286}
   m_LocalRotation: {x: 0.7112732, y: 0.004025042, z: 0.007727504, w: 0.70286167}
-  m_LocalPosition: {x: -0.18483195, y: 0.63284564, z: -0.21603602}
+  m_LocalPosition: {x: -0.185, y: 0.634, z: -0.282}
   m_LocalScale: {x: 0.9999476, y: 0.9999729, z: 0.80971164}
   m_Children: []
   m_Father: {fileID: 4212725028402576}
@@ -524,10 +525,10 @@ MonoBehaviour:
   AllowReverse: 1
   splineCount: 1
   points:
-  - {x: -0.011523247, y: -0.70934916, z: 0}
-  - {x: -0.039915085, y: -5.718343, z: 4.47402}
-  - {x: 1.7774308, y: 5.679893, z: 8.58329}
-  - {x: 1.6771555, y: 5.908746, z: 3.717283}
+  - {x: -0.041999817, y: -0.99356127, z: -0.00399971}
+  - {x: 0.028000355, y: -7.4935617, z: 0.9759996}
+  - {x: 5.8921766, y: 11.480516, z: 10.247993}
+  - {x: 5.930347, y: 10.467137, z: 3.7528484}
   modes: 000000000000000000000000
   loop: 0
 --- !u!114 &114135597173468048
@@ -710,7 +711,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 198814860250480818}
-        m_MethodName: Play
+        m_MethodName: Stop
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -741,6 +742,25 @@ MonoBehaviour:
   Reverse: 1
   WallDigStart: 1
   WallDigEnd: 0
+--- !u!114 &114920958593509724
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013400450414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2106867ba883f4d478bbc74ba3d711dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PointA: {fileID: 4000013945092380}
+  PointB: {fileID: 4212725028402576}
+  aStartDistance: 1
+  bStartDistance: 1
+  aDirection: 3
+  bDirection: 3
+  aCurveDistance: {x: 0.07, y: 0.98, z: 6.5}
+  bCurveDistance: {x: 0.07, y: 0.98, z: 6.5}
 --- !u!137 &137000012646819648
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
