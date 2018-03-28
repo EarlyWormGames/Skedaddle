@@ -19,7 +19,7 @@ public class TestSceneManualCameraMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        currentAnimal = GameManager.Instance.GetComponent<AnimalController>().GetCurrentAnimal();
+        currentAnimal = GameManager.Instance.GetComponent<AnimalController>().GetCurrentAnimal<Animal>();
         Vector3 AnimalOffset = currentAnimal.transform.position;
         CameraOffset += cameraInput.control.vector3 * Speed;
         AnimalOffset += CameraOffset;
