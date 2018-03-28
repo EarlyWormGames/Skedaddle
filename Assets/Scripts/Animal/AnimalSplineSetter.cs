@@ -10,6 +10,9 @@ public class AnimalSplineSetter : MonoBehaviour
     public ButtonAction RequiredKey;
     public bool StopOnExit;
 
+    [Tooltip("Will it only trigger if the animal isn't using a spline?")]
+    public bool OnlyIfNotSplining = false;
+
     private List<Animal> animalsIn = new List<Animal>();
 
     private void OnTriggerEnter(Collider other)
@@ -21,7 +24,7 @@ public class AnimalSplineSetter : MonoBehaviour
         if (trig.m_eName != RequiredAnimal && RequiredAnimal != ANIMAL_NAME.NONE)
             return;
 
-        if (trig.m_aMovement.FollowSpline == this)
+        if (trig.m_aMovement.FollowSpline == this || (OnlyIfNotSplining && trig.m_aMovement.FollowSpline != null))
             return;
 
         if (RequiredKey.control == null)
@@ -42,7 +45,7 @@ public class AnimalSplineSetter : MonoBehaviour
         if (!animalsIn.Contains(trig))
             return;
 
-        if (StopOnExit)
+        if (StopOnExit && trig.m_aMovement.FollowSpline == this)
             trig.m_aMovement.StopSpline();
 
         animalsIn.Remove(trig);
