@@ -286,7 +286,7 @@ public static class ColliderExtensions
     public static Collider[] OverlapBox(this BoxCollider col)
     {
         var pos = col.transform.TransformPoint(col.center);
-        var size = col.transform.TransformVector(col.size);
+        var size = col.transform.TransformVector(col.size / 2);
 
         return Physics.OverlapBox(pos, size, col.transform.rotation);
     }
@@ -312,11 +312,14 @@ public static class ColliderExtensions
 
 public static class ListExtensions
 {
-    public static List<T> RemoveAll<T>(this List<T> list, T item)
+    public static List<T> RemoveAll<T>(this List<T> list, T item) where T : class
     {
         var l = list;
         for (int i = 0; i < l.Count; ++i)
         {
+            if (l == null)
+                continue;
+
             if (l[i].Equals(item))
             {
                 l.RemoveAt(i);

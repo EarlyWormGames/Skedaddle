@@ -47,7 +47,7 @@ public class FallDetacher : MonoBehaviour
         if (Trigger == null)
             return 100;
 
-        List<Collider> cols = new List<Collider>(Physics.OverlapBox(Trigger.transform.position, Trigger.transform.TransformVector(Trigger.size), Trigger.transform.rotation, Layer, TriggerInteraction));
+        List<Collider> cols = new List<Collider>(Physics.OverlapBox(Trigger.transform.position, Trigger.transform.TransformVector(Trigger.size / 2), Trigger.transform.rotation, Layer, TriggerInteraction));
         for(int i = 0; i < cols.Count; ++i)
         {
             var item = cols[i];
