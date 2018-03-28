@@ -41,13 +41,6 @@ public class Dig : ActionObject
         m_CanDetach = false;
 
         trigger = GetComponent<Collider>();
-
-        var digs = transform.parent.parent.GetComponentsInChildren<Dig>();
-        foreach (var dig in digs)
-        {
-            if (dig != this)
-                otherDig = dig;
-        }
     }
 
     protected override void OnCanTrigger()
@@ -121,8 +114,6 @@ public class Dig : ActionObject
         m_aCurrentAnimal.m_rBody.useGravity = true;
         m_aCurrentAnimal.m_oCurrentObject = null;
         m_aCurrentAnimal.SetDirection(FACING_DIR.NONE, false);
-
-        otherDig.m_lAnimalsIn.Add(m_aCurrentAnimal);
 
         m_aCurrentAnimal = null;
 
