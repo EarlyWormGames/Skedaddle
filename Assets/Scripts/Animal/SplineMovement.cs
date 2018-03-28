@@ -91,9 +91,11 @@ public class SplineMovement : MonoBehaviour
     {
         float distance = -1;
         int index = 0;
+
         for (int i = 0; i < points.Length; ++i)
         {
-            float d = Vector3.Distance(position, GetPosition(i));
+            var p = IgnoreUtils.Calculate(AxesToIgnore, transform.position, GetPosition(i));
+            float d = Vector3.Distance(position, p);
             if (d < distance || distance < 0)
             {
                 index = i;
