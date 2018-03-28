@@ -176,7 +176,6 @@ public class LadderObject : ActionObject
                 moveDown = false;
             else if (pointIndex < 0 && LowExit)
             {
-                m_lAnimalsIn.RemoveAll(loris);
                 Detach(loris);
                 OnLowExit.Invoke();
             }
@@ -184,7 +183,6 @@ public class LadderObject : ActionObject
                 moveUp = false;
             else if (pointIndex > Points.Length - 1 && HighExit)
             {
-                m_lAnimalsIn.RemoveAll(loris);
                 Detach(loris);
                 OnHighExit.Invoke();
             }
@@ -242,6 +240,8 @@ public class LadderObject : ActionObject
     {
         base.Detach(anim, destroy);
         moveVelocity = 0;
+
+        m_lAnimalsIn.RemoveAll(m_aCurrentAnimal);
 
         m_aCurrentAnimal.m_oCurrentObject = null;
         m_aCurrentAnimal.transform.parent = null;

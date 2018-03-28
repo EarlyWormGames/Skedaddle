@@ -85,7 +85,7 @@ public class Cannon : ActionObject
 
         loris.m_aMovement.StopSpline();
 
-        loris.m_tCollider.gameObject.layer = LayerMask.NameToLayer("AnimalNoCollide");
+        loris.m_tCollider.gameObject.SetActive(false);
         loris.transform.position = LorisSitPoint.position;
         shooting = false;
         firstpress = true;
@@ -147,7 +147,7 @@ public class Cannon : ActionObject
 
     void SplineEnd(BezierSplineFollower sender, Transform trackedItem)
     {
-        loris.m_tCollider.gameObject.layer = LayerMask.NameToLayer("Animal");
+        loris.m_tCollider.gameObject.SetActive(true);
 
         loris.m_bInCannon = false;
         loris.m_rBody.isKinematic = false;

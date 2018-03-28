@@ -280,7 +280,7 @@ public class Poodle : Animal
                         if (loris.transform.parent != null)
                             break;
 
-                        loris.m_tCollider.gameObject.layer = LayerMask.NameToLayer("AnimalNoCollide");
+                        loris.m_tCollider.gameObject.SetActive(false);
                         loris.m_rBody.useGravity = false;
                         loris.m_bHeldByPoodle = true;
 

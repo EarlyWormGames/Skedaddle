@@ -807,7 +807,7 @@ public class Animal : MonoBehaviour
             }
         }
 
-        m_tCollider.gameObject.layer = LayerMask.NameToLayer("Animal");
+        m_tCollider.gameObject.SetActive(true);
 
         if (m_bAlive)
             CameraController.Instance.ViewThenReload(transform.position + m_v3DeathDistance, 1.5f);
