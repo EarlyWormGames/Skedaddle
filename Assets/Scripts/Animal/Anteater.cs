@@ -11,6 +11,7 @@ public class Anteater : Animal
     public float            m_fIdleSwapTime;
     public float            m_fIdleSwapVarience;
     public int              m_iNumberOfIdles;
+    public Transform        m_tTongueEnd;
 
     //==================================
     //          Internal Vars

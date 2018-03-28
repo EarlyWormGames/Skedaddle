@@ -289,7 +289,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013400450414}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5, y: 0.53, z: 3.76}
+  m_LocalPosition: {x: 10, y: 0.53, z: 3.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4000013945092380}
@@ -347,7 +347,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1160975972838670}
   m_LocalRotation: {x: -0.70891875, y: -0.010082788, z: -0.0016713169, w: 0.70521617}
-  m_LocalPosition: {x: 5.29, y: 10.8, z: 2.75}
+  m_LocalPosition: {x: 1.671, y: 5.814, z: 2.868}
   m_LocalScale: {x: 1, y: 1.2351288, z: 1}
   m_Children:
   - {fileID: 4842413882277718}
@@ -525,9 +525,9 @@ MonoBehaviour:
   splineCount: 1
   points:
   - {x: -0.011523247, y: -0.70934916, z: 0}
-  - {x: -0.039914608, y: -7.7656975, z: 5.028864}
-  - {x: 5.4103765, y: 10.51388, z: 10.402326}
-  - {x: 5.310101, y: 10.742732, z: 3.717799}
+  - {x: -0.039915085, y: -5.718343, z: 4.47402}
+  - {x: 1.7774308, y: 5.679893, z: 8.58329}
+  - {x: 1.6771555, y: 5.908746, z: 3.717283}
   modes: 000000000000000000000000
   loop: 0
 --- !u!114 &114135597173468048
@@ -639,6 +639,8 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   Reverse: 0
+  WallDigStart: 0
+  WallDigEnd: 1
 --- !u!114 &114681574191054192
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -702,8 +704,8 @@ MonoBehaviour:
   StartPoint: {fileID: 4431732870606320}
   FinishPoint: {fileID: 4017382744027396}
   Spline: {fileID: 114000011288677094}
-  StartDirection: 2
-  EndDirection: 1
+  StartDirection: 3
+  EndDirection: 2
   OnSplineStart:
     m_PersistentCalls:
       m_Calls:
@@ -737,6 +739,8 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   Reverse: 1
+  WallDigStart: 1
+  WallDigEnd: 0
 --- !u!137 &137000012646819648
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

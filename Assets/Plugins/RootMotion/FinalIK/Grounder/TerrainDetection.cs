@@ -66,7 +66,7 @@ namespace RootMotion.FinalIK
                 float pythag = Mathf.Pow(IKDistance, 2) - Mathf.Pow(Vector3.Distance(FirstBone.position, preHit.point), 2);
                 float newHeight = Mathf.Sqrt(pythag >= 0 ? pythag : 0);
                 IKtoggle = 1;
-                if (Physics.Raycast(preHit.point + new Vector3(0, newHeight, 0), UseLocal ? (Vector3.down - new Vector3(transform.rotation.x * angleBuffer, 0, 0)) : Vector3.down, out hit, newHeight * 2, raycastLayers))
+                if (Physics.Raycast(preHit.point + new Vector3(0, newHeight, 0) + -ForwardDirection.right * 0.01f, UseLocal ? (Vector3.down - new Vector3(transform.rotation.x * angleBuffer, 0, 0)) : Vector3.down, out hit, newHeight * 2, raycastLayers))
                 {
                     finalHit = hit.point;
                 }
