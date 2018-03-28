@@ -471,6 +471,8 @@ public class Loris : Animal
         return speedMinMax;
     }
 
+
+    //
     public override bool CanMove()
     {
         bool canmove = base.CanMove();
