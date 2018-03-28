@@ -262,7 +262,7 @@ public class AnimalController : Singleton<AnimalController>
         return false;
     }
 
-    public Animal GetCurrentAnimal()
+    public T GetCurrentAnimal<T>() where T : Animal
     {
         if (m_lAnimals == null)
             return null;
@@ -270,6 +270,11 @@ public class AnimalController : Singleton<AnimalController>
         if (m_lAnimals.Count <= 0)
             return null;
 
-        return m_lAnimals[m_iSelectedNumber];
+        var animal = m_lAnimals[m_iSelectedNumber];
+
+        if (animal.GetType() != typeof(T))
+            return null;
+
+        return (T)animal;
     }
 }

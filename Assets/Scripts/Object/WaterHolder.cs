@@ -26,7 +26,7 @@ public class WaterHolder : ActionObject
     //protected override void OnStart() { }
     protected override void OnCanTrigger()
     {
-        if (m_wTrunk != null && AnimalController.Instance.GetCurrentAnimal().m_eName == ANIMAL_NAME.ELEPHANT)
+        if (m_wTrunk != null && AnimalController.Instance.GetCurrentAnimal<Elephant>() != null)
         {
             //if (Keybinding.GetKeyDown("Action") || Controller.GetButtonDown(ControllerButtons.A))
             //{

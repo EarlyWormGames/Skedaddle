@@ -126,8 +126,7 @@ public class NightVision : MonoBehaviour
         }
         else
         {
-            var currentAnimal = (Loris)AnimalController.Instance.GetCurrentAnimal();
-            //var currentAnimal = c == null ? null : (Loris)c;
+            var currentAnimal = AnimalController.Instance.GetCurrentAnimal<Loris>();
             if (currentAnimal != null)
             {
                 //I fixed it for you :YEET:

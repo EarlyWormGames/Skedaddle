@@ -5,7 +5,7 @@ public class Teleport : MonoBehaviour
 {
     public void TeleportAnimal(Transform TeleportLocation)
     {
-        Transform teleAnim = AnimalController.Instance.GetCurrentAnimal().transform;
+        Transform teleAnim = AnimalController.Instance.GetCurrentAnimal<Animal>().transform;
         teleAnim.position = TeleportLocation.position;
         Animal animal = teleAnim.GetComponent<Animal>();
         animal.m_aMovement.StopSpline();
