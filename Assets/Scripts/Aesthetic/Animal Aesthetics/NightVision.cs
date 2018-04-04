@@ -110,6 +110,7 @@ public class NightVision : MonoBehaviour
                 m_Fade.BeginFadeInOut();
                 RemoveListner(EndNV);
                 AddListner(StartNV);
+                LightsOFF();
             }
             else
             {
