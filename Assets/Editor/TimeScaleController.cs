@@ -8,7 +8,7 @@ public class TimeScaleController : EditorWindow
     private float lastTimeScale = 1.0f;
 
     // You may change "Aealo Games" to something else
-    [MenuItem("Aealo Games/Time Scale Controller")]
+    [MenuItem("Tools/Time Scale Controller")]
     static void Init()
     {
         TimeScaleController window = (TimeScaleController)EditorWindow.GetWindow(typeof(TimeScaleController));
