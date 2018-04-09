@@ -22874,38 +22874,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 850264723}
   m_Mesh: {fileID: 4300000, guid: f4f9950aba9db29478339917d5a804fa, type: 3}
---- !u!21 &853707894
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: TEMP NV MATERIAL
-  m_Shader: {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &854132680
 Prefab:
   m_ObjectHideFlags: 0
@@ -28466,7 +28434,7 @@ MonoBehaviour:
   m_Script: {fileID: -98529514, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 853707894}
+  m_Material: {fileID: 2064286732}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -31220,6 +31188,10 @@ Prefab:
     - target: {fileID: 1945679349491248, guid: 18ecd83fcbb7fab40bcaa8784497450d, type: 2}
       propertyPath: m_Name
       value: Magician's Hat
+      objectReference: {fileID: 0}
+    - target: {fileID: 1538341890831358, guid: 18ecd83fcbb7fab40bcaa8784497450d, type: 2}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18ecd83fcbb7fab40bcaa8784497450d, type: 2}
@@ -35872,7 +35844,7 @@ GameObject:
   - component: {fileID: 1410866092}
   - component: {fileID: 1410866094}
   - component: {fileID: 1410866093}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DoTeleport
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56105,6 +56077,38 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: d05759bb961d83a459abbd00b4b39243, type: 3}
   m_PrefabInternal: {fileID: 2064245563}
+--- !u!21 &2064286732
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: TEMP NV MATERIAL
+  m_Shader: {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &2065179255
 Prefab:
   m_ObjectHideFlags: 0
