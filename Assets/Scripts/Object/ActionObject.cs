@@ -169,7 +169,7 @@ public class ActionObject : MonoBehaviour
         if (animtrig == null)
         {
             if (!m_bOnlyHeadTrigger)
-                anim = a_col.GetComponentInParent<Animal>();
+                anim = a_col.GetComponentInParent<Animal>(2);
             if (anim == null)
             {
                 ObjectEnter(a_col);
@@ -207,7 +207,7 @@ public class ActionObject : MonoBehaviour
         if (animtrig == null)
         {
             if (!m_bOnlyHeadTrigger)
-                anim = a_col.GetComponentInParent<Animal>();
+                anim = a_col.GetComponentInParent<Animal>(2);
             if (anim == null)
             {
                 ObjectExit(a_col);

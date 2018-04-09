@@ -77,7 +77,7 @@ public class PPObject : ActionObject
         m_aCurrentAnimal.m_oCurrentObject = this;
         m_aCurrentAnimal.OnPushChange();
 
-        transform.SetParent(m_aCurrentAnimal.transform, true);
+        transform.SetParent(m_aCurrentAnimal.m_tObjectHolder.transform, true);
 
         foreach (var trigger in TriggersToDisable)
             trigger.enabled = false;

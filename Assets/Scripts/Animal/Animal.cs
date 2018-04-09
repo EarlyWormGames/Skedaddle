@@ -75,6 +75,7 @@ public class Animal : MonoBehaviour
     public Transform        m_tPelvis;
     public Vector3          m_v3PelvisOffset;
     public Transform        m_tCollider;
+    public Transform        m_tObjectHolder;
 
     [Header("Speeds")]
     public float            m_fWalkSpeed = 0.001f;
