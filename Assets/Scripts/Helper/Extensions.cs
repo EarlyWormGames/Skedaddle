@@ -340,7 +340,7 @@ public static class ComponentExtensions
 
     static T GetCompInParent<T>(int count, int max, Transform parent) where T : Component
     {
-        if (parent == null)
+        if (parent == null || count >= max)
             return null;
 
         T comp = parent.GetComponent<T>();
