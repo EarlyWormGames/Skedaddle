@@ -85,7 +85,7 @@ public class Cannon : ActionObject
 
         loris.m_aMovement.StopSpline();
 
-        loris.m_tCollider.gameObject.SetActive(false);
+        loris.SetColliderActive(false, this);
         loris.transform.position = LorisSitPoint.position;
         shooting = false;
         firstpress = true;
@@ -147,7 +147,7 @@ public class Cannon : ActionObject
 
     void SplineEnd(BezierSplineFollower sender, Transform trackedItem)
     {
-        loris.m_tCollider.gameObject.SetActive(true);
+        loris.SetColliderActive(true);
 
         loris.m_bInCannon = false;
         loris.m_rBody.isKinematic = false;

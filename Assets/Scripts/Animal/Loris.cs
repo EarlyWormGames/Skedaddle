@@ -394,7 +394,7 @@ public class Loris : Animal
                 transform.position = poodle.LorisHolder.position;
 
             m_rBody.useGravity = true;
-            m_tCollider.gameObject.SetActive(true);
+            SetColliderActive(true);
         }
     }
 

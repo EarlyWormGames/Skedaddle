@@ -99,7 +99,7 @@ public class ClimbJump : ActionObject
                 m_aCurrentAnimal.m_rBody.isKinematic = false;
                 m_aCurrentAnimal.m_oCurrentObject = null;
 
-                m_aCurrentAnimal.m_tCollider.gameObject.SetActive(true);
+                m_aCurrentAnimal.SetColliderActive(true);
 
                 m_aCurrentAnimal.m_bOnGround = true;
                 m_aCurrentAnimal.m_bCheckGround = true;
@@ -125,7 +125,7 @@ public class ClimbJump : ActionObject
                 m_aCurrentAnimal.m_rBody.isKinematic = false;
                 m_aCurrentAnimal.m_oCurrentObject = null;
 
-                m_aCurrentAnimal.m_tCollider.gameObject.SetActive(true);
+                m_aCurrentAnimal.SetColliderActive(true);
 
                 m_aCurrentAnimal.m_bOnGround = true;
                 m_aCurrentAnimal.m_bCheckGround = true;
@@ -160,7 +160,9 @@ public class ClimbJump : ActionObject
         timer = m_aCurrentAnimal.m_fJumpWaitTime;
 
         m_aCurrentAnimal.m_oCurrentObject = this;
-        m_aCurrentAnimal.m_tCollider.gameObject.SetActive(false);
+
+        m_aCurrentAnimal.SetColliderActive(false, this);
+
         m_aCurrentAnimal.m_bCheckGround = false;
         m_aCurrentAnimal.m_bAutoClimbing = true;
         m_aCurrentAnimal.m_rBody.isKinematic = true;

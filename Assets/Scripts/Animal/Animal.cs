@@ -808,7 +808,7 @@ public class Animal : MonoBehaviour
             }
         }
 
-        m_tCollider.gameObject.SetActive(true);
+        SetColliderActive(true);
 
         if (m_bAlive)
             CameraController.Instance.ViewThenReload(transform.position + m_v3DeathDistance, 1.5f);
@@ -947,5 +947,21 @@ public class Animal : MonoBehaviour
         {
             AnimalController.Instance.ChangeAnimal();
         }
+    }
+
+    public void SetColliderActive(bool active, List<ActionObject> ignore = null)
+    {
+        m_tCollider.gameObject.SetActive(active);
+        if (!active)
+            ActionObject.RemoveAll(this, ignore);
+    }
+
+    public void SetColliderActive(bool active, ActionObject ignore)
+    {
+        var ignoreList = new List<ActionObject>();
+        if (ignore != null)
+            ignoreList.Add(ignore);
+
+        SetColliderActive(active, ignoreList);
     }
 }

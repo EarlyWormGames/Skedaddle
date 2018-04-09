@@ -73,7 +73,7 @@ public class Dig : ActionObject
         anteater.SetDirection(StartDirection, false);
 
         anteater.transform.position = StartPoint.position;
-        m_aCurrentAnimal.m_tCollider.gameObject.SetActive(false);
+        m_aCurrentAnimal.SetColliderActive(false, this);
 
         m_lAnimalsIn.RemoveAll(anteater);
 
@@ -109,7 +109,7 @@ public class Dig : ActionObject
 
     public void Finish()
     {
-        m_aCurrentAnimal.m_tCollider.gameObject.SetActive(true);
+        m_aCurrentAnimal.SetColliderActive(true);
         m_aCurrentAnimal.m_bCheckGround = true;
         m_aCurrentAnimal.m_rBody.useGravity = true;
         m_aCurrentAnimal.m_oCurrentObject = null;

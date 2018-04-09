@@ -208,7 +208,7 @@ public class LadderObject : ActionObject
         entryZ = m_aCurrentAnimal.transform.position.z;
 
         if (DisableCollision)
-            m_aCurrentAnimal.m_tCollider.gameObject.SetActive(false);
+            m_aCurrentAnimal.SetColliderActive(false, this);
 
         loris = (Loris)m_aCurrentAnimal;
         loris.m_bClimbing = true;
@@ -255,7 +255,7 @@ public class LadderObject : ActionObject
         }
 
         if (DisableCollision)
-            m_aCurrentAnimal.m_tCollider.gameObject.SetActive(true);
+            m_aCurrentAnimal.SetColliderActive(true);
 
         loris.m_bClimbing = false;
         loris.SetDirection(FACING_DIR.NONE, false);

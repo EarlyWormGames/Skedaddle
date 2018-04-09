@@ -66,6 +66,8 @@ public class ActionObject : MonoBehaviour
 
     protected MainMapping input;
 
+    private static List<ActionObject> m_lCurrentObjects = new List<ActionObject>();
+
 
     // Use this for initialization
     void Start()
@@ -79,6 +81,8 @@ public class ActionObject : MonoBehaviour
             m_GazeObject = GetComponent<EWGazeObject>();
 
         input = GameManager.Instance.mainMap;
+
+        m_lCurrentObjects.Add(this);
 
         OnStart();
     }
@@ -282,5 +286,58 @@ public class ActionObject : MonoBehaviour
     {
         if (m_aCurrentAnimal != null)
             Detach(m_aCurrentAnimal, true);
+
+        m_lCurrentObjects.Remove(this);
     }
+
+    //=====================================================
+    // STATIC FUNCTIONS
+
+    /// <summary>
+    /// Removes <paramref name="animals"/> from all <see cref="ActionObject"/>s in the scene
+    /// </summary>
+    /// <param name="animals">The <see cref="Animal"/>s to remove</param>
+    /// <param name="ignore">Optional: ignore these <see cref="ActionObject"/>s</param>
+    public static void RemoveAll(List<Animal> animals, List<ActionObject> ignore = null)
+    {
+        if (ignore == null)
+            ignore = new List<ActionObject>();
+
+        foreach(var ao in m_lCurrentObjects)
+        {
+            if (ao == null)
+                continue;
+
+            if (!ignore.Contains(ao))
+            {
+                foreach (var animal in animals)
+                    ao.m_lAnimalsIn.RemoveAll(animal);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Removes <paramref name="animal"/> from all <see cref="ActionObject"/>s in the scene
+    /// </summary>
+    /// <param name="animal">The <see cref="Animal"/> to remove</param>
+    /// <param name="ignore">Optional: ignore <see cref="ActionObject"/></param>
+    public static void RemoveAll(Animal animal, ActionObject ignore = null)
+    {
+        var ignoreList = new List<ActionObject>();
+        if (ignore != null)
+            ignoreList.Add(ignore);
+
+        RemoveAll(new List<Animal> { animal }, ignoreList);
+    }
+
+    /// <summary>
+    /// Removes <paramref name="animal"/> from all <see cref="ActionObject"/>s in the scene
+    /// </summary>
+    /// <param name="animal">The <see cref="Animal"/> to remove</param>
+    /// <param name="ignore">Ignore <see cref="ActionObject"/></param>
+    public static void RemoveAll(Animal animal, List<ActionObject> ignore)
+    {
+        RemoveAll(new List<Animal> { animal }, ignore);
+    }
+    //=====================================================
 }
