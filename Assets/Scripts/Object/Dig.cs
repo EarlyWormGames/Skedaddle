@@ -114,7 +114,16 @@ public class Dig : ActionObject
         m_aCurrentAnimal.m_rBody.useGravity = true;
         m_aCurrentAnimal.m_oCurrentObject = null;
         m_aCurrentAnimal.SetDirection(FACING_DIR.NONE, false);
-
+        if (EndDirection == FACING_DIR.LEFT)
+        {
+            m_aCurrentAnimal.m_bTurned = true;
+            m_aCurrentAnimal.m_bFacingLeft = true;
+        }
+        if(EndDirection == FACING_DIR.RIGHT)
+        {
+            m_aCurrentAnimal.m_bTurned = false;
+            m_aCurrentAnimal.m_bFacingLeft = false;
+        }
         m_aCurrentAnimal = null;
 
         AnimalController.Instance.CanSwap = true;

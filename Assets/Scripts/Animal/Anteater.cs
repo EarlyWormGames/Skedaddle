@@ -48,6 +48,7 @@ public class Anteater : Animal
         if ((m_bWalkingLeft ^ m_bWalkingRight))
         {
             m_aAnimalAnimator.SetBool("Walking", true);
+            m_aAnimalAnimator.SetBool("FacingLeft", m_bTurned);
         }
         else
         {
@@ -85,7 +86,7 @@ public class Anteater : Animal
                 {
                     float randomIdle = Random.Range(1.6f, m_iNumberOfIdles + 0.4f);
                     m_iCurrentIdle = Mathf.RoundToInt(randomIdle);
-                    m_fIdleTimer = 3f;
+                    m_fIdleTimer = 0.2f;
                 }
                 else
                 {

@@ -14,7 +14,7 @@ public class BridgeMaker : ActionObject
     [Range(0, 1)] public float m_fHeadWeight;
     public float m_BridgeTongueScale;
     [Range(0, 0.5f)]public float m_BridgeEndAnimationStart;
-
+    public bool m_IsVertical;
 
     public UnityEvent OnBuildBridge, OnRemoveBridge;
 
@@ -60,7 +60,7 @@ public class BridgeMaker : ActionObject
 
         if (m_bBridgeMade)
         {
-            if(m_aCurrentAnimal.GetComponent<Anteater>() != null)
+            if (m_aCurrentAnimal.GetComponent<Anteater>() != null)
             {
                 m_aTongue.transform.position = m_aCurrentAnimal.GetComponent<Anteater>().m_tTongueEnd.position;
             }
@@ -97,6 +97,7 @@ public class BridgeMaker : ActionObject
             if (m_fTimer >= m_BridgeEndAnimationStart)
             {
                 m_aCurrentAnimal.m_aAnimalAnimator.SetBool("TongueBridge", false);
+                m_aCurrentAnimal.m_aAnimalAnimator.SetBool("TongueRope", false);
                 //m_headTerrain.overrideTarget = true;
             }
             if (m_fTimer >= 0.5f)
@@ -145,7 +146,14 @@ public class BridgeMaker : ActionObject
             m_aCurrentAnimal = Animal.CurrentAnimal;
             m_aCurrentAnimal.m_oCurrentObject = this;
             m_aCurrentAnimal.m_aAnimalAnimator.SetTrigger("TongueStart");
-            m_aCurrentAnimal.m_aAnimalAnimator.SetBool("TongueBridge", true);
+            if (!m_IsVertical)
+            {
+                m_aCurrentAnimal.m_aAnimalAnimator.SetBool("TongueBridge", true);
+            }
+            else
+            {
+                m_aCurrentAnimal.m_aAnimalAnimator.SetBool("TongueRope", true);
+            }
             m_aCurrentAnimal.m_bCanWalkLeft = false;
             m_aCurrentAnimal.m_bCanWalkRight = false;
 
