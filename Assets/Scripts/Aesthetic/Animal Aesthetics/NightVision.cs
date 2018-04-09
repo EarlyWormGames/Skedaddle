@@ -43,7 +43,7 @@ public class NightVision : MonoBehaviour
     private float NV_ActiveSensitivity = 0;
     private float NV_SensitivityMin = 2;
     private float NV_SensitivityMax = 4;
-
+    private bool DoLightBlend = false;
     void Start()
     {
 
@@ -123,19 +123,29 @@ public class NightVision : MonoBehaviour
 
         if (NightVisionOn)
         {
+            DoLightBlend = true;
+        }
+        else
+        {
+          
+            var TLoris = AnimalController.Instance.GetAnimal(ANIMAL_NAME.LORIS);
+            if (TLoris != null)
+            {
+                //I fixed it for you :YEET:
+                if (!TLoris.GetComponent<Loris>().GetLightStatus()) //// THIS IS A TERRIBLE LINE OF CODE :Bernard: *was
+                {
+                    DoLightBlend = false;
+                }
+            }
+        }
+
+        if (DoLightBlend)
+        {
             LightsOFF();
         }
         else
         {
-            var currentAnimal = AnimalController.Instance.GetCurrentAnimal<Loris>();
-            if (currentAnimal != null)
-            {
-                //I fixed it for you :YEET:
-                if (!currentAnimal.GetLightStatus()) //// THIS IS A TERRIBLE LINE OF CODE :Bernard: *was
-                {
-                    LightsON();
-                }
-            }
+            LightsON();
         }
 
         if (m_bBeginNV)
@@ -238,7 +248,7 @@ public class NightVision : MonoBehaviour
         m_Fade.EventToCall.RemoveListener(listner);
     }
 
-    void LightsON()
+    public void LightsON()
     {
         //blend intencity up
         for (int i = 0; i < ActiveLights.Length; i++)
@@ -251,7 +261,7 @@ public class NightVision : MonoBehaviour
             }
         }
     }
-    void LightsOFF()
+    public void LightsOFF()
     {
         //blend intencity down
         for (int i = 0; i < ActiveLights.Length; i++)
