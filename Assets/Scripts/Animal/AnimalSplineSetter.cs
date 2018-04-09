@@ -9,6 +9,7 @@ public class AnimalSplineSetter : MonoBehaviour
     public SplineMovement Spline;
     public ButtonAction RequiredKey;
     public bool StopOnExit;
+    public LayerMask RequiredLayer;
 
     [Tooltip("Will it only trigger if the animal isn't using a spline?")]
     public bool OnlyIfNotSplining = false;
@@ -17,6 +18,14 @@ public class AnimalSplineSetter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (RequiredLayer == 0)
+        {
+            RequiredLayer = (1 << LayerMask.NameToLayer("Animal")) | (1 << LayerMask.NameToLayer("AnimalTrigger"));
+        }
+
+        if (!RequiredLayer.Contains(other.gameObject.layer))
+            return;
+
         Animal trig = other.GetComponentInParent<Animal>();
         if (trig == null)
             return;

@@ -330,3 +330,23 @@ public static class ListExtensions
         return l;
     }
 }
+
+public static class ComponentExtensions
+{
+    public static T GetComponentInParent<T>(this Component comp, int maxUpCount = 1) where T : Component
+    {
+        return GetCompInParent<T>(0, maxUpCount, comp.transform.parent);
+    }
+
+    static T GetCompInParent<T>(int count, int max, Transform parent) where T : Component
+    {
+        if (parent == null)
+            return null;
+
+        T comp = parent.GetComponent<T>();
+        if (comp != null)
+            return comp;
+        else
+            return GetCompInParent<T>(count + 1, max, parent.parent);
+    }
+}

@@ -18920,6 +18920,59 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: be40f58cd720be9468b59a9edf87f251, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &728368016
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 728368019}
+  - component: {fileID: 728368018}
+  - component: {fileID: 728368017}
+  m_Layer: 11
+  m_Name: SplineStopper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &728368017
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 728368016}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &728368018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 728368016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfe8359f366251248ae734c08cb41db4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &728368019
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 728368016}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.776, y: 0.131, z: 4.83}
+  m_LocalScale: {x: 1, y: 0.2786932, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 477
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &728589331
 Prefab:
   m_ObjectHideFlags: 0
@@ -20916,7 +20969,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-1061368
+  m_Name: pb_Mesh451940
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -48439,7 +48492,7 @@ MonoBehaviour:
   Spline: {fileID: 2025896950}
   RequiredKey:
     action: {fileID: 114697485102394638, guid: 80f2df7e1586bc94aa1bbea872f6ca3b, type: 2}
-  StopOnExit: 1
+  StopOnExit: 0
   OnlyIfNotSplining: 0
 --- !u!54 &1799726656
 Rigidbody:
@@ -54017,8 +54070,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.7009196, y: 0.08917236, z: 0.36069965}
-  m_Center: {x: -0.14954056, y: 0.45541382, z: -0.3196516}
+  m_Size: {x: 0.8531307, y: 0.08917236, z: 0.36069965}
+  m_Center: {x: -0.22564608, y: 0.45541382, z: -0.3196516}
 --- !u!4 &2001994496
 Transform:
   m_ObjectHideFlags: 0
