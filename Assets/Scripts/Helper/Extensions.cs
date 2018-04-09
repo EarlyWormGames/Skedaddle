@@ -333,7 +333,7 @@ public static class ListExtensions
 
 public static class ComponentExtensions
 {
-    public static T GetComponentInParent<T>(this Component comp, int maxUpCount = 1) where T : Component
+    public static T GetComponentInParent<T>(this Component comp, int maxUpCount) where T : Component
     {
         return GetCompInParent<T>(0, maxUpCount, comp.transform.parent);
     }
