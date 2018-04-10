@@ -317,7 +317,7 @@ public static class ListExtensions
         var l = list;
         for (int i = 0; i < l.Count; ++i)
         {
-            if (l == null)
+            if (l[i] == null)
                 continue;
 
             if (l[i].Equals(item))
