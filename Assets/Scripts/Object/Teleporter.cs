@@ -4,15 +4,33 @@ using UnityEngine;
 
 public class Teleporter : MonoBehaviour
 {
+    public bool m_StartClosed;
+    public Animator m_Anim;
     private List<Animal> currentAnimals = new List<Animal>();
+    private bool Closed;
+
+    void Start()
+    {
+        Closed = m_StartClosed;
+        if(m_Anim != null)
+        m_Anim.SetBool("Closed", Closed);
+    }
 
     public void Teleport(Transform transform)
     {
+        ChangeState();
         foreach (var animal in currentAnimals)
         {
             animal.transform.position = transform.position;
         }
         currentAnimals.Clear();
+    }
+
+    public void ChangeState()
+    {
+        Closed = !Closed;
+        if (m_Anim != null)
+            m_Anim.SetBool("Closed", Closed);
     }
 
     private void OnTriggerEnter(Collider other)
