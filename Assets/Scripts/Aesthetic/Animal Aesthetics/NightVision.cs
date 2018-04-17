@@ -87,6 +87,7 @@ public class NightVision : MonoBehaviour
             ActiveLightIntencity = new float[ActiveLights.Length];
             for (int i = 0; i < ActiveLights.Length; i++)
             {
+                if(ActiveLights[i] != null)
                 ActiveLightIntencity[i] = ActiveLights[i].intensity;
             }
         }
