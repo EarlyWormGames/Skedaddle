@@ -20,7 +20,7 @@ public class MovingObject : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        OnStart();
     }
 
     // Update is called once per frame
@@ -50,6 +50,11 @@ public class MovingObject : MonoBehaviour
                 BackwardEnd.Invoke();
         }
     }
+
+    /// <summary>
+    /// Allows for child/parent classes to still call Start properly 
+    /// </summary>
+    protected virtual void OnStart() { }
 
     /// <summary>
     /// For generic update usage (animations etc)

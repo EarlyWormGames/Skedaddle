@@ -7,6 +7,12 @@ public class SweepingSlider : SlidingObject
     public Rigidbody SweepBody;
     public bool UseSweep { get; set; }
 
+    protected override void OnStart()
+    {
+        base.OnStart();
+        UseSweep = true;
+    }
+
     protected override bool DoMove(Vector3 position)
     {
         if (SweepBody == null || !UseSweep)
