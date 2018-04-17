@@ -291,7 +291,7 @@ public class Poodle : Animal
                     }
                 }
             }
-            else
+            else if(!m_bTurning)
             {
                 var loris = AnimalController.Instance.GetAnimal(ANIMAL_NAME.LORIS) as Loris;
                 loris.LetGoOfPoodle();
