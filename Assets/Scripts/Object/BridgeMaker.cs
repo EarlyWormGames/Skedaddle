@@ -10,9 +10,10 @@ public class BridgeMaker : ActionObject
     //==================================
     public GameObject m_goBridge;
     public Transform m_tMovePoint;
+    public Transform m_tBridgeAnchor;
     public GameObject m_aTongue;
     [Range(0, 1)] public float m_fHeadWeight;
-    public float m_BridgeTongueScale;
+    public float m_BridgeTongueOriginalDistance;
     [Range(0, 0.5f)]public float m_BridgeEndAnimationStart;
     public bool m_IsVertical;
 
@@ -27,6 +28,8 @@ public class BridgeMaker : ActionObject
     //          Private Vars
     //==================================
     private Transform[] m_tJoints;
+    private Vector3[] m_vJointOrigScale;
+    private float m_tBridgeMulti;
     private bool m_bMoveTo;
     private bool m_bBridgeMade;
     private float m_fTimer;
@@ -39,7 +42,16 @@ public class BridgeMaker : ActionObject
     protected override void OnStart()
     {
         m_TongueIK = m_goBridge.GetComponent<CCDIK>();
-        m_tJoints = m_aTongue.GetComponentsInChildren<Transform>();
+        m_tJoints = new Transform[m_TongueIK.solver.bones.Length];
+        for(int i = 0; i < m_TongueIK.solver.bones.Length; i++)
+        {
+            m_tJoints[i] = m_TongueIK.solver.bones[i].transform;
+        }
+        m_vJointOrigScale = new Vector3[m_tJoints.Length];
+        for (int i = 0; i < m_tJoints.Length; i++)
+        {
+            m_vJointOrigScale[i] = m_tJoints[i].localScale;
+        }
         m_goBridge.SetActive(false);
 
         m_bBlocksMovement = true;
@@ -64,15 +76,25 @@ public class BridgeMaker : ActionObject
             {
                 m_aTongue.transform.position = m_aCurrentAnimal.GetComponent<Anteater>().m_tTongueEnd.position;
             }
+            m_tBridgeMulti = Vector3.Distance(m_aTongue.transform.position, m_tBridgeAnchor.position) / m_BridgeTongueOriginalDistance;
 
             m_TongueIK.solver.IKPositionWeight = Mathf.Lerp(0, 1, m_fTimer * 2);
-
-
-            foreach (Transform x in m_tJoints)
+            for (int i = 0; i < m_tJoints.Length; i++)
             {
-                x.localScale = new Vector3(Mathf.Lerp(0, m_BridgeTongueScale, m_fTimer * 2), 1, 1);
-                if(x.localScale.x >= m_BridgeTongueScale) m_TongueIK.fixTransforms = false;
+                if (i == 0)
+                {
+                    m_tJoints[0].localScale = Vector3.Lerp(new Vector3(0, 1, 1), new Vector3(m_vJointOrigScale[i].x * m_tBridgeMulti, m_vJointOrigScale[i].y, m_vJointOrigScale[i].z), m_fTimer * 2);
+                }
+                else if (i == m_tJoints.Length - 1)
+                {
+                    m_tJoints[i].localScale = Vector3.Lerp(new Vector3(0, 1, 1), new Vector3(m_vJointOrigScale[i].x * (1 / m_tBridgeMulti), m_vJointOrigScale[i].y, m_vJointOrigScale[i].z), m_fTimer * 2);
+                }
+                else
+                {
+                    m_tJoints[i].localScale = Vector3.Lerp(new Vector3(0, 1, 1), m_vJointOrigScale[i], m_fTimer * 2);
+                }
             }
+            if (m_tJoints[0].localScale.x >= m_vJointOrigScale[0].x * m_tBridgeMulti) m_TongueIK.fixTransforms = false;
             if (m_fTimer >= 0.2f)
             {
                 
@@ -84,15 +106,20 @@ public class BridgeMaker : ActionObject
         }
         else if (m_goBridge.activeInHierarchy)
         {
+            if (m_aCurrentAnimal.GetComponent<Anteater>() != null)
+            {
+                m_aTongue.transform.position = m_aCurrentAnimal.GetComponent<Anteater>().m_tTongueEnd.position;
+            }
+            m_tBridgeMulti = Vector3.Distance(m_aTongue.transform.position, m_tBridgeAnchor.position) / m_BridgeTongueOriginalDistance;
             m_TongueIK.fixTransforms = true;
             if (m_aCurrentAnimal.GetComponent<Anteater>() != null)
             {
                 m_aTongue.transform.position = m_aCurrentAnimal.GetComponent<Anteater>().m_tTongueEnd.position;
             }
             m_TongueIK.solver.IKPositionWeight = 0;
-            foreach (Transform x in m_tJoints)
+            for (int i = 0; i < m_tJoints.Length; i++)
             {
-                x.localScale = new Vector3(Mathf.Lerp(1, 0, m_fTimer * 2), 1, 1);
+                m_tJoints[i].localScale = Vector3.Lerp(m_vJointOrigScale[i] * m_tBridgeMulti, new Vector3(0, 1, 1), m_fTimer * 2);
             }
             if (m_fTimer >= m_BridgeEndAnimationStart)
             {
