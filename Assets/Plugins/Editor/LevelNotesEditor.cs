@@ -439,8 +439,9 @@ public class EditNodeWindow : ForceWindow
         text = EditorGUI.TextArea(new Rect(5, 5, position.width - 10, halfHeight - 10), text);
 
         color = EditorGUI.ColorField(new Rect(5, halfHeight, position.width - 10, 20), color);
+        color = EditorGUI.Vector4Field(new Rect(5, halfHeight + 25, position.width - 10, 15), "", color);
 
-        if (GUI.Button(new Rect(5, halfHeight + 35, position.width - 10, halfHeight - 10 - 30), "Submit"))
+        if (GUI.Button(new Rect(5, halfHeight + 45, position.width - 10, halfHeight - 10 - 30), "Submit"))
         {
             onFinish(text, color);
             Close();
