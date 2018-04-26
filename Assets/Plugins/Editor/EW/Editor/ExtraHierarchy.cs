@@ -19,7 +19,7 @@ public class ExtraHierarchy
             if (!m_Down)
             {
                 m_Down = true;
-                if (Selection.transforms.Length > 1)
+                if (Selection.transforms.Length > 0)
                 {
                     Transform previousParent = Selection.transforms[0].parent;
                     bool allSiblings = true;
@@ -49,6 +49,16 @@ public class ExtraHierarchy
                     }
                     Selection.activeTransform = parent.transform;
                     if (allSiblings) parent.transform.parent = previousParent;
+                }
+                else
+                {
+                    m_Down = true;
+                    GameObject parent = new GameObject();
+                    Undo.RegisterCreatedObjectUndo(parent, "New Empty");
+
+                    parent.name = "New Empty";
+                    Vector3 pos = Vector3.zero;
+                    Selection.activeTransform = parent.transform;
                 }
             }
         }
