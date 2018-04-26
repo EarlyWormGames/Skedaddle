@@ -8,7 +8,6 @@ using System;
 /// 
 /// Change the Luminocity setting on the NV_Pannle material to increase the visibility of the Night Vision
 /// </summary>
-[ExecuteInEditMode]
 [AddComponentMenu("Image Effects/Night Vision")]
 public class NightVision : MonoBehaviour
 {
@@ -22,14 +21,16 @@ public class NightVision : MonoBehaviour
     public GameObject NVCanvas;
     private GameObject Temp_NV_Canvas;
 
-    public bool NightVisionOn = false;
     public GameObject NightVisionObject;
-    public float NVTranssionSpeed = 1.0f;
+    public float NVTransitionSpeed = 1.0f;
 
     public Light[] ActiveLights;
-    private float[] ActiveLightIntencity;
+    
     public float LightTransitionSpeed = 0.2f;
 
+    internal bool NightVisionOn = false;
+    private float[] ActiveLightIntensity;
+    private float ActiveLightIntensityLerp = 1;
     private bool PreviousNVStatus;
     private RawImage NV_Image;
     private Material Temp_NV_Material;
@@ -84,11 +85,11 @@ public class NightVision : MonoBehaviour
 
         if (ActiveLights.Length != 0)
         {
-            ActiveLightIntencity = new float[ActiveLights.Length];
+            ActiveLightIntensity = new float[ActiveLights.Length];
             for (int i = 0; i < ActiveLights.Length; i++)
             {
                 if(ActiveLights[i] != null)
-                ActiveLightIntencity[i] = ActiveLights[i].intensity;
+                ActiveLightIntensity[i] = ActiveLights[i].intensity;
             }
         }
 
@@ -137,10 +138,14 @@ public class NightVision : MonoBehaviour
                 {
                     DoLightBlend = false;
                 }
+                else
+                {
+                    DoLightBlend = true;
+                }
             }
         }
 
-        if (DoLightBlend)
+        if (DoLightBlend && !AnimalController.Instance.GetAnimal(ANIMAL_NAME.LORIS).m_bSelected)
         {
             LightsOFF();
         }
@@ -251,27 +256,27 @@ public class NightVision : MonoBehaviour
 
     public void LightsON()
     {
+        ActiveLightIntensityLerp += LightTransitionSpeed * Time.deltaTime;
+        ActiveLightIntensityLerp = Mathf.Clamp01(ActiveLightIntensityLerp);
         //blend intencity up
         for (int i = 0; i < ActiveLights.Length; i++)
         {
-            ActiveLights[i].intensity += LightTransitionSpeed;
-
-            if (ActiveLights[i].intensity > ActiveLightIntencity[i])
+            if (ActiveLights[i] != null)
             {
-                ActiveLights[i].intensity = ActiveLightIntencity[i];
+                ActiveLights[i].intensity = Mathf.Lerp(0, ActiveLightIntensity[i], ActiveLightIntensityLerp);
             }
         }
     }
     public void LightsOFF()
     {
+        ActiveLightIntensityLerp -= LightTransitionSpeed * Time.deltaTime;
+        ActiveLightIntensityLerp = Mathf.Clamp01(ActiveLightIntensityLerp);
         //blend intencity down
         for (int i = 0; i < ActiveLights.Length; i++)
         {
-            ActiveLights[i].intensity -= LightTransitionSpeed;
-
-            if (ActiveLights[i].intensity < 0.0f)
+            if (ActiveLights[i] != null)
             {
-                ActiveLights[i].intensity = 0.0f;
+                ActiveLights[i].intensity = Mathf.Lerp(0, ActiveLightIntensity[i], ActiveLightIntensityLerp);
             }
         }
 

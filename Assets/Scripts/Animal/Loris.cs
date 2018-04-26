@@ -20,6 +20,7 @@ public class Loris : Animal
     public float m_fOnIntensity = 1.68f;
     public float m_fLightSpeed = 1f;
     public Vector2 m_v2IdleChangeTime;
+    public bool m_bStartWithNVOn = false;
 
     public float m_fDropTime = 0.3f;
 
@@ -67,6 +68,7 @@ public class Loris : Animal
         m_eSize = ANIMAL_SIZE.XS;
 
         NV = GetComponent<NightVision>();
+        if (m_bStartWithNVOn) SetNightVision(true);
     }
 
     protected override void OnUpdate()
@@ -83,6 +85,7 @@ public class Loris : Animal
             else
                 m_bEyeClimbDown = false;
         }
+        m_fCurrentSpeed = m_fWalkSpeed;
 
         if (m_bClimbing)
         {
@@ -446,6 +449,7 @@ public class Loris : Animal
         CameraController.Instance.m_bUseNightVision = a_On;
         m_bUseLight = a_On;
         NV.NightVisionOn = a_On;
+        RenderSettings.ambientMode = a_On ? UnityEngine.Rendering.AmbientMode.Skybox : UnityEngine.Rendering.AmbientMode.Flat;
     }
 
     public override float[] CalculateMoveSpeed()
