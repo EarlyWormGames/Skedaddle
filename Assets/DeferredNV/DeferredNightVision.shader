@@ -47,6 +47,7 @@ SubShader {
 			sampler2D _MainTex;
 			sampler2D _CookieTex;
 			sampler2D _CameraGBufferTexture0;
+			sampler2D _CameraGBufferTexture3;
 			//NOTE: If you're super keen to optimize, change all these floats to fixeds.
 			float4 _MainTex_ST;
 			float4 _NVColor;
@@ -70,7 +71,8 @@ SubShader {
 				//fixed4 is cheapest, half4 second, float4 expensive (but really doesn't matter here)
 				float4 col = tex2D(_MainTex, i.texcoord);
 				float4 Ccol = tex2D(_CookieTex, i.texcoord);
-				float4 dfse = tex2D(_CameraGBufferTexture0, i.texcoord);			
+				float4 dfse = tex2D(_CameraGBufferTexture0, i.texcoord);
+				float4 emm = tex2D(_CameraGBufferTexture3, i.texcoord);
 				
 				//Get the luminance of the pixel				
 				float lumc = Luminance (col.rgb);
@@ -83,6 +85,8 @@ SubShader {
 				
 				//Add some of the regular diffuse texture based off how bright each pixel is
 				col.rgb = lerp(col.rgb, dfse.rgb, (lumc * _Boost )  + _BaseLightingContribution);
+
+				col.rgb = lerp(col.rgb, emm.rgb, lumc);
 				
 				#if USE_VIGNETTE
 				//Add vignette

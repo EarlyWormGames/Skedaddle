@@ -145,7 +145,7 @@ public class NightVision : MonoBehaviour
             }
         }
 
-        if (DoLightBlend && !AnimalController.Instance.GetAnimal(ANIMAL_NAME.LORIS).m_bSelected)
+        if (DoLightBlend)
         {
             LightsOFF();
         }
