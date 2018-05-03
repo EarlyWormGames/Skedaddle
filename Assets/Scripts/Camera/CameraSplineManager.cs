@@ -37,6 +37,11 @@ public class CameraSplineManager : MonoBehaviour
         //}
     }
 
+    public int GetSplineCount()
+    {
+        return Splines.Count;
+    }
+
     public void SetupSplines()
     {
         foreach (var spline in Splines)

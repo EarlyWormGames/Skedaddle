@@ -59,6 +59,7 @@ public class Anteater : Animal
         m_aAnimalAnimator.SetBool("DigInWall", m_bDigInWall);
 
         m_aAnimalAnimator.SetBool("AutoClimb", m_bAutoClimbing);
+        m_aAnimalAnimator.SetBool("AutoClimbLarge", m_bAutoClimbLarge);
 
         if (m_bPullingLeverOn)
         {

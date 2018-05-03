@@ -171,6 +171,7 @@ public class Animal : MonoBehaviour
     internal bool           m_bCanRotate = true;
     internal bool           m_bAllowAutoRotate = true;
     internal bool           m_bAutoClimbing = false;
+    internal bool           m_bAutoClimbLarge = false;
 
     internal bool           m_bOnTrampoline;
     internal bool           m_bBouncingOnTrampoline;

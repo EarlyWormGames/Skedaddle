@@ -11,6 +11,7 @@ public class ClimbJump : ActionObject
     public Transform AnchorPoint;
     public ActionObject TransitionTo;
     public ButtonAction RequiredKey;
+    public ANIMAL_SIZE AutoClimbSize;
 
     private Vector3 ClimbCurve;
     private float timer;
@@ -104,6 +105,7 @@ public class ClimbJump : ActionObject
                 m_aCurrentAnimal.m_bOnGround = true;
                 m_aCurrentAnimal.m_bCheckGround = true;
                 m_aCurrentAnimal.m_bAutoClimbing = false;
+                m_aCurrentAnimal.m_bAutoClimbLarge = false;
 
                 if (BreakSplineConnection)
                     m_aCurrentAnimal.m_aMovement.StopSpline();
@@ -130,6 +132,7 @@ public class ClimbJump : ActionObject
                 m_aCurrentAnimal.m_bOnGround = true;
                 m_aCurrentAnimal.m_bCheckGround = true;
                 m_aCurrentAnimal.m_bAutoClimbing = false;
+                m_aCurrentAnimal.m_bAutoClimbLarge = false;
 
                 if (BreakSplineConnection)
                     m_aCurrentAnimal.m_aMovement.StopSpline();
@@ -165,6 +168,10 @@ public class ClimbJump : ActionObject
 
         m_aCurrentAnimal.m_bCheckGround = false;
         m_aCurrentAnimal.m_bAutoClimbing = true;
+        if(m_aCurrentAnimal.m_eSize == AutoClimbSize)
+        {
+            m_aCurrentAnimal.m_bAutoClimbLarge = true;
+        }
         m_aCurrentAnimal.m_rBody.isKinematic = true;
 
         if (BreakSplineConnection)
