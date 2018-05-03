@@ -24,9 +24,9 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0, g: 0, b: 0, a: 0}
   m_AmbientGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_AmbientIntensity: 0
-  m_AmbientMode: 3
+  m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -17204,130 +17204,25 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 114263837035252660, guid: b62b03aa2e1c50742ab8bc7130c5b45b,
+        type: 2}
+      propertyPath: ForwardEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 134229021}
+    - target: {fileID: 114263837035252660, guid: b62b03aa2e1c50742ab8bc7130c5b45b,
+        type: 2}
+      propertyPath: BackwardEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 134229021}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b62b03aa2e1c50742ab8bc7130c5b45b, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &623269071 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1275718288176944, guid: b62b03aa2e1c50742ab8bc7130c5b45b,
+--- !u!114 &623269073 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114365622627174772, guid: b62b03aa2e1c50742ab8bc7130c5b45b,
     type: 2}
   m_PrefabInternal: {fileID: 623269070}
---- !u!114 &623269072
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 623269071}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5babe951966287041bf678ab535ba69d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 1.5
-  MovingCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  ForwardEnd:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 134229021}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  BackwardEnd:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 134229021}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  StartRotation: {x: 0, y: 180.0004, z: 0}
-  EndRotation: {x: 0, y: 180.0004, z: 90}
-  UseLocal: 0
---- !u!114 &623269073
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 623269071}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5670f87d5c88324418f75412bbc7da23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RequiredCount: 1
-  TriggerOnlyOnceMet: 1
-  OnCountMet:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 623269072}
-        m_MethodName: Move
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnCountUnMet:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 623269072}
-        m_MethodName: Move
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!1001 &628694674
 Prefab:
   m_ObjectHideFlags: 0
@@ -23974,7 +23869,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 543f3ea637628fd4991e2af441818906, type: 3}
+  - {fileID: 2100000, guid: a4d024d0dd4ee494bb7dd31de514b82c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -32283,6 +32178,16 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 0.247
       objectReference: {fileID: 0}
+    - target: {fileID: 23116723886227178, guid: 18ecd83fcbb7fab40bcaa8784497450d,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a4d024d0dd4ee494bb7dd31de514b82c, type: 2}
+    - target: {fileID: 23419217809743364, guid: 18ecd83fcbb7fab40bcaa8784497450d,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a4d024d0dd4ee494bb7dd31de514b82c, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18ecd83fcbb7fab40bcaa8784497450d, type: 2}
   m_IsPrefabParent: 0
@@ -48106,7 +48011,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 543f3ea637628fd4991e2af441818906, type: 3}
+  - {fileID: 2100000, guid: a4d024d0dd4ee494bb7dd31de514b82c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -50105,23 +50010,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: e0abe22a886908247b907006ac70f954, type: 3}
   m_PrefabInternal: {fileID: 1349119684}
---- !u!1 &1790427569 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1978242981247430, guid: b62b03aa2e1c50742ab8bc7130c5b45b,
-    type: 2}
-  m_PrefabInternal: {fileID: 623269070}
---- !u!65 &1790427573
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1790427569}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.1492414, y: 0.024523258, z: 1.1492414}
-  m_Center: {x: -0.5746207, y: -0.012261637, z: -0.5746207}
 --- !u!1 &1795104222
 GameObject:
   m_ObjectHideFlags: 0
