@@ -51,23 +51,6 @@ public class CreateItems
         CreateGameObject(ITEM_LIST.GC);
     }
 
-    [MenuItem("GameObject/EW/Audio Material")]
-    public static void CreateAudioMaterial()
-    {
-        GameObject obj = new GameObject();
-        obj.AddComponent<AudioMaterial>();
-        obj.AddComponent<BoxCollider>();
-        obj.layer = LayerMask.NameToLayer("AudioMat");
-
-        //if (Selection.activeGameObject != null)
-        //    obj.transform.SetParent(Selection.activeGameObject.transform);
-
-        obj.name = "Audio Material";
-        obj.transform.localPosition = Vector3.zero;
-        obj.transform.localScale = new Vector3(1, 1, 1);
-        Selection.activeGameObject = obj;
-    }
-
     [MenuItem("GameObject/EW/Animals/Loris", false, 5)]
     public static void CreateLoris()
     {
