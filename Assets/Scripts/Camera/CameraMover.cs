@@ -44,10 +44,13 @@ public abstract class CameraMover : MonoBehaviour
 
     protected abstract void OnStart();
     protected abstract void OnUpdate();
+<<<<<<< HEAD
 
     /// <summary>
     /// Check which <see cref="Animal"/> to use in the next calculation. This should set <see cref="currentAnimal"/>
     /// </summary>
+=======
+>>>>>>> parent of 27b7647a... Added more comments :ok_hand:
     protected abstract void CheckCurrentAnimal();
 
     /// <summary>
