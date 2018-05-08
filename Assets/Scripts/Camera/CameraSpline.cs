@@ -3,40 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(BezierSpline))]
-public class CameraSpline : MonoBehaviour
+public class CameraSpline : CameraMover
 {
-    public static Vector3 CurrentPoint;
-    public static Vector3 LookAtPoint;
-
     public SplineMovement AnimalSpline;
-    [Tooltip("Will the spline be active on level start?")]
-    public List<ANIMAL_NAME> DefaultAnimals;
     [Tooltip("Should the spline use the Animal's \"Camera Y\" value?")]
     public bool UseAnimalYSettings = true;
-    public List<ANIMAL_NAME> MyAnimals = new List<ANIMAL_NAME>();  
-
-    internal bool[] EnableForAnimals;
 
     private BezierSpline MySpline;
 
-    private void Start()
+    protected override void OnStart()
     {
         MySpline = GetComponent<BezierSpline>();
-
-        if (DefaultAnimals.Count > 0)
-        {
-            foreach (var item in DefaultAnimals)
-            {
-                CameraSplineManager.instance.EnableSpline(item, this);
-            }
-        }
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void OnUpdate()
     {
-        Animal currentAnimal = null;
-        for(int i = 0; i < MyAnimals.Count; ++i)
+        
+    }
+
+    /// <summary>
+    /// Check which animal to use in the next calculation
+    /// </summary>
+    protected override void CheckCurrentAnimal()
+    {
+        for (int i = 0; i < MyAnimals.Count; ++i)
         {
             if (MyAnimals[i] == Animal.CurrentAnimal.m_eName &&
                 EnableForAnimals[i])
@@ -45,10 +36,10 @@ public class CameraSpline : MonoBehaviour
                 break;
             }
         }
+    }
 
-        if (currentAnimal == null)
-            return;
-
+    protected override void CalcPosition()
+    {
         float distance = -1;
         int firstIndex = 0;
         for (int i = 0; i < AnimalSpline.points.Length; ++i)
@@ -145,8 +136,13 @@ public class CameraSpline : MonoBehaviour
         SetCurrentPoint(splineT);
     }
 
-    private void SetCurrentPoint(float time)
+    public override void SetCurrentPoint(object data)
     {
+        if (data.GetType() != typeof(float))
+            return;
+
+        float time = (float)data;
+
         CurrentPoint = MySpline.GetPoint(time);
         LookAtPoint = AnimalSpline.m_Spline.GetPoint(time);
 
@@ -157,11 +153,12 @@ public class CameraSpline : MonoBehaviour
         }
     }
 
-    public void SetAnimalEnabled(ANIMAL_NAME a_name, bool a_enabled)
+    public override bool SetAnimalEnabled(ANIMAL_NAME a_name, bool a_enabled)
     {
         if (!MyAnimals.Contains(a_name))
-            return;
+            return true;
 
         EnableForAnimals[MyAnimals.IndexOf(a_name)] = a_enabled;
+        return true;
     }
 }

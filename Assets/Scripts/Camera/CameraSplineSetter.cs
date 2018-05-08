@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class CameraSplineSetter : MonoBehaviour
 {
-    public CameraSpline Spline;
+    public CameraMover Spline;
     public ANIMAL_NAME RequiredAnimal;
     public LayerMask RequiredLayer;
 

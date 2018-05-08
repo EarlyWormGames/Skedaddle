@@ -16,13 +16,13 @@ public class CameraSplineManager : MonoBehaviour
         }
     }
 
-    private List<CameraSpline> Splines = new List<CameraSpline>();
-    private Dictionary<ANIMAL_NAME, CameraSpline> CurrentSplines = new Dictionary<ANIMAL_NAME, CameraSpline>();
+    private List<CameraMover> Splines = new List<CameraMover>();
+    private Dictionary<ANIMAL_NAME, CameraMover> CurrentSplines = new Dictionary<ANIMAL_NAME, CameraMover>();
 
     private void Start()
     {
         instance = this;
-        Splines.AddRange(FindObjectsOfType<CameraSpline>());
+        Splines.AddRange(FindObjectsOfType<CameraMover>());
         var animals = FindObjectsOfType<Animal>();
         foreach (var animal in animals)
         {
@@ -30,11 +30,6 @@ public class CameraSplineManager : MonoBehaviour
         }
 
         SetupSplines();
-        //foreach (var spline in Splines)
-        //{
-        //    if (spline.IsDefaultSpline)
-        //        spline.enabled = true;
-        //}
     }
 
     public int GetSplineCount()
@@ -50,42 +45,61 @@ public class CameraSplineManager : MonoBehaviour
         }
     }
 
-    public void EnableSpline(ANIMAL_NAME a_name, CameraSpline spline)
+    public bool EnableSpline(ANIMAL_NAME a_name, CameraMover spline)
     {
         if (!CurrentSplines.ContainsKey(a_name))
-            return;
+            return false;
 
+        bool wasSet = false;
         if (CurrentSplines[a_name] != null)
         {
-            CurrentSplines[a_name].SetAnimalEnabled(a_name, false);
+            if (!CurrentSplines[a_name].SetAnimalEnabled(a_name, false))
+                return true;
+            wasSet = true;
         }
 
         CurrentSplines[a_name] = spline;
         CurrentSplines[a_name].SetAnimalEnabled(a_name, true);
+        return wasSet;
     }
 
-    public void EnableSplineLoris(CameraSpline spline)
+    public bool EnableSplineLoris(CameraMover spline)
     {
-        EnableSpline(ANIMAL_NAME.LORIS, spline);
+        return EnableSpline(ANIMAL_NAME.LORIS, spline);
     }
 
-    public void EnableSplinePoodle(CameraSpline spline)
+    public bool EnableSplinePoodle(CameraMover spline)
     {
-        EnableSpline(ANIMAL_NAME.POODLE, spline);
+        return EnableSpline(ANIMAL_NAME.POODLE, spline);
     }
 
-    public void EnableSplineAnteater(CameraSpline spline)
+    public bool EnableSplineAnteater(CameraMover spline)
     {
-        EnableSpline(ANIMAL_NAME.ANTEATER, spline);
+        return EnableSpline(ANIMAL_NAME.ANTEATER, spline);
     }
 
-    public void EnableSplineZebra(CameraSpline spline)
+    public bool EnableSplineZebra(CameraMover spline)
     {
-        EnableSpline(ANIMAL_NAME.ZEBRA, spline);
+        return EnableSpline(ANIMAL_NAME.ZEBRA, spline);
     }
 
-    public void EnableSplineElephant(CameraSpline spline)
+    public bool EnableSplineElephant(CameraMover spline)
     {
-        EnableSpline(ANIMAL_NAME.ELEPHANT, spline);
+        return EnableSpline(ANIMAL_NAME.ELEPHANT, spline);
+    }
+
+    public void EnableSplineALL(CameraMover spline)
+    {
+        foreach(var pair in CurrentSplines)
+        {
+            if (pair.Value != null)
+            {
+                if (!pair.Value.SetAnimalEnabled(pair.Key, false))
+                    continue;
+            }
+
+            CurrentSplines[pair.Key] = spline;
+            CurrentSplines[pair.Key].SetAnimalEnabled(pair.Key, true);
+        }
     }
 }
