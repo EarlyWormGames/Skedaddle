@@ -12,7 +12,7 @@ public abstract class CameraMover : MonoBehaviour
     [Tooltip("The Animals this mover can be used for")]
     public List<ANIMAL_NAME> MyAnimals = new List<ANIMAL_NAME>();
 
-    internal bool[] EnableForAnimals; 
+    internal bool[] EnableForAnimals;
     protected Animal currentAnimal;
 
     // Use this for initialization
@@ -46,7 +46,7 @@ public abstract class CameraMover : MonoBehaviour
     protected abstract void OnUpdate();
 
     /// <summary>
-    /// Check which <see cref="Animal"/> to use in the next calculation
+    /// Check which <see cref="Animal"/> to use in the next calculation. This should set <see cref="currentAnimal"/>
     /// </summary>
     protected abstract void CheckCurrentAnimal();
 
@@ -56,7 +56,7 @@ public abstract class CameraMover : MonoBehaviour
     protected abstract void CalcPosition();
 
     /// <summary>
-    /// Sets the current move-to and look-at points for the camera
+    /// Sets the current move-to and look-at points for the camera. Please type check <paramref name="data"/> before using it
     /// </summary>
     /// <param name="data">The optional data to send through</param>
     public abstract void SetCurrentPoint(object data);
