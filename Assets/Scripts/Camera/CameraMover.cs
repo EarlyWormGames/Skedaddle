@@ -44,6 +44,10 @@ public abstract class CameraMover : MonoBehaviour
 
     protected abstract void OnStart();
     protected abstract void OnUpdate();
+
+    /// <summary>
+    /// Check which <see cref="Animal"/> to use in the next calculation
+    /// </summary>
     protected abstract void CheckCurrentAnimal();
 
     /// <summary>
