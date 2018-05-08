@@ -27,8 +27,8 @@ public class CameraMovement : MonoBehaviour
         Vector3 target = transform.position + transform.forward;
         if (UseSpline)
         {
-            target = CameraSpline.LookAtPoint;
-            Vector3 movePoint = CameraSpline.CurrentPoint;
+            target = CameraMover.LookAtPoint;
+            Vector3 movePoint = CameraMover.CurrentPoint;
             transform.position = Vector3.Lerp(transform.position, movePoint, Time.deltaTime * LerpSpeed);
         }
 
