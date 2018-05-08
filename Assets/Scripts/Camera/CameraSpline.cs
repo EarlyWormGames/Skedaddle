@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(BezierSpline))]
-public class CameraSpline : CameraMover
+public class CameraSpline : DefaultCameraMovement
 {
     public SplineMovement AnimalSpline;
     [Tooltip("Should the spline use the Animal's \"Camera Y\" value?")]
@@ -20,22 +20,6 @@ public class CameraSpline : CameraMover
     protected override void OnUpdate()
     {
         
-    }
-
-    /// <summary>
-    /// Check which animal to use in the next calculation
-    /// </summary>
-    protected override void CheckCurrentAnimal()
-    {
-        for (int i = 0; i < MyAnimals.Count; ++i)
-        {
-            if (MyAnimals[i] == Animal.CurrentAnimal.m_eName &&
-                EnableForAnimals[i])
-            {
-                currentAnimal = Animal.CurrentAnimal;
-                break;
-            }
-        }
     }
 
     protected override void CalcPosition()
@@ -151,14 +135,5 @@ public class CameraSpline : CameraMover
             CurrentPoint.y += Animal.CurrentAnimal.m_fCameraY;
             LookAtPoint.y += Animal.CurrentAnimal.m_fCameraY;
         }
-    }
-
-    public override bool SetAnimalEnabled(ANIMAL_NAME a_name, bool a_enabled)
-    {
-        if (!MyAnimals.Contains(a_name))
-            return true;
-
-        EnableForAnimals[MyAnimals.IndexOf(a_name)] = a_enabled;
-        return true;
     }
 }
