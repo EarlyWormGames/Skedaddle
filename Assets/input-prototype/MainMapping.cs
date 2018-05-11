@@ -24,4 +24,8 @@ public class MainMapping : ActionMapInput {
 	public ButtonInputControl @pause { get { return (ButtonInputControl)this[16]; } }
 	public ButtonInputControl @cameraToggle1 { get { return (ButtonInputControl)this[17]; } }
 	public ButtonInputControl @cameraToggle2 { get { return (ButtonInputControl)this[18]; } }
+	public Vector3InputControl @moveCameraLookat { get { return (Vector3InputControl)this[19]; } }
+	public AxisInputControl @moveCameraLookatX { get { return (AxisInputControl)this[20]; } }
+	public AxisInputControl @moveCameraLookatY { get { return (AxisInputControl)this[21]; } }
+	public AxisInputControl @moveCameraLookatZ { get { return (AxisInputControl)this[22]; } }
 }
