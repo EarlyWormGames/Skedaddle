@@ -48,16 +48,23 @@ public class OpenScene : EditorWindow
         btnStyle.wordWrap = true;
         btnStyle.fontSize = 13;
 
+        bool enter = false;
+        if(Event.current.keyCode == KeyCode.Return || Event.current.keyCode == KeyCode.KeypadEnter)
+        {
+            enter = true;
+        }
+
         int i = 0;
         foreach (var path in paths)
         {
             string pathname = path.Remove(0, "Assets/Resources/Scenes/Levels".Length + 1);
-            if (GUI.Button(new Rect(0, i * buttonHeight, width, buttonHeight), pathname, btnStyle))
+            if (GUI.Button(new Rect(0, i * buttonHeight, width, buttonHeight), pathname, btnStyle) || enter)
             {
                 if (EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
                 {
                     Close();
                     EditorSceneManager.OpenScene(path, OpenSceneMode.Single);
+                    break;
                 }
             }
             ++i;
