@@ -63,29 +63,29 @@ public class CameraSplineManager : MonoBehaviour
         return wasSet;
     }
 
-    public bool EnableSplineLoris(CameraMover spline)
+    public void EnableSplineLoris(CameraMover spline)
     {
-        return EnableSpline(ANIMAL_NAME.LORIS, spline);
+        EnableSpline(ANIMAL_NAME.LORIS, spline);
     }
 
-    public bool EnableSplinePoodle(CameraMover spline)
+    public void EnableSplinePoodle(CameraMover spline)
     {
-        return EnableSpline(ANIMAL_NAME.POODLE, spline);
+        EnableSpline(ANIMAL_NAME.POODLE, spline);
     }
 
-    public bool EnableSplineAnteater(CameraMover spline)
+    public void EnableSplineAnteater(CameraMover spline)
     {
-        return EnableSpline(ANIMAL_NAME.ANTEATER, spline);
+        EnableSpline(ANIMAL_NAME.ANTEATER, spline);
     }
 
-    public bool EnableSplineZebra(CameraMover spline)
+    public void EnableSplineZebra(CameraMover spline)
     {
-        return EnableSpline(ANIMAL_NAME.ZEBRA, spline);
+        EnableSpline(ANIMAL_NAME.ZEBRA, spline);
     }
 
-    public bool EnableSplineElephant(CameraMover spline)
+    public void EnableSplineElephant(CameraMover spline)
     {
-        return EnableSpline(ANIMAL_NAME.ELEPHANT, spline);
+        EnableSpline(ANIMAL_NAME.ELEPHANT, spline);
     }
 
     public void EnableSplineALL(CameraMover spline)
