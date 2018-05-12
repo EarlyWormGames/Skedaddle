@@ -39,6 +39,10 @@ public abstract class CameraMover : MonoBehaviour
         CheckCurrentAnimal();
         if (currentAnimal == null)
             return;
+
+        if (CameraSplineManager.instance.OverrideSpline != this && CameraSplineManager.instance.OverrideSpline != null)
+            return;
+
         CalcPosition();
     }
 

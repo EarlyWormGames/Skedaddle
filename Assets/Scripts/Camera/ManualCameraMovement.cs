@@ -78,6 +78,8 @@ public class ManualCameraMovement : DefaultCameraMovement {
                 SetAnimalEnabled(ANIMAL_NAME.ANTEATER, true);
                 SetAnimalEnabled(ANIMAL_NAME.ZEBRA, true);
                 SetAnimalEnabled(ANIMAL_NAME.ELEPHANT, true);
+
+                CameraSplineManager.instance.OverrideSpline = this;
             }
             else
             {
@@ -86,6 +88,8 @@ public class ManualCameraMovement : DefaultCameraMovement {
                 SetAnimalEnabled(ANIMAL_NAME.ANTEATER, false);
                 SetAnimalEnabled(ANIMAL_NAME.ZEBRA, false);
                 SetAnimalEnabled(ANIMAL_NAME.ELEPHANT, false);
+
+                CameraSplineManager.instance.OverrideSpline = null;
             }
         }
         else

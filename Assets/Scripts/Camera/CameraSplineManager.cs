@@ -18,6 +18,7 @@ public class CameraSplineManager : MonoBehaviour
 
     private List<CameraMover> Splines = new List<CameraMover>();
     private Dictionary<ANIMAL_NAME, CameraMover> CurrentSplines = new Dictionary<ANIMAL_NAME, CameraMover>();
+    public CameraMover OverrideSpline;
 
     private void Start()
     {
