@@ -35,14 +35,14 @@ public abstract class CameraMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Probably better to not do anything at all if overridden
+        if (CameraSplineManager.instance.OverrideSpline != this && CameraSplineManager.instance.OverrideSpline != null)
+            return;
+
         OnUpdate();
         CheckCurrentAnimal();
         if (currentAnimal == null)
             return;
-
-        if (CameraSplineManager.instance.OverrideSpline != this && CameraSplineManager.instance.OverrideSpline != null)
-            return;
-
         CalcPosition();
     }
 
