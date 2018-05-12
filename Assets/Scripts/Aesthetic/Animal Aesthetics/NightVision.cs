@@ -232,28 +232,46 @@ public class NightVision : MonoBehaviour
             Temp_NV_Material.SetFloat("_LightSensitivityMultiplier", NV_ActiveSensitivity);
         }
     }
-
+    /// <summary>
+    /// Called when the Night Vision begins
+    /// </summary>
     public void StartNV()
     {
         m_bBeginNV = true;
         NightVisionObject.SetActive(true);
     }
 
+    /// <summary>
+    /// Called when the Night Vision ends
+    /// </summary>
     public void EndNV()
     {
         m_bBeginNV = false;
         NightVisionObject.SetActive(false);
     }
 
+
+    /// <summary>
+    /// add the listner which is called in the Fading class, During the a transition
+    /// </summary>
+    /// <param name="listner"></param>
     void AddListner(UnityEngine.Events.UnityAction listner)
     {
         m_Fade.EventToCall.AddListener(listner);
     }
+    /// <summary>
+    /// Removes the listner which is called in the Fading class, During the a transition
+    /// </summary>
+    /// <param name="listner"></param>
     void RemoveListner(UnityEngine.Events.UnityAction listner)
     {
         m_Fade.EventToCall.RemoveListener(listner);
     }
 
+
+    /// <summary>
+    /// Turns all the lights ON in the public ActiveLights Array
+    /// </summary>
     public void LightsON()
     {
         ActiveLightIntensityLerp += LightTransitionSpeed * Time.deltaTime;
@@ -267,6 +285,9 @@ public class NightVision : MonoBehaviour
             }
         }
     }
+    /// <summary>
+    /// Turns all the lights OFF in the public ActiveLights Array
+    /// </summary>
     public void LightsOFF()
     {
         ActiveLightIntensityLerp -= LightTransitionSpeed * Time.deltaTime;
