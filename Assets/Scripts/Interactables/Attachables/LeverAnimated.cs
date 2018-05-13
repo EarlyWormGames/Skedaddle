@@ -11,6 +11,8 @@ public class LeverAnimated : Lever
 
     protected override void DoInteract(Animal caller)
     {
+        base.DoInteract(caller);
+
         if (!IsPlug)
         {
             AttachedAnimal.m_bPullingLeverOn = IsOn;

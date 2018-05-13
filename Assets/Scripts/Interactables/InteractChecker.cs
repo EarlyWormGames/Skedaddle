@@ -33,7 +33,7 @@ public class InteractChecker : Singleton<InteractChecker>
                 //Loop through all of the interactables that listen to this key
                 foreach(var interactable in pair.Value)
                 {
-                    if (interactable == null)
+                    if (interactable.Equals(null))
                         continue;
 
                     if(interactable.CheckInfo(pair.Key, Animal.CurrentAnimal))

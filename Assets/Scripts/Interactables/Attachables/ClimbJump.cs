@@ -135,7 +135,7 @@ public class ClimbJump : AttachableInteract
 
     void DoAction(Animal caller, bool wasTrigger)
     {
-        if (DoOnTrigger ^ !wasTrigger)
+        if ((DoOnTrigger && !wasTrigger) || (!DoOnTrigger && wasTrigger))
             return;
 
         if (AttachedAnimal != null)
