@@ -30,7 +30,7 @@ public abstract class AnimalInteractor : AnimalTrigger, IInteractable
     protected virtual float CheckDistance(Vector3 point)
     {
         if (InteractPoint == null)
-            return 0;
+            return Vector3.Distance(point, transform.position);
 
         return Vector3.Distance(point, InteractPoint.position);
     }

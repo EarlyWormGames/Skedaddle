@@ -6,7 +6,20 @@ using UnityEngine.SceneManagement;
 
 public class InteractChecker : Singleton<InteractChecker>
 {
-    private Dictionary<InputControl, List<IInteractable>> Listeners = new Dictionary<InputControl, List<IInteractable>>();
+    private class KeyListener
+    {
+        public bool wasPressed;
+        public bool firstPress;
+        public bool consumed;
+        public List<IInteractable> listeners;
+
+        public KeyListener(List<IInteractable> list)
+        {
+            listeners = list;
+        }
+    }
+
+    private Dictionary<InputControl, KeyListener> Listeners = new Dictionary<InputControl, KeyListener>();
 
     // Use this for initialization
     void Start()
@@ -27,11 +40,20 @@ public class InteractChecker : Singleton<InteractChecker>
         {
             if(pair.Key.isEnabled && pair.Key.rawValue != 0)
             {
+                if (pair.Value.consumed)
+                {
+                    pair.Value.firstPress = false;
+                    continue;
+                }
+
+                pair.Value.wasPressed = true;
+                pair.Value.firstPress = true;
+
                 float distance = Mathf.Infinity;
                 IInteractable current = null;
 
                 //Loop through all of the interactables that listen to this key
-                foreach(var interactable in pair.Value)
+                foreach(var interactable in pair.Value.listeners)
                 {
                     if (interactable.Equals(null))
                         continue;
@@ -62,7 +84,16 @@ public class InteractChecker : Singleton<InteractChecker>
 
                 //Call interact on the interactable
                 if (current != null)
+                {
                     current.Interact(Animal.CurrentAnimal);
+                    pair.Value.consumed = true;
+                }
+            }
+            else
+            {
+                pair.Value.wasPressed = false;
+                pair.Value.firstPress = false;
+                pair.Value.consumed = false;
             }
         }
     }
@@ -76,10 +107,10 @@ public class InteractChecker : Singleton<InteractChecker>
         foreach (var slot in actionSlots)
         {
             if (Instance.Listeners.ContainsKey(GameManager.Instance.controlsList[slot]))
-                Instance.Listeners[GameManager.Instance.controlsList[slot]].Add(interactable);
+                Instance.Listeners[GameManager.Instance.controlsList[slot]].listeners.Add(interactable);
             else
             {
-                Instance.Listeners.Add(GameManager.Instance.controlsList[slot], new List<IInteractable>(new[] { interactable }));
+                Instance.Listeners.Add(GameManager.Instance.controlsList[slot], new KeyListener(new List<IInteractable>(new[] { interactable })));
             }
         }
     }
@@ -94,7 +125,25 @@ public class InteractChecker : Singleton<InteractChecker>
             if (!Instance.Listeners.ContainsKey(GameManager.Instance.controlsList[slot]))
                 continue;
 
-            Instance.Listeners[GameManager.Instance.controlsList[slot]].Remove(interactable);
+            Instance.Listeners[GameManager.Instance.controlsList[slot]].listeners.Remove(interactable);
         }
+    }
+
+    public bool WasKeyPressed(string name)
+    {
+        if (!Instance.Listeners.ContainsKey(GameManager.Instance.controlsList[name]))
+            return false;
+
+        var item = Instance.Listeners[GameManager.Instance.controlsList[name]];
+        return item.firstPress && !item.consumed;
+    }
+
+    public void Consume(string name)
+    {
+        if (!Instance.Listeners.ContainsKey(GameManager.Instance.controlsList[name]))
+            return;
+
+        var item = Instance.Listeners[GameManager.Instance.controlsList[name]];
+        item.consumed = true;
     }
 }

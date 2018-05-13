@@ -369,8 +369,11 @@ public class Loris : Animal
 
         m_aAnimalAnimator.SetBool("Controlled", m_bSelected);
 
-        if (m_bSelected)
-            LetGoOfPoodle();
+        if (m_bSelected && m_bHeldByPoodle)
+        {
+            var poodle = AnimalController.Instance.GetAnimal(ANIMAL_NAME.POODLE) as Poodle;
+            poodle.DropLoris();
+        }
     }
 
     /// <summary>
@@ -383,7 +386,6 @@ public class Loris : Animal
             transform.parent = null;
             var poodle = AnimalController.Instance.GetAnimal(ANIMAL_NAME.POODLE) as Poodle;
             m_bHeldByPoodle = false;
-            poodle.m_bHoldingLoris = false;
 
             transform.position = poodle.transform.position;
 

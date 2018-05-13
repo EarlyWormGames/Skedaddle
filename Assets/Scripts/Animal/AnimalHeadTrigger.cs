@@ -4,6 +4,7 @@ using System.Collections;
 [RequireComponent(typeof(Collider))]
 public class AnimalHeadTrigger : MonoBehaviour
 {
+    [HideInNormalInspector]
     public Animal parent;
     private Collider col;
 

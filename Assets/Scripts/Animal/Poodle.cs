@@ -27,7 +27,6 @@ public class Poodle : Animal
     public Transform LorisHolder;
     public LayerMask LorisCheckLayer;
 
-
     //==================================
     //          Internal Vars
     //==================================
@@ -42,7 +41,6 @@ public class Poodle : Animal
     private float m_fDampen = 1;
     
     private float m_fIKBackLegsDampen;
-    private bool m_bInteractPressed = false;
 
 
     //Inherited functions
@@ -73,6 +71,12 @@ public class Poodle : Animal
         if (m_bHoldingLoris)
         {
             AnimalController.Instance.GetAnimal(ANIMAL_NAME.LORIS).transform.position = LorisHolder.position;
+
+            if (InteractChecker.Instance.WasKeyPressed("Interact"))
+            {
+                InteractChecker.Instance.Consume("Interact");
+                DropLoris();
+            }
         }
 
         m_aAnimalAnimator.SetBool("Controlled", m_bSelected);
@@ -258,47 +262,33 @@ public class Poodle : Animal
         {
             m_aAnimalAnimator.SetFloat("Push Direction", 0);
         }
+    }
 
-        if (m_bSelected && GameManager.mainMap.interact.wasJustPressed)
-            m_bInteractPressed = true;
-        else if (m_bSelected && m_bInteractPressed)
+    public void PickupLoris(Loris loris)
+    {
+        if (!m_bHoldingLoris)
         {
-            m_bInteractPressed = false;
+            loris.SetColliderActive(false);
+            loris.m_rBody.useGravity = false;
+            loris.m_bHeldByPoodle = true;
 
-            if (!m_bHoldingLoris)
-            {
-                if (currentAttached == null)
-                {
-                    Vector3 castPos = transform.position;
-                    castPos += m_tJointRoot.forward * BoxCastDistance;
-                    castPos.y += BoxCastY_Offset;
+            loris.transform.SetParent(LorisHolder);
+            loris.transform.localPosition = Vector3.zero;
 
-                    var cols = Physics.OverlapBox(castPos, BoxCastSize, m_tJointRoot.rotation, LorisCheckLayer);
-                    foreach (var item in cols)
-                    {
-                        Loris loris = item.GetComponentInParent<Loris>();
-                        if (loris == null)
-                            continue;
+            m_bHoldingLoris = true;
+        }
+    }
 
-                        if (loris.transform.parent != null)
-                            break;
+    public void DropLoris()
+    {
+        if(!m_bTurning)
+        {
+            m_bHoldingLoris = false;
 
-                        loris.SetColliderActive(false);
-                        loris.m_rBody.useGravity = false;
-                        loris.m_bHeldByPoodle = true;
+            var loris = AnimalController.Instance.GetAnimal(ANIMAL_NAME.LORIS) as Loris;
+            loris.LetGoOfPoodle();
 
-                        loris.transform.SetParent(LorisHolder);
-                        loris.transform.localPosition = Vector3.zero;
-
-                        m_bHoldingLoris = true;
-                    }
-                }
-            }
-            else if(!m_bTurning)
-            {
-                var loris = AnimalController.Instance.GetAnimal(ANIMAL_NAME.LORIS) as Loris;
-                loris.LetGoOfPoodle();
-            }
+            currentAttached.Detach(currentAttached, this);
         }
     }
 
