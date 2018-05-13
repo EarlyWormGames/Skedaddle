@@ -841,6 +841,9 @@ public class Animal : MonoBehaviour
         if (m_bAlive)
             CameraController.Instance.ViewThenReload(transform.position + m_v3DeathDistance, 1.5f);
 
+        if (currentAttached != null)
+            currentAttached.Detach(currentAttached, this);
+
         m_bAlive = false;
         Debug.Log(a_death);
         OnDeath(a_death);

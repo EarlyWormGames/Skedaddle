@@ -109,6 +109,8 @@ public abstract class Attachable : AnimalTrigger
             return false;
 
         AttachedAnimal.DetachInteractable();
+        if (animal == null)
+            animal = AttachedAnimal;
         OnDetach(animal);
         AttachedAnimal = null;
 
