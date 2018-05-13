@@ -101,7 +101,7 @@ public class InGameMenu : MonoBehaviour
             }
         }
 
-        if (GameManager.Instance.mainMap.pause.wasJustPressed)
+        if (GameManager.mainMap.pause.wasJustPressed)
         {
             if (!m_bPaused)
             {

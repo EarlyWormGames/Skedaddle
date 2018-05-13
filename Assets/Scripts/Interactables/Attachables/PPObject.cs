@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PPObject : ActionObject
+public class PPObject : AttachableInteract
 {
     [EnumFlag] public IgnoreAxis MaintainPosition = IgnoreAxis.Y | IgnoreAxis.Z;
     [EnumFlag] public IgnoreAxis MaintainRotation = IgnoreAxis.Everything;
@@ -23,10 +23,9 @@ public class PPObject : ActionObject
     protected override void OnStart()
     {
         base.OnStart();
-        m_CanBeDetached = true;
-        m_CanDetach = false;
-        m_bBlocksMovement = false;
-        m_bBlocksTurn = true;
+        
+        BlocksMovement = false;
+        BlocksTurn = true;
 
         rig = GetComponent<Rigidbody>();
         isKinematic = rig.isKinematic;
@@ -42,42 +41,35 @@ public class PPObject : ActionObject
 
     protected override void OnUpdate()
     {
-        if (m_aCurrentAnimal != null)
+        if (AttachedAnimal != null)
         {
             transform.position = IgnoreUtils.Calculate(MaintainPosition, startPosition, transform.position);
             transform.eulerAngles = IgnoreUtils.Calculate(MaintainPosition, startRotation, transform.eulerAngles);
 
-            if (input.interact.wasJustPressed && !waitOne && m_aCurrentAnimal.m_bSelected)
-                Detach(m_aCurrentAnimal);
+            if (GameManager.mainMap.interact.wasJustPressed && !waitOne && AttachedAnimal.m_bSelected)
+                Detach(this);
 
             waitOne = false;
         }
     }
 
-    public override void DoAction()
+    protected override void DoInteract(Animal caller)
     {
-        if (!TryDetach())
+        if (caller.m_bTurning)
             return;
 
-        if (m_aCurrentAnimal != null)
-        {
-            return;
-        }
-
-        if (Animal.CurrentAnimal.m_bTurning)
+        if (!TryDetachOther())
             return;
 
-        base.DoAction();
+        Attach(caller);
 
         startPosition = transform.position;
         startRotation = transform.eulerAngles;
+        
+        AttachedAnimal.m_bPullingObject = true;
+        AttachedAnimal.OnPushChange();
 
-        m_aCurrentAnimal = Animal.CurrentAnimal;
-        m_aCurrentAnimal.m_bPullingObject = true;
-        m_aCurrentAnimal.m_oCurrentObject = this;
-        m_aCurrentAnimal.OnPushChange();
-
-        transform.SetParent(m_aCurrentAnimal.m_tObjectHolder.transform, true);
+        transform.SetParent(AttachedAnimal.m_tObjectHolder.transform, true);
 
         foreach (var trigger in TriggersToDisable)
             trigger.enabled = false;
@@ -89,19 +81,17 @@ public class PPObject : ActionObject
 
     public void SetCollisions(Animal anim, bool allowed)
     {
-        var cols = m_aCurrentAnimal.GetComponentsInChildren<Collider>();
+        var cols = AttachedAnimal.GetComponentsInChildren<Collider>();
         foreach (var col in cols)
             Physics.IgnoreCollision(col, GetComponent<Collider>(), true);
     }
 
-    public override void Detach(Animal anim, bool destroy = false)
+    protected override void OnDetach(Animal anim)
     {
-        base.Detach(anim, destroy);
-        m_aCurrentAnimal.m_bPullingObject = false;
-        m_aCurrentAnimal.m_oCurrentObject = null;
-        m_aCurrentAnimal.OnPushChange();
+        AttachedAnimal.m_bPullingObject = false;
+        AttachedAnimal.OnPushChange();
 
-        if (!destroy)
+        if (!BeingDestroyed)
         {
             if (defaultParent != null)
                 transform.SetParent(defaultParent, true);
@@ -120,13 +110,7 @@ public class PPObject : ActionObject
             foreach (var trigger in TriggersToDisable)
                 trigger.enabled = true;
 
-            m_lAnimalsIn.RemoveAll(m_aCurrentAnimal);
-            m_aCurrentAnimal = null;
+            AnimalsIn.RemoveAll(AttachedAnimal);
         }
-    }
-
-    protected override void AnimalExit(Animal a_animal)
-    {
-        base.AnimalExit(a_animal);
     }
 }

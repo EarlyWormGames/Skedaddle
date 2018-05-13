@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrapChest : ActionObject
+public class TrapChest : AttachableInteract
 {
     public Animator m_Animator;
     public float m_RattleTime = 1;
@@ -14,10 +14,9 @@ public class TrapChest : ActionObject
     {
         base.OnStart();
 
-        m_CanBeDetached = false;
-        m_CanDetach = false;
-        m_bBlocksMovement = true;
-        m_bBlocksTurn = true;
+        CanDetach = false;
+        BlocksMovement = true;
+        BlocksTurn = true;
     }
 
     protected override void OnUpdate()
@@ -34,17 +33,22 @@ public class TrapChest : ActionObject
         }
     }
 
-    public override void DoAction()
+    protected override bool CheckDetach()
     {
-        if (m_aCurrentAnimal != null)
+        //REEEEEEEEEEEEEEEEEEE
+        //No-detacho. Comprende?
+        return false;
+    }
+
+    protected override void DoInteract(Animal caller)
+    {
+        if (AttachedAnimal != null)
             return;
 
-        if (!TryDetach())
-            return;      
-        base.DoAction();
+        if (!TryDetachOther())
+            return;
 
-        m_aCurrentAnimal = Animal.CurrentAnimal;
-        m_aCurrentAnimal.m_oCurrentObject = this;
+        Attach(caller);
 
         m_Animator.SetTrigger("Open");
         isOpen = true;
@@ -55,6 +59,6 @@ public class TrapChest : ActionObject
     IEnumerator KillAnimal()
     {
         yield return new WaitForSeconds(m_WaitKillTime);
-        m_aCurrentAnimal.Kill(DEATH_TYPE.SQUASH);
+        AttachedAnimal.Kill(DEATH_TYPE.SQUASH);
     }
 }

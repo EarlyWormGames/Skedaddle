@@ -2,16 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputNew;
 
-public class LadderObject : ActionObject
+public class LadderObject : AttachableInteract
 {
-    public bool AllowLowExit { get { return LowExit; } set { LowExit = value; } }
-    public bool AllowHighExit { get { return HighExit; } set { HighExit = value; } }
-
     [Header("Exit Settings")]
     public bool LowExit = true;
     public bool HighExit = true;
-    public ActionObject TopTransition, BottomTransition;
+    public Attachable TopTransition, BottomTransition;
 
     [Header("Movement")]
     public float RotateSpeed = 5;
@@ -41,28 +39,28 @@ public class LadderObject : ActionObject
     private Loris loris;
     private bool moveDown = true, moveUp = true;
     private bool justEnter;
+    private bool justExit;
     private float entryZ;
 
     protected override void OnStart()
     {
         base.OnStart();
-
-        m_CanBeDetached = true;
-        m_CanDetach = false;
-        m_bBlocksMovement = true;
-        m_bBlocksTurn = true;
+        
+        BlocksMovement = true;
+        BlocksTurn = true;
     }
 
-    protected override void OnCanTrigger()
+    protected override bool CheckInput(ActionSlot input, Animal caller)
     {
-        if ((KeyCheck(Animal.CurrentAnimal.transform) || input.interact.wasJustPressed) && m_aCurrentAnimal == null)
-        {
-            DoAction();
-        }
+        if (justExit)
+            return false;
+
+        return KeyCheck(caller.transform);
     }
 
     protected override void OnUpdate()
     {
+        justExit = false;
         if (loris == null)
             return;
 
@@ -74,16 +72,16 @@ public class LadderObject : ActionObject
 
         if (shimmyLeft != null)
         {
-            if (shimmyLeft.IsPointInRange(loris.transform.position.y) && input.leftButton.isHeld)
+            if (shimmyLeft.IsPointInRange(loris.transform.position.y) && GameManager.mainMap.leftButton.isHeld)
                 TryShimmyLeft = true;
         }
         if (shimmyRight != null)
         {
-            if (shimmyRight.IsPointInRange(loris.transform.position.y) && input.rightButton.isHeld)
+            if (shimmyRight.IsPointInRange(loris.transform.position.y) && GameManager.mainMap.rightButton.isHeld)
                 TryShimmyRight = true;
         }
 
-        if (input.interact.wasJustPressed && !justEnter && m_aCurrentAnimal.m_bSelected)
+        if (GameManager.mainMap.interact.wasJustPressed && !justEnter && AttachedAnimal.m_bSelected)
         {
             if (TryShimmyLeft)
             {
@@ -96,17 +94,17 @@ public class LadderObject : ActionObject
                 return;
             }
 
-            Detach(m_aCurrentAnimal);
+            Detach(this);
             return;
         }
         justEnter = false;
 
         float[] speed = loris.CalculateMoveSpeed();
-        float acceleration = input.moveY.value * speed[0];
+        float acceleration = GameManager.mainMap.moveY.value * speed[0];
         moveVelocity += acceleration * Time.deltaTime;
         moveVelocity = Mathf.Clamp(moveVelocity, speed[1], speed[2]);
 
-        if (input.moveY.value == 0)
+        if (GameManager.mainMap.moveY.value == 0)
         {
             moveVelocity = Mathf.MoveTowards(moveVelocity, 0, loris.m_fClimbStopSpeed * Time.deltaTime);
         }
@@ -155,14 +153,6 @@ public class LadderObject : ActionObject
         if (currentSpeed < 0)
             rotateMult = -1;
 
-        //Vector3 rotation = transform.eulerAngles;
-        //Vector3 newRotation = transform.eulerAngles;
-        //transform.forward = dir.normalized * rotateMult;
-        //newRotation.x = transform.eulerAngles.x;
-        //newRotation.y = transform.eulerAngles.y;
-        //
-        //transform.rotation = Quaternion.Lerp(Quaternion.Euler(rotation), Quaternion.Euler(newRotation), Time.deltaTime * RotateSpeed);
-
         float dot = Vector3.Dot(dir, loris.transform.up);
 
         if (dir.magnitude < move || ((dot < 0 && moveVelocity > 0) || (dot > 0 && moveVelocity < 0)))
@@ -176,41 +166,37 @@ public class LadderObject : ActionObject
                 moveDown = false;
             else if (pointIndex < 0 && LowExit)
             {
-                Detach(loris);
+                Detach(this);
                 OnLowExit.Invoke();
             }
             else if (pointIndex > Points.Length - 1 && !HighExit)
                 moveUp = false;
             else if (pointIndex > Points.Length - 1 && HighExit)
             {
-                Detach(loris);
+                Detach(this);
                 OnHighExit.Invoke();
             }
         }
     }
 
-    public override void DoAction()
+    protected override void DoInteract(Animal caller)
     {
-        if (m_aCurrentAnimal != null)
+        if (!TryDetachOther())
             return;
 
-        if (!TryDetach())
-            return;
+        Attach(caller);
 
-        base.DoAction();
-        m_aCurrentAnimal = Animal.CurrentAnimal;
-        m_aCurrentAnimal.m_oCurrentObject = this;
-        m_aCurrentAnimal.transform.SetParent(transform);
-        m_aCurrentAnimal.m_rBody.isKinematic = true;
+        AttachedAnimal.transform.SetParent(transform);
+        AttachedAnimal.m_rBody.isKinematic = true;
 
-        m_aCurrentAnimal.m_aMovement.StopSpline();
+        AttachedAnimal.m_aMovement.StopSpline();
 
-        entryZ = m_aCurrentAnimal.transform.position.z;
+        entryZ = AttachedAnimal.transform.position.z;
 
         if (DisableCollision)
-            m_aCurrentAnimal.SetColliderActive(false, this);
+            AttachedAnimal.SetColliderActive(false, this);
 
-        loris = (Loris)m_aCurrentAnimal;
+        loris = (Loris)AttachedAnimal;
         loris.m_bClimbing = true;
         if (IsRope)
             loris.m_bHorizontalRope = true;
@@ -236,26 +222,29 @@ public class LadderObject : ActionObject
         loris.SetDirection(Direction, true);
     }
 
-    public override void Detach(Animal anim, bool destroy = false)
+    protected override void OnDetach(Animal animal)
     {
-        base.Detach(anim, destroy);
+        //Base re-registers keys
+        base.OnDetach(animal);
+
+        justExit = true;
+
         moveVelocity = 0;
 
-        m_lAnimalsIn.RemoveAll(m_aCurrentAnimal);
-
-        m_aCurrentAnimal.m_oCurrentObject = null;
-        m_aCurrentAnimal.transform.parent = null;
-        m_aCurrentAnimal.m_rBody.isKinematic = false;
+        AnimalsIn.RemoveAll(AttachedAnimal);
+        
+        AttachedAnimal.transform.parent = null;
+        AttachedAnimal.m_rBody.isKinematic = false;
 
         if (UseExitZ)
         {
-            Vector3 pos = m_aCurrentAnimal.transform.position;
+            Vector3 pos = AttachedAnimal.transform.position;
             pos.z = entryZ;
-            m_aCurrentAnimal.transform.position = pos;
+            AttachedAnimal.transform.position = pos;
         }
 
         if (DisableCollision)
-            m_aCurrentAnimal.SetColliderActive(true);
+            AttachedAnimal.SetColliderActive(true);
 
         loris.m_bClimbing = false;
         loris.SetDirection(FACING_DIR.NONE, false);
@@ -263,13 +252,15 @@ public class LadderObject : ActionObject
         if (IsRope)
             loris.m_bHorizontalRope = false;
 
+        var temp = AttachedAnimal;
+        AttachedAnimal = null;
+
         if (TopTransition != null && pointIndex > Points.Length - 1)
-            TopTransition.AnimalEnter(m_aCurrentAnimal);
+            TopTransition.AnimalEnter(temp);
         else if (BottomTransition != null && pointIndex < 0)
-            BottomTransition.AnimalEnter(m_aCurrentAnimal);
+            BottomTransition.AnimalEnter(temp);
 
         loris = null;
-        m_aCurrentAnimal = null;
     }
 
     public int FindClosestPoint(Vector3 position)
@@ -290,17 +281,20 @@ public class LadderObject : ActionObject
 
     bool KeyCheck(Transform animal)
     {
+        if (GameManager.mainMap.interact.isHeld)
+            return true;
+
         if (animal.position.y <= Points[0].position.y)
         {
-            if (input.moveY.positive.isHeld)
+            if (GameManager.mainMap.moveY.positive.isHeld)
                 return true;
         }
         else if (animal.position.y >= Points[Points.Length - 1].position.y)
         {
-            if (input.moveY.negative.isHeld)
+            if (GameManager.mainMap.moveY.negative.isHeld)
                 return true;
         }
-        else if (input.moveY.negative.isHeld || input.moveY.positive.isHeld)
+        else if (GameManager.mainMap.moveY.negative.isHeld || GameManager.mainMap.moveY.positive.isHeld)
             return true;
 
         return false;
@@ -356,13 +350,13 @@ public class LadderObject : ActionObject
         return true;
     }
 
-
     public void Shimmy(LadderObject shimmyObject)
     {
         if (shimmyObject == null)
             return;
 
-        Detach(m_aCurrentAnimal);
-        shimmyObject.DoAction();
+        var temp = AttachedAnimal;
+        Detach(this);
+        shimmyObject.Interact(temp);
     }
 }

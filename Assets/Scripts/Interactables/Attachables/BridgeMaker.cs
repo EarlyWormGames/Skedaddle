@@ -3,7 +3,7 @@ using UnityEngine.Events;
 using RootMotion.FinalIK;
 using System.Collections;
 
-public class BridgeMaker : ActionObject
+public class BridgeMaker : AttachableInteract
 {
     //==================================
     //          Public Vars
@@ -54,15 +54,14 @@ public class BridgeMaker : ActionObject
         }
         m_goBridge.SetActive(false);
 
-        m_bBlocksMovement = true;
-        m_bBlocksTurn = true;
-        m_CanBeDetached = false;
-        m_CanDetach = false;
+        BlocksMovement = true;
+        BlocksTurn = true;
+        CanDetach = false;
     }
 
     protected override void OnUpdate()
     {
-        if (m_aCurrentAnimal == null)
+        if (AttachedAnimal == null)
             return;
 
         if (m_fTimer < 1)
@@ -72,9 +71,9 @@ public class BridgeMaker : ActionObject
 
         if (m_bBridgeMade)
         {
-            if (m_aCurrentAnimal.GetComponent<Anteater>() != null)
+            if (AttachedAnimal.GetType().IsAssignableFrom(typeof(Anteater)))
             {
-                m_aTongue.transform.position = m_aCurrentAnimal.GetComponent<Anteater>().m_tTongueEnd.position;
+                m_aTongue.transform.position = AttachedAnimal.GetComponent<Anteater>().m_tTongueEnd.position;
             }
             m_tBridgeMulti = Vector3.Distance(m_aTongue.transform.position, m_tBridgeAnchor.position) / m_BridgeTongueOriginalDistance;
 
@@ -106,15 +105,15 @@ public class BridgeMaker : ActionObject
         }
         else if (m_goBridge.activeInHierarchy)
         {
-            if (m_aCurrentAnimal.GetComponent<Anteater>() != null)
+            if (AttachedAnimal.GetType().IsAssignableFrom(typeof(Anteater)))
             {
-                m_aTongue.transform.position = m_aCurrentAnimal.GetComponent<Anteater>().m_tTongueEnd.position;
+                m_aTongue.transform.position = AttachedAnimal.GetComponent<Anteater>().m_tTongueEnd.position;
             }
             m_tBridgeMulti = Vector3.Distance(m_aTongue.transform.position, m_tBridgeAnchor.position) / m_BridgeTongueOriginalDistance;
             m_TongueIK.fixTransforms = true;
-            if (m_aCurrentAnimal.GetComponent<Anteater>() != null)
+            if (AttachedAnimal.GetType().IsAssignableFrom(typeof(Anteater)))
             {
-                m_aTongue.transform.position = m_aCurrentAnimal.GetComponent<Anteater>().m_tTongueEnd.position;
+                m_aTongue.transform.position = AttachedAnimal.GetComponent<Anteater>().m_tTongueEnd.position;
             }
             m_TongueIK.solver.IKPositionWeight = 0;
             for (int i = 0; i < m_tJoints.Length; i++)
@@ -123,22 +122,13 @@ public class BridgeMaker : ActionObject
             }
             if (m_fTimer >= m_BridgeEndAnimationStart)
             {
-                m_aCurrentAnimal.m_aAnimalAnimator.SetBool("TongueBridge", false);
-                m_aCurrentAnimal.m_aAnimalAnimator.SetBool("TongueRope", false);
+                AttachedAnimal.m_aAnimalAnimator.SetBool("TongueBridge", false);
+                AttachedAnimal.m_aAnimalAnimator.SetBool("TongueRope", false);
                 //m_headTerrain.overrideTarget = true;
             }
             if (m_fTimer >= 0.5f)
             {
-                
-                m_goBridge.SetActive(false);
-                m_aCurrentAnimal.m_bCanWalkLeft = true;
-                m_aCurrentAnimal.m_bCanWalkRight = true;
-                
-                m_aCurrentAnimal.m_oCurrentObject = null;
-                m_aCurrentAnimal = null;
-
-                m_headTerrain = null;
-                m_headIK = null;
+                Detach(this);
             }
 
         }
@@ -151,15 +141,7 @@ public class BridgeMaker : ActionObject
         }
     }
 
-    protected override void OnCanTrigger()
-    {
-        if (input.interact.wasJustPressed)
-        {
-            DoAction();
-        }
-    }
-
-    public override void DoAction()
+    protected override void DoInteract(Animal caller)
     {
         if (m_bBridgeMade)
         {
@@ -170,19 +152,19 @@ public class BridgeMaker : ActionObject
         }
         else
         {
-            m_aCurrentAnimal = Animal.CurrentAnimal;
-            m_aCurrentAnimal.m_oCurrentObject = this;
-            m_aCurrentAnimal.m_aAnimalAnimator.SetTrigger("TongueStart");
+            Attach(caller);
+
+            AttachedAnimal.m_aAnimalAnimator.SetTrigger("TongueStart");
             if (!m_IsVertical)
             {
-                m_aCurrentAnimal.m_aAnimalAnimator.SetBool("TongueBridge", true);
+                AttachedAnimal.m_aAnimalAnimator.SetBool("TongueBridge", true);
             }
             else
             {
-                m_aCurrentAnimal.m_aAnimalAnimator.SetBool("TongueRope", true);
+                AttachedAnimal.m_aAnimalAnimator.SetBool("TongueRope", true);
             }
-            m_aCurrentAnimal.m_bCanWalkLeft = false;
-            m_aCurrentAnimal.m_bCanWalkRight = false;
+            AttachedAnimal.m_bCanWalkLeft = false;
+            AttachedAnimal.m_bCanWalkRight = false;
 
             m_TongueIK.fixTransforms = true;
 
@@ -198,5 +180,15 @@ public class BridgeMaker : ActionObject
         m_goBridge.SetActive(true);
         m_bBridgeMade = true;
         m_fTimer = 0;
+    }
+
+    protected override void OnDetach(Animal animal)
+    {
+        m_goBridge.SetActive(false);
+        AttachedAnimal.m_bCanWalkLeft = true;
+        AttachedAnimal.m_bCanWalkRight = true;
+
+        m_headTerrain = null;
+        m_headIK = null;
     }
 }

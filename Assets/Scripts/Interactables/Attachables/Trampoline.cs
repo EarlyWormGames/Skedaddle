@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputNew;
 
-public class Trampoline : ActionObject
+public class Trampoline : AttachableInteract
 {
     [System.Serializable]
     public class TrampSpline
@@ -34,6 +34,7 @@ public class Trampoline : ActionObject
     private Rigidbody lastLaunched;
     private List<Transform> WrongIn = new List<Transform>();
     private Dictionary<Transform, RigidbodySettings> tempSettings = new Dictionary<Transform, RigidbodySettings>();
+    private bool wasPositive = true;
 
     protected override void OnStart()
     {
@@ -42,29 +43,37 @@ public class Trampoline : ActionObject
         if (!LaunchOnTrigger)
             LaunchAxis.Bind(GameManager.Instance.input.handle);
 
-        m_CanBeDetached = true;
-        m_CanDetach = true;
-        m_bBlocksMovement = true;
-        m_bBlocksTurn = true;
+        CanDetach = true;
+        BlocksMovement = true;
+        BlocksTurn = true;
     }
 
-    protected override void OnCanTrigger()
+    protected override bool CheckDetach()
+    {
+        return true;
+    }
+
+    protected override bool CheckInput(ActionSlot input, Animal caller)
     {
         if (!LaunchOnTrigger)
         {
+            if (!AllowsAnimal(caller))
+                return false;
+
             if ((LaunchAxis.control.positive.wasJustPressed && !InvertAxis) ||
                 (LaunchAxis.control.negative.wasJustPressed && InvertAxis))
             {
-                m_aCurrentAnimal = Animal.CurrentAnimal;
-                LaunchAnimal();
+                wasPositive = true;
+                return true;
             }
             else if ((LaunchAxis.control.negative.wasJustPressed && !InvertAxis) ||
                 (LaunchAxis.control.positive.wasJustPressed && InvertAxis))
             {
-                m_aCurrentAnimal = Animal.CurrentAnimal;
-                ExitAnimal();
+                wasPositive = false;
+                return true;
             }
         }
+        return false;
     }
 
     protected override void OnUpdate()
@@ -74,14 +83,29 @@ public class Trampoline : ActionObject
         AnimatorController.SetBool("TooHeavy", WrongIn.Count > 0);
     }
 
-    public override void AnimalEnter(Animal a_animal)
+    protected override void DoInteract(Animal caller)
     {
+        if (!TryDetachOther(caller))
+            return;
+
+        Attach(caller);
+
+        if (wasPositive)
+            ExitAnimal();
+        else
+            LaunchAnimal();
+    }
+
+    protected override void OnAnimalEnter(Animal a_animal)
+    {
+        base.OnAnimalEnter(a_animal);
         if (!LaunchOnTrigger)
             return;
 
-        TryDetach(a_animal);
+        if (!TryDetachOther(a_animal))
+            return;
 
-        m_aCurrentAnimal = a_animal;
+        Attach(a_animal);
         LaunchAnimal();
     }
 
@@ -121,7 +145,7 @@ public class Trampoline : ActionObject
         BezierSpline spline = ObjectSpline;
         foreach (var item in AnimalSplines)
         {
-            if (item.AnimalName == m_aCurrentAnimal.m_eName)
+            if (item.AnimalName == AttachedAnimal.m_eName)
             {
                 spline = item.Spline;
                 break;
@@ -130,16 +154,15 @@ public class Trampoline : ActionObject
 
         RigidbodySettings settings = new RigidbodySettings()
         {
-            constraints = m_aCurrentAnimal.m_rBody.constraints
+            constraints = AttachedAnimal.m_rBody.constraints
         };
-        tempSettings.Add(m_aCurrentAnimal.transform, settings);
-        m_aCurrentAnimal.m_oCurrentObject = this;
-        m_aCurrentAnimal.m_rBody.constraints = RigidbodyConstraints.FreezeAll;
-        m_aCurrentAnimal.m_rBody.velocity = Vector3.zero;
-        m_aCurrentAnimal.m_rBody.angularVelocity = Vector3.zero;
-        m_aCurrentAnimal.m_rBody.useGravity = false;
+        tempSettings.Add(AttachedAnimal.transform, settings);
+        AttachedAnimal.m_rBody.constraints = RigidbodyConstraints.FreezeAll;
+        AttachedAnimal.m_rBody.velocity = Vector3.zero;
+        AttachedAnimal.m_rBody.angularVelocity = Vector3.zero;
+        AttachedAnimal.m_rBody.useGravity = false;
 
-        LaunchItem(m_aCurrentAnimal.transform, spline);
+        LaunchItem(AttachedAnimal.transform, spline);
     }
 
     private void LaunchObject()
@@ -179,11 +202,9 @@ public class Trampoline : ActionObject
 
     private void ExitAnimal()
     {
-        m_aCurrentAnimal.m_oCurrentObject = this;
-
-        var follower = m_aCurrentAnimal.gameObject.AddComponent<BezierSplineFollower>();
+        var follower = AttachedAnimal.gameObject.AddComponent<BezierSplineFollower>();
         follower.m_Spline = ExitSpline;
-        follower.m_MoveObject = m_aCurrentAnimal.transform;
+        follower.m_MoveObject = AttachedAnimal.transform;
         follower.m_FollowTime = LaunchSplineSpeed;
         follower.OnPathEnd = new BezierSplineFollower.FollowerEvent();
         follower.OnPathEnd.AddListener(SplineEnd);
@@ -202,7 +223,7 @@ public class Trampoline : ActionObject
 
         if (animal != null)
         {
-            animal.m_oCurrentObject = null;
+            animal.currentAttached.Detach(this);
             animal.m_rBody.useGravity = true;
             animal.m_rBody.constraints = tempSettings[item].constraints;
             tempSettings.Remove(item);
@@ -219,18 +240,18 @@ public class Trampoline : ActionObject
             tempSettings.Remove(item);
         }
     }
-    public override void Detach(Animal anim, bool destroyed = false)
-    {
-        base.Detach(anim, destroyed);
 
-        if (!tempSettings.ContainsKey(anim.transform))
+    protected override void OnDetach(Animal animal)
+    {
+        base.OnDetach(animal);
+
+        if (!tempSettings.ContainsKey(animal.transform))
             return;
 
-        Destroy(anim.GetComponent<BezierSplineFollower>());
+        Destroy(animal.GetComponent<BezierSplineFollower>());
 
-        anim.m_oCurrentObject = null;
-        anim.m_rBody.useGravity = true;
-        anim.m_rBody.constraints = tempSettings[anim.transform].constraints;
-        tempSettings.Remove(anim.transform);
+        animal.m_rBody.useGravity = true;
+        animal.m_rBody.constraints = tempSettings[animal.transform].constraints;
+        tempSettings.Remove(animal.transform);
     }
 }

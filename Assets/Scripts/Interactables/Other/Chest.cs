@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputNew;
 
-public class Chest : ActionObject
+public class Chest : MonoInteracter
 {
     [LabelColor(1, 0, 0, true)]
     public ChestManager Manager;
@@ -15,10 +16,20 @@ public class Chest : ActionObject
     private bool isOpen;
     private float timer;
 
-    protected override void OnStart()
+    protected override void DoInteract(Animal caller)
     {
-        base.OnStart();
+        if (isOpen)
+            return;
 
+        m_Animator.SetTrigger("Open");
+        isOpen = true;
+
+        SaveData.AddPeanut();
+        SaveData.UnlockChest(GUID);
+    }
+
+    void Start()
+    {
         if (SaveData.IsChestUnlocked(GUID))
         {
             isOpen = true;
@@ -26,9 +37,8 @@ public class Chest : ActionObject
         }
     }
 
-    protected override void OnUpdate()
+    void Update()
     {
-        base.OnUpdate();
         if (!isOpen)
         {
             timer += Time.deltaTime;
@@ -38,19 +48,5 @@ public class Chest : ActionObject
                 timer = 0;
             }
         }
-    }
-
-    public override void DoAction()
-    {
-        if (isOpen)
-            return;
-
-        base.DoAction();
-
-        m_Animator.SetTrigger("Open");
-        isOpen = true;
-
-        SaveData.AddPeanut();
-        SaveData.UnlockChest(GUID);
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Dig : ActionObject
+public class Dig : AttachableInteract
 {
     public Transform StartPoint;
     public Transform FinishPoint;
@@ -35,55 +35,47 @@ public class Dig : ActionObject
     {
         base.OnStart();
 
-        m_bBlocksMovement = true;
-        m_bBlocksTurn = true;
-        m_CanBeDetached = false;
-        m_CanDetach = false;
+        BlocksMovement = true;
+        BlocksTurn = true;
+        CanDetach = false;
 
         trigger = GetComponent<Collider>();
     }
 
-    protected override void OnCanTrigger()
+    protected override bool CheckDetach()
     {
-        if (m_aCurrentAnimal != null)
-            return;
-        if (input.interact.wasJustPressed)
-        {
-            Begin();
-        }
+        return false;
     }
 
-    void Begin()
+    protected override void DoInteract(Animal caller)
     {
-        if (!TryDetach())
+        if (!TryDetachOther())
             return;
 
-        base.DoAction();
+        Attach(caller);
 
-        m_aCurrentAnimal = Animal.CurrentAnimal;
-        m_aCurrentAnimal.m_oCurrentObject = this;
-        m_aCurrentAnimal.m_aMovement.moveVelocity = 0;
-        m_aCurrentAnimal.m_bCheckGround = false;
-        m_aCurrentAnimal.m_aMovement.StopSpline();
+        AttachedAnimal.m_aMovement.moveVelocity = 0;
+        AttachedAnimal.m_bCheckGround = false;
+        AttachedAnimal.m_aMovement.StopSpline();
 
-        Anteater anteater = (Anteater)m_aCurrentAnimal;
+        Anteater anteater = (Anteater)AttachedAnimal;
         anteater.m_bDigging = true;
         anteater.m_bDigInWall = WallDigStart;
         anteater.m_rBody.useGravity = false;
         anteater.SetDirection(StartDirection, false);
 
         anteater.transform.position = StartPoint.position;
-        m_aCurrentAnimal.SetColliderActive(false, this);
+        AttachedAnimal.SetColliderActive(false, this);
 
-        m_lAnimalsIn.RemoveAll(anteater);
+        AnimalsIn.RemoveAll(anteater);
 
         AnimalController.Instance.CanSwap = false;
     }
 
-    public override void DoAction()
+    public void StartSpline()
     {
-        Anteater anteater = (Anteater)m_aCurrentAnimal;
-        Spline.m_MoveObject = m_aCurrentAnimal.transform;
+        Anteater anteater = (Anteater)AttachedAnimal;
+        Spline.m_MoveObject = AttachedAnimal.transform;
         anteater.SetDirection(EndDirection, false);
         anteater.m_bDigInWall = WallDigEnd;
         Spline.Follow(Reverse);
@@ -98,10 +90,10 @@ public class Dig : ActionObject
 
     void SplineEnd(BezierSplineFollower sender, Transform trackedItem)
     {
-        if (m_aCurrentAnimal == null)
+        if (AttachedAnimal == null)
             return;
 
-        Anteater anteater = (Anteater)m_aCurrentAnimal;
+        Anteater anteater = (Anteater)AttachedAnimal;
         anteater.m_bDigging = false;
         
         anteater.transform.position = FinishPoint.position;
@@ -109,22 +101,22 @@ public class Dig : ActionObject
 
     public void Finish()
     {
-        m_aCurrentAnimal.SetColliderActive(true);
-        m_aCurrentAnimal.m_bCheckGround = true;
-        m_aCurrentAnimal.m_rBody.useGravity = true;
-        m_aCurrentAnimal.m_oCurrentObject = null;
-        m_aCurrentAnimal.SetDirection(FACING_DIR.NONE, false);
+        AttachedAnimal.SetColliderActive(true);
+        AttachedAnimal.m_bCheckGround = true;
+        AttachedAnimal.m_rBody.useGravity = true;
+        AttachedAnimal.SetDirection(FACING_DIR.NONE, false);
         if (EndDirection == FACING_DIR.LEFT)
         {
-            m_aCurrentAnimal.m_bTurned = true;
-            m_aCurrentAnimal.m_bFacingLeft = true;
+            AttachedAnimal.m_bTurned = true;
+            AttachedAnimal.m_bFacingLeft = true;
         }
         if(EndDirection == FACING_DIR.RIGHT)
         {
-            m_aCurrentAnimal.m_bTurned = false;
-            m_aCurrentAnimal.m_bFacingLeft = false;
+            AttachedAnimal.m_bTurned = false;
+            AttachedAnimal.m_bFacingLeft = false;
         }
-        m_aCurrentAnimal = null;
+
+        Detach(this);
 
         AnimalController.Instance.CanSwap = true;
     }

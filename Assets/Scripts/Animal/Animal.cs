@@ -1,10 +1,9 @@
-﻿using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.Analytics;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using RootMotion.FinalIK;
-using UnityEngine.InputNew;
+using UnityEngine;
+using UnityEngine.Analytics;
+using UnityEngine.Events;
 
 public enum DEATH_TYPE
 {
@@ -132,6 +131,9 @@ public class Animal : MonoBehaviour
 
     public bool             WasTeleport { get; set; }
 
+    [HideInNormalInspector]
+    public Attachable       currentAttached;
+
     //==================================
     //          Internal Vars
     //    (Public use for scripts)
@@ -142,7 +144,7 @@ public class Animal : MonoBehaviour
     internal FACING_DIR     m_fFacingDir;
 
     //Helpers for objects
-    internal ActionObject   m_oCurrentObject;
+    //internal ActionObject   m_oCurrentObject;
     internal bool           m_bPullingObject;
 
     internal Animator       m_aAnimalAnimator;
@@ -344,13 +346,13 @@ public class Animal : MonoBehaviour
         {
             Highlighter.Selected = gameObject;
 
-            if (m_oCurrentObject != null)
+            if (currentAttached != null)
             {
                 SetTimer(true);
 
                 if (m_fGazeTimer >= EWEyeTracking.holdTime)
                 {
-                    m_oCurrentObject.Detach(this);
+                    currentAttached.Detach(null);
                     SetTimer(false);
                 }
             }
@@ -779,11 +781,11 @@ public class Animal : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (m_oCurrentObject != null)
+        if (currentAttached != null)
         {
-            if (m_oCurrentObject.GetType() == typeof(Trampoline))
+            if (currentAttached.GetType() == typeof(Trampoline))
             {
-                m_oCurrentObject.Detach(this);
+                currentAttached.Detach(null);
             }
         }
 
@@ -928,8 +930,8 @@ public class Animal : MonoBehaviour
     public bool CanTurn()
     {
         bool objOkay = true;
-        if (m_oCurrentObject != null)
-            objOkay = !m_oCurrentObject.m_bBlocksTurn;
+        if (currentAttached != null)
+            objOkay = !currentAttached.BlocksTurn;
 
         if (!Alive)
             return false;
@@ -940,8 +942,8 @@ public class Animal : MonoBehaviour
     public virtual bool CanMove()
     {
         bool objOkay = true;
-        if (m_oCurrentObject != null)
-            objOkay = !m_oCurrentObject.m_bBlocksMovement;
+        if (currentAttached != null)
+            objOkay = !currentAttached.BlocksMovement;
 
         if (!Alive)
             return false;
@@ -971,19 +973,34 @@ public class Animal : MonoBehaviour
         }
     }
 
-    public void SetColliderActive(bool active, List<ActionObject> ignore = null)
+    public void SetColliderActive(bool active, List<Attachable> ignore = null)
     {
         m_tCollider.gameObject.SetActive(active);
         if (!active)
-            ActionObject.RemoveAll(this, ignore);
+            Attachable.RemoveAll(this, ignore);
     }
 
-    public void SetColliderActive(bool active, ActionObject ignore)
+    public void SetColliderActive(bool active, Attachable ignore)
     {
-        var ignoreList = new List<ActionObject>();
+        var ignoreList = new List<Attachable>();
         if (ignore != null)
             ignoreList.Add(ignore);
 
         SetColliderActive(active, ignoreList);
+    }
+
+    protected virtual void OnAttach() { }
+    protected virtual void OnDetach() { }
+
+    public void AttachInteractable(Attachable attachable)
+    {
+        currentAttached = attachable;
+        OnAttach();
+    }
+
+    public void DetachInteractable()
+    {
+        OnDetach();
+        currentAttached = null;
     }
 }

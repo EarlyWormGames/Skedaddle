@@ -9,25 +9,20 @@ public class LeverAnimated : Lever
 
     private int waitFrames = 0;
 
-    public override void DoAction()
+    protected override void DoInteract(Animal caller)
     {
-        base.DoAction();
         if (!IsPlug)
         {
-            m_aCurrentAnimal.m_bPullingLeverOn = IsOn;
-            m_aCurrentAnimal.m_bPullingLeverOff = !IsOn;
+            AttachedAnimal.m_bPullingLeverOn = IsOn;
+            AttachedAnimal.m_bPullingLeverOff = !IsOn;
 
             waitFrames = 15;
         }
     }
 
-    public override void DoAnimation()
-    {
-    }
-
     public void LateUpdate()
     {
-        if (m_aCurrentAnimal == null)
+        if (AttachedAnimal == null)
             return;
 
         if (waitFrames > 0)
@@ -38,9 +33,9 @@ public class LeverAnimated : Lever
 
         if (!IsPlug)
         {
-            float curve = m_aCurrentAnimal.m_aAnimalAnimator.GetFloat("Root_Curve_Y");
+            float curve = AttachedAnimal.m_aAnimalAnimator.GetFloat("Root_Curve_Y");
 
-            if (m_aCurrentAnimal.m_eName != ANIMAL_NAME.LORIS)
+            if (AttachedAnimal.m_eName != ANIMAL_NAME.LORIS)
                 curve = IsOn? 1 : 0;
 
             AnimController.SetFloat("Position", curve);
@@ -66,11 +61,11 @@ public class LeverAnimated : Lever
     {
         if (!IsPlug)
         {
-            m_aCurrentAnimal.m_bPullingLeverOn = false;
-            m_aCurrentAnimal.m_bPullingLeverOff = false;
+            AttachedAnimal.m_bPullingLeverOn = false;
+            AttachedAnimal.m_bPullingLeverOff = false;
         }
 
-        Detach(m_aCurrentAnimal);
+        Detach(this);
     }
 
     protected override void DoSwitchOff()

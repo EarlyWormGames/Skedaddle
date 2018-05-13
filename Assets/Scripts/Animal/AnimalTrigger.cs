@@ -2,7 +2,7 @@
 using System.Collections;
 
 [RequireComponent(typeof(Collider))]
-public class AnimalTrigger : MonoBehaviour
+public class AnimalHeadTrigger : MonoBehaviour
 {
     public Animal parent;
     private Collider col;

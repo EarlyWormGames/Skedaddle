@@ -43,7 +43,7 @@ public class EndLevel : MonoBehaviour
 
         m_GazeObject = GetComponent<EWGazeObject>();
 
-        ExitKey = GameManager.Instance.mainMap.interact;
+        ExitKey = GameManager.mainMap.interact;
     }
 
     // Update is called once per frame

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FallDetacher : MonoBehaviour
 {
-    public ActionObject ToDetach;
+    public Attachable ToDetach;
     [Tooltip("Should the ActionObject also be disabled when it would be detached?")]
     public bool DisableWhenDetach = true;
 
@@ -88,8 +88,8 @@ public class FallDetacher : MonoBehaviour
         float percent = BoundsPercent(box, b);
         if (percent * 100 < DetachPercent && detach)
         {
-            if (ToDetach.m_aCurrentAnimal != null)
-                ToDetach.Detach(ToDetach.m_aCurrentAnimal);
+            if (ToDetach.AttachedAnimal != null)
+                ToDetach.Detach(null);
             if (DisableWhenDetach)
                 ToDetach.enabled = false;
         }

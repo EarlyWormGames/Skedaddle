@@ -7,12 +7,14 @@ using System.Collections.Generic;
 
 public class GameManager : Singleton<GameManager>
 {
+    public static MainMapping mainMap;
+
     public GameObject m_goMenuPrefab;
     public bool m_bUseDoF = true;
     public string[] m_asDebugScenes;
     public string[] m_asNonGameScenes;
 
-    public MainMapping mainMap;
+    [HideInInspector]
     public PlayerInput input;
 
     internal float m_fGameTimer = 0;

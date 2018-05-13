@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Cannon : ActionObject
+public class Cannon : Attachable
 {
     public float RotateTime = 1;
     public Transform RotateObject, LorisSitPoint;
@@ -31,10 +31,9 @@ public class Cannon : ActionObject
         base.OnStart();
         startRotation = RotateObject.rotation;
 
-        m_CanBeDetached = false;
-        m_CanDetach = false;
-        m_bBlocksMovement = true;
-        m_bBlocksTurn = true;
+        CanDetach = false;
+        BlocksMovement = true;
+        BlocksTurn = true;
     }
 
     private void OnEnable()
@@ -62,24 +61,15 @@ public class Cannon : ActionObject
         if (SplineRight != null)
             SplineRight.OnPathEnd.RemoveListener(SplineEnd);
     }
-
-    protected override void OnCanTrigger()
+    
+    protected override void OnAnimalEnter(Animal animal)
     {
-        DoAction();
-    }
-
-    public override void DoAction()
-    {
-        if (!TryDetach())
+        if (!TryDetachOther())
             return;
 
-        if (m_aCurrentAnimal != null)
-            return;
+        Attach(animal);
 
-        base.DoAction();
-        m_aCurrentAnimal = Animal.CurrentAnimal;
-        loris = (Loris)m_aCurrentAnimal;
-        loris.m_oCurrentObject = this;
+        loris = (Loris)AttachedAnimal;
         loris.m_bInCannon = true;
         loris.m_rBody.isKinematic = true;
 
@@ -90,7 +80,7 @@ public class Cannon : ActionObject
         shooting = false;
         firstpress = true;
 
-        m_lAnimalsIn.RemoveAll(loris);
+        AnimalsIn.RemoveAll(loris);
     }
 
     protected override void OnUpdate()
@@ -116,10 +106,10 @@ public class Cannon : ActionObject
         {
             loris.transform.position = LorisSitPoint.position;
         }
-        else if (input.interact.wasJustPressed && !isLerping)
+        else if (GameManager.mainMap.interact.wasJustPressed && !isLerping)
             Shoot();
-        else if ((input.moveX.negative.wasJustPressed && (!facingLeft || InvertKeys) ||
-            input.moveX.positive.wasJustPressed && (facingLeft || InvertKeys) && !isLerping) || firstpress)
+        else if ((GameManager.mainMap.moveX.negative.wasJustPressed && (!facingLeft || InvertKeys) ||
+            GameManager.mainMap.moveX.positive.wasJustPressed && (facingLeft || InvertKeys) && !isLerping) || firstpress)
         {
             Switch();
             firstpress = false;
@@ -151,9 +141,10 @@ public class Cannon : ActionObject
 
         loris.m_bInCannon = false;
         loris.m_rBody.isKinematic = false;
-        loris.m_oCurrentObject = null;
         loris = null;
-        m_aCurrentAnimal = null;
+
+        Detach(this);
+
 
         isLerping = true;
         timer = 0;

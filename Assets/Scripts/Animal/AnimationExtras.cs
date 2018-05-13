@@ -25,18 +25,19 @@ public class AnimationExtras : MonoBehaviour
 
     public void StartDig()
     {
-        GetComponentInParent<Animal>().m_oCurrentObject.DoAction();
+        var dig = (Dig)GetComponentInParent<Animal>().currentAttached;
+        dig.StartSpline();
     }
 
     public void FinishDig()
     {
-        var dig = (Dig)GetComponentInParent<Animal>().m_oCurrentObject;
+        var dig = (Dig)GetComponentInParent<Animal>().currentAttached;
         dig.Finish();
     }
 
     public void BuildBridge()
     {
-        var bridge = (BridgeMaker)GetComponentInParent<Animal>().m_oCurrentObject;
+        var bridge = (BridgeMaker)GetComponentInParent<Animal>().currentAttached;
         if (bridge == null)
             return;
 
