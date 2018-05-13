@@ -37,7 +37,7 @@ public class CageDrop : MonoBehaviour, IInteractable
     {
     }
 
-    public bool CheckInfo(ActionSlot input, Animal caller)
+    public bool CheckInfo(InputControl input, Animal caller)
     {
         return true;
     }

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class InteractChecker : Singleton<InteractChecker>
 {
-    private Dictionary<ActionSlot, List<IInteractable>> Listeners = new Dictionary<ActionSlot, List<IInteractable>>();
+    private Dictionary<InputControl, List<IInteractable>> Listeners = new Dictionary<InputControl, List<IInteractable>>();
 
     // Use this for initialization
     void Start()
@@ -25,7 +25,7 @@ public class InteractChecker : Singleton<InteractChecker>
         //Loop through all listener keys
         foreach(var pair in Listeners)
         {
-            if(CheckKey(pair.Key))
+            if(pair.Key.isEnabled && pair.Key.rawValue != 0)
             {
                 float distance = Mathf.Infinity;
                 IInteractable current = null;
@@ -67,73 +67,34 @@ public class InteractChecker : Singleton<InteractChecker>
         }
     }
 
-    /// <summary>
-    /// Checks what type the <paramref name="slot"/> is and return if it has been pressed
-    /// </summary>
-    bool CheckKey(ActionSlot slot)
+    ///<summary>Add a listener to a list of strings, which relate to <see cref="GameManager.controlsList"/></summary>
+    public static void RegisterKeyListener(IInteractable interactable, List<string> actionSlots)
     {
-        if (slot.GetType().IsAssignableFrom(typeof(ButtonAction)))
-        {
-            ButtonAction button = (ButtonAction)slot;
-            return button.control.wasJustPressed && button.control.isEnabled;
-        }
-        else if(slot.GetType().IsAssignableFrom(typeof(AxisAction)))
-        {
-            AxisAction axis = (AxisAction)slot;
-            return axis.control.value != 0 && axis.control.isEnabled;
-        }
-        return false;
-    }
+        if (GameManager.Instance == null || GameManager.Instance.input == null)
+            return;
 
-    ///<summary>Add a listener to a list of <see cref="ButtonAction"/></summary>
-    public static void RegisterKeyListener(IInteractable interactable, List<ButtonAction> actionSlots)
-    {
-        foreach(var slot in actionSlots)
+        foreach (var slot in actionSlots)
         {
-            if (Instance.Listeners.ContainsKey(slot))
-                Instance.Listeners[slot].Add(interactable);
+            if (Instance.Listeners.ContainsKey(GameManager.Instance.controlsList[slot]))
+                Instance.Listeners[GameManager.Instance.controlsList[slot]].Add(interactable);
             else
             {
-                slot.Bind(GameManager.Instance.input.handle);
-                Instance.Listeners.Add(slot, new List<IInteractable>(new[] { interactable }));
+                Instance.Listeners.Add(GameManager.Instance.controlsList[slot], new List<IInteractable>(new[] { interactable }));
             }
         }
     }
-    ///<summary>Remove a listener from a list of <see cref="ButtonAction"/></summary>
-    public static void UnregisterKeyListener(IInteractable interactable, List<ButtonAction> actionSlots)
+    ///<summary>Remove a listener from a list of strings, which relate to <see cref="GameManager.controlsList"/></summary>
+    public static void UnregisterKeyListener(IInteractable interactable, List<string> actionSlots)
     {
-        foreach(var slot in actionSlots)
-        {
-            if (!Instance.Listeners.ContainsKey(slot))
-                continue;
+        if (GameManager.Instance == null || GameManager.Instance.input == null)
+            return;
 
-            Instance.Listeners[slot].Remove(interactable);
-        }
-    }
-
-    ///<summary>Add a listener to a list of <see cref="AxisAction"/></summary>
-    public static void RegisterKeyListener(IInteractable interactable, List<AxisAction> actionSlots)
-    {
         foreach (var slot in actionSlots)
         {
-            if (Instance.Listeners.ContainsKey(slot))
-                Instance.Listeners[slot].Add(interactable);
-            else
-            {
-                slot.Bind(GameManager.Instance.input.handle);
-                Instance.Listeners.Add(slot, new List<IInteractable>(new[] { interactable }));
-            }
-        }
-    }
-    ///<summary>Remove a listener from a list of <see cref="AxisAction"/></summary>
-    public static void UnregisterKeyListener(IInteractable interactable, List<AxisAction> actionSlots)
-    {
-        foreach (var slot in actionSlots)
-        {
-            if (!Instance.Listeners.ContainsKey(slot))
+            if (!Instance.Listeners.ContainsKey(GameManager.Instance.controlsList[slot]))
                 continue;
 
-            Instance.Listeners[slot].Remove(interactable);
+            Instance.Listeners[GameManager.Instance.controlsList[slot]].Remove(interactable);
         }
     }
 }

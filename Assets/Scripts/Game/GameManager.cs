@@ -16,6 +16,7 @@ public class GameManager : Singleton<GameManager>
 
     [HideInInspector]
     public PlayerInput input;
+    public Dictionary<string, InputControl> controlsList;
 
     internal float m_fGameTimer = 0;
 
@@ -38,7 +39,7 @@ public class GameManager : Singleton<GameManager>
         SceneManager.sceneLoaded += SceneLoaded;
         SceneLoaded(SceneManager.GetActiveScene(), LoadSceneMode.Single);
 
-        Application.targetFrameRate = 120;
+        Application.targetFrameRate = 200;
     }
 
     void SceneLoaded(Scene a_scene, LoadSceneMode a_mode)
@@ -56,6 +57,19 @@ public class GameManager : Singleton<GameManager>
         input.autoAssignGlobal = pInput.autoAssignGlobal;
         input.actionMaps = pInput.actionMaps;
         mainMap = input.GetActions<MainMapping>();
+        
+        RefreshInputs();
+    }
+
+    void RefreshInputs()
+    {
+        //Make a dictionary of inputs that are case insensitive
+        controlsList = new Dictionary<string, InputControl>(StringComparer.OrdinalIgnoreCase);
+        foreach (var item in mainMap.actionMap.actions)
+        {
+            var map = input.handle.GetActions(mainMap.actionMap);
+            controlsList.Add(item.name, map[item.actionIndex]);
+        }
     }
 
     // Update is called once per frame

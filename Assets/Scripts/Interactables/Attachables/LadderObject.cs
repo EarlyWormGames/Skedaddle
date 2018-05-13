@@ -50,7 +50,7 @@ public class LadderObject : AttachableInteract
         BlocksTurn = true;
     }
 
-    protected override bool CheckInput(ActionSlot input, Animal caller)
+    protected override bool CheckInput(InputControl input, Animal caller)
     {
         if (justExit)
             return false;
@@ -237,9 +237,6 @@ public class LadderObject : AttachableInteract
 
     protected override void OnDetaching(Animal animal)
     {
-        //Base re-registers keys
-        base.OnDetach(animal);
-
         justExit = true;
 
         moveVelocity = 0;

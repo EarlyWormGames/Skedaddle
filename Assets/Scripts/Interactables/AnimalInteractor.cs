@@ -8,15 +8,15 @@ using UnityEngine.InputNew;
 /// </summary>
 public abstract class AnimalInteractor : AnimalTrigger, IInteractable
 {
-    public List<ButtonAction> UsableKeys = new List<ButtonAction>();
+    public List<InputAction> UsableKeys = new List<InputAction>();
     public Transform InteractPoint;
 
     /// <summary>
     /// Default simply checks if the <paramref name="caller"/> works with <see cref="AnimalTrigger.AllowsAnimal(Animal)"/>
     /// </summary>
-    public bool CheckInfo(ActionSlot input, Animal caller)
+    public bool CheckInfo(InputControl input, Animal caller)
     {
-        return AllowsAnimal(caller);
+        return AllowsAnimal(caller) && AnimalsIn.Contains(caller);
     }
 
     public float GetDistance(Vector3 point)
@@ -50,11 +50,19 @@ public abstract class AnimalInteractor : AnimalTrigger, IInteractable
 
     public override void AnimalEnter(Animal animal)
     {
-        InteractChecker.RegisterKeyListener(this, UsableKeys);
+        InteractChecker.RegisterKeyListener(this, KeysToString());
     }
 
     public override void AnimalExit(Animal animal)
     {
-        InteractChecker.UnregisterKeyListener(this, UsableKeys);
+        InteractChecker.UnregisterKeyListener(this, KeysToString());
+    }
+
+    List<string> KeysToString()
+    {
+        List<string> l = new List<string>();
+        foreach (var item in UsableKeys)
+            l.Add(item.name);
+        return l;
     }
 }

@@ -53,7 +53,7 @@ public class Trampoline : AttachableInteract
         return true;
     }
 
-    protected override bool CheckInput(ActionSlot input, Animal caller)
+    protected override bool CheckInput(InputControl input, Animal caller)
     {
         if (!LaunchOnTrigger)
         {
@@ -248,10 +248,11 @@ public class Trampoline : AttachableInteract
 
         if (animal != null)
         {
+            var info = tempSettings[item];
+            tempSettings.Remove(item);
             animal.currentAttached.Detach(this);
             animal.m_rBody.useGravity = true;
-            animal.m_rBody.constraints = tempSettings[item].constraints;
-            tempSettings.Remove(item);
+            animal.m_rBody.constraints = info.constraints;
 
             //We only really care about the Animal ending
             OnSplineEnd.Invoke();
@@ -272,8 +273,6 @@ public class Trampoline : AttachableInteract
     /// </summary>
     protected override void OnDetaching(Animal animal)
     {
-        base.OnDetach(animal);
-       
         if (!tempSettings.ContainsKey(animal.transform))
             return;
 

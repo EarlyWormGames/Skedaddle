@@ -5,14 +5,13 @@ using UnityEngine.InputNew;
 
 public abstract class AttachableInteract : Attachable, IInteractable
 {
-    public List<ButtonAction> UsableKeys = new List<ButtonAction>();
-    public List<AxisAction> UsableAxes = new List<AxisAction>();
+    public List<InputAction> UsableKeys = new List<InputAction>();
     public Transform InteractPoint;
 
     /// <summary>
     /// Default simply checks if the <paramref name="caller"/> works with <see cref="AnimalTrigger.AllowsAnimal(Animal)"/>
     /// </summary>
-    public bool CheckInfo(ActionSlot input, Animal caller)
+    public bool CheckInfo(InputControl input, Animal caller)
     {
         return CheckInput(input, caller);
     }
@@ -20,9 +19,9 @@ public abstract class AttachableInteract : Attachable, IInteractable
     /// <summary>
     /// Default simply checks if the <paramref name="caller"/> works with <see cref="AnimalTrigger.AllowsAnimal(Animal)"/>
     /// </summary>
-    protected virtual bool CheckInput(ActionSlot input, Animal caller)
+    protected virtual bool CheckInput(InputControl input, Animal caller)
     {
-        return AllowsAnimal(caller);
+        return AllowsAnimal(caller) && AnimalsIn.Contains(caller);
     }
 
     public float GetDistance(Vector3 point)
@@ -59,8 +58,7 @@ public abstract class AttachableInteract : Attachable, IInteractable
     /// </summary>
     protected void RegisterKeys()
     {
-        InteractChecker.RegisterKeyListener(this, UsableKeys);
-        InteractChecker.RegisterKeyListener(this, UsableAxes);
+        InteractChecker.RegisterKeyListener(this, KeysToString());
     }
 
     /// <summary>
@@ -68,8 +66,15 @@ public abstract class AttachableInteract : Attachable, IInteractable
     /// </summary>
     protected void UnregisterKeys()
     {
-        InteractChecker.UnregisterKeyListener(this, UsableKeys);
-        InteractChecker.UnregisterKeyListener(this, UsableAxes);
+        InteractChecker.UnregisterKeyListener(this, KeysToString());
+    }
+
+    List<string> KeysToString()
+    {
+        List<string> l = new List<string>();
+        foreach (var item in UsableKeys)
+            l.Add(item.name);
+        return l;
     }
 
     protected override void OnAttach()

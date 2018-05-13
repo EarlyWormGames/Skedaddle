@@ -5,13 +5,13 @@ using UnityEngine.InputNew;
 
 public abstract class MonoInteracter : MonoBehaviour, IInteractable
 {
-    public List<ButtonAction> UsableKeys = new List<ButtonAction>();
+    public List<InputAction> UsableKeys = new List<InputAction>();
     public Transform InteractPoint;
 
     /// <summary>
     /// Default simply returns true. Keys are already registered
     /// </summary>
-    public bool CheckInfo(ActionSlot input, Animal caller)
+    public bool CheckInfo(InputControl input, Animal caller)
     {
         return CheckInput(input, caller);
     }
@@ -42,7 +42,15 @@ public abstract class MonoInteracter : MonoBehaviour, IInteractable
         DoInteract(caller);
     }
 
-    protected virtual bool CheckInput(ActionSlot input, Animal caller) { return true; }
+    protected List<string> KeysToString()
+    {
+        List<string> l = new List<string>();
+        foreach (var item in UsableKeys)
+            l.Add(item.name);
+        return l;
+    }
+
+    protected virtual bool CheckInput(InputControl input, Animal caller) { return true; }
     protected virtual bool ShouldIgnoreDistance() { return false; }
     protected abstract void DoInteract(Animal caller);
 }

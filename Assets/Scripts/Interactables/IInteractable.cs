@@ -4,7 +4,7 @@ using UnityEngine.InputNew;
 public interface IInteractable
 {
     ///<summary>Check if this interactable uses the key</summary>
-    bool CheckInfo(ActionSlot input, Animal caller);
+    bool CheckInfo(InputControl input, Animal caller);
     ///<summary>Should this interactable ignore the distance check and automatically interact when possible</summary>
     bool IgnoreDistance();
     ///<summary>Get the distance from point. Used to check keypress</summary>
