@@ -8,6 +8,7 @@ using UnityEngine.InputNew;
 /// </summary>
 public abstract class AnimalInteractor : AnimalTrigger, IInteractable
 {
+    [Header("Interaction")]
     public List<InputAction> UsableKeys = new List<InputAction>();
     public Transform InteractPoint;
 

@@ -5,6 +5,7 @@ using UnityEngine.InputNew;
 
 public abstract class AttachableInteract : Attachable, IInteractable
 {
+    [Header("Interaction")]
     public List<InputAction> UsableKeys = new List<InputAction>();
     public Transform InteractPoint;
 

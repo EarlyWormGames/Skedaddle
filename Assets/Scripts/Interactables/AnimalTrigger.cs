@@ -3,6 +3,7 @@ using UnityEngine;
 
 public abstract class AnimalTrigger : MonoBehaviour
 {
+    [Header("Animal Trigger")]
     public ANIMAL_SIZE RequiredSize;
     public ANIMAL_NAME RequiredAnimal;
     public ANIMAL_SIZE MaximumSize;
