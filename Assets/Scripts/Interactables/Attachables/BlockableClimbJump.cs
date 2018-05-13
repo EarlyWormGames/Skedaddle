@@ -14,17 +14,22 @@ public class BlockableClimbJump : ClimbJump
         return !BoxCheck();
     }
 
+    /// <summary>
+    /// Check if the box with the supplied settings is overlapping anything
+    /// </summary>
     bool BoxCheck()
     {
         Vector3 pos = transform.TransformPoint(BoxPosition);
         Quaternion rot = transform.rotation * Quaternion.Euler(BoxRotation);
         Vector3 scale = transform.TransformVector(BoxScale).Abs();
 
+        //Do a physics overlap check
         var cols = Physics.OverlapBox(pos, scale, rot, Layer, QueryTriggerInteraction.Ignore);
         if (cols.Length > 0)
         {
             foreach (var col in cols)
             {
+                //Ignore climbjump scripts
                 if (col.attachedRigidbody != null)
                 {
                     if (col.attachedRigidbody.GetComponent<ClimbJump>())
@@ -32,9 +37,11 @@ public class BlockableClimbJump : ClimbJump
                 }
                 else if (col.GetComponent<ClimbJump>())
                     continue;
+                //We hit something
                 return true;
             }
         }
+        //Nothing was hit, good to go!
         return false;
     }
 

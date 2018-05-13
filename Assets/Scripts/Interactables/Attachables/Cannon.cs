@@ -73,13 +73,16 @@ public class Cannon : Attachable
         loris.m_bInCannon = true;
         loris.m_rBody.isKinematic = true;
 
+        //Completely override movement by stopping any spline the loris is on
         loris.m_aMovement.StopSpline();
 
+        //The loris should not collide with anything but this
         loris.SetColliderActive(false, this);
         loris.transform.position = LorisSitPoint.position;
         shooting = false;
         firstpress = true;
 
+        //We don't need to worry if the loris is in now
         AnimalsIn.RemoveAll(loris);
     }
 
@@ -107,7 +110,9 @@ public class Cannon : Attachable
             loris.transform.position = LorisSitPoint.position;
         }
         else if (GameManager.mainMap.interact.wasJustPressed && !isLerping)
+        {
             Shoot();
+        }
         else if ((GameManager.mainMap.moveX.negative.wasJustPressed && (!facingLeft || InvertKeys) ||
             GameManager.mainMap.moveX.positive.wasJustPressed && (facingLeft || InvertKeys) && !isLerping) || firstpress)
         {
@@ -116,6 +121,9 @@ public class Cannon : Attachable
         }
     }
 
+    /// <summary>
+    /// Fire ze cannons!
+    /// </summary>
     public void Shoot()
     {
         if (facingLeft)
@@ -135,6 +143,9 @@ public class Cannon : Attachable
         OnShoot.Invoke();
     }
 
+    /// <summary>
+    /// Called once the spline has finished
+    /// </summary>
     void SplineEnd(BezierSplineFollower sender, Transform trackedItem)
     {
         loris.SetColliderActive(true);
@@ -145,30 +156,40 @@ public class Cannon : Attachable
 
         Detach(this);
 
-
         isLerping = true;
         timer = 0;
 
+        //Rotate from current facing to the starting rotation
         Vector3 forward = (facingLeft ? LeftFacing.position : RightFacing.position) - RotateObject.position;
         start = Quaternion.LookRotation(forward.normalized, Vector3.up);
         end = startRotation;
     }
 
+    /// <summary>
+    /// Invert the facing direction from left/right
+    /// </summary>
     void Switch()
     {
         facingLeft = !facingLeft;
         isLerping = true;
         timer = 0;
 
+        //Grab the forward vector, depending on which direction we're facing
         Vector3 forward = (!facingLeft ? LeftFacing.position : RightFacing.position) - RotateObject.position;
+
+        //If it has been reset, use the initial rotation 
         if (!useStartRotation)
             start = Quaternion.LookRotation(forward.normalized, Vector3.up);
         else
             start = startRotation;
 
+        //Essentially inverts the facing direction
         forward = (facingLeft ? LeftFacing.position : RightFacing.position) - RotateObject.position;
+
+        //The ending rotation should be the forward direction
         end = Quaternion.LookRotation(forward.normalized, Vector3.up);
 
+        //We don't need to use the starting rotation, now that we've switched once
         useStartRotation = false;
     }
 }

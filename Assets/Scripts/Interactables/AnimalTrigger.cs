@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public abstract class AnimalTrigger : MonoBehaviour
 {
@@ -6,6 +7,8 @@ public abstract class AnimalTrigger : MonoBehaviour
     public ANIMAL_NAME RequiredAnimal;
     public ANIMAL_SIZE MaximumSize;
     public bool OnlyHeadTrigger;
+
+    protected List<Animal> AnimalsIn = new List<Animal>();
 
     ///<summary>Check if this object is able to interact with this <see cref="Animal"/></summary>
     public bool AllowsAnimal(Animal animal)
@@ -54,7 +57,10 @@ public abstract class AnimalTrigger : MonoBehaviour
         }
 
         if (AllowsAnimal(anim))
+        {
+            AnimalsIn.Add(anim);
             AnimalEnter(anim);
+        }
         else
             WrongAnimalEnter(anim);
     }
@@ -85,7 +91,10 @@ public abstract class AnimalTrigger : MonoBehaviour
         }
 
         if (AllowsAnimal(anim))
+        {
+            AnimalsIn.Remove(anim);
             AnimalExit(anim);
+        }
         else
             WrongAnimalExit(anim);
     }

@@ -41,10 +41,14 @@ public class AnimalSplineMover : AttachableInteract
 
         Attach(caller);
 
+        //Follow the path
         SplineFollower.m_MoveObject = AttachedAnimal.transform;
         SplineFollower.Follow();
     }
 
+    /// <summary>
+    /// Called once the spline has finished
+    /// </summary>
     void SplineEnd(BezierSplineFollower sender, Transform trackedObject)
     {
         Detach(this);

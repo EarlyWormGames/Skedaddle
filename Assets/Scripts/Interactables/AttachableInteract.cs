@@ -81,13 +81,17 @@ public abstract class AttachableInteract : Attachable, IInteractable
     protected override void OnAnimalEnter(Animal animal)
     {
         base.OnAnimalEnter(animal);
-        RegisterKeys();
+
+        if (AnimalsIn.Count == 1)
+            RegisterKeys();
     }
 
     protected override void OnAnimalExit(Animal animal)
     {
         base.OnAnimalExit(animal);
-        UnregisterKeys();
+
+        if (AnimalsIn.Count == 0)
+            UnregisterKeys();
     }
 
     protected virtual bool ShouldIgnoreDistance() { return false; }

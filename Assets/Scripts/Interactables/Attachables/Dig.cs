@@ -72,6 +72,9 @@ public class Dig : AttachableInteract
         AnimalController.Instance.CanSwap = false;
     }
 
+    /// <summary>
+    /// Start the digging spline
+    /// </summary>
     public void StartSpline()
     {
         Anteater anteater = (Anteater)AttachedAnimal;
@@ -83,11 +86,17 @@ public class Dig : AttachableInteract
         OnSplineStart.Invoke();
     }
 
+    /// <summary>
+    /// Trigger <see cref="OnDirtExplode"/>
+    /// </summary>
     public void DirtExplode()
     {
         OnDirtExplode.Invoke();
     }
 
+    /// <summary>
+    /// Called when the digging spline ends
+    /// </summary>
     void SplineEnd(BezierSplineFollower sender, Transform trackedItem)
     {
         if (AttachedAnimal == null)
@@ -99,6 +108,9 @@ public class Dig : AttachableInteract
         anteater.transform.position = FinishPoint.position;
     }
 
+    /// <summary>
+    /// Called once the <see cref="Anteater"/> has finished the ending animation
+    /// </summary>
     public void Finish()
     {
         AttachedAnimal.SetColliderActive(true);

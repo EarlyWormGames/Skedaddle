@@ -14,19 +14,15 @@ public abstract class Attachable : AnimalTrigger
     public bool CanDetach { get; protected set; }
 
     ///<summary>A collection of <see cref="Animal"/>s that are currently inside this object's trigger(s)</summary>
-    protected List<Animal> AnimalsIn = new List<Animal>();
     protected bool BeingDestroyed;
 
     sealed public override void AnimalEnter(Animal animal)
     {
-        AnimalsIn.Add(animal);
         OnAnimalEnter(animal);
     }
 
     sealed public override void AnimalExit(Animal animal)
     {
-        if (AnimalsIn.Contains(animal))
-            AnimalsIn.Remove(animal);
         OnAnimalExit(animal);
     }
 

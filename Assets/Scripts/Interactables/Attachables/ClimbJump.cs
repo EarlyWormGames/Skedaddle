@@ -133,6 +133,9 @@ public class ClimbJump : AttachableInteract
         DoAction(caller, false);
     }
 
+    /// <summary>
+    /// Do the climb. Only sometimes want to do on trigger so <paramref name="wasTrigger"/> indicates what occurred
+    /// </summary>
     void DoAction(Animal caller, bool wasTrigger)
     {
         if ((DoOnTrigger && !wasTrigger) || (!DoOnTrigger && wasTrigger))
@@ -167,11 +170,17 @@ public class ClimbJump : AttachableInteract
         AnimalsIn.RemoveAll(AttachedAnimal);
     }
 
+    /// <summary>
+    /// Default always returns true. Meant to allow children to prevent climbing
+    /// </summary>
     protected virtual bool TryClimb(Animal animal)
     {
         return true;
     }
 
+    /// <summary>
+    /// Get the animation multiplier for <see cref="FACING_DIR"/>
+    /// </summary>
     public static float GetMultiplier(FACING_DIR direction)
     {
         switch (direction)

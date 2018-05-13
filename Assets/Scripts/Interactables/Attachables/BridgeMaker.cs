@@ -71,6 +71,7 @@ public class BridgeMaker : AttachableInteract
 
         if (m_bBridgeMade)
         {
+            //The code below positions the IK's correctly
             if (AttachedAnimal.GetType().IsAssignableFrom(typeof(Anteater)))
             {
                 m_aTongue.transform.position = AttachedAnimal.GetComponent<Anteater>().m_tTongueEnd.position;
@@ -105,6 +106,7 @@ public class BridgeMaker : AttachableInteract
         }
         else if (m_goBridge.activeInHierarchy)
         {
+            //Undo the joints over time
             if (AttachedAnimal.GetType().IsAssignableFrom(typeof(Anteater)))
             {
                 m_aTongue.transform.position = AttachedAnimal.GetComponent<Anteater>().m_tTongueEnd.position;
@@ -134,6 +136,7 @@ public class BridgeMaker : AttachableInteract
         }
         else
         {
+            //Unscale the joints
             foreach (Transform x in m_tJoints)
             {
                 x.localScale = new Vector3(0, 1, 1);
@@ -145,15 +148,18 @@ public class BridgeMaker : AttachableInteract
     {
         if (m_bBridgeMade)
         {
+            //Undo creating the bridge
             m_bBridgeMade = false;
             m_fTimer = 0;
 
+            //Remove the bridge
             OnRemoveBridge.Invoke();
         }
         else
         {
             Attach(caller);
 
+            //Setup some initial animation values
             AttachedAnimal.m_aAnimalAnimator.SetTrigger("TongueStart");
             if (!m_IsVertical)
             {
@@ -163,6 +169,8 @@ public class BridgeMaker : AttachableInteract
             {
                 AttachedAnimal.m_aAnimalAnimator.SetBool("TongueRope", true);
             }
+
+            //Prevent the animal from moving
             AttachedAnimal.m_bCanWalkLeft = false;
             AttachedAnimal.m_bCanWalkRight = false;
 
@@ -175,8 +183,12 @@ public class BridgeMaker : AttachableInteract
         }
     }
 
+    /// <summary>
+    /// Callback from the animator to make the invisible bridge active
+    /// </summary>
     public void BuildBridge()
     {
+        //Bridge should be fully built, 
         m_goBridge.SetActive(true);
         m_bBridgeMade = true;
         m_fTimer = 0;
@@ -184,6 +196,7 @@ public class BridgeMaker : AttachableInteract
 
     protected override void OnDetach(Animal animal)
     {
+        //Disable the bridge
         m_goBridge.SetActive(false);
         AttachedAnimal.m_bCanWalkLeft = true;
         AttachedAnimal.m_bCanWalkRight = true;
