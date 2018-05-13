@@ -37,6 +37,7 @@ public class LeverAnimated : Lever
         {
             float curve = AttachedAnimal.m_aAnimalAnimator.GetFloat("Root_Curve_Y");
 
+            //Only the loris can get the curve. This will help with that for other animals
             if (AttachedAnimal.m_eName != ANIMAL_NAME.LORIS)
                 curve = IsOn? 1 : 0;
 

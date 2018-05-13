@@ -64,6 +64,7 @@ public class LadderObject : AttachableInteract
         if (loris == null)
             return;
 
+        //Find what objects we can shimmy to
         LadderObject shimmyLeft = GetShimmyObject(loris.transform.position, Vector3.left, loris.m_fShimmyDistance, loris.m_fShimmyBoxSize, Color.red);
         LadderObject shimmyRight = GetShimmyObject(loris.transform.position, Vector3.right, loris.m_fShimmyDistance, loris.m_fShimmyBoxSize, Color.blue);
 
@@ -72,6 +73,7 @@ public class LadderObject : AttachableInteract
 
         if (shimmyLeft != null)
         {
+            //Attempt to shimmy left
             if (shimmyLeft.IsPointInRange(loris.transform.position.y) && GameManager.mainMap.leftButton.isHeld)
                 TryShimmyLeft = true;
         }
@@ -81,6 +83,7 @@ public class LadderObject : AttachableInteract
                 TryShimmyRight = true;
         }
 
+        //Only allow shimmy once the interact button is pressed
         if (GameManager.mainMap.interact.wasJustPressed && !justEnter && AttachedAnimal.m_bSelected)
         {
             if (TryShimmyLeft)
@@ -99,6 +102,7 @@ public class LadderObject : AttachableInteract
         }
         justEnter = false;
 
+        //Calculate the input amounts
         float[] speed = loris.CalculateMoveSpeed();
         float acceleration = GameManager.mainMap.moveY.value * speed[0];
         moveVelocity += acceleration * Time.deltaTime;
@@ -106,6 +110,7 @@ public class LadderObject : AttachableInteract
 
         if (GameManager.mainMap.moveY.value == 0)
         {
+            //Slow the loris
             moveVelocity = Mathf.MoveTowards(moveVelocity, 0, loris.m_fClimbStopSpeed * Time.deltaTime);
         }
 
@@ -135,26 +140,31 @@ public class LadderObject : AttachableInteract
         pointIndex = Mathf.Clamp(pointIndex, 0, Points.Length - 1);
         splinePos = Points[pointIndex].position;
 
+        //Limit the movement vector, based on the AxesToIgnore
         splinePos = IgnoreUtils.Calculate(AxesToIgnore, loris.transform.position, splinePos);
 
         Vector3 dir = splinePos - loris.transform.position;
         float move = currentSpeed;
+        //Move amount is always positive
         if (move < 0)
             move *= -1;
 
         Vector3 moveDir = dir.normalized * move;
 
+        //If collisions are enabled, we need to first raycast
         if (!DisableCollision)
-            Debug.Log(loris.m_aMovement.TryMove(loris.transform.position + moveDir));
-        else
+            loris.m_aMovement.TryMove(loris.transform.position + moveDir);
+        else //Otherwise we can just move
             loris.transform.position += moveDir;
 
         float rotateMult = 1;
         if (currentSpeed < 0)
             rotateMult = -1;
 
+        //Determine which direction the current movement was
         float dot = Vector3.Dot(dir, loris.transform.up);
 
+        //Check if we've passed the movement point
         if (dir.magnitude < move || ((dot < 0 && moveVelocity > 0) || (dot > 0 && moveVelocity < 0)))
         {
             if (moveVelocity < 0)
@@ -205,13 +215,16 @@ public class LadderObject : AttachableInteract
 
         Vector3 dir = Points[pointIndex].position - loris.transform.position;
 
+        //Determine which point to target
         if ((pointIndex == 0 && Vector3.Dot(dir.normalized, Vector3.up) >= 0) ||
             (pointIndex == Points.Length - 1 && Vector3.Dot(dir.normalized, Vector3.up) <= 0))
         {
+            //Snap to the point
             loris.transform.position = IgnoreUtils.Calculate(AxesToIgnore, loris.transform.position, Points[pointIndex].position);
         }
         else
         {
+            //Snap to the point
             Vector3 pos = IgnoreUtils.Calculate(AxesToIgnore, loris.transform.position, Points[pointIndex].position);
             pos.y = loris.transform.position.y;
             loris.transform.position = pos;
@@ -263,6 +276,9 @@ public class LadderObject : AttachableInteract
         loris = null;
     }
 
+    /// <summary>
+    /// Find the <see cref="Points"/> item closest to <paramref name="position"/>
+    /// </summary>
     public int FindClosestPoint(Vector3 position)
     {
         float closeDist = -1;
@@ -279,6 +295,9 @@ public class LadderObject : AttachableInteract
         return index;
     }
 
+    /// <summary>
+    /// Check that we want to use the keypress
+    /// </summary>
     bool KeyCheck(Transform animal)
     {
         if (GameManager.mainMap.interact.isHeld)
@@ -300,6 +319,9 @@ public class LadderObject : AttachableInteract
         return false;
     }
 
+    /// <summary>
+    /// Gets the closest <see cref="LadderObject"/> that triggers a Physics overlap
+    /// </summary>
     public LadderObject GetShimmyObject(Vector3 position, Vector3 direction, float distance, Vector3 boxSize, Color debugColor)
     {
         if (loris == null)
@@ -307,13 +329,16 @@ public class LadderObject : AttachableInteract
 
         position = position + (direction * distance);
 
+        //Get a list of colliders we hit
         var colliders = Physics.OverlapBox(position, boxSize, Quaternion.LookRotation(direction), ShimmyLayer, QueryTriggerInteraction.Collide);
+        //Draw a debug box
         ExtDebug.DrawBox(position, boxSize, Quaternion.LookRotation(direction), debugColor);
 
         float dist = -1;
         LadderObject shimmyObject = null;
         foreach (var collider in colliders)
         {
+            //Ensure it's a ladder
             var ladder = collider.GetComponent<LadderObject>();
             if (ladder == null)
             {
@@ -324,6 +349,7 @@ public class LadderObject : AttachableInteract
             if (ladder == null || ladder == this)
                 continue;
 
+            //Find the closest ladder
             float d = Vector3.Distance(position, collider.bounds.center);
             if (d < dist || dist < 0)
             {
@@ -350,6 +376,9 @@ public class LadderObject : AttachableInteract
         return true;
     }
 
+    /// <summary>
+    /// Tells the loris to detach and then shimmy to <paramref name="shimmyObject"/>
+    /// </summary>
     public void Shimmy(LadderObject shimmyObject)
     {
         if (shimmyObject == null)

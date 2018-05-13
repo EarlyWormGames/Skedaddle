@@ -27,6 +27,7 @@ public class PPObject : AttachableInteract
         BlocksMovement = false;
         BlocksTurn = true;
 
+        //We have to store all of this information because we'll be destroying the rigidbody
         rig = GetComponent<Rigidbody>();
         isKinematic = rig.isKinematic;
         mass = rig.mass;
@@ -43,6 +44,7 @@ public class PPObject : AttachableInteract
     {
         if (AttachedAnimal != null)
         {
+            //Limit the position and rotation
             transform.position = IgnoreUtils.Calculate(MaintainPosition, startPosition, transform.position);
             transform.eulerAngles = IgnoreUtils.Calculate(MaintainPosition, startRotation, transform.eulerAngles);
 
@@ -69,8 +71,10 @@ public class PPObject : AttachableInteract
         AttachedAnimal.m_bPullingObject = true;
         AttachedAnimal.OnPushChange();
 
+        //Child the object to the animal
         transform.SetParent(AttachedAnimal.m_tObjectHolder.transform, true);
 
+        //Disable all of our triggers so they don't interfere with the Animal's physics checks
         foreach (var trigger in TriggersToDisable)
             trigger.enabled = false;
 
@@ -79,6 +83,9 @@ public class PPObject : AttachableInteract
         Destroy(rig);
     }
 
+    /// <summary>
+    /// Enable/disable collisions for a specific animal
+    /// </summary>
     public void SetCollisions(Animal anim, bool allowed)
     {
         var cols = AttachedAnimal.GetComponentsInChildren<Collider>();
@@ -98,6 +105,7 @@ public class PPObject : AttachableInteract
             else
                 transform.parent = defaultParent;
 
+            //Add the rigidbody back in
             rig = gameObject.AddComponent<Rigidbody>();
             rig.isKinematic = isKinematic;
             rig.mass = mass;
@@ -107,6 +115,7 @@ public class PPObject : AttachableInteract
             rig.interpolation = interpolation;
             rig.collisionDetectionMode = collisionDetectionMode;
 
+            //Enable the triggers again
             foreach (var trigger in TriggersToDisable)
                 trigger.enabled = true;
 

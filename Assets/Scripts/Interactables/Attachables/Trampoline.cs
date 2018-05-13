@@ -140,6 +140,9 @@ public class Trampoline : AttachableInteract
             WrongIn.Remove(a_animal.transform);
     }
 
+    /// <summary>
+    /// Launches an <see cref="Animal"/>
+    /// </summary>
     private void LaunchAnimal()
     {
         BezierSpline spline = ObjectSpline;
@@ -152,54 +155,73 @@ public class Trampoline : AttachableInteract
             }
         }
 
+        //Retain some rigidbody settings
         RigidbodySettings settings = new RigidbodySettings()
         {
             constraints = AttachedAnimal.m_rBody.constraints
         };
         tempSettings.Add(AttachedAnimal.transform, settings);
+
+        //Lock the animal's rigidbody movement
         AttachedAnimal.m_rBody.constraints = RigidbodyConstraints.FreezeAll;
         AttachedAnimal.m_rBody.velocity = Vector3.zero;
         AttachedAnimal.m_rBody.angularVelocity = Vector3.zero;
         AttachedAnimal.m_rBody.useGravity = false;
 
+        //LIFTOFF
         LaunchItem(AttachedAnimal.transform, spline);
     }
 
+    /// <summary>
+    /// Launches some other rigidbody object
+    /// </summary>
     private void LaunchObject()
     {
         if (tempSettings.ContainsKey(lastLaunched.transform))
             return;
 
+        //Retain the constraints
         RigidbodySettings settings = new RigidbodySettings()
         {
             constraints = lastLaunched.constraints
         };
         tempSettings.Add(lastLaunched.transform, settings);
 
+        //Lock the object's movement
         lastLaunched.useGravity = false;
         lastLaunched.velocity = Vector3.zero;
         lastLaunched.angularVelocity = Vector3.zero;
         lastLaunched.constraints = RigidbodyConstraints.FreezeAll;
 
+        //TIME FOR WEEEEEEEEEEEEEEEEEE
         LaunchItem(lastLaunched.transform, ObjectSpline);
     }
 
+    /// <summary>
+    /// Launch any transform onto a specified <see cref="BezierSpline"/>
+    /// </summary>
     private void LaunchItem(Transform item, BezierSpline spline)
     {
         AnimatorController.SetTrigger("Launch");
 
+        //Create a new spline follower
         var follower = item.gameObject.AddComponent<BezierSplineFollower>();
-        follower.m_Spline = spline;
-        follower.m_MoveObject = item.transform;
+        follower.m_Spline = spline;        
+        follower.m_MoveObject = item.transform; //Attach the transform
         follower.m_FollowTime = LaunchSplineSpeed;
         follower.m_Curve = LaunchCurve;
 
+        //Listen for the ending event
         follower.OnPathEnd = new BezierSplineFollower.FollowerEvent();
         follower.OnPathEnd.AddListener(SplineEnd);
 
+        //Follow the path
         follower.Follow();
     }
 
+    /// <summary>
+    /// Move the <see cref="Animal"/> off the trampoline
+    /// </summary>
     private void ExitAnimal()
     {
         var follower = AttachedAnimal.gameObject.AddComponent<BezierSplineFollower>();
@@ -211,6 +233,9 @@ public class Trampoline : AttachableInteract
         follower.Follow();
     }
 
+    /// <summary>
+    /// Called when the spline has finished
+    /// </summary>
     private void SplineEnd(BezierSplineFollower sender, Transform item)
     {
         Destroy(sender);
@@ -228,6 +253,7 @@ public class Trampoline : AttachableInteract
             animal.m_rBody.constraints = tempSettings[item].constraints;
             tempSettings.Remove(item);
 
+            //We only really care about the Animal ending
             OnSplineEnd.Invoke();
             return;
         }
@@ -241,10 +267,13 @@ public class Trampoline : AttachableInteract
         }
     }
 
+    /// <summary>
+    /// Detaches a specific animal from the trampoline
+    /// </summary>
     protected override void OnDetach(Animal animal)
     {
         base.OnDetach(animal);
-
+       
         if (!tempSettings.ContainsKey(animal.transform))
             return;
 
