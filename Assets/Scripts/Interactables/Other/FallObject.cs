@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class FallObject : MonoInteracter
+public class FallObject : AnimalInteractor
 {
     public Rigidbody m_rBody;
 

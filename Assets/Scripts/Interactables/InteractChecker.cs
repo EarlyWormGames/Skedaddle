@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputNew;
+using UnityEngine.SceneManagement;
 
 public class InteractChecker : Singleton<InteractChecker>
 {
@@ -10,7 +11,12 @@ public class InteractChecker : Singleton<InteractChecker>
     // Use this for initialization
     void Start()
     {
+        SceneManager.sceneUnloaded += SceneManager_sceneUnloaded;
+    }
 
+    private void SceneManager_sceneUnloaded(Scene arg0)
+    {
+        Listeners.Clear();
     }
 
     // Update is called once per frame
@@ -27,6 +33,9 @@ public class InteractChecker : Singleton<InteractChecker>
                 //Loop through all of the interactables that listen to this key
                 foreach(var interactable in pair.Value)
                 {
+                    if (interactable == null)
+                        continue;
+
                     if(interactable.CheckInfo(pair.Key, Animal.CurrentAnimal))
                     {
                         if(interactable.IgnoreDistance())

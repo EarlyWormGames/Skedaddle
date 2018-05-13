@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.InputNew;
 using System.Collections.Generic;
 
-public class AnimalReveal : MonoInteracter
+public class AnimalReveal : MonoBehaviour
 {
     //==================================
     //          Public Vars
@@ -25,7 +25,7 @@ public class AnimalReveal : MonoInteracter
         m_aAnimator = GetComponent<Animator>();
     }
 
-    protected override void DoInteract(Animal caller)
+    public void DoInteract()
     {
         if (!Done)
             Done = true;

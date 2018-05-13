@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputNew;
 
-public class Chest : MonoInteracter
+public class Chest : AnimalInteractor
 {
     [LabelColor(1, 0, 0, true)]
     public ChestManager Manager;
