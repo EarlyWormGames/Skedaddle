@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 10892952}
   - component: {fileID: 11473602}
   - component: {fileID: 54885097338723538}
+  - component: {fileID: 114392134170740816}
+  - component: {fileID: 114861852115499102}
   m_Layer: 0
   m_Name: ExitBox
   m_TagString: Untagged
@@ -85,7 +87,7 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 0.7402735, b: 0.21323532, a: 1}
-  m_Intensity: 8
+  m_Intensity: 47.746483
   m_Range: 3.63
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -158,6 +160,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
@@ -339,6 +342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NumPoints: 1
   RegeneratePoints: 0
+  ConstantRegenerate: 0
   HighExit: 1
   LowExit: 1
   MoveAxisKey:
@@ -347,6 +351,7 @@ MonoBehaviour:
   ForceMovement: 1
   AxesToIgnore: 2
   DisableGravity: 0
+  DisableGrounder: 0
   points:
   - current: {x: 1, y: 0, z: 0}
     totalDistance: 0
@@ -357,6 +362,37 @@ MonoBehaviour:
     time: 1
     index: 1
   m_Spline: {fileID: 114031328936617078}
+--- !u!114 &114392134170740816
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 115176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  directionalIntensity: 3.1415927
+  punctualIntensity: 600
+  areaIntensity: 200
+  m_InnerSpotPercent: 0
+  lightDimmer: 1
+  fadeDistance: 10000
+  affectDiffuse: 1
+  affectSpecular: 1
+  lightTypeExtent: 0
+  spotLightShape: 0
+  shapeWidth: 0.5
+  shapeHeight: 0.5
+  aspectRatio: 1
+  shapeRadius: 0
+  maxSmoothness: 1
+  applyRangeAttenuation: 1
+  useOldInspector: 0
+  featuresFoldout: 1
+  showAdditionalSettings: 0
 --- !u!114 &114469286611556398
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -372,6 +408,11 @@ MonoBehaviour:
   Spline: {fileID: 114066567035806624}
   RequiredKey:
     action: {fileID: 0}
+  StopOnExit: 0
+  RequiredLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  OnlyIfNotSplining: 0
 --- !u!114 &114677449276062252
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -387,3 +428,50 @@ MonoBehaviour:
   Spline: {fileID: 114066567035806624}
   RequiredKey:
     action: {fileID: 0}
+  StopOnExit: 0
+  RequiredLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  OnlyIfNotSplining: 0
+--- !u!114 &114861852115499102
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 115176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c2871f720b2af4e9210febdac74517, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  shadowResolution: 512
+  shadowDimmer: 1
+  shadowFadeDistance: 10000
+  viewBiasMin: 0.2
+  viewBiasMax: 100
+  viewBiasScale: 1
+  normalBiasMin: 0.5
+  normalBiasMax: 0.5
+  normalBiasScale: 1
+  sampleBiasScale: 0
+  edgeLeakFixup: 1
+  edgeToleranceNormal: 1
+  edgeTolerance: 1
+  shadowCascadeCount: 4
+  shadowCascadeRatios:
+  - 0.05
+  - 0.2
+  - 0.3
+  shadowCascadeBorders:
+  - 0.2
+  - 0.2
+  - 0.2
+  - 0.2
+  shadowAlgorithm: 0
+  shadowVariant: 0
+  shadowPrecision: 0
+  shadowData:
+    format: 0
+    data: 
+  shadowDatas: []
