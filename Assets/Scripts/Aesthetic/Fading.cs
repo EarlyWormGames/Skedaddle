@@ -80,6 +80,7 @@ public class Fading : MonoBehaviour {
         return (FadeSpeed);
     }
 
+    //Begin Fade from Black to transparent 
     public float BeginFadeInOut()
     {
         m_bFinishedFade = false;
@@ -118,12 +119,14 @@ public class Fading : MonoBehaviour {
         FadeDir = direction * -1; // Invert current fade dir;
     }
 
+    // Set the directoin and current alpha value of the fade out texture
     public void FadeOut()
     {
         alpha = 1;
         FadeDir = -1;
     }
 
+    // Set the directoin and current alpha value of the fade out texture
     public void FadeIn()
     {
         alpha = 0;

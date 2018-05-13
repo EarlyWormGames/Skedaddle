@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// manage the curl of the anteater tail.
+/// </summary>
 public class AnteaterTail : MonoBehaviour {
 
     public Animator m_AnteaterAnimator;

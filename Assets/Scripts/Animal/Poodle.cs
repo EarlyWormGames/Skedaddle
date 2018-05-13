@@ -83,6 +83,8 @@ public class Poodle : Animal
 
         m_bRunning = false;
         m_fCurrentSpeed = m_fWalkSpeed;
+
+        //checking if the poodle is on the ground
         if (m_gqGrounder.solver.currentGroundLayer != -1)
         {
             if (m_bSelected && !m_bPullingObject && !m_bTurning && !m_bForceWalk)
@@ -111,8 +113,9 @@ public class Poodle : Animal
             }
         }
 
-
+        //--=-----------------------------------------------
         //All animations here
+        //--=-----------------------------------------------
 
         //set horozontal velocity
         m_aAnimalAnimator.SetFloat("Vertical Velocity", m_rBody.velocity.y);
@@ -143,7 +146,7 @@ public class Poodle : Animal
             }
         }
         
-
+        
         m_aAnimalAnimator.SetLayerWeight(2, Mathf.Lerp(m_aAnimalAnimator.GetLayerWeight(2), m_fDampen, Time.deltaTime * 10));
 
         if (m_aAnimalAnimator.GetBool("PullingOutCord"))
