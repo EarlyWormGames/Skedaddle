@@ -597,6 +597,12 @@ public class Animal : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Force an animal to face a certian direction
+    /// true   = left
+    /// false  = Right
+    /// </summary>
+    /// <param name="a_facingLeft"></param>
     public void ForceTurn(bool a_facingLeft)
     {
         m_bTurned = a_facingLeft;
