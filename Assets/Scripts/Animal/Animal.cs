@@ -636,7 +636,10 @@ public class Animal : MonoBehaviour
         MoveRig();
         m_v3MoveVelocity = Vector3.zero;
     }
-
+    /// <summary>
+    /// turn the animal X degrees 
+    /// </summary>
+    /// <param name="angle"></param>
     public void Turn(float angle)
     {
         if (m_bTurning)
@@ -650,7 +653,11 @@ public class Animal : MonoBehaviour
         m_fTurnStartRotation = m_tJointRoot.eulerAngles.y;
         //m_bFinishTurn = false;
     }
-
+    
+    /// <summary>
+    /// Turn the animal to face a certian direction.
+    /// </summary>
+    /// <param name="direction"></param>
     public void Turn(FACING_DIR direction)
     {
         if (m_bTurning)
@@ -721,6 +728,14 @@ public class Animal : MonoBehaviour
         return false;
     }
 
+    /// <summary>
+    /// Set a target position for the animal to move to and use constraints if needed.
+    /// </summary>
+    /// <param name="a_Target"></param>
+    /// <param name="a_xMove"></param>
+    /// <param name="a_yMove"></param>
+    /// <param name="a_zMove"></param>
+    /// <returns></returns>
     public bool MoveTo(Transform a_Target, bool a_xMove, bool a_yMove, bool a_zMove)
     {
         float neededFinishCount = 0;
