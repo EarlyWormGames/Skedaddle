@@ -194,7 +194,7 @@ public class BridgeMaker : AttachableInteract
         m_fTimer = 0;
     }
 
-    protected override void OnDetach(Animal animal)
+    protected override void OnDetaching(Animal animal)
     {
         //Disable the bridge
         m_goBridge.SetActive(false);

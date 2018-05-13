@@ -93,7 +93,7 @@ public class PPObject : AttachableInteract
             Physics.IgnoreCollision(col, GetComponent<Collider>(), true);
     }
 
-    protected override void OnDetach(Animal anim)
+    protected override void OnDetaching(Animal anim)
     {
         AttachedAnimal.m_bPullingObject = false;
         AttachedAnimal.OnPushChange();

@@ -235,7 +235,7 @@ public class LadderObject : AttachableInteract
         loris.SetDirection(Direction, true);
     }
 
-    protected override void OnDetach(Animal animal)
+    protected override void OnDetaching(Animal animal)
     {
         //Base re-registers keys
         base.OnDetach(animal);

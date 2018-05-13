@@ -270,7 +270,7 @@ public class Trampoline : AttachableInteract
     /// <summary>
     /// Detaches a specific animal from the trampoline
     /// </summary>
-    protected override void OnDetach(Animal animal)
+    protected override void OnDetaching(Animal animal)
     {
         base.OnDetach(animal);
        

@@ -74,7 +74,7 @@ public class Lever : AttachableInteract
         Detach(this);
     }
 
-    protected override void OnDetach(Animal anim)
+    protected override void OnDetaching(Animal anim)
     {
         AttachedAnimal.SetDirection(FACING_DIR.NONE, false);
     }
