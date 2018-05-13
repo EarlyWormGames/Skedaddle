@@ -3,14 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputNew;
 
+/// <summary>
+/// Base class for listening to keypresses when an <see cref="Animal"/> is nearby
+/// </summary>
 public abstract class AnimalInteractor : AnimalTrigger, IInteractable
 {
     public List<ButtonAction> UsableKeys = new List<ButtonAction>();
     public Transform InteractPoint;
 
+    /// <summary>
+    /// Default simply checks if the <paramref name="caller"/> works with <see cref="AnimalTrigger.AllowsAnimal(Animal)"/>
+    /// </summary>
     public bool CheckInfo(ActionSlot input, Animal caller)
     {
-        return true;
+        return AllowsAnimal(caller);
     }
 
     public float GetDistance(Vector3 point)
@@ -18,6 +24,9 @@ public abstract class AnimalInteractor : AnimalTrigger, IInteractable
         return CheckDistance(point);
     }
 
+    /// <summary>
+    /// Default checks the distance between <paramref name="point"/> and <see cref="InteractPoint"/>
+    /// </summary>
     protected virtual float CheckDistance(Vector3 point)
     {
         if (InteractPoint == null)

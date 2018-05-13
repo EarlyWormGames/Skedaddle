@@ -36,6 +36,7 @@ public class InteractChecker : Singleton<InteractChecker>
                     if (interactable.Equals(null))
                         continue;
 
+                    //Check if the interactable accepts the input at this moment
                     if(interactable.CheckInfo(pair.Key, Animal.CurrentAnimal))
                     {
                         if(interactable.IgnoreDistance())
@@ -66,6 +67,9 @@ public class InteractChecker : Singleton<InteractChecker>
         }
     }
 
+    /// <summary>
+    /// Checks what type the <paramref name="slot"/> is and return if it has been pressed
+    /// </summary>
     bool CheckKey(ActionSlot slot)
     {
         if (slot.GetType().IsAssignableFrom(typeof(ButtonAction)))
@@ -81,7 +85,7 @@ public class InteractChecker : Singleton<InteractChecker>
         return false;
     }
 
-    ///<summary>Add a listener to a list of buttons</summary>
+    ///<summary>Add a listener to a list of <see cref="ButtonAction"/></summary>
     public static void RegisterKeyListener(IInteractable interactable, List<ButtonAction> actionSlots)
     {
         foreach(var slot in actionSlots)
@@ -95,7 +99,7 @@ public class InteractChecker : Singleton<InteractChecker>
             }
         }
     }
-    ///<summary>Add a listener to a list of buttons</summary>
+    ///<summary>Remove a listener from a list of <see cref="ButtonAction"/></summary>
     public static void UnregisterKeyListener(IInteractable interactable, List<ButtonAction> actionSlots)
     {
         foreach(var slot in actionSlots)
@@ -107,7 +111,7 @@ public class InteractChecker : Singleton<InteractChecker>
         }
     }
 
-    ///<summary>Add a listener to a list of buttons</summary>
+    ///<summary>Add a listener to a list of <see cref="AxisAction"/></summary>
     public static void RegisterKeyListener(IInteractable interactable, List<AxisAction> actionSlots)
     {
         foreach (var slot in actionSlots)
@@ -121,7 +125,7 @@ public class InteractChecker : Singleton<InteractChecker>
             }
         }
     }
-    ///<summary>Add a listener to a list of buttons</summary>
+    ///<summary>Remove a listener from a list of <see cref="AxisAction"/></summary>
     public static void UnregisterKeyListener(IInteractable interactable, List<AxisAction> actionSlots)
     {
         foreach (var slot in actionSlots)

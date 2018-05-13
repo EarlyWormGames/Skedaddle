@@ -9,6 +9,6 @@ public interface IInteractable
     bool IgnoreDistance();
     ///<summary>Get the distance from point. Used to check keypress</summary>
     float GetDistance(Vector3 point);
-
+    /// <summary>Called on a successful key (and possible distance) check occurred</summary>
     void Interact(Animal caller);
 }

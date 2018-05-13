@@ -8,9 +8,12 @@ public abstract class MonoInteracter : MonoBehaviour, IInteractable
     public List<ButtonAction> UsableKeys = new List<ButtonAction>();
     public Transform InteractPoint;
 
+    /// <summary>
+    /// Default simply returns true. Keys are already registered
+    /// </summary>
     public bool CheckInfo(ActionSlot input, Animal caller)
     {
-        return true;
+        return CheckInput(input, caller);
     }
 
     public float GetDistance(Vector3 point)
@@ -18,6 +21,9 @@ public abstract class MonoInteracter : MonoBehaviour, IInteractable
         return CheckDistance(point);
     }
 
+    /// <summary>
+    /// Default checks the distance between <paramref name="point"/> and <see cref="InteractPoint"/>
+    /// </summary>
     protected virtual float CheckDistance(Vector3 point)
     {
         if (InteractPoint == null)
@@ -36,6 +42,7 @@ public abstract class MonoInteracter : MonoBehaviour, IInteractable
         DoInteract(caller);
     }
 
+    protected virtual bool CheckInput(ActionSlot input, Animal caller) { return true; }
     protected virtual bool ShouldIgnoreDistance() { return false; }
     protected abstract void DoInteract(Animal caller);
 }

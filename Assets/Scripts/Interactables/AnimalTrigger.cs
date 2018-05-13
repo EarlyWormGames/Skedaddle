@@ -7,7 +7,7 @@ public abstract class AnimalTrigger : MonoBehaviour
     public ANIMAL_SIZE MaximumSize;
     public bool OnlyHeadTrigger;
 
-    ///<summary>Check if this object is able to interact with this Animal</summary>
+    ///<summary>Check if this object is able to interact with this <see cref="Animal"/></summary>
     public bool AllowsAnimal(Animal animal)
     {
         if (RequiredAnimal != ANIMAL_NAME.NONE)
@@ -30,10 +30,12 @@ public abstract class AnimalTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //Search for an animal head trigger
         AnimalHeadTrigger animtrig = other.GetComponent<AnimalHeadTrigger>();
         Animal anim = null;
         if (animtrig == null)
         {
+            //Or search for an animal if not found
             if (!OnlyHeadTrigger)
                 anim = other.GetComponentInParent<Animal>(2);
             if (anim == null)
@@ -59,10 +61,12 @@ public abstract class AnimalTrigger : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        //Search for an animal head trigger
         AnimalHeadTrigger animtrig = other.GetComponent<AnimalHeadTrigger>();
         Animal anim = null;
         if (animtrig == null)
         {
+            //Or search for an animal if not found
             if (!OnlyHeadTrigger)
                 anim = other.GetComponentInParent<Animal>(2);
             if (anim == null)
@@ -86,12 +90,30 @@ public abstract class AnimalTrigger : MonoBehaviour
             WrongAnimalExit(anim);
     }
 
+    /// <summary>
+    /// An <see cref="Animal"/> has entered the trigger
+    /// </summary>
     public abstract void AnimalEnter(Animal animal);
+    /// <summary>
+    /// An <see cref="Animal"/> has exited the trigger
+    /// </summary>
     public abstract void AnimalExit(Animal animal);
 
+    /// <summary>
+    /// An incorrect <see cref="Animal"/> has entered the trigger
+    /// </summary>
     protected virtual void WrongAnimalEnter(Animal other) { }
+    /// <summary>
+    /// An incorrect <see cref="Animal"/> has exited the trigger
+    /// </summary>
     protected virtual void WrongAnimalExit(Animal other) { }
 
+    /// <summary>
+    /// An object other than an <see cref="Animal"/> has entered the trigger
+    /// </summary>
     protected virtual void ObjectEnter(Collider other) { }
+    /// <summary>
+    /// An object other than an <see cref="Animal"/> has exited the trigger
+    /// </summary>
     protected virtual void ObjectExit(Collider other) { }
 }
