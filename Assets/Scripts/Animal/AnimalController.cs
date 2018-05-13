@@ -59,7 +59,7 @@ public class AnimalController : Singleton<AnimalController>
         //    ChangeAnimal(m_iSelectedNumber - 1);
         //}
         //
-        if (GameManager.Instance.mainMap.nextAnimal.wasJustPressed)
+        if (GameManager.mainMap.nextAnimal.wasJustPressed)
         {
             ChangeAnimal();
         }

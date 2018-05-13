@@ -1977,66 +1977,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be4a30d72ac3f3c4e8be92c53db10bc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_aRequiredSize: 0
-  m_aRequiredAnimal: 0
-  m_aMaximumSize: 0
-  m_bOnlyHeadTrigger: 1
-  m_lAnimalsIn: []
-  m_rBody: {fileID: 0}
-  m_GazeObject: {fileID: 0}
-  m_aSoundEvents: []
-  OnDoAction:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnDetach:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnAnimalEnter:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1733621337}
-        m_MethodName: set_isKinematic
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1611261371}
-        m_MethodName: Destroy
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 45999325}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnAnimalExit:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnWrongAnimalEnter:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnWrongAnimalExit:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!65 &45999329
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10783,6 +10723,16 @@ Prefab:
     m_Modifications:
     - target: {fileID: 114347624804561452, guid: d5ee04ab3ddebaf4a952be1e449284cb,
         type: 2}
+      propertyPath: UsableKeys.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114347624804561452, guid: d5ee04ab3ddebaf4a952be1e449284cb,
+        type: 2}
+      propertyPath: UsableAxes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114347624804561452, guid: d5ee04ab3ddebaf4a952be1e449284cb,
+        type: 2}
       propertyPath: OnDoAction.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -10933,6 +10883,30 @@ Prefab:
       propertyPath: m_LocalPosition.x
       value: 0.194
       objectReference: {fileID: 0}
+    - target: {fileID: 114347624804561452, guid: d5ee04ab3ddebaf4a952be1e449284cb,
+        type: 2}
+      propertyPath: UsableKeys.Array.data[0].action
+      value: 
+      objectReference: {fileID: 114552692680613328, guid: 80f2df7e1586bc94aa1bbea872f6ca3b,
+        type: 2}
+    - target: {fileID: 114347624804561452, guid: d5ee04ab3ddebaf4a952be1e449284cb,
+        type: 2}
+      propertyPath: UsableKeys.Array.data[1].action
+      value: 
+      objectReference: {fileID: 114697485102394638, guid: 80f2df7e1586bc94aa1bbea872f6ca3b,
+        type: 2}
+    - target: {fileID: 114347624804561452, guid: d5ee04ab3ddebaf4a952be1e449284cb,
+        type: 2}
+      propertyPath: UsableKeys.Array.data[2].action
+      value: 
+      objectReference: {fileID: 114552692680613328, guid: 80f2df7e1586bc94aa1bbea872f6ca3b,
+        type: 2}
+    - target: {fileID: 114347624804561452, guid: d5ee04ab3ddebaf4a952be1e449284cb,
+        type: 2}
+      propertyPath: UsableAxes.Array.data[0].action
+      value: 
+      objectReference: {fileID: 114332852716363806, guid: 80f2df7e1586bc94aa1bbea872f6ca3b,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d5ee04ab3ddebaf4a952be1e449284cb, type: 2}
   m_IsPrefabParent: 0
@@ -11510,51 +11484,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6025807fdd746444697919ac043fb005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_aRequiredSize: 0
-  m_aRequiredAnimal: 1
-  m_aMaximumSize: 0
-  m_bOnlyHeadTrigger: 1
-  m_lAnimalsIn: []
-  m_rBody: {fileID: 0}
-  m_GazeObject: {fileID: 0}
-  m_aSoundEvents: []
-  OnDoAction:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnDetach:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnAnimalEnter:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnAnimalExit:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnWrongAnimalEnter:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnWrongAnimalExit:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+  RequiredSize: 0
+  RequiredAnimal: 0
+  MaximumSize: 0
+  OnlyHeadTrigger: 0
+  UsableKeys: []
+  UsableAxes: []
+  InteractPoint: {fileID: 0}
   DoOnTrigger: 0
   BreakSplineConnection: 0
   Direction: 4
   AnchorPoint: {fileID: 1322291603}
   TransitionTo: {fileID: 0}
-  RequiredKey:
-    action: {fileID: 0}
   AutoClimbSize: 0
 --- !u!54 &400866264
 Rigidbody:
@@ -11632,44 +11573,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9af25d5c74bd0c04189a9c9285b7d747, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_aRequiredSize: 0
-  m_aRequiredAnimal: 3
-  m_aMaximumSize: 0
-  m_bOnlyHeadTrigger: 1
-  m_lAnimalsIn: []
-  m_rBody: {fileID: 0}
-  m_GazeObject: {fileID: 0}
-  m_aSoundEvents: []
-  OnDoAction:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnDetach:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnAnimalEnter:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnAnimalExit:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnWrongAnimalEnter:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnWrongAnimalExit:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+  RequiredSize: 0
+  RequiredAnimal: 0
+  MaximumSize: 0
+  OnlyHeadTrigger: 0
+  UsableKeys: []
+  UsableAxes: []
+  InteractPoint: {fileID: 0}
   m_goBridge: {fileID: 1085741489}
   m_tMovePoint: {fileID: 0}
   m_tBridgeAnchor: {fileID: 2111098474}
@@ -20109,66 +20019,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be4a30d72ac3f3c4e8be92c53db10bc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_aRequiredSize: 0
-  m_aRequiredAnimal: 1
-  m_aMaximumSize: 0
-  m_bOnlyHeadTrigger: 0
-  m_lAnimalsIn: []
-  m_rBody: {fileID: 0}
-  m_GazeObject: {fileID: 0}
-  m_aSoundEvents: []
-  OnDoAction:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1921586832}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 429152852}
-        m_MethodName: set_isKinematic
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnDetach:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnAnimalEnter:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnAnimalExit:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnWrongAnimalEnter:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnWrongAnimalExit:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &510292049 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114347624804561452, guid: d5ee04ab3ddebaf4a952be1e449284cb,
@@ -25349,51 +25199,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6025807fdd746444697919ac043fb005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_aRequiredSize: 0
-  m_aRequiredAnimal: 2
-  m_aMaximumSize: 0
-  m_bOnlyHeadTrigger: 1
-  m_lAnimalsIn: []
-  m_rBody: {fileID: 0}
-  m_GazeObject: {fileID: 0}
-  m_aSoundEvents: []
-  OnDoAction:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnDetach:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnAnimalEnter:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnAnimalExit:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnWrongAnimalEnter:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnWrongAnimalExit:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+  RequiredSize: 0
+  RequiredAnimal: 0
+  MaximumSize: 0
+  OnlyHeadTrigger: 0
+  UsableKeys: []
+  UsableAxes: []
+  InteractPoint: {fileID: 0}
   DoOnTrigger: 0
   BreakSplineConnection: 0
   Direction: 4
   AnchorPoint: {fileID: 1806610039}
   TransitionTo: {fileID: 0}
-  RequiredKey:
-    action: {fileID: 0}
   AutoClimbSize: 0
 --- !u!54 &704329941
 Rigidbody:
@@ -28947,51 +28764,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6025807fdd746444697919ac043fb005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_aRequiredSize: 0
-  m_aRequiredAnimal: 1
-  m_aMaximumSize: 0
-  m_bOnlyHeadTrigger: 1
-  m_lAnimalsIn: []
-  m_rBody: {fileID: 0}
-  m_GazeObject: {fileID: 0}
-  m_aSoundEvents: []
-  OnDoAction:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnDetach:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnAnimalEnter:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnAnimalExit:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnWrongAnimalEnter:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnWrongAnimalExit:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+  RequiredSize: 0
+  RequiredAnimal: 0
+  MaximumSize: 0
+  OnlyHeadTrigger: 0
+  UsableKeys: []
+  UsableAxes: []
+  InteractPoint: {fileID: 0}
   DoOnTrigger: 0
   BreakSplineConnection: 0
   Direction: 2
   AnchorPoint: {fileID: 32805641}
   TransitionTo: {fileID: 0}
-  RequiredKey:
-    action: {fileID: 0}
   AutoClimbSize: 0
 --- !u!54 &858981384
 Rigidbody:
@@ -29369,51 +29153,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6025807fdd746444697919ac043fb005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_aRequiredSize: 0
-  m_aRequiredAnimal: 2
-  m_aMaximumSize: 0
-  m_bOnlyHeadTrigger: 1
-  m_lAnimalsIn: []
-  m_rBody: {fileID: 0}
-  m_GazeObject: {fileID: 0}
-  m_aSoundEvents: []
-  OnDoAction:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnDetach:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnAnimalEnter:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnAnimalExit:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnWrongAnimalEnter:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnWrongAnimalExit:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+  RequiredSize: 0
+  RequiredAnimal: 0
+  MaximumSize: 0
+  OnlyHeadTrigger: 0
+  UsableKeys: []
+  UsableAxes: []
+  InteractPoint: {fileID: 0}
   DoOnTrigger: 0
   BreakSplineConnection: 0
   Direction: 2
   AnchorPoint: {fileID: 2045439520}
   TransitionTo: {fileID: 0}
-  RequiredKey:
-    action: {fileID: 0}
   AutoClimbSize: 0
 --- !u!54 &872197300
 Rigidbody:
@@ -50248,12 +49999,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ac26916394ca4e4caa5daf8346f4a48, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &1611261371 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114876781311178536, guid: 6ac26916394ca4e4caa5daf8346f4a48,
-    type: 2}
-  m_PrefabInternal: {fileID: 1611261370}
-  m_Script: {fileID: 11500000, guid: d2919d17dda063c41b96f81c15d8fcff, type: 3}
 --- !u!1001 &1611994311
 Prefab:
   m_ObjectHideFlags: 0
@@ -61286,51 +61031,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6025807fdd746444697919ac043fb005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_aRequiredSize: 0
-  m_aRequiredAnimal: 1
-  m_aMaximumSize: 0
-  m_bOnlyHeadTrigger: 1
-  m_lAnimalsIn: []
-  m_rBody: {fileID: 0}
-  m_GazeObject: {fileID: 0}
-  m_aSoundEvents: []
-  OnDoAction:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnDetach:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnAnimalEnter:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnAnimalExit:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnWrongAnimalEnter:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnWrongAnimalExit:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+  RequiredSize: 0
+  RequiredAnimal: 0
+  MaximumSize: 0
+  OnlyHeadTrigger: 0
+  UsableKeys: []
+  UsableAxes: []
+  InteractPoint: {fileID: 0}
   DoOnTrigger: 1
   BreakSplineConnection: 0
   Direction: 3
   AnchorPoint: {fileID: 160398148}
   TransitionTo: {fileID: 0}
-  RequiredKey:
-    action: {fileID: 0}
   AutoClimbSize: 0
 --- !u!114 &1946355209
 MonoBehaviour:

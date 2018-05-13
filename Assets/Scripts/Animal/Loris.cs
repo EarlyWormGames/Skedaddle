@@ -120,7 +120,7 @@ public class Loris : Animal
             m_aAnimalAnimator.SetFloat("Vertical Velocity", m_rBody.velocity.y);
         else
         {
-            verticalVelocity = !m_bSelected ? 0 : ((LadderObject)m_oCurrentObject).moveVelocity;
+            verticalVelocity = !m_bSelected ? 0 : ((LadderObject)currentAttached).moveVelocity;
             m_aAnimalAnimator.SetFloat("Vertical Velocity", verticalVelocity * m_fClimbAnimMult);
         }
 
@@ -298,7 +298,7 @@ public class Loris : Animal
             m_aAnimalAnimator.SetBool("OnGround", false);
             m_aAnimalAnimator.SetBool("Walking", false);
 
-            LadderObject ladder = (LadderObject)m_oCurrentObject;
+            LadderObject ladder = (LadderObject)currentAttached;
             if (ladder != null)
             {
                 if (ladder.TryShimmyLeft)

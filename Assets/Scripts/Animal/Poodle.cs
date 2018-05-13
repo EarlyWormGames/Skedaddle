@@ -99,7 +99,7 @@ public class Poodle : Animal
                         m_bRunning = false;
                 }
 
-                if (GameManager.Instance.mainMap.sprint.isHeld)
+                if (GameManager.mainMap.sprint.isHeld)
                 {
                     m_fCurrentSpeed = m_fWalkSpeed * m_fRunSpeedMult;
                     m_bRunning = true;
@@ -256,7 +256,7 @@ public class Poodle : Animal
             m_aAnimalAnimator.SetFloat("Push Direction", 0);
         }
 
-        if (m_bSelected && GameManager.Instance.mainMap.interact.wasJustPressed)
+        if (m_bSelected && GameManager.mainMap.interact.wasJustPressed)
             m_bInteractPressed = true;
         else if (m_bSelected && m_bInteractPressed)
         {
@@ -264,7 +264,7 @@ public class Poodle : Animal
 
             if (!m_bHoldingLoris)
             {
-                if (m_oCurrentObject == null)
+                if (currentAttached == null)
                 {
                     Vector3 castPos = transform.position;
                     castPos += m_tJointRoot.forward * BoxCastDistance;

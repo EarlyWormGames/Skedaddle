@@ -6,7 +6,7 @@ public class Elephant : Animal
     //==================================
     //          Public Vars
     //==================================
-    public WaterHolder m_wHolder;
+    //public WaterHolder m_wHolder;
 
     //==================================
     //          Internal Vars

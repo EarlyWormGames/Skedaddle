@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Stopwatch : ActionObject {
+public class Stopwatch : AnimalTrigger
+{
 
     //Public Variables
 
@@ -26,12 +27,12 @@ public class Stopwatch : ActionObject {
 
     void Update()
     {
-        if(TimerObject != null)
+        if (TimerObject != null)
         {
             if (TimedAnimal.m_eName == ANIMAL_NAME.POODLE)
             {
                 Running = TimedAnimal.GetComponent<Poodle>().m_bRunning;
-            } 
+            }
             else
             {
                 Running = false;
@@ -44,7 +45,7 @@ public class Stopwatch : ActionObject {
             {
                 Climbing = false;
             }
-            Timer += Time.deltaTime/TotalTimers;
+            Timer += Time.deltaTime / TotalTimers;
             TimerObject.TimerName = TimedAnimal.name + (Running ? " Run" : "") + (Climbing ? " Climb" : "");
             TimerObject.TimerTime = Timer;
         }
@@ -56,7 +57,7 @@ public class Stopwatch : ActionObject {
 
     public override void AnimalEnter(Animal a_animal)
     {
-        if(TimedAnimal == null)
+        if (TimedAnimal == null)
         {
             TimedAnimal = a_animal;
             TimerObject = Instantiate(TimerPrefab, GUIObject.transform).GetComponent<StopwatchTimer>();
@@ -66,7 +67,7 @@ public class Stopwatch : ActionObject {
         }
         else
         {
-            if(a_animal == TimedAnimal)
+            if (a_animal == TimedAnimal)
             {
                 TimedAnimal = null;
                 TimerObject = null;
@@ -74,4 +75,8 @@ public class Stopwatch : ActionObject {
         }
     }
 
+    public override void AnimalExit(Animal animal)
+    {
+        
+    }
 }
