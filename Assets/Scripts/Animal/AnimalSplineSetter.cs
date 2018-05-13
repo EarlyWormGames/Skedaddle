@@ -18,24 +18,30 @@ public class AnimalSplineSetter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //Set the default value for the layer if it isn't set
         if (RequiredLayer == 0)
         {
             RequiredLayer = (1 << LayerMask.NameToLayer("Animal")) | (1 << LayerMask.NameToLayer("AnimalTrigger"));
         }
 
+        //Checks that the object is on the correct layer
         if (!RequiredLayer.Contains(other.gameObject.layer))
             return;
 
+        //We also kinda need an animal
         Animal trig = other.GetComponentInParent<Animal>();
         if (trig == null)
             return;
 
+        //Sometimes we need a specific animal
         if (trig.m_eName != RequiredAnimal && RequiredAnimal != ANIMAL_NAME.NONE)
             return;
 
+        //Ignore if they're on this spline, or if on something else and we can't override
         if (trig.m_aMovement.FollowSpline == this || (OnlyIfNotSplining && trig.m_aMovement.FollowSpline != null))
             return;
 
+        //Sometimes we move on a specific key
         if (RequiredKey.control == null)
             trig.GetComponent<AnimalMovement>().SetSpline(Spline);
         else
@@ -54,6 +60,7 @@ public class AnimalSplineSetter : MonoBehaviour
         if (!animalsIn.Contains(trig))
             return;
 
+        //Stop splining on leaving the trigger if appropriate
         if (StopOnExit && trig.m_aMovement.FollowSpline == this)
             trig.m_aMovement.StopSpline();
 
@@ -62,6 +69,7 @@ public class AnimalSplineSetter : MonoBehaviour
 
     private void Start()
     {
+        //Bind the keypress
         if (RequiredKey.action != null)
             RequiredKey.Bind(GameManager.Instance.input.handle);
     }
