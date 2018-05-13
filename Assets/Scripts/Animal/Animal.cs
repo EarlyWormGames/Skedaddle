@@ -821,6 +821,10 @@ public class Animal : MonoBehaviour
         m_bWallOnRight = false;
     }
 
+    /// <summary>
+    /// Kill the animal
+    /// </summary>
+    /// <param name="a_death"></param>
     public virtual void Kill(DEATH_TYPE a_death)
     {
         if (m_NoDeaths != null)
@@ -850,7 +854,7 @@ public class Animal : MonoBehaviour
             { "Type", a_death.ToString() }
         });
     }
-
+    
     void OnDestroy()
     {
         if (m_fSelectionTimer > 0)
@@ -927,6 +931,10 @@ public class Animal : MonoBehaviour
         return speedMinMax;
     }
 
+    /// <summary>
+    /// can the animal turn?
+    /// </summary>
+    /// <returns></returns>
     public bool CanTurn()
     {
         bool objOkay = true;
@@ -939,6 +947,10 @@ public class Animal : MonoBehaviour
         return !m_bTurning && !m_bPullingObject && objOkay;
     }
 
+    /// <summary>
+    /// can the animal move?
+    /// </summary>
+    /// <returns></returns>
     public virtual bool CanMove()
     {
         bool objOkay = true;
@@ -951,6 +963,11 @@ public class Animal : MonoBehaviour
         return (m_bCanWalkLeft || m_bCanWalkRight) && objOkay;
     }
 
+    /// <summary>
+    /// set the direction of the animal and detach from interactable object if needed
+    /// </summary>
+    /// <param name="direction"></param>
+    /// <param name="detach"></param>
     public void SetDirection(FACING_DIR direction, bool detach)
     {
         if (m_aMovement.FollowSpline != null)
@@ -962,7 +979,11 @@ public class Animal : MonoBehaviour
         }
         m_fFacingDir = direction;
     }
-
+    
+    /// <summary>
+    /// allow animal selection if needed
+    /// </summary>
+    /// <param name="allow"></param>
     public void AllowSelection(bool allow)
     {
         m_bCanBeSelected = allow;
@@ -989,15 +1010,28 @@ public class Animal : MonoBehaviour
         SetColliderActive(active, ignoreList);
     }
 
+    /// <summary>
+    /// called when the animal attches to an object.
+    /// </summary>
     protected virtual void OnAttach() { }
+    /// <summary>
+    /// called when the animal dies
+    /// </summary>
     protected virtual void OnDetach() { }
 
+    /// <summary>
+    /// Add the interactable object to the animal
+    /// </summary>
+    /// <param name="attachable"></param>
     public void AttachInteractable(Attachable attachable)
     {
         currentAttached = attachable;
         OnAttach();
     }
 
+/// <summary>
+/// remove the interactable object from the animal
+/// </summary>
     public void DetachInteractable()
     {
         OnDetach();

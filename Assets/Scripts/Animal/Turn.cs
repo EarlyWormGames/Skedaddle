@@ -14,6 +14,12 @@ public class Turn : StateMachineBehaviour {
     private bool m_startTranstion;
     private bool m_endTransition;
 
+    /// <summary>
+    /// begin the transition of the animal turning around 
+    /// </summary>
+    /// <param name="animator"></param>
+    /// <param name="stateInfo"></param>
+    /// <param name="layerIndex"></param>
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         m_endTransition = false;
@@ -31,6 +37,12 @@ public class Turn : StateMachineBehaviour {
 
     }
 
+    /// <summary>
+    /// the actual turn
+    /// </summary>
+    /// <param name="animator"></param>
+    /// <param name="stateInfo"></param>
+    /// <param name="layerIndex"></param>
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         if (m_aAnimal.m_bSelected)
@@ -77,6 +89,12 @@ public class Turn : StateMachineBehaviour {
         }
     }
 
+    /// <summary>
+    /// set the turn speed in the animator.
+    /// </summary>
+    /// <param name="animator"></param>
+    /// <param name="stateInfo"></param>
+    /// <param name="layerIndex"></param>
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.SetFloat("Turn_Speed", m_stateSpeed);

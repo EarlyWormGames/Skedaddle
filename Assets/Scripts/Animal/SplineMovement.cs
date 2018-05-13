@@ -65,6 +65,9 @@ public class SplineMovement : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// create the list of points for the slpline
+    /// </summary>
     public void GeneratePoints()
     {
         if (m_Spline == null)
@@ -87,6 +90,11 @@ public class SplineMovement : MonoBehaviour
         RegeneratePoints = false;
     }
 
+    /// <summary>
+    /// return the closets point to a given position
+    /// </summary>
+    /// <param name="position"></param>
+    /// <returns></returns>
     public int GetClosestPoint(Vector3 position)
     {
         float distance = -1;
@@ -105,6 +113,11 @@ public class SplineMovement : MonoBehaviour
         return index;
     }
 
+    /// <summary>
+    /// returns a point in the spline at a given index
+    /// </summary>
+    /// <param name="index"></param>
+    /// <returns></returns>
     public Vector3 GetPosition(int index)
     {
         if (index >= points.Length)
@@ -112,12 +125,20 @@ public class SplineMovement : MonoBehaviour
 
         return m_Spline.transform.TransformPoint(points[index].current);
     }
-
+    
+    /// <summary>
+    /// returns a specific point in the spline
+    /// </summary>
+    /// <param name="point"></param>
+    /// <returns></returns>
     public Vector3 GetPosition(Point point)
     {
         return GetPosition(point.index);
     }
 
+    /// <summary>
+    /// Draw the spline created
+    /// </summary>
     private void OnDrawGizmosSelected()
     {
         if (m_Spline == null)

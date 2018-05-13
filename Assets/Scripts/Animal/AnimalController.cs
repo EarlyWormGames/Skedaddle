@@ -73,6 +73,9 @@ public class AnimalController : Singleton<AnimalController>
         }
     }
 
+    /// <summary>
+    /// Deselect current animal
+    /// </summary>
     public void Deselect()
     {
         m_lAnimals[m_iSelectedNumber].m_bSelected = false;
@@ -81,6 +84,9 @@ public class AnimalController : Singleton<AnimalController>
         m_bControlling = false;
     }
 
+    /// <summary>
+    /// ReSelect the last current animal.
+    /// </summary>
     public void Reselect()
     {
         m_lAnimals[m_iSelectedNumber].m_bSelected = true;
@@ -93,6 +99,10 @@ public class AnimalController : Singleton<AnimalController>
         ChangeAnimal(m_iSelectedNumber + 1);
     }
 
+    /// <summary>
+    /// change to the desired animal.
+    /// </summary>
+    /// <param name="a_index"></param>
     public void ChangeAnimal(int a_index)
     {
         if (m_lAnimals.Count <= 0)
@@ -155,6 +165,10 @@ public class AnimalController : Singleton<AnimalController>
         }
     }
 
+    /// <summary>
+    /// change animal through name
+    /// </summary>
+    /// <param name="a_animal"></param>
     public void ChangeAnimal(ANIMAL_NAME a_animal)
     {
         for (int i = 0; i < m_lAnimals.Count; ++i)
@@ -238,6 +252,11 @@ public class AnimalController : Singleton<AnimalController>
         return 0;
     }
 
+    /// <summary>
+    /// return the animal of your desire 
+    /// </summary>
+    /// <param name="a_name"></param>
+    /// <returns></returns>
     public Animal GetAnimal(ANIMAL_NAME a_name)
     {
         for (int i = 0; i < m_lAnimals.Count; ++i)

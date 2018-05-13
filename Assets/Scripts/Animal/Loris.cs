@@ -373,6 +373,9 @@ public class Loris : Animal
             LetGoOfPoodle();
     }
 
+    /// <summary>
+    /// Call when you want the loris to be dropped by the poodle
+    /// </summary>
     public void LetGoOfPoodle()
     {
         if (m_bHeldByPoodle)
@@ -405,7 +408,12 @@ public class Loris : Animal
     {
         
     }
-
+    
+    /// <summary>
+    /// set the facing direction of the loris when climbing
+    /// </summary>
+    /// <param name="a_facingType"></param>
+    /// <param name="a_isRope"></param>
     public void ClimbChange(FACING_DIR a_facingType, bool a_isRope)
     {
         m_bIgnoreCheck = true;
@@ -443,7 +451,11 @@ public class Loris : Animal
                 break;
         }
     }
-
+    
+    /// <summary>
+    /// turn night vision on/off
+    /// </summary>
+    /// <param name="a_On"></param>
     public void SetNightVision(bool a_On)
     {
         CameraController.Instance.m_bUseNightVision = a_On;
@@ -475,8 +487,10 @@ public class Loris : Animal
         return speedMinMax;
     }
 
-
-    //
+    /// <summary>
+    /// Can the loris move?
+    /// </summary>
+    /// <returns></returns>
     public override bool CanMove()
     {
         bool canmove = base.CanMove();

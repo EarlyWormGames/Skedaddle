@@ -16,6 +16,9 @@ public class AnimalCardShow : MonoBehaviour
     private bool m_CameraMoved = false;
     private bool m_bDone = false;
 
+    /// <summary>
+    /// show the animal card.
+    /// </summary>
     public void Show()
     {
         if (m_Animator == null)
@@ -37,6 +40,9 @@ public class AnimalCardShow : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// hide the animal card
+    /// </summary>
     public void Hide()
     {
         if (m_Animator == null)

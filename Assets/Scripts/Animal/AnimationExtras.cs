@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 using System;
 
+/// <summary>
+///  This class exsists purley for any small extras that animations might need to call.
+///  create extra methods as needed.
+/// </summary>
+
 public class AnimationExtras : MonoBehaviour
 {
     public void LeftFoot()
