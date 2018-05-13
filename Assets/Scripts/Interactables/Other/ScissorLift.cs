@@ -11,12 +11,6 @@ public class ScissorLift : MonoBehaviour
     public bool m_bLook = true;
     public Transform m_tLookPoint;
 
-    [Header("Sounds")]
-    public NamedEvent[] m_aSoundEvents;
-    public string RaiseEventKey;
-    public string LowerEventKey;
-    public string StopEventKey;
-
     //==================================
     //          Internal Vars
     //==================================
@@ -51,8 +45,6 @@ public class ScissorLift : MonoBehaviour
             else
             {
                 m_fBlend = 1.1f;
-                if (!m_bStopped)
-                    NamedEvent.TriggerEvent(StopEventKey, m_aSoundEvents);
                 m_bStopped = true;
             }
         }
@@ -65,8 +57,6 @@ public class ScissorLift : MonoBehaviour
             else
             {
                 m_fBlend = 0f;
-                if (!m_bStopped)
-                    NamedEvent.TriggerEvent(StopEventKey, m_aSoundEvents);
                 m_bStopped = true;
             }
         }
@@ -79,8 +69,6 @@ public class ScissorLift : MonoBehaviour
         m_bUp = true;
         m_bStopped = false;
 
-        NamedEvent.TriggerEvent(RaiseEventKey, m_aSoundEvents);
-
         if (m_bLook)
         {
             m_bLook = false;
@@ -92,7 +80,5 @@ public class ScissorLift : MonoBehaviour
     {
         m_bUp = false;
         m_bStopped = false;
-        
-        NamedEvent.TriggerEvent(LowerEventKey, m_aSoundEvents);
     }
 }
