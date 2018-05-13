@@ -1040,4 +1040,13 @@ public class Animal : MonoBehaviour
         OnDetach();
         currentAttached = null;
     }
+
+    /// <summary>
+    /// Check if this object can attach to an interactable
+    /// </summary>
+    /// <returns></returns>
+    public virtual bool CanAttach()
+    {
+        return true;
+    }
 }

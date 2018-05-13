@@ -21,6 +21,9 @@ public abstract class AttachableInteract : Attachable, IInteractable
     /// </summary>
     protected virtual bool CheckInput(InputControl input, Animal caller)
     {
+        if (!caller.CanAttach() && !CanDetach)
+            return false;
+
         return AllowsAnimal(caller) && AnimalsIn.Contains(caller);
     }
 

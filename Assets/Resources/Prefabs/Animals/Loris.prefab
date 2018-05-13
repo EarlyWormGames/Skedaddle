@@ -6451,7 +6451,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 111396}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -7.8, y: 0.785, z: 5.698}
+  m_LocalPosition: {x: -6.911, y: 0.764, z: 10.933}
   m_LocalScale: {x: 0.401, y: 0.401, z: 0.401}
   m_Children:
   - {fileID: 427722}
@@ -6464,7 +6464,6 @@ Transform:
   - {fileID: 4514565672941364}
   - {fileID: 4588508676643126}
   - {fileID: 4108991513707938}
-  - {fileID: 4766088706659434}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9468,6 +9467,7 @@ Transform:
   m_Children:
   - {fileID: 483674}
   - {fileID: 461508}
+  - {fileID: 4558089774572912}
   m_Father: {fileID: 466434}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12762,6 +12762,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1339924916170824
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4558089774572912}
+  - component: {fileID: 65221156500206780}
+  - component: {fileID: 114784014849434076}
+  m_Layer: 11
+  m_Name: LorisPickup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1423345050095662
 GameObject:
   m_ObjectHideFlags: 0
@@ -12787,23 +12804,6 @@ GameObject:
   - component: {fileID: 4514565672941364}
   m_Layer: 8
   m_Name: Pelvis Rotation
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1530795373469668
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4766088706659434}
-  - component: {fileID: 65468985890757526}
-  - component: {fileID: 114028556795377602}
-  m_Layer: 11
-  m_Name: LorisPickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12918,6 +12918,20 @@ Transform:
   m_Father: {fileID: 423376}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4558089774572912
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1339924916170824}
+  m_LocalRotation: {x: -0.000000021566432, y: -0.000000029802322, z: -0.000000056470533,
+    w: 1}
+  m_LocalPosition: {x: 0, y: 1.0166667, z: 0}
+  m_LocalScale: {x: 1.6666675, y: 1.6666665, z: 1.6666675}
+  m_Children: []
+  m_Father: {fileID: 486628}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4588508676643126
 Transform:
   m_ObjectHideFlags: 1
@@ -12945,19 +12959,6 @@ Transform:
   m_Father: {fileID: 4108991513707938}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4766088706659434
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1530795373469668}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: -0.023, z: 0.086}
-  m_LocalScale: {x: 1, y: 1.0418409, z: 0.92061234}
-  m_Children: []
-  m_Father: {fileID: 423376}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4984212974349418
 Transform:
   m_ObjectHideFlags: 1
@@ -12973,6 +12974,18 @@ Transform:
   m_Father: {fileID: 423376}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65221156500206780
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1339924916170824}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65269219848172802
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -12985,18 +12998,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.70655197, y: 0.8880592, z: 0.72478914}
   m_Center: {x: -0.14672545, y: -0.05597044, z: 0.13760541}
---- !u!65 &65468985890757526
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1530795373469668}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!108 &108000011435722088
 Light:
   m_ObjectHideFlags: 1
@@ -13051,25 +13052,6 @@ MonoBehaviour:
   - {fileID: 499986}
   - {fileID: 414456}
   m_Water: {fileID: 0}
---- !u!114 &114028556795377602
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1530795373469668}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fff6096dbb447348a5e321276c742ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RequiredSize: 0
-  RequiredAnimal: 2
-  MaximumSize: 0
-  OnlyHeadTrigger: 1
-  UsableKeys:
-  - {fileID: 114552692680613328, guid: 80f2df7e1586bc94aa1bbea872f6ca3b, type: 2}
-  InteractPoint: {fileID: 0}
-  loris: {fileID: 11486266}
 --- !u!114 &114039960980768472
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13153,7 +13135,7 @@ MonoBehaviour:
   RotateIgnore: 5
   GroundLayers:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 4194305
   RaycastDistance: 0.5
   moveVelocity: 0
   currentSpeed: 0
@@ -13224,6 +13206,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsParent: 0
+--- !u!114 &114784014849434076
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1339924916170824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0fba6ba08c77494fb3c1d4e3eb0d2d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RequiredSize: 0
+  RequiredAnimal: 2
+  MaximumSize: 0
+  OnlyHeadTrigger: 1
+  UsableKeys:
+  - {fileID: 114552692680613328, guid: 80f2df7e1586bc94aa1bbea872f6ca3b, type: 2}
+  InteractPoint: {fileID: 0}
+  loris: {fileID: 11486266}
 --- !u!114 &114859081449444836
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13240,8 +13241,6 @@ MonoBehaviour:
   NVTransitionSpeed: 1
   ActiveLights:
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 108000011435722088}
   - {fileID: 0}
   - {fileID: 0}
@@ -13250,7 +13249,23 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  LightTransitionSpeed: 0.04
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  LightTransitionSpeed: 1
 --- !u!114 &114988325440748158
 MonoBehaviour:
   m_ObjectHideFlags: 1

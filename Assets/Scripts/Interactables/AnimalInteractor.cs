@@ -50,12 +50,14 @@ public abstract class AnimalInteractor : AnimalTrigger, IInteractable
 
     public override void AnimalEnter(Animal animal)
     {
-        InteractChecker.RegisterKeyListener(this, KeysToString());
+        if (AnimalsIn.Count == 1)
+            InteractChecker.RegisterKeyListener(this, KeysToString());
     }
 
     public override void AnimalExit(Animal animal)
     {
-        InteractChecker.UnregisterKeyListener(this, KeysToString());
+        if (AnimalsIn.Count == 0)
+            InteractChecker.UnregisterKeyListener(this, KeysToString());
     }
 
     List<string> KeysToString()

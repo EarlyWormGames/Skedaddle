@@ -56,6 +56,10 @@ public abstract class AnimalTrigger : MonoBehaviour
             return;
         }
 
+        //Only ever need one instance of the head trigger
+        if (OnlyHeadTrigger && AnimalsIn.Contains(anim))
+            return;
+
         if (AllowsAnimal(anim))
         {
             AnimalsIn.Add(anim);

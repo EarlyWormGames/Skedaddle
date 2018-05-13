@@ -49,8 +49,9 @@ public class PPObject : AttachableInteract
             transform.eulerAngles = IgnoreUtils.Calculate(MaintainPosition, startRotation, transform.eulerAngles);
 
             if (GameManager.mainMap.interact.wasJustPressed && !waitOne && AttachedAnimal.m_bSelected)
+            {
                 Detach(this);
-
+            }
             waitOne = false;
         }
     }

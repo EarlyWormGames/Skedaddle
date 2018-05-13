@@ -71,12 +71,6 @@ public class Poodle : Animal
         if (m_bHoldingLoris)
         {
             AnimalController.Instance.GetAnimal(ANIMAL_NAME.LORIS).transform.position = LorisHolder.position;
-
-            if (InteractChecker.Instance.WasKeyPressed("Interact"))
-            {
-                InteractChecker.Instance.Consume("Interact");
-                DropLoris();
-            }
         }
 
         m_aAnimalAnimator.SetBool("Controlled", m_bSelected);
@@ -287,8 +281,6 @@ public class Poodle : Animal
 
             var loris = AnimalController.Instance.GetAnimal(ANIMAL_NAME.LORIS) as Loris;
             loris.LetGoOfPoodle();
-
-            currentAttached.Detach(currentAttached, this);
         }
     }
 
@@ -372,5 +364,10 @@ public class Poodle : Animal
 
             Gizmos.DrawWireCube(Vector3.zero, Vector3.one);
         }
+    }
+
+    public override bool CanAttach()
+    {
+        return !m_bHoldingLoris;
     }
 }

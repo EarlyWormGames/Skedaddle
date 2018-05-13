@@ -129,21 +129,12 @@ public class InteractChecker : Singleton<InteractChecker>
         }
     }
 
-    public bool WasKeyPressed(string name)
+    public bool WasKeyConsumed(string name)
     {
         if (!Instance.Listeners.ContainsKey(GameManager.Instance.controlsList[name]))
             return false;
 
         var item = Instance.Listeners[GameManager.Instance.controlsList[name]];
-        return item.firstPress && !item.consumed;
-    }
-
-    public void Consume(string name)
-    {
-        if (!Instance.Listeners.ContainsKey(GameManager.Instance.controlsList[name]))
-            return;
-
-        var item = Instance.Listeners[GameManager.Instance.controlsList[name]];
-        item.consumed = true;
+        return item.consumed;
     }
 }
