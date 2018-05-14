@@ -55,7 +55,7 @@ public class LadderObject : AttachableInteract
         if (justExit)
             return false;
 
-        return KeyCheck(caller.transform);
+        return KeyCheck(caller.transform) && AllowsAnimal(caller);
     }
 
     protected override void OnUpdate()
