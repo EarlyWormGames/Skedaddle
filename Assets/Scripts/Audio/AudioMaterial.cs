@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Base class for noice's that surfaces will make.
+/// </summary>
 public class AudioMaterial : MonoBehaviour
 {
     public enum eMaterial

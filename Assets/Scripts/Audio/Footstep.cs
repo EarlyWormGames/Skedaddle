@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// class for handling footseps of animals
+/// </summary>
 public class Footstep : MonoBehaviour
 {
     public float m_fLifeTime = 1f;

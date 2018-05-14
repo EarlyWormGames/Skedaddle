@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// create an audio emitter along the "Lane"
+/// </summary>
 public class ShapedAudioEmitter : MonoBehaviour
 {
     public Vector3 m_Axis = Vector3.one;
