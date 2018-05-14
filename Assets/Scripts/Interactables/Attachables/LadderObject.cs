@@ -42,6 +42,8 @@ public class LadderObject : AttachableInteract
     private bool justExit;
     private float entryZ;
 
+    private LadderObject shimmyLeft, shimmyRight;
+
     protected override void OnStart()
     {
         base.OnStart();
@@ -65,8 +67,8 @@ public class LadderObject : AttachableInteract
             return;
 
         //Find what objects we can shimmy to
-        LadderObject shimmyLeft = GetShimmyObject(loris.transform.position, Vector3.left, loris.m_fShimmyDistance, loris.m_fShimmyBoxSize, Color.red);
-        LadderObject shimmyRight = GetShimmyObject(loris.transform.position, Vector3.right, loris.m_fShimmyDistance, loris.m_fShimmyBoxSize, Color.blue);
+        shimmyLeft = GetShimmyObject(loris.transform.position, Vector3.left, loris.m_fShimmyDistance, loris.m_fShimmyBoxSize, Color.red);
+        shimmyRight = GetShimmyObject(loris.transform.position, Vector3.right, loris.m_fShimmyDistance, loris.m_fShimmyBoxSize, Color.blue);
 
         TryShimmyLeft = false;
         TryShimmyRight = false;
@@ -83,23 +85,6 @@ public class LadderObject : AttachableInteract
                 TryShimmyRight = true;
         }
 
-        //Only allow shimmy once the interact button is pressed
-        if (GameManager.mainMap.interact.wasJustPressed && !justEnter && AttachedAnimal.m_bSelected)
-        {
-            if (TryShimmyLeft)
-            {
-                Shimmy(shimmyLeft);
-                return;
-            }
-            else if (TryShimmyRight)
-            {
-                Shimmy(shimmyRight);
-                return;
-            }
-
-            Detach(this);
-            return;
-        }
         justEnter = false;
 
         //Calculate the input amounts
@@ -191,10 +176,34 @@ public class LadderObject : AttachableInteract
 
     protected override void DoInteract(Animal caller)
     {
+        if(AttachedAnimal == caller)
+        {
+            //Only allow shimmy once the interact button is pressed
+            if (GameManager.mainMap.interact.wasJustPressed && !justEnter && AttachedAnimal.m_bSelected)
+            {
+                if (TryShimmyLeft)
+                {
+                    Shimmy(shimmyLeft);
+                    return;
+                }
+                else if (TryShimmyRight)
+                {
+                    Shimmy(shimmyRight);
+                    return;
+                }
+
+                Detach(this);
+                return;
+            }
+        }
+
         if (!TryDetachOther())
             return;
 
         Attach(caller);
+
+        if (DisableCollision)
+            AnimalsIn.RemoveAll(caller);
 
         AttachedAnimal.transform.SetParent(transform);
         AttachedAnimal.m_rBody.isKinematic = true;
@@ -240,8 +249,6 @@ public class LadderObject : AttachableInteract
         justExit = true;
 
         moveVelocity = 0;
-
-        AnimalsIn.RemoveAll(AttachedAnimal);
         
         AttachedAnimal.transform.parent = null;
         AttachedAnimal.m_rBody.isKinematic = false;
@@ -384,5 +391,16 @@ public class LadderObject : AttachableInteract
         var temp = AttachedAnimal;
         Detach(this);
         shimmyObject.Interact(temp);
+    }
+
+    protected override float CheckDistance(Vector3 point)
+    {
+        if (AttachedAnimal != null)
+            return 0; //Always do it!
+
+        if (InteractPoint == null)
+            return Vector3.Distance(point, transform.position);
+
+        return Vector3.Distance(point, InteractPoint.position);
     }
 }
