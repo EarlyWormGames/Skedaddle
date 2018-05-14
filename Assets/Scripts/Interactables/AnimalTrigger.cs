@@ -7,7 +7,7 @@ public abstract class AnimalTrigger : MonoBehaviour
     public ANIMAL_SIZE RequiredSize;
     public ANIMAL_NAME RequiredAnimal;
     public ANIMAL_SIZE MaximumSize;
-    public bool OnlyHeadTrigger;
+    protected bool HeadTriggerOnly = false;
 
     protected List<Animal> AnimalsIn = new List<Animal>();
 
@@ -40,7 +40,7 @@ public abstract class AnimalTrigger : MonoBehaviour
         if (animtrig == null)
         {
             //Or search for an animal if not found
-            if (!OnlyHeadTrigger)
+            if (!HeadTriggerOnly)
                 anim = other.GetComponentInParent<Animal>(2);
             if (anim == null)
             {
@@ -58,7 +58,7 @@ public abstract class AnimalTrigger : MonoBehaviour
         }
 
         //Only ever need one instance of the head trigger
-        if (OnlyHeadTrigger && AnimalsIn.Contains(anim))
+        if (HeadTriggerOnly && AnimalsIn.Contains(anim))
             return;
 
         if (AllowsAnimal(anim))
@@ -78,7 +78,7 @@ public abstract class AnimalTrigger : MonoBehaviour
         if (animtrig == null)
         {
             //Or search for an animal if not found
-            if (!OnlyHeadTrigger)
+            if (!HeadTriggerOnly)
                 anim = other.GetComponentInParent<Animal>(2);
             if (anim == null)
             {

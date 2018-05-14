@@ -57,6 +57,8 @@ public class BridgeMaker : AttachableInteract
         BlocksMovement = true;
         BlocksTurn = true;
         CanDetach = false;
+
+        HeadTriggerOnly = false;
     }
 
     protected override void OnUpdate()

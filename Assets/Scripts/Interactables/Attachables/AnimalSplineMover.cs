@@ -33,6 +33,9 @@ public class AnimalSplineMover : AttachableInteract
 
     void OnInteract(Animal caller, bool wasTrigger)
     {
+        if (AttachedAnimal != null)
+            return;
+
         if ((DoOnTrigger && !wasTrigger) || (!DoOnTrigger && wasTrigger))
             return;
 

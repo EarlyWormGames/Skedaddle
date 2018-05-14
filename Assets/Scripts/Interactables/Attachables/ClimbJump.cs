@@ -22,6 +22,8 @@ public class ClimbJump : AttachableInteract
         CanDetach = true;
         BlocksMovement = true;
         BlocksTurn = true;
+
+        HeadTriggerOnly = true;
     }
 
     protected override bool CheckDetach()

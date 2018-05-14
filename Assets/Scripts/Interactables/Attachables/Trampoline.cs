@@ -46,6 +46,8 @@ public class Trampoline : AttachableInteract
         CanDetach = true;
         BlocksMovement = true;
         BlocksTurn = true;
+
+        HeadTriggerOnly = false;
     }
 
     protected override bool CheckDetach()

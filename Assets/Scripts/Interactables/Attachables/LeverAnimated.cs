@@ -13,6 +13,9 @@ public class LeverAnimated : Lever
     {
         base.DoInteract(caller);
 
+        if (AttachedAnimal != null)
+            return;
+
         if (!IsPlug)
         {
             AttachedAnimal.m_bPullingLeverOn = IsOn;

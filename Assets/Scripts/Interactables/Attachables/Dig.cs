@@ -40,6 +40,8 @@ public class Dig : AttachableInteract
         CanDetach = false;
 
         trigger = GetComponent<Collider>();
+
+        HeadTriggerOnly = false;
     }
 
     protected override bool CheckDetach()
@@ -49,6 +51,9 @@ public class Dig : AttachableInteract
 
     protected override void DoInteract(Animal caller)
     {
+        if (AttachedAnimal != null)
+            return;
+
         if (!TryDetachOther())
             return;
 
