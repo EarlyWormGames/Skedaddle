@@ -50,6 +50,8 @@ public class LadderObject : AttachableInteract
         
         BlocksMovement = true;
         BlocksTurn = true;
+
+        RequiredAnimal = ANIMAL_NAME.LORIS;
     }
 
     protected override bool CheckInput(InputControl input, Animal caller)

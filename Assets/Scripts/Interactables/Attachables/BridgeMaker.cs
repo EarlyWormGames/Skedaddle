@@ -59,6 +59,8 @@ public class BridgeMaker : AttachableInteract
         CanDetach = false;
 
         HeadTriggerOnly = false;
+
+        RequiredAnimal = ANIMAL_NAME.ANTEATER;
     }
 
     protected override void OnUpdate()

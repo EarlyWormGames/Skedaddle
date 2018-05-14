@@ -42,6 +42,8 @@ public class Dig : AttachableInteract
         trigger = GetComponent<Collider>();
 
         HeadTriggerOnly = false;
+
+        RequiredAnimal = ANIMAL_NAME.ANTEATER;
     }
 
     protected override bool CheckDetach()
