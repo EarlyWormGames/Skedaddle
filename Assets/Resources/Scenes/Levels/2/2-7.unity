@@ -319,6 +319,16 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114794663300859998, guid: 73594af5744a53644b56dc6589625700,
+        type: 2}
+      propertyPath: RequiredAnimal
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114018125404345078, guid: 73594af5744a53644b56dc6589625700,
+        type: 2}
+      propertyPath: RequiredAnimal
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 73594af5744a53644b56dc6589625700, type: 2}
   m_IsPrefabParent: 0
@@ -1980,7 +1990,6 @@ MonoBehaviour:
   RequiredSize: 0
   RequiredAnimal: 0
   MaximumSize: 0
-  OnlyHeadTrigger: 0
   UsableKeys: []
   InteractPoint: {fileID: 0}
   m_rBody: {fileID: 1733621337}
@@ -11442,10 +11451,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RequiredSize: 0
-  RequiredAnimal: 0
+  RequiredAnimal: 1
   MaximumSize: 0
-  OnlyHeadTrigger: 0
-  UsableKeys: []
+  UsableKeys:
+  - {fileID: 114749059133443220, guid: 80f2df7e1586bc94aa1bbea872f6ca3b, type: 2}
   InteractPoint: {fileID: 0}
   DoOnTrigger: 0
   BreakSplineConnection: 0
@@ -11532,7 +11541,6 @@ MonoBehaviour:
   RequiredSize: 0
   RequiredAnimal: 3
   MaximumSize: 0
-  OnlyHeadTrigger: 1
   UsableKeys:
   - {fileID: 114552692680613328, guid: 80f2df7e1586bc94aa1bbea872f6ca3b, type: 2}
   InteractPoint: {fileID: 0}
@@ -19979,7 +19987,6 @@ MonoBehaviour:
   RequiredSize: 0
   RequiredAnimal: 1
   MaximumSize: 0
-  OnlyHeadTrigger: 0
   UsableKeys:
   - {fileID: 0}
   InteractPoint: {fileID: 0}
@@ -20421,6 +20428,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 629272774}
     m_Modifications:
+    - target: {fileID: 114912702065647814, guid: 5560e5968db641b46adde14dd1aec203,
+        type: 2}
+      propertyPath: UsableKeys.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4907385561553182, guid: 5560e5968db641b46adde14dd1aec203, type: 2}
       propertyPath: m_LocalPosition.x
       value: -0.025000095
@@ -20456,6 +20468,17 @@ Prefab:
     - target: {fileID: 1219603470800148, guid: 5560e5968db641b46adde14dd1aec203, type: 2}
       propertyPath: m_Name
       value: Rope (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114912702065647814, guid: 5560e5968db641b46adde14dd1aec203,
+        type: 2}
+      propertyPath: UsableKeys.Array.data[0]
+      value: 
+      objectReference: {fileID: 114749059133443220, guid: 80f2df7e1586bc94aa1bbea872f6ca3b,
+        type: 2}
+    - target: {fileID: 114912702065647814, guid: 5560e5968db641b46adde14dd1aec203,
+        type: 2}
+      propertyPath: RequiredAnimal
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5560e5968db641b46adde14dd1aec203, type: 2}
@@ -25191,10 +25214,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RequiredSize: 0
-  RequiredAnimal: 0
+  RequiredAnimal: 2
   MaximumSize: 0
-  OnlyHeadTrigger: 0
-  UsableKeys: []
+  UsableKeys:
+  - {fileID: 114749059133443220, guid: 80f2df7e1586bc94aa1bbea872f6ca3b, type: 2}
   InteractPoint: {fileID: 0}
   DoOnTrigger: 0
   BreakSplineConnection: 0
@@ -28755,10 +28778,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RequiredSize: 0
-  RequiredAnimal: 0
+  RequiredAnimal: 1
   MaximumSize: 0
-  OnlyHeadTrigger: 0
-  UsableKeys: []
+  UsableKeys:
+  - {fileID: 114749059133443220, guid: 80f2df7e1586bc94aa1bbea872f6ca3b, type: 2}
   InteractPoint: {fileID: 0}
   DoOnTrigger: 0
   BreakSplineConnection: 0
@@ -29143,10 +29166,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RequiredSize: 0
-  RequiredAnimal: 0
+  RequiredAnimal: 2
   MaximumSize: 0
-  OnlyHeadTrigger: 0
-  UsableKeys: []
+  UsableKeys:
+  - {fileID: 114749059133443220, guid: 80f2df7e1586bc94aa1bbea872f6ca3b, type: 2}
   InteractPoint: {fileID: 0}
   DoOnTrigger: 0
   BreakSplineConnection: 0
@@ -60898,10 +60921,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RequiredSize: 0
-  RequiredAnimal: 0
+  RequiredAnimal: 1
   MaximumSize: 0
-  OnlyHeadTrigger: 1
-  UsableKeys: []
+  UsableKeys:
+  - {fileID: 114749059133443220, guid: 80f2df7e1586bc94aa1bbea872f6ca3b, type: 2}
   InteractPoint: {fileID: 0}
   DoOnTrigger: 1
   BreakSplineConnection: 0
@@ -64087,6 +64110,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114909028514257608, guid: a6d6b62533b551a4199b6e2b1525a010,
+        type: 2}
+      propertyPath: UsableKeys.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 482702, guid: a6d6b62533b551a4199b6e2b1525a010, type: 2}
       propertyPath: m_LocalPosition.x
       value: 12
@@ -64162,6 +64190,17 @@ Prefab:
       propertyPath: OnDoAction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 1906875522}
+    - target: {fileID: 114909028514257608, guid: a6d6b62533b551a4199b6e2b1525a010,
+        type: 2}
+      propertyPath: UsableKeys.Array.data[0]
+      value: 
+      objectReference: {fileID: 114749059133443220, guid: 80f2df7e1586bc94aa1bbea872f6ca3b,
+        type: 2}
+    - target: {fileID: 114909028514257608, guid: a6d6b62533b551a4199b6e2b1525a010,
+        type: 2}
+      propertyPath: RequiredAnimal
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a6d6b62533b551a4199b6e2b1525a010, type: 2}
   m_IsPrefabParent: 0
