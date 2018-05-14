@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Camera spline movement 
+/// </summary>
 [RequireComponent(typeof(BezierSpline))]
 public class CameraSpline : DefaultCameraMovement
 {
@@ -21,7 +24,9 @@ public class CameraSpline : DefaultCameraMovement
     {
         
     }
-
+    /// <summary>
+    /// Calculate the position where the camera is meant to be on the spline
+    /// </summary>
     protected override void CalcPosition()
     {
         float distance = -1;

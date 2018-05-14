@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Management of the camera movement
+/// </summary>
 public class CameraMovement : MonoBehaviour
 {
     public float LerpSpeed = 10;

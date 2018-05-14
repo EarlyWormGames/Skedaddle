@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Refer to cameraMover for documentation
+/// </summary>
 public abstract class DefaultCameraMovement : CameraMover
 {
     protected override void CheckCurrentAnimal()
