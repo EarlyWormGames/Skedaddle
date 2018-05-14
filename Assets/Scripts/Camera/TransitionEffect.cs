@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Fade effect for a transition
+/// </summary>
 public class TransitionEffect : MonoBehaviour
 {
     public static TransitionEffect instance;

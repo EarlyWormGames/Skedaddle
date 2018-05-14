@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Musich handler for each area
+/// </summary>
 public class AreaMusic : MonoBehaviour
 {
     public float m_fLerpSpeed = 1f;
