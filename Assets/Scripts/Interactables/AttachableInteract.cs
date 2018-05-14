@@ -9,6 +9,8 @@ public abstract class AttachableInteract : Attachable, IInteractable
     public List<InputAction> UsableKeys = new List<InputAction>();
     public Transform InteractPoint;
 
+    protected bool keysRegistered = false;
+
     /// <summary>
     /// Default simply checks if the <paramref name="caller"/> works with <see cref="AnimalTrigger.AllowsAnimal(Animal)"/>
     /// </summary>
@@ -51,7 +53,7 @@ public abstract class AttachableInteract : Attachable, IInteractable
 
     public void Interact(Animal caller)
     {
-        if (AttachedAnimal != null)
+        if (AttachedAnimal != null && caller != AttachedAnimal)
             return;
 
         DoInteract(caller);
@@ -62,7 +64,11 @@ public abstract class AttachableInteract : Attachable, IInteractable
     /// </summary>
     protected void RegisterKeys()
     {
+        if (keysRegistered)
+            return;
+
         InteractChecker.RegisterKeyListener(this, KeysToString());
+        keysRegistered = true;
     }
 
     /// <summary>
@@ -70,7 +76,11 @@ public abstract class AttachableInteract : Attachable, IInteractable
     /// </summary>
     protected void UnregisterKeys()
     {
+        if (!keysRegistered)
+            return;
+
         InteractChecker.UnregisterKeyListener(this, KeysToString());
+        keysRegistered = false;
     }
 
     List<string> KeysToString()
@@ -84,15 +94,12 @@ public abstract class AttachableInteract : Attachable, IInteractable
     protected override void OnAttach()
     {
         base.OnAttach();
-        UnregisterKeys();
     }
 
     sealed protected override void OnDetach(Animal animal)
     {
         base.OnDetach(animal);
         OnDetaching(animal);
-        if (AnimalsIn.Count > 0)
-            RegisterKeys();
     }
 
     protected override void OnAnimalEnter(Animal animal)
