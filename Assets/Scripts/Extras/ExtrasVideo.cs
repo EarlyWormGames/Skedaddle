@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// GUI Videos.
+/// </summary>
 public class ExtrasVideo : ExtrasItem
 {
     public GameObject m_gPlayParent;

@@ -2,6 +2,9 @@
 using System.Collections;
 using UnityEngine.UI;
 
+/// <summary>
+/// Items that can be unlocked in by peanuts
+/// </summary>
 public class ExtrasItem : MonoBehaviour
 {
     public int m_requireNuts;
@@ -12,6 +15,9 @@ public class ExtrasItem : MonoBehaviour
     protected bool m_bSelected;
     protected bool m_bCanQuit = true;
 
+    /// <summary>
+    /// Show the parent object
+    /// </summary>
     public virtual void Show()
     {
         m_eParent.Select(this);

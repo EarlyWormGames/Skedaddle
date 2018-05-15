@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Container for the bounding area that the camera can stay in 
+/// </summary>
 public class CameraLimits : MonoBehaviour
 {
     public Vector2 m_v2XLimits = new Vector2(-1, 1);

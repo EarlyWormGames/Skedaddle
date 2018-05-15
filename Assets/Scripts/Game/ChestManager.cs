@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 
+/// <summary>
+/// Base class for saving the info of a chest
+/// </summary>
 [Serializable]
 public class ChestReference
 {
@@ -11,6 +14,9 @@ public class ChestReference
     public ExposedReference<Chest> reference;
 }
 
+/// <summary>
+/// handles data of all chests in the game
+/// </summary>
 [CreateAssetMenu(fileName = "Chest Manager", menuName = "Chest Manager")]
 public class ChestManager : ScriptableObject
 {
