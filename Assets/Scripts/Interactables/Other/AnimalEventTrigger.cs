@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class AnimalEventTrigger : AnimalTrigger
 {
+    [System.Serializable]
     public class AnimalEvent : UnityEvent<Animal> { }
 
     public AnimalEvent OnAnimalEnter, OnAnimalExit;
