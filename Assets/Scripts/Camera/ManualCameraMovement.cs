@@ -20,6 +20,7 @@ public class ManualCameraMovement : DefaultCameraMovement {
     public ButtonAction CameraToggle2;
     public Vector3 OriginOffset;
     public bool StartOn;
+    public bool FollowAnimal;
     public float MovementSpeed;
     public float LookSpeed;
     public float SmoothingSpeed;
@@ -33,6 +34,10 @@ public class ManualCameraMovement : DefaultCameraMovement {
         LookAtTransform = transform.GetChild(0).transform;
         OriginalLookat = LookAtTransform.position - transform.position;
         doneStart = StartOn;
+        if(StartOn)
+        {
+            CameraSplineManager.instance.OverrideSpline = this;
+        }
 	}
 
     // Update is called once per frame
@@ -71,7 +76,7 @@ public class ManualCameraMovement : DefaultCameraMovement {
             }
             doneStart = false;
             doneToggle = true;
-            if (!CameraActivated)
+            if (CameraActivated)
             {
                 SetAnimalEnabled(ANIMAL_NAME.LORIS, true);
                 SetAnimalEnabled(ANIMAL_NAME.POODLE, true);
@@ -104,8 +109,8 @@ public class ManualCameraMovement : DefaultCameraMovement {
             return;
 
         Vector3 AnimalOffset = (Vector3)data;
-        CurrentPoint = Vector3.Lerp(transform.position, OriginalPosition + AnimalOffset, Time.fixedDeltaTime * SmoothingSpeed);
-        LookAtTransform.position = Vector3.Slerp(LookAtTransform.position, OriginalLookat + CurrentPoint + LookatOffset, Time.fixedDeltaTime * SmoothingSpeed);
+        CurrentPoint = FollowAnimal ? OriginalPosition + AnimalOffset : OriginalPosition + CameraOffset;
+        LookAtTransform.position = OriginalLookat + CurrentPoint + LookatOffset;
         LookAtPoint = LookAtTransform.position;
     }
 }
