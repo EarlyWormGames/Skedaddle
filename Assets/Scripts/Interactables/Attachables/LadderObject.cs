@@ -246,7 +246,7 @@ public class LadderObject : AttachableInteract
         loris.SetDirection(Direction, true);
     }
 
-    protected override void OnDetaching(Animal animal)
+    protected override void OnDetach(Animal animal)
     {
         justExit = true;
 

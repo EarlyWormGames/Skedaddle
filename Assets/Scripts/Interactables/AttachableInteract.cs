@@ -91,17 +91,6 @@ public abstract class AttachableInteract : Attachable, IInteractable
         return l;
     }
 
-    protected override void OnAttach()
-    {
-        base.OnAttach();
-    }
-
-    sealed protected override void OnDetach(Animal animal)
-    {
-        base.OnDetach(animal);
-        OnDetaching(animal);
-    }
-
     protected override void OnAnimalEnter(Animal animal)
     {
         base.OnAnimalEnter(animal);
@@ -118,7 +107,6 @@ public abstract class AttachableInteract : Attachable, IInteractable
             UnregisterKeys();
     }
 
-    protected virtual void OnDetaching(Animal animal) { }
     protected virtual bool ShouldIgnoreDistance() { return false; }
     protected abstract void DoInteract(Animal caller);
 }

@@ -273,7 +273,7 @@ public class Trampoline : AttachableInteract
     /// <summary>
     /// Detaches a specific animal from the trampoline
     /// </summary>
-    protected override void OnDetaching(Animal animal)
+    protected override void OnDetach(Animal animal)
     {
         if (!tempSettings.ContainsKey(animal.transform))
             return;
