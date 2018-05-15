@@ -9,9 +9,10 @@ using UnityEngine.Rendering.PostProcessing;
 public class TransitionEffect : MonoBehaviour
 {
     public static TransitionEffect instance;
-    public PostProcessVolume volume;
     public LayerMask volumeLayer;
     public float value;
+
+    private PostProcessVolume volume;
 
     private void Awake()
     {

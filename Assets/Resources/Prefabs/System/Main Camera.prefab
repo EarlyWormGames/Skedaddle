@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 114476538363192892}
   - component: {fileID: 114121936319760040}
   - component: {fileID: 114412501214504596}
+  - component: {fileID: 114336855520519978}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -148,8 +149,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 194930}
-  m_LocalRotation: {x: 0.08442235, y: -0.00019862564, z: -0.0019608831, w: 0.99642813}
-  m_LocalPosition: {x: 4.45, y: -0.43, z: 3.4}
+  m_LocalRotation: {x: 0.027821133, y: 0, z: 0, w: 0.9996129}
+  m_LocalPosition: {x: -0.72, y: 2.33, z: -4.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 453490}
@@ -685,7 +686,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68c9790aa1a259f46b46540f2ceb085e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FadeShader: {fileID: 4800000, guid: 50866f5806aae8d43ad0c2abab825678, type: 3}
+  volume: {fileID: 0}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 2147483648
   value: 0
 --- !u!114 &114317303632901466
 MonoBehaviour:
@@ -702,6 +706,62 @@ MonoBehaviour:
   m_Amount: 0.583
   m_Multiplier: 1
   m_Invert: 0
+--- !u!114 &114336855520519978
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 194930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23c1ce4fb46143f46bc5cb5224c934f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  clearColorMode: 0
+  backgroundColorHDR: {r: 0.025, g: 0.07, b: 0.19, a: 0}
+  clearDepth: 1
+  renderingPath: 0
+  volumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  aperture: 8
+  shutterSpeed: 0.005
+  iso: 400
+  m_FrameSettings:
+    enableShadow: 1
+    enableContactShadows: 1
+    enableSSR: 1
+    enableSSAO: 1
+    enableSubsurfaceScattering: 1
+    enableTransmission: 1
+    diffuseGlobalDimmer: 1
+    specularGlobalDimmer: 1
+    enableForwardRenderingOnly: 0
+    enableDepthPrepassWithDeferredRendering: 0
+    enableTransparentPrepass: 1
+    enableMotionVectors: 1
+    enableObjectMotionVectors: 1
+    enableDBuffer: 1
+    enableAtmosphericScattering: 1
+    enableRoughRefraction: 1
+    enableTransparentPostpass: 1
+    enableDistortion: 1
+    enablePostprocess: 1
+    enableStereo: 1
+    enableAsyncCompute: 1
+    enableOpaqueObjects: 1
+    enableTransparentObjects: 1
+    enableMSAA: 0
+    enableShadowMask: 0
+    lightLoopSettings:
+      enableTileAndCluster: 1
+      enableComputeLightEvaluation: 1
+      enableComputeLightVariants: 1
+      enableComputeMaterialVariants: 1
+      enableFptlForForwardOpaque: 1
+      enableBigTilePrepass: 1
+      isFptlEnabled: 1
 --- !u!114 &114355741093068044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -728,6 +788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75bb356239bfaed43a335024f174d350, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OverrideSpline: {fileID: 0}
 --- !u!114 &114476538363192892
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -857,4 +918,6 @@ MonoBehaviour:
   breakBeforeColorGrading: 0
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
-  m_AfterStackBundles: []
+  m_AfterStackBundles:
+  - assemblyQualifiedName: TransitionPP, SkedaddleCore, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
