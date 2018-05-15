@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 
 /// <summary>
 /// Fade effect for a transition
@@ -8,20 +9,26 @@ using UnityEngine;
 public class TransitionEffect : MonoBehaviour
 {
     public static TransitionEffect instance;
-    public Shader FadeShader;
+    public PostProcessVolume volume;
+    public LayerMask volumeLayer;
     public float value;
-
-    private Material FadeMaterial;
 
     private void Awake()
     {
         instance = this;
-        FadeMaterial = new Material(FadeShader);
     }
 
-    private void OnRenderImage(RenderTexture source, RenderTexture destination)
+    private void Update()
     {
-        FadeMaterial.SetFloat("_FadeValue", value);
-        Graphics.Blit(source, destination, FadeMaterial);
+        volume = PostProcessManager.instance.GetHighestPriorityVolume(volumeLayer);
+
+        if (volume == null)
+            return;
+
+        TransitionPP settings = null;
+        volume.profile.TryGetSettings(out settings);
+
+        if (settings != null)
+            settings.blend.value = value;
     }
 }
