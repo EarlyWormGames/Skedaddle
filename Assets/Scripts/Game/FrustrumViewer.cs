@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// draws the given cameras' frustrum
+/// 
+/// possibly move to helpers?
+/// </summary>
 public class FrustrumViewer : MonoBehaviour
 {
     public Camera m_Camera;

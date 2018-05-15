@@ -289,6 +289,14 @@ public class CameraController : Singleton<CameraController>
         //}
     }
 
+    /// <summary>
+    /// have the camera look at a point/object
+    /// </summary>
+    /// <param name="a_object"></param>
+    /// <param name="a_waitTimer"></param>
+    /// <param name="a_lookTime"></param>
+    /// <param name="a_lookAt"></param>
+    /// <param name="a_bCancelLookAt"></param>
     public void ViewObject(GameObject a_object, float a_waitTimer = 1f, float a_lookTime = 1f, Transform a_lookAt = null, bool a_bCancelLookAt = true)
     {
         m_v3Target.x = a_object.transform.position.x;
@@ -307,6 +315,12 @@ public class CameraController : Singleton<CameraController>
 
     }
 
+    /// <summary>
+    /// have the camera look at a point and reload the level.
+    /// </summary>
+    /// <param name="a_pos"></param>
+    /// <param name="a_waitTimer"></param>
+    /// <param name="a_lookTime"></param>
     public void ViewThenReload(Vector3 a_pos, float a_waitTimer = 1f, float a_lookTime = 1f)
     {
         m_v3Target = a_pos;
@@ -363,6 +377,9 @@ public class CameraController : Singleton<CameraController>
         Animal.CurrentAnimal = a_animal;
     }
 
+    /// <summary>
+    /// Turn all the lights in the scene off
+    /// </summary>
     public void LightsOut()
     {
         foreach (Light child in m_Lights)
@@ -371,6 +388,9 @@ public class CameraController : Singleton<CameraController>
         }
     }
 
+    /// <summary>
+    /// turn all the lights in the scene on 
+    /// </summary>
     public void LetThereBeLight()
     {
         int i = 0;

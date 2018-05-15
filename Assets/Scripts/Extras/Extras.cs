@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// unlockable items in the menu from collecting peanuts
+/// </summary>
 public class Extras : MonoBehaviour
 {
     public ExtrasItem[] m_aeItems;
@@ -10,7 +13,7 @@ public class Extras : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        int nuts = SaveManager.PeanutCount();
+        int nuts /*...lol*/ = SaveManager.PeanutCount();
 
         foreach (ExtrasItem item in m_aeItems)
         {
