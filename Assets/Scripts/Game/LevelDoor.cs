@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// the exit/entry door of each level
+/// </summary>
 public class LevelDoor : MonoBehaviour
 {
     public MovingObject m_Door;

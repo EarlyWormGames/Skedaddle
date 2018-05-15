@@ -2,6 +2,9 @@
 using UnityEngine.SceneManagement;
 using System;
 
+/// <summary>
+/// possibly obsolete 
+/// </summary>
 public class LevelUnlocker : MonoBehaviour
 {
     // Use this for initialization

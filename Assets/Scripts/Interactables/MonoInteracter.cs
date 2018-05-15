@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputNew;
 
+/// <summary>
+/// Input handler for singular objects
+/// </summary>
 public abstract class MonoInteracter : MonoBehaviour, IInteractable
 {
     public List<InputAction> UsableKeys = new List<InputAction>();

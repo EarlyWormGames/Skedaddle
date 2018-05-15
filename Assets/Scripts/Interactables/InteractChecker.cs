@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.InputNew;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// any interactions with objects the player can have is handled here
+/// </summary>
 public class InteractChecker : Singleton<InteractChecker>
 {
     private class KeyListener

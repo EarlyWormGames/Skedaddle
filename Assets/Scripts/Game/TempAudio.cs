@@ -10,6 +10,9 @@ public struct AudioTrack
     public bool fadeOut;
 }
 
+/// <summary>
+/// 
+/// </summary>
 public class TempAudio : Singleton<TempAudio>
 {
     public AudioTrack[] m_aAnimalAudios;

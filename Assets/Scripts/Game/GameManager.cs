@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 using System;
 using System.Collections.Generic;
 
+/// <summary>
+/// handles Input and scene management 
+/// </summary>
 public class GameManager : Singleton<GameManager>
 {
     public static MainMapping mainMap;

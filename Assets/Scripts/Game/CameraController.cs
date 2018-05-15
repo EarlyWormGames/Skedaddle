@@ -3,6 +3,10 @@ using System.Collections.Generic;
 
 public delegate void CameraEndDelegate();
 
+
+/// <summary>
+/// Camera movement handled in late update because of m
+/// </summary>
 public class CameraController : Singleton<CameraController>
 {
     public static CameraEndDelegate onEnd
