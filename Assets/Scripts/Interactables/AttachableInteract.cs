@@ -10,6 +10,7 @@ public abstract class AttachableInteract : Attachable, IInteractable
     public Transform InteractPoint;
 
     protected bool keysRegistered = false;
+    private List<string> keyStrings = null;
 
     /// <summary>
     /// Default simply checks if the <paramref name="caller"/> works with <see cref="AnimalTrigger.AllowsAnimal(Animal)"/>
@@ -67,7 +68,10 @@ public abstract class AttachableInteract : Attachable, IInteractable
         if (keysRegistered)
             return;
 
-        InteractChecker.RegisterKeyListener(this, KeysToString());
+        if (keyStrings == null)
+            KeysToString();
+
+        InteractChecker.RegisterKeyListener(this, keyStrings);
         keysRegistered = true;
     }
 
@@ -79,27 +83,19 @@ public abstract class AttachableInteract : Attachable, IInteractable
         if (!keysRegistered)
             return;
 
-        InteractChecker.UnregisterKeyListener(this, KeysToString());
+        InteractChecker.UnregisterKeyListener(this, keyStrings);
         keysRegistered = false;
     }
 
-    List<string> KeysToString()
+    /// <summary>
+    /// Loads <see cref="UsableKeys"/> into <see cref="keyStrings"/>
+    /// </summary>
+    protected void KeysToString()
     {
         List<string> l = new List<string>();
         foreach (var item in UsableKeys)
             l.Add(item.name);
-        return l;
-    }
-
-    protected override void OnAttach()
-    {
-        base.OnAttach();
-    }
-
-    sealed protected override void OnDetach(Animal animal)
-    {
-        base.OnDetach(animal);
-        OnDetaching(animal);
+        keyStrings = l;
     }
 
     protected override void OnAnimalEnter(Animal animal)
@@ -118,7 +114,6 @@ public abstract class AttachableInteract : Attachable, IInteractable
             UnregisterKeys();
     }
 
-    protected virtual void OnDetaching(Animal animal) { }
     protected virtual bool ShouldIgnoreDistance() { return false; }
     protected abstract void DoInteract(Animal caller);
 }

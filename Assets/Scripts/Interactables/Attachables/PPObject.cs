@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PPObject : AttachableInteract
 {
+    public bool CanEnterMoveSpline = true;
+
     [EnumFlag] public IgnoreAxis MaintainPosition = IgnoreAxis.Y | IgnoreAxis.Z;
     [EnumFlag] public IgnoreAxis MaintainRotation = IgnoreAxis.Everything;
     public List<Collider> TriggersToDisable = new List<Collider>();
@@ -98,7 +100,7 @@ public class PPObject : AttachableInteract
             Physics.IgnoreCollision(col, GetComponent<Collider>(), true);
     }
 
-    protected override void OnDetaching(Animal anim)
+    protected override void OnDetach(Animal anim)
     {
         AttachedAnimal.m_bPullingObject = false;
         AttachedAnimal.OnPushChange();

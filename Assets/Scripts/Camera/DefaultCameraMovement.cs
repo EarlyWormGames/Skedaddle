@@ -9,6 +9,7 @@ public abstract class DefaultCameraMovement : CameraMover
 {
     protected override void CheckCurrentAnimal()
     {
+        currentAnimal = null;
         for (int i = 0; i < MyAnimals.Count; ++i)
         {
             if (MyAnimals[i] == Animal.CurrentAnimal.m_eName &&

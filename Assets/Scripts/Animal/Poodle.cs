@@ -262,6 +262,13 @@ public class Poodle : Animal
     {
         if (!m_bHoldingLoris)
         {
+            if(loris.currentAttached != null)
+            {
+                //If they can't be detached, ignore
+                if (!loris.currentAttached.Detach(null, loris))
+                    return;
+            }
+
             loris.SetColliderActive(false);
             loris.m_rBody.useGravity = false;
             loris.m_bHeldByPoodle = true;

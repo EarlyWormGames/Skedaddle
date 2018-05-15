@@ -43,7 +43,16 @@ public class AnimalSplineSetter : MonoBehaviour
 
         //Sometimes we move on a specific key
         if (RequiredKey.control == null)
+        {
+            //Ignore if the animal is pushing an object and isn't allowed to enter a spline
+            if (trig.currentAttached != null && trig.currentAttached.GetType().IsAssignableFrom(typeof(PPObject)))
+            {
+                if (!(trig.currentAttached as PPObject).CanEnterMoveSpline)
+                    return;
+            }
+
             trig.GetComponent<AnimalMovement>().SetSpline(Spline);
+        }
         else
             animalsIn.Add(trig);
     }
@@ -84,6 +93,13 @@ public class AnimalSplineSetter : MonoBehaviour
                 {
                     if (RequiredKey.control.isHeld)
                     {
+                        //Ignore if the animal is pushing an object and isn't allowed to enter a spline
+                        if (animal.currentAttached != null && animal.currentAttached.GetType().IsAssignableFrom(typeof(PPObject)))
+                        {
+                            if (!(animal.currentAttached as PPObject).CanEnterMoveSpline)
+                                continue;
+                        }
+
                         animal.m_aMovement.SetSpline(Spline);
                     }
                 }

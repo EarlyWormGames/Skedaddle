@@ -4,24 +4,17 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-public class CameraSplineSetter : MonoBehaviour
+public class CameraSplineSetter : AnimalTrigger
 {
     public CameraMover Spline;
-    public ANIMAL_NAME RequiredAnimal;
     public LayerMask RequiredLayer;
 
-    private void OnTriggerEnter(Collider other)
+    public override void AnimalEnter(Animal animal)
     {
-        if (other.attachedRigidbody == null || other.isTrigger || !RequiredLayer.Contains(other.gameObject.layer))
-            return;
-        Animal animal = other.attachedRigidbody.GetComponent<Animal>();
-
-        if (animal == null)
-            return;
-
-        if (animal.m_eName != RequiredAnimal && RequiredAnimal != ANIMAL_NAME.NONE)
-            return;
-
         CameraSplineManager.instance.EnableSpline(animal.m_eName, Spline);
+    }
+
+    public override void AnimalExit(Animal animal)
+    {
     }
 }
