@@ -13453,23 +13453,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1284566957}
   m_Mesh: {fileID: 4300000, guid: db62ba35131a0c3408cb9326af7c0a7f, type: 3}
---- !u!1 &1286883057 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1197363372415072, guid: 87eb243d01876b9488a8334df40f35ba,
-    type: 2}
-  m_PrefabInternal: {fileID: 1926058025}
---- !u!65 &1286883058
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1286883057}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0.4242277, z: 0.078540206}
-  m_Center: {x: -4.440892e-16, y: 0.23583913, z: 0.02808737}
 --- !u!1001 &1289233361
 Prefab:
   m_ObjectHideFlags: 0
@@ -15556,6 +15539,7 @@ MonoBehaviour:
   UsableKeys:
   - {fileID: 114552692680613328, guid: 80f2df7e1586bc94aa1bbea872f6ca3b, type: 2}
   InteractPoint: {fileID: 0}
+  CanEnterMoveSpline: 1
   MaintainPosition: 6
   MaintainRotation: -1
   TriggersToDisable:
@@ -22154,6 +22138,11 @@ Prefab:
     - target: {fileID: 114403791230353878, guid: 87eb243d01876b9488a8334df40f35ba,
         type: 2}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114403791230353878, guid: 87eb243d01876b9488a8334df40f35ba,
+        type: 2}
+      propertyPath: CanEnterMoveSpline
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

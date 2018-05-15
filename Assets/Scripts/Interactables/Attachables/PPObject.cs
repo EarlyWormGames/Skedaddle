@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PPObject : AttachableInteract
 {
+    public bool CanEnterMoveSpline = true;
+
     [EnumFlag] public IgnoreAxis MaintainPosition = IgnoreAxis.Y | IgnoreAxis.Z;
     [EnumFlag] public IgnoreAxis MaintainRotation = IgnoreAxis.Everything;
     public List<Collider> TriggersToDisable = new List<Collider>();
