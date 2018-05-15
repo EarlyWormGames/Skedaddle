@@ -16,6 +16,8 @@ public static class CustomTools
         if (pp)
             return;
 
+        Undo.RegisterCompleteObjectUndo(go, "Add PPObject data");
+
         pp = go.AddComponent<PPObject>();
 
         var rig = go.GetComponent<Rigidbody>();
