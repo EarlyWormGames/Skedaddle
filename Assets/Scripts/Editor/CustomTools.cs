@@ -5,7 +5,7 @@ using UnityEditor;
 
 public static class CustomTools
 {
-    [MenuItem("Tools/Convert To PPObject")]
+    [MenuItem("Tools/Early Worm/Convert To PPObject")]
     public static void MakeObjectPP()
     {
         var go = Selection.activeGameObject;
