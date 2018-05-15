@@ -86,6 +86,8 @@ public class EWApplication : Singleton<EWApplication>
         m_bLoadCalled = false;
         m_bRefresh = false;
         m_fTimer = 0f;
+
+        TransitionEffect.instance.value = 1;
     }
 
     public static void LoadLevel(string a_levelName)
