@@ -117,6 +117,12 @@ public class Trampoline : AttachableInteract
             WrongIn.Add(a_col.transform);
         else
         {
+            if(!a_col.GetComponent<Bouncable>())
+            {
+                if (!a_col.GetComponentInParent<Bouncable>())
+                    return;
+            }
+
             lastLaunched = a_col.GetComponent<Rigidbody>();
             if (lastLaunched == null)
                 lastLaunched = a_col.GetComponentInParent<Rigidbody>();
