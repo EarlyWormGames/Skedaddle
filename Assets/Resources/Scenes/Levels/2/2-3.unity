@@ -9747,7 +9747,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh199554
+  m_Name: pb_Mesh389094
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -10700,7 +10700,6 @@ MonoBehaviour:
   RequiredSize: 0
   RequiredAnimal: 2
   MaximumSize: 0
-  OnlyHeadTrigger: 0
   UsableKeys:
   - {fileID: 114749059133443220, guid: 80f2df7e1586bc94aa1bbea872f6ca3b, type: 2}
   InteractPoint: {fileID: 0}
@@ -17880,7 +17879,6 @@ MonoBehaviour:
   RequiredSize: 0
   RequiredAnimal: 2
   MaximumSize: 0
-  OnlyHeadTrigger: 0
   UsableKeys:
   - {fileID: 114749059133443220, guid: 80f2df7e1586bc94aa1bbea872f6ca3b, type: 2}
   InteractPoint: {fileID: 0}
@@ -30008,10 +30006,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RequiredSize: 0
-  RequiredAnimal: 0
+  RequiredAnimal: 1
   MaximumSize: 0
-  OnlyHeadTrigger: 0
-  UsableKeys: []
+  UsableKeys:
+  - {fileID: 114749059133443220, guid: 80f2df7e1586bc94aa1bbea872f6ca3b, type: 2}
   InteractPoint: {fileID: 0}
   DoOnTrigger: 0
   BreakSplineConnection: 0
@@ -38966,10 +38964,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RequiredSize: 0
-  RequiredAnimal: 0
+  RequiredAnimal: 1
   MaximumSize: 0
-  OnlyHeadTrigger: 0
-  UsableKeys: []
+  UsableKeys:
+  - {fileID: 114749059133443220, guid: 80f2df7e1586bc94aa1bbea872f6ca3b, type: 2}
   InteractPoint: {fileID: 0}
   DoOnTrigger: 0
   BreakSplineConnection: 0
@@ -41065,7 +41063,6 @@ MonoBehaviour:
   RequiredSize: 0
   RequiredAnimal: 2
   MaximumSize: 0
-  OnlyHeadTrigger: 0
   UsableKeys:
   - {fileID: 114552692680613328, guid: 80f2df7e1586bc94aa1bbea872f6ca3b, type: 2}
   InteractPoint: {fileID: 0}
@@ -43133,7 +43130,6 @@ MonoBehaviour:
   RequiredSize: 0
   RequiredAnimal: 0
   MaximumSize: 0
-  OnlyHeadTrigger: 0
   RotateTime: 0.08
   RotateObject: {fileID: 1189055746}
   LorisSitPoint: {fileID: 739862332}
@@ -52181,7 +52177,6 @@ MonoBehaviour:
   RequiredSize: 0
   RequiredAnimal: 1
   MaximumSize: 0
-  OnlyHeadTrigger: 0
   UsableKeys:
   - {fileID: 114749059133443220, guid: 80f2df7e1586bc94aa1bbea872f6ca3b, type: 2}
   InteractPoint: {fileID: 0}
@@ -55192,6 +55187,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114819736979973564, guid: bd2518320e117ce4ba809968bf72ce31,
+        type: 2}
+      propertyPath: UsableKeys.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4003280309273718, guid: bd2518320e117ce4ba809968bf72ce31, type: 2}
       propertyPath: m_LocalPosition.x
       value: -5.543
@@ -55283,6 +55283,22 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a8bd816165886b740b0a89f2260b7acb, type: 2}
+    - target: {fileID: 114819736979973564, guid: bd2518320e117ce4ba809968bf72ce31,
+        type: 2}
+      propertyPath: RequiredAnimal
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114819736979973564, guid: bd2518320e117ce4ba809968bf72ce31,
+        type: 2}
+      propertyPath: UsableKeys.Array.data[0]
+      value: 
+      objectReference: {fileID: 114749059133443220, guid: 80f2df7e1586bc94aa1bbea872f6ca3b,
+        type: 2}
+    - target: {fileID: 114211046504142954, guid: bd2518320e117ce4ba809968bf72ce31,
+        type: 2}
+      propertyPath: RequiredAnimal
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bd2518320e117ce4ba809968bf72ce31, type: 2}
   m_IsPrefabParent: 0

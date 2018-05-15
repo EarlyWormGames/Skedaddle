@@ -12,6 +12,8 @@ public abstract class AnimalInteractor : AnimalTrigger, IInteractable
     public List<InputAction> UsableKeys = new List<InputAction>();
     public Transform InteractPoint;
 
+    protected bool keysRegistered = false;
+
     /// <summary>
     /// Default simply checks if the <paramref name="caller"/> works with <see cref="AnimalTrigger.AllowsAnimal(Animal)"/>
     /// </summary>
@@ -51,14 +53,26 @@ public abstract class AnimalInteractor : AnimalTrigger, IInteractable
 
     public override void AnimalEnter(Animal animal)
     {
+        if (keysRegistered)
+            return;
+
         if (AnimalsIn.Count == 1)
+        {
             InteractChecker.RegisterKeyListener(this, KeysToString());
+            keysRegistered = true;
+        }
     }
 
     public override void AnimalExit(Animal animal)
     {
+        if (!keysRegistered)
+            return;
+
         if (AnimalsIn.Count == 0)
+        {
             InteractChecker.UnregisterKeyListener(this, KeysToString());
+            keysRegistered = false;
+        }
     }
 
     List<string> KeysToString()

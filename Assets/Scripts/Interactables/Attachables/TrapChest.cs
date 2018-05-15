@@ -17,6 +17,8 @@ public class TrapChest : AttachableInteract
         CanDetach = false;
         BlocksMovement = true;
         BlocksTurn = true;
+
+        HeadTriggerOnly = true;
     }
 
     protected override void OnUpdate()

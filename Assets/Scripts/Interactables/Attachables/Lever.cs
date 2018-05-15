@@ -28,6 +28,9 @@ public class Lever : AttachableInteract
 
     protected override void DoInteract(Animal caller)
     {
+        if (AttachedAnimal != null)
+            return;
+
         if (triggered && OnlyOnce)
             return;
 

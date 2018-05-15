@@ -38,6 +38,8 @@ public class PPObject : AttachableInteract
         collisionDetectionMode = rig.collisionDetectionMode;
 
         defaultParent = transform.parent;
+
+        HeadTriggerOnly = true;
     }
 
     protected override void OnUpdate()
@@ -48,16 +50,18 @@ public class PPObject : AttachableInteract
             transform.position = IgnoreUtils.Calculate(MaintainPosition, startPosition, transform.position);
             transform.eulerAngles = IgnoreUtils.Calculate(MaintainPosition, startRotation, transform.eulerAngles);
 
-            if (GameManager.mainMap.interact.wasJustPressed && !waitOne && AttachedAnimal.m_bSelected)
-            {
-                Detach(this);
-            }
             waitOne = false;
         }
     }
 
     protected override void DoInteract(Animal caller)
     {
+        if(AttachedAnimal != null)
+        {
+            Detach(this, caller);
+            return;
+        }
+
         if (caller.m_bTurning)
             return;
 
