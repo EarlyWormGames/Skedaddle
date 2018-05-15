@@ -8,6 +8,9 @@ public abstract class MonoInteracter : MonoBehaviour, IInteractable
     public List<InputAction> UsableKeys = new List<InputAction>();
     public Transform InteractPoint;
 
+    protected bool keysRegistered = false;
+    private List<string> keyStrings = null;
+
     /// <summary>
     /// Default simply returns true. Keys are already registered
     /// </summary>
@@ -42,12 +45,15 @@ public abstract class MonoInteracter : MonoBehaviour, IInteractable
         DoInteract(caller);
     }
 
-    protected List<string> KeysToString()
+    /// <summary>
+    /// Loads <see cref="UsableKeys"/> into <see cref="keyStrings"/>
+    /// </summary>
+    protected void KeysToString()
     {
         List<string> l = new List<string>();
         foreach (var item in UsableKeys)
             l.Add(item.name);
-        return l;
+        keyStrings = l;
     }
 
     protected virtual bool CheckInput(InputControl input, Animal caller) { return true; }
