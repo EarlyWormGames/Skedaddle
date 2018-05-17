@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// Manager to handle all the stop watches in the game.
+/// </summary>
 public class StopwatchManager : MonoBehaviour {
 
     public GameObject AverageParent;

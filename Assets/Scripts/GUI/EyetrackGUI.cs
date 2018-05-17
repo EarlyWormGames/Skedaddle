@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
+/// <summary>
+/// Tobii Eye tracking interactions with GUI
+/// </summary>
 public class EyetrackGUI : MonoBehaviour
 {
     public EWEyeTracking.HoldLength m_HoldLength = EWEyeTracking.HoldLength.LONG;
@@ -27,8 +30,10 @@ public class EyetrackGUI : MonoBehaviour
         {
             m_fGazeTimer += Time.unscaledDeltaTime;
 
+            // if the gaze timer reaches less than the hold length
             if (m_fGazeTimer >= (m_HoldLength == EWEyeTracking.HoldLength.LONG ? EWEyeTracking.holdTime : EWEyeTracking.shortHoldTime))
             {
+                //call the function that the gaze object is staring at 
                 m_fGazeTimer = 0f;
                 m_Event.Invoke();
             }

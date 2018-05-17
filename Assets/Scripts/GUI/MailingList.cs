@@ -4,6 +4,9 @@ using System.IO;
 using System.Collections;
 using System.Xml;
 
+/// <summary>
+/// joining the mailing list
+/// </summary>
 public class MailingList : MonoBehaviour {
 
     public GameObject m_SubscribePanel;

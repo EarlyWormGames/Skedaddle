@@ -3,6 +3,9 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
+/// <summary>
+/// helper functions to manage the pause menu
+/// </summary>
 public class Pause : MonoBehaviour
 {
 
@@ -23,6 +26,11 @@ public class Pause : MonoBehaviour
         SceneLoaded(SceneManager.GetActiveScene(), LoadSceneMode.Single);
     }
 
+    /// <summary>
+    /// called when the scene has loaded.
+    /// </summary>
+    /// <param name="a_scene"></param>
+    /// <param name="a_mode"></param>
     void SceneLoaded(Scene a_scene, LoadSceneMode a_mode)
     {
         m_bCanPause = true;

@@ -2,12 +2,15 @@
 using UnityEngine.UI;
 using System;
 
+
 public enum UIType
 {
     CANVAS,
     IMAGE,
 }
-
+/// <summary>
+/// Fade the UI IN and OUT
+/// </summary>
 public class UIFade : MonoBehaviour
 {
     /////////////////////////////////

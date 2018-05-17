@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
+/// <summary>
+/// Plot the points that the player has traveled and save the data
+/// </summary>
 public class HeatmapCharacter : MonoBehaviour
 {
     [Tooltip("How far the character must move before data is sent")]
@@ -39,7 +42,7 @@ public class HeatmapCharacter : MonoBehaviour
             lastPos = transform.position;
 
         float dist = Vector3.Distance(lastPos.Value, transform.position);
-
+        //plot a point if the player has moved a certian distance
         if (dist >= MinimumMoveDist)
         {
             lastPos = transform.position;
@@ -53,6 +56,9 @@ public class HeatmapCharacter : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Draw the heatmap
+    /// </summary>
     private void OnDrawGizmosSelected()
     {
         if (!DrawGizmos)
@@ -76,6 +82,10 @@ public class HeatmapCharacter : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// retrieve the point information
+    ///x </summary>
+    /// <returns></returns>
     IEnumerator GetPointData()
     {
         var settings = FindObjectOfType<HeatmapSettings>();

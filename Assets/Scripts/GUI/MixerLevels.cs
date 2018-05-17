@@ -3,6 +3,10 @@ using System.Collections;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
+/// <summary>
+/// Audio Mixer manager
+/// mainly contains helper functions to manage the audio levels
+/// </summary>
 public class MixerLevels : MonoBehaviour {
 
     public AudioMixer masterMixer;
@@ -17,7 +21,7 @@ public class MixerLevels : MonoBehaviour {
 	
 	}
 	
-
+    
     public void SetSfxLvl(float a_sfxLvl)
     {
         masterMixer.SetFloat("sfxVolume", a_sfxLvl);

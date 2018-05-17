@@ -5,6 +5,9 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+/// <summary>
+/// extra functionality for sliders
+/// </summary>
 public class CustomSlider : Slider
 {
     public UnityAction<PointerEventData> onDrag;
@@ -16,6 +19,10 @@ public class CustomSlider : Slider
         base.Awake();
     }
 
+    /// <summary>
+    /// Do Something on a drag event
+    /// </summary>
+    /// <param name="eventData"></param>
     public override void OnDrag(PointerEventData eventData)
     {
         base.OnDrag(eventData);
@@ -24,6 +31,10 @@ public class CustomSlider : Slider
             onDrag.Invoke(eventData);
     }
 
+    /// <summary>
+    /// Do Something on a mouse down event
+    /// </summary>
+    /// <param name="eventData"></param>
     public override void OnPointerDown(PointerEventData eventData)
     {
         base.OnPointerDown(eventData);
@@ -32,6 +43,10 @@ public class CustomSlider : Slider
             onPointerDown.Invoke(eventData);
     }
 
+    /// <summary>
+    /// Do Something on a mouse up event
+    /// </summary>
+    /// <param name="eventData"></param>
     public override void OnPointerUp(PointerEventData eventData)
     {
         base.OnPointerDown(eventData);

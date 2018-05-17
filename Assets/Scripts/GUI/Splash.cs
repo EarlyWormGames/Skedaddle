@@ -2,6 +2,9 @@
 using UnityEngine.UI;
 using System.Collections;
 
+/// <summary>
+/// Splash Screne
+/// </summary>
 public class Splash : MonoBehaviour
 {
     public static bool GameLoaded = false;

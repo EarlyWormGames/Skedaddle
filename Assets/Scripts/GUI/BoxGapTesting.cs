@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+/// <summary>
+/// GUI SETTINGS for Height Check testing scene
+/// </summary>
 public class BoxGapTesting : MonoBehaviour {
 
     public TextMeshProUGUI SliderValue;
@@ -32,6 +35,9 @@ public class BoxGapTesting : MonoBehaviour {
         ChangeBoxDistance();
 	}
 
+    /// <summary>
+    /// public function for a button call.
+    /// </summary>
     public void LeftBoxChange()
     {
         int index = LeftBoxList.value;
@@ -53,6 +59,9 @@ public class BoxGapTesting : MonoBehaviour {
         ChangeBoxDistance();
     }
 
+    /// <summary>
+    /// public function for a button call.
+    /// </summary>
     public void RightBoxChange()
     {
         int index = RightBoxList.value;
@@ -74,6 +83,9 @@ public class BoxGapTesting : MonoBehaviour {
         ChangeBoxDistance();
     }
 
+    /// <summary>
+    /// public function for a button call using the settings from the inspector.
+    /// </summary>
     public void ChangeBoxDistance()
     {
         int distance = (int)DistanceSlider.value;

@@ -17,8 +17,6 @@ public enum TabName
 
 public class InGameMenu : MonoBehaviour
 {
-    
-
     [System.Serializable]
     public class Menutab
     {
@@ -140,6 +138,9 @@ public class InGameMenu : MonoBehaviour
 #endif
     }
 
+    /// <summary>
+    /// Pause the game.
+    /// </summary>
     public void Pause()
     {
 #if !UNITY_EDITOR
@@ -153,6 +154,9 @@ public class InGameMenu : MonoBehaviour
         Time.timeScale = 0f;
     }
 
+    /// <summary>
+    /// UnPause the game
+    /// </summary>
     public void Return()
     {
 #if !UNITY_EDITOR
@@ -168,13 +172,20 @@ public class InGameMenu : MonoBehaviour
         Time.timeScale = 1f;
     }
 
+    /// <summary>
+    /// select the current tab in the pause menu
+    /// </summary>
+    /// <param name="a_tab"></param>
     public void SwitchTab(TabName a_tab)
     {
         m_SelectedTab.m_bSelected = false;
         m_SelectedTab = GetTab(a_tab);
         m_SelectedTab.m_bSelected = true;
     }
-
+    /// <summary>
+    /// select the current tab in the pause menu
+    /// </summary>
+    /// <param name="a_tab"></param>
     public void SwitchTab(CanvasGroup a_tab)
     {
         m_SelectedTab.m_bSelected = false;
@@ -182,6 +193,11 @@ public class InGameMenu : MonoBehaviour
         m_SelectedTab.m_bSelected = true;
     }
 
+    /// <summary>
+    /// grab a tab from the menu.
+    /// </summary>
+    /// <param name="a_tab"></param>
+    /// <returns></returns>
     public Menutab GetTab(CanvasGroup a_tab)
     {
         foreach (Menutab tab in m_Tabs)
@@ -194,6 +210,11 @@ public class InGameMenu : MonoBehaviour
         return null;
     }
 
+    /// <summary>
+    /// grab a tab from the menu.
+    /// </summary>
+    /// <param name="a_tab"></param>
+    /// <returns></returns>
     public Menutab GetTab(TabName a_tab)
     {
         foreach (Menutab tab in m_Tabs)
@@ -205,6 +226,7 @@ public class InGameMenu : MonoBehaviour
         }
         return null;
     }
+
 
     public float FadeOut
     {
@@ -224,16 +246,28 @@ public class InGameMenu : MonoBehaviour
         m_ContrastSlider.value = FadeOutEffect.Amount;
     }
 
+    /// <summary>
+    /// load a scene
+    /// </summary>
+    /// <param name="a_name"></param>
     public void LoadLevel(string a_name)
     {
         EWApplication.LoadLevel(a_name);
     }
 
+    /// <summary>
+    /// hide the back ground
+    /// </summary>
+    /// <param name="a_data"></param>
     public void HideBG(PointerEventData a_data)
     {
         m_bShow = false;
     }
 
+    /// <summary>
+    /// show the background
+    /// </summary>
+    /// <param name="a_data"></param>
     public void ShowBG(PointerEventData a_data)
     {
         m_bShow = true;

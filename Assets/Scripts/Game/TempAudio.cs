@@ -11,7 +11,7 @@ public struct AudioTrack
 }
 
 /// <summary>
-/// 
+/// im 90% sure this class is gonna get re written
 /// </summary>
 public class TempAudio : Singleton<TempAudio>
 {
@@ -58,6 +58,9 @@ public class TempAudio : Singleton<TempAudio>
         }
     }
 
+    /// <summary>
+    /// play audio at the start of the new level
+    /// </summary>
     public void StartLevel()
     {
         if (m_aAnimalAudios == null)
@@ -88,6 +91,9 @@ public class TempAudio : Singleton<TempAudio>
             m_aOtherAudio[2].source.Play();
     }
 
+    /// <summary>
+    /// stop music when the level ends
+    /// </summary>
     public void StopLevel()
     {
         if (m_aAnimalAudios.Length == 0)

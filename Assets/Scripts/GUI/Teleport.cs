@@ -1,6 +1,9 @@
 using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Teleport the animal.
+/// </summary>
 public class Teleport : MonoBehaviour
 {
     public void TeleportAnimal(Transform TeleportLocation)

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Base class to create the instance of the heatmap
 public class HeatmapSettings : MonoBehaviour
 {
     public static HeatmapSettings instance;

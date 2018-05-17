@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// display the eye tracking GUI if it is active.
+/// </summary>
 public class EyeTrackImage : MonoBehaviour
 {
     private Image image;

@@ -4,6 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+
+
+/// <summary>
+/// not sure/........ MIIIITCH?????? 
+/// </summary>
 public class SliderTag : MonoBehaviour {
 
     public TextMeshProUGUI SliderValueLabel;

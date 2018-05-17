@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// Stopwatch timer 
+/// </summary>
 public class StopwatchTimer : MonoBehaviour {
 
     internal StopwatchManager Manager;
@@ -17,9 +20,13 @@ public class StopwatchTimer : MonoBehaviour {
 
     void Update()
     {
+        //display the timer length for the current level
         TextField.text = TimerName + " : " + TimerTime.ToString("0.00");
     }
 
+    /// <summary>
+    /// Destroy the timer
+    /// </summary>
     public void DeleteTime()
     {
         Manager.Times.Remove(this);

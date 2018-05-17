@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// used for the testing scene.
+/// </summary>
 public class TrampolineTesting : MonoBehaviour {
 
     public Trampoline LeftTrampoline;
@@ -105,6 +108,7 @@ public class TrampolineTesting : MonoBehaviour {
 
     void ReconfigureTramp()
     {
+        ///omg what 
         RightTrampoline.transform.position = new Vector3(RightStartPosition.x + Distance, RightStartPosition.y + RightStartHeight, RightStartPosition.z);
         LeftTrampoline.transform.position = new Vector3(LeftStartPosition.x, LeftStartPosition.y + LeftStartHeight, LeftStartPosition.z);
         LeftSplinePoints.points[0].y = LeftSplineStartPos[0].y;

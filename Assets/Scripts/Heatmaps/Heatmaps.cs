@@ -8,6 +8,9 @@ using System;
 using System.Text;
 using System.IO;
 
+/// <summary>
+/// Logs the information of the characters in the level and sends the data to the EW Server
+/// </summary>
 [AddComponentMenu("")]
 public class Heatmaps : MonoBehaviour
 {
@@ -73,6 +76,14 @@ public class Heatmaps : MonoBehaviour
         lastDebug = null;
     }
 
+   /// <summary>
+   /// Send the information to the server
+   /// </summary>
+   /// <param name="levelName"></param>
+   /// <param name="player"></param>
+   /// <param name="position"></param>
+   /// <param name="time"></param>
+   /// <param name="allowInEditor"></param>
     public void SendData(string levelName, CHARACTER player, Vector3 position, float time, bool allowInEditor = false)
     {
 #if UNITY_EDITOR

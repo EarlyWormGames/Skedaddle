@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// stopwatch to count how long a playe spends in a level.
+/// </summary>
 public class Stopwatch : AnimalTrigger
 {
 

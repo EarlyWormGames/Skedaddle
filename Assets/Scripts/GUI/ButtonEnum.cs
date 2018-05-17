@@ -2,6 +2,9 @@
 using UnityEngine.UI;
 using System.Collections;
 
+/// <summary>
+/// Dead Script
+/// </summary>
 public class ButtonEnum : MonoBehaviour
 {
     //public KeyActionName m_kKey;

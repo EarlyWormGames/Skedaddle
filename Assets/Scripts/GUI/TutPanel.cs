@@ -2,6 +2,10 @@
 using UnityEngine.UI;
 using System.Collections;
 
+/// <summary>
+/// This class is used to display text to the player 
+/// and deliver instructions
+/// </summary>
 public class TutPanel : Singleton<TutPanel>
 {
     public GameObject m_goTextPanel;
@@ -102,6 +106,10 @@ public class TutPanel : Singleton<TutPanel>
         }
     }
 
+    /// <summary>
+    /// Bring the text up on the tutorial pannel
+    /// </summary>
+    /// <param name="a_text"></param>
     public void ShowText(string a_text)
     {
         if (m_goTextPanel == null)
@@ -139,6 +147,7 @@ public class TutPanel : Singleton<TutPanel>
         m_fTimer = 0f;
     }
 
+    //Hide the tutorial panel
     public void Hide()
     {
         if (m_eDirection != TEXT_DIR.DOWN)

@@ -1,3 +1,8 @@
+
+
+/// <summary>
+/// Change the speed of an animal if they enter the trigger
+/// </summary>
 public class ChangeSpeed : AnimalTrigger
 {
 

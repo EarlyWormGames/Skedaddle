@@ -17,6 +17,9 @@ public enum TAG_POSITION
     SELECTED
 }
 
+/// <summary>
+/// Animal GUI tags, (Bottom left corner)
+/// </summary>
 [System.Serializable]
 public class AnimalTag
 {
@@ -32,6 +35,11 @@ public class AnimalTag
     internal float m_GazeTimer;
 }
 
+/// <summary>
+/// Animal Tag Manager
+/// Handles the states of the tags to inform the
+/// player of the current status of each animal.
+/// </summary>
 public class InGameGUI : MonoBehaviour
 {
     public AnimalTag[]  m_aaAnimalTags;
@@ -136,6 +144,14 @@ public class InGameGUI : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// blend colour between the states
+    /// </summary>
+    /// <param name="a_col"></param>
+    /// <param name="a_target"></param>
+    /// <param name="a_moveVels"></param>
+    /// <param name="a_speed"></param>
+    /// <returns></returns>
     Color SmoothColor(Color a_col, Color a_target, float[] a_moveVels, float a_speed)
     {
         Color col = new Color();
@@ -147,6 +163,10 @@ public class InGameGUI : MonoBehaviour
         return col;
     }
 
+    /// <summary>
+    /// change the gui based on the Current animal.
+    /// </summary>
+    /// <param name="a_name"></param>
     public void ChangeAnimal(ANIMAL_NAME a_name)
     {
         int index = GetAnimal(a_name);
@@ -181,6 +201,10 @@ public class InGameGUI : MonoBehaviour
         //}
     }
 
+    /// <summary>
+    /// Reset the animal GUI
+    /// </summary>
+    /// <param name="a_level"></param>
     public void EndLevel(string a_level)
     {
         m_bEndLevel = true;
@@ -215,6 +239,7 @@ public class InGameGUI : MonoBehaviour
         //}
     }
 
+    
     public void AnimalLeaveExit(ANIMAL_NAME a_name)
     {
         int index = GetAnimal(a_name);

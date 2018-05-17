@@ -5,6 +5,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+/// <summary>
+/// menu windows manager
+/// </summary>
 public class TestingWindowManager : MonoBehaviour {
 
     public GameObject[] panels;
