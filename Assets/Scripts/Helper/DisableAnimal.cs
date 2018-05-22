@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// If an animal can be selected in this level... yet
+/// an animal can be selected after it becomes "Unlocked"
+/// </summary>
 public class DisableAnimal : MonoBehaviour
 {
     public Animal[] m_aDisables;

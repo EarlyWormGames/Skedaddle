@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Finds the center of mass of a given object
+/// </summary>
 [RequireComponent(typeof(Rigidbody))]
 public class CentreOfMass : MonoBehaviour
 {

@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// How many things are currently triggering an object.
+/// Use:
+/// when more than one animal is stiepping on a pressure plate it will continue to count
+/// how many are on the pressure plate AND WONT call the on exit -OnCountUnMet- event
+/// until all animals have left the triggerable space
+/// </summary>
 public class CountTrigger : MonoBehaviour
 {
     public int RequiredCount = 1;
@@ -23,6 +30,7 @@ public class CountTrigger : MonoBehaviour
             OnCountMet.Invoke();
         }
     }
+
 
     public void Remove()
     {

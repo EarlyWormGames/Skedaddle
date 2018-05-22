@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// pretty self explanatory 
+/// </summary>
 public class DisableOnStart : MonoBehaviour
 {
     // Use this for initialization

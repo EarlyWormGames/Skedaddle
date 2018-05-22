@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System;
 
+/// <summary>
+/// disable a component of your choosing on an object
+/// </summary>
 public class TypeDisabler : MonoBehaviour
 {
     public Type m_tRemove;

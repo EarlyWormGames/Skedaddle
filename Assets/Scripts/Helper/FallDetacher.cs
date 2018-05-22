@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// how much of an object is inside a trigger and when to detach it from its 
+/// </summary>
 public class FallDetacher : MonoBehaviour
 {
     public Attachable ToDetach;
