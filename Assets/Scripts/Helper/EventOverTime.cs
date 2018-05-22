@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// add an event timer that will be called back once the timer has run out
+/// Use:
+/// cut scenes?
+/// </summary>
 public class EventOverTime : MonoBehaviour
 {
     [Serializable]

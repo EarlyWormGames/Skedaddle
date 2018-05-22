@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Destroy a component from the inspector after a certian time.
+/// </summary>
 public class TimedDestroy : MonoBehaviour
 {
     public float DestroyTime = 0f;

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// on an overlap, call the overlap Unity events
+/// </summary>
 public class OverlapDisable : MonoBehaviour
 {
     public BoxCollider Trigger;

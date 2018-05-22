@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
+/// <summary>
+/// follow a given object
+/// </summary>
 public class Follower : MonoBehaviour
 {
     public Transform m_tObject;

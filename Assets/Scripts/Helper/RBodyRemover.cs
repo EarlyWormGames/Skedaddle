@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// destroy the rigid body on entering the trigger
+/// Use:
+/// attach to an object with a trigger. destroy rigidbody when the trigger event occurs
+/// </summary>
 public class RBodyRemover : MonoBehaviour
 {
     public Collider[] m_acAcceptedColliders;

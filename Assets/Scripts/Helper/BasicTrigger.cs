@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// Custon Trigger event caller
+/// Use:
+/// attach this triggerscript to any triggerable object and call whichever function you want
+/// </summary>
 public class BasicTrigger : MonoBehaviour
 {
     [System.Serializable]

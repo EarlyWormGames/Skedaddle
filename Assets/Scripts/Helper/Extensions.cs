@@ -3,7 +3,10 @@ using System.Reflection;
 using System.Collections.Generic;
 using UnityEngine;
 
-//Extension methods must be defined in a static class
+/// <summary>
+/// Extension methods must be defined in a static class
+/// Helper methods for base essential classes
+/// </summary>
 public static class ArrayExtension
 {
     public static T[] Add<T>(this T[] a_array, T a_object)
