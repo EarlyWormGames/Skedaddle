@@ -122,7 +122,7 @@ GameObject:
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -149,8 +149,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 194930}
-  m_LocalRotation: {x: 0.027821133, y: 0, z: 0, w: 0.9996129}
-  m_LocalPosition: {x: -0.72, y: 2.33, z: -4.04}
+  m_LocalRotation: {x: 0.084416695, y: 0.048779193, z: 0.0021911114, w: 0.99523354}
+  m_LocalPosition: {x: 2.447, y: -0.578, z: 3.704}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 453490}
@@ -159,7 +159,7 @@ Transform:
   - {fileID: 4761544594562772}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 13.996, y: -0.042000003, z: -0.22900002}
+  m_LocalEulerAnglesHint: {x: 9.661, y: 5.6740003, z: 0.73200005}
 --- !u!4 &414054
 Transform:
   m_ObjectHideFlags: 1
@@ -619,6 +619,7 @@ GameObject:
   - component: {fileID: 4761544594562772}
   - component: {fileID: 20571386034424814}
   - component: {fileID: 114317303632901466}
+  - component: {fileID: 114287082723016184}
   m_Layer: 0
   m_Name: FadeOutCamera
   m_TagString: Untagged
@@ -686,11 +687,66 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68c9790aa1a259f46b46540f2ceb085e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volume: {fileID: 0}
   volumeLayer:
     serializedVersion: 2
     m_Bits: 2147483648
   value: 0
+--- !u!114 &114287082723016184
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1010205552851528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23c1ce4fb46143f46bc5cb5224c934f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  clearColorMode: 0
+  backgroundColorHDR: {r: 0.025, g: 0.07, b: 0.19, a: 0}
+  clearDepth: 1
+  renderingPath: 0
+  volumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  aperture: 8
+  shutterSpeed: 0.005
+  iso: 400
+  m_FrameSettings:
+    enableShadow: 1
+    enableContactShadows: 1
+    enableSSR: 1
+    enableSSAO: 1
+    enableSubsurfaceScattering: 1
+    enableTransmission: 1
+    diffuseGlobalDimmer: 1
+    specularGlobalDimmer: 1
+    enableForwardRenderingOnly: 0
+    enableDepthPrepassWithDeferredRendering: 0
+    enableTransparentPrepass: 1
+    enableMotionVectors: 1
+    enableObjectMotionVectors: 1
+    enableDBuffer: 1
+    enableAtmosphericScattering: 1
+    enableRoughRefraction: 1
+    enableTransparentPostpass: 1
+    enableDistortion: 1
+    enablePostprocess: 1
+    enableStereo: 1
+    enableAsyncCompute: 1
+    enableOpaqueObjects: 1
+    enableTransparentObjects: 1
+    enableMSAA: 0
+    enableShadowMask: 0
+    lightLoopSettings:
+      enableTileAndCluster: 1
+      enableComputeLightEvaluation: 1
+      enableComputeLightVariants: 1
+      enableComputeMaterialVariants: 1
+      enableFptlForForwardOpaque: 1
+      enableBigTilePrepass: 1
+      isFptlEnabled: 1
 --- !u!114 &114317303632901466
 MonoBehaviour:
   m_ObjectHideFlags: 1
