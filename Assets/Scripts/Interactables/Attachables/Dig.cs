@@ -17,6 +17,7 @@ public class Dig : AttachableInteract
     public bool Reverse;
     public bool WallDigStart;
     public bool WallDigEnd;
+    protected override bool HeadTriggerOnly { get { return false; } set { } }
 
     private Collider trigger;
     private Dig otherDig;
@@ -40,8 +41,6 @@ public class Dig : AttachableInteract
         CanDetach = false;
 
         trigger = GetComponent<Collider>();
-
-        HeadTriggerOnly = false;
 
         RequiredAnimal = ANIMAL_NAME.ANTEATER;
     }

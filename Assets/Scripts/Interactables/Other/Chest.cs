@@ -12,6 +12,7 @@ public class Chest : AnimalInteractor
 
     [HideInNormalInspector]
     public int GUID = 0;
+    protected override bool HeadTriggerOnly { get; set; }
 
     private bool isOpen;
     private float timer;

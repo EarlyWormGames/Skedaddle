@@ -8,6 +8,7 @@ using TMPro;
 /// </summary>
 public class Stopwatch : AnimalTrigger
 {
+    protected override bool HeadTriggerOnly { get; set; }
 
     //Public Variables
 

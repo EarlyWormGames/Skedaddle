@@ -6,6 +6,7 @@ public class SecretCameraMover : AnimalTrigger
     public Camera m_cMain;
     public Vector2 m_newXLimits;
     public Vector2 m_newYLimits;
+    protected override bool HeadTriggerOnly { get; set; }
 
     public override void AnimalEnter(Animal a_animal)
     {

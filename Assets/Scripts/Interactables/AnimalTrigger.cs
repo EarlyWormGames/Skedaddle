@@ -7,7 +7,7 @@ public abstract class AnimalTrigger : MonoBehaviour
     public ANIMAL_SIZE RequiredSize;
     public ANIMAL_NAME RequiredAnimal;
     public ANIMAL_SIZE MaximumSize;
-    protected bool HeadTriggerOnly = false;
+    protected abstract bool HeadTriggerOnly { get; set; }
 
     protected List<Animal> AnimalsIn = new List<Animal>();
 

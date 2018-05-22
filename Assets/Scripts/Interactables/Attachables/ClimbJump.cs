@@ -11,6 +11,7 @@ public class ClimbJump : AttachableInteract
     public Transform AnchorPoint;
     public Attachable TransitionTo;
     public ANIMAL_SIZE AutoClimbSize;
+    protected override bool HeadTriggerOnly { get { return true; } set { } }
 
     private Vector3 ClimbCurve;
     private float timer;
@@ -22,8 +23,6 @@ public class ClimbJump : AttachableInteract
         CanDetach = true;
         BlocksMovement = true;
         BlocksTurn = true;
-
-        HeadTriggerOnly = true;
     }
 
     protected override bool CheckDetach()

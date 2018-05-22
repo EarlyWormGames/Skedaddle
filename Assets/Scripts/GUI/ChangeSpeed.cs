@@ -5,7 +5,7 @@
 /// </summary>
 public class ChangeSpeed : AnimalTrigger
 {
-
+    protected override bool HeadTriggerOnly { get; set; }
     public float SpeedChange;
     private static float InitialSpeed;
 

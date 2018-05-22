@@ -7,6 +7,7 @@ public class TrapChest : AttachableInteract
     public Animator m_Animator;
     public float m_RattleTime = 1;
     public float m_WaitKillTime = 0.5f;
+    protected override bool HeadTriggerOnly { get { return true; } set { } }
     private bool isOpen;
     private float timer;
 
@@ -17,8 +18,6 @@ public class TrapChest : AttachableInteract
         CanDetach = false;
         BlocksMovement = true;
         BlocksTurn = true;
-
-        HeadTriggerOnly = true;
     }
 
     protected override void OnUpdate()

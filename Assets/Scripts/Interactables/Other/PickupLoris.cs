@@ -5,6 +5,7 @@ using UnityEngine;
 public class PickupLoris : AnimalInteractor
 {
     public Loris loris;
+    protected override bool HeadTriggerOnly { get { return true; } set { } }
 
     protected override void DoInteract(Animal caller)
     {

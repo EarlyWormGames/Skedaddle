@@ -5,6 +5,7 @@ using UnityEngine.InputNew;
 
 public class AnimalSplineMover : AttachableInteract
 {
+    protected override bool HeadTriggerOnly { get; set; }
     public BezierSplineFollower SplineFollower;
     public bool DoOnTrigger = true;
 

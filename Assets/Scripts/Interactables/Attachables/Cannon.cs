@@ -15,6 +15,7 @@ public class Cannon : Attachable
     public Transform LeftFacing, RightFacing;
 
     public UnityEvent OnShoot;
+    protected override bool HeadTriggerOnly { get; set; }
 
     private Loris loris;
     private bool facingLeft = false;

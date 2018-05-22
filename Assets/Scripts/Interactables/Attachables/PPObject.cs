@@ -9,6 +9,7 @@ public class PPObject : AttachableInteract
     [EnumFlag] public IgnoreAxis MaintainPosition = IgnoreAxis.Y | IgnoreAxis.Z;
     [EnumFlag] public IgnoreAxis MaintainRotation = IgnoreAxis.Everything;
     public List<Collider> TriggersToDisable = new List<Collider>();
+    protected override bool HeadTriggerOnly { get { return true; } set { } }
 
     private Rigidbody rig;
     private bool isKinematic;
@@ -40,8 +41,6 @@ public class PPObject : AttachableInteract
         collisionDetectionMode = rig.collisionDetectionMode;
 
         defaultParent = transform.parent;
-
-        HeadTriggerOnly = true;
     }
 
     protected override void OnUpdate()

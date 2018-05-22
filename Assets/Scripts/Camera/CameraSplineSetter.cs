@@ -8,6 +8,7 @@ public class CameraSplineSetter : AnimalTrigger
 {
     public CameraMover Spline;
     public LayerMask RequiredLayer;
+    protected override bool HeadTriggerOnly { get; set; }
 
     public override void AnimalEnter(Animal animal)
     {

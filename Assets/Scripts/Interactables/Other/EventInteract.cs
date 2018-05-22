@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class EventInteract : AnimalInteractor
 {
     public UnityEvent OnInteract;
+    protected override bool HeadTriggerOnly { get; set; }
 
     protected override void DoInteract(Animal caller)
     {

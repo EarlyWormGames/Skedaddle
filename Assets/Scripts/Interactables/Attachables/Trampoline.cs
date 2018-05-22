@@ -30,6 +30,7 @@ public class Trampoline : AttachableInteract
     [Header("Input")]
     public AxisAction LaunchAxis;
     public bool InvertAxis;
+    protected override bool HeadTriggerOnly { get { return true; } set { } }
 
     private Rigidbody lastLaunched;
     private List<Transform> WrongIn = new List<Transform>();
@@ -46,8 +47,6 @@ public class Trampoline : AttachableInteract
         CanDetach = true;
         BlocksMovement = true;
         BlocksTurn = true;
-
-        HeadTriggerOnly = false;
     }
 
     protected override bool CheckDetach()
