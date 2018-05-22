@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputNew;
 
 [RequireComponent(typeof(BezierSpline))]
@@ -35,6 +36,8 @@ public class SplineMovement : MonoBehaviour
     public AxisAction MoveAxisKey;
     public bool InvertAxis = false;
     public bool ForceMovement = false;
+
+    public UnityEvent OnHighExit, OnLowExit;
 
     [EnumFlag] public IgnoreAxis AxesToIgnore = IgnoreAxis.Y;
     public bool DisableGravity;
