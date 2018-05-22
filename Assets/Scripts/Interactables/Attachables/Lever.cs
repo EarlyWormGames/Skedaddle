@@ -8,6 +8,7 @@ public class Lever : AttachableInteract
     public FACING_DIR Direction;
     public bool OnlyOnce;
     public UnityEvent OnSwitchOn, OnSwitchOff;
+    protected override bool HeadTriggerOnly { get; set; }
 
     protected bool IsOn;
     protected bool triggered;

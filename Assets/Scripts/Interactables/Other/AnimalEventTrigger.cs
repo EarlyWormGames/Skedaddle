@@ -5,6 +5,10 @@ using UnityEngine.Events;
 
 public class AnimalEventTrigger : AnimalTrigger
 {
+    public bool HeadOnly = false;
+    protected override bool HeadTriggerOnly { get { return HeadOnly; } set { HeadOnly = value; } }
+
+
     [System.Serializable]
     public class AnimalEvent : UnityEvent<Animal> { }
 

@@ -27,6 +27,7 @@ public class BridgeMaker : AttachableInteract
     //==================================
     //          Private Vars
     //==================================
+    protected override bool HeadTriggerOnly { get { return false; } set { } }
     private Transform[] m_tJoints;
     private Vector3[] m_vJointOrigScale;
     private float m_tBridgeMulti;
@@ -57,8 +58,6 @@ public class BridgeMaker : AttachableInteract
         BlocksMovement = true;
         BlocksTurn = true;
         CanDetach = false;
-
-        HeadTriggerOnly = false;
 
         RequiredAnimal = ANIMAL_NAME.ANTEATER;
     }

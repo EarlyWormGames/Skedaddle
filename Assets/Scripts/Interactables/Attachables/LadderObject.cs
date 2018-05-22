@@ -19,7 +19,7 @@ public class LadderObject : AttachableInteract
 
     [Tooltip("First = Bottom, Last = Top :: THESE MUST BE IN CORRECT ORDER!")]
     public Transform[] Points;
-    public UnityEvent OnLowExit, OnHighExit;
+    public UnityEvent OnEnter, OnExit, OnLowExit, OnHighExit;
 
     [Header("Misc")]
     public bool ForceMoveToClosest = true;
@@ -34,6 +34,7 @@ public class LadderObject : AttachableInteract
 
     [HideInInspector]
     public bool TryShimmyLeft, TryShimmyRight;
+    protected override bool HeadTriggerOnly { get; set; }
 
     private int pointIndex;
     private Loris loris;
@@ -278,6 +279,8 @@ public class LadderObject : AttachableInteract
             TopTransition.AnimalEnter(temp);
         else if (BottomTransition != null && pointIndex < 0)
             BottomTransition.AnimalEnter(temp);
+        else
+            OnExit.Invoke();
 
         loris = null;
     }
@@ -404,5 +407,11 @@ public class LadderObject : AttachableInteract
             return Vector3.Distance(point, transform.position);
 
         return Vector3.Distance(point, InteractPoint.position);
+    }
+
+    protected override void OnAttach()
+    {
+        base.OnAttach();
+        OnEnter.Invoke();
     }
 }

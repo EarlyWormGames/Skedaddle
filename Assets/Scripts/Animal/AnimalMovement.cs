@@ -275,14 +275,20 @@ public class AnimalMovement : MonoBehaviour
                 if (currentPoint < 0)
                 {
                     if (FollowSpline.LowExit)
+                    {
                         StopSpline();
+                        FollowSpline.OnLowExit.Invoke();
+                    }
                     else
                         canMoveBackward = false;
                 }
                 else if (currentPoint > FollowSpline.points.Length - 1)
                 {
                     if (FollowSpline.HighExit)
+                    {
                         StopSpline();
+                        FollowSpline.OnHighExit.Invoke();
+                    }
                     else
                         canMoveForward = false;
                 }
