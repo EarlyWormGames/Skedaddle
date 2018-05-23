@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// debug drawing
+/// </summary>
 public static class ExtDebug
 {
     //Draws just the box at where it is currently hitting.

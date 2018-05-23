@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
+/// <summary>
+/// Animation Helper
+/// Add methods as needed
+/// </summary>
 [RequireComponent(typeof(Animator))]
 public class AnimationSetter : MonoBehaviour
 {

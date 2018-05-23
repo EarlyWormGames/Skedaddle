@@ -7,7 +7,8 @@ using TMPro;
 
 
 /// <summary>
-/// not sure/........ MIIIITCH?????? 
+/// Timer formatting for test scene
+/// ty mitch
 /// </summary>
 public class SliderTag : MonoBehaviour {
 

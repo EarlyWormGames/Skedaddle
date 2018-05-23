@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using RootMotion.FinalIK;
 
+/// <summary>
+/// IK fixes for the poodle
+/// </summary>
 public class IKCorrection : MonoBehaviour {
-
     
     Poodle pPoodle;
     Transform PoodleT;

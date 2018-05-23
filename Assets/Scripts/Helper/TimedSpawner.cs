@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// create an object after a certian time.
+/// </summary>
 public class TimedSpawner : MonoBehaviour
 {
     public float m_fCountTime = 1f;

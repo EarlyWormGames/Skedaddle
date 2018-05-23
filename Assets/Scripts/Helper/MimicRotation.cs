@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// copy the rotation of a different object
+/// </summary>
 public class MimicRotation : MonoBehaviour
 {
     public Transform m_ToMimic;

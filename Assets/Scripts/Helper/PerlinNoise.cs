@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+/// <summary>
+/// PERLINNOISE!
+/// #Math, if you dont know what this is you're not a programmer
+/// </summary>
 public class PerlinNoise
 {
     public static Texture2D Generate2D(int a_width, int a_height, float xOrg, float yOrg, float scale)
