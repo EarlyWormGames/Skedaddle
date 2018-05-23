@@ -299,7 +299,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 170866}
   m_LocalRotation: {x: 0, y: 0.7075702, z: 0, w: 0.70664316}
-  m_LocalPosition: {x: -6.247, y: 0.536, z: 4.12}
+  m_LocalPosition: {x: -28.97, y: 0.497, z: 18.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 414148}
@@ -480,9 +480,10 @@ MonoBehaviour:
   m_fCrushForce: 5
   m_NoDeaths: 
   m_aSoundEvents: []
+  currentAttached: {fileID: 0}
   m_fIdleSwapTime: 10
   m_fIdleSwapVarience: 2
-  m_iNumberOfIdles: 3
+  m_iNumberOfIdles: 5
   m_tTongueEnd: {fileID: 4386930316697972}
 --- !u!114 &11430268
 MonoBehaviour:
@@ -2378,6 +2379,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1942802532066612
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4948589417427726}
+  - component: {fileID: 114692443471489862}
+  m_Layer: 0
+  m_Name: Tail Raycaster
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1949171618189950
 GameObject:
   m_ObjectHideFlags: 1
@@ -3240,6 +3257,7 @@ Transform:
   - {fileID: 498766}
   - {fileID: 4913926943944642}
   - {fileID: 4030070226380828}
+  - {fileID: 4948589417427726}
   m_Father: {fileID: 4473850068020596}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4000,6 +4018,19 @@ Transform:
   m_Father: {fileID: 4337807445153506}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4948589417427726
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1942802532066612}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4403540650955432}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4953246224886022
 Transform:
   m_ObjectHideFlags: 1
@@ -4121,9 +4152,9 @@ MonoBehaviour:
   timeStep: 0
   fixTransforms: 1
   solver:
-    IKPosition: {x: -27.829416, y: 0.8696636, z: -1.8400004}
+    IKPosition: {x: -28.444754, y: 1.0067731, z: 18.49}
     IKPositionWeight: 1
-    root: {fileID: 4031624475984534}
+    root: {fileID: 4269173205738804}
     target: {fileID: 4366417377576838}
     tolerance: 0
     maxIterations: 4
@@ -4146,18 +4177,9 @@ MonoBehaviour:
       solverRotation: {x: 0, y: 0, z: 0, w: 0}
       defaultLocalPosition: {x: -0.16691102, y: 9.485745e-17, z: 2.6207929e-17}
       defaultLocalRotation: {x: -0.067615405, y: -0.36305067, z: 0.0030729647, w: 0.92930776}
-      length: 0.47640625
+      length: 0.47640628
       sqrMag: 0
-      axis: {x: -0.35145035, y: -0.07594915, z: 0.31253397}
-    - transform: {fileID: 4277195890205030}
-      weight: 1
-      solverPosition: {x: 0, y: 0, z: 0}
-      solverRotation: {x: 0, y: 0, z: 0, w: 0}
-      defaultLocalPosition: {x: -0.030181171, y: -3.794298e-16, z: -7.114077e-18}
-      defaultLocalRotation: {x: 0, y: 0, z: 0.030628733, w: 0.99953085}
-      length: 0.37971914
-      sqrMag: 0
-      axis: {x: -0.6353216, y: 0.09551446, z: 0.00000031487113}
+      axis: {x: -0.1229074, y: -0.0072414335, z: 0.11269535}
 --- !u!114 &114409145056037124
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4169,6 +4191,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cd60626a1a62d84fba3311ddd2ef605, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114692443471489862
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1942802532066612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 698d8076bcf514841be24caf0ebb3c2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AnteaterAnimator: {fileID: 95317354698523402}
+  m_Origin: {fileID: 4293329612785774}
+  m_ForwardDirection: {fileID: 4403540650955432}
+  m_BoxDimensions: {x: 0.3, y: 0.28, z: 0.07}
+  m_raycastLayers:
+    serializedVersion: 2
+    m_Bits: 5242881
+  m_RaycastDistance: 0.3
+  m_LerpSpeed: 1
 --- !u!114 &114776052870564358
 MonoBehaviour:
   m_ObjectHideFlags: 1
