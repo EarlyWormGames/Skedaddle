@@ -11,15 +11,15 @@ using UnityEditor.SceneManagement;
 [InitializeOnLoad]
 class TestOpen
 {
+    public static bool run;
     static TestOpen()
     {
-        EditorSceneManager.sceneLoaded += RunOnce;
+        EditorApplication.update += RunOnce;
     }
 
-    static void RunOnce(Scene scene, LoadSceneMode mode)
+    static void RunOnce()
     {
-        if (string.IsNullOrEmpty(scene.name))
-            return;
+        run = true;
 
         if(!File.Exists(Application.persistentDataPath + "/testing.txt"))
         {
@@ -28,7 +28,7 @@ class TestOpen
             editor.position = new Rect(editor.position.position, new Vector2(1280, 720));
         }
 
-        EditorSceneManager.sceneLoaded -= RunOnce;
+        EditorApplication.update -= RunOnce;
     }
 }
 
@@ -36,6 +36,8 @@ class MyAllPostprocessor : AssetPostprocessor
 {
     static void OnPostprocessAllAssets(string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths)
     {
+        if (!TestOpen.run)
+            return;
         if (!File.Exists(Application.persistentDataPath + "/testing.txt"))
         {
             File.WriteAllText(Application.persistentDataPath + "/testing.txt", "huehuehue");
