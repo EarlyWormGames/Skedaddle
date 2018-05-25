@@ -498,6 +498,9 @@ public class Loris : Animal
         bool canmove = base.CanMove();
         return canmove && !m_bClimbing && !m_bInCannon;
     }
-    
 
+    public override ANIMAL_NAME GetName()
+    {
+        return ANIMAL_NAME.LORIS;
+    }
 }

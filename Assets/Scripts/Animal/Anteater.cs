@@ -104,4 +104,9 @@ public class Anteater : Animal
     }
     //protected override void OnFixedUpdate() { }
     //protected override void OnDeath(DEATH_TYPE a_type) { }
+
+    public override ANIMAL_NAME GetName()
+    {
+        return ANIMAL_NAME.ANTEATER;
+    }
 }

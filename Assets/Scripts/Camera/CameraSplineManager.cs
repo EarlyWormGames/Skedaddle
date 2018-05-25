@@ -16,9 +16,15 @@ public class CameraSplineManager : MonoBehaviour
         }
     }
 
+    public CameraMover OverrideSpline;
+
+    [HideInInspector]
+    public List<ANIMAL_NAME> DefaultAnimals;
+    [HideInInspector]
+    public List<CameraMover> DefaultSplines;
+
     private List<CameraMover> Splines = new List<CameraMover>();
     private Dictionary<ANIMAL_NAME, CameraMover> CurrentSplines = new Dictionary<ANIMAL_NAME, CameraMover>();
-    public CameraMover OverrideSpline;
 
     private void Start()
     {
@@ -43,6 +49,14 @@ public class CameraSplineManager : MonoBehaviour
         foreach (var spline in Splines)
         {
             spline.EnableForAnimals = new bool[spline.MyAnimals.Count];
+        }
+
+        for(int i = 0; i < DefaultAnimals.Count; ++i)
+        {
+            if (DefaultSplines[i] == null)
+                continue;
+
+            EnableSpline(DefaultAnimals[i], DefaultSplines[i]);
         }
     }
 

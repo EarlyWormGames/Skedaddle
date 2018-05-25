@@ -377,4 +377,9 @@ public class Poodle : Animal
     {
         return !m_bHoldingLoris;
     }
+
+    public override ANIMAL_NAME GetName()
+    {
+        return ANIMAL_NAME.POODLE;
+    }
 }

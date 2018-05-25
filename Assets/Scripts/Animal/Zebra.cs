@@ -13,4 +13,9 @@ public class Zebra : Animal
     {
 
     }
+
+    public override ANIMAL_NAME GetName()
+    {
+        return ANIMAL_NAME.ZEBRA;
+    }
 }

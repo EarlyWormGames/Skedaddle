@@ -22,6 +22,7 @@ public enum ANIMAL_SIZE
     XL
 }
 
+[System.Serializable]
 public enum ANIMAL_NAME
 {
     NONE = 0,
@@ -134,13 +135,15 @@ public class Animal : MonoBehaviour
     [HideInNormalInspector]
     public Attachable       currentAttached;
 
+    [HideInInspector]
+    public ANIMAL_NAME m_eName;
+    [HideInInspector]
+    public ANIMAL_SIZE m_eSize;
+
     //==================================
     //          Internal Vars
     //    (Public use for scripts)
     //==================================
-    internal ANIMAL_SIZE    m_eSize;
-    internal ANIMAL_NAME    m_eName;
-    
     internal FACING_DIR     m_fFacingDir;
 
     //Helpers for objects
@@ -1049,4 +1052,6 @@ public class Animal : MonoBehaviour
     {
         return true;
     }
+
+    public virtual ANIMAL_NAME GetName() { return ANIMAL_NAME.NONE; }
 }

@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public abstract class CameraMover : MonoBehaviour
 {
     public static Vector3 CurrentPoint;
     public static Vector3 LookAtPoint;
-    
-    [Tooltip("Will the mover be active on level start?")]
-    public List<ANIMAL_NAME> DefaultAnimals;
     [Tooltip("The Animals this mover can be used for")]
     public List<ANIMAL_NAME> MyAnimals = new List<ANIMAL_NAME>();
 
@@ -19,17 +17,6 @@ public abstract class CameraMover : MonoBehaviour
     void Start()
     {
         OnStart();
-
-        if (DefaultAnimals.Count > 0)
-        {
-            foreach (var item in DefaultAnimals)
-            {
-                if (CameraSplineManager.instance.EnableSpline(item, this))
-                {
-                    Debug.LogWarning("Multiple default splines are enabled for " + item.ToString());
-                }
-            }
-        }
     }
 
     // Update is called once per frame

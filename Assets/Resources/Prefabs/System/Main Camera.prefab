@@ -43,6 +43,8 @@ GameObject:
   m_Component:
   - component: {fileID: 475242}
   - component: {fileID: 10877326}
+  - component: {fileID: 114815875757734282}
+  - component: {fileID: 114811638726582504}
   m_Layer: 0
   m_Name: Spotlight
   m_TagString: Untagged
@@ -117,7 +119,6 @@ GameObject:
   - component: {fileID: 114649289026399742}
   - component: {fileID: 114476538363192892}
   - component: {fileID: 114121936319760040}
-  - component: {fileID: 114412501214504596}
   - component: {fileID: 114336855520519978}
   m_Layer: 0
   m_Name: Main Camera
@@ -149,8 +150,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 194930}
-  m_LocalRotation: {x: 0.084416695, y: 0.048779193, z: 0.0021911114, w: 0.99523354}
-  m_LocalPosition: {x: 2.447, y: -0.578, z: 3.704}
+  m_LocalRotation: {x: 0.041453537, y: 0.025124224, z: 0.0023977896, w: 0.9988216}
+  m_LocalPosition: {x: 1.59, y: 8.67, z: -24.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 453490}
@@ -512,7 +513,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.8
+  m_Intensity: 47.746483
   m_Range: 10
   m_SpotAngle: 85.076454
   m_CookieSize: 10
@@ -833,18 +834,6 @@ MonoBehaviour:
   m_Amount: 0
   m_Multiplier: 0.5
   m_Invert: 0
---- !u!114 &114412501214504596
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 194930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75bb356239bfaed43a335024f174d350, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OverrideSpline: {fileID: 0}
 --- !u!114 &114476538363192892
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -918,6 +907,79 @@ MonoBehaviour:
   useDepthTexture: 1
   sunShaftsShader: {fileID: 4800000, guid: d3b1c8c1036784176946f5cfbfb7fe4c, type: 3}
   simpleClearShader: {fileID: 4800000, guid: f688f89ed5eb847c5b19c934a0f1e772, type: 3}
+--- !u!114 &114811638726582504
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 131986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  directionalIntensity: 3.1415927
+  punctualIntensity: 600
+  areaIntensity: 200
+  m_InnerSpotPercent: 0
+  lightDimmer: 1
+  fadeDistance: 10000
+  affectDiffuse: 1
+  affectSpecular: 1
+  lightTypeExtent: 0
+  spotLightShape: 0
+  shapeWidth: 0.5
+  shapeHeight: 0.5
+  aspectRatio: 1
+  shapeRadius: 0
+  maxSmoothness: 1
+  applyRangeAttenuation: 1
+  useOldInspector: 0
+  featuresFoldout: 1
+  showAdditionalSettings: 0
+--- !u!114 &114815875757734282
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 131986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c2871f720b2af4e9210febdac74517, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  shadowResolution: 512
+  shadowDimmer: 1
+  shadowFadeDistance: 10000
+  viewBiasMin: 0.2
+  viewBiasMax: 100
+  viewBiasScale: 1
+  normalBiasMin: 0.5
+  normalBiasMax: 0.5
+  normalBiasScale: 1
+  sampleBiasScale: 0
+  edgeLeakFixup: 1
+  edgeToleranceNormal: 1
+  edgeTolerance: 1
+  shadowCascadeCount: 4
+  shadowCascadeRatios:
+  - 0.05
+  - 0.2
+  - 0.3
+  shadowCascadeBorders:
+  - 0.2
+  - 0.2
+  - 0.2
+  - 0.2
+  shadowAlgorithm: 0
+  shadowVariant: 0
+  shadowPrecision: 0
+  shadowData:
+    format: 0
+    data: 
+  shadowDatas: []
 --- !u!114 &114932872744456520
 MonoBehaviour:
   m_ObjectHideFlags: 1
