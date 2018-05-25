@@ -151,20 +151,6 @@ public class Pendulum : MonoBehaviour
         {
             //Smash any breakable objects
             a_col.collider.GetComponent<BreakableObject>().Break();
-            if (m_bDestroyOnSmash)
-            {
-                m_psExplosion.Play();
-                foreach (Rigidbody x in m_rShards)
-                {
-                    x.isKinematic = false;
-                    x.useGravity = true;
-                    x.GetComponent<Transform>().parent = null;
-                    x.GetComponent<Collider>().enabled = true;
-                    x.AddForce(Vector3.left * m_Force, ForceMode.Impulse);
-                    x.AddForce(Vector3.forward * m_Force * m_fShardForce, ForceMode.Impulse);
-                }
-                Destroy(m_HeadObject);
-            }
         }
         else if (a_col.collider.GetComponentInParent<Animal>())
         {
@@ -180,6 +166,21 @@ public class Pendulum : MonoBehaviour
                     a_col.collider.GetComponentInParent<Animal>().m_rBody.AddForce(new Vector3((m_Left ? -1 : 1) * m_DeathForce, m_DeathUpForce, 0) * mass, ForceMode.Impulse);
                 }
             }
+        }
+
+        if (m_bDestroyOnSmash)
+        {
+            m_psExplosion.Play();
+            foreach (Rigidbody x in m_rShards)
+            {
+                x.isKinematic = false;
+                x.useGravity = true;
+                x.GetComponent<Transform>().parent = null;
+                x.GetComponent<Collider>().enabled = true;
+                x.AddForce(Vector3.left * m_Force, ForceMode.Impulse);
+                x.AddForce(Vector3.forward * m_Force * m_fShardForce, ForceMode.Impulse);
+            }
+            Destroy(m_HeadObject);
         }
     }
 }

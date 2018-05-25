@@ -87,8 +87,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4856959908142090}
   - component: {fileID: 65553909922290576}
-  - component: {fileID: 114440565203189016}
-  m_Layer: 0
+  - component: {fileID: 114966310838616564}
+  m_Layer: 11
   m_Name: DoTeleport
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1151035057982304}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.911, y: 0.53, z: -0.007}
+  m_LocalPosition: {x: -0.91, y: 0.247, z: -0.007}
   m_LocalScale: {x: 5.3496447, y: 1.6985928, z: 1.1463523}
   m_Children: []
   m_Father: {fileID: 4041232305685542}
@@ -238,8 +238,9 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 543f3ea637628fd4991e2af441818906, type: 3}
+  - {fileID: 2100000, guid: a4d024d0dd4ee494bb7dd31de514b82c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -272,8 +273,9 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 543f3ea637628fd4991e2af441818906, type: 3}
+  - {fileID: 2100000, guid: a4d024d0dd4ee494bb7dd31de514b82c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -375,7 +377,31 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114440565203189016
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114867264832306240
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1419745347798446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6025807fdd746444697919ac043fb005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RequiredSize: 0
+  RequiredAnimal: 0
+  MaximumSize: 0
+  UsableKeys:
+  - {fileID: 114749059133443220, guid: 80f2df7e1586bc94aa1bbea872f6ca3b, type: 2}
+  InteractPoint: {fileID: 0}
+  DoOnTrigger: 0
+  BreakSplineConnection: 1
+  Direction: 3
+  AnchorPoint: {fileID: 4828859823014390}
+  TransitionTo: {fileID: 0}
+  AutoClimbSize: 0
+--- !u!114 &114966310838616564
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -383,27 +409,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1538341890831358}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be4a30d72ac3f3c4e8be92c53db10bc1, type: 3}
+  m_Script: {fileID: 11500000, guid: d1a7132a9a9d9124299b7f542150d039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_aRequiredSize: 0
-  m_aRequiredAnimal: 1
-  m_aMaximumSize: 0
-  m_bOnlyHeadTrigger: 0
-  m_lAnimalsIn: []
-  m_rBody: {fileID: 0}
-  m_GazeObject: {fileID: 0}
-  m_aSoundEvents: []
-  OnDoAction:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnDetach:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+  RequiredSize: 0
+  RequiredAnimal: 1
+  MaximumSize: 0
+  HeadOnly: 0
   OnAnimalEnter:
     m_PersistentCalls:
       m_Calls:
@@ -418,101 +430,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: set_WasTeleport
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: EnableSplineLoris
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: CameraSpline, SkedaddleCore
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    m_TypeName: AnimalEventTrigger+AnimalEvent, SkedaddleCore, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
   OnAnimalExit:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnWrongAnimalEnter:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnWrongAnimalExit:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &114867264832306240
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1419745347798446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6025807fdd746444697919ac043fb005, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_aRequiredSize: 0
-  m_aRequiredAnimal: 1
-  m_aMaximumSize: 0
-  m_bOnlyHeadTrigger: 1
-  m_lAnimalsIn: []
-  m_rBody: {fileID: 0}
-  m_GazeObject: {fileID: 0}
-  m_aSoundEvents: []
-  OnDoAction:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnDetach:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnAnimalEnter:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnAnimalExit:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnWrongAnimalEnter:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnWrongAnimalExit:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  DoOnTrigger: 0
-  BreakSplineConnection: 1
-  Direction: 3
-  AnchorPoint: {fileID: 4828859823014390}
-  TransitionTo: {fileID: 0}
-  RequiredKey:
-    action: {fileID: 0}
+    m_TypeName: AnimalEventTrigger+AnimalEvent, SkedaddleCore, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114990501478699610
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -524,3 +448,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75b69924fc245af4db79d8bd5a592bad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_StartClosed: 0
+  m_Anim: {fileID: 0}
