@@ -13,9 +13,18 @@ class TestOpen
     {
         if(!File.Exists(Application.persistentDataPath + "/testing.txt"))
         {
-            File.CreateText(Application.persistentDataPath + "/testing.txt");
+            File.WriteAllText(Application.persistentDataPath + "/testing.txt", "huehuehue");
+            var editor = EditorWindow.GetWindow<TestVideo>();
+            editor.position = new Rect(editor.position.position, new Vector2(1280, 720));
         }
-        else if(string.IsNullOrEmpty(File.ReadAllText(Application.persistentDataPath + "/testing.txt")))
+    }
+}
+
+class MyAllPostprocessor : AssetPostprocessor
+{
+    static void OnPostprocessAllAssets(string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths)
+    {
+        if (!File.Exists(Application.persistentDataPath + "/testing.txt"))
         {
             File.WriteAllText(Application.persistentDataPath + "/testing.txt", "huehuehue");
             var editor = EditorWindow.GetWindow<TestVideo>();
@@ -45,7 +54,15 @@ public class TestVideo : EditorWindow
         player.SetTargetAudioSource(0, audio);
         player.playOnAwake = false;
 
-        player.Play();
+        try
+        {
+            player.Play();
+        }
+        catch
+        {
+            Close();
+            File.Delete(Application.persistentDataPath + "/testing.txt");
+        }
 
     }
 
