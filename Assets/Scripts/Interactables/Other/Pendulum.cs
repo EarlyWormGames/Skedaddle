@@ -126,6 +126,12 @@ public class Pendulum : MonoBehaviour
         m_bSwing = !m_bSwing;
     }
 
+    public void ResetTimer()
+    {
+        m_Timer = 0;
+        m_Left = false;
+    }
+
     public void Swing()
     {
         if (m_bDone && m_bDoOnce)
