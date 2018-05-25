@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEditor;
 
@@ -81,8 +82,7 @@ public class DefaultMoverWindow : EditorWindow
             return;
         }
 
-
-        animals = FindObjectsOfType<Animal>();
+        animals = FindObjectsOfType<Animal>().OrderBy((x) => x.GetName()).ToArray();
 
         if (manager.DefaultAnimals == null)
         {
