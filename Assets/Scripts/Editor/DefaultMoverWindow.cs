@@ -37,6 +37,9 @@ public class DefaultMoverWindow : EditorWindow
 
     private void OnGUI()
     {
+        if (Event.current.type == EventType.Layout)
+            Update();
+
         if(waitOne)
         {
             GUILayout.Label("Cannot make changes during play mode");
