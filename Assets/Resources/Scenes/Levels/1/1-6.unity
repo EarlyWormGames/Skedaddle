@@ -23,10 +23,10 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.084342554, g: 0.37624756, b: 0.7647059, a: 1.1}
   m_AmbientEquatorColor: {r: 0, g: 0.2010493, b: 0.9403922, a: 1.1}
   m_AmbientGroundColor: {r: 0.012941186, g: 0.6729412, b: 0.017493032, a: 1.1}
-  m_AmbientIntensity: 1.1
-  m_AmbientMode: 3
+  m_AmbientIntensity: 0
+  m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -35,10 +35,10 @@ RenderSettings:
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 256
   m_ReflectionBounces: 1
-  m_ReflectionIntensity: 0.07
+  m_ReflectionIntensity: 0
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 0.07}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 0}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -15150,6 +15150,16 @@ MonoBehaviour:
     action: {fileID: 0}
   InvertAxis: 0
   ForceMovement: 0
+  OnHighExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnLowExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   AxesToIgnore: 2
   DisableGravity: 0
   DisableGrounder: 0
@@ -23309,6 +23319,51 @@ Transform:
   m_Father: {fileID: 1845768805}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1021580911
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1021580913}
+  - component: {fileID: 1021580912}
+  m_Layer: 0
+  m_Name: Camera Spline Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1021580912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1021580911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75bb356239bfaed43a335024f174d350, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OverrideSpline: {fileID: 0}
+  DefaultAnimals: 0100000002000000
+  DefaultSplines:
+  - {fileID: 1328702283}
+  - {fileID: 1328702283}
+--- !u!4 &1021580913
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1021580911}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 126
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1022398243 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 7d06ee39fa1768542a24dd6f1f3968fe, type: 3}
@@ -25884,72 +25939,6 @@ MonoBehaviour:
   m_fBlendSpeed: 1
   m_bLook: 1
   m_tLookPoint: {fileID: 709815200}
-  m_aSoundEvents:
-  - m_EventKey: 
-    m_eFunction:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 230453975}
-          m_MethodName: Play
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-  - m_EventKey: 
-    m_eFunction:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 462712590}
-          m_MethodName: Play
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-  - m_EventKey: 
-    m_eFunction:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 462712590}
-          m_MethodName: Stop
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 230453975}
-          m_MethodName: Stop
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-  RaiseEventKey: 
-  LowerEventKey: 
-  StopEventKey: 
 --- !u!1 &1122797153
 GameObject:
   m_ObjectHideFlags: 0
@@ -31146,10 +31135,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c1411ff7d2ea804fb8f36be7a8492f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnimalSpline: {fileID: 669160658}
-  DefaultAnimals: 
-  UseAnimalYSettings: 1
   MyAnimals: 0100000002000000
+  AnimalSpline: {fileID: 669160658}
+  UseAnimalYSettings: 1
 --- !u!114 &1328702284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31165,10 +31153,10 @@ MonoBehaviour:
   AllowReverse: 1
   splineCount: 1
   points:
-  - {x: 4.249131, y: 0, z: 0}
-  - {x: 5.249131, y: 0, z: 0}
-  - {x: 14.012413, y: 0, z: 0}
-  - {x: 15.012413, y: 0, z: 0}
+  - {x: 3.892601, y: -0.03987837, z: -0.0033159256}
+  - {x: 4.892601, y: -0.03987837, z: -0.0033159256}
+  - {x: 14.1742935, y: -0.66772187, z: 0.47491074}
+  - {x: 14.155426, y: -0.30825806, z: 0.08440113}
   modes: 0000000000000000
   loop: 0
 --- !u!1 &1338422474

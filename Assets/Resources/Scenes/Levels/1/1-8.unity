@@ -24,9 +24,9 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0, g: 0, b: 0, a: 0}
   m_AmbientGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_AmbientIntensity: 0
-  m_AmbientMode: 3
+  m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -35,10 +35,10 @@ RenderSettings:
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 256
   m_ReflectionBounces: 1
-  m_ReflectionIntensity: 0.247
+  m_ReflectionIntensity: 0
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 0.247}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 0}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -15347,6 +15347,51 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 725443223}
   m_Mesh: {fileID: 4300000, guid: 10cc1169c770c8b4f95e6ff1098a8e5a, type: 3}
+--- !u!1 &726196360
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 726196362}
+  - component: {fileID: 726196361}
+  m_Layer: 0
+  m_Name: Camera Spline Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &726196361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 726196360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75bb356239bfaed43a335024f174d350, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OverrideSpline: {fileID: 0}
+  DefaultAnimals: 0100000002000000
+  DefaultSplines:
+  - {fileID: 1416521860}
+  - {fileID: 1416521860}
+--- !u!4 &726196362
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 726196360}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 51
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &726669405
 Prefab:
   m_ObjectHideFlags: 0
@@ -27005,6 +27050,16 @@ MonoBehaviour:
     action: {fileID: 0}
   InvertAxis: 0
   ForceMovement: 0
+  OnHighExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnLowExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   AxesToIgnore: 2
   DisableGravity: 0
   DisableGrounder: 0
@@ -28831,6 +28886,16 @@ MonoBehaviour:
     action: {fileID: 0}
   InvertAxis: 0
   ForceMovement: 1
+  OnHighExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnLowExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   AxesToIgnore: 2
   DisableGravity: 0
   DisableGrounder: 0
@@ -31032,10 +31097,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c1411ff7d2ea804fb8f36be7a8492f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnimalSpline: {fileID: 1246252991}
-  DefaultAnimals: 
-  UseAnimalYSettings: 1
   MyAnimals: 0100000002000000
+  AnimalSpline: {fileID: 1246252991}
+  UseAnimalYSettings: 1
 --- !u!114 &1416521861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31051,10 +31115,10 @@ MonoBehaviour:
   AllowReverse: 1
   splineCount: 1
   points:
-  - {x: 4.249131, y: 0, z: 0}
-  - {x: 5.249131, y: 0, z: 0}
-  - {x: 14.012413, y: 0, z: 0}
-  - {x: 15.012413, y: 0, z: 0}
+  - {x: 4.3556824, y: 0, z: 0.15809059}
+  - {x: 5.3556824, y: 0, z: 0.15809059}
+  - {x: 12.501068, y: 0, z: 0.5292802}
+  - {x: 14.745712, y: 0, z: 0.30870008}
   modes: 0000000000000000
   loop: 0
 --- !u!4 &1416799592 stripped
