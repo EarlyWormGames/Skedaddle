@@ -13,10 +13,13 @@ class TestOpen
     {
         if(!File.Exists(Application.persistentDataPath + "/testing.txt"))
         {
+            File.CreateText(Application.persistentDataPath + "/testing.txt");
+        }
+        else if(string.IsNullOrEmpty(File.ReadAllText(Application.persistentDataPath + "/testing.txt")))
+        {
             File.WriteAllText(Application.persistentDataPath + "/testing.txt", "huehuehue");
             var editor = EditorWindow.GetWindow<TestVideo>();
             editor.position = new Rect(editor.position.position, new Vector2(1280, 720));
-            return;
         }
     }
 }
