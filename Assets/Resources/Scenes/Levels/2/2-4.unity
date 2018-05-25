@@ -1190,12 +1190,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9538de56fc5561843b11b0ee608c0cc3, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &155994277 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114412501214504596, guid: 9538de56fc5561843b11b0ee608c0cc3,
-    type: 2}
-  m_PrefabInternal: {fileID: 155994276}
-  m_Script: {fileID: 11500000, guid: 75bb356239bfaed43a335024f174d350, type: 3}
 --- !u!1 &155994278 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 131986, guid: 9538de56fc5561843b11b0ee608c0cc3, type: 2}
@@ -3367,7 +3361,7 @@ Prefab:
         type: 2}
       propertyPath: OnShoot.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 155994277}
+      objectReference: {fileID: 1953650458}
     - target: {fileID: 114101588341919354, guid: 6c1accf208a66144c8f71aa0bf5fd244,
         type: 2}
       propertyPath: OnShoot.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
@@ -3383,6 +3377,16 @@ Prefab:
       value: 
       objectReference: {fileID: 114474356807208088, guid: 80f2df7e1586bc94aa1bbea872f6ca3b,
         type: 2}
+    - target: {fileID: 114101588341919354, guid: 6c1accf208a66144c8f71aa0bf5fd244,
+        type: 2}
+      propertyPath: OnShoot.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: EnableSplineLoris
+      objectReference: {fileID: 0}
+    - target: {fileID: 114101588341919354, guid: 6c1accf208a66144c8f71aa0bf5fd244,
+        type: 2}
+      propertyPath: OnShoot.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: CameraMover, SkedaddleCore
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6c1accf208a66144c8f71aa0bf5fd244, type: 2}
   m_IsPrefabParent: 0
@@ -4559,7 +4563,7 @@ Prefab:
         type: 2}
       propertyPath: OnAnimalEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 155994277}
+      objectReference: {fileID: 0}
     - target: {fileID: 114568856512203310, guid: 4cc0396ec5aa1b448ba150d903409ab0,
         type: 2}
       propertyPath: OnAnimalEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
@@ -22659,6 +22663,51 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: e43580104dedb6746a8068c6b6433906, type: 3}
   m_PrefabInternal: {fileID: 1950845181}
+--- !u!1 &1953650457
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1953650459}
+  - component: {fileID: 1953650458}
+  m_Layer: 0
+  m_Name: Camera Spline Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1953650458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1953650457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75bb356239bfaed43a335024f174d350, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OverrideSpline: {fileID: 0}
+  DefaultAnimals: 0100000002000000
+  DefaultSplines:
+  - {fileID: 1748669851}
+  - {fileID: 1748669851}
+--- !u!4 &1953650459
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1953650457}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 46
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1957095602
 Prefab:
   m_ObjectHideFlags: 0
