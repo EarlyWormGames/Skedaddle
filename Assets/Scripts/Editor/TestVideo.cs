@@ -18,6 +18,9 @@ class TestOpen
 
     static void RunOnce(Scene scene, LoadSceneMode mode)
     {
+        if (string.IsNullOrEmpty(scene.name))
+            return;
+
         if(!File.Exists(Application.persistentDataPath + "/testing.txt"))
         {
             File.WriteAllText(Application.persistentDataPath + "/testing.txt", "huehuehue");
