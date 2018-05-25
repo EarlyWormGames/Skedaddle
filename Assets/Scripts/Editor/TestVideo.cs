@@ -3,18 +3,20 @@ using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Video;
 using UnityEditor;
+using UnityEditor.SceneManagement;
 
 [InitializeOnLoad]
 class TestOpen
 {
     static TestOpen()
     {
-        EditorApplication.update += RunOnce;
+        EditorSceneManager.sceneLoaded += RunOnce;
     }
 
-    static void RunOnce()
+    static void RunOnce(Scene scene, LoadSceneMode mode)
     {
         if(!File.Exists(Application.persistentDataPath + "/testing.txt"))
         {
@@ -23,7 +25,7 @@ class TestOpen
             editor.position = new Rect(editor.position.position, new Vector2(1280, 720));
         }
 
-        EditorApplication.update -= RunOnce;
+        EditorSceneManager.sceneLoaded -= RunOnce;
     }
 }
 
