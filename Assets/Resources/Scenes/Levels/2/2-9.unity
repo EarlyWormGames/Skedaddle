@@ -4482,12 +4482,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9538de56fc5561843b11b0ee608c0cc3, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &155994277 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114412501214504596, guid: 9538de56fc5561843b11b0ee608c0cc3,
-    type: 2}
-  m_PrefabInternal: {fileID: 155994276}
-  m_Script: {fileID: 11500000, guid: 75bb356239bfaed43a335024f174d350, type: 3}
 --- !u!1 &155994278 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 131986, guid: 9538de56fc5561843b11b0ee608c0cc3, type: 2}
@@ -38428,6 +38422,16 @@ MonoBehaviour:
   Points:
   - {fileID: 357304168}
   - {fileID: 692116200}
+  OnEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   OnLowExit:
     m_PersistentCalls:
       m_Calls: []
@@ -41373,6 +41377,16 @@ MonoBehaviour:
   Points:
   - {fileID: 253207317}
   - {fileID: 637377006}
+  OnEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   OnLowExit:
     m_PersistentCalls:
       m_Calls: []
@@ -44158,6 +44172,52 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: e43580104dedb6746a8068c6b6433906, type: 3}
   m_PrefabInternal: {fileID: 1294218166}
+--- !u!1 &1295305807
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1295305809}
+  - component: {fileID: 1295305808}
+  m_Layer: 0
+  m_Name: Camera Spline Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1295305808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1295305807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75bb356239bfaed43a335024f174d350, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OverrideSpline: {fileID: 0}
+  DefaultAnimals: 010000000200000003000000
+  DefaultSplines:
+  - {fileID: 1282619727}
+  - {fileID: 1282619727}
+  - {fileID: 1282619727}
+--- !u!4 &1295305809
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1295305807}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 47
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1303299516
 Prefab:
   m_ObjectHideFlags: 0
@@ -45048,6 +45108,16 @@ MonoBehaviour:
   Points:
   - {fileID: 875980907}
   - {fileID: 1782860695}
+  OnEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   OnLowExit:
     m_PersistentCalls:
       m_Calls: []
@@ -45323,7 +45393,7 @@ Prefab:
         type: 2}
       propertyPath: OnDoAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 155994277}
+      objectReference: {fileID: 0}
     - target: {fileID: 114375823239581950, guid: 0ee66066ce94fb348a84cf0bfa229ac3,
         type: 2}
       propertyPath: OnDoAction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
