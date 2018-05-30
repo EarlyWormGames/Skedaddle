@@ -2,6 +2,9 @@
 using UnityEngine.UI;
 using System.Collections;
 
+/// <summary>
+/// Opetions selection that can be chosen in the menu
+/// </summary>
 public class OptionsArea : Area
 {
     public Transform m_tMovePoint;

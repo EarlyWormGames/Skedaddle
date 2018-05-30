@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Class that holds information on the level and setting to load with
+/// </summary>
 public class Level : MonoBehaviour
 {
     public string m_sLevelName;

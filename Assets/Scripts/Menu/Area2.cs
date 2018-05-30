@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// GUI and management of the menu 
+/// </summary>
 public class Area2 : Area
 {
 
