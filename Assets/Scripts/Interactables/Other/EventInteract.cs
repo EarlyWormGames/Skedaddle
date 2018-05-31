@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// interaction with an event obbject
+/// </summary>
 public class EventInteract : AnimalInteractor
 {
     public UnityEvent OnInteract;

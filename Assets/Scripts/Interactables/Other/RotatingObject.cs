@@ -1,6 +1,10 @@
 using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// An object that rotates 
+/// given a start rotation, End rotation and weather or not it is to use local space or world space
+/// </summary>
 public class RotatingObject : MovingObject
 {
     public Vector3 StartRotation;

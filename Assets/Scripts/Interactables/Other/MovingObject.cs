@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+
+/// <summary>
+/// An Object that can be interacted and moved
+/// </summary>
 [AddComponentMenu("")]
 public class MovingObject : MonoBehaviour
 {

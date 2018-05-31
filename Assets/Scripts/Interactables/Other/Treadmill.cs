@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// a treadmill that an animal can run on
+/// speed is applied to the animal depending on which way the treadmill is running
+/// </summary>
 public class Treadmill : MonoBehaviour
 {
     public Vector3 force;

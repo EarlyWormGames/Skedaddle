@@ -1,6 +1,9 @@
 using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// call the interaction when an animal interacts with this object
+/// </summary>
 public class FallObject : AnimalInteractor
 {
     public Rigidbody m_rBody;

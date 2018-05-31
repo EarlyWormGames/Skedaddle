@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// sweep test for sliding objects
+/// 
+/// figure out if an object can move without hitting something.
+/// </summary>
 public class SweepingSlider : SlidingObject
 {
     public Rigidbody SweepBody;

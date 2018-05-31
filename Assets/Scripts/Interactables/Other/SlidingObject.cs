@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// an object that can slide 
+/// </summary>
 public class SlidingObject : MovingObject
 {
     public Transform PointA, PointB;

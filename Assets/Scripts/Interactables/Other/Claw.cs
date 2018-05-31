@@ -1,6 +1,9 @@
 using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// /Manages the claw interactions
+/// </summary>
 public class Claw : MonoBehaviour
 {
     public float m_fOpenDuration;

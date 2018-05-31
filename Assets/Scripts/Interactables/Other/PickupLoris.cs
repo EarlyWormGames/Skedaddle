@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// animal interactions
+/// Poodle picking up Laurie
+/// </summary>
 public class PickupLoris : AnimalInteractor
 {
     public Loris loris;

@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// seesaw based on physics
+/// </summary>
 [RequireComponent(typeof(Rigidbody))]
 public class Seesaw : MonoBehaviour
 {

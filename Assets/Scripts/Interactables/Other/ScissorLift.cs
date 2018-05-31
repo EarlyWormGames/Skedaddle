@@ -1,6 +1,9 @@
 using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Interactable object that the Animals use to raise or lower themselvs to greater heights
+/// </summary>
 public class ScissorLift : MonoBehaviour
 {
     //==================================

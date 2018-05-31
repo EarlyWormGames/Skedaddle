@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// apply shared forces to multiple rigidbodies.
+/// </summary>
 public class Sharder : MonoBehaviour
 {
     public float m_fShardForce;

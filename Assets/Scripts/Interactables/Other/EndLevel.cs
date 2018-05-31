@@ -5,6 +5,10 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 
+/// <summary>
+/// manager and condition checker for the end of the level
+/// weather or not the animals can complete the level.
+/// </summary>
 public class EndLevel : MonoBehaviour
 {
     public string m_sLoadScene;

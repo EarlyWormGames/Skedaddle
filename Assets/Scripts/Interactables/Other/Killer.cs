@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+
+/// <summary>
+/// Kill the animals if they touch this object
+/// </summary>
 public class Killer : MonoBehaviour
 {
     [System.Serializable]

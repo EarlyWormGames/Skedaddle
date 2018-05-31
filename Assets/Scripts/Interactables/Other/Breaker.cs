@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// the object that breaks the "BreakableObject"
+/// </summary>
 public class Breaker : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)

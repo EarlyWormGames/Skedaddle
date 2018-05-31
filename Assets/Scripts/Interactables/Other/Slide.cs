@@ -1,6 +1,10 @@
 using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// quick animation handling for the loris on the slide
+/// Loris interaction with the slide. 
+/// </summary>
 public class Slide : AnimalTrigger
 {
     protected override bool HeadTriggerOnly { get; set; }

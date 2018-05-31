@@ -3,6 +3,9 @@ using System.Collections;
 using UnityEngine.InputNew;
 using System.Collections.Generic;
 
+/// <summary>
+/// reveal the animal 
+/// </summary>
 public class AnimalReveal : MonoBehaviour
 {
     //==================================
@@ -25,6 +28,9 @@ public class AnimalReveal : MonoBehaviour
         m_aAnimator = GetComponent<Animator>();
     }
 
+    /// <summary>
+    /// Unlock the animal when the condition has been met
+    /// </summary>
     public void DoInteract()
     {
         if (!Done)

@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// teleport an animal from point A to B
+/// </summary>
 public class Teleporter : MonoBehaviour
 {
     public bool m_StartClosed;

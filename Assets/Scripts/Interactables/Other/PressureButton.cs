@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// Pressure button management
+/// </summary>
 public class PressureButton : MonoBehaviour
 {
     public bool OnlyOnce = false;
@@ -36,6 +39,7 @@ public class PressureButton : MonoBehaviour
 
     private void Update()
     {
+        //if there is more than one RigidBody (Animal) on the pressure button, it will stay activated
         if (inBodies.Count > 0 && !wasPressed)
         {
             wasPressed = true;

@@ -2,6 +2,9 @@ using UnityEngine;
 using System.Collections.Generic;
 using System;
 
+/// <summary>
+/// Swinging object from a point above.
+/// </summary>
 public class Pendulum : MonoBehaviour
 {
     //==================================

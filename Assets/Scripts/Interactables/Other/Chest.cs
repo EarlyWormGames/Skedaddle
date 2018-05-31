@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputNew;
 
+/// <summary>
+/// Handles the chest interactions
+/// </summary>
 public class Chest : AnimalInteractor
 {
     [LabelColor(1, 0, 0, true)]
