@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// extra areas that might be included in the menu select
+/// </summary>
 public class ExtrasArea : Area
 {
     public Transform m_tLookPoint;

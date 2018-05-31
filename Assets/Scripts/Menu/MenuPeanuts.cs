@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Peanut chest in the menu?
+/// </summary>
 public class MenuPeanuts : MonoBehaviour {
 
     public Vector2 m_v2Level;

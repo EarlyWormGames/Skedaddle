@@ -2,6 +2,10 @@
 using UnityEngine.UI;
 using System.Collections;
 
+
+/// <summary>
+/// GUI and management of the menu 
+/// </summary>
 public class Area1 : Area
 {
     public Level m_lLvl1;
@@ -32,7 +36,9 @@ public class Area1 : Area
             CameraController.Instance.m_tLookAt = m_tLookPoint;
         }
     }
-
+    /// <summary>
+    /// select this as the current navigation object.
+    /// </summary>
     public override void Select()
     {
         //m_gTarg.FadeIn();
@@ -42,6 +48,9 @@ public class Area1 : Area
         Selected = this;
     }
 
+    /// <summary>
+    /// deselect this as the current navigation object
+    /// </summary>
     public override void Deselect()
     {
         //m_gTarg.FadeOut();

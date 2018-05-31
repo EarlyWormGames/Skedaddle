@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// GUI on the menu select items that displays a preview of whats inside the level.s
+/// </summary>
 [RequireComponent(typeof(Renderer))]
 public class LevelPreview : MonoBehaviour
 {

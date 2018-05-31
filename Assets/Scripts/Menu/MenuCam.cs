@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Management of the menu camera
+/// </summary>
 public class MenuCam : MonoBehaviour
 {
     public static MenuCam instance;

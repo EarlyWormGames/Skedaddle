@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Animals in the menu and their behaviours
+/// </summary>
 public class MenuAnimal : Area
 {
     public ANIMAL_NAME m_aName;

@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// The Exit Button
+/// </summary>
 public class ExitLamp : Area
 {
     public float m_fLerpSpeed;

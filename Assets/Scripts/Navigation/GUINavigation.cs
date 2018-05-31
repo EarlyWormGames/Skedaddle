@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// management for navigating the GUI
+/// </summary>
 public class GUINavigation : MonoBehaviour
 {
     public GUINavigation[] m_gUpDir;
@@ -83,12 +86,18 @@ public class GUINavigation : MonoBehaviour
 
     protected virtual void OnUpdate() { }
 
+    /// <summary>
+    /// deselect the current GUINavigation object
+    /// </summary>
     public virtual void Deselect()
     {
         enabled = false;
         m_IsActive = false;
     }
 
+    /// <summary>
+    /// Select this as the current navigaiton object
+    /// </summary>
     public virtual void Select()
     {
         enabled = true;
@@ -96,6 +105,7 @@ public class GUINavigation : MonoBehaviour
         Selected = this;
     }
 
+    
     public virtual void Click()
     {
         enabled = false;

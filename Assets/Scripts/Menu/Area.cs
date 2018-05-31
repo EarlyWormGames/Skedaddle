@@ -2,6 +2,9 @@
 using UnityEngine.UI;
 using System;
 
+/// <summary>
+/// menu Area selection
+/// </summary>
 public class Area : GUINavigation
 {
     public static Area CurrentArea;

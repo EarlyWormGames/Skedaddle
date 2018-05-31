@@ -87,7 +87,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4856959908142090}
   - component: {fileID: 65553909922290576}
-  - component: {fileID: 114966310838616564}
+  - component: {fileID: 114154630274722034}
   m_Layer: 11
   m_Name: DoTeleport
   m_TagString: Untagged
@@ -161,8 +161,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1945679349491248}
-  m_LocalRotation: {x: -0, y: -0, z: 0.9914445, w: 0.13052878}
-  m_LocalPosition: {x: -1.974, y: -0.788, z: 5.909}
+  m_LocalRotation: {x: -0.9914446, y: -0.13052881, z: 0.0000027865171, w: 0.00000037252903}
+  m_LocalPosition: {x: -6.9250484, y: 0.986, z: 6.2352304}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4649717401588574}
@@ -172,7 +172,7 @@ Transform:
   - {fileID: 4041232305685542}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 165.00002}
+  m_LocalEulerAnglesHint: {x: 0, y: -180.00002, z: 165.00002}
 --- !u!4 &4412520497003994
 Transform:
   m_ObjectHideFlags: 1
@@ -240,7 +240,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: a4d024d0dd4ee494bb7dd31de514b82c, type: 2}
+  - {fileID: 2100000, guid: d1135f05ce283c148a767cada287d9f7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -378,6 +378,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114154630274722034
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1538341890831358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114867264832306240
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -392,8 +403,7 @@ MonoBehaviour:
   RequiredSize: 0
   RequiredAnimal: 0
   MaximumSize: 0
-  UsableKeys:
-  - {fileID: 114749059133443220, guid: 80f2df7e1586bc94aa1bbea872f6ca3b, type: 2}
+  UsableKeys: []
   InteractPoint: {fileID: 0}
   DoOnTrigger: 0
   BreakSplineConnection: 1
@@ -401,42 +411,6 @@ MonoBehaviour:
   AnchorPoint: {fileID: 4828859823014390}
   TransitionTo: {fileID: 0}
   AutoClimbSize: 0
---- !u!114 &114966310838616564
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1538341890831358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1a7132a9a9d9124299b7f542150d039, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RequiredSize: 0
-  RequiredAnimal: 1
-  MaximumSize: 0
-  HeadOnly: 0
-  OnAnimalEnter:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114990501478699610}
-        m_MethodName: Teleport
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: AnimalEventTrigger+AnimalEvent, SkedaddleCore, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  OnAnimalExit:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: AnimalEventTrigger+AnimalEvent, SkedaddleCore, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
 --- !u!114 &114990501478699610
 MonoBehaviour:
   m_ObjectHideFlags: 1

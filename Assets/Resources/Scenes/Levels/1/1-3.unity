@@ -4522,22 +4522,22 @@ Prefab:
     - target: {fileID: 114415215251113736, guid: 757c0ffdb7ef0c245a62aab60bfeb725,
         type: 2}
       propertyPath: points.Array.data[0].x
-      value: 4.489624
+      value: 4.7385654
       objectReference: {fileID: 0}
     - target: {fileID: 114415215251113736, guid: 757c0ffdb7ef0c245a62aab60bfeb725,
         type: 2}
       propertyPath: points.Array.data[0].z
-      value: -0.00000023841858
+      value: 0.21592402
       objectReference: {fileID: 0}
     - target: {fileID: 114415215251113736, guid: 757c0ffdb7ef0c245a62aab60bfeb725,
         type: 2}
       propertyPath: points.Array.data[1].x
-      value: 5.489624
+      value: 4.834133
       objectReference: {fileID: 0}
     - target: {fileID: 114415215251113736, guid: 757c0ffdb7ef0c245a62aab60bfeb725,
         type: 2}
       propertyPath: points.Array.data[1].z
-      value: -0.00000023841858
+      value: -0.005740404
       objectReference: {fileID: 0}
     - target: {fileID: 114551186039253092, guid: 757c0ffdb7ef0c245a62aab60bfeb725,
         type: 2}
@@ -4553,6 +4553,16 @@ Prefab:
         type: 2}
       propertyPath: loop
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114415215251113736, guid: 757c0ffdb7ef0c245a62aab60bfeb725,
+        type: 2}
+      propertyPath: points.Array.data[0].y
+      value: -0.534605
+      objectReference: {fileID: 0}
+    - target: {fileID: 114415215251113736, guid: 757c0ffdb7ef0c245a62aab60bfeb725,
+        type: 2}
+      propertyPath: points.Array.data[1].y
+      value: -0.06850338
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 757c0ffdb7ef0c245a62aab60bfeb725, type: 2}
@@ -32428,6 +32438,36 @@ Prefab:
         type: 2}
       propertyPath: m_Mass
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114819691897654272, guid: 73594af5744a53644b56dc6589625700,
+        type: 2}
+      propertyPath: RequiredAnimal
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114794663300859998, guid: 73594af5744a53644b56dc6589625700,
+        type: 2}
+      propertyPath: RequiredAnimal
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114018125404345078, guid: 73594af5744a53644b56dc6589625700,
+        type: 2}
+      propertyPath: RequiredAnimal
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114794663300859998, guid: 73594af5744a53644b56dc6589625700,
+        type: 2}
+      propertyPath: RequiredSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114018125404345078, guid: 73594af5744a53644b56dc6589625700,
+        type: 2}
+      propertyPath: RequiredSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114794663300859998, guid: 73594af5744a53644b56dc6589625700,
+        type: 2}
+      propertyPath: DoOnTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 73594af5744a53644b56dc6589625700, type: 2}
@@ -92310,6 +92350,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1651731272}
   - component: {fileID: 1651731271}
+  - component: {fileID: 1651731274}
+  - component: {fileID: 1651731273}
   m_Layer: 0
   m_Name: Point light (4)
   m_TagString: Untagged
@@ -92327,7 +92369,7 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 0.503, b: 0, a: 1}
-  m_Intensity: 8
+  m_Intensity: 47.746483
   m_Range: 1.1
   m_SpotAngle: 27.79
   m_CookieSize: 10
@@ -92366,6 +92408,79 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 112
   m_LocalEulerAnglesHint: {x: 85.034004, y: -49.409004, z: -49.874}
+--- !u!114 &1651731273
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1651731270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c2871f720b2af4e9210febdac74517, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  shadowResolution: 512
+  shadowDimmer: 1
+  shadowFadeDistance: 10000
+  viewBiasMin: 0.2
+  viewBiasMax: 100
+  viewBiasScale: 1
+  normalBiasMin: 0.5
+  normalBiasMax: 0.5
+  normalBiasScale: 1
+  sampleBiasScale: 0
+  edgeLeakFixup: 1
+  edgeToleranceNormal: 1
+  edgeTolerance: 1
+  shadowCascadeCount: 4
+  shadowCascadeRatios:
+  - 0.05
+  - 0.2
+  - 0.3
+  shadowCascadeBorders:
+  - 0.2
+  - 0.2
+  - 0.2
+  - 0.2
+  shadowAlgorithm: 0
+  shadowVariant: 0
+  shadowPrecision: 0
+  shadowData:
+    format: 0
+    data: 
+  shadowDatas: []
+--- !u!114 &1651731274
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1651731270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  directionalIntensity: 3.1415927
+  punctualIntensity: 600
+  areaIntensity: 200
+  m_InnerSpotPercent: 0
+  lightDimmer: 1
+  fadeDistance: 10000
+  affectDiffuse: 1
+  affectSpecular: 1
+  lightTypeExtent: 0
+  spotLightShape: 0
+  shapeWidth: 0.5
+  shapeHeight: 0.5
+  aspectRatio: 1
+  shapeRadius: 0
+  maxSmoothness: 1
+  applyRangeAttenuation: 1
+  useOldInspector: 0
+  featuresFoldout: 1
+  showAdditionalSettings: 0
 --- !u!1 &1653180111
 GameObject:
   m_ObjectHideFlags: 0
