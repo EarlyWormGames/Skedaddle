@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// probably written when we wanted to optimise/cleanup code
+/// </summary>
 public class AnimalTemplate : Animal
 {
     //==================================

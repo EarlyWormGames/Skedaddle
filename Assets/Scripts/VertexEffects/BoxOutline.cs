@@ -2,6 +2,9 @@
 using UnityEngine.UI;
 using System.Collections.Generic;
 
+/// <summary>
+/// create a box outline
+/// </summary>
 public class BoxOutline : ModifiedShadow
 {
     const int maxHalfSampleCount = 20;

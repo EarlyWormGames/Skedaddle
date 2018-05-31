@@ -3,6 +3,7 @@ using System.Collections;
 
 /// <summary>
 /// The Exit Button
+/// inherits from gui navigation to allow it to be a selectable object though GUINavigation system.
 /// </summary>
 public class ExitLamp : Area
 {

@@ -3,7 +3,9 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
-
+/// <summary>
+/// EW eye tracking with Tobii
+/// </summary>
 public class EWEyeTracking : Singleton<EWEyeTracking>
 {
     [System.Serializable]

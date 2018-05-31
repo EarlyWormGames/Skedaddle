@@ -3,6 +3,9 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
+/// <summary>
+/// handaling of application management
+/// </summary>
 public class EWApplication : Singleton<EWApplication>
 {
     public delegate void OnLevelCallback(string a_levelName);

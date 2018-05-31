@@ -4,6 +4,13 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using System.IO;
 
+/// <summary>
+/// counting the seconds/time the user has been playing from for a:
+/// -Speedrun 
+///     (the begging of the application.)
+/// -Single level
+///     (the begging of a level.)
+/// </summary>
 public class GameTimer : Singleton<GameTimer>
 {
     public GameObject m_EndPanel;
@@ -27,6 +34,12 @@ public class GameTimer : Singleton<GameTimer>
             m_TimerText.gameObject.SetActive(false);
     }
 
+    /// <summary>
+    /// Unity Action that is called when the scene is loaded.
+    /// </summary>
+    /// <param name="a_scene"></param>
+    /// 
+    /// <param name="a_loadMode"></param>
     private void SceneLoad(Scene a_scene, LoadSceneMode a_loadMode)
     {
         if (a_scene.name == "SpeedrunEnd")
@@ -84,6 +97,9 @@ public class GameTimer : Singleton<GameTimer>
         }
     }
 
+    /// <summary>
+    /// send the score to the save manager
+    /// </summary>
     public void SubmitScore()
     {
         if (m_Namefield.text.Length > 0)

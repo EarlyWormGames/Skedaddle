@@ -2,6 +2,10 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// Object Pooling
+/// </summary>
+/// <typeparam name="T"></typeparam>
 public class ObjectPool<T> where T : new()
 {
     private readonly Stack<T> m_Stack = new Stack<T>();

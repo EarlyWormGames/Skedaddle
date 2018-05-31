@@ -4,6 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Rendering;
 
+/// <summary>
+/// Edge detection of a selected object
+/// 
+/// Note: 
+/// used primarly in the menu
+/// </summary>
 [ExecuteInEditMode]
 [RequireComponent(typeof(Camera))]
 public class Highlighter : MonoBehaviour

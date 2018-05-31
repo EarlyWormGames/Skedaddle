@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// EW tools/Utilities
+/// </summary>
 public class EWTools
 {
     public static Texture2D MakeTexture(int a_width, int a_height, Color a_col, TextureFormat a_format = TextureFormat.ARGB32, bool a_mipmap = false)

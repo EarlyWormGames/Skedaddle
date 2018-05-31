@@ -6,6 +6,10 @@ using System.Security.Cryptography;
 using System.Text;
 using UnityEngine;
 
+/// <summary>
+/// saved information
+/// SINGLETON
+/// </summary>
 [System.Serializable]
 public class SaveData
 {
@@ -107,6 +111,12 @@ public class SaveData
     }
     //==============================================================
 
+        /// <summary>
+        /// encrypt the data
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="outputStream"></param>
+        /// <returns></returns>
     public static CryptoStream CreateEncryptionStream(byte[] key, Stream outputStream)
     {
         byte[] iv = new byte[ivSize];
@@ -127,7 +137,12 @@ public class SaveData
             CryptoStreamMode.Write);
         return encryptor;
     }
-
+    /// <summary>
+    /// decrypt the data
+    /// </summary>
+    /// <param name="key"></param>
+    /// <param name="inputStream"></param>
+    /// <returns></returns>
     public static CryptoStream CreateDecryptionStream(byte[] key, Stream inputStream)
     {
         byte[] iv = new byte[ivSize];

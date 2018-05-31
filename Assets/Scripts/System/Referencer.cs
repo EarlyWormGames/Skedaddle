@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// container class for references to objects.
+/// mainly used for peanut chests to keep reference to each chest in the game
+/// </summary>
 public class Referencer : MonoBehaviour, IExposedPropertyTable
 {
     [SerializeField]

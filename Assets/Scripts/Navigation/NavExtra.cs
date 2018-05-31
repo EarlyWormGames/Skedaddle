@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// other objects that may require to be navigated to through the GUINavigation
+/// </summary>
 public class NavExtra : GUINavigation
 {
     private ExtrasItem m_eItem;

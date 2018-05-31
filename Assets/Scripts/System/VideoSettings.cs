@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Playing videos 
+/// </summary>
 public class VideoSettings : MonoBehaviour
 {
 

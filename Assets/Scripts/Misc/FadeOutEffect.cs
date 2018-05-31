@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Fade in/out effect using a material to blend obver the main camera's RenderTexture
+/// </summary>
 [ExecuteInEditMode]
 [RequireComponent(typeof(Camera))]
 public class FadeOutEffect : MonoBehaviour

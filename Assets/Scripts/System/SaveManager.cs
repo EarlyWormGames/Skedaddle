@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// helper class for the save management
+/// </summary>
 public class SaveManager : Singleton<SaveManager>
 {
     private int m_iSaveIndex = 0;

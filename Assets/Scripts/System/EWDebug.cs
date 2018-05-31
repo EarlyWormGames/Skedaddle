@@ -3,6 +3,11 @@ using UnityEngine.UI;
 using System;
 using System.Collections;
 
+
+/// <summary>
+/// EW Debug manager
+/// added functionality and extentions for the unity debugger
+/// </summary>
 public class EWDebug : Singleton<EWDebug>
 {
     public bool LogDebugMessages = false;

@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+/// <summary>
+/// Management of the "Settings Trunk" in the menu
+/// </summary>
 public class TrunkFolder : MonoBehaviour
 {
     public Transform m_tUpPoint;

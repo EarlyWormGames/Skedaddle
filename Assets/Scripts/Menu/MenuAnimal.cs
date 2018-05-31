@@ -2,7 +2,7 @@
 using System.Collections;
 
 /// <summary>
-/// Animals in the menu and their behaviours
+/// IDLE Animals in the menu and their behaviours
 /// </summary>
 public class MenuAnimal : Area
 {

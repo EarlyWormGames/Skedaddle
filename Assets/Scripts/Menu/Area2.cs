@@ -3,6 +3,7 @@ using System.Collections;
 
 /// <summary>
 /// GUI and management of the menu 
+/// inherits from gui navigation to allow it to be a selectable object though GUINavigation system.
 /// </summary>
 public class Area2 : Area
 {

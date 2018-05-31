@@ -2,6 +2,10 @@
 using System;
 using System.Collections;
 
+
+/// <summary>
+/// Pattern settings
+/// </summary>
 public enum LightPattern
 {
     AllBlinking = 0,
@@ -18,6 +22,10 @@ public enum LightPattern
     Random
 }
 
+/// <summary>
+/// Menu fairy lights
+/// Management of the patterns for the fairy lights in the menu.
+/// </summary>
 public class TitleLights : MonoBehaviour {
 
     public LightPattern m_enPattern;

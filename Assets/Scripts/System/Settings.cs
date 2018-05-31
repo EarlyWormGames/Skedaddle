@@ -4,6 +4,9 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
+/// <summary>
+/// Settings manager
+/// </summary>
 public class Settings : MonoBehaviour
 {
     public float Brightness { get { return m_Brightness; } set { m_Brightness = value; } }

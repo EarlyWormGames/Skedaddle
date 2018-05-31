@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// EW Utilities
+/// </summary>
 public class EWArrayUtil
 {
     public static void RemoveAt<T>(ref T[] a_array, int a_index)

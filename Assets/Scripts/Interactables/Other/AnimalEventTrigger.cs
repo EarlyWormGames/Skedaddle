@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// 
+/// </summary>
 public class AnimalEventTrigger : AnimalTrigger
 {
     public bool HeadOnly = false;

@@ -2,7 +2,8 @@
 using System.Collections;
 
 /// <summary>
-/// extra areas that might be included in the menu select
+/// extra areas that might be included in the menu/GUI select
+/// inherits from gui navigation to allow it to be a selectable object though GUINavigation system.
 /// </summary>
 public class ExtrasArea : Area
 {

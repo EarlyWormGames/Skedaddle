@@ -6,6 +6,9 @@ using System.Collections;
 /// </summary>
 public class GUINavigation : MonoBehaviour
 {
+    /// <summary>
+    /// selectable objects that the GUI can navigate to next.
+    /// </summary>
     public GUINavigation[] m_gUpDir;
     public GUINavigation[] m_gDownDir;
     public GUINavigation[] m_gLeftDir;

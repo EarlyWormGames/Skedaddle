@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System;
 
+/// <summary>
+/// read the level names from file.
+/// </summary>
 public class LevelReader
 {
     public static string[] LevelNames

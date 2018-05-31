@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// scale the camera's render texture.
+/// </summary>
 [RequireComponent(typeof(Camera))]
 [ExecuteInEditMode]
 public class CameraScale : MonoBehaviour

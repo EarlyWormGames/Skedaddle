@@ -2,7 +2,8 @@
 using System.Collections;
 
 /// <summary>
-/// Peanut chest in the menu?
+/// Peanut chest in the menu
+/// check the save file for the peanuts collected to activeate them in the menu
 /// </summary>
 public class MenuPeanuts : MonoBehaviour {
 

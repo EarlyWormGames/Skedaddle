@@ -3,6 +3,10 @@ using UnityEngine.UI;
 using System;
 using System.Collections;
 
+/// <summary>
+/// Base class Singleton
+/// </summary>
+/// <typeparam name="T"></typeparam>
 public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 {
     private static T        m_tInstance = null;

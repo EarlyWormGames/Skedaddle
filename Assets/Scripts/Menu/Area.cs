@@ -4,6 +4,7 @@ using System;
 
 /// <summary>
 /// menu Area selection
+/// inherits from gui navigation to allow it to be a selectable object though GUINavigation system.
 /// </summary>
 public class Area : GUINavigation
 {

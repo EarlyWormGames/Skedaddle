@@ -5,6 +5,9 @@ using System;
 using System.Collections;
 using System.Reflection;
 
+/// <summary>
+/// Container class for enabled scripts that the ScriptController will handle
+/// </summary>
 [Serializable]
 public struct ScriptEnable
 {
@@ -12,6 +15,9 @@ public struct ScriptEnable
     public string[] m_sLevelNames;  
 }
 
+/// <summary>
+/// management of enabling scripts at the begging of a scene load.
+/// </summary>
 public class ScriptController : Singleton<ScriptController>
 {
     //============================

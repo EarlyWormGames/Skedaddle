@@ -4,6 +4,7 @@ using System.Collections;
 
 /// <summary>
 /// Opetions selection that can be chosen in the menu
+/// inherits from gui navigation to allow it to be a selectable object though GUINavigation system.
 /// </summary>
 public class OptionsArea : Area
 {

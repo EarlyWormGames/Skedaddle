@@ -2,6 +2,9 @@
 using System;
 using System.IO;
 
+/// <summary>
+/// Save data for the settings/options   
+/// </summary>
 [Serializable]
 public class OptionsFile
 {
@@ -9,6 +12,11 @@ public class OptionsFile
     // STATIC
     private static OptionsFile[] m_aoFiles;
 
+    /// <summary>
+    /// Load the options data from file
+    /// </summary>
+    /// <param name="a_file">Filepath</param>
+    /// <returns></returns>
     public static OptionsFile LoadFile(string a_file)
     {
         if (m_aoFiles == null)
@@ -36,6 +44,10 @@ public class OptionsFile
         return file;
     }
 
+    /// <summary>
+    /// Save the Options data
+    /// </summary>
+    /// <param name="a_file">filepath</param>
     public static void SaveFile(string a_file)
     {
         for (int i = 0; i < m_aoFiles.Length; ++i)
@@ -73,6 +85,13 @@ public class OptionsFile
         return file.Get(a_name, out a_defined);
     }
 
+    /// <summary>
+    /// Attempt to get a float from the Data file.
+    /// </summary>
+    /// <param name="a_file">filpath</param>
+    /// <param name="a_name">Variable name</param>
+    /// <param name="a_defined"> Returned value</param>
+    /// <returns></returns>
     public static float GetFloat(string a_file, string a_name, out bool a_defined)
     {
         string item = GetString(a_file, a_name, out a_defined);
@@ -89,6 +108,13 @@ public class OptionsFile
         return 0f;
     }
 
+    /// <summary>
+    /// Attempt to get an Int from the Data file
+    /// </summary>
+    /// <param name="a_file">filepath</param>
+    /// <param name="a_name">Variable name</param>
+    /// <param name="a_defined">Returned Value</param>
+    /// <returns></returns>
     public static int GetInt(string a_file, string a_name, out bool a_defined)
     {
         string item = GetString(a_file, a_name, out a_defined);
@@ -105,6 +131,13 @@ public class OptionsFile
         return 0;
     }
 
+    /// <summary>
+    /// Attempt to get a bool from the data file
+    /// </summary>
+    /// <param name="a_file">Filepath</param>
+    /// <param name="a_name">Variable Name</param>
+    /// <param name="a_defined">Returned Value</param>
+    /// <returns></returns>
     public static bool GetBool(string a_file, string a_name, out bool a_defined)
     {
         string item = GetString(a_file, a_name, out a_defined);
@@ -121,6 +154,11 @@ public class OptionsFile
         return false;
     }
 
+    /// <summary>
+    /// Get file name Length
+    /// </summary>
+    /// <param name="a_file">File name</param>
+    /// <returns></returns>
     public static int GetNameLength(string a_file)
     {
         OptionsFile file = null;
@@ -142,6 +180,12 @@ public class OptionsFile
     //=============================================================
 
 
+    /// <summary>
+    /// Create a string in the file
+    /// </summary>
+    /// <param name="a_file">Filename</param>
+    /// <param name="a_name">Variable Name</param>
+    /// <param name="a_value">Given Value</param>
     public static void SetString(string a_file, string a_name, string a_value)
     {
         OptionsFile file = null;
@@ -160,16 +204,34 @@ public class OptionsFile
 
     //=============================================================
     // SET
+    /// <summary>
+    /// Create a Float in the file
+    /// </summary>
+    /// <param name="a_file">Filename</param>
+    /// <param name="a_name">Variable Name</param>
+    /// <param name="a_value">Given Value</param>
     public static void SetFloat(string a_file, string a_name, float a_value)
     {
         SetString(a_file, a_name, a_value.ToString());
     }
 
+    /// <summary>
+    /// Create a Int in the file
+    /// </summary>
+    /// <param name="a_file">Filename</param>
+    /// <param name="a_name">Variable Name</param>
+    /// <param name="a_value">Given Value</param>
     public static void SetInt(string a_file, string a_name, int a_value)
     {
         SetString(a_file, a_name, a_value.ToString());
     }
 
+    /// <summary>
+    /// Create a Bool in the file
+    /// </summary>
+    /// <param name="a_file">Filename</param>
+    /// <param name="a_name">Variable Name</param>
+    /// <param name="a_value">Given Value</param>
     public static void SetBool(string a_file, string a_name, bool a_value)
     {
         SetString(a_file, a_name, a_value.ToString());
@@ -186,6 +248,10 @@ public class OptionsFile
     private string[] m_asNames;
     private string[] m_asValues;
 
+    /// <summary>
+    /// Constructor for Options file
+    /// </summary>
+    /// <param name="a_name">Given name of the new file</param>
     public OptionsFile(string a_name)
     {
         m_sName = a_name;
@@ -259,7 +325,7 @@ public class OptionsFile
 
     public void Set(string a_name, string a_value)
     {
-        bool fek = false;
+        bool fek = false; ///lol nice1 @heatblayze
         if (Get(a_name, out fek) == null)
         {
             string[] names = new string[m_asNames.Length + 1];

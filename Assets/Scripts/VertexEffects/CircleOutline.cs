@@ -2,6 +2,9 @@
 using UnityEngine.UI;
 using System.Collections.Generic;
 
+/// <summary>
+/// create a circle outline
+/// </summary>
 public class CircleOutline : ModifiedShadow
 {
     [SerializeField]

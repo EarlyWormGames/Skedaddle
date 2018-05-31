@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Object Pooling for lists
+/// </summary>
+/// <typeparam name="T"></typeparam>
 static class ListPool<T>
 {
     // Object pool to avoid allocations.
