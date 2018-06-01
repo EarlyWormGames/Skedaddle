@@ -8,6 +8,11 @@ using UnityEngine.Video;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 
+
+/// <summary>
+/// Please comment as you go :YEET: 
+/// </summary>
+
 [InitializeOnLoad]
 class TestOpen
 {

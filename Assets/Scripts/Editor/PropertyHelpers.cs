@@ -4,6 +4,9 @@ using System.Reflection;
 using UnityEngine;
 using UnityEditor;
 
+/// <summary>
+/// retrieve the property of an object
+/// </summary>
 public class PropertyHelpers
 {
     private static object GetValue_Imp(object source, string name)

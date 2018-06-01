@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
+/// <summary>
+/// Hide the gizmoGUI draw 
+/// </summary>
 [CustomPropertyDrawer(typeof(HideInNormalInspectorAttribute))]
 public class HideInNormalInspectorDrawer : PropertyDrawer
 {

@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 
 /// <summary>
-/// 
+/// ?
 /// </summary>
 public class Outline8 : ModifiedShadow
 {

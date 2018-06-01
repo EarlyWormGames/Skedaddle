@@ -4,6 +4,10 @@ using UnityEngine;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 
+
+/// <summary>
+/// Quick shortcut to opening different scenes "Ctrl + Shift + O"
+/// </summary>
 public class OpenScene : EditorWindow
 {
     static Vector2 scrollPos;

@@ -5,6 +5,10 @@ using System.Collections;
 using System.Reflection;
 using UnityEngine.Internal;
 
+
+/// <summary>
+/// Transform editor that can be included in an editor window.
+/// </summary>
 [CustomEditor(typeof(Transform))]
 public class TransformEditor : Editor
 {

@@ -6,6 +6,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 
+/// <summary>
+/// base item class
+/// </summary>
 public class Item
 {
     public GameObject m_goPrefab;
@@ -17,6 +20,10 @@ public class Item
     }
 }
  
+
+/// <summary>
+/// editor window that allows you to edit prefab/gameobject settings
+/// </summary>
 public class ItemWindow : EditorWindow
 {
     [MenuItem("Window/EW Item Editor %i", false, 1)]

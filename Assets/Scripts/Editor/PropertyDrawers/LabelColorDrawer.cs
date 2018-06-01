@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEditor;
 using System;
 
+/// <summary>
+/// colour of the labels in the scene
+/// </summary>
 [CustomPropertyDrawer(typeof(LabelColorAttribute))]
 public class LabelColorDrawer : PropertyDrawer
 {

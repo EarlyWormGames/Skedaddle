@@ -3,6 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Derives from Property Attribute
+/// colour of the labels in the scene
+/// </summary>
 [AttributeUsage(AttributeTargets.Field)]
 public class LabelColorAttribute : PropertyAttribute
 {
