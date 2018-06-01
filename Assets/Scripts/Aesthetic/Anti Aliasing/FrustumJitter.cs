@@ -5,6 +5,9 @@
 using System;
 using UnityEngine;
 
+/// <summary>
+/// edge smoothing
+/// </summary>
 [ExecuteInEditMode]
 [RequireComponent(typeof(Camera))]
 [AddComponentMenu("Playdead/FrustumJitter")]

@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// slider to detemine the time of night
+/// applies a slight colour change to the level.
+/// </summary>
 public class NightTimeSlider : MonoBehaviour {
 
     [Range(0,1)] public float m_fTimeOfNight;

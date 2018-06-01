@@ -2,6 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 
+/// <summary>
+/// jitter applied to spacific objects
+/// </summary>
 public class ObjectJitter : TrainEffects {
 
     public Vector3 m_v3ConstantForce;

@@ -5,6 +5,10 @@ using System.IO;
 using System.Collections.Generic;
 using System.Reflection;
 
+/// <summary>
+/// item selector Editor Window
+/// a popup that allows you to change and modify items 
+/// </summary>
 public class ItemSelector : EditorWindow
 {
     public static bool m_bJustSaved = false;

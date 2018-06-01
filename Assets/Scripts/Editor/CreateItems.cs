@@ -3,6 +3,9 @@ using UnityEngine;
 using System.IO;
 using System.Reflection;
 
+/// <summary>
+/// helper functions that allow you to create objects as needed
+/// </summary>
 public class CreateItems
 {
     public static void StartRenameSelectedAsset()

@@ -2,6 +2,9 @@
 using System.Collections;
 using UnityEngine.InputNew;
 
+/// <summary>
+/// drop the cage from its hinge joint
+/// </summary>
 public class CageDrop : MonoBehaviour, IInteractable
 {
     public HingeJoint[] m_hjRope;

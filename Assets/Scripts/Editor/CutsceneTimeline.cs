@@ -3,6 +3,9 @@ using UnityEditor;
 using System.Collections.Generic;
 using System.Linq;
 
+/// <summary>
+/// an object that exsists on a timeline.
+/// </summary>
 public class TimelineObject
 {
     public Vector2 m_v2TimePos;
@@ -89,6 +92,11 @@ public class TimelineObject
     }
 }
 
+/// <summary>
+/// Cutscene timeline manager
+/// Use:
+/// create a CutsceneTimeline that can call events and functions during its progression.
+/// </summary>
 public class CutsceneTimeline : EditorWindow
 {
     [MenuItem("Window/EW Cutscene Timeline", false, 2)]

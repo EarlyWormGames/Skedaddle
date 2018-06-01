@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
+/// <summary>
+/// helper functions to create joints
+/// </summary>
 public class CreateJoints
 {
     [MenuItem("Tools/Hinge/Hinge Joints on Children")]

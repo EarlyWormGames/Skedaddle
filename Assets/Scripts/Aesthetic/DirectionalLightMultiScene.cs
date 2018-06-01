@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// container class for level lighting information
+/// </summary>
 [System.Serializable]public class LevelLightingDetails
 {
     public int level;
@@ -10,6 +13,9 @@ using UnityEngine;
     public float lightIntensity;
 }
 
+/// <summary>
+/// management of the level lighting details and applied to the scene
+/// </summary>
 [ExecuteInEditMode]
 public class DirectionalLightMultiScene : MonoBehaviour {
 

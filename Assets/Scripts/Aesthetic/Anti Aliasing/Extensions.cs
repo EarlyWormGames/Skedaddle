@@ -4,6 +4,12 @@
 
 using UnityEngine;
 
+///Extensions for the math library
+
+
+/// <summary>
+/// extra functionality for Vector2's
+/// </summary>
 public static class Vector2Extension
 {
     // positive if v2 is on the left side of v1

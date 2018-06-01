@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// debris fade out.
+/// </summary>
 public class DebrisFade : MonoBehaviour
 {
     public float m_fSpeed;

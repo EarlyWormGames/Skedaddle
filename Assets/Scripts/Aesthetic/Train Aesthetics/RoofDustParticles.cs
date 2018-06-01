@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Dust particles that fall from the roof, based on a timer.
+/// </summary>
 public class RoofDustParticles : TrainEffects {
 
     //////////////////////////////

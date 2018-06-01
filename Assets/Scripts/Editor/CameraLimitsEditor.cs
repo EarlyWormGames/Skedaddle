@@ -2,6 +2,9 @@
 using UnityEditor;
 using System.Collections;
 
+/// <summary>
+/// Debug draw for the camera limits
+/// </summary>
 [CustomEditor(typeof(CameraLimits))]
 public class CameraLimitsEditor : Editor
 {

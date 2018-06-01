@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
+/// <summary>
+/// helper functions to create objects as needed.
+/// </summary>
 public static class CustomTools
 {
     [MenuItem("Tools/Early Worm/Convert To PPObject")]

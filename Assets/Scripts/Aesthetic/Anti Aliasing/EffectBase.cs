@@ -4,6 +4,9 @@
 
 using UnityEngine;
 
+/// <summary>
+/// render a full screen quad
+/// </summary>
 public abstract class EffectBase : MonoBehaviour
 {
     public void EnsureMaterial(ref Material material, Shader shader)

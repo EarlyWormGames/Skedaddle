@@ -6,6 +6,9 @@ using UnityEditor.AnimatedValues;
 using UnityEngine.Events;
 using System.Reflection;
 
+/// <summary>
+/// manage an event that happens over time.
+/// </summary>
 [CustomEditor(typeof(EventOverTime))]
 public class EventOverTimeInspector : Editor
 {

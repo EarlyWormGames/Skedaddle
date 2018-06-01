@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// base class for all train effects to derive from.
+/// </summary>
 public class TrainEffects : MonoBehaviour {
 
     ////////////////////////////////

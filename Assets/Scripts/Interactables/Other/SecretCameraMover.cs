@@ -1,6 +1,9 @@
 using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// why is it a secret?
+/// </summary>
 public class SecretCameraMover : AnimalTrigger
 {
     public Camera m_cMain;

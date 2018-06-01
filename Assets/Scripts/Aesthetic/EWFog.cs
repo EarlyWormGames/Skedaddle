@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// subtle fog 
+/// </summary>
 [RequireComponent(typeof(Renderer))]
 public class EWFog : MonoBehaviour
 {

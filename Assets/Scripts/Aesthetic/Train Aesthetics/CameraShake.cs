@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// added camera shake for the train carriages 
+/// </summary>
 public class CameraShake : TrainEffects
 {
     //public variables

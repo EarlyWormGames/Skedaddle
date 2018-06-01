@@ -2,6 +2,9 @@
 using UnityEngine.UI;
 using System.Collections.Generic;
 
+/// <summary>
+/// 
+/// </summary>
 public class Outline8 : ModifiedShadow
 {
     public override void ModifyVertices(List<UIVertex> verts)

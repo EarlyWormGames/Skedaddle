@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// jitter the cage the loris starts in.
+/// </summary>
 public class CageJitter : TrainEffects {
 
     //public variables

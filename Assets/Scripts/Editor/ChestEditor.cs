@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 
+/// <summary>
+/// To aid in managing all chests in the game, giving each chest its current data.
+/// </summary>
 [CustomEditor(typeof(Chest))]
 public class ChestEditor : Editor
 {

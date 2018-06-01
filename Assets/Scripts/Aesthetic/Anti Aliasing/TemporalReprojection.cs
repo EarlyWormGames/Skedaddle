@@ -4,6 +4,10 @@
 
 using UnityEngine;
 
+/// <summary>
+/// AA edge smoothing
+/// </summary>
+
 [ExecuteInEditMode]
 [RequireComponent(typeof(Camera))]
 [RequireComponent(typeof(FrustumJitter))]

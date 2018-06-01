@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
+/// <summary>
+/// Transition between two post processing effects
+/// </summary>
 [Serializable]
 [PostProcess(typeof(TransitionPPRenderer), PostProcessEvent.AfterStack, "Early Worm/Transition")]
 public sealed class TransitionPP : PostProcessEffectSettings

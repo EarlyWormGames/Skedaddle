@@ -5,6 +5,9 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+/// <summary>
+/// AA edge smoothing
+/// </summary>
 
 [AddComponentMenu("Playdead/VelocityBufferTag")]
 public class VelocityBufferTag : MonoBehaviour

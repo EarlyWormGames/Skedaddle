@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// flicker that occurs during the train ride.
+/// </summary>
 public class TrainLightFlicker : TrainEffects {
 
     public Light[] m_laLightSources;

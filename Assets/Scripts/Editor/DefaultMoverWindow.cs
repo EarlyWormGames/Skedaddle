@@ -4,6 +4,9 @@ using System.Linq;
 using UnityEngine;
 using UnityEditor;
 
+/// <summary>
+/// create default cmamera mover
+/// </summary>
 public class DefaultMoverWindow : EditorWindow
 {
     private CameraSplineManager manager;

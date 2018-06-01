@@ -5,6 +5,9 @@ using System;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// fading in and out through a texture that's overlayed on the screen
+/// </summary>
 public class Fading : MonoBehaviour {
 
     public Texture2D FadeOutTexture;    // the texture that will overlay the screen. This can be a block image or loading graphic

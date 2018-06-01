@@ -16,7 +16,7 @@ public class Item
         m_goPrefab = a_prefab;
     }
 }
-
+ 
 public class ItemWindow : EditorWindow
 {
     [MenuItem("Window/EW Item Editor %i", false, 1)]
