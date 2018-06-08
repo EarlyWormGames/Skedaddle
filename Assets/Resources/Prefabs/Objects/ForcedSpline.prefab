@@ -52,14 +52,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1841972136504560}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.728, y: -1.813, z: 7.5}
+  m_LocalRotation: {x: -0, y: 0.7071089, z: -0, w: -0.7071047}
+  m_LocalPosition: {x: -2.933996, y: 0.946, z: 4.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4797645209425526}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
 --- !u!4 &4797645209425526
 Transform:
   m_ObjectHideFlags: 1
@@ -68,7 +68,7 @@ Transform:
   m_GameObject: {fileID: 1636298864134910}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.866, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4.3025846, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4711431855261962}
   m_RootOrder: 0
@@ -114,7 +114,12 @@ MonoBehaviour:
   RequiredAnimal: 1
   Spline: {fileID: 114516380391760796}
   RequiredKey:
-    action: {fileID: 0}
+    action: {fileID: 114474356807208088, guid: 80f2df7e1586bc94aa1bbea872f6ca3b, type: 2}
+  StopOnExit: 0
+  RequiredLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  OnlyIfNotSplining: 0
 --- !u!114 &114499436664095120
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -132,8 +137,8 @@ MonoBehaviour:
   points:
   - {x: 1, y: 0, z: 0}
   - {x: 2, y: 0, z: 0}
-  - {x: 1.4708891, y: 0, z: 0}
-  - {x: 2.470889, y: 0, z: 0}
+  - {x: 1.0548773, y: 0, z: 0}
+  - {x: 2.0548773, y: 0, z: 0}
   modes: 0000000000000000
   loop: 0
 --- !u!114 &114516380391760796
@@ -147,23 +152,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 576a420f9a8e3f24fb0c7e263d232988, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumPoints: 1
+  NumPoints: 5
   RegeneratePoints: 0
+  ConstantRegenerate: 0
   HighExit: 1
   LowExit: 1
   MoveAxisKey:
-    action: {fileID: 0}
+    action: {fileID: 114332852716363806, guid: 80f2df7e1586bc94aa1bbea872f6ca3b, type: 2}
   InvertAxis: 0
-  ForceMovement: 1
+  ForceMovement: 0
+  OnHighExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnLowExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   AxesToIgnore: 2
   DisableGravity: 0
+  DisableGrounder: 0
   points:
-  - current: {x: 1, y: 0, z: 0}
+  - current: {x: 1, y: 0, z: -0.000000059604645}
     totalDistance: 0
     time: 0
     index: 0
-  - current: {x: 2.470889, y: 0, z: 0}
-    totalDistance: 1.4708891
-    time: 1
+  - current: {x: 1.4706302, y: 0, z: 0}
+    totalDistance: 0.47063017
+    time: 0.2
     index: 1
+  - current: {x: 1.7621331, y: 0, z: 0}
+    totalDistance: 0.7621331
+    time: 0.4
+    index: 2
+  - current: {x: 1.993926, y: 0, z: 0}
+    totalDistance: 0.99392605
+    time: 0.6
+    index: 3
+  - current: {x: 2.285429, y: 0, z: 0}
+    totalDistance: 1.285429
+    time: 0.8
+    index: 4
+  - current: {x: 2.7560592, y: 0, z: 0}
+    totalDistance: 1.7560592
+    time: 1
+    index: 5
   m_Spline: {fileID: 114499436664095120}

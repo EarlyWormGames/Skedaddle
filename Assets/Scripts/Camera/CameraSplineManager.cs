@@ -46,11 +46,13 @@ public class CameraSplineManager : MonoBehaviour
 
     public void SetupSplines()
     {
+        //Initializes all splines' settings
         foreach (var spline in Splines)
         {
             spline.EnableForAnimals = new bool[spline.MyAnimals.Count];
         }
 
+        //Enable the default spline
         for(int i = 0; i < DefaultAnimals.Count; ++i)
         {
             if (DefaultSplines[i] == null)
@@ -60,6 +62,9 @@ public class CameraSplineManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Enable a specific spline for a specific animal
+    /// </summary>
     public bool EnableSpline(ANIMAL_NAME a_name, CameraMover spline)
     {
         if (!CurrentSplines.ContainsKey(a_name))
@@ -78,6 +83,7 @@ public class CameraSplineManager : MonoBehaviour
         return wasSet;
     }
 
+    #region Per-animal Enables
     public void EnableSplineLoris(CameraMover spline)
     {
         EnableSpline(ANIMAL_NAME.LORIS, spline);
@@ -102,7 +108,11 @@ public class CameraSplineManager : MonoBehaviour
     {
         EnableSpline(ANIMAL_NAME.ELEPHANT, spline);
     }
+    #endregion
 
+    /// <summary>
+    /// Enable a spline for all animals
+    /// </summary>
     public void EnableSplineALL(CameraMover spline)
     {
         foreach(var pair in CurrentSplines)
