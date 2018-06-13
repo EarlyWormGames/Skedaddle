@@ -43,7 +43,7 @@ public class Anteater : Animal
         m_fIdleTimer -= Time.deltaTime;
         m_aAnimalAnimator.SetBool("Controlled", m_bSelected);
         m_aAnimalAnimator.SetBool("OnGround", m_bOnGround);
-        m_aAnimalAnimator.SetBool("Dead", !Alive);
+        if(!m_bSimulateDeath)m_aAnimalAnimator.SetBool("Dead", !Alive);
         m_aAnimalAnimator.SetFloat("Vertical Velocity", m_rBody.velocity.y);
         if ((m_bWalkingLeft ^ m_bWalkingRight))
         {

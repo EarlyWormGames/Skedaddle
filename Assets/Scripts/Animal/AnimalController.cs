@@ -291,8 +291,8 @@ public class AnimalController : Singleton<AnimalController>
 
         var animal = m_lAnimals[m_iSelectedNumber];
 
-        if (animal.GetType() != typeof(T))
-            return null;
+        //if (animal.GetType() != typeof(T))
+        //    return null;
 
         return (T)animal;
     }

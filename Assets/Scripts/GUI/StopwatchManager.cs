@@ -4,13 +4,31 @@ using UnityEngine;
 using TMPro;
 
 /// <summary>
-/// Manager to handle all the stop watches in the game.
+/// Manager to handle all the stopwatchs created from testing Stopwatch Triggers.
 /// </summary>
 public class StopwatchManager : MonoBehaviour {
 
+    ///////////////////////////////////////
+    ///         Public Variables        ///
+    ///////////////////////////////////////
+
+    /// <summary>
+    /// Average Times Parent GUI Object
+    /// </summary>
+    [Tooltip("Average Times Parent GUI Object")]
     public GameObject AverageParent;
+    /// <summary>
+    /// Average Timer Prefab used to create GUI
+    /// </summary>
+    [Tooltip("Average Timer Prefab used to create GUI")]
     public GameObject AverageTimesPrefab;
+    /// <summary>
+    /// Contains a list of all Timers
+    /// </summary>
     internal List<StopwatchTimer> Times;
+    /// <summary>
+    /// Contains a list of all Average Timers
+    /// </summary>
     private List<StopwatchTimer> AverageTimers;
 
 	// Use this for initialization
@@ -21,6 +39,9 @@ public class StopwatchManager : MonoBehaviour {
         }
 	}
 	
+    /// <summary>
+    /// Clears all timers
+    /// </summary>
 	public void ClearTimes()
     {
         foreach(StopwatchTimer x in Times)
@@ -30,9 +51,12 @@ public class StopwatchManager : MonoBehaviour {
         Times.Clear();
     }
 
+    /// <summary>
+    /// creates average times for current animals being timed
+    /// </summary>
     public void AverageTimes()
     {
-        //clear Existing Averages
+        //clear Existing Averages if they exist
         if(AverageTimers == null)
         {
             AverageTimers = new List<StopwatchTimer>();
@@ -49,14 +73,16 @@ public class StopwatchManager : MonoBehaviour {
         List<StopwatchTimer> TimesToAverage = new List<StopwatchTimer>(Times);
         while (TimesToAverage.Count != 0)
         {
-            List<StopwatchTimer> TimesToRemove = new List<StopwatchTimer>();
-            string NameAverage = "";
-            float sum = 0;
-            int amount = 0;
+            List<StopwatchTimer> TimesToRemove = new List<StopwatchTimer>();    //creates list of times to remove from list to average
+            string NameAverage = "";                                            //What is currently being averaged
+            float sum = 0;                                                      //sum of times
+            int amount = 0;                                                     //amount of times
+            //scan for items of the same timer types and sum up totals
             for(int i = 0; i < TimesToAverage.Count; i++)
             {
                 if(i == 0)
                 {
+                    //initialise current average loop
                     NameAverage = TimesToAverage[i].TimerName;
                     sum += TimesToAverage[i].TimerTime;
                     amount++;
@@ -66,17 +92,20 @@ public class StopwatchManager : MonoBehaviour {
                 {
                     if(TimesToAverage[i].TimerName == NameAverage)
                     {
+                        //adds same timers to the current totals
                         sum += TimesToAverage[i].TimerTime;
                         amount++;
                         TimesToRemove.Add(TimesToAverage[i]);
                     }
                 }
             }
+            //remove times from times to average
             foreach (StopwatchTimer x in TimesToRemove)
             {
                 TimesToAverage.Remove(x);
             }
             TimesToRemove.Clear();
+            //average total
             StopwatchTimer Average = Instantiate(AverageTimesPrefab, AverageParent.transform).GetComponent<StopwatchTimer>();
             Average.TimerName = NameAverage;
             Average.TimerTime = sum / amount;

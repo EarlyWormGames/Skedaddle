@@ -67,6 +67,7 @@ public class ClimbJump : AttachableInteract
             {
                 //Lerp to the start position
                 AttachedAnimal.transform.position = Vector3.Lerp(AttachedAnimal.transform.position, AnchorPoint.position + ClimbCurve, 0.1f);
+                AttachedAnimal.m_gqGrounder.weight = 0.01f;
             }
             else
             {
@@ -79,6 +80,7 @@ public class ClimbJump : AttachableInteract
                 //Stop climbing, reset values
                 AttachedAnimal.m_fFacingDir = FACING_DIR.NONE;
                 AttachedAnimal.m_rBody.isKinematic = false;
+                AttachedAnimal.m_gqGrounder.weight = 1f;
 
                 AttachedAnimal.SetColliderActive(true);
 

@@ -119,6 +119,7 @@ public class Animal : MonoBehaviour
 
     [Header("Misc")]
     public float            m_fMaxFallDist = 1f;
+    public bool             m_bDisableFallDeath = false;
     public float            m_fHitResist = 1f;
     public float            m_fSitTime = 2f;
     public float            m_fCameraY = 0;
@@ -180,6 +181,7 @@ public class Animal : MonoBehaviour
 
     internal bool           m_bOnTrampoline;
     internal bool           m_bBouncingOnTrampoline;
+    internal bool           m_bHorizontalRope;
     internal bool           m_bOnSlope;
 
     internal bool           m_bCanBeSelected = true;
@@ -203,6 +205,8 @@ public class Animal : MonoBehaviour
     {
         get { return m_bAlive; }
     }
+
+    internal bool m_bSimulateDeath;
 
     internal bool           m_bTurned = false;
 
@@ -253,7 +257,8 @@ public class Animal : MonoBehaviour
     //==================================
     private float           m_fRaycastTimer = 0f;
     private float           m_fIKMaxWeight;
-    
+
+    private float           m_DeathSimTimer = 0f;
 
     private float           m_fTurnAngle;
 
@@ -490,6 +495,19 @@ public class Animal : MonoBehaviour
             m_fSelectionTimer = 0;
         }
 
+        if (m_bSimulateDeath)
+        {
+            if(m_DeathSimTimer > 0)
+            {
+                m_aAnimalAnimator.SetBool("Dead", true);
+                m_DeathSimTimer -= Time.deltaTime;
+            }
+            else
+            {
+                m_aAnimalAnimator.SetBool("Dead", false);
+                m_bSimulateDeath = false;
+            }
+        }
         m_fRaycastTimer -= Time.deltaTime;
         if (m_fRaycastTimer <= 0f && m_bCheckGround)
         {
@@ -556,9 +574,17 @@ public class Animal : MonoBehaviour
 
                     if (dist > m_fMaxFallDist && (!m_bOnTrampoline || !WasTeleport))
                     {
-                        Kill(DEATH_TYPE.FALL);
-                        PlaySound(SOUND_EVENT.FALL_STOP);
-                        PlaySound(SOUND_EVENT.FALL_DEATH);
+                        if (!m_bDisableFallDeath)
+                        {
+                            Kill(DEATH_TYPE.FALL);
+                            PlaySound(SOUND_EVENT.FALL_STOP);
+                            PlaySound(SOUND_EVENT.FALL_DEATH);
+                        }
+                        else
+                        {
+                            m_bSimulateDeath = true;
+                            m_DeathSimTimer = 1.5f;
+                        }
                     }
                     else
                     {

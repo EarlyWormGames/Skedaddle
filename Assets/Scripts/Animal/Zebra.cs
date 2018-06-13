@@ -11,9 +11,23 @@ public class Zebra : Animal
 
     protected override void OnUpdate()
     {
-
+        if (m_bSelected)
+        {
+            if(m_bWalkingLeft || m_bWalkingRight)
+            {
+                m_aAnimalAnimator.SetBool("Walking", true);
+            } else
+            {
+                m_aAnimalAnimator.SetBool("Walking", false);
+            }
+        }
     }
+    public override void OnSelectChange()
+    {
+        base.OnSelectChange();
 
+        m_aAnimalAnimator.SetBool("Controlled", m_bSelected);
+    }
     public override ANIMAL_NAME GetName()
     {
         return ANIMAL_NAME.ZEBRA;

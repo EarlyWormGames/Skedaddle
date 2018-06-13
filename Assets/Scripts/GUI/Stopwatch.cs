@@ -4,24 +4,53 @@ using UnityEngine;
 using TMPro;
 
 /// <summary>
-/// stopwatch to count how long a playe spends in a level.
+/// Trigger script for stopwatch
 /// </summary>
 public class Stopwatch : AnimalTrigger
 {
+    /// <summary>
+    /// Checks whether to use only the head trigger for actiavtion
+    /// </summary>
     protected override bool HeadTriggerOnly { get; set; }
 
     //Public Variables
 
+    /// <summary>
+    /// Lap Time Parent Object
+    /// </summary>
+    [Tooltip("Lap Time Parent Object")]
     public StopwatchManager GUIObject;
+    /// <summary>
+    /// Lap Time prefab used to create GUI Timers
+    /// </summary>
+    [Tooltip("Lap Time prefab used to create GUI Timers")]
     public GameObject TimerPrefab;
 
     //Private Static Variables
 
+    /// <summary>
+    /// Parent Timer object
+    /// </summary>
     private static StopwatchTimer TimerObject;
+    /// <summary>
+    /// Animal being timed
+    /// </summary>
     private static Animal TimedAnimal;
+    /// <summary>
+    /// Current Time
+    /// </summary>
     private static float Timer;
+    /// <summary>
+    /// Total amount of Timers
+    /// </summary>
     private static int TotalTimers;
+    /// <summary>
+    /// is the Animal running?
+    /// </summary>
     private static bool Running;
+    /// <summary>
+    /// is the Animal Climbing?
+    /// </summary>
     private static bool Climbing;
 
     void Awake()
@@ -31,8 +60,10 @@ public class Stopwatch : AnimalTrigger
 
     void Update()
     {
+        //check if currently timed
         if (TimerObject != null)
         {
+            // check if animal is running
             if (TimedAnimal.m_eName == ANIMAL_NAME.POODLE)
             {
                 Running = TimedAnimal.GetComponent<Poodle>().m_bRunning;
@@ -41,6 +72,7 @@ public class Stopwatch : AnimalTrigger
             {
                 Running = false;
             }
+            // check if animal is climbing
             if (TimedAnimal.m_eName == ANIMAL_NAME.LORIS)
             {
                 Climbing = TimedAnimal.GetComponent<Loris>().m_bClimbing;
@@ -49,6 +81,7 @@ public class Stopwatch : AnimalTrigger
             {
                 Climbing = false;
             }
+            //Update timer
             Timer += Time.deltaTime / TotalTimers;
             TimerObject.TimerName = TimedAnimal.name + (Running ? " Run" : "") + (Climbing ? " Climb" : "");
             TimerObject.TimerTime = Timer;
@@ -61,8 +94,10 @@ public class Stopwatch : AnimalTrigger
 
     public override void AnimalEnter(Animal a_animal)
     {
+        //check if timer is currently on
         if (TimedAnimal == null)
         {
+            //start Timer
             TimedAnimal = a_animal;
             TimerObject = Instantiate(TimerPrefab, GUIObject.transform).GetComponent<StopwatchTimer>();
             TimerObject.Manager = GUIObject;
@@ -71,6 +106,7 @@ public class Stopwatch : AnimalTrigger
         }
         else
         {
+            //stop timer
             if (a_animal == TimedAnimal)
             {
                 TimedAnimal = null;
@@ -79,6 +115,7 @@ public class Stopwatch : AnimalTrigger
         }
     }
 
+    //phantom function
     public override void AnimalExit(Animal animal)
     {
         

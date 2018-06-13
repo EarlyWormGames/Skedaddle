@@ -74,7 +74,7 @@ public class Poodle : Animal
         }
 
         m_aAnimalAnimator.SetBool("Controlled", m_bSelected);
-        m_aAnimalAnimator.SetBool("Dead", !Alive);
+        if(!m_bSimulateDeath) m_aAnimalAnimator.SetBool("Dead", !Alive);
 
         m_fIKDampen = Mathf.Lerp(m_fIKDampen, m_IKLedgeBlend, Time.deltaTime * 3);
         m_aAnimalAnimator.SetLayerWeight(3, m_fIKDampen);
@@ -223,6 +223,8 @@ public class Poodle : Animal
             {
                 m_aAnimalAnimator.SetFloat("Push Direction", 0);
             }
+
+            m_aAnimalAnimator.SetFloat("OnRope", m_bHorizontalRope ? 1f : 0f); 
 
             if (m_bPullingPlug)
             {

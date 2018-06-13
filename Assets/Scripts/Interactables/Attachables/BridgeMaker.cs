@@ -77,7 +77,8 @@ public class BridgeMaker : AttachableInteract
             //The code below positions the IK's correctly
             if (AttachedAnimal.GetType().IsAssignableFrom(typeof(Anteater)))
             {
-                m_aTongue.transform.position = AttachedAnimal.GetComponent<Anteater>().m_tTongueEnd.position;
+                Vector3 TongueOrigin = AttachedAnimal.GetComponent<Anteater>().m_tTongueEnd.position;
+                m_aTongue.transform.position = TongueOrigin;
             }
             m_tBridgeMulti = Vector3.Distance(m_aTongue.transform.position, m_tBridgeAnchor.position) / m_BridgeTongueOriginalDistance;
 

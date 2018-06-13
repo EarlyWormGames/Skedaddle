@@ -4,13 +4,25 @@ using UnityEngine;
 using TMPro;
 
 /// <summary>
-/// Stopwatch timer 
+/// Stopwatch timer GUI
 /// </summary>
 public class StopwatchTimer : MonoBehaviour {
 
+    /// <summary>
+    /// Internal Stopwatch manager container
+    /// </summary>
     internal StopwatchManager Manager;
+    /// <summary>
+    /// Name of this stopwatch
+    /// </summary>
     internal string TimerName;
+    /// <summary>
+    /// This timers current time
+    /// </summary>
     internal float TimerTime;
+    /// <summary>
+    /// Text Display on GUI
+    /// </summary>
     private TextMeshProUGUI TextField;
 
     void Start()

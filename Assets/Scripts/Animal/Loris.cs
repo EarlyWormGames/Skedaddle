@@ -38,8 +38,6 @@ public class Loris : Animal
     internal bool m_bCanClimbDown = true;
     internal bool m_bInCannon = false;
 
-    internal bool m_bHorizontalRope;
-
     internal bool m_bHeldByPoodle = false;
 
     //==================================
@@ -181,6 +179,7 @@ public class Loris : Animal
         //    m_aAnimalAnimator.SetBool("EdgeWarning", false);
         //}
 
+        if(!m_bSimulateDeath)
         m_aAnimalAnimator.SetBool("Dead", !m_bAlive);
 
         if (m_bWallOnLeft || m_bWallOnRight)
@@ -344,6 +343,8 @@ public class Loris : Animal
             }
         }
 
+        m_aAnimalAnimator.SetFloat("SprintMulti", Mathf.Clamp(m_aMovement.currentSpeed / (m_fTopSpeed * 3), 1, Mathf.Infinity));
+
         //=====================================
         // NIGHT VISION
         //=====================================
@@ -473,7 +474,7 @@ public class Loris : Animal
         if (m_bClimbing)
             speedMinMax[0] = m_fClimbSpeed;
 
-        if (!m_bClimbing)
+        if (!m_bClimbing && !m_bHorizontalRope)
         {
             if (m_bCanWalkLeft)
                 speedMinMax[1] = -m_fTopSpeed * (m_bPullingObject ? m_fPullSpeedMult : 1);
