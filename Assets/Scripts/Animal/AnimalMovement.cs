@@ -276,8 +276,9 @@ public class AnimalMovement : MonoBehaviour
                 {
                     if (FollowSpline.LowExit)
                     {
+                        var follow = FollowSpline;
                         StopSpline();
-                        FollowSpline.OnLowExit.Invoke();
+                        follow.OnLowExit.Invoke();
                     }
                     else
                         canMoveBackward = false;
@@ -286,8 +287,9 @@ public class AnimalMovement : MonoBehaviour
                 {
                     if (FollowSpline.HighExit)
                     {
+                        var follow = FollowSpline;
                         StopSpline();
-                        FollowSpline.OnHighExit.Invoke();
+                        follow.OnHighExit.Invoke();
                     }
                     else
                         canMoveForward = false;
