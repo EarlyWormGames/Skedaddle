@@ -1,0 +1,232 @@
+\hypertarget{class_animal_trigger}{}\section{Animal\+Trigger Class Reference}
+\label{class_animal_trigger}\index{Animal\+Trigger@{Animal\+Trigger}}
+Inheritance diagram for Animal\+Trigger\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=10.000000cm]{class_animal_trigger}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_animal_trigger_ae8394dfcf5f91b8c413959a4d6baa3a9}{Allows\+Animal}} (\mbox{\hyperlink{class_animal}{Animal}} animal)
+\item 
+abstract void \mbox{\hyperlink{class_animal_trigger_a03181803fa268e0bfcbdc752ee733c40}{Animal\+Enter}} (\mbox{\hyperlink{class_animal}{Animal}} animal)
+\begin{DoxyCompactList}\small\item\em An \mbox{\hyperlink{class_animal}{Animal}} has entered the trigger \end{DoxyCompactList}\item 
+abstract void \mbox{\hyperlink{class_animal_trigger_aa1a7c2e90de76c2e089b2bae01813f5c}{Animal\+Exit}} (\mbox{\hyperlink{class_animal}{Animal}} animal)
+\begin{DoxyCompactList}\small\item\em An \mbox{\hyperlink{class_animal}{Animal}} has exited the trigger \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_animal_8cs_ad0d15cd79bb3e3a97e7fb817f1438fcc}{A\+N\+I\+M\+A\+L\+\_\+\+S\+I\+ZE}} \mbox{\hyperlink{class_animal_trigger_a8df6a540a57c386c2f76a4554ee7e057}{Required\+Size}}
+\item 
+\mbox{\hyperlink{_animal_8cs_a2fa5713399b84d1b88dae9196837af50}{A\+N\+I\+M\+A\+L\+\_\+\+N\+A\+ME}} \mbox{\hyperlink{class_animal_trigger_aea34d32ba37a524d791680718161f31c}{Required\+Animal}}
+\item 
+\mbox{\hyperlink{_animal_8cs_ad0d15cd79bb3e3a97e7fb817f1438fcc}{A\+N\+I\+M\+A\+L\+\_\+\+S\+I\+ZE}} \mbox{\hyperlink{class_animal_trigger_ac9754af1da0271dfa7f677485953a0bb}{Maximum\+Size}}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_animal_trigger_a7a27e866d74251de063bb4a36c99e99d}{Wrong\+Animal\+Enter}} (\mbox{\hyperlink{class_animal}{Animal}} other)
+\begin{DoxyCompactList}\small\item\em An incorrect \mbox{\hyperlink{class_animal}{Animal}} has entered the trigger \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_animal_trigger_abbdf7b21fc9595ff639b96e6baecec46}{Wrong\+Animal\+Exit}} (\mbox{\hyperlink{class_animal}{Animal}} other)
+\begin{DoxyCompactList}\small\item\em An incorrect \mbox{\hyperlink{class_animal}{Animal}} has exited the trigger \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_animal_trigger_ac9d6fbc38448a5369e5658ae0774bd58}{Object\+Enter}} (Collider other)
+\begin{DoxyCompactList}\small\item\em An object other than an \mbox{\hyperlink{class_animal}{Animal}} has entered the trigger \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_animal_trigger_aad4a0cd7f224897b7d810429e05b038a}{Object\+Exit}} (Collider other)
+\begin{DoxyCompactList}\small\item\em An object other than an \mbox{\hyperlink{class_animal}{Animal}} has exited the trigger \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{class_animal}{Animal}} $>$ \mbox{\hyperlink{class_animal_trigger_acfc2fb2d9f72558027a49150e7e224ad}{Animals\+In}} = new List$<$\mbox{\hyperlink{class_animal}{Animal}}$>$()
+\begin{DoxyCompactList}\small\item\em summary$>$Check if this object is able to interact with this \mbox{\hyperlink{class_animal}{Animal}}\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+abstract bool \mbox{\hyperlink{class_animal_trigger_a7962bd6370a474f0d8cb69726ac783e5}{Head\+Trigger\+Only}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 4 of file Animal\+Trigger.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_animal_trigger_ae8394dfcf5f91b8c413959a4d6baa3a9}\label{class_animal_trigger_ae8394dfcf5f91b8c413959a4d6baa3a9}} 
+\index{Animal\+Trigger@{Animal\+Trigger}!Allows\+Animal@{Allows\+Animal}}
+\index{Allows\+Animal@{Allows\+Animal}!Animal\+Trigger@{Animal\+Trigger}}
+\subsubsection{\texorpdfstring{Allows\+Animal()}{AllowsAnimal()}}
+{\footnotesize\ttfamily bool Animal\+Trigger.\+Allows\+Animal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{animal }\end{DoxyParamCaption})}
+
+
+
+Definition at line 15 of file Animal\+Trigger.\+cs.
+
+\mbox{\Hypertarget{class_animal_trigger_a03181803fa268e0bfcbdc752ee733c40}\label{class_animal_trigger_a03181803fa268e0bfcbdc752ee733c40}} 
+\index{Animal\+Trigger@{Animal\+Trigger}!Animal\+Enter@{Animal\+Enter}}
+\index{Animal\+Enter@{Animal\+Enter}!Animal\+Trigger@{Animal\+Trigger}}
+\subsubsection{\texorpdfstring{Animal\+Enter()}{AnimalEnter()}}
+{\footnotesize\ttfamily abstract void Animal\+Trigger.\+Animal\+Enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{animal }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+An \mbox{\hyperlink{class_animal}{Animal}} has entered the trigger 
+
+
+
+Implemented in \mbox{\hyperlink{class_stopwatch_abd930ea70de15bd24e05f63ba89a640e}{Stopwatch}}, \mbox{\hyperlink{class_animal_interactor_a91ee9e749597002a9d8b48055f3ee0ce}{Animal\+Interactor}}, \mbox{\hyperlink{class_animal_event_trigger_a99229b8cc15441fd184fb92747106d14}{Animal\+Event\+Trigger}}, \mbox{\hyperlink{class_attachable_a78b678ddd2860e245fd1ce5350414b8e}{Attachable}}, \mbox{\hyperlink{class_secret_camera_mover_a167a1c9a1b6de66a6789e4f9c4eb2633}{Secret\+Camera\+Mover}}, \mbox{\hyperlink{class_camera_spline_setter_a5669e29495356c82377ef7545cf29b3a}{Camera\+Spline\+Setter}}, \mbox{\hyperlink{class_change_speed_ae31f3a37d9eca8f2d055867035e02ca4}{Change\+Speed}}, and \mbox{\hyperlink{class_slide_a9ff3efb4447801dcd251378a66d5afa5}{Slide}}.
+
+\mbox{\Hypertarget{class_animal_trigger_aa1a7c2e90de76c2e089b2bae01813f5c}\label{class_animal_trigger_aa1a7c2e90de76c2e089b2bae01813f5c}} 
+\index{Animal\+Trigger@{Animal\+Trigger}!Animal\+Exit@{Animal\+Exit}}
+\index{Animal\+Exit@{Animal\+Exit}!Animal\+Trigger@{Animal\+Trigger}}
+\subsubsection{\texorpdfstring{Animal\+Exit()}{AnimalExit()}}
+{\footnotesize\ttfamily abstract void Animal\+Trigger.\+Animal\+Exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{animal }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+An \mbox{\hyperlink{class_animal}{Animal}} has exited the trigger 
+
+
+
+Implemented in \mbox{\hyperlink{class_stopwatch_ad71c492f52e3396c648501c315bae5e5}{Stopwatch}}, \mbox{\hyperlink{class_animal_interactor_a0ff1e2c10b462d19357913cbf1f2d023}{Animal\+Interactor}}, \mbox{\hyperlink{class_animal_event_trigger_a5fb92b33d31fee51fbf2237fd3aead55}{Animal\+Event\+Trigger}}, \mbox{\hyperlink{class_attachable_adef6aa1287071d15d2724de7c0badbd8}{Attachable}}, \mbox{\hyperlink{class_secret_camera_mover_a7034d7373226a7c514d054ab73df027a}{Secret\+Camera\+Mover}}, \mbox{\hyperlink{class_camera_spline_setter_a4b75777822bf9b381e8a95c11d979e31}{Camera\+Spline\+Setter}}, \mbox{\hyperlink{class_change_speed_ac708140d2ba20cf5bb4307a23f5987dd}{Change\+Speed}}, and \mbox{\hyperlink{class_slide_a69c08279e8270df11ec45fba09dd12ba}{Slide}}.
+
+\mbox{\Hypertarget{class_animal_trigger_ac9d6fbc38448a5369e5658ae0774bd58}\label{class_animal_trigger_ac9d6fbc38448a5369e5658ae0774bd58}} 
+\index{Animal\+Trigger@{Animal\+Trigger}!Object\+Enter@{Object\+Enter}}
+\index{Object\+Enter@{Object\+Enter}!Animal\+Trigger@{Animal\+Trigger}}
+\subsubsection{\texorpdfstring{Object\+Enter()}{ObjectEnter()}}
+{\footnotesize\ttfamily virtual void Animal\+Trigger.\+Object\+Enter (\begin{DoxyParamCaption}\item[{Collider}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+An object other than an \mbox{\hyperlink{class_animal}{Animal}} has entered the trigger 
+
+
+
+Reimplemented in \mbox{\hyperlink{class_trampoline_a82a3dc5c89e349b31def18b36ee1ad5a}{Trampoline}}.
+
+
+
+Definition at line 128 of file Animal\+Trigger.\+cs.
+
+\mbox{\Hypertarget{class_animal_trigger_aad4a0cd7f224897b7d810429e05b038a}\label{class_animal_trigger_aad4a0cd7f224897b7d810429e05b038a}} 
+\index{Animal\+Trigger@{Animal\+Trigger}!Object\+Exit@{Object\+Exit}}
+\index{Object\+Exit@{Object\+Exit}!Animal\+Trigger@{Animal\+Trigger}}
+\subsubsection{\texorpdfstring{Object\+Exit()}{ObjectExit()}}
+{\footnotesize\ttfamily virtual void Animal\+Trigger.\+Object\+Exit (\begin{DoxyParamCaption}\item[{Collider}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+An object other than an \mbox{\hyperlink{class_animal}{Animal}} has exited the trigger 
+
+
+
+Reimplemented in \mbox{\hyperlink{class_trampoline_a3924d1f315181a81e2117ab239b8ec0e}{Trampoline}}.
+
+
+
+Definition at line 132 of file Animal\+Trigger.\+cs.
+
+\mbox{\Hypertarget{class_animal_trigger_a7a27e866d74251de063bb4a36c99e99d}\label{class_animal_trigger_a7a27e866d74251de063bb4a36c99e99d}} 
+\index{Animal\+Trigger@{Animal\+Trigger}!Wrong\+Animal\+Enter@{Wrong\+Animal\+Enter}}
+\index{Wrong\+Animal\+Enter@{Wrong\+Animal\+Enter}!Animal\+Trigger@{Animal\+Trigger}}
+\subsubsection{\texorpdfstring{Wrong\+Animal\+Enter()}{WrongAnimalEnter()}}
+{\footnotesize\ttfamily virtual void Animal\+Trigger.\+Wrong\+Animal\+Enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+An incorrect \mbox{\hyperlink{class_animal}{Animal}} has entered the trigger 
+
+
+
+Reimplemented in \mbox{\hyperlink{class_trampoline_a7ffb817b148f86e9cc5dd7faa1af7c0c}{Trampoline}}.
+
+
+
+Definition at line 119 of file Animal\+Trigger.\+cs.
+
+\mbox{\Hypertarget{class_animal_trigger_abbdf7b21fc9595ff639b96e6baecec46}\label{class_animal_trigger_abbdf7b21fc9595ff639b96e6baecec46}} 
+\index{Animal\+Trigger@{Animal\+Trigger}!Wrong\+Animal\+Exit@{Wrong\+Animal\+Exit}}
+\index{Wrong\+Animal\+Exit@{Wrong\+Animal\+Exit}!Animal\+Trigger@{Animal\+Trigger}}
+\subsubsection{\texorpdfstring{Wrong\+Animal\+Exit()}{WrongAnimalExit()}}
+{\footnotesize\ttfamily virtual void Animal\+Trigger.\+Wrong\+Animal\+Exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+An incorrect \mbox{\hyperlink{class_animal}{Animal}} has exited the trigger 
+
+
+
+Reimplemented in \mbox{\hyperlink{class_trampoline_ac7806793d08278aafaac93d0ac552e51}{Trampoline}}.
+
+
+
+Definition at line 123 of file Animal\+Trigger.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_animal_trigger_acfc2fb2d9f72558027a49150e7e224ad}\label{class_animal_trigger_acfc2fb2d9f72558027a49150e7e224ad}} 
+\index{Animal\+Trigger@{Animal\+Trigger}!Animals\+In@{Animals\+In}}
+\index{Animals\+In@{Animals\+In}!Animal\+Trigger@{Animal\+Trigger}}
+\subsubsection{\texorpdfstring{Animals\+In}{AnimalsIn}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_animal}{Animal}}$>$ Animal\+Trigger.\+Animals\+In = new List$<$\mbox{\hyperlink{class_animal}{Animal}}$>$()\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+summary$>$Check if this object is able to interact with this \mbox{\hyperlink{class_animal}{Animal}}
+
+
+
+Definition at line 12 of file Animal\+Trigger.\+cs.
+
+\mbox{\Hypertarget{class_animal_trigger_ac9754af1da0271dfa7f677485953a0bb}\label{class_animal_trigger_ac9754af1da0271dfa7f677485953a0bb}} 
+\index{Animal\+Trigger@{Animal\+Trigger}!Maximum\+Size@{Maximum\+Size}}
+\index{Maximum\+Size@{Maximum\+Size}!Animal\+Trigger@{Animal\+Trigger}}
+\subsubsection{\texorpdfstring{Maximum\+Size}{MaximumSize}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_animal_8cs_ad0d15cd79bb3e3a97e7fb817f1438fcc}{A\+N\+I\+M\+A\+L\+\_\+\+S\+I\+ZE}} Animal\+Trigger.\+Maximum\+Size}
+
+
+
+Definition at line 9 of file Animal\+Trigger.\+cs.
+
+\mbox{\Hypertarget{class_animal_trigger_aea34d32ba37a524d791680718161f31c}\label{class_animal_trigger_aea34d32ba37a524d791680718161f31c}} 
+\index{Animal\+Trigger@{Animal\+Trigger}!Required\+Animal@{Required\+Animal}}
+\index{Required\+Animal@{Required\+Animal}!Animal\+Trigger@{Animal\+Trigger}}
+\subsubsection{\texorpdfstring{Required\+Animal}{RequiredAnimal}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_animal_8cs_a2fa5713399b84d1b88dae9196837af50}{A\+N\+I\+M\+A\+L\+\_\+\+N\+A\+ME}} Animal\+Trigger.\+Required\+Animal}
+
+
+
+Definition at line 8 of file Animal\+Trigger.\+cs.
+
+\mbox{\Hypertarget{class_animal_trigger_a8df6a540a57c386c2f76a4554ee7e057}\label{class_animal_trigger_a8df6a540a57c386c2f76a4554ee7e057}} 
+\index{Animal\+Trigger@{Animal\+Trigger}!Required\+Size@{Required\+Size}}
+\index{Required\+Size@{Required\+Size}!Animal\+Trigger@{Animal\+Trigger}}
+\subsubsection{\texorpdfstring{Required\+Size}{RequiredSize}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_animal_8cs_ad0d15cd79bb3e3a97e7fb817f1438fcc}{A\+N\+I\+M\+A\+L\+\_\+\+S\+I\+ZE}} Animal\+Trigger.\+Required\+Size}
+
+
+
+Definition at line 7 of file Animal\+Trigger.\+cs.
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_animal_trigger_a7962bd6370a474f0d8cb69726ac783e5}\label{class_animal_trigger_a7962bd6370a474f0d8cb69726ac783e5}} 
+\index{Animal\+Trigger@{Animal\+Trigger}!Head\+Trigger\+Only@{Head\+Trigger\+Only}}
+\index{Head\+Trigger\+Only@{Head\+Trigger\+Only}!Animal\+Trigger@{Animal\+Trigger}}
+\subsubsection{\texorpdfstring{Head\+Trigger\+Only}{HeadTriggerOnly}}
+{\footnotesize\ttfamily abstract bool Animal\+Trigger.\+Head\+Trigger\+Only\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 10 of file Animal\+Trigger.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Interactables/\mbox{\hyperlink{_animal_trigger_8cs}{Animal\+Trigger.\+cs}}\end{DoxyCompactItemize}

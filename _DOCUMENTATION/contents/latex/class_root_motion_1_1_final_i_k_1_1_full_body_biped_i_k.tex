@@ -1,0 +1,181 @@
+\hypertarget{class_root_motion_1_1_final_i_k_1_1_full_body_biped_i_k}{}\section{Root\+Motion.\+Final\+I\+K.\+Full\+Body\+Biped\+IK Class Reference}
+\label{class_root_motion_1_1_final_i_k_1_1_full_body_biped_i_k}\index{Root\+Motion.\+Final\+I\+K.\+Full\+Body\+Biped\+IK@{Root\+Motion.\+Final\+I\+K.\+Full\+Body\+Biped\+IK}}
+
+
+Full Body IK System designed specifically for bipeds  
+
+
+Inheritance diagram for Root\+Motion.\+Final\+I\+K.\+Full\+Body\+Biped\+IK\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_root_motion_1_1_final_i_k_1_1_full_body_biped_i_k}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_full_body_biped_i_k_a824614a4b5c443a03dfff3a5edea0485}{Set\+References}} (\mbox{\hyperlink{class_root_motion_1_1_biped_references}{Biped\+References}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_full_body_biped_i_k_a0dfac5c2550dad76128806dd5fdc019b}{references}}, Transform root\+Node)
+\begin{DoxyCompactList}\small\item\em Sets the solver to new biped references. \end{DoxyCompactList}\item 
+override \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver}{I\+K\+Solver}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_full_body_biped_i_k_a40afaf3c61effbcc2ee82ad30c0b4bb7}{Get\+I\+K\+Solver}} ()
+\begin{DoxyCompactList}\small\item\em Gets the IK component\textquotesingle{}s solver as \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver}{I\+K\+Solver}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_full_body_biped_i_k_a8ce3c980aabd02250b0fbe4526a1cc0b}{References\+Error}} (ref string error\+Message)
+\begin{DoxyCompactList}\small\item\em Checks the biped references for errors. Returns true if error found. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_full_body_biped_i_k_a0668d64f894aa8f21ae2057c06788812}{References\+Warning}} (ref string warning\+Message)
+\begin{DoxyCompactList}\small\item\em Check for possible warnings with the biped references setup. Returns true if warning found. The solver can still run, but probably not how you expected. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_root_motion_1_1_biped_references}{Biped\+References}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_full_body_biped_i_k_a0dfac5c2550dad76128806dd5fdc019b}{references}} = new \mbox{\hyperlink{class_root_motion_1_1_biped_references}{Biped\+References}}()
+\begin{DoxyCompactList}\small\item\em The biped definition. Don\textquotesingle{}t change refences directly in runtime, use Set\+References(\+Biped\+References references) instead. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped}{I\+K\+Solver\+Full\+Body\+Biped}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_full_body_biped_i_k_ae1ba56ebef8d8312da5a610a90472823}{solver}} = new \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped}{I\+K\+Solver\+Full\+Body\+Biped}}()
+\begin{DoxyCompactList}\small\item\em The Full\+Body\+Biped IK solver. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_full_body_biped_i_k_a18f11840a747ff0163ba5933b026badc}{Open\+User\+Manual}} ()
+\item 
+override void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_full_body_biped_i_k_aae4e2635775efc0a5f2b1058b7e693fe}{Open\+Script\+Reference}} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Full Body IK System designed specifically for bipeds 
+
+
+
+Definition at line 11 of file Full\+Body\+Biped\+I\+K.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_full_body_biped_i_k_a40afaf3c61effbcc2ee82ad30c0b4bb7}\label{class_root_motion_1_1_final_i_k_1_1_full_body_biped_i_k_a40afaf3c61effbcc2ee82ad30c0b4bb7}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Full\+Body\+Biped\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+Full\+Body\+Biped\+IK}!Get\+I\+K\+Solver@{Get\+I\+K\+Solver}}
+\index{Get\+I\+K\+Solver@{Get\+I\+K\+Solver}!Root\+Motion\+::\+Final\+I\+K\+::\+Full\+Body\+Biped\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+Full\+Body\+Biped\+IK}}
+\subsubsection{\texorpdfstring{Get\+I\+K\+Solver()}{GetIKSolver()}}
+{\footnotesize\ttfamily override \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver}{I\+K\+Solver}} Root\+Motion.\+Final\+I\+K.\+Full\+Body\+Biped\+I\+K.\+Get\+I\+K\+Solver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the IK component\textquotesingle{}s solver as \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver}{I\+K\+Solver}}. 
+
+
+
+Implements \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_ad9ef393e69cd16ba2d6fa06ba06b7a66}{Root\+Motion.\+Final\+I\+K.\+IK}}.
+
+
+
+Definition at line 69 of file Full\+Body\+Biped\+I\+K.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_full_body_biped_i_k_aae4e2635775efc0a5f2b1058b7e693fe}\label{class_root_motion_1_1_final_i_k_1_1_full_body_biped_i_k_aae4e2635775efc0a5f2b1058b7e693fe}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Full\+Body\+Biped\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+Full\+Body\+Biped\+IK}!Open\+Script\+Reference@{Open\+Script\+Reference}}
+\index{Open\+Script\+Reference@{Open\+Script\+Reference}!Root\+Motion\+::\+Final\+I\+K\+::\+Full\+Body\+Biped\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+Full\+Body\+Biped\+IK}}
+\subsubsection{\texorpdfstring{Open\+Script\+Reference()}{OpenScriptReference()}}
+{\footnotesize\ttfamily override void Root\+Motion.\+Final\+I\+K.\+Full\+Body\+Biped\+I\+K.\+Open\+Script\+Reference (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_a260f283903b1305b99485c9474c83927}{Root\+Motion.\+Final\+I\+K.\+IK}}.
+
+
+
+Definition at line 21 of file Full\+Body\+Biped\+I\+K.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_full_body_biped_i_k_a18f11840a747ff0163ba5933b026badc}\label{class_root_motion_1_1_final_i_k_1_1_full_body_biped_i_k_a18f11840a747ff0163ba5933b026badc}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Full\+Body\+Biped\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+Full\+Body\+Biped\+IK}!Open\+User\+Manual@{Open\+User\+Manual}}
+\index{Open\+User\+Manual@{Open\+User\+Manual}!Root\+Motion\+::\+Final\+I\+K\+::\+Full\+Body\+Biped\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+Full\+Body\+Biped\+IK}}
+\subsubsection{\texorpdfstring{Open\+User\+Manual()}{OpenUserManual()}}
+{\footnotesize\ttfamily override void Root\+Motion.\+Final\+I\+K.\+Full\+Body\+Biped\+I\+K.\+Open\+User\+Manual (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_a1922e31d550e27dcc60eca0d62c699c5}{Root\+Motion.\+Final\+I\+K.\+IK}}.
+
+
+
+Definition at line 15 of file Full\+Body\+Biped\+I\+K.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_full_body_biped_i_k_a8ce3c980aabd02250b0fbe4526a1cc0b}\label{class_root_motion_1_1_final_i_k_1_1_full_body_biped_i_k_a8ce3c980aabd02250b0fbe4526a1cc0b}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Full\+Body\+Biped\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+Full\+Body\+Biped\+IK}!References\+Error@{References\+Error}}
+\index{References\+Error@{References\+Error}!Root\+Motion\+::\+Final\+I\+K\+::\+Full\+Body\+Biped\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+Full\+Body\+Biped\+IK}}
+\subsubsection{\texorpdfstring{References\+Error()}{ReferencesError()}}
+{\footnotesize\ttfamily bool Root\+Motion.\+Final\+I\+K.\+Full\+Body\+Biped\+I\+K.\+References\+Error (\begin{DoxyParamCaption}\item[{ref string}]{error\+Message }\end{DoxyParamCaption})}
+
+
+
+Checks the biped references for errors. Returns true if error found. 
+
+
+
+Definition at line 76 of file Full\+Body\+Biped\+I\+K.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_full_body_biped_i_k_a0668d64f894aa8f21ae2057c06788812}\label{class_root_motion_1_1_final_i_k_1_1_full_body_biped_i_k_a0668d64f894aa8f21ae2057c06788812}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Full\+Body\+Biped\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+Full\+Body\+Biped\+IK}!References\+Warning@{References\+Warning}}
+\index{References\+Warning@{References\+Warning}!Root\+Motion\+::\+Final\+I\+K\+::\+Full\+Body\+Biped\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+Full\+Body\+Biped\+IK}}
+\subsubsection{\texorpdfstring{References\+Warning()}{ReferencesWarning()}}
+{\footnotesize\ttfamily bool Root\+Motion.\+Final\+I\+K.\+Full\+Body\+Biped\+I\+K.\+References\+Warning (\begin{DoxyParamCaption}\item[{ref string}]{warning\+Message }\end{DoxyParamCaption})}
+
+
+
+Check for possible warnings with the biped references setup. Returns true if warning found. The solver can still run, but probably not how you expected. 
+
+
+
+Definition at line 113 of file Full\+Body\+Biped\+I\+K.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_full_body_biped_i_k_a824614a4b5c443a03dfff3a5edea0485}\label{class_root_motion_1_1_final_i_k_1_1_full_body_biped_i_k_a824614a4b5c443a03dfff3a5edea0485}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Full\+Body\+Biped\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+Full\+Body\+Biped\+IK}!Set\+References@{Set\+References}}
+\index{Set\+References@{Set\+References}!Root\+Motion\+::\+Final\+I\+K\+::\+Full\+Body\+Biped\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+Full\+Body\+Biped\+IK}}
+\subsubsection{\texorpdfstring{Set\+References()}{SetReferences()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+Full\+Body\+Biped\+I\+K.\+Set\+References (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_root_motion_1_1_biped_references}{Biped\+References}}}]{references,  }\item[{Transform}]{root\+Node }\end{DoxyParamCaption})}
+
+
+
+Sets the solver to new biped references. 
+
+/// 
+\begin{DoxyParams}{Parameters}
+{\em references} & Biped references.\\
+\hline
+{\em root\+Node} & Root node. if null, will try to detect the root node bone automatically. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 64 of file Full\+Body\+Biped\+I\+K.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_full_body_biped_i_k_a0dfac5c2550dad76128806dd5fdc019b}\label{class_root_motion_1_1_final_i_k_1_1_full_body_biped_i_k_a0dfac5c2550dad76128806dd5fdc019b}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Full\+Body\+Biped\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+Full\+Body\+Biped\+IK}!references@{references}}
+\index{references@{references}!Root\+Motion\+::\+Final\+I\+K\+::\+Full\+Body\+Biped\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+Full\+Body\+Biped\+IK}}
+\subsubsection{\texorpdfstring{references}{references}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_biped_references}{Biped\+References}} Root\+Motion.\+Final\+I\+K.\+Full\+Body\+Biped\+I\+K.\+references = new \mbox{\hyperlink{class_root_motion_1_1_biped_references}{Biped\+References}}()}
+
+
+
+The biped definition. Don\textquotesingle{}t change refences directly in runtime, use Set\+References(\+Biped\+References references) instead. 
+
+
+
+Definition at line 52 of file Full\+Body\+Biped\+I\+K.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_full_body_biped_i_k_ae1ba56ebef8d8312da5a610a90472823}\label{class_root_motion_1_1_final_i_k_1_1_full_body_biped_i_k_ae1ba56ebef8d8312da5a610a90472823}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Full\+Body\+Biped\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+Full\+Body\+Biped\+IK}!solver@{solver}}
+\index{solver@{solver}!Root\+Motion\+::\+Final\+I\+K\+::\+Full\+Body\+Biped\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+Full\+Body\+Biped\+IK}}
+\subsubsection{\texorpdfstring{solver}{solver}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped}{I\+K\+Solver\+Full\+Body\+Biped}} Root\+Motion.\+Final\+I\+K.\+Full\+Body\+Biped\+I\+K.\+solver = new \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped}{I\+K\+Solver\+Full\+Body\+Biped}}()}
+
+
+
+The Full\+Body\+Biped IK solver. 
+
+
+
+Definition at line 57 of file Full\+Body\+Biped\+I\+K.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Plugins/\+Root\+Motion/\+Final\+I\+K/\+I\+K Components/\mbox{\hyperlink{_full_body_biped_i_k_8cs}{Full\+Body\+Biped\+I\+K.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,93 @@
+\hypertarget{class_root_motion_1_1_demos_1_1_f_p_s_aiming}{}\section{Root\+Motion.\+Demos.\+F\+P\+S\+Aiming Class Reference}
+\label{class_root_motion_1_1_demos_1_1_f_p_s_aiming}\index{Root\+Motion.\+Demos.\+F\+P\+S\+Aiming@{Root\+Motion.\+Demos.\+F\+P\+S\+Aiming}}
+
+
+Basic full body F\+PS IK controller.  
+
+
+Inheritance diagram for Root\+Motion.\+Demos.\+F\+P\+S\+Aiming\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_root_motion_1_1_demos_1_1_f_p_s_aiming}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_f_p_s_aiming_af39807c2c9f238249017e4a69ac7c7b1}{aim\+Weight}} = 1f
+\item 
+float \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_f_p_s_aiming_a145f42f9fa98e3107bb1966dc7ace1d3}{sight\+Weight}} = 1f
+\item 
+float \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_f_p_s_aiming_ab28a529fb832601c81202696d792d1a3}{max\+Angle}} = 80f
+\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_recoil}{Recoil}} \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_f_p_s_aiming_a0fedd3012297add881556a5ff8d27b61}{recoil}}
+\item 
+float \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_f_p_s_aiming_aa0748cd8c090bce863166c077a19b530}{camera\+Recoil\+Weight}} = 0.\+5f
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Basic full body F\+PS IK controller. 
+
+If aim\+Weight is weighed in, the character will simply use Aim\+IK to aim his gun towards the camera forward direction. If sight\+Weight is weighed in, the character will also use F\+B\+B\+IK to pose the gun to a predefined position relative to the camera so it stays fixed in view. That position was simply defined by making a copy of the gun (gun\+Target), parenting it to the camera and positioning it so that the camera would look down it\textquotesingle{}s sights. 
+
+Definition at line 14 of file F\+P\+S\+Aiming.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_f_p_s_aiming_af39807c2c9f238249017e4a69ac7c7b1}\label{class_root_motion_1_1_demos_1_1_f_p_s_aiming_af39807c2c9f238249017e4a69ac7c7b1}} 
+\index{Root\+Motion\+::\+Demos\+::\+F\+P\+S\+Aiming@{Root\+Motion\+::\+Demos\+::\+F\+P\+S\+Aiming}!aim\+Weight@{aim\+Weight}}
+\index{aim\+Weight@{aim\+Weight}!Root\+Motion\+::\+Demos\+::\+F\+P\+S\+Aiming@{Root\+Motion\+::\+Demos\+::\+F\+P\+S\+Aiming}}
+\subsubsection{\texorpdfstring{aim\+Weight}{aimWeight}}
+{\footnotesize\ttfamily float Root\+Motion.\+Demos.\+F\+P\+S\+Aiming.\+aim\+Weight = 1f}
+
+
+
+Definition at line 16 of file F\+P\+S\+Aiming.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_f_p_s_aiming_aa0748cd8c090bce863166c077a19b530}\label{class_root_motion_1_1_demos_1_1_f_p_s_aiming_aa0748cd8c090bce863166c077a19b530}} 
+\index{Root\+Motion\+::\+Demos\+::\+F\+P\+S\+Aiming@{Root\+Motion\+::\+Demos\+::\+F\+P\+S\+Aiming}!camera\+Recoil\+Weight@{camera\+Recoil\+Weight}}
+\index{camera\+Recoil\+Weight@{camera\+Recoil\+Weight}!Root\+Motion\+::\+Demos\+::\+F\+P\+S\+Aiming@{Root\+Motion\+::\+Demos\+::\+F\+P\+S\+Aiming}}
+\subsubsection{\texorpdfstring{camera\+Recoil\+Weight}{cameraRecoilWeight}}
+{\footnotesize\ttfamily float Root\+Motion.\+Demos.\+F\+P\+S\+Aiming.\+camera\+Recoil\+Weight = 0.\+5f}
+
+
+
+Definition at line 93 of file F\+P\+S\+Aiming.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_f_p_s_aiming_ab28a529fb832601c81202696d792d1a3}\label{class_root_motion_1_1_demos_1_1_f_p_s_aiming_ab28a529fb832601c81202696d792d1a3}} 
+\index{Root\+Motion\+::\+Demos\+::\+F\+P\+S\+Aiming@{Root\+Motion\+::\+Demos\+::\+F\+P\+S\+Aiming}!max\+Angle@{max\+Angle}}
+\index{max\+Angle@{max\+Angle}!Root\+Motion\+::\+Demos\+::\+F\+P\+S\+Aiming@{Root\+Motion\+::\+Demos\+::\+F\+P\+S\+Aiming}}
+\subsubsection{\texorpdfstring{max\+Angle}{maxAngle}}
+{\footnotesize\ttfamily float Root\+Motion.\+Demos.\+F\+P\+S\+Aiming.\+max\+Angle = 80f}
+
+
+
+Definition at line 18 of file F\+P\+S\+Aiming.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_f_p_s_aiming_a0fedd3012297add881556a5ff8d27b61}\label{class_root_motion_1_1_demos_1_1_f_p_s_aiming_a0fedd3012297add881556a5ff8d27b61}} 
+\index{Root\+Motion\+::\+Demos\+::\+F\+P\+S\+Aiming@{Root\+Motion\+::\+Demos\+::\+F\+P\+S\+Aiming}!recoil@{recoil}}
+\index{recoil@{recoil}!Root\+Motion\+::\+Demos\+::\+F\+P\+S\+Aiming@{Root\+Motion\+::\+Demos\+::\+F\+P\+S\+Aiming}}
+\subsubsection{\texorpdfstring{recoil}{recoil}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_recoil}{Recoil}} Root\+Motion.\+Demos.\+F\+P\+S\+Aiming.\+recoil}
+
+
+
+Definition at line 92 of file F\+P\+S\+Aiming.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_f_p_s_aiming_a145f42f9fa98e3107bb1966dc7ace1d3}\label{class_root_motion_1_1_demos_1_1_f_p_s_aiming_a145f42f9fa98e3107bb1966dc7ace1d3}} 
+\index{Root\+Motion\+::\+Demos\+::\+F\+P\+S\+Aiming@{Root\+Motion\+::\+Demos\+::\+F\+P\+S\+Aiming}!sight\+Weight@{sight\+Weight}}
+\index{sight\+Weight@{sight\+Weight}!Root\+Motion\+::\+Demos\+::\+F\+P\+S\+Aiming@{Root\+Motion\+::\+Demos\+::\+F\+P\+S\+Aiming}}
+\subsubsection{\texorpdfstring{sight\+Weight}{sightWeight}}
+{\footnotesize\ttfamily float Root\+Motion.\+Demos.\+F\+P\+S\+Aiming.\+sight\+Weight = 1f}
+
+
+
+Definition at line 17 of file F\+P\+S\+Aiming.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Plugins/\+Root\+Motion/\+Final\+I\+K/\+\_\+\+D\+E\+M\+O\+S/\+F\+B\+B\+I\+K/\+Scripts/\mbox{\hyperlink{_f_p_s_aiming_8cs}{F\+P\+S\+Aiming.\+cs}}\end{DoxyCompactItemize}

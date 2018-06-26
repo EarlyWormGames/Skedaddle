@@ -1,0 +1,86 @@
+\hypertarget{interface_i_interactable}{}\section{I\+Interactable Interface Reference}
+\label{interface_i_interactable}\index{I\+Interactable@{I\+Interactable}}
+Inheritance diagram for I\+Interactable\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=9.476923cm]{interface_i_interactable}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{interface_i_interactable_a5142ebbddd5d91a93da436941ad77d8e}{Check\+Info}} (Input\+Control input, \mbox{\hyperlink{class_animal}{Animal}} caller)
+\begin{DoxyCompactList}\small\item\em Check if this interactable uses the key\end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{interface_i_interactable_ad184024a0cc6bce38ebcd77c0126fcc5}{Ignore\+Distance}} ()
+\begin{DoxyCompactList}\small\item\em summary$>$Get the distance from point. Used to check keypress\end{DoxyCompactList}\item 
+float \mbox{\hyperlink{interface_i_interactable_acde3047364ffe9a4ed107513feb21675}{Get\+Distance}} (Vector3 point)
+\item 
+void \mbox{\hyperlink{interface_i_interactable_ae38fb77e97bc1066db045b32db647681}{Interact}} (\mbox{\hyperlink{class_animal}{Animal}} caller)
+\begin{DoxyCompactList}\small\item\em Called on a successful key (and possible distance) check occurred\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 4 of file I\+Interactable.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{interface_i_interactable_a5142ebbddd5d91a93da436941ad77d8e}\label{interface_i_interactable_a5142ebbddd5d91a93da436941ad77d8e}} 
+\index{I\+Interactable@{I\+Interactable}!Check\+Info@{Check\+Info}}
+\index{Check\+Info@{Check\+Info}!I\+Interactable@{I\+Interactable}}
+\subsubsection{\texorpdfstring{Check\+Info()}{CheckInfo()}}
+{\footnotesize\ttfamily bool I\+Interactable.\+Check\+Info (\begin{DoxyParamCaption}\item[{Input\+Control}]{input,  }\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{caller }\end{DoxyParamCaption})}
+
+
+
+Check if this interactable uses the key
+
+summary$>$Should this interactable ignore the distance check and automatically interact when possible
+
+Implemented in \mbox{\hyperlink{class_cage_drop_a38a96e29aa7e79a26f97e0ddf6480b2e}{Cage\+Drop}}, \mbox{\hyperlink{class_animal_interactor_a12da79f6eb050c54043ff783e7c2a725}{Animal\+Interactor}}, \mbox{\hyperlink{class_mono_interacter_ac79722c1e38867f96166dbae403f0110}{Mono\+Interacter}}, and \mbox{\hyperlink{class_attachable_interact_a8426a9821130ecde5ed75517ca2ee5d7}{Attachable\+Interact}}.
+
+\mbox{\Hypertarget{interface_i_interactable_acde3047364ffe9a4ed107513feb21675}\label{interface_i_interactable_acde3047364ffe9a4ed107513feb21675}} 
+\index{I\+Interactable@{I\+Interactable}!Get\+Distance@{Get\+Distance}}
+\index{Get\+Distance@{Get\+Distance}!I\+Interactable@{I\+Interactable}}
+\subsubsection{\texorpdfstring{Get\+Distance()}{GetDistance()}}
+{\footnotesize\ttfamily float I\+Interactable.\+Get\+Distance (\begin{DoxyParamCaption}\item[{Vector3}]{point }\end{DoxyParamCaption})}
+
+
+
+Implemented in \mbox{\hyperlink{class_cage_drop_a57457a58730ee0fbad7693ef9d9a78d7}{Cage\+Drop}}, \mbox{\hyperlink{class_attachable_interact_abeaa046ec8352957e008cde245fd4f65}{Attachable\+Interact}}, \mbox{\hyperlink{class_animal_interactor_a92693dc7d95858e69c2f787507f14acb}{Animal\+Interactor}}, and \mbox{\hyperlink{class_mono_interacter_aa94f17988ac01fa0c8feac0406a775f0}{Mono\+Interacter}}.
+
+\mbox{\Hypertarget{interface_i_interactable_ad184024a0cc6bce38ebcd77c0126fcc5}\label{interface_i_interactable_ad184024a0cc6bce38ebcd77c0126fcc5}} 
+\index{I\+Interactable@{I\+Interactable}!Ignore\+Distance@{Ignore\+Distance}}
+\index{Ignore\+Distance@{Ignore\+Distance}!I\+Interactable@{I\+Interactable}}
+\subsubsection{\texorpdfstring{Ignore\+Distance()}{IgnoreDistance()}}
+{\footnotesize\ttfamily bool I\+Interactable.\+Ignore\+Distance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+summary$>$Get the distance from point. Used to check keypress
+
+
+
+Implemented in \mbox{\hyperlink{class_attachable_interact_a2778c59435948c3a3794664ceadc0c7f}{Attachable\+Interact}}, \mbox{\hyperlink{class_cage_drop_a4f05fa4967d7317ffd43b8e7b9e42e3d}{Cage\+Drop}}, \mbox{\hyperlink{class_animal_interactor_a51de9b553e86019f8d45d10915fe960c}{Animal\+Interactor}}, and \mbox{\hyperlink{class_mono_interacter_adbdd4ad781e4fce595a14c2ee6258463}{Mono\+Interacter}}.
+
+\mbox{\Hypertarget{interface_i_interactable_ae38fb77e97bc1066db045b32db647681}\label{interface_i_interactable_ae38fb77e97bc1066db045b32db647681}} 
+\index{I\+Interactable@{I\+Interactable}!Interact@{Interact}}
+\index{Interact@{Interact}!I\+Interactable@{I\+Interactable}}
+\subsubsection{\texorpdfstring{Interact()}{Interact()}}
+{\footnotesize\ttfamily void I\+Interactable.\+Interact (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{caller }\end{DoxyParamCaption})}
+
+
+
+Called on a successful key (and possible distance) check occurred
+
+
+
+Implemented in \mbox{\hyperlink{class_cage_drop_a5832f1672e4475be50319fa8e23f5cbc}{Cage\+Drop}}, \mbox{\hyperlink{class_attachable_interact_a3ce9d2122b8b014f608ed3ed1004f909}{Attachable\+Interact}}, \mbox{\hyperlink{class_animal_interactor_ab7aa5df1cd2596715b1edf39752ae02f}{Animal\+Interactor}}, and \mbox{\hyperlink{class_mono_interacter_ae732e07805c24cad447adf6218658f23}{Mono\+Interacter}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Interactables/\mbox{\hyperlink{_i_interactable_8cs}{I\+Interactable.\+cs}}\end{DoxyCompactItemize}

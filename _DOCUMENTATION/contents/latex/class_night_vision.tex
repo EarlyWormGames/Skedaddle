@@ -1,0 +1,198 @@
+\hypertarget{class_night_vision}{}\section{Night\+Vision Class Reference}
+\label{class_night_vision}\index{Night\+Vision@{Night\+Vision}}
+
+
+Night Vision (NV) Will use the default settings from the N\+V\+\_\+\+Pannle on the N\+V\+\_\+\+Canvas Prefab ( ( ( IF ) ) ) the N\+V\+\_\+\+Canvas doesn\textquotesingle{}t exsist in the scene  
+
+
+Inheritance diagram for Night\+Vision\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_night_vision}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_night_vision_a8a5978ab2bf8b47a9d498aab7a3db69b}{E\+Status}} \{ \mbox{\hyperlink{class_night_vision_a8a5978ab2bf8b47a9d498aab7a3db69ba9372966112cfdcc55c4f7832c9636060}{E\+Status.\+e\+F\+A\+D\+E\+IN}}, 
+\mbox{\hyperlink{class_night_vision_a8a5978ab2bf8b47a9d498aab7a3db69ba7103e4b9687c5e110a2e22bba17935b4}{E\+Status.\+e\+F\+A\+D\+E\+O\+UT}}, 
+\mbox{\hyperlink{class_night_vision_a8a5978ab2bf8b47a9d498aab7a3db69ba629f0d0f94fee574d896f31c506c18eb}{E\+Status.\+e\+I\+D\+LE}}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_night_vision_af4355043a822669cf20c1bc318543539}{Start\+NV}} ()
+\begin{DoxyCompactList}\small\item\em Called when the Night Vision begins \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_night_vision_adbc1111e211f1759bb67b6118ee3118c}{End\+NV}} ()
+\begin{DoxyCompactList}\small\item\em Called when the Night Vision ends \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_night_vision_ae34023a85285e821c06db76a48af5d18}{Lights\+ON}} ()
+\begin{DoxyCompactList}\small\item\em Turns all the lights ON in the public Active\+Lights Array \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_night_vision_a5d61b9beaa4d3cb9b1d42677e6e77124}{Lights\+O\+FF}} ()
+\begin{DoxyCompactList}\small\item\em Turns all the lights O\+FF in the public Active\+Lights Array \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Game\+Object \mbox{\hyperlink{class_night_vision_a87df66ec5cac946275ed12e40cd8b20a}{N\+V\+Canvas}}
+\item 
+Game\+Object \mbox{\hyperlink{class_night_vision_a0319e6f51ca09217bad8cad12e2f07ed}{Night\+Vision\+Object}}
+\item 
+float \mbox{\hyperlink{class_night_vision_af1b09dce6c363ac1db1ad09e54bcc181}{N\+V\+Transition\+Speed}} = 1.\+0f
+\item 
+Light \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_night_vision_a66c2ee9ee95d47cd713ddddc3d901e53}{Active\+Lights}}
+\item 
+float \mbox{\hyperlink{class_night_vision_a7a289fb3043fbb063347fff73db3f9fc}{Light\+Transition\+Speed}} = 0.\+2f
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Night Vision (NV) Will use the default settings from the N\+V\+\_\+\+Pannle on the N\+V\+\_\+\+Canvas Prefab ( ( ( IF ) ) ) the N\+V\+\_\+\+Canvas doesn\textquotesingle{}t exsist in the scene 
+
+Change the Luminocity setting on the N\+V\+\_\+\+Pannle material to increase the visibility of the Night Vision 
+
+Definition at line 12 of file Night\+Vision.\+cs.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_night_vision_a8a5978ab2bf8b47a9d498aab7a3db69b}\label{class_night_vision_a8a5978ab2bf8b47a9d498aab7a3db69b}} 
+\index{Night\+Vision@{Night\+Vision}!E\+Status@{E\+Status}}
+\index{E\+Status@{E\+Status}!Night\+Vision@{Night\+Vision}}
+\subsubsection{\texorpdfstring{E\+Status}{EStatus}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_night_vision_a8a5978ab2bf8b47a9d498aab7a3db69b}{Night\+Vision.\+E\+Status}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{e\+F\+A\+D\+E\+IN@{e\+F\+A\+D\+E\+IN}!Night\+Vision@{Night\+Vision}}\index{Night\+Vision@{Night\+Vision}!e\+F\+A\+D\+E\+IN@{e\+F\+A\+D\+E\+IN}}}\mbox{\Hypertarget{class_night_vision_a8a5978ab2bf8b47a9d498aab7a3db69ba9372966112cfdcc55c4f7832c9636060}\label{class_night_vision_a8a5978ab2bf8b47a9d498aab7a3db69ba9372966112cfdcc55c4f7832c9636060}} 
+e\+F\+A\+D\+E\+IN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{e\+F\+A\+D\+E\+O\+UT@{e\+F\+A\+D\+E\+O\+UT}!Night\+Vision@{Night\+Vision}}\index{Night\+Vision@{Night\+Vision}!e\+F\+A\+D\+E\+O\+UT@{e\+F\+A\+D\+E\+O\+UT}}}\mbox{\Hypertarget{class_night_vision_a8a5978ab2bf8b47a9d498aab7a3db69ba7103e4b9687c5e110a2e22bba17935b4}\label{class_night_vision_a8a5978ab2bf8b47a9d498aab7a3db69ba7103e4b9687c5e110a2e22bba17935b4}} 
+e\+F\+A\+D\+E\+O\+UT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{e\+I\+D\+LE@{e\+I\+D\+LE}!Night\+Vision@{Night\+Vision}}\index{Night\+Vision@{Night\+Vision}!e\+I\+D\+LE@{e\+I\+D\+LE}}}\mbox{\Hypertarget{class_night_vision_a8a5978ab2bf8b47a9d498aab7a3db69ba629f0d0f94fee574d896f31c506c18eb}\label{class_night_vision_a8a5978ab2bf8b47a9d498aab7a3db69ba629f0d0f94fee574d896f31c506c18eb}} 
+e\+I\+D\+LE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 14 of file Night\+Vision.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_night_vision_adbc1111e211f1759bb67b6118ee3118c}\label{class_night_vision_adbc1111e211f1759bb67b6118ee3118c}} 
+\index{Night\+Vision@{Night\+Vision}!End\+NV@{End\+NV}}
+\index{End\+NV@{End\+NV}!Night\+Vision@{Night\+Vision}}
+\subsubsection{\texorpdfstring{End\+N\+V()}{EndNV()}}
+{\footnotesize\ttfamily void Night\+Vision.\+End\+NV (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Called when the Night Vision ends 
+
+
+
+Definition at line 247 of file Night\+Vision.\+cs.
+
+\mbox{\Hypertarget{class_night_vision_a5d61b9beaa4d3cb9b1d42677e6e77124}\label{class_night_vision_a5d61b9beaa4d3cb9b1d42677e6e77124}} 
+\index{Night\+Vision@{Night\+Vision}!Lights\+O\+FF@{Lights\+O\+FF}}
+\index{Lights\+O\+FF@{Lights\+O\+FF}!Night\+Vision@{Night\+Vision}}
+\subsubsection{\texorpdfstring{Lights\+O\+F\+F()}{LightsOFF()}}
+{\footnotesize\ttfamily void Night\+Vision.\+Lights\+O\+FF (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Turns all the lights O\+FF in the public Active\+Lights Array 
+
+
+
+Definition at line 291 of file Night\+Vision.\+cs.
+
+\mbox{\Hypertarget{class_night_vision_ae34023a85285e821c06db76a48af5d18}\label{class_night_vision_ae34023a85285e821c06db76a48af5d18}} 
+\index{Night\+Vision@{Night\+Vision}!Lights\+ON@{Lights\+ON}}
+\index{Lights\+ON@{Lights\+ON}!Night\+Vision@{Night\+Vision}}
+\subsubsection{\texorpdfstring{Lights\+O\+N()}{LightsON()}}
+{\footnotesize\ttfamily void Night\+Vision.\+Lights\+ON (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Turns all the lights ON in the public Active\+Lights Array 
+
+
+
+Definition at line 275 of file Night\+Vision.\+cs.
+
+\mbox{\Hypertarget{class_night_vision_af4355043a822669cf20c1bc318543539}\label{class_night_vision_af4355043a822669cf20c1bc318543539}} 
+\index{Night\+Vision@{Night\+Vision}!Start\+NV@{Start\+NV}}
+\index{Start\+NV@{Start\+NV}!Night\+Vision@{Night\+Vision}}
+\subsubsection{\texorpdfstring{Start\+N\+V()}{StartNV()}}
+{\footnotesize\ttfamily void Night\+Vision.\+Start\+NV (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Called when the Night Vision begins 
+
+
+
+Definition at line 238 of file Night\+Vision.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_night_vision_a66c2ee9ee95d47cd713ddddc3d901e53}\label{class_night_vision_a66c2ee9ee95d47cd713ddddc3d901e53}} 
+\index{Night\+Vision@{Night\+Vision}!Active\+Lights@{Active\+Lights}}
+\index{Active\+Lights@{Active\+Lights}!Night\+Vision@{Night\+Vision}}
+\subsubsection{\texorpdfstring{Active\+Lights}{ActiveLights}}
+{\footnotesize\ttfamily Light \mbox{[}$\,$\mbox{]} Night\+Vision.\+Active\+Lights}
+
+
+
+Definition at line 27 of file Night\+Vision.\+cs.
+
+\mbox{\Hypertarget{class_night_vision_a7a289fb3043fbb063347fff73db3f9fc}\label{class_night_vision_a7a289fb3043fbb063347fff73db3f9fc}} 
+\index{Night\+Vision@{Night\+Vision}!Light\+Transition\+Speed@{Light\+Transition\+Speed}}
+\index{Light\+Transition\+Speed@{Light\+Transition\+Speed}!Night\+Vision@{Night\+Vision}}
+\subsubsection{\texorpdfstring{Light\+Transition\+Speed}{LightTransitionSpeed}}
+{\footnotesize\ttfamily float Night\+Vision.\+Light\+Transition\+Speed = 0.\+2f}
+
+
+
+Definition at line 29 of file Night\+Vision.\+cs.
+
+\mbox{\Hypertarget{class_night_vision_a0319e6f51ca09217bad8cad12e2f07ed}\label{class_night_vision_a0319e6f51ca09217bad8cad12e2f07ed}} 
+\index{Night\+Vision@{Night\+Vision}!Night\+Vision\+Object@{Night\+Vision\+Object}}
+\index{Night\+Vision\+Object@{Night\+Vision\+Object}!Night\+Vision@{Night\+Vision}}
+\subsubsection{\texorpdfstring{Night\+Vision\+Object}{NightVisionObject}}
+{\footnotesize\ttfamily Game\+Object Night\+Vision.\+Night\+Vision\+Object}
+
+
+
+Definition at line 24 of file Night\+Vision.\+cs.
+
+\mbox{\Hypertarget{class_night_vision_a87df66ec5cac946275ed12e40cd8b20a}\label{class_night_vision_a87df66ec5cac946275ed12e40cd8b20a}} 
+\index{Night\+Vision@{Night\+Vision}!N\+V\+Canvas@{N\+V\+Canvas}}
+\index{N\+V\+Canvas@{N\+V\+Canvas}!Night\+Vision@{Night\+Vision}}
+\subsubsection{\texorpdfstring{N\+V\+Canvas}{NVCanvas}}
+{\footnotesize\ttfamily Game\+Object Night\+Vision.\+N\+V\+Canvas}
+
+
+
+Definition at line 19 of file Night\+Vision.\+cs.
+
+\mbox{\Hypertarget{class_night_vision_af1b09dce6c363ac1db1ad09e54bcc181}\label{class_night_vision_af1b09dce6c363ac1db1ad09e54bcc181}} 
+\index{Night\+Vision@{Night\+Vision}!N\+V\+Transition\+Speed@{N\+V\+Transition\+Speed}}
+\index{N\+V\+Transition\+Speed@{N\+V\+Transition\+Speed}!Night\+Vision@{Night\+Vision}}
+\subsubsection{\texorpdfstring{N\+V\+Transition\+Speed}{NVTransitionSpeed}}
+{\footnotesize\ttfamily float Night\+Vision.\+N\+V\+Transition\+Speed = 1.\+0f}
+
+
+
+Definition at line 25 of file Night\+Vision.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Aesthetic/\+Animal Aesthetics/\mbox{\hyperlink{_night_vision_8cs}{Night\+Vision.\+cs}}\end{DoxyCompactItemize}

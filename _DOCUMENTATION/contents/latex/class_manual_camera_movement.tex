@@ -1,0 +1,280 @@
+\hypertarget{class_manual_camera_movement}{}\section{Manual\+Camera\+Movement Class Reference}
+\label{class_manual_camera_movement}\index{Manual\+Camera\+Movement@{Manual\+Camera\+Movement}}
+
+
+Camera Controller for a Manual Movement Testing Camera  
+
+
+Inheritance diagram for Manual\+Camera\+Movement\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_manual_camera_movement}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_manual_camera_movement_a5c0dbb93ee2c14d66e55c1ce090a8bb4}{Set\+Current\+Point}} (object data)
+\begin{DoxyCompactList}\small\item\em Tells Canera\+Spline\+Manager where to move camera to. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Vector3\+Action \mbox{\hyperlink{class_manual_camera_movement_a9d77f87895d77561f1e2364732e27f73}{camera\+Input}}
+\begin{DoxyCompactList}\small\item\em Public Variables ///. \end{DoxyCompactList}\item 
+Vector3\+Action \mbox{\hyperlink{class_manual_camera_movement_a0ac7f0cc6e4047e94f177ef964ff3a2e}{look\+At\+Input}}
+\begin{DoxyCompactList}\small\item\em Input to move look at point \end{DoxyCompactList}\item 
+Button\+Action \mbox{\hyperlink{class_manual_camera_movement_a8d1d608815cd9a9a8bd8639ac24ef304}{Camera\+Toggle1}}
+\begin{DoxyCompactList}\small\item\em First button to toggle camera on \end{DoxyCompactList}\item 
+Button\+Action \mbox{\hyperlink{class_manual_camera_movement_ad374a1ea7b330ee00e19f74a0554f515}{Camera\+Toggle2}}
+\begin{DoxyCompactList}\small\item\em Second button to toggle camera on \end{DoxyCompactList}\item 
+Vector3 \mbox{\hyperlink{class_manual_camera_movement_ab7f212784a7b315eda18f01aec187a78}{Origin\+Offset}}
+\begin{DoxyCompactList}\small\item\em Offset starting position \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_manual_camera_movement_aabdb8ce630c89c62182c5d657a205911}{Start\+On}}
+\begin{DoxyCompactList}\small\item\em Toggle whether camera is on and off at the start \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_manual_camera_movement_a0f8bbd6e136e0f1ad5bd95a4f13fb8c6}{Follow\+Animal}}
+\begin{DoxyCompactList}\small\item\em Toggle whether camera should move with animal \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_manual_camera_movement_ae4eb375c5c7a10c9c019798dfc0c7f02}{Movement\+Speed}}
+\begin{DoxyCompactList}\small\item\em Speed of camera movement \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_manual_camera_movement_a9f58e0d15279174c688caef6c0f64d9d}{Look\+Speed}}
+\begin{DoxyCompactList}\small\item\em Speed of look at point movement \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_manual_camera_movement_a368f05f76a1622fac5f6460c7f5da8d2}{Smoothing\+Speed}}
+\begin{DoxyCompactList}\small\item\em Changes smoothness of the movement of the camera \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_manual_camera_movement_a7d176cf631d84d7c34b2407fd810adcf}{On\+Start}} ()
+\item 
+override void \mbox{\hyperlink{class_manual_camera_movement_af39bcaa57f616ec5003c1848deefb087}{Calc\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Calculate position the camera should be in \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_manual_camera_movement_a0ea298439b1602ebd031bcccd411e2f4}{On\+Update}} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Camera Controller for a Manual Movement Testing Camera 
+
+
+
+Definition at line 10 of file Manual\+Camera\+Movement.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_manual_camera_movement_af39bcaa57f616ec5003c1848deefb087}\label{class_manual_camera_movement_af39bcaa57f616ec5003c1848deefb087}} 
+\index{Manual\+Camera\+Movement@{Manual\+Camera\+Movement}!Calc\+Position@{Calc\+Position}}
+\index{Calc\+Position@{Calc\+Position}!Manual\+Camera\+Movement@{Manual\+Camera\+Movement}}
+\subsubsection{\texorpdfstring{Calc\+Position()}{CalcPosition()}}
+{\footnotesize\ttfamily override void Manual\+Camera\+Movement.\+Calc\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Calculate position the camera should be in 
+
+
+
+Implements \mbox{\hyperlink{class_camera_mover_afe44c2188d44a3fdb72acdf0d12563a9}{Camera\+Mover}}.
+
+
+
+Definition at line 138 of file Manual\+Camera\+Movement.\+cs.
+
+\mbox{\Hypertarget{class_manual_camera_movement_a7d176cf631d84d7c34b2407fd810adcf}\label{class_manual_camera_movement_a7d176cf631d84d7c34b2407fd810adcf}} 
+\index{Manual\+Camera\+Movement@{Manual\+Camera\+Movement}!On\+Start@{On\+Start}}
+\index{On\+Start@{On\+Start}!Manual\+Camera\+Movement@{Manual\+Camera\+Movement}}
+\subsubsection{\texorpdfstring{On\+Start()}{OnStart()}}
+{\footnotesize\ttfamily override void Manual\+Camera\+Movement.\+On\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_camera_mover_ab96169179c915b4c8599c956dc572fc7}{Camera\+Mover}}.
+
+
+
+Definition at line 113 of file Manual\+Camera\+Movement.\+cs.
+
+\mbox{\Hypertarget{class_manual_camera_movement_a0ea298439b1602ebd031bcccd411e2f4}\label{class_manual_camera_movement_a0ea298439b1602ebd031bcccd411e2f4}} 
+\index{Manual\+Camera\+Movement@{Manual\+Camera\+Movement}!On\+Update@{On\+Update}}
+\index{On\+Update@{On\+Update}!Manual\+Camera\+Movement@{Manual\+Camera\+Movement}}
+\subsubsection{\texorpdfstring{On\+Update()}{OnUpdate()}}
+{\footnotesize\ttfamily override void Manual\+Camera\+Movement.\+On\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_camera_mover_add4a882d9c8684a75d9d2cdacf90a74f}{Camera\+Mover}}.
+
+
+
+Definition at line 155 of file Manual\+Camera\+Movement.\+cs.
+
+\mbox{\Hypertarget{class_manual_camera_movement_a5c0dbb93ee2c14d66e55c1ce090a8bb4}\label{class_manual_camera_movement_a5c0dbb93ee2c14d66e55c1ce090a8bb4}} 
+\index{Manual\+Camera\+Movement@{Manual\+Camera\+Movement}!Set\+Current\+Point@{Set\+Current\+Point}}
+\index{Set\+Current\+Point@{Set\+Current\+Point}!Manual\+Camera\+Movement@{Manual\+Camera\+Movement}}
+\subsubsection{\texorpdfstring{Set\+Current\+Point()}{SetCurrentPoint()}}
+{\footnotesize\ttfamily override void Manual\+Camera\+Movement.\+Set\+Current\+Point (\begin{DoxyParamCaption}\item[{object}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Tells Canera\+Spline\+Manager where to move camera to. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_camera_mover_ab2f77d1df91324b508a7a45f1f22a04a}{Camera\+Mover}}.
+
+
+
+Definition at line 215 of file Manual\+Camera\+Movement.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_manual_camera_movement_a9d77f87895d77561f1e2364732e27f73}\label{class_manual_camera_movement_a9d77f87895d77561f1e2364732e27f73}} 
+\index{Manual\+Camera\+Movement@{Manual\+Camera\+Movement}!camera\+Input@{camera\+Input}}
+\index{camera\+Input@{camera\+Input}!Manual\+Camera\+Movement@{Manual\+Camera\+Movement}}
+\subsubsection{\texorpdfstring{camera\+Input}{cameraInput}}
+{\footnotesize\ttfamily Vector3\+Action Manual\+Camera\+Movement.\+camera\+Input}
+
+
+
+Public Variables ///. 
+
+Input to move camera 
+
+Definition at line 20 of file Manual\+Camera\+Movement.\+cs.
+
+\mbox{\Hypertarget{class_manual_camera_movement_a8d1d608815cd9a9a8bd8639ac24ef304}\label{class_manual_camera_movement_a8d1d608815cd9a9a8bd8639ac24ef304}} 
+\index{Manual\+Camera\+Movement@{Manual\+Camera\+Movement}!Camera\+Toggle1@{Camera\+Toggle1}}
+\index{Camera\+Toggle1@{Camera\+Toggle1}!Manual\+Camera\+Movement@{Manual\+Camera\+Movement}}
+\subsubsection{\texorpdfstring{Camera\+Toggle1}{CameraToggle1}}
+{\footnotesize\ttfamily Button\+Action Manual\+Camera\+Movement.\+Camera\+Toggle1}
+
+
+
+First button to toggle camera on 
+
+
+
+Definition at line 30 of file Manual\+Camera\+Movement.\+cs.
+
+\mbox{\Hypertarget{class_manual_camera_movement_ad374a1ea7b330ee00e19f74a0554f515}\label{class_manual_camera_movement_ad374a1ea7b330ee00e19f74a0554f515}} 
+\index{Manual\+Camera\+Movement@{Manual\+Camera\+Movement}!Camera\+Toggle2@{Camera\+Toggle2}}
+\index{Camera\+Toggle2@{Camera\+Toggle2}!Manual\+Camera\+Movement@{Manual\+Camera\+Movement}}
+\subsubsection{\texorpdfstring{Camera\+Toggle2}{CameraToggle2}}
+{\footnotesize\ttfamily Button\+Action Manual\+Camera\+Movement.\+Camera\+Toggle2}
+
+
+
+Second button to toggle camera on 
+
+
+
+Definition at line 35 of file Manual\+Camera\+Movement.\+cs.
+
+\mbox{\Hypertarget{class_manual_camera_movement_a0f8bbd6e136e0f1ad5bd95a4f13fb8c6}\label{class_manual_camera_movement_a0f8bbd6e136e0f1ad5bd95a4f13fb8c6}} 
+\index{Manual\+Camera\+Movement@{Manual\+Camera\+Movement}!Follow\+Animal@{Follow\+Animal}}
+\index{Follow\+Animal@{Follow\+Animal}!Manual\+Camera\+Movement@{Manual\+Camera\+Movement}}
+\subsubsection{\texorpdfstring{Follow\+Animal}{FollowAnimal}}
+{\footnotesize\ttfamily bool Manual\+Camera\+Movement.\+Follow\+Animal}
+
+
+
+Toggle whether camera should move with animal 
+
+
+
+Definition at line 50 of file Manual\+Camera\+Movement.\+cs.
+
+\mbox{\Hypertarget{class_manual_camera_movement_a0ac7f0cc6e4047e94f177ef964ff3a2e}\label{class_manual_camera_movement_a0ac7f0cc6e4047e94f177ef964ff3a2e}} 
+\index{Manual\+Camera\+Movement@{Manual\+Camera\+Movement}!look\+At\+Input@{look\+At\+Input}}
+\index{look\+At\+Input@{look\+At\+Input}!Manual\+Camera\+Movement@{Manual\+Camera\+Movement}}
+\subsubsection{\texorpdfstring{look\+At\+Input}{lookAtInput}}
+{\footnotesize\ttfamily Vector3\+Action Manual\+Camera\+Movement.\+look\+At\+Input}
+
+
+
+Input to move look at point 
+
+
+
+Definition at line 25 of file Manual\+Camera\+Movement.\+cs.
+
+\mbox{\Hypertarget{class_manual_camera_movement_a9f58e0d15279174c688caef6c0f64d9d}\label{class_manual_camera_movement_a9f58e0d15279174c688caef6c0f64d9d}} 
+\index{Manual\+Camera\+Movement@{Manual\+Camera\+Movement}!Look\+Speed@{Look\+Speed}}
+\index{Look\+Speed@{Look\+Speed}!Manual\+Camera\+Movement@{Manual\+Camera\+Movement}}
+\subsubsection{\texorpdfstring{Look\+Speed}{LookSpeed}}
+{\footnotesize\ttfamily float Manual\+Camera\+Movement.\+Look\+Speed}
+
+
+
+Speed of look at point movement 
+
+
+
+Definition at line 60 of file Manual\+Camera\+Movement.\+cs.
+
+\mbox{\Hypertarget{class_manual_camera_movement_ae4eb375c5c7a10c9c019798dfc0c7f02}\label{class_manual_camera_movement_ae4eb375c5c7a10c9c019798dfc0c7f02}} 
+\index{Manual\+Camera\+Movement@{Manual\+Camera\+Movement}!Movement\+Speed@{Movement\+Speed}}
+\index{Movement\+Speed@{Movement\+Speed}!Manual\+Camera\+Movement@{Manual\+Camera\+Movement}}
+\subsubsection{\texorpdfstring{Movement\+Speed}{MovementSpeed}}
+{\footnotesize\ttfamily float Manual\+Camera\+Movement.\+Movement\+Speed}
+
+
+
+Speed of camera movement 
+
+
+
+Definition at line 55 of file Manual\+Camera\+Movement.\+cs.
+
+\mbox{\Hypertarget{class_manual_camera_movement_ab7f212784a7b315eda18f01aec187a78}\label{class_manual_camera_movement_ab7f212784a7b315eda18f01aec187a78}} 
+\index{Manual\+Camera\+Movement@{Manual\+Camera\+Movement}!Origin\+Offset@{Origin\+Offset}}
+\index{Origin\+Offset@{Origin\+Offset}!Manual\+Camera\+Movement@{Manual\+Camera\+Movement}}
+\subsubsection{\texorpdfstring{Origin\+Offset}{OriginOffset}}
+{\footnotesize\ttfamily Vector3 Manual\+Camera\+Movement.\+Origin\+Offset}
+
+
+
+Offset starting position 
+
+
+
+Definition at line 40 of file Manual\+Camera\+Movement.\+cs.
+
+\mbox{\Hypertarget{class_manual_camera_movement_a368f05f76a1622fac5f6460c7f5da8d2}\label{class_manual_camera_movement_a368f05f76a1622fac5f6460c7f5da8d2}} 
+\index{Manual\+Camera\+Movement@{Manual\+Camera\+Movement}!Smoothing\+Speed@{Smoothing\+Speed}}
+\index{Smoothing\+Speed@{Smoothing\+Speed}!Manual\+Camera\+Movement@{Manual\+Camera\+Movement}}
+\subsubsection{\texorpdfstring{Smoothing\+Speed}{SmoothingSpeed}}
+{\footnotesize\ttfamily float Manual\+Camera\+Movement.\+Smoothing\+Speed}
+
+
+
+Changes smoothness of the movement of the camera 
+
+
+
+Definition at line 65 of file Manual\+Camera\+Movement.\+cs.
+
+\mbox{\Hypertarget{class_manual_camera_movement_aabdb8ce630c89c62182c5d657a205911}\label{class_manual_camera_movement_aabdb8ce630c89c62182c5d657a205911}} 
+\index{Manual\+Camera\+Movement@{Manual\+Camera\+Movement}!Start\+On@{Start\+On}}
+\index{Start\+On@{Start\+On}!Manual\+Camera\+Movement@{Manual\+Camera\+Movement}}
+\subsubsection{\texorpdfstring{Start\+On}{StartOn}}
+{\footnotesize\ttfamily bool Manual\+Camera\+Movement.\+Start\+On}
+
+
+
+Toggle whether camera is on and off at the start 
+
+
+
+Definition at line 45 of file Manual\+Camera\+Movement.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Camera/\mbox{\hyperlink{_manual_camera_movement_8cs}{Manual\+Camera\+Movement.\+cs}}\end{DoxyCompactItemize}

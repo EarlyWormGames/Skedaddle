@@ -1,0 +1,116 @@
+\hypertarget{class_root_motion_1_1_final_i_k_1_1_rotation_limit_hinge}{}\section{Root\+Motion.\+Final\+I\+K.\+Rotation\+Limit\+Hinge Class Reference}
+\label{class_root_motion_1_1_final_i_k_1_1_rotation_limit_hinge}\index{Root\+Motion.\+Final\+I\+K.\+Rotation\+Limit\+Hinge@{Root\+Motion.\+Final\+I\+K.\+Rotation\+Limit\+Hinge}}
+
+
+The hinge rotation limit limits the rotation to 1 degree of freedom around Axis. This rotation limit is additive which means the limits can exceed 360 degrees.  
+
+
+Inheritance diagram for Root\+Motion.\+Final\+I\+K.\+Rotation\+Limit\+Hinge\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_root_motion_1_1_final_i_k_1_1_rotation_limit_hinge}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_rotation_limit_hinge_acbbfed7196f956dd06e90728f5060598}{use\+Limits}} = true
+\begin{DoxyCompactList}\small\item\em Should the rotation be limited around the axis? \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_rotation_limit_hinge_a6ed350df6938f4c1eeac9eb4884ae7b7}{min}} = -\/45
+\begin{DoxyCompactList}\small\item\em The min limit around the axis. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_rotation_limit_hinge_a57aced275c001a90534b93011c3b130a}{max}} = 90
+\begin{DoxyCompactList}\small\item\em The max limit around the axis. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_rotation_limit_hinge_a85d1cbf4d100a00defcee3444d0f37c7}{zero\+Axis\+Display\+Offset}}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override Quaternion \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_rotation_limit_hinge_aad677e39535e5f9344da8bfbd5bd3388}{Limit\+Rotation}} (Quaternion rotation)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The hinge rotation limit limits the rotation to 1 degree of freedom around Axis. This rotation limit is additive which means the limits can exceed 360 degrees. 
+
+
+
+Definition at line 11 of file Rotation\+Limit\+Hinge.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_rotation_limit_hinge_aad677e39535e5f9344da8bfbd5bd3388}\label{class_root_motion_1_1_final_i_k_1_1_rotation_limit_hinge_aad677e39535e5f9344da8bfbd5bd3388}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Rotation\+Limit\+Hinge@{Root\+Motion\+::\+Final\+I\+K\+::\+Rotation\+Limit\+Hinge}!Limit\+Rotation@{Limit\+Rotation}}
+\index{Limit\+Rotation@{Limit\+Rotation}!Root\+Motion\+::\+Final\+I\+K\+::\+Rotation\+Limit\+Hinge@{Root\+Motion\+::\+Final\+I\+K\+::\+Rotation\+Limit\+Hinge}}
+\subsubsection{\texorpdfstring{Limit\+Rotation()}{LimitRotation()}}
+{\footnotesize\ttfamily override Quaternion Root\+Motion.\+Final\+I\+K.\+Rotation\+Limit\+Hinge.\+Limit\+Rotation (\begin{DoxyParamCaption}\item[{Quaternion}]{rotation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_rotation_limit_aebdcf7af948a0205901d2b839a76b985}{Root\+Motion.\+Final\+I\+K.\+Rotation\+Limit}}.
+
+
+
+Definition at line 57 of file Rotation\+Limit\+Hinge.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_rotation_limit_hinge_a57aced275c001a90534b93011c3b130a}\label{class_root_motion_1_1_final_i_k_1_1_rotation_limit_hinge_a57aced275c001a90534b93011c3b130a}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Rotation\+Limit\+Hinge@{Root\+Motion\+::\+Final\+I\+K\+::\+Rotation\+Limit\+Hinge}!max@{max}}
+\index{max@{max}!Root\+Motion\+::\+Final\+I\+K\+::\+Rotation\+Limit\+Hinge@{Root\+Motion\+::\+Final\+I\+K\+::\+Rotation\+Limit\+Hinge}}
+\subsubsection{\texorpdfstring{max}{max}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+Rotation\+Limit\+Hinge.\+max = 90}
+
+
+
+The max limit around the axis. 
+
+
+
+Definition at line 50 of file Rotation\+Limit\+Hinge.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_rotation_limit_hinge_a6ed350df6938f4c1eeac9eb4884ae7b7}\label{class_root_motion_1_1_final_i_k_1_1_rotation_limit_hinge_a6ed350df6938f4c1eeac9eb4884ae7b7}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Rotation\+Limit\+Hinge@{Root\+Motion\+::\+Final\+I\+K\+::\+Rotation\+Limit\+Hinge}!min@{min}}
+\index{min@{min}!Root\+Motion\+::\+Final\+I\+K\+::\+Rotation\+Limit\+Hinge@{Root\+Motion\+::\+Final\+I\+K\+::\+Rotation\+Limit\+Hinge}}
+\subsubsection{\texorpdfstring{min}{min}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+Rotation\+Limit\+Hinge.\+min = -\/45}
+
+
+
+The min limit around the axis. 
+
+
+
+Definition at line 46 of file Rotation\+Limit\+Hinge.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_rotation_limit_hinge_acbbfed7196f956dd06e90728f5060598}\label{class_root_motion_1_1_final_i_k_1_1_rotation_limit_hinge_acbbfed7196f956dd06e90728f5060598}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Rotation\+Limit\+Hinge@{Root\+Motion\+::\+Final\+I\+K\+::\+Rotation\+Limit\+Hinge}!use\+Limits@{use\+Limits}}
+\index{use\+Limits@{use\+Limits}!Root\+Motion\+::\+Final\+I\+K\+::\+Rotation\+Limit\+Hinge@{Root\+Motion\+::\+Final\+I\+K\+::\+Rotation\+Limit\+Hinge}}
+\subsubsection{\texorpdfstring{use\+Limits}{useLimits}}
+{\footnotesize\ttfamily bool Root\+Motion.\+Final\+I\+K.\+Rotation\+Limit\+Hinge.\+use\+Limits = true}
+
+
+
+Should the rotation be limited around the axis? 
+
+
+
+Definition at line 42 of file Rotation\+Limit\+Hinge.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_rotation_limit_hinge_a85d1cbf4d100a00defcee3444d0f37c7}\label{class_root_motion_1_1_final_i_k_1_1_rotation_limit_hinge_a85d1cbf4d100a00defcee3444d0f37c7}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Rotation\+Limit\+Hinge@{Root\+Motion\+::\+Final\+I\+K\+::\+Rotation\+Limit\+Hinge}!zero\+Axis\+Display\+Offset@{zero\+Axis\+Display\+Offset}}
+\index{zero\+Axis\+Display\+Offset@{zero\+Axis\+Display\+Offset}!Root\+Motion\+::\+Final\+I\+K\+::\+Rotation\+Limit\+Hinge@{Root\+Motion\+::\+Final\+I\+K\+::\+Rotation\+Limit\+Hinge}}
+\subsubsection{\texorpdfstring{zero\+Axis\+Display\+Offset}{zeroAxisDisplayOffset}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+Rotation\+Limit\+Hinge.\+zero\+Axis\+Display\+Offset}
+
+
+
+Definition at line 62 of file Rotation\+Limit\+Hinge.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Plugins/\+Root\+Motion/\+Final\+I\+K/\+Rotation Limits/\mbox{\hyperlink{_rotation_limit_hinge_8cs}{Rotation\+Limit\+Hinge.\+cs}}\end{DoxyCompactItemize}

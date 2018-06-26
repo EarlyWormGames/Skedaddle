@@ -1,0 +1,305 @@
+\hypertarget{class_spline_movement}{}\section{Spline\+Movement Class Reference}
+\label{class_spline_movement}\index{Spline\+Movement@{Spline\+Movement}}
+Inheritance diagram for Spline\+Movement\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_spline_movement}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_spline_movement_1_1_point}{Point}}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_spline_movement_a55ac2dde40f8639ff040dd07fb63b34e}{Start}} ()
+\item 
+void \mbox{\hyperlink{class_spline_movement_a44f9470b8291c8fff0aa4eb23378623c}{Generate\+Points}} ()
+\begin{DoxyCompactList}\small\item\em create the list of points for the slpline \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_spline_movement_a687a1aedc6e6862ddc34cd3f2bd819ac}{Get\+Closest\+Point}} (Vector3 position)
+\begin{DoxyCompactList}\small\item\em return the closets point to a given position \end{DoxyCompactList}\item 
+Vector3 \mbox{\hyperlink{class_spline_movement_ad49c7e2dff671d59557385b4b464b2ad}{Get\+Position}} (int index)
+\begin{DoxyCompactList}\small\item\em returns a point in the spline at a given index \end{DoxyCompactList}\item 
+Vector3 \mbox{\hyperlink{class_spline_movement_a7c6e2706a671008309d50e628c004462}{Get\+Position}} (\mbox{\hyperlink{class_spline_movement_1_1_point}{Point}} point)
+\begin{DoxyCompactList}\small\item\em returns a specific point in the spline \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_spline_movement_adbbea5ed021fc7b6f7c400400a7dcd3a}{Num\+Points}} = 30
+\item 
+bool \mbox{\hyperlink{class_spline_movement_a6f38fd94d067872d8f11b50965ac776f}{Regenerate\+Points}} = false
+\item 
+bool \mbox{\hyperlink{class_spline_movement_a2f1281a919203432cca759b814642c08}{Constant\+Regenerate}} = false
+\item 
+bool \mbox{\hyperlink{class_spline_movement_a21c86cdee895ba1a71af2eeaf28f51eb}{High\+Exit}} = true
+\item 
+bool \mbox{\hyperlink{class_spline_movement_ae7ef31a81a9bef0a404aa5aff3ec5e2b}{Low\+Exit}} = true
+\item 
+Axis\+Action \mbox{\hyperlink{class_spline_movement_a9915058d410d11abf2ff0a53d6175e5f}{Move\+Axis\+Key}}
+\item 
+bool \mbox{\hyperlink{class_spline_movement_a2417f1ad0eeec517e5896c16175af012}{Invert\+Axis}} = false
+\item 
+bool \mbox{\hyperlink{class_spline_movement_adace2321a290e27160f326d7257f7db7}{Force\+Movement}} = false
+\item 
+Unity\+Event \mbox{\hyperlink{class_spline_movement_ae21d40c99f8da6645cf1041e79dbe0c9}{On\+High\+Exit}}
+\item 
+\mbox{\hyperlink{_ignore_axis_8cs_aa61b0141055d583a4f5b013297a1d48f}{Ignore\+Axis}} \mbox{\hyperlink{class_spline_movement_a5731a01361661e4c1cc4de230e3d80be}{Axes\+To\+Ignore}} = \mbox{\hyperlink{_ignore_axis_8cs_aa61b0141055d583a4f5b013297a1d48fa57cec4137b614c87cb4e24a3d003a3e0}{Ignore\+Axis.\+Y}}
+\item 
+bool \mbox{\hyperlink{class_spline_movement_a8f829fcdc1fdc601d94e6eb6a5f186a0}{Disable\+Gravity}}
+\item 
+bool \mbox{\hyperlink{class_spline_movement_a639e4325e5208e76cfa10b07786d63b3}{Disable\+Grounder}}
+\item 
+\mbox{\hyperlink{class_spline_movement_1_1_point}{Point}} \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_spline_movement_a3ab10a8f9594bbaf278ac2c7c8e6858d}{points}}
+\item 
+\mbox{\hyperlink{class_bezier_spline}{Bezier\+Spline}} \mbox{\hyperlink{class_spline_movement_afd3796f0a70d33023cb46d913b06a51e}{m\+\_\+\+Spline}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 8 of file Spline\+Movement.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_spline_movement_a44f9470b8291c8fff0aa4eb23378623c}\label{class_spline_movement_a44f9470b8291c8fff0aa4eb23378623c}} 
+\index{Spline\+Movement@{Spline\+Movement}!Generate\+Points@{Generate\+Points}}
+\index{Generate\+Points@{Generate\+Points}!Spline\+Movement@{Spline\+Movement}}
+\subsubsection{\texorpdfstring{Generate\+Points()}{GeneratePoints()}}
+{\footnotesize\ttfamily void Spline\+Movement.\+Generate\+Points (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+create the list of points for the slpline 
+
+
+
+Definition at line 74 of file Spline\+Movement.\+cs.
+
+\mbox{\Hypertarget{class_spline_movement_a687a1aedc6e6862ddc34cd3f2bd819ac}\label{class_spline_movement_a687a1aedc6e6862ddc34cd3f2bd819ac}} 
+\index{Spline\+Movement@{Spline\+Movement}!Get\+Closest\+Point@{Get\+Closest\+Point}}
+\index{Get\+Closest\+Point@{Get\+Closest\+Point}!Spline\+Movement@{Spline\+Movement}}
+\subsubsection{\texorpdfstring{Get\+Closest\+Point()}{GetClosestPoint()}}
+{\footnotesize\ttfamily int Spline\+Movement.\+Get\+Closest\+Point (\begin{DoxyParamCaption}\item[{Vector3}]{position }\end{DoxyParamCaption})}
+
+
+
+return the closets point to a given position 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 101 of file Spline\+Movement.\+cs.
+
+\mbox{\Hypertarget{class_spline_movement_ad49c7e2dff671d59557385b4b464b2ad}\label{class_spline_movement_ad49c7e2dff671d59557385b4b464b2ad}} 
+\index{Spline\+Movement@{Spline\+Movement}!Get\+Position@{Get\+Position}}
+\index{Get\+Position@{Get\+Position}!Spline\+Movement@{Spline\+Movement}}
+\subsubsection{\texorpdfstring{Get\+Position()}{GetPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Vector3 Spline\+Movement.\+Get\+Position (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+returns a point in the spline at a given index 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 124 of file Spline\+Movement.\+cs.
+
+\mbox{\Hypertarget{class_spline_movement_a7c6e2706a671008309d50e628c004462}\label{class_spline_movement_a7c6e2706a671008309d50e628c004462}} 
+\index{Spline\+Movement@{Spline\+Movement}!Get\+Position@{Get\+Position}}
+\index{Get\+Position@{Get\+Position}!Spline\+Movement@{Spline\+Movement}}
+\subsubsection{\texorpdfstring{Get\+Position()}{GetPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Vector3 Spline\+Movement.\+Get\+Position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_spline_movement_1_1_point}{Point}}}]{point }\end{DoxyParamCaption})}
+
+
+
+returns a specific point in the spline 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 137 of file Spline\+Movement.\+cs.
+
+\mbox{\Hypertarget{class_spline_movement_a55ac2dde40f8639ff040dd07fb63b34e}\label{class_spline_movement_a55ac2dde40f8639ff040dd07fb63b34e}} 
+\index{Spline\+Movement@{Spline\+Movement}!Start@{Start}}
+\index{Start@{Start}!Spline\+Movement@{Spline\+Movement}}
+\subsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Spline\+Movement.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 52 of file Spline\+Movement.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_spline_movement_a5731a01361661e4c1cc4de230e3d80be}\label{class_spline_movement_a5731a01361661e4c1cc4de230e3d80be}} 
+\index{Spline\+Movement@{Spline\+Movement}!Axes\+To\+Ignore@{Axes\+To\+Ignore}}
+\index{Axes\+To\+Ignore@{Axes\+To\+Ignore}!Spline\+Movement@{Spline\+Movement}}
+\subsubsection{\texorpdfstring{Axes\+To\+Ignore}{AxesToIgnore}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_ignore_axis_8cs_aa61b0141055d583a4f5b013297a1d48f}{Ignore\+Axis}} Spline\+Movement.\+Axes\+To\+Ignore = \mbox{\hyperlink{_ignore_axis_8cs_aa61b0141055d583a4f5b013297a1d48fa57cec4137b614c87cb4e24a3d003a3e0}{Ignore\+Axis.\+Y}}}
+
+
+
+Definition at line 42 of file Spline\+Movement.\+cs.
+
+\mbox{\Hypertarget{class_spline_movement_a2f1281a919203432cca759b814642c08}\label{class_spline_movement_a2f1281a919203432cca759b814642c08}} 
+\index{Spline\+Movement@{Spline\+Movement}!Constant\+Regenerate@{Constant\+Regenerate}}
+\index{Constant\+Regenerate@{Constant\+Regenerate}!Spline\+Movement@{Spline\+Movement}}
+\subsubsection{\texorpdfstring{Constant\+Regenerate}{ConstantRegenerate}}
+{\footnotesize\ttfamily bool Spline\+Movement.\+Constant\+Regenerate = false}
+
+
+
+Definition at line 33 of file Spline\+Movement.\+cs.
+
+\mbox{\Hypertarget{class_spline_movement_a8f829fcdc1fdc601d94e6eb6a5f186a0}\label{class_spline_movement_a8f829fcdc1fdc601d94e6eb6a5f186a0}} 
+\index{Spline\+Movement@{Spline\+Movement}!Disable\+Gravity@{Disable\+Gravity}}
+\index{Disable\+Gravity@{Disable\+Gravity}!Spline\+Movement@{Spline\+Movement}}
+\subsubsection{\texorpdfstring{Disable\+Gravity}{DisableGravity}}
+{\footnotesize\ttfamily bool Spline\+Movement.\+Disable\+Gravity}
+
+
+
+Definition at line 43 of file Spline\+Movement.\+cs.
+
+\mbox{\Hypertarget{class_spline_movement_a639e4325e5208e76cfa10b07786d63b3}\label{class_spline_movement_a639e4325e5208e76cfa10b07786d63b3}} 
+\index{Spline\+Movement@{Spline\+Movement}!Disable\+Grounder@{Disable\+Grounder}}
+\index{Disable\+Grounder@{Disable\+Grounder}!Spline\+Movement@{Spline\+Movement}}
+\subsubsection{\texorpdfstring{Disable\+Grounder}{DisableGrounder}}
+{\footnotesize\ttfamily bool Spline\+Movement.\+Disable\+Grounder}
+
+
+
+Definition at line 44 of file Spline\+Movement.\+cs.
+
+\mbox{\Hypertarget{class_spline_movement_adace2321a290e27160f326d7257f7db7}\label{class_spline_movement_adace2321a290e27160f326d7257f7db7}} 
+\index{Spline\+Movement@{Spline\+Movement}!Force\+Movement@{Force\+Movement}}
+\index{Force\+Movement@{Force\+Movement}!Spline\+Movement@{Spline\+Movement}}
+\subsubsection{\texorpdfstring{Force\+Movement}{ForceMovement}}
+{\footnotesize\ttfamily bool Spline\+Movement.\+Force\+Movement = false}
+
+
+
+Definition at line 38 of file Spline\+Movement.\+cs.
+
+\mbox{\Hypertarget{class_spline_movement_a21c86cdee895ba1a71af2eeaf28f51eb}\label{class_spline_movement_a21c86cdee895ba1a71af2eeaf28f51eb}} 
+\index{Spline\+Movement@{Spline\+Movement}!High\+Exit@{High\+Exit}}
+\index{High\+Exit@{High\+Exit}!Spline\+Movement@{Spline\+Movement}}
+\subsubsection{\texorpdfstring{High\+Exit}{HighExit}}
+{\footnotesize\ttfamily bool Spline\+Movement.\+High\+Exit = true}
+
+
+
+Definition at line 34 of file Spline\+Movement.\+cs.
+
+\mbox{\Hypertarget{class_spline_movement_a2417f1ad0eeec517e5896c16175af012}\label{class_spline_movement_a2417f1ad0eeec517e5896c16175af012}} 
+\index{Spline\+Movement@{Spline\+Movement}!Invert\+Axis@{Invert\+Axis}}
+\index{Invert\+Axis@{Invert\+Axis}!Spline\+Movement@{Spline\+Movement}}
+\subsubsection{\texorpdfstring{Invert\+Axis}{InvertAxis}}
+{\footnotesize\ttfamily bool Spline\+Movement.\+Invert\+Axis = false}
+
+
+
+Definition at line 37 of file Spline\+Movement.\+cs.
+
+\mbox{\Hypertarget{class_spline_movement_ae7ef31a81a9bef0a404aa5aff3ec5e2b}\label{class_spline_movement_ae7ef31a81a9bef0a404aa5aff3ec5e2b}} 
+\index{Spline\+Movement@{Spline\+Movement}!Low\+Exit@{Low\+Exit}}
+\index{Low\+Exit@{Low\+Exit}!Spline\+Movement@{Spline\+Movement}}
+\subsubsection{\texorpdfstring{Low\+Exit}{LowExit}}
+{\footnotesize\ttfamily bool Spline\+Movement.\+Low\+Exit = true}
+
+
+
+Definition at line 35 of file Spline\+Movement.\+cs.
+
+\mbox{\Hypertarget{class_spline_movement_afd3796f0a70d33023cb46d913b06a51e}\label{class_spline_movement_afd3796f0a70d33023cb46d913b06a51e}} 
+\index{Spline\+Movement@{Spline\+Movement}!m\+\_\+\+Spline@{m\+\_\+\+Spline}}
+\index{m\+\_\+\+Spline@{m\+\_\+\+Spline}!Spline\+Movement@{Spline\+Movement}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Spline}{m\_Spline}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bezier_spline}{Bezier\+Spline}} Spline\+Movement.\+m\+\_\+\+Spline}
+
+
+
+Definition at line 50 of file Spline\+Movement.\+cs.
+
+\mbox{\Hypertarget{class_spline_movement_a9915058d410d11abf2ff0a53d6175e5f}\label{class_spline_movement_a9915058d410d11abf2ff0a53d6175e5f}} 
+\index{Spline\+Movement@{Spline\+Movement}!Move\+Axis\+Key@{Move\+Axis\+Key}}
+\index{Move\+Axis\+Key@{Move\+Axis\+Key}!Spline\+Movement@{Spline\+Movement}}
+\subsubsection{\texorpdfstring{Move\+Axis\+Key}{MoveAxisKey}}
+{\footnotesize\ttfamily Axis\+Action Spline\+Movement.\+Move\+Axis\+Key}
+
+
+
+Definition at line 36 of file Spline\+Movement.\+cs.
+
+\mbox{\Hypertarget{class_spline_movement_adbbea5ed021fc7b6f7c400400a7dcd3a}\label{class_spline_movement_adbbea5ed021fc7b6f7c400400a7dcd3a}} 
+\index{Spline\+Movement@{Spline\+Movement}!Num\+Points@{Num\+Points}}
+\index{Num\+Points@{Num\+Points}!Spline\+Movement@{Spline\+Movement}}
+\subsubsection{\texorpdfstring{Num\+Points}{NumPoints}}
+{\footnotesize\ttfamily int Spline\+Movement.\+Num\+Points = 30}
+
+
+
+Definition at line 30 of file Spline\+Movement.\+cs.
+
+\mbox{\Hypertarget{class_spline_movement_ae21d40c99f8da6645cf1041e79dbe0c9}\label{class_spline_movement_ae21d40c99f8da6645cf1041e79dbe0c9}} 
+\index{Spline\+Movement@{Spline\+Movement}!On\+High\+Exit@{On\+High\+Exit}}
+\index{On\+High\+Exit@{On\+High\+Exit}!Spline\+Movement@{Spline\+Movement}}
+\subsubsection{\texorpdfstring{On\+High\+Exit}{OnHighExit}}
+{\footnotesize\ttfamily Unity\+Event Spline\+Movement.\+On\+High\+Exit}
+
+
+
+Definition at line 40 of file Spline\+Movement.\+cs.
+
+\mbox{\Hypertarget{class_spline_movement_a3ab10a8f9594bbaf278ac2c7c8e6858d}\label{class_spline_movement_a3ab10a8f9594bbaf278ac2c7c8e6858d}} 
+\index{Spline\+Movement@{Spline\+Movement}!points@{points}}
+\index{points@{points}!Spline\+Movement@{Spline\+Movement}}
+\subsubsection{\texorpdfstring{points}{points}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_spline_movement_1_1_point}{Point}} \mbox{[}$\,$\mbox{]} Spline\+Movement.\+points}
+
+
+
+Definition at line 47 of file Spline\+Movement.\+cs.
+
+\mbox{\Hypertarget{class_spline_movement_a6f38fd94d067872d8f11b50965ac776f}\label{class_spline_movement_a6f38fd94d067872d8f11b50965ac776f}} 
+\index{Spline\+Movement@{Spline\+Movement}!Regenerate\+Points@{Regenerate\+Points}}
+\index{Regenerate\+Points@{Regenerate\+Points}!Spline\+Movement@{Spline\+Movement}}
+\subsubsection{\texorpdfstring{Regenerate\+Points}{RegeneratePoints}}
+{\footnotesize\ttfamily bool Spline\+Movement.\+Regenerate\+Points = false}
+
+
+
+Definition at line 32 of file Spline\+Movement.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Animal/\mbox{\hyperlink{_spline_movement_8cs}{Spline\+Movement.\+cs}}\end{DoxyCompactItemize}

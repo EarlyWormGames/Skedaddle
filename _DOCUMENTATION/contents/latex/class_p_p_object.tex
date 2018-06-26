@@ -1,0 +1,186 @@
+\hypertarget{class_p_p_object}{}\section{P\+P\+Object Class Reference}
+\label{class_p_p_object}\index{P\+P\+Object@{P\+P\+Object}}
+Inheritance diagram for P\+P\+Object\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{class_p_p_object}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_p_p_object_a6a35b92bb58b0e3b5e8f7857940ada54}{Set\+Collisions}} (\mbox{\hyperlink{class_animal}{Animal}} anim, bool allowed)
+\begin{DoxyCompactList}\small\item\em Enable/disable collisions for a specific animal \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_p_p_object_a7df76e4799e0afc65ac5fa5bf8f5c33c}{Can\+Enter\+Move\+Spline}} = true
+\item 
+\mbox{\hyperlink{_ignore_axis_8cs_aa61b0141055d583a4f5b013297a1d48f}{Ignore\+Axis}} \mbox{\hyperlink{class_p_p_object_ad6ffb2bd4353f3ebf44561da0fb9f352}{Maintain\+Position}} = \mbox{\hyperlink{_ignore_axis_8cs_aa61b0141055d583a4f5b013297a1d48fa57cec4137b614c87cb4e24a3d003a3e0}{Ignore\+Axis.\+Y}} $\vert$ \mbox{\hyperlink{_ignore_axis_8cs_aa61b0141055d583a4f5b013297a1d48fa21c2e59531c8710156d34a3c30ac81d5}{Ignore\+Axis.\+Z}}
+\item 
+\mbox{\hyperlink{_ignore_axis_8cs_aa61b0141055d583a4f5b013297a1d48f}{Ignore\+Axis}} \mbox{\hyperlink{class_p_p_object_a5b0142f71e2f406feabe00f1fb17f062}{Maintain\+Rotation}} = \mbox{\hyperlink{_ignore_axis_8cs_aa61b0141055d583a4f5b013297a1d48fa709468af25e91284821d1bdbfdded24c}{Ignore\+Axis.\+Everything}}
+\item 
+List$<$ Collider $>$ \mbox{\hyperlink{class_p_p_object_a980e154549866d63adac0ab449fac07e}{Triggers\+To\+Disable}} = new List$<$Collider$>$()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_p_p_object_a365b36598fc60a7d6470147aae73121b}{On\+Start}} ()
+\item 
+override void \mbox{\hyperlink{class_p_p_object_a74855705698504fae01ef77b0cee6313}{On\+Update}} ()
+\item 
+override void \mbox{\hyperlink{class_p_p_object_a3359bdf648e8252f0d7326c65bbf9d73}{Do\+Interact}} (\mbox{\hyperlink{class_animal}{Animal}} caller)
+\item 
+override void \mbox{\hyperlink{class_p_p_object_a2cf5c46651860b997fd937c30e29d6b8}{On\+Detach}} (\mbox{\hyperlink{class_animal}{Animal}} anim)
+\begin{DoxyCompactList}\small\item\em summary$>$Check if this object is attachable\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+override bool \mbox{\hyperlink{class_p_p_object_a240d0da4ac929975c3091d6a8ecf297e}{Head\+Trigger\+Only}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 5 of file P\+P\+Object.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_p_p_object_a3359bdf648e8252f0d7326c65bbf9d73}\label{class_p_p_object_a3359bdf648e8252f0d7326c65bbf9d73}} 
+\index{P\+P\+Object@{P\+P\+Object}!Do\+Interact@{Do\+Interact}}
+\index{Do\+Interact@{Do\+Interact}!P\+P\+Object@{P\+P\+Object}}
+\subsubsection{\texorpdfstring{Do\+Interact()}{DoInteract()}}
+{\footnotesize\ttfamily override void P\+P\+Object.\+Do\+Interact (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{caller }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_attachable_interact_a9b07a54f1dbb96777c4bd287dfe438e3}{Attachable\+Interact}}.
+
+
+
+Definition at line 58 of file P\+P\+Object.\+cs.
+
+\mbox{\Hypertarget{class_p_p_object_a2cf5c46651860b997fd937c30e29d6b8}\label{class_p_p_object_a2cf5c46651860b997fd937c30e29d6b8}} 
+\index{P\+P\+Object@{P\+P\+Object}!On\+Detach@{On\+Detach}}
+\index{On\+Detach@{On\+Detach}!P\+P\+Object@{P\+P\+Object}}
+\subsubsection{\texorpdfstring{On\+Detach()}{OnDetach()}}
+{\footnotesize\ttfamily override void P\+P\+Object.\+On\+Detach (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{animal }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+summary$>$Check if this object is attachable
+
+
+
+Reimplemented from \mbox{\hyperlink{class_attachable_abe7cf9d7930393610c7c9c4ae14b12d7}{Attachable}}.
+
+
+
+Definition at line 102 of file P\+P\+Object.\+cs.
+
+\mbox{\Hypertarget{class_p_p_object_a365b36598fc60a7d6470147aae73121b}\label{class_p_p_object_a365b36598fc60a7d6470147aae73121b}} 
+\index{P\+P\+Object@{P\+P\+Object}!On\+Start@{On\+Start}}
+\index{On\+Start@{On\+Start}!P\+P\+Object@{P\+P\+Object}}
+\subsubsection{\texorpdfstring{On\+Start()}{OnStart()}}
+{\footnotesize\ttfamily override void P\+P\+Object.\+On\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_attachable_a3c05c0b07b831881a7ab245057d34d30}{Attachable}}.
+
+
+
+Definition at line 26 of file P\+P\+Object.\+cs.
+
+\mbox{\Hypertarget{class_p_p_object_a74855705698504fae01ef77b0cee6313}\label{class_p_p_object_a74855705698504fae01ef77b0cee6313}} 
+\index{P\+P\+Object@{P\+P\+Object}!On\+Update@{On\+Update}}
+\index{On\+Update@{On\+Update}!P\+P\+Object@{P\+P\+Object}}
+\subsubsection{\texorpdfstring{On\+Update()}{OnUpdate()}}
+{\footnotesize\ttfamily override void P\+P\+Object.\+On\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_attachable_abb659a66efacd6fa09fa1d7125c7b5e6}{Attachable}}.
+
+
+
+Definition at line 46 of file P\+P\+Object.\+cs.
+
+\mbox{\Hypertarget{class_p_p_object_a6a35b92bb58b0e3b5e8f7857940ada54}\label{class_p_p_object_a6a35b92bb58b0e3b5e8f7857940ada54}} 
+\index{P\+P\+Object@{P\+P\+Object}!Set\+Collisions@{Set\+Collisions}}
+\index{Set\+Collisions@{Set\+Collisions}!P\+P\+Object@{P\+P\+Object}}
+\subsubsection{\texorpdfstring{Set\+Collisions()}{SetCollisions()}}
+{\footnotesize\ttfamily void P\+P\+Object.\+Set\+Collisions (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{anim,  }\item[{bool}]{allowed }\end{DoxyParamCaption})}
+
+
+
+Enable/disable collisions for a specific animal 
+
+
+
+Definition at line 95 of file P\+P\+Object.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_p_p_object_a7df76e4799e0afc65ac5fa5bf8f5c33c}\label{class_p_p_object_a7df76e4799e0afc65ac5fa5bf8f5c33c}} 
+\index{P\+P\+Object@{P\+P\+Object}!Can\+Enter\+Move\+Spline@{Can\+Enter\+Move\+Spline}}
+\index{Can\+Enter\+Move\+Spline@{Can\+Enter\+Move\+Spline}!P\+P\+Object@{P\+P\+Object}}
+\subsubsection{\texorpdfstring{Can\+Enter\+Move\+Spline}{CanEnterMoveSpline}}
+{\footnotesize\ttfamily bool P\+P\+Object.\+Can\+Enter\+Move\+Spline = true}
+
+
+
+Definition at line 7 of file P\+P\+Object.\+cs.
+
+\mbox{\Hypertarget{class_p_p_object_ad6ffb2bd4353f3ebf44561da0fb9f352}\label{class_p_p_object_ad6ffb2bd4353f3ebf44561da0fb9f352}} 
+\index{P\+P\+Object@{P\+P\+Object}!Maintain\+Position@{Maintain\+Position}}
+\index{Maintain\+Position@{Maintain\+Position}!P\+P\+Object@{P\+P\+Object}}
+\subsubsection{\texorpdfstring{Maintain\+Position}{MaintainPosition}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_ignore_axis_8cs_aa61b0141055d583a4f5b013297a1d48f}{Ignore\+Axis}} P\+P\+Object.\+Maintain\+Position = \mbox{\hyperlink{_ignore_axis_8cs_aa61b0141055d583a4f5b013297a1d48fa57cec4137b614c87cb4e24a3d003a3e0}{Ignore\+Axis.\+Y}} $\vert$ \mbox{\hyperlink{_ignore_axis_8cs_aa61b0141055d583a4f5b013297a1d48fa21c2e59531c8710156d34a3c30ac81d5}{Ignore\+Axis.\+Z}}}
+
+
+
+Definition at line 9 of file P\+P\+Object.\+cs.
+
+\mbox{\Hypertarget{class_p_p_object_a5b0142f71e2f406feabe00f1fb17f062}\label{class_p_p_object_a5b0142f71e2f406feabe00f1fb17f062}} 
+\index{P\+P\+Object@{P\+P\+Object}!Maintain\+Rotation@{Maintain\+Rotation}}
+\index{Maintain\+Rotation@{Maintain\+Rotation}!P\+P\+Object@{P\+P\+Object}}
+\subsubsection{\texorpdfstring{Maintain\+Rotation}{MaintainRotation}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_ignore_axis_8cs_aa61b0141055d583a4f5b013297a1d48f}{Ignore\+Axis}} P\+P\+Object.\+Maintain\+Rotation = \mbox{\hyperlink{_ignore_axis_8cs_aa61b0141055d583a4f5b013297a1d48fa709468af25e91284821d1bdbfdded24c}{Ignore\+Axis.\+Everything}}}
+
+
+
+Definition at line 10 of file P\+P\+Object.\+cs.
+
+\mbox{\Hypertarget{class_p_p_object_a980e154549866d63adac0ab449fac07e}\label{class_p_p_object_a980e154549866d63adac0ab449fac07e}} 
+\index{P\+P\+Object@{P\+P\+Object}!Triggers\+To\+Disable@{Triggers\+To\+Disable}}
+\index{Triggers\+To\+Disable@{Triggers\+To\+Disable}!P\+P\+Object@{P\+P\+Object}}
+\subsubsection{\texorpdfstring{Triggers\+To\+Disable}{TriggersToDisable}}
+{\footnotesize\ttfamily List$<$Collider$>$ P\+P\+Object.\+Triggers\+To\+Disable = new List$<$Collider$>$()}
+
+
+
+Definition at line 11 of file P\+P\+Object.\+cs.
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_p_p_object_a240d0da4ac929975c3091d6a8ecf297e}\label{class_p_p_object_a240d0da4ac929975c3091d6a8ecf297e}} 
+\index{P\+P\+Object@{P\+P\+Object}!Head\+Trigger\+Only@{Head\+Trigger\+Only}}
+\index{Head\+Trigger\+Only@{Head\+Trigger\+Only}!P\+P\+Object@{P\+P\+Object}}
+\subsubsection{\texorpdfstring{Head\+Trigger\+Only}{HeadTriggerOnly}}
+{\footnotesize\ttfamily override bool P\+P\+Object.\+Head\+Trigger\+Only\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 12 of file P\+P\+Object.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Interactables/\+Attachables/\mbox{\hyperlink{_p_p_object_8cs}{P\+P\+Object.\+cs}}\end{DoxyCompactItemize}

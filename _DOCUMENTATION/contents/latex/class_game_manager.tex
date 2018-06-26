@@ -1,0 +1,173 @@
+\hypertarget{class_game_manager}{}\section{Game\+Manager Class Reference}
+\label{class_game_manager}\index{Game\+Manager@{Game\+Manager}}
+
+
+handles Input and scene management  
+
+
+Inheritance diagram for Game\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_game_manager}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_game_manager_ab83c7c6f5531d0591b0697fdf340a16c}{Is\+Game\+Scene}} (string a\+\_\+scene\+Name)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_game_manager_a746715f95f49db4565a3c52235021656}{Is\+Debug\+Scene}} (string a\+\_\+scene\+Name)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Game\+Object \mbox{\hyperlink{class_game_manager_a5f2e8fddfab1df9b614ee8c19e190c89}{m\+\_\+go\+Menu\+Prefab}}
+\item 
+bool \mbox{\hyperlink{class_game_manager_a5f44a085c580d46869d434c58356acaf}{m\+\_\+b\+Use\+DoF}} = true
+\item 
+string \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_game_manager_a08c09884a7b006f6e34b9a97791ad8e9}{m\+\_\+as\+Debug\+Scenes}}
+\item 
+string \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_game_manager_aa64096e52946d57a561f6182aa56380e}{m\+\_\+as\+Non\+Game\+Scenes}}
+\item 
+Player\+Input \mbox{\hyperlink{class_game_manager_ab233485503b57111cd2c5aa0ddc3b0ec}{input}}
+\item 
+Dictionary$<$ string, Input\+Control $>$ \mbox{\hyperlink{class_game_manager_aa59964143f46f6d366aa576ab08c5a15}{controls\+List}}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static Main\+Mapping \mbox{\hyperlink{class_game_manager_ad6ae4c20fbf43657dfb819caf38df783}{main\+Map}}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_game_manager_a30d19f2d0dbdc657e6f216a99e4be4af}{On\+Awake}} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+handles Input and scene management 
+
+
+
+Definition at line 11 of file Game\+Manager.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_game_manager_a746715f95f49db4565a3c52235021656}\label{class_game_manager_a746715f95f49db4565a3c52235021656}} 
+\index{Game\+Manager@{Game\+Manager}!Is\+Debug\+Scene@{Is\+Debug\+Scene}}
+\index{Is\+Debug\+Scene@{Is\+Debug\+Scene}!Game\+Manager@{Game\+Manager}}
+\subsubsection{\texorpdfstring{Is\+Debug\+Scene()}{IsDebugScene()}}
+{\footnotesize\ttfamily static bool Game\+Manager.\+Is\+Debug\+Scene (\begin{DoxyParamCaption}\item[{string}]{a\+\_\+scene\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 115 of file Game\+Manager.\+cs.
+
+\mbox{\Hypertarget{class_game_manager_ab83c7c6f5531d0591b0697fdf340a16c}\label{class_game_manager_ab83c7c6f5531d0591b0697fdf340a16c}} 
+\index{Game\+Manager@{Game\+Manager}!Is\+Game\+Scene@{Is\+Game\+Scene}}
+\index{Is\+Game\+Scene@{Is\+Game\+Scene}!Game\+Manager@{Game\+Manager}}
+\subsubsection{\texorpdfstring{Is\+Game\+Scene()}{IsGameScene()}}
+{\footnotesize\ttfamily bool Game\+Manager.\+Is\+Game\+Scene (\begin{DoxyParamCaption}\item[{string}]{a\+\_\+scene\+Name }\end{DoxyParamCaption})}
+
+
+
+Definition at line 125 of file Game\+Manager.\+cs.
+
+\mbox{\Hypertarget{class_game_manager_a30d19f2d0dbdc657e6f216a99e4be4af}\label{class_game_manager_a30d19f2d0dbdc657e6f216a99e4be4af}} 
+\index{Game\+Manager@{Game\+Manager}!On\+Awake@{On\+Awake}}
+\index{On\+Awake@{On\+Awake}!Game\+Manager@{Game\+Manager}}
+\subsubsection{\texorpdfstring{On\+Awake()}{OnAwake()}}
+{\footnotesize\ttfamily override void Game\+Manager.\+On\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_singleton_aac558b29781a363c0845b0359c8f85ff}{Singleton$<$ Game\+Manager $>$}}.
+
+
+
+Definition at line 30 of file Game\+Manager.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_game_manager_aa59964143f46f6d366aa576ab08c5a15}\label{class_game_manager_aa59964143f46f6d366aa576ab08c5a15}} 
+\index{Game\+Manager@{Game\+Manager}!controls\+List@{controls\+List}}
+\index{controls\+List@{controls\+List}!Game\+Manager@{Game\+Manager}}
+\subsubsection{\texorpdfstring{controls\+List}{controlsList}}
+{\footnotesize\ttfamily Dictionary$<$string, Input\+Control$>$ Game\+Manager.\+controls\+List}
+
+
+
+Definition at line 22 of file Game\+Manager.\+cs.
+
+\mbox{\Hypertarget{class_game_manager_ab233485503b57111cd2c5aa0ddc3b0ec}\label{class_game_manager_ab233485503b57111cd2c5aa0ddc3b0ec}} 
+\index{Game\+Manager@{Game\+Manager}!input@{input}}
+\index{input@{input}!Game\+Manager@{Game\+Manager}}
+\subsubsection{\texorpdfstring{input}{input}}
+{\footnotesize\ttfamily Player\+Input Game\+Manager.\+input}
+
+
+
+Definition at line 21 of file Game\+Manager.\+cs.
+
+\mbox{\Hypertarget{class_game_manager_a08c09884a7b006f6e34b9a97791ad8e9}\label{class_game_manager_a08c09884a7b006f6e34b9a97791ad8e9}} 
+\index{Game\+Manager@{Game\+Manager}!m\+\_\+as\+Debug\+Scenes@{m\+\_\+as\+Debug\+Scenes}}
+\index{m\+\_\+as\+Debug\+Scenes@{m\+\_\+as\+Debug\+Scenes}!Game\+Manager@{Game\+Manager}}
+\subsubsection{\texorpdfstring{m\+\_\+as\+Debug\+Scenes}{m\_asDebugScenes}}
+{\footnotesize\ttfamily string \mbox{[}$\,$\mbox{]} Game\+Manager.\+m\+\_\+as\+Debug\+Scenes}
+
+
+
+Definition at line 17 of file Game\+Manager.\+cs.
+
+\mbox{\Hypertarget{class_game_manager_aa64096e52946d57a561f6182aa56380e}\label{class_game_manager_aa64096e52946d57a561f6182aa56380e}} 
+\index{Game\+Manager@{Game\+Manager}!m\+\_\+as\+Non\+Game\+Scenes@{m\+\_\+as\+Non\+Game\+Scenes}}
+\index{m\+\_\+as\+Non\+Game\+Scenes@{m\+\_\+as\+Non\+Game\+Scenes}!Game\+Manager@{Game\+Manager}}
+\subsubsection{\texorpdfstring{m\+\_\+as\+Non\+Game\+Scenes}{m\_asNonGameScenes}}
+{\footnotesize\ttfamily string \mbox{[}$\,$\mbox{]} Game\+Manager.\+m\+\_\+as\+Non\+Game\+Scenes}
+
+
+
+Definition at line 18 of file Game\+Manager.\+cs.
+
+\mbox{\Hypertarget{class_game_manager_a5f44a085c580d46869d434c58356acaf}\label{class_game_manager_a5f44a085c580d46869d434c58356acaf}} 
+\index{Game\+Manager@{Game\+Manager}!m\+\_\+b\+Use\+DoF@{m\+\_\+b\+Use\+DoF}}
+\index{m\+\_\+b\+Use\+DoF@{m\+\_\+b\+Use\+DoF}!Game\+Manager@{Game\+Manager}}
+\subsubsection{\texorpdfstring{m\+\_\+b\+Use\+DoF}{m\_bUseDoF}}
+{\footnotesize\ttfamily bool Game\+Manager.\+m\+\_\+b\+Use\+DoF = true}
+
+
+
+Definition at line 16 of file Game\+Manager.\+cs.
+
+\mbox{\Hypertarget{class_game_manager_a5f2e8fddfab1df9b614ee8c19e190c89}\label{class_game_manager_a5f2e8fddfab1df9b614ee8c19e190c89}} 
+\index{Game\+Manager@{Game\+Manager}!m\+\_\+go\+Menu\+Prefab@{m\+\_\+go\+Menu\+Prefab}}
+\index{m\+\_\+go\+Menu\+Prefab@{m\+\_\+go\+Menu\+Prefab}!Game\+Manager@{Game\+Manager}}
+\subsubsection{\texorpdfstring{m\+\_\+go\+Menu\+Prefab}{m\_goMenuPrefab}}
+{\footnotesize\ttfamily Game\+Object Game\+Manager.\+m\+\_\+go\+Menu\+Prefab}
+
+
+
+Definition at line 15 of file Game\+Manager.\+cs.
+
+\mbox{\Hypertarget{class_game_manager_ad6ae4c20fbf43657dfb819caf38df783}\label{class_game_manager_ad6ae4c20fbf43657dfb819caf38df783}} 
+\index{Game\+Manager@{Game\+Manager}!main\+Map@{main\+Map}}
+\index{main\+Map@{main\+Map}!Game\+Manager@{Game\+Manager}}
+\subsubsection{\texorpdfstring{main\+Map}{mainMap}}
+{\footnotesize\ttfamily Main\+Mapping Game\+Manager.\+main\+Map\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 13 of file Game\+Manager.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Game/\mbox{\hyperlink{_game_manager_8cs}{Game\+Manager.\+cs}}\end{DoxyCompactItemize}

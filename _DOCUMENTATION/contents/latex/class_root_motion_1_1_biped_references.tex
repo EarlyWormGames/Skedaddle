@@ -1,0 +1,463 @@
+\hypertarget{class_root_motion_1_1_biped_references}{}\section{Root\+Motion.\+Biped\+References Class Reference}
+\label{class_root_motion_1_1_biped_references}\index{Root\+Motion.\+Biped\+References@{Root\+Motion.\+Biped\+References}}
+
+
+Contains references to bones common to all biped characters.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_root_motion_1_1_biped_references_1_1_auto_detect_params}{Auto\+Detect\+Params}}
+\begin{DoxyCompactList}\small\item\em Params for automatic biped recognition. (Using a struct here because I might need to add more parameters in the future). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{class_root_motion_1_1_biped_references_a9b09e3a8851e9b5709571de3895fc24c}{Is\+Empty}} (bool include\+Root)
+\begin{DoxyCompactList}\small\item\em Gets a value indicating whether this \mbox{\hyperlink{class_root_motion_1_1_biped_references}{Biped\+References}} is empty. If include\+Root is false, returns true(is empty) even if root Transform has been assigned. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_root_motion_1_1_biped_references_ab0b1faadbb6500da51504049e8302409}{Contains}} (Transform t, bool ignore\+Root=false)
+\begin{DoxyCompactList}\small\item\em Returns true if the References contain the specified Transform \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_root_motion_1_1_biped_references_a9a0ace986622d184c741e801651d05dd}{Auto\+Detect\+References}} (ref \mbox{\hyperlink{class_root_motion_1_1_biped_references}{Biped\+References}} references, Transform \mbox{\hyperlink{class_root_motion_1_1_biped_references_a9881cc2a81314b442244e08c5b7d62fc}{root}}, \mbox{\hyperlink{struct_root_motion_1_1_biped_references_1_1_auto_detect_params}{Auto\+Detect\+Params}} auto\+Detect\+Params)
+\begin{DoxyCompactList}\small\item\em Automatically detects biped bones. Returns true if a valid biped has been referenced. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_root_motion_1_1_biped_references_a60c9580a2af294063ead6b0b8f6a0360}{Detect\+References\+By\+Naming}} (ref \mbox{\hyperlink{class_root_motion_1_1_biped_references}{Biped\+References}} references, Transform \mbox{\hyperlink{class_root_motion_1_1_biped_references_a9881cc2a81314b442244e08c5b7d62fc}{root}}, \mbox{\hyperlink{struct_root_motion_1_1_biped_references_1_1_auto_detect_params}{Auto\+Detect\+Params}} auto\+Detect\+Params)
+\begin{DoxyCompactList}\small\item\em Detects the references based on naming and hierarchy. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_root_motion_1_1_biped_references_a4d9655d6418610e47e87a16df00dfe4a}{Assign\+Humanoid\+References}} (ref \mbox{\hyperlink{class_root_motion_1_1_biped_references}{Biped\+References}} references, Animator animator, \mbox{\hyperlink{struct_root_motion_1_1_biped_references_1_1_auto_detect_params}{Auto\+Detect\+Params}} auto\+Detect\+Params)
+\begin{DoxyCompactList}\small\item\em Fills in \mbox{\hyperlink{class_root_motion_1_1_biped_references}{Biped\+References}} using Animator.\+Get\+Bone\+Transform(). \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_root_motion_1_1_biped_references_aa51cbda78013925d19b3eb540492f96b}{Setup\+Error}} (\mbox{\hyperlink{class_root_motion_1_1_biped_references}{Biped\+References}} references, ref string error\+Message)
+\begin{DoxyCompactList}\small\item\em Checks the setup for definite problems. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_root_motion_1_1_biped_references_a43eed3ca43bc5b7b4aff4631ddcbd650}{Setup\+Warning}} (\mbox{\hyperlink{class_root_motion_1_1_biped_references}{Biped\+References}} references, ref string warning\+Message)
+\begin{DoxyCompactList}\small\item\em Checks the setup for possible problems. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_biped_references_a9881cc2a81314b442244e08c5b7d62fc}{root}}
+\begin{DoxyCompactList}\small\item\em The root transform is the parent of all the biped\textquotesingle{}s bones and should be located at ground level. \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_biped_references_aaf12e0e58c4b3e635d3bc422f4efcd36}{pelvis}}
+\begin{DoxyCompactList}\small\item\em The pelvis (hip) bone. \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_biped_references_a88d891301bf912988dafb043b8619552}{left\+Thigh}}
+\begin{DoxyCompactList}\small\item\em The first bone of the left leg. \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_biped_references_a3bf14dbd168075a0b2b5a67e1ada02ca}{left\+Calf}}
+\begin{DoxyCompactList}\small\item\em The second bone of the left leg. \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_biped_references_abca1f57dc355f126238cf8ead478cd02}{left\+Foot}}
+\begin{DoxyCompactList}\small\item\em The third bone of the left leg. \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_biped_references_a74381fef16ab26ef3a4278539db84bf5}{right\+Thigh}}
+\begin{DoxyCompactList}\small\item\em The first bone of the right leg. \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_biped_references_a9ca831e7879d70d0ea221b9d7e47ab9d}{right\+Calf}}
+\begin{DoxyCompactList}\small\item\em The second bone of the right leg. \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_biped_references_ab1434314e0c85dac39247f9f3dbd57d4}{right\+Foot}}
+\begin{DoxyCompactList}\small\item\em The third bone of the right leg. \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_biped_references_afb1b13f2e8f216e7c7217762aa225f6a}{left\+Upper\+Arm}}
+\begin{DoxyCompactList}\small\item\em The first bone of the left arm. \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_biped_references_a5b248a0fe60cabe4e8e474a3b021571c}{left\+Forearm}}
+\begin{DoxyCompactList}\small\item\em The second bone of the left arm. \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_biped_references_a0d28263f5680784a76ea79c2f9c9a251}{left\+Hand}}
+\begin{DoxyCompactList}\small\item\em The third bone of the left arm. \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_biped_references_a255db332585a13c4e6d08602a74fb4ac}{right\+Upper\+Arm}}
+\begin{DoxyCompactList}\small\item\em The first bone of the right arm. \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_biped_references_aed7973911fcca268a3d185954ec198f3}{right\+Forearm}}
+\begin{DoxyCompactList}\small\item\em The second bone of the right arm. \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_biped_references_ad6fa2cc62f62b81150f4d5ef0217be72}{right\+Hand}}
+\begin{DoxyCompactList}\small\item\em The third bone of the right arm. \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_biped_references_a0934fcbdbdb9d80099bd014a134319e0}{head}}
+\begin{DoxyCompactList}\small\item\em The head. \end{DoxyCompactList}\item 
+Transform \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_root_motion_1_1_biped_references_aac4acc4a14c2ea6f05693afd5ff57c2c}{spine}} = new Transform\mbox{[}0\mbox{]}
+\begin{DoxyCompactList}\small\item\em The spine hierarchy. Should not contain any bone deeper in the hierarchy than the arms (neck or head). \end{DoxyCompactList}\item 
+Transform \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_root_motion_1_1_biped_references_ad5c4f83e5e5425de0c2fdca68a4ea731}{eyes}} = new Transform\mbox{[}0\mbox{]}
+\begin{DoxyCompactList}\small\item\em The eyes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{class_root_motion_1_1_biped_references_a6520a3b816d79d54b2057ce1a5d04516}{is\+Filled}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Check for null references. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_root_motion_1_1_biped_references_a300b9269aec71669fc38fb9b349cc075}{is\+Empty}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets a value indicating whether this \mbox{\hyperlink{class_root_motion_1_1_biped_references}{Biped\+References}} is empty. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains references to bones common to all biped characters. 
+
+
+
+Definition at line 11 of file Biped\+References.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_biped_references_a4d9655d6418610e47e87a16df00dfe4a}\label{class_root_motion_1_1_biped_references_a4d9655d6418610e47e87a16df00dfe4a}} 
+\index{Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}!Assign\+Humanoid\+References@{Assign\+Humanoid\+References}}
+\index{Assign\+Humanoid\+References@{Assign\+Humanoid\+References}!Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}}
+\subsubsection{\texorpdfstring{Assign\+Humanoid\+References()}{AssignHumanoidReferences()}}
+{\footnotesize\ttfamily static void Root\+Motion.\+Biped\+References.\+Assign\+Humanoid\+References (\begin{DoxyParamCaption}\item[{ref \mbox{\hyperlink{class_root_motion_1_1_biped_references}{Biped\+References}}}]{references,  }\item[{Animator}]{animator,  }\item[{\mbox{\hyperlink{struct_root_motion_1_1_biped_references_1_1_auto_detect_params}{Auto\+Detect\+Params}}}]{auto\+Detect\+Params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Fills in \mbox{\hyperlink{class_root_motion_1_1_biped_references}{Biped\+References}} using Animator.\+Get\+Bone\+Transform(). 
+
+
+
+Definition at line 285 of file Biped\+References.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_biped_references_a9a0ace986622d184c741e801651d05dd}\label{class_root_motion_1_1_biped_references_a9a0ace986622d184c741e801651d05dd}} 
+\index{Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}!Auto\+Detect\+References@{Auto\+Detect\+References}}
+\index{Auto\+Detect\+References@{Auto\+Detect\+References}!Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}}
+\subsubsection{\texorpdfstring{Auto\+Detect\+References()}{AutoDetectReferences()}}
+{\footnotesize\ttfamily static bool Root\+Motion.\+Biped\+References.\+Auto\+Detect\+References (\begin{DoxyParamCaption}\item[{ref \mbox{\hyperlink{class_root_motion_1_1_biped_references}{Biped\+References}}}]{references,  }\item[{Transform}]{root,  }\item[{\mbox{\hyperlink{struct_root_motion_1_1_biped_references_1_1_auto_detect_params}{Auto\+Detect\+Params}}}]{auto\+Detect\+Params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Automatically detects biped bones. Returns true if a valid biped has been referenced. 
+
+
+
+Definition at line 179 of file Biped\+References.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_biped_references_ab0b1faadbb6500da51504049e8302409}\label{class_root_motion_1_1_biped_references_ab0b1faadbb6500da51504049e8302409}} 
+\index{Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}!Contains@{Contains}}
+\index{Contains@{Contains}!Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}}
+\subsubsection{\texorpdfstring{Contains()}{Contains()}}
+{\footnotesize\ttfamily virtual bool Root\+Motion.\+Biped\+References.\+Contains (\begin{DoxyParamCaption}\item[{Transform}]{t,  }\item[{bool}]{ignore\+Root = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns true if the References contain the specified Transform 
+
+
+
+Definition at line 130 of file Biped\+References.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_biped_references_a60c9580a2af294063ead6b0b8f6a0360}\label{class_root_motion_1_1_biped_references_a60c9580a2af294063ead6b0b8f6a0360}} 
+\index{Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}!Detect\+References\+By\+Naming@{Detect\+References\+By\+Naming}}
+\index{Detect\+References\+By\+Naming@{Detect\+References\+By\+Naming}!Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}}
+\subsubsection{\texorpdfstring{Detect\+References\+By\+Naming()}{DetectReferencesByNaming()}}
+{\footnotesize\ttfamily static void Root\+Motion.\+Biped\+References.\+Detect\+References\+By\+Naming (\begin{DoxyParamCaption}\item[{ref \mbox{\hyperlink{class_root_motion_1_1_biped_references}{Biped\+References}}}]{references,  }\item[{Transform}]{root,  }\item[{\mbox{\hyperlink{struct_root_motion_1_1_biped_references_1_1_auto_detect_params}{Auto\+Detect\+Params}}}]{auto\+Detect\+Params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Detects the references based on naming and hierarchy. 
+
+
+
+Definition at line 216 of file Biped\+References.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_biped_references_a9b09e3a8851e9b5709571de3895fc24c}\label{class_root_motion_1_1_biped_references_a9b09e3a8851e9b5709571de3895fc24c}} 
+\index{Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}!Is\+Empty@{Is\+Empty}}
+\index{Is\+Empty@{Is\+Empty}!Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}}
+\subsubsection{\texorpdfstring{Is\+Empty()}{IsEmpty()}}
+{\footnotesize\ttfamily virtual bool Root\+Motion.\+Biped\+References.\+Is\+Empty (\begin{DoxyParamCaption}\item[{bool}]{include\+Root }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets a value indicating whether this \mbox{\hyperlink{class_root_motion_1_1_biped_references}{Biped\+References}} is empty. If include\+Root is false, returns true(is empty) even if root Transform has been assigned. 
+
+
+
+Definition at line 114 of file Biped\+References.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_biped_references_aa51cbda78013925d19b3eb540492f96b}\label{class_root_motion_1_1_biped_references_aa51cbda78013925d19b3eb540492f96b}} 
+\index{Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}!Setup\+Error@{Setup\+Error}}
+\index{Setup\+Error@{Setup\+Error}!Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}}
+\subsubsection{\texorpdfstring{Setup\+Error()}{SetupError()}}
+{\footnotesize\ttfamily static bool Root\+Motion.\+Biped\+References.\+Setup\+Error (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_root_motion_1_1_biped_references}{Biped\+References}}}]{references,  }\item[{ref string}]{error\+Message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Checks the setup for definite problems. 
+
+
+
+Definition at line 330 of file Biped\+References.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_biped_references_a43eed3ca43bc5b7b4aff4631ddcbd650}\label{class_root_motion_1_1_biped_references_a43eed3ca43bc5b7b4aff4631ddcbd650}} 
+\index{Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}!Setup\+Warning@{Setup\+Warning}}
+\index{Setup\+Warning@{Setup\+Warning}!Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}}
+\subsubsection{\texorpdfstring{Setup\+Warning()}{SetupWarning()}}
+{\footnotesize\ttfamily static bool Root\+Motion.\+Biped\+References.\+Setup\+Warning (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_root_motion_1_1_biped_references}{Biped\+References}}}]{references,  }\item[{ref string}]{warning\+Message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Checks the setup for possible problems. 
+
+
+
+Definition at line 349 of file Biped\+References.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_biped_references_ad5c4f83e5e5425de0c2fdca68a4ea731}\label{class_root_motion_1_1_biped_references_ad5c4f83e5e5425de0c2fdca68a4ea731}} 
+\index{Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}!eyes@{eyes}}
+\index{eyes@{eyes}!Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}}
+\subsubsection{\texorpdfstring{eyes}{eyes}}
+{\footnotesize\ttfamily Transform \mbox{[}$\,$\mbox{]} Root\+Motion.\+Biped\+References.\+eyes = new Transform\mbox{[}0\mbox{]}}
+
+
+
+The eyes. 
+
+
+
+Definition at line 82 of file Biped\+References.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_biped_references_a0934fcbdbdb9d80099bd014a134319e0}\label{class_root_motion_1_1_biped_references_a0934fcbdbdb9d80099bd014a134319e0}} 
+\index{Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}!head@{head}}
+\index{head@{head}!Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}}
+\subsubsection{\texorpdfstring{head}{head}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Biped\+References.\+head}
+
+
+
+The head. 
+
+
+
+Definition at line 74 of file Biped\+References.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_biped_references_a3bf14dbd168075a0b2b5a67e1ada02ca}\label{class_root_motion_1_1_biped_references_a3bf14dbd168075a0b2b5a67e1ada02ca}} 
+\index{Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}!left\+Calf@{left\+Calf}}
+\index{left\+Calf@{left\+Calf}!Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}}
+\subsubsection{\texorpdfstring{left\+Calf}{leftCalf}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Biped\+References.\+left\+Calf}
+
+
+
+The second bone of the left leg. 
+
+
+
+Definition at line 30 of file Biped\+References.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_biped_references_abca1f57dc355f126238cf8ead478cd02}\label{class_root_motion_1_1_biped_references_abca1f57dc355f126238cf8ead478cd02}} 
+\index{Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}!left\+Foot@{left\+Foot}}
+\index{left\+Foot@{left\+Foot}!Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}}
+\subsubsection{\texorpdfstring{left\+Foot}{leftFoot}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Biped\+References.\+left\+Foot}
+
+
+
+The third bone of the left leg. 
+
+
+
+Definition at line 34 of file Biped\+References.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_biped_references_a5b248a0fe60cabe4e8e474a3b021571c}\label{class_root_motion_1_1_biped_references_a5b248a0fe60cabe4e8e474a3b021571c}} 
+\index{Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}!left\+Forearm@{left\+Forearm}}
+\index{left\+Forearm@{left\+Forearm}!Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}}
+\subsubsection{\texorpdfstring{left\+Forearm}{leftForearm}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Biped\+References.\+left\+Forearm}
+
+
+
+The second bone of the left arm. 
+
+
+
+Definition at line 54 of file Biped\+References.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_biped_references_a0d28263f5680784a76ea79c2f9c9a251}\label{class_root_motion_1_1_biped_references_a0d28263f5680784a76ea79c2f9c9a251}} 
+\index{Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}!left\+Hand@{left\+Hand}}
+\index{left\+Hand@{left\+Hand}!Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}}
+\subsubsection{\texorpdfstring{left\+Hand}{leftHand}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Biped\+References.\+left\+Hand}
+
+
+
+The third bone of the left arm. 
+
+
+
+Definition at line 58 of file Biped\+References.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_biped_references_a88d891301bf912988dafb043b8619552}\label{class_root_motion_1_1_biped_references_a88d891301bf912988dafb043b8619552}} 
+\index{Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}!left\+Thigh@{left\+Thigh}}
+\index{left\+Thigh@{left\+Thigh}!Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}}
+\subsubsection{\texorpdfstring{left\+Thigh}{leftThigh}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Biped\+References.\+left\+Thigh}
+
+
+
+The first bone of the left leg. 
+
+
+
+Definition at line 26 of file Biped\+References.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_biped_references_afb1b13f2e8f216e7c7217762aa225f6a}\label{class_root_motion_1_1_biped_references_afb1b13f2e8f216e7c7217762aa225f6a}} 
+\index{Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}!left\+Upper\+Arm@{left\+Upper\+Arm}}
+\index{left\+Upper\+Arm@{left\+Upper\+Arm}!Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}}
+\subsubsection{\texorpdfstring{left\+Upper\+Arm}{leftUpperArm}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Biped\+References.\+left\+Upper\+Arm}
+
+
+
+The first bone of the left arm. 
+
+
+
+Definition at line 50 of file Biped\+References.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_biped_references_aaf12e0e58c4b3e635d3bc422f4efcd36}\label{class_root_motion_1_1_biped_references_aaf12e0e58c4b3e635d3bc422f4efcd36}} 
+\index{Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}!pelvis@{pelvis}}
+\index{pelvis@{pelvis}!Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}}
+\subsubsection{\texorpdfstring{pelvis}{pelvis}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Biped\+References.\+pelvis}
+
+
+
+The pelvis (hip) bone. 
+
+
+
+Definition at line 22 of file Biped\+References.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_biped_references_a9ca831e7879d70d0ea221b9d7e47ab9d}\label{class_root_motion_1_1_biped_references_a9ca831e7879d70d0ea221b9d7e47ab9d}} 
+\index{Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}!right\+Calf@{right\+Calf}}
+\index{right\+Calf@{right\+Calf}!Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}}
+\subsubsection{\texorpdfstring{right\+Calf}{rightCalf}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Biped\+References.\+right\+Calf}
+
+
+
+The second bone of the right leg. 
+
+
+
+Definition at line 42 of file Biped\+References.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_biped_references_ab1434314e0c85dac39247f9f3dbd57d4}\label{class_root_motion_1_1_biped_references_ab1434314e0c85dac39247f9f3dbd57d4}} 
+\index{Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}!right\+Foot@{right\+Foot}}
+\index{right\+Foot@{right\+Foot}!Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}}
+\subsubsection{\texorpdfstring{right\+Foot}{rightFoot}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Biped\+References.\+right\+Foot}
+
+
+
+The third bone of the right leg. 
+
+
+
+Definition at line 46 of file Biped\+References.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_biped_references_aed7973911fcca268a3d185954ec198f3}\label{class_root_motion_1_1_biped_references_aed7973911fcca268a3d185954ec198f3}} 
+\index{Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}!right\+Forearm@{right\+Forearm}}
+\index{right\+Forearm@{right\+Forearm}!Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}}
+\subsubsection{\texorpdfstring{right\+Forearm}{rightForearm}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Biped\+References.\+right\+Forearm}
+
+
+
+The second bone of the right arm. 
+
+
+
+Definition at line 66 of file Biped\+References.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_biped_references_ad6fa2cc62f62b81150f4d5ef0217be72}\label{class_root_motion_1_1_biped_references_ad6fa2cc62f62b81150f4d5ef0217be72}} 
+\index{Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}!right\+Hand@{right\+Hand}}
+\index{right\+Hand@{right\+Hand}!Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}}
+\subsubsection{\texorpdfstring{right\+Hand}{rightHand}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Biped\+References.\+right\+Hand}
+
+
+
+The third bone of the right arm. 
+
+
+
+Definition at line 70 of file Biped\+References.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_biped_references_a74381fef16ab26ef3a4278539db84bf5}\label{class_root_motion_1_1_biped_references_a74381fef16ab26ef3a4278539db84bf5}} 
+\index{Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}!right\+Thigh@{right\+Thigh}}
+\index{right\+Thigh@{right\+Thigh}!Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}}
+\subsubsection{\texorpdfstring{right\+Thigh}{rightThigh}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Biped\+References.\+right\+Thigh}
+
+
+
+The first bone of the right leg. 
+
+
+
+Definition at line 38 of file Biped\+References.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_biped_references_a255db332585a13c4e6d08602a74fb4ac}\label{class_root_motion_1_1_biped_references_a255db332585a13c4e6d08602a74fb4ac}} 
+\index{Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}!right\+Upper\+Arm@{right\+Upper\+Arm}}
+\index{right\+Upper\+Arm@{right\+Upper\+Arm}!Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}}
+\subsubsection{\texorpdfstring{right\+Upper\+Arm}{rightUpperArm}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Biped\+References.\+right\+Upper\+Arm}
+
+
+
+The first bone of the right arm. 
+
+
+
+Definition at line 62 of file Biped\+References.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_biped_references_a9881cc2a81314b442244e08c5b7d62fc}\label{class_root_motion_1_1_biped_references_a9881cc2a81314b442244e08c5b7d62fc}} 
+\index{Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}!root@{root}}
+\index{root@{root}!Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}}
+\subsubsection{\texorpdfstring{root}{root}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Biped\+References.\+root}
+
+
+
+The root transform is the parent of all the biped\textquotesingle{}s bones and should be located at ground level. 
+
+
+
+Definition at line 18 of file Biped\+References.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_biped_references_aac4acc4a14c2ea6f05693afd5ff57c2c}\label{class_root_motion_1_1_biped_references_aac4acc4a14c2ea6f05693afd5ff57c2c}} 
+\index{Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}!spine@{spine}}
+\index{spine@{spine}!Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}}
+\subsubsection{\texorpdfstring{spine}{spine}}
+{\footnotesize\ttfamily Transform \mbox{[}$\,$\mbox{]} Root\+Motion.\+Biped\+References.\+spine = new Transform\mbox{[}0\mbox{]}}
+
+
+
+The spine hierarchy. Should not contain any bone deeper in the hierarchy than the arms (neck or head). 
+
+
+
+Definition at line 78 of file Biped\+References.\+cs.
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_biped_references_a300b9269aec71669fc38fb9b349cc075}\label{class_root_motion_1_1_biped_references_a300b9269aec71669fc38fb9b349cc075}} 
+\index{Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}}
+\subsubsection{\texorpdfstring{is\+Empty}{isEmpty}}
+{\footnotesize\ttfamily bool Root\+Motion.\+Biped\+References.\+is\+Empty\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets a value indicating whether this \mbox{\hyperlink{class_root_motion_1_1_biped_references}{Biped\+References}} is empty. 
+
+
+
+Definition at line 105 of file Biped\+References.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_biped_references_a6520a3b816d79d54b2057ce1a5d04516}\label{class_root_motion_1_1_biped_references_a6520a3b816d79d54b2057ce1a5d04516}} 
+\index{Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}!is\+Filled@{is\+Filled}}
+\index{is\+Filled@{is\+Filled}!Root\+Motion\+::\+Biped\+References@{Root\+Motion\+::\+Biped\+References}}
+\subsubsection{\texorpdfstring{is\+Filled}{isFilled}}
+{\footnotesize\ttfamily virtual bool Root\+Motion.\+Biped\+References.\+is\+Filled\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Check for null references. 
+
+
+
+Definition at line 87 of file Biped\+References.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Plugins/\+Root\+Motion/\+Shared Scripts/\mbox{\hyperlink{_biped_references_8cs}{Biped\+References.\+cs}}\end{DoxyCompactItemize}

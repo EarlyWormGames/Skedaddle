@@ -1,0 +1,224 @@
+\hypertarget{class_cutscene_object}{}\section{Cutscene\+Object Class Reference}
+\label{class_cutscene_object}\index{Cutscene\+Object@{Cutscene\+Object}}
+Inheritance diagram for Cutscene\+Object\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_cutscene_object}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_cutscene_object_a041b232f8146038cc625120e1cab138d}{Scene\+Start}} ()
+\item 
+void \mbox{\hyperlink{class_cutscene_object_ad3f71206703f9912e26b3c007259d4fb}{Scene\+End}} ()
+\item 
+virtual void \mbox{\hyperlink{class_cutscene_object_a8d23d6fb5601379ba729b3aa9292003c}{Set\+Anim\+Param$<$ T $>$}} (T a\+\_\+value)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Component \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_cutscene_object_aa2ce9bca249dae951b4b6f93abfec624}{m\+\_\+a\+Disable\+Comps}}
+\item 
+Rigidbody \mbox{\hyperlink{class_cutscene_object_a0f2d7168764e754d26214b5631f29193}{m\+\_\+r\+Body}}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_cutscene_object_a23bce7b06c88f20664e646e1e88855a5}{On\+Start}} ()
+\item 
+virtual void \mbox{\hyperlink{class_cutscene_object_adf319191840e097209184bb0adb69059}{On\+Update}} ()
+\item 
+virtual void \mbox{\hyperlink{class_cutscene_object_a84f7ddae58243cd84fddf5a3d364cbfa}{On\+Scene\+Start}} ()
+\item 
+virtual void \mbox{\hyperlink{class_cutscene_object_a028a73ecec97660090c68080ab7939e3}{On\+Scene\+End}} ()
+\item 
+virtual void \mbox{\hyperlink{class_cutscene_object_a4a4839cf157b8a68ef0ff173f158719c}{Timeline\+Hit}} ()
+\item 
+virtual void \mbox{\hyperlink{class_cutscene_object_a1d290a7d167c9521ecf27609a90b5f4c}{Timeline\+Exit}} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_cutscene_object_aab55bc72fd9e5674b14f0d524722993e}{m\+\_\+b\+In\+Scene}} = false
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+virtual Vector3 \mbox{\hyperlink{class_cutscene_object_a95de90a33a7c318d3a8009897ed5013c}{position}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+virtual Quaternion \mbox{\hyperlink{class_cutscene_object_a746d5bfdbf4be010a5696f76c2a15255}{rotation}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+virtual float \mbox{\hyperlink{class_cutscene_object_a512dbfaffb59e8908a78fa1feb559839}{opacity}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 6 of file Cutscene\+Object.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_cutscene_object_a028a73ecec97660090c68080ab7939e3}\label{class_cutscene_object_a028a73ecec97660090c68080ab7939e3}} 
+\index{Cutscene\+Object@{Cutscene\+Object}!On\+Scene\+End@{On\+Scene\+End}}
+\index{On\+Scene\+End@{On\+Scene\+End}!Cutscene\+Object@{Cutscene\+Object}}
+\subsubsection{\texorpdfstring{On\+Scene\+End()}{OnSceneEnd()}}
+{\footnotesize\ttfamily virtual void Cutscene\+Object.\+On\+Scene\+End (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 106 of file Cutscene\+Object.\+cs.
+
+\mbox{\Hypertarget{class_cutscene_object_a84f7ddae58243cd84fddf5a3d364cbfa}\label{class_cutscene_object_a84f7ddae58243cd84fddf5a3d364cbfa}} 
+\index{Cutscene\+Object@{Cutscene\+Object}!On\+Scene\+Start@{On\+Scene\+Start}}
+\index{On\+Scene\+Start@{On\+Scene\+Start}!Cutscene\+Object@{Cutscene\+Object}}
+\subsubsection{\texorpdfstring{On\+Scene\+Start()}{OnSceneStart()}}
+{\footnotesize\ttfamily virtual void Cutscene\+Object.\+On\+Scene\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 105 of file Cutscene\+Object.\+cs.
+
+\mbox{\Hypertarget{class_cutscene_object_a23bce7b06c88f20664e646e1e88855a5}\label{class_cutscene_object_a23bce7b06c88f20664e646e1e88855a5}} 
+\index{Cutscene\+Object@{Cutscene\+Object}!On\+Start@{On\+Start}}
+\index{On\+Start@{On\+Start}!Cutscene\+Object@{Cutscene\+Object}}
+\subsubsection{\texorpdfstring{On\+Start()}{OnStart()}}
+{\footnotesize\ttfamily virtual void Cutscene\+Object.\+On\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 102 of file Cutscene\+Object.\+cs.
+
+\mbox{\Hypertarget{class_cutscene_object_adf319191840e097209184bb0adb69059}\label{class_cutscene_object_adf319191840e097209184bb0adb69059}} 
+\index{Cutscene\+Object@{Cutscene\+Object}!On\+Update@{On\+Update}}
+\index{On\+Update@{On\+Update}!Cutscene\+Object@{Cutscene\+Object}}
+\subsubsection{\texorpdfstring{On\+Update()}{OnUpdate()}}
+{\footnotesize\ttfamily virtual void Cutscene\+Object.\+On\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 103 of file Cutscene\+Object.\+cs.
+
+\mbox{\Hypertarget{class_cutscene_object_ad3f71206703f9912e26b3c007259d4fb}\label{class_cutscene_object_ad3f71206703f9912e26b3c007259d4fb}} 
+\index{Cutscene\+Object@{Cutscene\+Object}!Scene\+End@{Scene\+End}}
+\index{Scene\+End@{Scene\+End}!Cutscene\+Object@{Cutscene\+Object}}
+\subsubsection{\texorpdfstring{Scene\+End()}{SceneEnd()}}
+{\footnotesize\ttfamily void Cutscene\+Object.\+Scene\+End (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 72 of file Cutscene\+Object.\+cs.
+
+\mbox{\Hypertarget{class_cutscene_object_a041b232f8146038cc625120e1cab138d}\label{class_cutscene_object_a041b232f8146038cc625120e1cab138d}} 
+\index{Cutscene\+Object@{Cutscene\+Object}!Scene\+Start@{Scene\+Start}}
+\index{Scene\+Start@{Scene\+Start}!Cutscene\+Object@{Cutscene\+Object}}
+\subsubsection{\texorpdfstring{Scene\+Start()}{SceneStart()}}
+{\footnotesize\ttfamily void Cutscene\+Object.\+Scene\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 41 of file Cutscene\+Object.\+cs.
+
+\mbox{\Hypertarget{class_cutscene_object_a8d23d6fb5601379ba729b3aa9292003c}\label{class_cutscene_object_a8d23d6fb5601379ba729b3aa9292003c}} 
+\index{Cutscene\+Object@{Cutscene\+Object}!Set\+Anim\+Param$<$ T $>$@{Set\+Anim\+Param$<$ T $>$}}
+\index{Set\+Anim\+Param$<$ T $>$@{Set\+Anim\+Param$<$ T $>$}!Cutscene\+Object@{Cutscene\+Object}}
+\subsubsection{\texorpdfstring{Set\+Anim\+Param$<$ T $>$()}{SetAnimParam< T >()}}
+{\footnotesize\ttfamily virtual void Cutscene\+Object.\+Set\+Anim\+Param$<$ T $>$ (\begin{DoxyParamCaption}\item[{T}]{a\+\_\+value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 111 of file Cutscene\+Object.\+cs.
+
+\mbox{\Hypertarget{class_cutscene_object_a1d290a7d167c9521ecf27609a90b5f4c}\label{class_cutscene_object_a1d290a7d167c9521ecf27609a90b5f4c}} 
+\index{Cutscene\+Object@{Cutscene\+Object}!Timeline\+Exit@{Timeline\+Exit}}
+\index{Timeline\+Exit@{Timeline\+Exit}!Cutscene\+Object@{Cutscene\+Object}}
+\subsubsection{\texorpdfstring{Timeline\+Exit()}{TimelineExit()}}
+{\footnotesize\ttfamily virtual void Cutscene\+Object.\+Timeline\+Exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 109 of file Cutscene\+Object.\+cs.
+
+\mbox{\Hypertarget{class_cutscene_object_a4a4839cf157b8a68ef0ff173f158719c}\label{class_cutscene_object_a4a4839cf157b8a68ef0ff173f158719c}} 
+\index{Cutscene\+Object@{Cutscene\+Object}!Timeline\+Hit@{Timeline\+Hit}}
+\index{Timeline\+Hit@{Timeline\+Hit}!Cutscene\+Object@{Cutscene\+Object}}
+\subsubsection{\texorpdfstring{Timeline\+Hit()}{TimelineHit()}}
+{\footnotesize\ttfamily virtual void Cutscene\+Object.\+Timeline\+Hit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 108 of file Cutscene\+Object.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_cutscene_object_aa2ce9bca249dae951b4b6f93abfec624}\label{class_cutscene_object_aa2ce9bca249dae951b4b6f93abfec624}} 
+\index{Cutscene\+Object@{Cutscene\+Object}!m\+\_\+a\+Disable\+Comps@{m\+\_\+a\+Disable\+Comps}}
+\index{m\+\_\+a\+Disable\+Comps@{m\+\_\+a\+Disable\+Comps}!Cutscene\+Object@{Cutscene\+Object}}
+\subsubsection{\texorpdfstring{m\+\_\+a\+Disable\+Comps}{m\_aDisableComps}}
+{\footnotesize\ttfamily Component \mbox{[}$\,$\mbox{]} Cutscene\+Object.\+m\+\_\+a\+Disable\+Comps}
+
+
+
+Definition at line 11 of file Cutscene\+Object.\+cs.
+
+\mbox{\Hypertarget{class_cutscene_object_aab55bc72fd9e5674b14f0d524722993e}\label{class_cutscene_object_aab55bc72fd9e5674b14f0d524722993e}} 
+\index{Cutscene\+Object@{Cutscene\+Object}!m\+\_\+b\+In\+Scene@{m\+\_\+b\+In\+Scene}}
+\index{m\+\_\+b\+In\+Scene@{m\+\_\+b\+In\+Scene}!Cutscene\+Object@{Cutscene\+Object}}
+\subsubsection{\texorpdfstring{m\+\_\+b\+In\+Scene}{m\_bInScene}}
+{\footnotesize\ttfamily bool Cutscene\+Object.\+m\+\_\+b\+In\+Scene = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 22 of file Cutscene\+Object.\+cs.
+
+\mbox{\Hypertarget{class_cutscene_object_a0f2d7168764e754d26214b5631f29193}\label{class_cutscene_object_a0f2d7168764e754d26214b5631f29193}} 
+\index{Cutscene\+Object@{Cutscene\+Object}!m\+\_\+r\+Body@{m\+\_\+r\+Body}}
+\index{m\+\_\+r\+Body@{m\+\_\+r\+Body}!Cutscene\+Object@{Cutscene\+Object}}
+\subsubsection{\texorpdfstring{m\+\_\+r\+Body}{m\_rBody}}
+{\footnotesize\ttfamily Rigidbody Cutscene\+Object.\+m\+\_\+r\+Body}
+
+
+
+Definition at line 12 of file Cutscene\+Object.\+cs.
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_cutscene_object_a512dbfaffb59e8908a78fa1feb559839}\label{class_cutscene_object_a512dbfaffb59e8908a78fa1feb559839}} 
+\index{Cutscene\+Object@{Cutscene\+Object}!opacity@{opacity}}
+\index{opacity@{opacity}!Cutscene\+Object@{Cutscene\+Object}}
+\subsubsection{\texorpdfstring{opacity}{opacity}}
+{\footnotesize\ttfamily virtual float Cutscene\+Object.\+opacity\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line 147 of file Cutscene\+Object.\+cs.
+
+\mbox{\Hypertarget{class_cutscene_object_a95de90a33a7c318d3a8009897ed5013c}\label{class_cutscene_object_a95de90a33a7c318d3a8009897ed5013c}} 
+\index{Cutscene\+Object@{Cutscene\+Object}!position@{position}}
+\index{position@{position}!Cutscene\+Object@{Cutscene\+Object}}
+\subsubsection{\texorpdfstring{position}{position}}
+{\footnotesize\ttfamily virtual Vector3 Cutscene\+Object.\+position\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line 117 of file Cutscene\+Object.\+cs.
+
+\mbox{\Hypertarget{class_cutscene_object_a746d5bfdbf4be010a5696f76c2a15255}\label{class_cutscene_object_a746d5bfdbf4be010a5696f76c2a15255}} 
+\index{Cutscene\+Object@{Cutscene\+Object}!rotation@{rotation}}
+\index{rotation@{rotation}!Cutscene\+Object@{Cutscene\+Object}}
+\subsubsection{\texorpdfstring{rotation}{rotation}}
+{\footnotesize\ttfamily virtual Quaternion Cutscene\+Object.\+rotation\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line 132 of file Cutscene\+Object.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Custscene/\mbox{\hyperlink{_cutscene_object_8cs}{Cutscene\+Object.\+cs}}\end{DoxyCompactItemize}

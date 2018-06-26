@@ -1,0 +1,165 @@
+\hypertarget{class_fading}{}\section{Fading Class Reference}
+\label{class_fading}\index{Fading@{Fading}}
+
+
+fading in and out through a texture that\textquotesingle{}s overlayed on the screen  
+
+
+Inheritance diagram for Fading\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_fading}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_fading_a183a11289805b24a337317a338c8b488}{Has\+Finished\+Fade}} ()
+\item 
+float \mbox{\hyperlink{class_fading_a1de56a8439ac7fe269d28b560e43a170}{Begin\+Fade}} (int direction, string Target\+Scene=\char`\"{}\char`\"{})
+\item 
+float \mbox{\hyperlink{class_fading_aad79c9805adb309dfca9c35956a6539f}{Begin\+Fade}} (int direction)
+\item 
+float \mbox{\hyperlink{class_fading_ab7c586c60d0becec8731a5d273d5f8a4}{Begin\+Fade\+In\+Out}} ()
+\item 
+void \mbox{\hyperlink{class_fading_a9447dc0ed62e9aa23683d54084bba9bf}{Fade\+Out}} ()
+\item 
+void \mbox{\hyperlink{class_fading_a1f3938e6d5871b57282dc2eef6f6a8b7}{Fade\+In}} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Texture2D \mbox{\hyperlink{class_fading_a1dfc14543e7463214e9186b592944f12}{Fade\+Out\+Texture}}
+\item 
+float \mbox{\hyperlink{class_fading_a8c33e07faed3d06ad034fcc17216a783}{Fade\+Speed}} = 0.\+8f
+\item 
+Unity\+Event \mbox{\hyperlink{class_fading_ad48fed18d4d8d59440fca235f2f61b07}{Event\+To\+Call}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+fading in and out through a texture that\textquotesingle{}s overlayed on the screen 
+
+
+
+Definition at line 11 of file Fading.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_fading_a1de56a8439ac7fe269d28b560e43a170}\label{class_fading_a1de56a8439ac7fe269d28b560e43a170}} 
+\index{Fading@{Fading}!Begin\+Fade@{Begin\+Fade}}
+\index{Begin\+Fade@{Begin\+Fade}!Fading@{Fading}}
+\subsubsection{\texorpdfstring{Begin\+Fade()}{BeginFade()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float Fading.\+Begin\+Fade (\begin{DoxyParamCaption}\item[{int}]{direction,  }\item[{string}]{Target\+Scene = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+
+
+Set direction to 1 for Fade\+In, and 0 for Fade\+Out 
+
+Target\+Scene is case Sensative \+: must match your scene name 
+
+
+\begin{DoxyParams}{Parameters}
+{\em direction} & \\
+\hline
+{\em Target\+Scene} & Case Sensative\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 67 of file Fading.\+cs.
+
+\mbox{\Hypertarget{class_fading_aad79c9805adb309dfca9c35956a6539f}\label{class_fading_aad79c9805adb309dfca9c35956a6539f}} 
+\index{Fading@{Fading}!Begin\+Fade@{Begin\+Fade}}
+\index{Begin\+Fade@{Begin\+Fade}!Fading@{Fading}}
+\subsubsection{\texorpdfstring{Begin\+Fade()}{BeginFade()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float Fading.\+Begin\+Fade (\begin{DoxyParamCaption}\item[{int}]{direction }\end{DoxyParamCaption})}
+
+
+
+Definition at line 76 of file Fading.\+cs.
+
+\mbox{\Hypertarget{class_fading_ab7c586c60d0becec8731a5d273d5f8a4}\label{class_fading_ab7c586c60d0becec8731a5d273d5f8a4}} 
+\index{Fading@{Fading}!Begin\+Fade\+In\+Out@{Begin\+Fade\+In\+Out}}
+\index{Begin\+Fade\+In\+Out@{Begin\+Fade\+In\+Out}!Fading@{Fading}}
+\subsubsection{\texorpdfstring{Begin\+Fade\+In\+Out()}{BeginFadeInOut()}}
+{\footnotesize\ttfamily float Fading.\+Begin\+Fade\+In\+Out (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 87 of file Fading.\+cs.
+
+\mbox{\Hypertarget{class_fading_a1f3938e6d5871b57282dc2eef6f6a8b7}\label{class_fading_a1f3938e6d5871b57282dc2eef6f6a8b7}} 
+\index{Fading@{Fading}!Fade\+In@{Fade\+In}}
+\index{Fade\+In@{Fade\+In}!Fading@{Fading}}
+\subsubsection{\texorpdfstring{Fade\+In()}{FadeIn()}}
+{\footnotesize\ttfamily void Fading.\+Fade\+In (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 133 of file Fading.\+cs.
+
+\mbox{\Hypertarget{class_fading_a9447dc0ed62e9aa23683d54084bba9bf}\label{class_fading_a9447dc0ed62e9aa23683d54084bba9bf}} 
+\index{Fading@{Fading}!Fade\+Out@{Fade\+Out}}
+\index{Fade\+Out@{Fade\+Out}!Fading@{Fading}}
+\subsubsection{\texorpdfstring{Fade\+Out()}{FadeOut()}}
+{\footnotesize\ttfamily void Fading.\+Fade\+Out (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 126 of file Fading.\+cs.
+
+\mbox{\Hypertarget{class_fading_a183a11289805b24a337317a338c8b488}\label{class_fading_a183a11289805b24a337317a338c8b488}} 
+\index{Fading@{Fading}!Has\+Finished\+Fade@{Has\+Finished\+Fade}}
+\index{Has\+Finished\+Fade@{Has\+Finished\+Fade}!Fading@{Fading}}
+\subsubsection{\texorpdfstring{Has\+Finished\+Fade()}{HasFinishedFade()}}
+{\footnotesize\ttfamily bool Fading.\+Has\+Finished\+Fade (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 23 of file Fading.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_fading_ad48fed18d4d8d59440fca235f2f61b07}\label{class_fading_ad48fed18d4d8d59440fca235f2f61b07}} 
+\index{Fading@{Fading}!Event\+To\+Call@{Event\+To\+Call}}
+\index{Event\+To\+Call@{Event\+To\+Call}!Fading@{Fading}}
+\subsubsection{\texorpdfstring{Event\+To\+Call}{EventToCall}}
+{\footnotesize\ttfamily Unity\+Event Fading.\+Event\+To\+Call}
+
+
+
+Definition at line 15 of file Fading.\+cs.
+
+\mbox{\Hypertarget{class_fading_a1dfc14543e7463214e9186b592944f12}\label{class_fading_a1dfc14543e7463214e9186b592944f12}} 
+\index{Fading@{Fading}!Fade\+Out\+Texture@{Fade\+Out\+Texture}}
+\index{Fade\+Out\+Texture@{Fade\+Out\+Texture}!Fading@{Fading}}
+\subsubsection{\texorpdfstring{Fade\+Out\+Texture}{FadeOutTexture}}
+{\footnotesize\ttfamily Texture2D Fading.\+Fade\+Out\+Texture}
+
+
+
+Definition at line 13 of file Fading.\+cs.
+
+\mbox{\Hypertarget{class_fading_a8c33e07faed3d06ad034fcc17216a783}\label{class_fading_a8c33e07faed3d06ad034fcc17216a783}} 
+\index{Fading@{Fading}!Fade\+Speed@{Fade\+Speed}}
+\index{Fade\+Speed@{Fade\+Speed}!Fading@{Fading}}
+\subsubsection{\texorpdfstring{Fade\+Speed}{FadeSpeed}}
+{\footnotesize\ttfamily float Fading.\+Fade\+Speed = 0.\+8f}
+
+
+
+Definition at line 14 of file Fading.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Aesthetic/\mbox{\hyperlink{_fading_8cs}{Fading.\+cs}}\end{DoxyCompactItemize}

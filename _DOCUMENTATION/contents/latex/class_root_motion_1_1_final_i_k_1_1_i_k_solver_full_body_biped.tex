@@ -1,0 +1,711 @@
+\hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped}{}\section{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped Class Reference}
+\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped}\index{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped}}
+
+
+F\+B\+IK solver specialized to biped characters.  
+
+
+Inheritance diagram for Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a957b832f70b2e5b9b203797a0aa21c7b}{Set\+Chain\+Weights}} (\mbox{\hyperlink{namespace_root_motion_1_1_final_i_k_ae8848c0353270a08dcfe8b85a5c9b761}{Full\+Body\+Biped\+Chain}} c, float pull, float reach=0f)
+\begin{DoxyCompactList}\small\item\em Sets chain weights for the specified chain. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a0f70c62cab21131a696082750670a36c}{Set\+Effector\+Weights}} (\mbox{\hyperlink{namespace_root_motion_1_1_final_i_k_ae0dd2058c7667b6f132c11a6b860c14a}{Full\+Body\+Biped\+Effector}} effector, float position\+Weight, float rotation\+Weight)
+\begin{DoxyCompactList}\small\item\em Sets effector weights for the specified effector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain}{F\+B\+I\+K\+Chain}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a8b377dae8738c5a77ff88bf4bb5c8087}{Get\+Chain}} (\mbox{\hyperlink{namespace_root_motion_1_1_final_i_k_ae8848c0353270a08dcfe8b85a5c9b761}{Full\+Body\+Biped\+Chain}} c)
+\begin{DoxyCompactList}\small\item\em Gets the chain of a limb. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain}{F\+B\+I\+K\+Chain}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a8ffb80b6fed2ba10516c47d1266a136a}{Get\+Chain}} (\mbox{\hyperlink{namespace_root_motion_1_1_final_i_k_ae0dd2058c7667b6f132c11a6b860c14a}{Full\+Body\+Biped\+Effector}} effector)
+\begin{DoxyCompactList}\small\item\em Gets the chain of the specified effector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_effector}{I\+K\+Effector}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_abc623c1247452620c8ea22e61b0dce89}{Get\+Effector}} (\mbox{\hyperlink{namespace_root_motion_1_1_final_i_k_ae0dd2058c7667b6f132c11a6b860c14a}{Full\+Body\+Biped\+Effector}} effector)
+\begin{DoxyCompactList}\small\item\em Gets the effector of type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_effector}{I\+K\+Effector}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_adaa6dd3c41880d13564d6c018784cea5}{Get\+End\+Effector}} (\mbox{\hyperlink{namespace_root_motion_1_1_final_i_k_ae8848c0353270a08dcfe8b85a5c9b761}{Full\+Body\+Biped\+Chain}} c)
+\begin{DoxyCompactList}\small\item\em Gets the effector of type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_limb}{I\+K\+Mapping\+Limb}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a08e166778ae50b5057cc91daaabf58b7}{Get\+Limb\+Mapping}} (\mbox{\hyperlink{namespace_root_motion_1_1_final_i_k_ae8848c0353270a08dcfe8b85a5c9b761}{Full\+Body\+Biped\+Chain}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_aae6ec635c069329275bd5e3eb18dac41}{chain}})
+\begin{DoxyCompactList}\small\item\em Gets the limb mapping for the limb. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_limb}{I\+K\+Mapping\+Limb}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_ae2ed6739b99204e848db21e42153e9d7}{Get\+Limb\+Mapping}} (\mbox{\hyperlink{namespace_root_motion_1_1_final_i_k_ae0dd2058c7667b6f132c11a6b860c14a}{Full\+Body\+Biped\+Effector}} effector)
+\begin{DoxyCompactList}\small\item\em Gets the limb mapping for the effector type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_spine}{I\+K\+Mapping\+Spine}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a9f9ed1a8e3f75029e096cf2602ea635e}{Get\+Spine\+Mapping}} ()
+\begin{DoxyCompactList}\small\item\em Gets the spine mapping. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_bone}{I\+K\+Mapping\+Bone}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a333b21503e002b5d745b0d688a51f362}{Get\+Head\+Mapping}} ()
+\begin{DoxyCompactList}\small\item\em Gets the head mapping. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_constraint_bend}{I\+K\+Constraint\+Bend}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a44ea8d0cd6aee4c78d22f5c1d9732d5c}{Get\+Bend\+Constraint}} (\mbox{\hyperlink{namespace_root_motion_1_1_final_i_k_ae8848c0353270a08dcfe8b85a5c9b761}{Full\+Body\+Biped\+Chain}} limb)
+\begin{DoxyCompactList}\small\item\em Gets the bend constraint of a limb. \end{DoxyCompactList}\item 
+override bool \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a3a3db44c5ef5d7a508492225ae161f10}{Is\+Valid}} (ref string message)
+\begin{DoxyCompactList}\small\item\em Determines whether this instance is valid or not. If returns false, also fills in an error message. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_aa97e0a279a2cd49d947da470ca41a28f}{Set\+To\+References}} (\mbox{\hyperlink{class_root_motion_1_1_biped_references}{Biped\+References}} references, Transform \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a9a18dc6b6c5d26df3e1ec2ab33b07239}{root\+Node}}=null)
+\begin{DoxyCompactList}\small\item\em Sets up the solver to \mbox{\hyperlink{class_root_motion_1_1_biped_references}{Biped\+References}} and reinitiates (if in runtime). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a4025a7fdeb436feb415e08583d4d22ac}{Set\+Limb\+Orientations}} (\mbox{\hyperlink{class_root_motion_1_1_biped_limb_orientations}{Biped\+Limb\+Orientations}} o)
+\begin{DoxyCompactList}\small\item\em Sets the bend directions of the limbs to the local axes specified by \mbox{\hyperlink{class_root_motion_1_1_biped_limb_orientations}{Biped\+Limb\+Orientations}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Transform \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_acee1adb26e3fbc41c6aa3df2c321beb7}{Detect\+Root\+Node\+Bone}} (\mbox{\hyperlink{class_root_motion_1_1_biped_references}{Biped\+References}} references)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a9a18dc6b6c5d26df3e1ec2ab33b07239}{root\+Node}}
+\begin{DoxyCompactList}\small\item\em The central root node (body). \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a0bb52386758a3e1f814379ffb816993f}{spine\+Stiffness}} = 0.\+5f
+\begin{DoxyCompactList}\small\item\em The stiffness of spine constraints. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a241d1c7f67c5d4d3c3eef2792a9462c1}{pull\+Body\+Vertical}} = 0.\+5f
+\begin{DoxyCompactList}\small\item\em Weight of hand effectors pulling the body vertically (relative to root rotation). \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_ac7ecc58a1fdf03a6e0d564698905622e}{pull\+Body\+Horizontal}} = 0f
+\begin{DoxyCompactList}\small\item\em Weight of hand effectors pulling the body horizontally (relative to root rotation). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a4691b021c0446bb435caf9ba0022406e}{Read\+Pose}} ()
+\item 
+override void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_ad062f0934df40f03a40e79a94dc32709}{Apply\+Bend\+Constraints}} ()
+\item 
+override void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_aaf274661bb29e50507fdf3f3f33473b6}{Write\+Pose}} ()
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_effector}{I\+K\+Effector}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_af0f747553657a86a31e46d7a77286274}{body\+Effector}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the body effector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_effector}{I\+K\+Effector}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a52a063d6e54f2007426c39ea47b2cbf4}{left\+Shoulder\+Effector}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the left shoulder effector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_effector}{I\+K\+Effector}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_ad29051cd81fc4542d0e9517ee99a4c64}{right\+Shoulder\+Effector}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the right shoulder effector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_effector}{I\+K\+Effector}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_ae122df730de97aa4bcd06ef6bd9f9ffc}{left\+Thigh\+Effector}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the left thigh effector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_effector}{I\+K\+Effector}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a11b63ebb06b59132ee2988963de88088}{right\+Thigh\+Effector}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the right thigh effector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_effector}{I\+K\+Effector}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a2bce9e947f2ba3547b087d561ef1b8ec}{left\+Hand\+Effector}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the left hand effector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_effector}{I\+K\+Effector}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a1faedd9aebeaaa3e042bdd74c434fb9d}{right\+Hand\+Effector}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the right hand effector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_effector}{I\+K\+Effector}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a0f91481a279c359659f25e1423ca4c90}{left\+Foot\+Effector}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the left foot effector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_effector}{I\+K\+Effector}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_aeb771c4e02f7bdf9d221b3b560b6b9e2}{right\+Foot\+Effector}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the right foot effector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain}{F\+B\+I\+K\+Chain}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_af2d0f9dc36bf32dcca65f9ffbefb3e41}{left\+Arm\+Chain}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the left arm chain. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain}{F\+B\+I\+K\+Chain}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_ae95e0496cfb2192e080c48069dc699ee}{right\+Arm\+Chain}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the right arm chain. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain}{F\+B\+I\+K\+Chain}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a1a3cbfd181fde82a9e60ab16f7e96afe}{left\+Leg\+Chain}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the left leg chain. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain}{F\+B\+I\+K\+Chain}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a16e54ecefe2098c14f37c3b54de14016}{right\+Leg\+Chain}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the right leg chain. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_limb}{I\+K\+Mapping\+Limb}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a0221bdad2781e6d79e72beed3dc02bf0}{left\+Arm\+Mapping}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the left arm \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k}{IK}} mapping. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_limb}{I\+K\+Mapping\+Limb}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a95a060b2ec7c554d26d2c944c0b7c286}{right\+Arm\+Mapping}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the right arm \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k}{IK}} mapping. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_limb}{I\+K\+Mapping\+Limb}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_ab03f847a30c8ad506325353756e809c6}{left\+Leg\+Mapping}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the left leg \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k}{IK}} mapping. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_limb}{I\+K\+Mapping\+Limb}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_ae29edf9bcd4204a5431a483198e065c3}{right\+Leg\+Mapping}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the right leg \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k}{IK}} mapping. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_bone}{I\+K\+Mapping\+Bone}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_ac22e05e856e1300e572e2596c7adec95}{head\+Mapping}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the head \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k}{IK}} mapping. \end{DoxyCompactList}\item 
+Vector3 \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a8f89027d56337408f1de36867867f58e}{pull\+Body\+Offset}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+F\+B\+IK solver specialized to biped characters. 
+
+
+
+Definition at line 38 of file I\+K\+Solver\+Full\+Body\+Biped.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_ad062f0934df40f03a40e79a94dc32709}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_ad062f0934df40f03a40e79a94dc32709}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}!Apply\+Bend\+Constraints@{Apply\+Bend\+Constraints}}
+\index{Apply\+Bend\+Constraints@{Apply\+Bend\+Constraints}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}}
+\subsubsection{\texorpdfstring{Apply\+Bend\+Constraints()}{ApplyBendConstraints()}}
+{\footnotesize\ttfamily override void Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped.\+Apply\+Bend\+Constraints (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_ad6b05a4f0312f9f6df7de38b1222a649}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body}}.
+
+
+
+Definition at line 554 of file I\+K\+Solver\+Full\+Body\+Biped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_acee1adb26e3fbc41c6aa3df2c321beb7}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_acee1adb26e3fbc41c6aa3df2c321beb7}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}!Detect\+Root\+Node\+Bone@{Detect\+Root\+Node\+Bone}}
+\index{Detect\+Root\+Node\+Bone@{Detect\+Root\+Node\+Bone}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}}
+\subsubsection{\texorpdfstring{Detect\+Root\+Node\+Bone()}{DetectRootNodeBone()}}
+{\footnotesize\ttfamily static Transform Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped.\+Detect\+Root\+Node\+Bone (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_root_motion_1_1_biped_references}{Biped\+References}}}]{references }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 420 of file I\+K\+Solver\+Full\+Body\+Biped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a44ea8d0cd6aee4c78d22f5c1d9732d5c}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a44ea8d0cd6aee4c78d22f5c1d9732d5c}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}!Get\+Bend\+Constraint@{Get\+Bend\+Constraint}}
+\index{Get\+Bend\+Constraint@{Get\+Bend\+Constraint}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}}
+\subsubsection{\texorpdfstring{Get\+Bend\+Constraint()}{GetBendConstraint()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_constraint_bend}{I\+K\+Constraint\+Bend}} Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped.\+Get\+Bend\+Constraint (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_root_motion_1_1_final_i_k_ae8848c0353270a08dcfe8b85a5c9b761}{Full\+Body\+Biped\+Chain}}}]{limb }\end{DoxyParamCaption})}
+
+
+
+Gets the bend constraint of a limb. 
+
+
+
+Definition at line 262 of file I\+K\+Solver\+Full\+Body\+Biped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a8b377dae8738c5a77ff88bf4bb5c8087}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a8b377dae8738c5a77ff88bf4bb5c8087}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}!Get\+Chain@{Get\+Chain}}
+\index{Get\+Chain@{Get\+Chain}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}}
+\subsubsection{\texorpdfstring{Get\+Chain()}{GetChain()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain}{F\+B\+I\+K\+Chain}} Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped.\+Get\+Chain (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_root_motion_1_1_final_i_k_ae8848c0353270a08dcfe8b85a5c9b761}{Full\+Body\+Biped\+Chain}}}]{c }\end{DoxyParamCaption})}
+
+
+
+Gets the chain of a limb. 
+
+
+
+Definition at line 156 of file I\+K\+Solver\+Full\+Body\+Biped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a8ffb80b6fed2ba10516c47d1266a136a}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a8ffb80b6fed2ba10516c47d1266a136a}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}!Get\+Chain@{Get\+Chain}}
+\index{Get\+Chain@{Get\+Chain}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}}
+\subsubsection{\texorpdfstring{Get\+Chain()}{GetChain()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain}{F\+B\+I\+K\+Chain}} Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped.\+Get\+Chain (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_root_motion_1_1_final_i_k_ae0dd2058c7667b6f132c11a6b860c14a}{Full\+Body\+Biped\+Effector}}}]{effector }\end{DoxyParamCaption})}
+
+
+
+Gets the chain of the specified effector. 
+
+
+
+Definition at line 169 of file I\+K\+Solver\+Full\+Body\+Biped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_abc623c1247452620c8ea22e61b0dce89}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_abc623c1247452620c8ea22e61b0dce89}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}!Get\+Effector@{Get\+Effector}}
+\index{Get\+Effector@{Get\+Effector}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}}
+\subsubsection{\texorpdfstring{Get\+Effector()}{GetEffector()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_effector}{I\+K\+Effector}} Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped.\+Get\+Effector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_root_motion_1_1_final_i_k_ae0dd2058c7667b6f132c11a6b860c14a}{Full\+Body\+Biped\+Effector}}}]{effector }\end{DoxyParamCaption})}
+
+
+
+Gets the effector of type. 
+
+
+
+Definition at line 187 of file I\+K\+Solver\+Full\+Body\+Biped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_adaa6dd3c41880d13564d6c018784cea5}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_adaa6dd3c41880d13564d6c018784cea5}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}!Get\+End\+Effector@{Get\+End\+Effector}}
+\index{Get\+End\+Effector@{Get\+End\+Effector}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}}
+\subsubsection{\texorpdfstring{Get\+End\+Effector()}{GetEndEffector()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_effector}{I\+K\+Effector}} Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped.\+Get\+End\+Effector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_root_motion_1_1_final_i_k_ae8848c0353270a08dcfe8b85a5c9b761}{Full\+Body\+Biped\+Chain}}}]{c }\end{DoxyParamCaption})}
+
+
+
+Gets the effector of type. 
+
+
+
+Definition at line 205 of file I\+K\+Solver\+Full\+Body\+Biped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a333b21503e002b5d745b0d688a51f362}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a333b21503e002b5d745b0d688a51f362}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}!Get\+Head\+Mapping@{Get\+Head\+Mapping}}
+\index{Get\+Head\+Mapping@{Get\+Head\+Mapping}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}}
+\subsubsection{\texorpdfstring{Get\+Head\+Mapping()}{GetHeadMapping()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_bone}{I\+K\+Mapping\+Bone}} Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped.\+Get\+Head\+Mapping (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the head mapping. 
+
+
+
+Definition at line 255 of file I\+K\+Solver\+Full\+Body\+Biped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a08e166778ae50b5057cc91daaabf58b7}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a08e166778ae50b5057cc91daaabf58b7}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}!Get\+Limb\+Mapping@{Get\+Limb\+Mapping}}
+\index{Get\+Limb\+Mapping@{Get\+Limb\+Mapping}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}}
+\subsubsection{\texorpdfstring{Get\+Limb\+Mapping()}{GetLimbMapping()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_limb}{I\+K\+Mapping\+Limb}} Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped.\+Get\+Limb\+Mapping (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_root_motion_1_1_final_i_k_ae8848c0353270a08dcfe8b85a5c9b761}{Full\+Body\+Biped\+Chain}}}]{chain }\end{DoxyParamCaption})}
+
+
+
+Gets the limb mapping for the limb. 
+
+
+
+Definition at line 218 of file I\+K\+Solver\+Full\+Body\+Biped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_ae2ed6739b99204e848db21e42153e9d7}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_ae2ed6739b99204e848db21e42153e9d7}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}!Get\+Limb\+Mapping@{Get\+Limb\+Mapping}}
+\index{Get\+Limb\+Mapping@{Get\+Limb\+Mapping}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}}
+\subsubsection{\texorpdfstring{Get\+Limb\+Mapping()}{GetLimbMapping()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_limb}{I\+K\+Mapping\+Limb}} Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped.\+Get\+Limb\+Mapping (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_root_motion_1_1_final_i_k_ae0dd2058c7667b6f132c11a6b860c14a}{Full\+Body\+Biped\+Effector}}}]{effector }\end{DoxyParamCaption})}
+
+
+
+Gets the limb mapping for the effector type. 
+
+
+
+Definition at line 231 of file I\+K\+Solver\+Full\+Body\+Biped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a9f9ed1a8e3f75029e096cf2602ea635e}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a9f9ed1a8e3f75029e096cf2602ea635e}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}!Get\+Spine\+Mapping@{Get\+Spine\+Mapping}}
+\index{Get\+Spine\+Mapping@{Get\+Spine\+Mapping}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}}
+\subsubsection{\texorpdfstring{Get\+Spine\+Mapping()}{GetSpineMapping()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_spine}{I\+K\+Mapping\+Spine}} Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped.\+Get\+Spine\+Mapping (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the spine mapping. 
+
+
+
+Definition at line 248 of file I\+K\+Solver\+Full\+Body\+Biped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a3a3db44c5ef5d7a508492225ae161f10}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a3a3db44c5ef5d7a508492225ae161f10}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}!Is\+Valid@{Is\+Valid}}
+\index{Is\+Valid@{Is\+Valid}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}}
+\subsubsection{\texorpdfstring{Is\+Valid()}{IsValid()}}
+{\footnotesize\ttfamily override bool Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped.\+Is\+Valid (\begin{DoxyParamCaption}\item[{ref string}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Determines whether this instance is valid or not. If returns false, also fills in an error message. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_a52e5312dcea8441bec26f0a9c2bf54f2}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body}}.
+
+
+
+Definition at line 272 of file I\+K\+Solver\+Full\+Body\+Biped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a4691b021c0446bb435caf9ba0022406e}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a4691b021c0446bb435caf9ba0022406e}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}!Read\+Pose@{Read\+Pose}}
+\index{Read\+Pose@{Read\+Pose}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}}
+\subsubsection{\texorpdfstring{Read\+Pose()}{ReadPose()}}
+{\footnotesize\ttfamily override void Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped.\+Read\+Pose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_abee6485084ea3120e974145609fe7838}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body}}.
+
+
+
+Definition at line 497 of file I\+K\+Solver\+Full\+Body\+Biped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a957b832f70b2e5b9b203797a0aa21c7b}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a957b832f70b2e5b9b203797a0aa21c7b}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}!Set\+Chain\+Weights@{Set\+Chain\+Weights}}
+\index{Set\+Chain\+Weights@{Set\+Chain\+Weights}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}}
+\subsubsection{\texorpdfstring{Set\+Chain\+Weights()}{SetChainWeights()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped.\+Set\+Chain\+Weights (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_root_motion_1_1_final_i_k_ae8848c0353270a08dcfe8b85a5c9b761}{Full\+Body\+Biped\+Chain}}}]{c,  }\item[{float}]{pull,  }\item[{float}]{reach = {\ttfamily 0f} }\end{DoxyParamCaption})}
+
+
+
+Sets chain weights for the specified chain. 
+
+
+
+Definition at line 140 of file I\+K\+Solver\+Full\+Body\+Biped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a0f70c62cab21131a696082750670a36c}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a0f70c62cab21131a696082750670a36c}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}!Set\+Effector\+Weights@{Set\+Effector\+Weights}}
+\index{Set\+Effector\+Weights@{Set\+Effector\+Weights}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}}
+\subsubsection{\texorpdfstring{Set\+Effector\+Weights()}{SetEffectorWeights()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped.\+Set\+Effector\+Weights (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_root_motion_1_1_final_i_k_ae0dd2058c7667b6f132c11a6b860c14a}{Full\+Body\+Biped\+Effector}}}]{effector,  }\item[{float}]{position\+Weight,  }\item[{float}]{rotation\+Weight }\end{DoxyParamCaption})}
+
+
+
+Sets effector weights for the specified effector. 
+
+
+
+Definition at line 148 of file I\+K\+Solver\+Full\+Body\+Biped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a4025a7fdeb436feb415e08583d4d22ac}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a4025a7fdeb436feb415e08583d4d22ac}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}!Set\+Limb\+Orientations@{Set\+Limb\+Orientations}}
+\index{Set\+Limb\+Orientations@{Set\+Limb\+Orientations}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}}
+\subsubsection{\texorpdfstring{Set\+Limb\+Orientations()}{SetLimbOrientations()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped.\+Set\+Limb\+Orientations (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_root_motion_1_1_biped_limb_orientations}{Biped\+Limb\+Orientations}}}]{o }\end{DoxyParamCaption})}
+
+
+
+Sets the bend directions of the limbs to the local axes specified by \mbox{\hyperlink{class_root_motion_1_1_biped_limb_orientations}{Biped\+Limb\+Orientations}}. 
+
+
+
+Definition at line 453 of file I\+K\+Solver\+Full\+Body\+Biped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_aa97e0a279a2cd49d947da470ca41a28f}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_aa97e0a279a2cd49d947da470ca41a28f}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}!Set\+To\+References@{Set\+To\+References}}
+\index{Set\+To\+References@{Set\+To\+References}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}}
+\subsubsection{\texorpdfstring{Set\+To\+References()}{SetToReferences()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped.\+Set\+To\+References (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_root_motion_1_1_biped_references}{Biped\+References}}}]{references,  }\item[{Transform}]{root\+Node = {\ttfamily null} }\end{DoxyParamCaption})}
+
+
+
+Sets up the solver to \mbox{\hyperlink{class_root_motion_1_1_biped_references}{Biped\+References}} and reinitiates (if in runtime). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em references} & Biped references.\\
+\hline
+{\em root\+Node} & Root node (optional). if null, will try to detect the root node bone automatically. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 301 of file I\+K\+Solver\+Full\+Body\+Biped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_aaf274661bb29e50507fdf3f3f33473b6}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_aaf274661bb29e50507fdf3f3f33473b6}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}!Write\+Pose@{Write\+Pose}}
+\index{Write\+Pose@{Write\+Pose}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}}
+\subsubsection{\texorpdfstring{Write\+Pose()}{WritePose()}}
+{\footnotesize\ttfamily override void Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped.\+Write\+Pose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_a08443a6f8b4f9dcfc4d0e5e8426ada7a}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body}}.
+
+
+
+Definition at line 571 of file I\+K\+Solver\+Full\+Body\+Biped.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_ac7ecc58a1fdf03a6e0d564698905622e}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_ac7ecc58a1fdf03a6e0d564698905622e}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}!pull\+Body\+Horizontal@{pull\+Body\+Horizontal}}
+\index{pull\+Body\+Horizontal@{pull\+Body\+Horizontal}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}}
+\subsubsection{\texorpdfstring{pull\+Body\+Horizontal}{pullBodyHorizontal}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped.\+pull\+Body\+Horizontal = 0f}
+
+
+
+Weight of hand effectors pulling the body horizontally (relative to root rotation). 
+
+
+
+Definition at line 60 of file I\+K\+Solver\+Full\+Body\+Biped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a241d1c7f67c5d4d3c3eef2792a9462c1}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a241d1c7f67c5d4d3c3eef2792a9462c1}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}!pull\+Body\+Vertical@{pull\+Body\+Vertical}}
+\index{pull\+Body\+Vertical@{pull\+Body\+Vertical}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}}
+\subsubsection{\texorpdfstring{pull\+Body\+Vertical}{pullBodyVertical}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped.\+pull\+Body\+Vertical = 0.\+5f}
+
+
+
+Weight of hand effectors pulling the body vertically (relative to root rotation). 
+
+
+
+Definition at line 55 of file I\+K\+Solver\+Full\+Body\+Biped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a9a18dc6b6c5d26df3e1ec2ab33b07239}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a9a18dc6b6c5d26df3e1ec2ab33b07239}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}!root\+Node@{root\+Node}}
+\index{root\+Node@{root\+Node}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}}
+\subsubsection{\texorpdfstring{root\+Node}{rootNode}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped.\+root\+Node}
+
+
+
+The central root node (body). 
+
+
+
+Definition at line 45 of file I\+K\+Solver\+Full\+Body\+Biped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a0bb52386758a3e1f814379ffb816993f}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a0bb52386758a3e1f814379ffb816993f}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}!spine\+Stiffness@{spine\+Stiffness}}
+\index{spine\+Stiffness@{spine\+Stiffness}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}}
+\subsubsection{\texorpdfstring{spine\+Stiffness}{spineStiffness}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped.\+spine\+Stiffness = 0.\+5f}
+
+
+
+The stiffness of spine constraints. 
+
+
+
+Definition at line 50 of file I\+K\+Solver\+Full\+Body\+Biped.\+cs.
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_af0f747553657a86a31e46d7a77286274}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_af0f747553657a86a31e46d7a77286274}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}!body\+Effector@{body\+Effector}}
+\index{body\+Effector@{body\+Effector}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}}
+\subsubsection{\texorpdfstring{body\+Effector}{bodyEffector}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_effector}{I\+K\+Effector}} Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped.\+body\+Effector\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the body effector. 
+
+
+
+Definition at line 65 of file I\+K\+Solver\+Full\+Body\+Biped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_ac22e05e856e1300e572e2596c7adec95}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_ac22e05e856e1300e572e2596c7adec95}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}!head\+Mapping@{head\+Mapping}}
+\index{head\+Mapping@{head\+Mapping}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}}
+\subsubsection{\texorpdfstring{head\+Mapping}{headMapping}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_bone}{I\+K\+Mapping\+Bone}} Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped.\+head\+Mapping\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the head \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k}{IK}} mapping. 
+
+
+
+Definition at line 135 of file I\+K\+Solver\+Full\+Body\+Biped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_af2d0f9dc36bf32dcca65f9ffbefb3e41}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_af2d0f9dc36bf32dcca65f9ffbefb3e41}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}!left\+Arm\+Chain@{left\+Arm\+Chain}}
+\index{left\+Arm\+Chain@{left\+Arm\+Chain}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}}
+\subsubsection{\texorpdfstring{left\+Arm\+Chain}{leftArmChain}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain}{F\+B\+I\+K\+Chain}} Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped.\+left\+Arm\+Chain\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the left arm chain. 
+
+
+
+Definition at line 102 of file I\+K\+Solver\+Full\+Body\+Biped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a0221bdad2781e6d79e72beed3dc02bf0}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a0221bdad2781e6d79e72beed3dc02bf0}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}!left\+Arm\+Mapping@{left\+Arm\+Mapping}}
+\index{left\+Arm\+Mapping@{left\+Arm\+Mapping}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}}
+\subsubsection{\texorpdfstring{left\+Arm\+Mapping}{leftArmMapping}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_limb}{I\+K\+Mapping\+Limb}} Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped.\+left\+Arm\+Mapping\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the left arm \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k}{IK}} mapping. 
+
+
+
+Definition at line 119 of file I\+K\+Solver\+Full\+Body\+Biped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a0f91481a279c359659f25e1423ca4c90}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a0f91481a279c359659f25e1423ca4c90}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}!left\+Foot\+Effector@{left\+Foot\+Effector}}
+\index{left\+Foot\+Effector@{left\+Foot\+Effector}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}}
+\subsubsection{\texorpdfstring{left\+Foot\+Effector}{leftFootEffector}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_effector}{I\+K\+Effector}} Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped.\+left\+Foot\+Effector\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the left foot effector. 
+
+
+
+Definition at line 93 of file I\+K\+Solver\+Full\+Body\+Biped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a2bce9e947f2ba3547b087d561ef1b8ec}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a2bce9e947f2ba3547b087d561ef1b8ec}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}!left\+Hand\+Effector@{left\+Hand\+Effector}}
+\index{left\+Hand\+Effector@{left\+Hand\+Effector}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}}
+\subsubsection{\texorpdfstring{left\+Hand\+Effector}{leftHandEffector}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_effector}{I\+K\+Effector}} Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped.\+left\+Hand\+Effector\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the left hand effector. 
+
+
+
+Definition at line 85 of file I\+K\+Solver\+Full\+Body\+Biped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a1a3cbfd181fde82a9e60ab16f7e96afe}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a1a3cbfd181fde82a9e60ab16f7e96afe}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}!left\+Leg\+Chain@{left\+Leg\+Chain}}
+\index{left\+Leg\+Chain@{left\+Leg\+Chain}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}}
+\subsubsection{\texorpdfstring{left\+Leg\+Chain}{leftLegChain}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain}{F\+B\+I\+K\+Chain}} Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped.\+left\+Leg\+Chain\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the left leg chain. 
+
+
+
+Definition at line 110 of file I\+K\+Solver\+Full\+Body\+Biped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_ab03f847a30c8ad506325353756e809c6}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_ab03f847a30c8ad506325353756e809c6}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}!left\+Leg\+Mapping@{left\+Leg\+Mapping}}
+\index{left\+Leg\+Mapping@{left\+Leg\+Mapping}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}}
+\subsubsection{\texorpdfstring{left\+Leg\+Mapping}{leftLegMapping}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_limb}{I\+K\+Mapping\+Limb}} Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped.\+left\+Leg\+Mapping\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the left leg \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k}{IK}} mapping. 
+
+
+
+Definition at line 127 of file I\+K\+Solver\+Full\+Body\+Biped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a52a063d6e54f2007426c39ea47b2cbf4}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a52a063d6e54f2007426c39ea47b2cbf4}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}!left\+Shoulder\+Effector@{left\+Shoulder\+Effector}}
+\index{left\+Shoulder\+Effector@{left\+Shoulder\+Effector}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}}
+\subsubsection{\texorpdfstring{left\+Shoulder\+Effector}{leftShoulderEffector}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_effector}{I\+K\+Effector}} Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped.\+left\+Shoulder\+Effector\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the left shoulder effector. 
+
+
+
+Definition at line 69 of file I\+K\+Solver\+Full\+Body\+Biped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_ae122df730de97aa4bcd06ef6bd9f9ffc}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_ae122df730de97aa4bcd06ef6bd9f9ffc}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}!left\+Thigh\+Effector@{left\+Thigh\+Effector}}
+\index{left\+Thigh\+Effector@{left\+Thigh\+Effector}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}}
+\subsubsection{\texorpdfstring{left\+Thigh\+Effector}{leftThighEffector}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_effector}{I\+K\+Effector}} Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped.\+left\+Thigh\+Effector\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the left thigh effector. 
+
+
+
+Definition at line 77 of file I\+K\+Solver\+Full\+Body\+Biped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a8f89027d56337408f1de36867867f58e}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a8f89027d56337408f1de36867867f58e}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}!pull\+Body\+Offset@{pull\+Body\+Offset}}
+\index{pull\+Body\+Offset@{pull\+Body\+Offset}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}}
+\subsubsection{\texorpdfstring{pull\+Body\+Offset}{pullBodyOffset}}
+{\footnotesize\ttfamily Vector3 Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped.\+pull\+Body\+Offset\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line 463 of file I\+K\+Solver\+Full\+Body\+Biped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_ae95e0496cfb2192e080c48069dc699ee}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_ae95e0496cfb2192e080c48069dc699ee}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}!right\+Arm\+Chain@{right\+Arm\+Chain}}
+\index{right\+Arm\+Chain@{right\+Arm\+Chain}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}}
+\subsubsection{\texorpdfstring{right\+Arm\+Chain}{rightArmChain}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain}{F\+B\+I\+K\+Chain}} Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped.\+right\+Arm\+Chain\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the right arm chain. 
+
+
+
+Definition at line 106 of file I\+K\+Solver\+Full\+Body\+Biped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a95a060b2ec7c554d26d2c944c0b7c286}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a95a060b2ec7c554d26d2c944c0b7c286}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}!right\+Arm\+Mapping@{right\+Arm\+Mapping}}
+\index{right\+Arm\+Mapping@{right\+Arm\+Mapping}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}}
+\subsubsection{\texorpdfstring{right\+Arm\+Mapping}{rightArmMapping}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_limb}{I\+K\+Mapping\+Limb}} Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped.\+right\+Arm\+Mapping\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the right arm \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k}{IK}} mapping. 
+
+
+
+Definition at line 123 of file I\+K\+Solver\+Full\+Body\+Biped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_aeb771c4e02f7bdf9d221b3b560b6b9e2}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_aeb771c4e02f7bdf9d221b3b560b6b9e2}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}!right\+Foot\+Effector@{right\+Foot\+Effector}}
+\index{right\+Foot\+Effector@{right\+Foot\+Effector}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}}
+\subsubsection{\texorpdfstring{right\+Foot\+Effector}{rightFootEffector}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_effector}{I\+K\+Effector}} Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped.\+right\+Foot\+Effector\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the right foot effector. 
+
+
+
+Definition at line 97 of file I\+K\+Solver\+Full\+Body\+Biped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a1faedd9aebeaaa3e042bdd74c434fb9d}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a1faedd9aebeaaa3e042bdd74c434fb9d}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}!right\+Hand\+Effector@{right\+Hand\+Effector}}
+\index{right\+Hand\+Effector@{right\+Hand\+Effector}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}}
+\subsubsection{\texorpdfstring{right\+Hand\+Effector}{rightHandEffector}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_effector}{I\+K\+Effector}} Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped.\+right\+Hand\+Effector\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the right hand effector. 
+
+
+
+Definition at line 89 of file I\+K\+Solver\+Full\+Body\+Biped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a16e54ecefe2098c14f37c3b54de14016}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a16e54ecefe2098c14f37c3b54de14016}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}!right\+Leg\+Chain@{right\+Leg\+Chain}}
+\index{right\+Leg\+Chain@{right\+Leg\+Chain}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}}
+\subsubsection{\texorpdfstring{right\+Leg\+Chain}{rightLegChain}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain}{F\+B\+I\+K\+Chain}} Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped.\+right\+Leg\+Chain\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the right leg chain. 
+
+
+
+Definition at line 114 of file I\+K\+Solver\+Full\+Body\+Biped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_ae29edf9bcd4204a5431a483198e065c3}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_ae29edf9bcd4204a5431a483198e065c3}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}!right\+Leg\+Mapping@{right\+Leg\+Mapping}}
+\index{right\+Leg\+Mapping@{right\+Leg\+Mapping}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}}
+\subsubsection{\texorpdfstring{right\+Leg\+Mapping}{rightLegMapping}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_limb}{I\+K\+Mapping\+Limb}} Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped.\+right\+Leg\+Mapping\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the right leg \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k}{IK}} mapping. 
+
+
+
+Definition at line 131 of file I\+K\+Solver\+Full\+Body\+Biped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_ad29051cd81fc4542d0e9517ee99a4c64}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_ad29051cd81fc4542d0e9517ee99a4c64}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}!right\+Shoulder\+Effector@{right\+Shoulder\+Effector}}
+\index{right\+Shoulder\+Effector@{right\+Shoulder\+Effector}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}}
+\subsubsection{\texorpdfstring{right\+Shoulder\+Effector}{rightShoulderEffector}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_effector}{I\+K\+Effector}} Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped.\+right\+Shoulder\+Effector\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the right shoulder effector. 
+
+
+
+Definition at line 73 of file I\+K\+Solver\+Full\+Body\+Biped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a11b63ebb06b59132ee2988963de88088}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a11b63ebb06b59132ee2988963de88088}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}!right\+Thigh\+Effector@{right\+Thigh\+Effector}}
+\index{right\+Thigh\+Effector@{right\+Thigh\+Effector}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Full\+Body\+Biped}}
+\subsubsection{\texorpdfstring{right\+Thigh\+Effector}{rightThighEffector}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_effector}{I\+K\+Effector}} Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped.\+right\+Thigh\+Effector\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the right thigh effector. 
+
+
+
+Definition at line 81 of file I\+K\+Solver\+Full\+Body\+Biped.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Plugins/\+Root\+Motion/\+Final\+I\+K/\+I\+K Solvers/\mbox{\hyperlink{_i_k_solver_full_body_biped_8cs}{I\+K\+Solver\+Full\+Body\+Biped.\+cs}}\end{DoxyCompactItemize}

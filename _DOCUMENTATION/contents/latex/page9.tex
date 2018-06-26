@@ -1,0 +1,53 @@
+Trigonometric IK is the most basic IK solver that is based on the Law of Cosines and solves a 3-\/segmented bone hierarchy. (I\+K\+Solver\+Limb extends I\+K\+Solver\+Trigonometric just to add a couple of extra parameters like the bend modifiers)
+
+{\bfseries Getting started\+:}
+\begin{DoxyItemize}
+\item Add the Trigonometric\+IK component to the first bone.
+\item Assign bone1, bone2 and bone3 in the Trigonometric\+IK component
+\item Press Play
+\end{DoxyItemize}
+
+{\bfseries Getting started with scripting\+:}
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{public} TrigonometricIK trig;
+
+\textcolor{keywordtype}{void} LateUpdate () \{
+    \textcolor{comment}{// Changing the target position, rotation and weights}
+    trig.solver.IKPosition = something;
+    trig.solver.IKRotation = something;
+    trig.solver.IKPositionWeight = something;
+    trig.solver.IKRotationWeight = something;
+
+    trig.solver.SetBendGoalPosition(Vector goalPosition); \textcolor{comment}{// Sets the bend goal to a point in world space }
+\}
+\end{DoxyCode}
+
+
+{\bfseries Adding Trigonometric\+IK in runtime\+:}
+\begin{DoxyItemize}
+\item Add the Trigonometric\+IK component via script
+\item Call Trigonometric\+I\+K.\+solver.\+Set\+Chain()
+\end{DoxyItemize}
+
+
+
+{\bfseries Component variables\+:}
+\begin{DoxyItemize}
+\item {\bfseries time\+Step} -\/ if zero, will update the solver in every Late\+Update(). Use this for chains that are animated. If $>$ 0, will be used as updating frequency so that the solver will reach its target in the same time on all machines
+\item {\bfseries fix\+Transforms} -\/ if true, will fix all the Transforms used by the solver to their initial state in each Update. This prevents potential problems with unanimated bones and animator culling with a small cost of performance
+\end{DoxyItemize}
+
+{\bfseries Solver variables\+:}
+\begin{DoxyItemize}
+\item {\bfseries bone1} -\/ the first bone (upper arm or thigh)
+\item {\bfseries bone2} -\/ the second bone (forearm or calf)
+\item {\bfseries bone3} -\/ the third bone (hand or foot)
+\item {\bfseries target} -\/ the target Transform. If assigned, solver I\+K\+Position and I\+K\+Rotation will be automatically set to the position of the target
+\item {\bfseries position\+Weight} -\/ the weight of solving to the target position (I\+K\+Position)
+\item {\bfseries rotation\+Weight} -\/ the weight of solving to the target rotation (I\+K\+Rotation)
+\item {\bfseries bend\+Normal} -\/ normal of the plane defined by the positions of the bones. When the limb bends, the second bone will always be positioned somewhere on that plane
+\end{DoxyItemize}
+
+ 

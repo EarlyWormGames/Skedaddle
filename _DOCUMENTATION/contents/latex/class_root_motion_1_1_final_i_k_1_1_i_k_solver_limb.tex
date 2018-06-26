@@ -1,0 +1,286 @@
+\hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb}{}\section{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Limb Class Reference}
+\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb}\index{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Limb@{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Limb}}
+
+
+Extends \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_trigonometric}{I\+K\+Solver\+Trigonometric}} to add automatic bend and rotation modes.  
+
+
+Inheritance diagram for Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Limb\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_1_1_axis_direction}{Axis\+Direction}}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_ae89bba0551841f9418b918ef8bff893c}{Bend\+Modifier}} \{ \newline
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_ae89bba0551841f9418b918ef8bff893cad6b6b668dbca9d4fe774bb654226ebe3}{Bend\+Modifier.\+Animation}}, 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_ae89bba0551841f9418b918ef8bff893cac41a31890959544c6523af684561abe5}{Bend\+Modifier.\+Target}}, 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_ae89bba0551841f9418b918ef8bff893ca30269022e9d8f51beaabb52e5d0de2b7}{Bend\+Modifier.\+Parent}}, 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_ae89bba0551841f9418b918ef8bff893ca551c5c03a1a91f2cf90e0d9a9b6dd378}{Bend\+Modifier.\+Arm}}, 
+\newline
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_ae89bba0551841f9418b918ef8bff893ca12c74214cb4c18cf36d885303d6aa2e1}{Bend\+Modifier.\+Goal}}
+ \}
+\begin{DoxyCompactList}\small\item\em Automatic bend modes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_ab95ef3cadd6e98bfe72008751dbda1bd}{Maintain\+Rotation}} ()
+\begin{DoxyCompactList}\small\item\em Used to record rotation of the last bone for one frame. If Maintain\+Rotation is not called and maintain\+Rotation\+Weight $>$ 0, the solver will maintain the rotation of the last bone as it was before solving the IK. You will probably need this if you wanted to maintain the animated rotation of a foot despite of any other IK solver that manipulates it\textquotesingle{}s parents\textquotesingle{} rotation. So you would call Maintain\+Rotation() in Late\+Update() after animation and before updating the Spine IK solver that would change the foot\textquotesingle{}s rotation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_a82c2e3eba2fdc5e791f0486196eaedeb}{Maintain\+Bend}} ()
+\begin{DoxyCompactList}\small\item\em If Auto Bend is on "Animation\textquotesingle{}, Maintain\+Bend() can be used to set the bend axis relative to the first bone\textquotesingle{}s rotation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_a664bd717bbf86ffcd70562f87930f742}{I\+K\+Solver\+Limb}} ()
+\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_af5ae62fda59273d4861eb5213a4bd021}{I\+K\+Solver\+Limb}} (Avatar\+I\+K\+Goal \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_af4266fb62c9f171f7e7c68a7bdbcdc44}{goal}})
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Avatar\+I\+K\+Goal \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_af4266fb62c9f171f7e7c68a7bdbcdc44}{goal}}
+\begin{DoxyCompactList}\small\item\em The Avatar\+I\+K\+Goal of this solver. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_ae89bba0551841f9418b918ef8bff893c}{Bend\+Modifier}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_a8db1d3059608300fd358ff23d0aa70de}{bend\+Modifier}}
+\begin{DoxyCompactList}\small\item\em Bend normal modifier. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_a484668b606095d02574459c2ee73142a}{maintain\+Rotation\+Weight}}
+\begin{DoxyCompactList}\small\item\em Weight of maintaining the rotation of the third bone as it was before solving. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_a357c8dd58f1200257aaea5c2c015a684}{bend\+Modifier\+Weight}} = 1f
+\begin{DoxyCompactList}\small\item\em Weight of bend normal modifier. \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_a94c337fa04b1a6349e6788821acdb387}{bend\+Goal}}
+\begin{DoxyCompactList}\small\item\em The bend goal Transform. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_ad7b356de1a54f7ce06b6c35faef32c69}{On\+Initiate\+Virtual}} ()
+\item 
+override void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_af4aa8f2e26828c4a1d0426ea248ca40a}{On\+Update\+Virtual}} ()
+\item 
+override void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_a8e2ae93521efeab2fe285de666b5b812}{On\+Post\+Solve\+Virtual}} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Extends \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_trigonometric}{I\+K\+Solver\+Trigonometric}} to add automatic bend and rotation modes. 
+
+
+
+Definition at line 10 of file I\+K\+Solver\+Limb.\+cs.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_ae89bba0551841f9418b918ef8bff893c}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_ae89bba0551841f9418b918ef8bff893c}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb}!Bend\+Modifier@{Bend\+Modifier}}
+\index{Bend\+Modifier@{Bend\+Modifier}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb}}
+\subsubsection{\texorpdfstring{Bend\+Modifier}{BendModifier}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_ae89bba0551841f9418b918ef8bff893c}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Limb.\+Bend\+Modifier}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Automatic bend modes. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Animation@{Animation}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb}}\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb}!Animation@{Animation}}}\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_ae89bba0551841f9418b918ef8bff893cad6b6b668dbca9d4fe774bb654226ebe3}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_ae89bba0551841f9418b918ef8bff893cad6b6b668dbca9d4fe774bb654226ebe3}} 
+Animation&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Target@{Target}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb}}\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb}!Target@{Target}}}\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_ae89bba0551841f9418b918ef8bff893cac41a31890959544c6523af684561abe5}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_ae89bba0551841f9418b918ef8bff893cac41a31890959544c6523af684561abe5}} 
+Target&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Parent@{Parent}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb}}\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb}!Parent@{Parent}}}\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_ae89bba0551841f9418b918ef8bff893ca30269022e9d8f51beaabb52e5d0de2b7}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_ae89bba0551841f9418b918ef8bff893ca30269022e9d8f51beaabb52e5d0de2b7}} 
+Parent&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Arm@{Arm}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb}}\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb}!Arm@{Arm}}}\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_ae89bba0551841f9418b918ef8bff893ca551c5c03a1a91f2cf90e0d9a9b6dd378}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_ae89bba0551841f9418b918ef8bff893ca551c5c03a1a91f2cf90e0d9a9b6dd378}} 
+Arm&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Goal@{Goal}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb}}\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb}!Goal@{Goal}}}\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_ae89bba0551841f9418b918ef8bff893ca12c74214cb4c18cf36d885303d6aa2e1}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_ae89bba0551841f9418b918ef8bff893ca12c74214cb4c18cf36d885303d6aa2e1}} 
+Goal&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 65 of file I\+K\+Solver\+Limb.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_a664bd717bbf86ffcd70562f87930f742}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_a664bd717bbf86ffcd70562f87930f742}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb}!I\+K\+Solver\+Limb@{I\+K\+Solver\+Limb}}
+\index{I\+K\+Solver\+Limb@{I\+K\+Solver\+Limb}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb}}
+\subsubsection{\texorpdfstring{I\+K\+Solver\+Limb()}{IKSolverLimb()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Limb.\+I\+K\+Solver\+Limb (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 150 of file I\+K\+Solver\+Limb.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_af5ae62fda59273d4861eb5213a4bd021}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_af5ae62fda59273d4861eb5213a4bd021}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb}!I\+K\+Solver\+Limb@{I\+K\+Solver\+Limb}}
+\index{I\+K\+Solver\+Limb@{I\+K\+Solver\+Limb}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb}}
+\subsubsection{\texorpdfstring{I\+K\+Solver\+Limb()}{IKSolverLimb()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Limb.\+I\+K\+Solver\+Limb (\begin{DoxyParamCaption}\item[{Avatar\+I\+K\+Goal}]{goal }\end{DoxyParamCaption})}
+
+
+
+Definition at line 152 of file I\+K\+Solver\+Limb.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_a82c2e3eba2fdc5e791f0486196eaedeb}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_a82c2e3eba2fdc5e791f0486196eaedeb}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb}!Maintain\+Bend@{Maintain\+Bend}}
+\index{Maintain\+Bend@{Maintain\+Bend}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb}}
+\subsubsection{\texorpdfstring{Maintain\+Bend()}{MaintainBend()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Limb.\+Maintain\+Bend (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+If Auto Bend is on "Animation\textquotesingle{}, Maintain\+Bend() can be used to set the bend axis relative to the first bone\textquotesingle{}s rotation. 
+
+
+
+Definition at line 53 of file I\+K\+Solver\+Limb.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_ab95ef3cadd6e98bfe72008751dbda1bd}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_ab95ef3cadd6e98bfe72008751dbda1bd}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb}!Maintain\+Rotation@{Maintain\+Rotation}}
+\index{Maintain\+Rotation@{Maintain\+Rotation}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb}}
+\subsubsection{\texorpdfstring{Maintain\+Rotation()}{MaintainRotation()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Limb.\+Maintain\+Rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Used to record rotation of the last bone for one frame. If Maintain\+Rotation is not called and maintain\+Rotation\+Weight $>$ 0, the solver will maintain the rotation of the last bone as it was before solving the IK. You will probably need this if you wanted to maintain the animated rotation of a foot despite of any other IK solver that manipulates it\textquotesingle{}s parents\textquotesingle{} rotation. So you would call Maintain\+Rotation() in Late\+Update() after animation and before updating the Spine IK solver that would change the foot\textquotesingle{}s rotation. 
+
+
+
+Definition at line 43 of file I\+K\+Solver\+Limb.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_ad7b356de1a54f7ce06b6c35faef32c69}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_ad7b356de1a54f7ce06b6c35faef32c69}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb}!On\+Initiate\+Virtual@{On\+Initiate\+Virtual}}
+\index{On\+Initiate\+Virtual@{On\+Initiate\+Virtual}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb}}
+\subsubsection{\texorpdfstring{On\+Initiate\+Virtual()}{OnInitiateVirtual()}}
+{\footnotesize\ttfamily override void Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Limb.\+On\+Initiate\+Virtual (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_trigonometric_af11d3885dee47e31be9f069355d0ce67}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Trigonometric}}.
+
+
+
+Definition at line 78 of file I\+K\+Solver\+Limb.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_a8e2ae93521efeab2fe285de666b5b812}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_a8e2ae93521efeab2fe285de666b5b812}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb}!On\+Post\+Solve\+Virtual@{On\+Post\+Solve\+Virtual}}
+\index{On\+Post\+Solve\+Virtual@{On\+Post\+Solve\+Virtual}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb}}
+\subsubsection{\texorpdfstring{On\+Post\+Solve\+Virtual()}{OnPostSolveVirtual()}}
+{\footnotesize\ttfamily override void Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Limb.\+On\+Post\+Solve\+Virtual (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_trigonometric_aa934d2fe8f3b8193e2f44254cbf48998}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Trigonometric}}.
+
+
+
+Definition at line 124 of file I\+K\+Solver\+Limb.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_af4aa8f2e26828c4a1d0426ea248ca40a}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_af4aa8f2e26828c4a1d0426ea248ca40a}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb}!On\+Update\+Virtual@{On\+Update\+Virtual}}
+\index{On\+Update\+Virtual@{On\+Update\+Virtual}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb}}
+\subsubsection{\texorpdfstring{On\+Update\+Virtual()}{OnUpdateVirtual()}}
+{\footnotesize\ttfamily override void Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Limb.\+On\+Update\+Virtual (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_trigonometric_a0be97e7ca173129544d6e8dca5e2c37d}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Trigonometric}}.
+
+
+
+Definition at line 101 of file I\+K\+Solver\+Limb.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_a94c337fa04b1a6349e6788821acdb387}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_a94c337fa04b1a6349e6788821acdb387}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb}!bend\+Goal@{bend\+Goal}}
+\index{bend\+Goal@{bend\+Goal}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb}}
+\subsubsection{\texorpdfstring{bend\+Goal}{bendGoal}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Limb.\+bend\+Goal}
+
+
+
+The bend goal Transform. 
+
+
+
+Definition at line 35 of file I\+K\+Solver\+Limb.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_a8db1d3059608300fd358ff23d0aa70de}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_a8db1d3059608300fd358ff23d0aa70de}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb}!bend\+Modifier@{bend\+Modifier}}
+\index{bend\+Modifier@{bend\+Modifier}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb}}
+\subsubsection{\texorpdfstring{bend\+Modifier}{bendModifier}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_ae89bba0551841f9418b918ef8bff893c}{Bend\+Modifier}} Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Limb.\+bend\+Modifier}
+
+
+
+Bend normal modifier. 
+
+
+
+Definition at line 21 of file I\+K\+Solver\+Limb.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_a357c8dd58f1200257aaea5c2c015a684}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_a357c8dd58f1200257aaea5c2c015a684}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb}!bend\+Modifier\+Weight@{bend\+Modifier\+Weight}}
+\index{bend\+Modifier\+Weight@{bend\+Modifier\+Weight}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb}}
+\subsubsection{\texorpdfstring{bend\+Modifier\+Weight}{bendModifierWeight}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Limb.\+bend\+Modifier\+Weight = 1f}
+
+
+
+Weight of bend normal modifier. 
+
+
+
+Definition at line 31 of file I\+K\+Solver\+Limb.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_af4266fb62c9f171f7e7c68a7bdbcdc44}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_af4266fb62c9f171f7e7c68a7bdbcdc44}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb}!goal@{goal}}
+\index{goal@{goal}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb}}
+\subsubsection{\texorpdfstring{goal}{goal}}
+{\footnotesize\ttfamily Avatar\+I\+K\+Goal Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Limb.\+goal}
+
+
+
+The Avatar\+I\+K\+Goal of this solver. 
+
+
+
+Definition at line 17 of file I\+K\+Solver\+Limb.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_a484668b606095d02574459c2ee73142a}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_limb_a484668b606095d02574459c2ee73142a}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb}!maintain\+Rotation\+Weight@{maintain\+Rotation\+Weight}}
+\index{maintain\+Rotation\+Weight@{maintain\+Rotation\+Weight}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Limb}}
+\subsubsection{\texorpdfstring{maintain\+Rotation\+Weight}{maintainRotationWeight}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Limb.\+maintain\+Rotation\+Weight}
+
+
+
+Weight of maintaining the rotation of the third bone as it was before solving. 
+
+
+
+Definition at line 26 of file I\+K\+Solver\+Limb.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Plugins/\+Root\+Motion/\+Final\+I\+K/\+I\+K Solvers/\mbox{\hyperlink{_i_k_solver_limb_8cs}{I\+K\+Solver\+Limb.\+cs}}\end{DoxyCompactItemize}

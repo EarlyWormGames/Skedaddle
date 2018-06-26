@@ -1,0 +1,312 @@
+\hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur}{}\section{Unity\+Standard\+Assets.\+Image\+Effects.\+Camera\+Motion\+Blur Class Reference}
+\label{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur}\index{Unity\+Standard\+Assets.\+Image\+Effects.\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets.\+Image\+Effects.\+Camera\+Motion\+Blur}}
+Inheritance diagram for Unity\+Standard\+Assets.\+Image\+Effects.\+Camera\+Motion\+Blur\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a5243e3d1f6a29d119409056d2e2ba99f}{Motion\+Blur\+Filter}} \{ \newline
+\mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a5243e3d1f6a29d119409056d2e2ba99fa95432e27727c4639d8e6bf6867c26ac1}{Motion\+Blur\+Filter.\+Camera\+Motion}} = 0, 
+\mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a5243e3d1f6a29d119409056d2e2ba99fae9d16d8aa9726c96bad1e609055db6b9}{Motion\+Blur\+Filter.\+Local\+Blur}} = 1, 
+\mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a5243e3d1f6a29d119409056d2e2ba99fa2d4907781ee5dad928d4c2f39d4d4848}{Motion\+Blur\+Filter.\+Reconstruction}} = 2, 
+\mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a5243e3d1f6a29d119409056d2e2ba99fa2e138ec188352208cc72692930aeff7f}{Motion\+Blur\+Filter.\+Reconstruction\+D\+X11}} = 3, 
+\newline
+\mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a5243e3d1f6a29d119409056d2e2ba99fa8748783bc6a0a1f7da0a1b57ce34061d}{Motion\+Blur\+Filter.\+Reconstruction\+Disc}} = 4
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override bool \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a4d123b09d7f7ce64ff061fe228d01fca}{Check\+Resources}} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a5243e3d1f6a29d119409056d2e2ba99f}{Motion\+Blur\+Filter}} \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a4095304016808a9b9370e6c41bba8a8c}{filter\+Type}} = \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a5243e3d1f6a29d119409056d2e2ba99fa2d4907781ee5dad928d4c2f39d4d4848}{Motion\+Blur\+Filter.\+Reconstruction}}
+\item 
+bool \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_aa66a7358f181c0bdcbf9ed8ff4a2e394}{preview}} = false
+\item 
+Vector3 \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_acbfb02a03910f99d28ffc86e04243631}{preview\+Scale}} = Vector3.\+one
+\item 
+float \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a6d2abe2f75c13d9dae5b5b9dc9fc74ea}{movement\+Scale}} = 0.\+0f
+\item 
+float \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a3d08bc6c65aad2fe3e48abcb2bc23029}{rotation\+Scale}} = 1.\+0f
+\item 
+float \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a7995452c9a8ab59e2d6f1767381fe567}{max\+Velocity}} = 8.\+0f
+\item 
+float \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_ae6e4436e252dda38e280d2ea557a9582}{min\+Velocity}} = 0.\+1f
+\item 
+float \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a3345ffe10e8c75ba91387badf041f343}{velocity\+Scale}} = 0.\+375f
+\item 
+float \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_aa886fe88ff2a12dddbc9c4df69ab7404}{soft\+Z\+Distance}} = 0.\+005f
+\item 
+int \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a875795278909fce61ce927b811d9bfc9}{velocity\+Downsample}} = 1
+\item 
+Layer\+Mask \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a14ae08ddd250d890ab9d8111664a98cb}{exclude\+Layers}} = 0
+\item 
+Shader \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_ab70160db6d191d6699c2ab42237fcb28}{shader}}
+\item 
+Shader \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a82277d1aa23f22c3040addcbda6b88c6}{dx11\+Motion\+Blur\+Shader}}
+\item 
+Shader \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a61ea61914365c6cc376703c7622522af}{replacement\+Clear}}
+\item 
+Texture2D \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a955966e7fef27a44c4b9321dd5940606}{noise\+Texture}} = null
+\item 
+float \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a05ab2d0c4ecd827f05a6fccb9dc572bb}{jitter}} = 0.\+05f
+\item 
+bool \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a3d537fe58f5088b59edbeafae8b7ec32}{show\+Velocity}} = false
+\item 
+float \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a2c3ab3b871c9f4cd8ed9206dcdd56b86}{show\+Velocity\+Scale}} = 1.\+0f
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 9 of file Camera\+Motion\+Blur.\+cs.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a5243e3d1f6a29d119409056d2e2ba99f}\label{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a5243e3d1f6a29d119409056d2e2ba99f}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}!Motion\+Blur\+Filter@{Motion\+Blur\+Filter}}
+\index{Motion\+Blur\+Filter@{Motion\+Blur\+Filter}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}}
+\subsubsection{\texorpdfstring{Motion\+Blur\+Filter}{MotionBlurFilter}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a5243e3d1f6a29d119409056d2e2ba99f}{Unity\+Standard\+Assets.\+Image\+Effects.\+Camera\+Motion\+Blur.\+Motion\+Blur\+Filter}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Camera\+Motion@{Camera\+Motion}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}}\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}!Camera\+Motion@{Camera\+Motion}}}\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a5243e3d1f6a29d119409056d2e2ba99fa95432e27727c4639d8e6bf6867c26ac1}\label{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a5243e3d1f6a29d119409056d2e2ba99fa95432e27727c4639d8e6bf6867c26ac1}} 
+Camera\+Motion&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Local\+Blur@{Local\+Blur}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}}\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}!Local\+Blur@{Local\+Blur}}}\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a5243e3d1f6a29d119409056d2e2ba99fae9d16d8aa9726c96bad1e609055db6b9}\label{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a5243e3d1f6a29d119409056d2e2ba99fae9d16d8aa9726c96bad1e609055db6b9}} 
+Local\+Blur&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Reconstruction@{Reconstruction}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}}\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}!Reconstruction@{Reconstruction}}}\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a5243e3d1f6a29d119409056d2e2ba99fa2d4907781ee5dad928d4c2f39d4d4848}\label{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a5243e3d1f6a29d119409056d2e2ba99fa2d4907781ee5dad928d4c2f39d4d4848}} 
+Reconstruction&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Reconstruction\+D\+X11@{Reconstruction\+D\+X11}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}}\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}!Reconstruction\+D\+X11@{Reconstruction\+D\+X11}}}\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a5243e3d1f6a29d119409056d2e2ba99fa2e138ec188352208cc72692930aeff7f}\label{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a5243e3d1f6a29d119409056d2e2ba99fa2e138ec188352208cc72692930aeff7f}} 
+Reconstruction\+D\+X11&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Reconstruction\+Disc@{Reconstruction\+Disc}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}}\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}!Reconstruction\+Disc@{Reconstruction\+Disc}}}\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a5243e3d1f6a29d119409056d2e2ba99fa8748783bc6a0a1f7da0a1b57ce34061d}\label{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a5243e3d1f6a29d119409056d2e2ba99fa8748783bc6a0a1f7da0a1b57ce34061d}} 
+Reconstruction\+Disc&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 14 of file Camera\+Motion\+Blur.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a4d123b09d7f7ce64ff061fe228d01fca}\label{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a4d123b09d7f7ce64ff061fe228d01fca}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}!Check\+Resources@{Check\+Resources}}
+\index{Check\+Resources@{Check\+Resources}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}}
+\subsubsection{\texorpdfstring{Check\+Resources()}{CheckResources()}}
+{\footnotesize\ttfamily override bool Unity\+Standard\+Assets.\+Image\+Effects.\+Camera\+Motion\+Blur.\+Check\+Resources (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_a8866612b25b7158b932efd3b832188f8}{Unity\+Standard\+Assets.\+Image\+Effects.\+Post\+Effects\+Base}}.
+
+
+
+Definition at line 108 of file Camera\+Motion\+Blur.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a82277d1aa23f22c3040addcbda6b88c6}\label{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a82277d1aa23f22c3040addcbda6b88c6}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}!dx11\+Motion\+Blur\+Shader@{dx11\+Motion\+Blur\+Shader}}
+\index{dx11\+Motion\+Blur\+Shader@{dx11\+Motion\+Blur\+Shader}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}}
+\subsubsection{\texorpdfstring{dx11\+Motion\+Blur\+Shader}{dx11MotionBlurShader}}
+{\footnotesize\ttfamily Shader Unity\+Standard\+Assets.\+Image\+Effects.\+Camera\+Motion\+Blur.\+dx11\+Motion\+Blur\+Shader}
+
+
+
+Definition at line 40 of file Camera\+Motion\+Blur.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a14ae08ddd250d890ab9d8111664a98cb}\label{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a14ae08ddd250d890ab9d8111664a98cb}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}!exclude\+Layers@{exclude\+Layers}}
+\index{exclude\+Layers@{exclude\+Layers}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}}
+\subsubsection{\texorpdfstring{exclude\+Layers}{excludeLayers}}
+{\footnotesize\ttfamily Layer\+Mask Unity\+Standard\+Assets.\+Image\+Effects.\+Camera\+Motion\+Blur.\+exclude\+Layers = 0}
+
+
+
+Definition at line 35 of file Camera\+Motion\+Blur.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a4095304016808a9b9370e6c41bba8a8c}\label{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a4095304016808a9b9370e6c41bba8a8c}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}!filter\+Type@{filter\+Type}}
+\index{filter\+Type@{filter\+Type}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}}
+\subsubsection{\texorpdfstring{filter\+Type}{filterType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a5243e3d1f6a29d119409056d2e2ba99f}{Motion\+Blur\+Filter}} Unity\+Standard\+Assets.\+Image\+Effects.\+Camera\+Motion\+Blur.\+filter\+Type = \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a5243e3d1f6a29d119409056d2e2ba99fa2d4907781ee5dad928d4c2f39d4d4848}{Motion\+Blur\+Filter.\+Reconstruction}}}
+
+
+
+Definition at line 23 of file Camera\+Motion\+Blur.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a05ab2d0c4ecd827f05a6fccb9dc572bb}\label{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a05ab2d0c4ecd827f05a6fccb9dc572bb}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}!jitter@{jitter}}
+\index{jitter@{jitter}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}}
+\subsubsection{\texorpdfstring{jitter}{jitter}}
+{\footnotesize\ttfamily float Unity\+Standard\+Assets.\+Image\+Effects.\+Camera\+Motion\+Blur.\+jitter = 0.\+05f}
+
+
+
+Definition at line 47 of file Camera\+Motion\+Blur.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a7995452c9a8ab59e2d6f1767381fe567}\label{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a7995452c9a8ab59e2d6f1767381fe567}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}!max\+Velocity@{max\+Velocity}}
+\index{max\+Velocity@{max\+Velocity}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}}
+\subsubsection{\texorpdfstring{max\+Velocity}{maxVelocity}}
+{\footnotesize\ttfamily float Unity\+Standard\+Assets.\+Image\+Effects.\+Camera\+Motion\+Blur.\+max\+Velocity = 8.\+0f}
+
+
+
+Definition at line 30 of file Camera\+Motion\+Blur.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_ae6e4436e252dda38e280d2ea557a9582}\label{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_ae6e4436e252dda38e280d2ea557a9582}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}!min\+Velocity@{min\+Velocity}}
+\index{min\+Velocity@{min\+Velocity}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}}
+\subsubsection{\texorpdfstring{min\+Velocity}{minVelocity}}
+{\footnotesize\ttfamily float Unity\+Standard\+Assets.\+Image\+Effects.\+Camera\+Motion\+Blur.\+min\+Velocity = 0.\+1f}
+
+
+
+Definition at line 31 of file Camera\+Motion\+Blur.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a6d2abe2f75c13d9dae5b5b9dc9fc74ea}\label{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a6d2abe2f75c13d9dae5b5b9dc9fc74ea}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}!movement\+Scale@{movement\+Scale}}
+\index{movement\+Scale@{movement\+Scale}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}}
+\subsubsection{\texorpdfstring{movement\+Scale}{movementScale}}
+{\footnotesize\ttfamily float Unity\+Standard\+Assets.\+Image\+Effects.\+Camera\+Motion\+Blur.\+movement\+Scale = 0.\+0f}
+
+
+
+Definition at line 28 of file Camera\+Motion\+Blur.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a955966e7fef27a44c4b9321dd5940606}\label{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a955966e7fef27a44c4b9321dd5940606}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}!noise\+Texture@{noise\+Texture}}
+\index{noise\+Texture@{noise\+Texture}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}}
+\subsubsection{\texorpdfstring{noise\+Texture}{noiseTexture}}
+{\footnotesize\ttfamily Texture2D Unity\+Standard\+Assets.\+Image\+Effects.\+Camera\+Motion\+Blur.\+noise\+Texture = null}
+
+
+
+Definition at line 46 of file Camera\+Motion\+Blur.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_aa66a7358f181c0bdcbf9ed8ff4a2e394}\label{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_aa66a7358f181c0bdcbf9ed8ff4a2e394}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}!preview@{preview}}
+\index{preview@{preview}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}}
+\subsubsection{\texorpdfstring{preview}{preview}}
+{\footnotesize\ttfamily bool Unity\+Standard\+Assets.\+Image\+Effects.\+Camera\+Motion\+Blur.\+preview = false}
+
+
+
+Definition at line 24 of file Camera\+Motion\+Blur.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_acbfb02a03910f99d28ffc86e04243631}\label{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_acbfb02a03910f99d28ffc86e04243631}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}!preview\+Scale@{preview\+Scale}}
+\index{preview\+Scale@{preview\+Scale}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}}
+\subsubsection{\texorpdfstring{preview\+Scale}{previewScale}}
+{\footnotesize\ttfamily Vector3 Unity\+Standard\+Assets.\+Image\+Effects.\+Camera\+Motion\+Blur.\+preview\+Scale = Vector3.\+one}
+
+
+
+Definition at line 25 of file Camera\+Motion\+Blur.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a61ea61914365c6cc376703c7622522af}\label{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a61ea61914365c6cc376703c7622522af}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}!replacement\+Clear@{replacement\+Clear}}
+\index{replacement\+Clear@{replacement\+Clear}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}}
+\subsubsection{\texorpdfstring{replacement\+Clear}{replacementClear}}
+{\footnotesize\ttfamily Shader Unity\+Standard\+Assets.\+Image\+Effects.\+Camera\+Motion\+Blur.\+replacement\+Clear}
+
+
+
+Definition at line 41 of file Camera\+Motion\+Blur.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a3d08bc6c65aad2fe3e48abcb2bc23029}\label{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a3d08bc6c65aad2fe3e48abcb2bc23029}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}!rotation\+Scale@{rotation\+Scale}}
+\index{rotation\+Scale@{rotation\+Scale}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}}
+\subsubsection{\texorpdfstring{rotation\+Scale}{rotationScale}}
+{\footnotesize\ttfamily float Unity\+Standard\+Assets.\+Image\+Effects.\+Camera\+Motion\+Blur.\+rotation\+Scale = 1.\+0f}
+
+
+
+Definition at line 29 of file Camera\+Motion\+Blur.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_ab70160db6d191d6699c2ab42237fcb28}\label{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_ab70160db6d191d6699c2ab42237fcb28}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}!shader@{shader}}
+\index{shader@{shader}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}}
+\subsubsection{\texorpdfstring{shader}{shader}}
+{\footnotesize\ttfamily Shader Unity\+Standard\+Assets.\+Image\+Effects.\+Camera\+Motion\+Blur.\+shader}
+
+
+
+Definition at line 39 of file Camera\+Motion\+Blur.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a3d537fe58f5088b59edbeafae8b7ec32}\label{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a3d537fe58f5088b59edbeafae8b7ec32}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}!show\+Velocity@{show\+Velocity}}
+\index{show\+Velocity@{show\+Velocity}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}}
+\subsubsection{\texorpdfstring{show\+Velocity}{showVelocity}}
+{\footnotesize\ttfamily bool Unity\+Standard\+Assets.\+Image\+Effects.\+Camera\+Motion\+Blur.\+show\+Velocity = false}
+
+
+
+Definition at line 50 of file Camera\+Motion\+Blur.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a2c3ab3b871c9f4cd8ed9206dcdd56b86}\label{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a2c3ab3b871c9f4cd8ed9206dcdd56b86}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}!show\+Velocity\+Scale@{show\+Velocity\+Scale}}
+\index{show\+Velocity\+Scale@{show\+Velocity\+Scale}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}}
+\subsubsection{\texorpdfstring{show\+Velocity\+Scale}{showVelocityScale}}
+{\footnotesize\ttfamily float Unity\+Standard\+Assets.\+Image\+Effects.\+Camera\+Motion\+Blur.\+show\+Velocity\+Scale = 1.\+0f}
+
+
+
+Definition at line 51 of file Camera\+Motion\+Blur.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_aa886fe88ff2a12dddbc9c4df69ab7404}\label{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_aa886fe88ff2a12dddbc9c4df69ab7404}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}!soft\+Z\+Distance@{soft\+Z\+Distance}}
+\index{soft\+Z\+Distance@{soft\+Z\+Distance}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}}
+\subsubsection{\texorpdfstring{soft\+Z\+Distance}{softZDistance}}
+{\footnotesize\ttfamily float Unity\+Standard\+Assets.\+Image\+Effects.\+Camera\+Motion\+Blur.\+soft\+Z\+Distance = 0.\+005f}
+
+
+
+Definition at line 33 of file Camera\+Motion\+Blur.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a875795278909fce61ce927b811d9bfc9}\label{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a875795278909fce61ce927b811d9bfc9}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}!velocity\+Downsample@{velocity\+Downsample}}
+\index{velocity\+Downsample@{velocity\+Downsample}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}}
+\subsubsection{\texorpdfstring{velocity\+Downsample}{velocityDownsample}}
+{\footnotesize\ttfamily int Unity\+Standard\+Assets.\+Image\+Effects.\+Camera\+Motion\+Blur.\+velocity\+Downsample = 1}
+
+
+
+Definition at line 34 of file Camera\+Motion\+Blur.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a3345ffe10e8c75ba91387badf041f343}\label{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a3345ffe10e8c75ba91387badf041f343}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}!velocity\+Scale@{velocity\+Scale}}
+\index{velocity\+Scale@{velocity\+Scale}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Camera\+Motion\+Blur}}
+\subsubsection{\texorpdfstring{velocity\+Scale}{velocityScale}}
+{\footnotesize\ttfamily float Unity\+Standard\+Assets.\+Image\+Effects.\+Camera\+Motion\+Blur.\+velocity\+Scale = 0.\+375f}
+
+
+
+Definition at line 32 of file Camera\+Motion\+Blur.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Standard Assets/\+Effects/\+Image\+Effects/\+Scripts/\mbox{\hyperlink{_camera_motion_blur_8cs}{Camera\+Motion\+Blur.\+cs}}\end{DoxyCompactItemize}

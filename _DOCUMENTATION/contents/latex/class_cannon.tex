@@ -1,0 +1,202 @@
+\hypertarget{class_cannon}{}\section{Cannon Class Reference}
+\label{class_cannon}\index{Cannon@{Cannon}}
+Inheritance diagram for Cannon\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_cannon}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_cannon_a960d1029f84d68f9a7e6404bed82b1c5}{Shoot}} ()
+\begin{DoxyCompactList}\small\item\em Fire ze cannons! \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_cannon_a9516c36d3a448bad28896f332fcedf53}{Rotate\+Time}} = 1
+\item 
+Transform \mbox{\hyperlink{class_cannon_a058c26253647d4f92ddcb8da7ea5ec15}{Rotate\+Object}}
+\item 
+Animation\+Curve \mbox{\hyperlink{class_cannon_a5c22134c62741c089a8ae471c7afee29}{Rotate\+Curve}} = Animation\+Curve.\+Ease\+In\+Out(0, 0, 1, 1)
+\item 
+\mbox{\hyperlink{class_bezier_spline_follower}{Bezier\+Spline\+Follower}} \mbox{\hyperlink{class_cannon_a6983ae781175cb879d1c4daacf0a72ff}{Spline\+Left}}
+\item 
+bool \mbox{\hyperlink{class_cannon_a4b17c78dd58465371d81c31f19f0030c}{Invert\+Keys}}
+\item 
+Transform \mbox{\hyperlink{class_cannon_a8ea813a90bea970311f357c5d4cb10e7}{Left\+Facing}}
+\item 
+Unity\+Event \mbox{\hyperlink{class_cannon_a6be8bc50dab6d91351513655c7c4f304}{On\+Shoot}}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_cannon_ab530656c8ae8981ced0162cfdd8f9cb2}{On\+Start}} ()
+\item 
+override void \mbox{\hyperlink{class_cannon_a972f062f1aba8d3f3ab95e47c6129506}{On\+Animal\+Enter}} (\mbox{\hyperlink{class_animal}{Animal}} animal)
+\item 
+override void \mbox{\hyperlink{class_cannon_aa5d69c897923c5ac5bdcc16b18f1cf85}{On\+Update}} ()
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+override bool \mbox{\hyperlink{class_cannon_ab764ca13d521eb8329aa9520e91842d4}{Head\+Trigger\+Only}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 6 of file Cannon.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_cannon_a972f062f1aba8d3f3ab95e47c6129506}\label{class_cannon_a972f062f1aba8d3f3ab95e47c6129506}} 
+\index{Cannon@{Cannon}!On\+Animal\+Enter@{On\+Animal\+Enter}}
+\index{On\+Animal\+Enter@{On\+Animal\+Enter}!Cannon@{Cannon}}
+\subsubsection{\texorpdfstring{On\+Animal\+Enter()}{OnAnimalEnter()}}
+{\footnotesize\ttfamily override void Cannon.\+On\+Animal\+Enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{animal }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_attachable_a068e297fb6be04b5162db5ce61290020}{Attachable}}.
+
+
+
+Definition at line 66 of file Cannon.\+cs.
+
+\mbox{\Hypertarget{class_cannon_ab530656c8ae8981ced0162cfdd8f9cb2}\label{class_cannon_ab530656c8ae8981ced0162cfdd8f9cb2}} 
+\index{Cannon@{Cannon}!On\+Start@{On\+Start}}
+\index{On\+Start@{On\+Start}!Cannon@{Cannon}}
+\subsubsection{\texorpdfstring{On\+Start()}{OnStart()}}
+{\footnotesize\ttfamily override void Cannon.\+On\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_attachable_a3c05c0b07b831881a7ab245057d34d30}{Attachable}}.
+
+
+
+Definition at line 30 of file Cannon.\+cs.
+
+\mbox{\Hypertarget{class_cannon_aa5d69c897923c5ac5bdcc16b18f1cf85}\label{class_cannon_aa5d69c897923c5ac5bdcc16b18f1cf85}} 
+\index{Cannon@{Cannon}!On\+Update@{On\+Update}}
+\index{On\+Update@{On\+Update}!Cannon@{Cannon}}
+\subsubsection{\texorpdfstring{On\+Update()}{OnUpdate()}}
+{\footnotesize\ttfamily override void Cannon.\+On\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_attachable_abb659a66efacd6fa09fa1d7125c7b5e6}{Attachable}}.
+
+
+
+Definition at line 90 of file Cannon.\+cs.
+
+\mbox{\Hypertarget{class_cannon_a960d1029f84d68f9a7e6404bed82b1c5}\label{class_cannon_a960d1029f84d68f9a7e6404bed82b1c5}} 
+\index{Cannon@{Cannon}!Shoot@{Shoot}}
+\index{Shoot@{Shoot}!Cannon@{Cannon}}
+\subsubsection{\texorpdfstring{Shoot()}{Shoot()}}
+{\footnotesize\ttfamily void Cannon.\+Shoot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fire ze cannons! 
+
+
+
+Definition at line 128 of file Cannon.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_cannon_a4b17c78dd58465371d81c31f19f0030c}\label{class_cannon_a4b17c78dd58465371d81c31f19f0030c}} 
+\index{Cannon@{Cannon}!Invert\+Keys@{Invert\+Keys}}
+\index{Invert\+Keys@{Invert\+Keys}!Cannon@{Cannon}}
+\subsubsection{\texorpdfstring{Invert\+Keys}{InvertKeys}}
+{\footnotesize\ttfamily bool Cannon.\+Invert\+Keys}
+
+
+
+Definition at line 12 of file Cannon.\+cs.
+
+\mbox{\Hypertarget{class_cannon_a8ea813a90bea970311f357c5d4cb10e7}\label{class_cannon_a8ea813a90bea970311f357c5d4cb10e7}} 
+\index{Cannon@{Cannon}!Left\+Facing@{Left\+Facing}}
+\index{Left\+Facing@{Left\+Facing}!Cannon@{Cannon}}
+\subsubsection{\texorpdfstring{Left\+Facing}{LeftFacing}}
+{\footnotesize\ttfamily Transform Cannon.\+Left\+Facing}
+
+
+
+Definition at line 15 of file Cannon.\+cs.
+
+\mbox{\Hypertarget{class_cannon_a6be8bc50dab6d91351513655c7c4f304}\label{class_cannon_a6be8bc50dab6d91351513655c7c4f304}} 
+\index{Cannon@{Cannon}!On\+Shoot@{On\+Shoot}}
+\index{On\+Shoot@{On\+Shoot}!Cannon@{Cannon}}
+\subsubsection{\texorpdfstring{On\+Shoot}{OnShoot}}
+{\footnotesize\ttfamily Unity\+Event Cannon.\+On\+Shoot}
+
+
+
+Definition at line 17 of file Cannon.\+cs.
+
+\mbox{\Hypertarget{class_cannon_a5c22134c62741c089a8ae471c7afee29}\label{class_cannon_a5c22134c62741c089a8ae471c7afee29}} 
+\index{Cannon@{Cannon}!Rotate\+Curve@{Rotate\+Curve}}
+\index{Rotate\+Curve@{Rotate\+Curve}!Cannon@{Cannon}}
+\subsubsection{\texorpdfstring{Rotate\+Curve}{RotateCurve}}
+{\footnotesize\ttfamily Animation\+Curve Cannon.\+Rotate\+Curve = Animation\+Curve.\+Ease\+In\+Out(0, 0, 1, 1)}
+
+
+
+Definition at line 10 of file Cannon.\+cs.
+
+\mbox{\Hypertarget{class_cannon_a058c26253647d4f92ddcb8da7ea5ec15}\label{class_cannon_a058c26253647d4f92ddcb8da7ea5ec15}} 
+\index{Cannon@{Cannon}!Rotate\+Object@{Rotate\+Object}}
+\index{Rotate\+Object@{Rotate\+Object}!Cannon@{Cannon}}
+\subsubsection{\texorpdfstring{Rotate\+Object}{RotateObject}}
+{\footnotesize\ttfamily Transform Cannon.\+Rotate\+Object}
+
+
+
+Definition at line 9 of file Cannon.\+cs.
+
+\mbox{\Hypertarget{class_cannon_a9516c36d3a448bad28896f332fcedf53}\label{class_cannon_a9516c36d3a448bad28896f332fcedf53}} 
+\index{Cannon@{Cannon}!Rotate\+Time@{Rotate\+Time}}
+\index{Rotate\+Time@{Rotate\+Time}!Cannon@{Cannon}}
+\subsubsection{\texorpdfstring{Rotate\+Time}{RotateTime}}
+{\footnotesize\ttfamily float Cannon.\+Rotate\+Time = 1}
+
+
+
+Definition at line 8 of file Cannon.\+cs.
+
+\mbox{\Hypertarget{class_cannon_a6983ae781175cb879d1c4daacf0a72ff}\label{class_cannon_a6983ae781175cb879d1c4daacf0a72ff}} 
+\index{Cannon@{Cannon}!Spline\+Left@{Spline\+Left}}
+\index{Spline\+Left@{Spline\+Left}!Cannon@{Cannon}}
+\subsubsection{\texorpdfstring{Spline\+Left}{SplineLeft}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bezier_spline_follower}{Bezier\+Spline\+Follower}} Cannon.\+Spline\+Left}
+
+
+
+Definition at line 11 of file Cannon.\+cs.
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_cannon_ab764ca13d521eb8329aa9520e91842d4}\label{class_cannon_ab764ca13d521eb8329aa9520e91842d4}} 
+\index{Cannon@{Cannon}!Head\+Trigger\+Only@{Head\+Trigger\+Only}}
+\index{Head\+Trigger\+Only@{Head\+Trigger\+Only}!Cannon@{Cannon}}
+\subsubsection{\texorpdfstring{Head\+Trigger\+Only}{HeadTriggerOnly}}
+{\footnotesize\ttfamily override bool Cannon.\+Head\+Trigger\+Only\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 18 of file Cannon.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Interactables/\+Attachables/\mbox{\hyperlink{_cannon_8cs}{Cannon.\+cs}}\end{DoxyCompactItemize}

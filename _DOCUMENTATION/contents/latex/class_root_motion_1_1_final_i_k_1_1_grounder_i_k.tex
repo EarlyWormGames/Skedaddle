@@ -1,0 +1,191 @@
+\hypertarget{class_root_motion_1_1_final_i_k_1_1_grounder_i_k}{}\section{Root\+Motion.\+Final\+I\+K.\+Grounder\+IK Class Reference}
+\label{class_root_motion_1_1_final_i_k_1_1_grounder_i_k}\index{Root\+Motion.\+Final\+I\+K.\+Grounder\+IK@{Root\+Motion.\+Final\+I\+K.\+Grounder\+IK}}
+
+
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounding}{Grounding}} for \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_limb_i_k}{Limb\+IK}}, C\+CD and/or \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_a_b_r_i_k}{F\+A\+B\+R\+IK}} solvers.  
+
+
+Inheritance diagram for Root\+Motion.\+Final\+I\+K.\+Grounder\+IK\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_root_motion_1_1_final_i_k_1_1_grounder_i_k}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder_i_k_a4a19512898c60ecd027f535198281b8f}{Reset\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Resets this \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder}{Grounder}} so characters can be teleported instananeously. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k}{IK}} \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder_i_k_a177f06c63c3b6a925ee8027e0734f7ad}{legs}}
+\begin{DoxyCompactList}\small\item\em The leg IK componets (can be any type of \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k}{IK}} component). \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder_i_k_adf8e5899cf94a91d14d5e1439243db82}{pelvis}}
+\begin{DoxyCompactList}\small\item\em The pelvis transform. Common ancestor of all the legs. \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder_i_k_ae1fc0528fd20ffee592ef23b401e980d}{character\+Root}}
+\begin{DoxyCompactList}\small\item\em The root Transform of the character, with the rigidbody and the collider. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder_i_k_a176e6eeb4faf46b2dd60b200647d121e}{root\+Rotation\+Weight}}
+\begin{DoxyCompactList}\small\item\em The weight of rotating the character root to the ground normal (range\+: 0 -\/ 1). \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder_i_k_a896061f0128f21b00187f9c790a04ec0}{root\+Rotation\+Speed}} = 5f
+\begin{DoxyCompactList}\small\item\em The speed of rotating the character root to the ground normal (range\+: 0 -\/ inf). \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder_i_k_a1baf8bb5d1f32f5277152351c756cbf3}{max\+Root\+Rotation\+Angle}} = 45f
+\begin{DoxyCompactList}\small\item\em The maximum angle of root rotation (range\+: 0 -\/ 90). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder_i_k_ae94b6c991b39a6fef2931378121969e7}{Open\+User\+Manual}} ()
+\item 
+override void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder_i_k_ac89b8c0bc37e1832f962682d9655721c}{Open\+Script\+Reference}} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounding}{Grounding}} for \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_limb_i_k}{Limb\+IK}}, C\+CD and/or \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_a_b_r_i_k}{F\+A\+B\+R\+IK}} solvers. 
+
+
+
+Definition at line 11 of file Grounder\+I\+K.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_grounder_i_k_ac89b8c0bc37e1832f962682d9655721c}\label{class_root_motion_1_1_final_i_k_1_1_grounder_i_k_ac89b8c0bc37e1832f962682d9655721c}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+IK}!Open\+Script\+Reference@{Open\+Script\+Reference}}
+\index{Open\+Script\+Reference@{Open\+Script\+Reference}!Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+IK}}
+\subsubsection{\texorpdfstring{Open\+Script\+Reference()}{OpenScriptReference()}}
+{\footnotesize\ttfamily override void Root\+Motion.\+Final\+I\+K.\+Grounder\+I\+K.\+Open\+Script\+Reference (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder_a76777e591f7aac441ea52b1b92c41886}{Root\+Motion.\+Final\+I\+K.\+Grounder}}.
+
+
+
+Definition at line 21 of file Grounder\+I\+K.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_grounder_i_k_ae94b6c991b39a6fef2931378121969e7}\label{class_root_motion_1_1_final_i_k_1_1_grounder_i_k_ae94b6c991b39a6fef2931378121969e7}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+IK}!Open\+User\+Manual@{Open\+User\+Manual}}
+\index{Open\+User\+Manual@{Open\+User\+Manual}!Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+IK}}
+\subsubsection{\texorpdfstring{Open\+User\+Manual()}{OpenUserManual()}}
+{\footnotesize\ttfamily override void Root\+Motion.\+Final\+I\+K.\+Grounder\+I\+K.\+Open\+User\+Manual (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder_af214d235ecea1b81ec637b1b61f756cb}{Root\+Motion.\+Final\+I\+K.\+Grounder}}.
+
+
+
+Definition at line 15 of file Grounder\+I\+K.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_grounder_i_k_a4a19512898c60ecd027f535198281b8f}\label{class_root_motion_1_1_final_i_k_1_1_grounder_i_k_a4a19512898c60ecd027f535198281b8f}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+IK}!Reset\+Position@{Reset\+Position}}
+\index{Reset\+Position@{Reset\+Position}!Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+IK}}
+\subsubsection{\texorpdfstring{Reset\+Position()}{ResetPosition()}}
+{\footnotesize\ttfamily override void Root\+Motion.\+Final\+I\+K.\+Grounder\+I\+K.\+Reset\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Resets this \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder}{Grounder}} so characters can be teleported instananeously. 
+
+
+
+Implements \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder_aecbd8b5addf2948f4d5fcd00a1b03314}{Root\+Motion.\+Final\+I\+K.\+Grounder}}.
+
+
+
+Definition at line 60 of file Grounder\+I\+K.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_grounder_i_k_ae1fc0528fd20ffee592ef23b401e980d}\label{class_root_motion_1_1_final_i_k_1_1_grounder_i_k_ae1fc0528fd20ffee592ef23b401e980d}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+IK}!character\+Root@{character\+Root}}
+\index{character\+Root@{character\+Root}!Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+IK}}
+\subsubsection{\texorpdfstring{character\+Root}{characterRoot}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Final\+I\+K.\+Grounder\+I\+K.\+character\+Root}
+
+
+
+The root Transform of the character, with the rigidbody and the collider. 
+
+
+
+Definition at line 40 of file Grounder\+I\+K.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_grounder_i_k_a177f06c63c3b6a925ee8027e0734f7ad}\label{class_root_motion_1_1_final_i_k_1_1_grounder_i_k_a177f06c63c3b6a925ee8027e0734f7ad}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+IK}!legs@{legs}}
+\index{legs@{legs}!Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+IK}}
+\subsubsection{\texorpdfstring{legs}{legs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k}{IK}} \mbox{[}$\,$\mbox{]} Root\+Motion.\+Final\+I\+K.\+Grounder\+I\+K.\+legs}
+
+
+
+The leg IK componets (can be any type of \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k}{IK}} component). 
+
+
+
+Definition at line 30 of file Grounder\+I\+K.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_grounder_i_k_a1baf8bb5d1f32f5277152351c756cbf3}\label{class_root_motion_1_1_final_i_k_1_1_grounder_i_k_a1baf8bb5d1f32f5277152351c756cbf3}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+IK}!max\+Root\+Rotation\+Angle@{max\+Root\+Rotation\+Angle}}
+\index{max\+Root\+Rotation\+Angle@{max\+Root\+Rotation\+Angle}!Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+IK}}
+\subsubsection{\texorpdfstring{max\+Root\+Rotation\+Angle}{maxRootRotationAngle}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+Grounder\+I\+K.\+max\+Root\+Rotation\+Angle = 45f}
+
+
+
+The maximum angle of root rotation (range\+: 0 -\/ 90). 
+
+
+
+Definition at line 56 of file Grounder\+I\+K.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_grounder_i_k_adf8e5899cf94a91d14d5e1439243db82}\label{class_root_motion_1_1_final_i_k_1_1_grounder_i_k_adf8e5899cf94a91d14d5e1439243db82}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+IK}!pelvis@{pelvis}}
+\index{pelvis@{pelvis}!Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+IK}}
+\subsubsection{\texorpdfstring{pelvis}{pelvis}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Final\+I\+K.\+Grounder\+I\+K.\+pelvis}
+
+
+
+The pelvis transform. Common ancestor of all the legs. 
+
+
+
+Definition at line 35 of file Grounder\+I\+K.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_grounder_i_k_a896061f0128f21b00187f9c790a04ec0}\label{class_root_motion_1_1_final_i_k_1_1_grounder_i_k_a896061f0128f21b00187f9c790a04ec0}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+IK}!root\+Rotation\+Speed@{root\+Rotation\+Speed}}
+\index{root\+Rotation\+Speed@{root\+Rotation\+Speed}!Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+IK}}
+\subsubsection{\texorpdfstring{root\+Rotation\+Speed}{rootRotationSpeed}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+Grounder\+I\+K.\+root\+Rotation\+Speed = 5f}
+
+
+
+The speed of rotating the character root to the ground normal (range\+: 0 -\/ inf). 
+
+
+
+Definition at line 51 of file Grounder\+I\+K.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_grounder_i_k_a176e6eeb4faf46b2dd60b200647d121e}\label{class_root_motion_1_1_final_i_k_1_1_grounder_i_k_a176e6eeb4faf46b2dd60b200647d121e}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+IK}!root\+Rotation\+Weight@{root\+Rotation\+Weight}}
+\index{root\+Rotation\+Weight@{root\+Rotation\+Weight}!Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+IK}}
+\subsubsection{\texorpdfstring{root\+Rotation\+Weight}{rootRotationWeight}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+Grounder\+I\+K.\+root\+Rotation\+Weight}
+
+
+
+The weight of rotating the character root to the ground normal (range\+: 0 -\/ 1). 
+
+
+
+Definition at line 46 of file Grounder\+I\+K.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Plugins/\+Root\+Motion/\+Final\+I\+K/\+Grounder/\mbox{\hyperlink{_grounder_i_k_8cs}{Grounder\+I\+K.\+cs}}\end{DoxyCompactItemize}

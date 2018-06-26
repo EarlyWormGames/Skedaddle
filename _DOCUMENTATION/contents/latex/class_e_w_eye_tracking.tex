@@ -1,0 +1,254 @@
+\hypertarget{class_e_w_eye_tracking}{}\section{E\+W\+Eye\+Tracking Class Reference}
+\label{class_e_w_eye_tracking}\index{E\+W\+Eye\+Tracking@{E\+W\+Eye\+Tracking}}
+
+
+EW eye tracking with Tobii  
+
+
+Inheritance diagram for E\+W\+Eye\+Tracking\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_e_w_eye_tracking}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_e_w_eye_tracking_a47461bd1b91c6aacca31b57253249392}{Hold\+Length}} \{ \mbox{\hyperlink{class_e_w_eye_tracking_a47461bd1b91c6aacca31b57253249392ac1fabfea54ec6011e694f211f3ffebf3}{Hold\+Length.\+L\+O\+NG}}, 
+\mbox{\hyperlink{class_e_w_eye_tracking_a47461bd1b91c6aacca31b57253249392aa35c2b02966b1563e5bf7b81b8b0cf77}{Hold\+Length.\+S\+H\+O\+RT}}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_e_w_gaze_object}{E\+W\+Gaze\+Object}} \mbox{\hyperlink{class_e_w_eye_tracking_a54ec9aa86d22af3b318ea940bc3c01cb}{Get\+Focused\+Object}} ()
+\begin{DoxyCompactList}\small\item\em Raycasts for an object \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_e_w_gaze_object}{E\+W\+Gaze\+Object}} \mbox{\hyperlink{class_e_w_eye_tracking_a9771685d37751b6af20d1bfe5ca3dff3}{Get\+Focused\+UI}} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_e_w_eye_tracking_a30bedfa38908a52193c7c6ce130461ea}{m\+\_\+f\+Look\+Time}} = 1.\+5f
+\item 
+float \mbox{\hyperlink{class_e_w_eye_tracking_a47a37230c6b770672d0525c9ce03f968}{m\+\_\+f\+Short\+Look\+Time}} = 0.\+5f
+\item 
+float \mbox{\hyperlink{class_e_w_eye_tracking_aa8454c8a2216b073f86f50e0c2f80400}{m\+\_\+f\+Lerp\+Speed}} = 0.\+5f
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static float \mbox{\hyperlink{class_e_w_eye_tracking_ae2b04e1a210ad9de92b0ac4d4292e19b}{FocusZ}} = 10
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_e_w_eye_tracking_a0f2a94f353f615f9c10721fd2641bdb6}{On\+Awake}} ()
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static Vector2 \mbox{\hyperlink{class_e_w_eye_tracking_a4733f318537a97a2fe9fad575453ad37}{position}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+static Vector3 \mbox{\hyperlink{class_e_w_eye_tracking_ada8347aa7a674825995b36f3df32930f}{world\+Position}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+static bool \mbox{\hyperlink{class_e_w_eye_tracking_a1c2b663231ab1603020b7a76cba1816b}{active}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+static float \mbox{\hyperlink{class_e_w_eye_tracking_a3c926417716c9568a436d368667f7f73}{hold\+Time}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+static float \mbox{\hyperlink{class_e_w_eye_tracking_ac1f3d7023d4ce02779c2012c53c8a834}{short\+Hold\+Time}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+static float \mbox{\hyperlink{class_e_w_eye_tracking_a7d28d1462a5ea4bf3d560ee5f7e8804e}{lerp\+Speed}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+EW eye tracking with Tobii 
+
+
+
+Definition at line 9 of file E\+W\+Eye\+Tracking.\+cs.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_e_w_eye_tracking_a47461bd1b91c6aacca31b57253249392}\label{class_e_w_eye_tracking_a47461bd1b91c6aacca31b57253249392}} 
+\index{E\+W\+Eye\+Tracking@{E\+W\+Eye\+Tracking}!Hold\+Length@{Hold\+Length}}
+\index{Hold\+Length@{Hold\+Length}!E\+W\+Eye\+Tracking@{E\+W\+Eye\+Tracking}}
+\subsubsection{\texorpdfstring{Hold\+Length}{HoldLength}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_e_w_eye_tracking_a47461bd1b91c6aacca31b57253249392}{E\+W\+Eye\+Tracking.\+Hold\+Length}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L\+O\+NG@{L\+O\+NG}!E\+W\+Eye\+Tracking@{E\+W\+Eye\+Tracking}}\index{E\+W\+Eye\+Tracking@{E\+W\+Eye\+Tracking}!L\+O\+NG@{L\+O\+NG}}}\mbox{\Hypertarget{class_e_w_eye_tracking_a47461bd1b91c6aacca31b57253249392ac1fabfea54ec6011e694f211f3ffebf3}\label{class_e_w_eye_tracking_a47461bd1b91c6aacca31b57253249392ac1fabfea54ec6011e694f211f3ffebf3}} 
+L\+O\+NG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+H\+O\+RT@{S\+H\+O\+RT}!E\+W\+Eye\+Tracking@{E\+W\+Eye\+Tracking}}\index{E\+W\+Eye\+Tracking@{E\+W\+Eye\+Tracking}!S\+H\+O\+RT@{S\+H\+O\+RT}}}\mbox{\Hypertarget{class_e_w_eye_tracking_a47461bd1b91c6aacca31b57253249392aa35c2b02966b1563e5bf7b81b8b0cf77}\label{class_e_w_eye_tracking_a47461bd1b91c6aacca31b57253249392aa35c2b02966b1563e5bf7b81b8b0cf77}} 
+S\+H\+O\+RT&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 12 of file E\+W\+Eye\+Tracking.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_e_w_eye_tracking_a54ec9aa86d22af3b318ea940bc3c01cb}\label{class_e_w_eye_tracking_a54ec9aa86d22af3b318ea940bc3c01cb}} 
+\index{E\+W\+Eye\+Tracking@{E\+W\+Eye\+Tracking}!Get\+Focused\+Object@{Get\+Focused\+Object}}
+\index{Get\+Focused\+Object@{Get\+Focused\+Object}!E\+W\+Eye\+Tracking@{E\+W\+Eye\+Tracking}}
+\subsubsection{\texorpdfstring{Get\+Focused\+Object()}{GetFocusedObject()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_e_w_gaze_object}{E\+W\+Gaze\+Object}} E\+W\+Eye\+Tracking.\+Get\+Focused\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Raycasts for an object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+\+Allow\+Family\+Search} & Allow looking for the Gaze Aware script on parents and children?\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 109 of file E\+W\+Eye\+Tracking.\+cs.
+
+\mbox{\Hypertarget{class_e_w_eye_tracking_a9771685d37751b6af20d1bfe5ca3dff3}\label{class_e_w_eye_tracking_a9771685d37751b6af20d1bfe5ca3dff3}} 
+\index{E\+W\+Eye\+Tracking@{E\+W\+Eye\+Tracking}!Get\+Focused\+UI@{Get\+Focused\+UI}}
+\index{Get\+Focused\+UI@{Get\+Focused\+UI}!E\+W\+Eye\+Tracking@{E\+W\+Eye\+Tracking}}
+\subsubsection{\texorpdfstring{Get\+Focused\+U\+I()}{GetFocusedUI()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_e_w_gaze_object}{E\+W\+Gaze\+Object}} E\+W\+Eye\+Tracking.\+Get\+Focused\+UI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 154 of file E\+W\+Eye\+Tracking.\+cs.
+
+\mbox{\Hypertarget{class_e_w_eye_tracking_a0f2a94f353f615f9c10721fd2641bdb6}\label{class_e_w_eye_tracking_a0f2a94f353f615f9c10721fd2641bdb6}} 
+\index{E\+W\+Eye\+Tracking@{E\+W\+Eye\+Tracking}!On\+Awake@{On\+Awake}}
+\index{On\+Awake@{On\+Awake}!E\+W\+Eye\+Tracking@{E\+W\+Eye\+Tracking}}
+\subsubsection{\texorpdfstring{On\+Awake()}{OnAwake()}}
+{\footnotesize\ttfamily override void E\+W\+Eye\+Tracking.\+On\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_singleton_aac558b29781a363c0845b0359c8f85ff}{Singleton$<$ E\+W\+Eye\+Tracking $>$}}.
+
+
+
+Definition at line 79 of file E\+W\+Eye\+Tracking.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_e_w_eye_tracking_ae2b04e1a210ad9de92b0ac4d4292e19b}\label{class_e_w_eye_tracking_ae2b04e1a210ad9de92b0ac4d4292e19b}} 
+\index{E\+W\+Eye\+Tracking@{E\+W\+Eye\+Tracking}!FocusZ@{FocusZ}}
+\index{FocusZ@{FocusZ}!E\+W\+Eye\+Tracking@{E\+W\+Eye\+Tracking}}
+\subsubsection{\texorpdfstring{FocusZ}{FocusZ}}
+{\footnotesize\ttfamily float E\+W\+Eye\+Tracking.\+FocusZ = 10\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 70 of file E\+W\+Eye\+Tracking.\+cs.
+
+\mbox{\Hypertarget{class_e_w_eye_tracking_aa8454c8a2216b073f86f50e0c2f80400}\label{class_e_w_eye_tracking_aa8454c8a2216b073f86f50e0c2f80400}} 
+\index{E\+W\+Eye\+Tracking@{E\+W\+Eye\+Tracking}!m\+\_\+f\+Lerp\+Speed@{m\+\_\+f\+Lerp\+Speed}}
+\index{m\+\_\+f\+Lerp\+Speed@{m\+\_\+f\+Lerp\+Speed}!E\+W\+Eye\+Tracking@{E\+W\+Eye\+Tracking}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Lerp\+Speed}{m\_fLerpSpeed}}
+{\footnotesize\ttfamily float E\+W\+Eye\+Tracking.\+m\+\_\+f\+Lerp\+Speed = 0.\+5f}
+
+
+
+Definition at line 68 of file E\+W\+Eye\+Tracking.\+cs.
+
+\mbox{\Hypertarget{class_e_w_eye_tracking_a30bedfa38908a52193c7c6ce130461ea}\label{class_e_w_eye_tracking_a30bedfa38908a52193c7c6ce130461ea}} 
+\index{E\+W\+Eye\+Tracking@{E\+W\+Eye\+Tracking}!m\+\_\+f\+Look\+Time@{m\+\_\+f\+Look\+Time}}
+\index{m\+\_\+f\+Look\+Time@{m\+\_\+f\+Look\+Time}!E\+W\+Eye\+Tracking@{E\+W\+Eye\+Tracking}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Look\+Time}{m\_fLookTime}}
+{\footnotesize\ttfamily float E\+W\+Eye\+Tracking.\+m\+\_\+f\+Look\+Time = 1.\+5f}
+
+
+
+Definition at line 66 of file E\+W\+Eye\+Tracking.\+cs.
+
+\mbox{\Hypertarget{class_e_w_eye_tracking_a47a37230c6b770672d0525c9ce03f968}\label{class_e_w_eye_tracking_a47a37230c6b770672d0525c9ce03f968}} 
+\index{E\+W\+Eye\+Tracking@{E\+W\+Eye\+Tracking}!m\+\_\+f\+Short\+Look\+Time@{m\+\_\+f\+Short\+Look\+Time}}
+\index{m\+\_\+f\+Short\+Look\+Time@{m\+\_\+f\+Short\+Look\+Time}!E\+W\+Eye\+Tracking@{E\+W\+Eye\+Tracking}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Short\+Look\+Time}{m\_fShortLookTime}}
+{\footnotesize\ttfamily float E\+W\+Eye\+Tracking.\+m\+\_\+f\+Short\+Look\+Time = 0.\+5f}
+
+
+
+Definition at line 67 of file E\+W\+Eye\+Tracking.\+cs.
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_e_w_eye_tracking_a1c2b663231ab1603020b7a76cba1816b}\label{class_e_w_eye_tracking_a1c2b663231ab1603020b7a76cba1816b}} 
+\index{E\+W\+Eye\+Tracking@{E\+W\+Eye\+Tracking}!active@{active}}
+\index{active@{active}!E\+W\+Eye\+Tracking@{E\+W\+Eye\+Tracking}}
+\subsubsection{\texorpdfstring{active}{active}}
+{\footnotesize\ttfamily bool E\+W\+Eye\+Tracking.\+active\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Definition at line 35 of file E\+W\+Eye\+Tracking.\+cs.
+
+\mbox{\Hypertarget{class_e_w_eye_tracking_a3c926417716c9568a436d368667f7f73}\label{class_e_w_eye_tracking_a3c926417716c9568a436d368667f7f73}} 
+\index{E\+W\+Eye\+Tracking@{E\+W\+Eye\+Tracking}!hold\+Time@{hold\+Time}}
+\index{hold\+Time@{hold\+Time}!E\+W\+Eye\+Tracking@{E\+W\+Eye\+Tracking}}
+\subsubsection{\texorpdfstring{hold\+Time}{holdTime}}
+{\footnotesize\ttfamily float E\+W\+Eye\+Tracking.\+hold\+Time\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Definition at line 43 of file E\+W\+Eye\+Tracking.\+cs.
+
+\mbox{\Hypertarget{class_e_w_eye_tracking_a7d28d1462a5ea4bf3d560ee5f7e8804e}\label{class_e_w_eye_tracking_a7d28d1462a5ea4bf3d560ee5f7e8804e}} 
+\index{E\+W\+Eye\+Tracking@{E\+W\+Eye\+Tracking}!lerp\+Speed@{lerp\+Speed}}
+\index{lerp\+Speed@{lerp\+Speed}!E\+W\+Eye\+Tracking@{E\+W\+Eye\+Tracking}}
+\subsubsection{\texorpdfstring{lerp\+Speed}{lerpSpeed}}
+{\footnotesize\ttfamily float E\+W\+Eye\+Tracking.\+lerp\+Speed\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Definition at line 59 of file E\+W\+Eye\+Tracking.\+cs.
+
+\mbox{\Hypertarget{class_e_w_eye_tracking_a4733f318537a97a2fe9fad575453ad37}\label{class_e_w_eye_tracking_a4733f318537a97a2fe9fad575453ad37}} 
+\index{E\+W\+Eye\+Tracking@{E\+W\+Eye\+Tracking}!position@{position}}
+\index{position@{position}!E\+W\+Eye\+Tracking@{E\+W\+Eye\+Tracking}}
+\subsubsection{\texorpdfstring{position}{position}}
+{\footnotesize\ttfamily Vector2 E\+W\+Eye\+Tracking.\+position\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Definition at line 19 of file E\+W\+Eye\+Tracking.\+cs.
+
+\mbox{\Hypertarget{class_e_w_eye_tracking_ac1f3d7023d4ce02779c2012c53c8a834}\label{class_e_w_eye_tracking_ac1f3d7023d4ce02779c2012c53c8a834}} 
+\index{E\+W\+Eye\+Tracking@{E\+W\+Eye\+Tracking}!short\+Hold\+Time@{short\+Hold\+Time}}
+\index{short\+Hold\+Time@{short\+Hold\+Time}!E\+W\+Eye\+Tracking@{E\+W\+Eye\+Tracking}}
+\subsubsection{\texorpdfstring{short\+Hold\+Time}{shortHoldTime}}
+{\footnotesize\ttfamily float E\+W\+Eye\+Tracking.\+short\+Hold\+Time\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Definition at line 51 of file E\+W\+Eye\+Tracking.\+cs.
+
+\mbox{\Hypertarget{class_e_w_eye_tracking_ada8347aa7a674825995b36f3df32930f}\label{class_e_w_eye_tracking_ada8347aa7a674825995b36f3df32930f}} 
+\index{E\+W\+Eye\+Tracking@{E\+W\+Eye\+Tracking}!world\+Position@{world\+Position}}
+\index{world\+Position@{world\+Position}!E\+W\+Eye\+Tracking@{E\+W\+Eye\+Tracking}}
+\subsubsection{\texorpdfstring{world\+Position}{worldPosition}}
+{\footnotesize\ttfamily Vector3 E\+W\+Eye\+Tracking.\+world\+Position\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Definition at line 27 of file E\+W\+Eye\+Tracking.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+System/\mbox{\hyperlink{_e_w_eye_tracking_8cs}{E\+W\+Eye\+Tracking.\+cs}}\end{DoxyCompactItemize}

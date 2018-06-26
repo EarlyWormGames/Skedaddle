@@ -1,0 +1,262 @@
+\hypertarget{class_root_motion_1_1_demos_1_1_v_r_aiming_controller}{}\section{Root\+Motion.\+Demos.\+V\+R\+Aiming\+Controller Class Reference}
+\label{class_root_motion_1_1_demos_1_1_v_r_aiming_controller}\index{Root\+Motion.\+Demos.\+V\+R\+Aiming\+Controller@{Root\+Motion.\+Demos.\+V\+R\+Aiming\+Controller}}
+
+
+Aiming weapons with the O\+VR headset.  
+
+
+Inheritance diagram for Root\+Motion.\+Demos.\+V\+R\+Aiming\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_root_motion_1_1_demos_1_1_v_r_aiming_controller}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_1_1_bone_rotation_offset}{Bone\+Rotation\+Offset}}
+\item 
+struct \mbox{\hyperlink{struct_root_motion_1_1_demos_1_1_v_r_aiming_controller_1_1_targets}{Targets}}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_ab88bf3b4946db8022f1a2049e3fc9399}{Handedness}} \{ \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_ab88bf3b4946db8022f1a2049e3fc9399a92b09c7c48c520c3c55e497875da437c}{Handedness.\+Right}}, 
+\mbox{\hyperlink{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_ab88bf3b4946db8022f1a2049e3fc9399a945d5e233cf7d6240f6b783b36a374ff}{Handedness.\+Left}}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_root_motion_1_1_demos_1_1_v_r_animator_controller}{V\+R\+Animator\+Controller}} \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_a4adf92a8752d112a38b0f7227f41359f}{animator\+Controller}}
+\item 
+\mbox{\hyperlink{class_root_motion_1_1_demos_1_1_weapon_base}{Weapon\+Base}} \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_aeac2a0bfa5586abce0d19104b82b967b}{current\+Weapon}}
+\item 
+float \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_a3165b535b76344b266cea3ec047fd6e5}{weight}} = 1f
+\item 
+float \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_a39e139308adb4666fd7fdc490189a3ed}{spine\+Twist\+Weight}} = 1f
+\item 
+\mbox{\hyperlink{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_ab88bf3b4946db8022f1a2049e3fc9399}{Handedness}} \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_aaf70e369f4b6afc75b0d2fd39b7cd151}{handedness}}
+\item 
+float \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_a573a4f23d1b58d71cf5aae53c1188b37}{side\+Offset}} = 0.\+1f
+\item 
+\mbox{\hyperlink{struct_root_motion_1_1_demos_1_1_v_r_aiming_controller_1_1_targets}{Targets}} \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_ae4024252e08d42e68c70c95eabc83f1a}{left\+Handed\+Targets}}
+\item 
+\mbox{\hyperlink{struct_root_motion_1_1_demos_1_1_v_r_aiming_controller_1_1_targets}{Targets}} \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_a24663be32b395b62fbdb07192c977478}{right\+Handed\+Targets}}
+\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_afa0172fdd1f8cf9ebee12261c514f0b8}{weapons\+Pivot}}
+\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_a98b44bcc95c0f555e09fc2ecd124bef7}{weapons\+Anchor}}
+\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_a3a845b81233fc8f78c93bcc93cb0cfa5}{pivot\+Motion\+Target}}
+\item 
+float \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_ac4aa733d606e1865b387ed2a5c349460}{lerp\+Speed}} = 8f
+\item 
+float \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_a30de092c32466a249e2e2359221e965f}{pivot\+Motion\+Smooth\+Speed}} = 5f
+\item 
+float \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_a9771dbdf7c4900af38a7c8595643e7b5}{pivot\+Motion\+Weight}} = 0.\+5f
+\item 
+float \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_a55e745e29b9c43b7a5622bac7288a378}{aim\+Vertical\+Limit}} = 80f
+\item 
+float \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_a01bdac614d05950b279caa9ee955dbf8}{aimZ}} = 0.\+05f
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Aiming weapons with the O\+VR headset. 
+
+
+
+Definition at line 12 of file V\+R\+Aiming\+Controller.\+cs.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_ab88bf3b4946db8022f1a2049e3fc9399}\label{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_ab88bf3b4946db8022f1a2049e3fc9399}} 
+\index{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller@{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller}!Handedness@{Handedness}}
+\index{Handedness@{Handedness}!Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller@{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller}}
+\subsubsection{\texorpdfstring{Handedness}{Handedness}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_ab88bf3b4946db8022f1a2049e3fc9399}{Root\+Motion.\+Demos.\+V\+R\+Aiming\+Controller.\+Handedness}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Right@{Right}!Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller@{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller}}\index{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller@{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller}!Right@{Right}}}\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_ab88bf3b4946db8022f1a2049e3fc9399a92b09c7c48c520c3c55e497875da437c}\label{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_ab88bf3b4946db8022f1a2049e3fc9399a92b09c7c48c520c3c55e497875da437c}} 
+Right&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Left@{Left}!Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller@{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller}}\index{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller@{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller}!Left@{Left}}}\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_ab88bf3b4946db8022f1a2049e3fc9399a945d5e233cf7d6240f6b783b36a374ff}\label{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_ab88bf3b4946db8022f1a2049e3fc9399a945d5e233cf7d6240f6b783b36a374ff}} 
+Left&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 21 of file V\+R\+Aiming\+Controller.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_a55e745e29b9c43b7a5622bac7288a378}\label{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_a55e745e29b9c43b7a5622bac7288a378}} 
+\index{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller@{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller}!aim\+Vertical\+Limit@{aim\+Vertical\+Limit}}
+\index{aim\+Vertical\+Limit@{aim\+Vertical\+Limit}!Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller@{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller}}
+\subsubsection{\texorpdfstring{aim\+Vertical\+Limit}{aimVerticalLimit}}
+{\footnotesize\ttfamily float Root\+Motion.\+Demos.\+V\+R\+Aiming\+Controller.\+aim\+Vertical\+Limit = 80f}
+
+
+
+Definition at line 70 of file V\+R\+Aiming\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_a01bdac614d05950b279caa9ee955dbf8}\label{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_a01bdac614d05950b279caa9ee955dbf8}} 
+\index{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller@{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller}!aimZ@{aimZ}}
+\index{aimZ@{aimZ}!Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller@{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller}}
+\subsubsection{\texorpdfstring{aimZ}{aimZ}}
+{\footnotesize\ttfamily float Root\+Motion.\+Demos.\+V\+R\+Aiming\+Controller.\+aimZ = 0.\+05f}
+
+
+
+Definition at line 72 of file V\+R\+Aiming\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_a4adf92a8752d112a38b0f7227f41359f}\label{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_a4adf92a8752d112a38b0f7227f41359f}} 
+\index{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller@{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller}!animator\+Controller@{animator\+Controller}}
+\index{animator\+Controller@{animator\+Controller}!Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller@{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller}}
+\subsubsection{\texorpdfstring{animator\+Controller}{animatorController}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_v_r_animator_controller}{V\+R\+Animator\+Controller}} Root\+Motion.\+Demos.\+V\+R\+Aiming\+Controller.\+animator\+Controller}
+
+
+
+Definition at line 33 of file V\+R\+Aiming\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_aeac2a0bfa5586abce0d19104b82b967b}\label{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_aeac2a0bfa5586abce0d19104b82b967b}} 
+\index{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller@{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller}!current\+Weapon@{current\+Weapon}}
+\index{current\+Weapon@{current\+Weapon}!Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller@{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller}}
+\subsubsection{\texorpdfstring{current\+Weapon}{currentWeapon}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_weapon_base}{Weapon\+Base}} Root\+Motion.\+Demos.\+V\+R\+Aiming\+Controller.\+current\+Weapon}
+
+
+
+Definition at line 35 of file V\+R\+Aiming\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_aaf70e369f4b6afc75b0d2fd39b7cd151}\label{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_aaf70e369f4b6afc75b0d2fd39b7cd151}} 
+\index{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller@{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller}!handedness@{handedness}}
+\index{handedness@{handedness}!Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller@{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller}}
+\subsubsection{\texorpdfstring{handedness}{handedness}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_ab88bf3b4946db8022f1a2049e3fc9399}{Handedness}} Root\+Motion.\+Demos.\+V\+R\+Aiming\+Controller.\+handedness}
+
+
+
+Definition at line 48 of file V\+R\+Aiming\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_ae4024252e08d42e68c70c95eabc83f1a}\label{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_ae4024252e08d42e68c70c95eabc83f1a}} 
+\index{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller@{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller}!left\+Handed\+Targets@{left\+Handed\+Targets}}
+\index{left\+Handed\+Targets@{left\+Handed\+Targets}!Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller@{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller}}
+\subsubsection{\texorpdfstring{left\+Handed\+Targets}{leftHandedTargets}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_root_motion_1_1_demos_1_1_v_r_aiming_controller_1_1_targets}{Targets}} Root\+Motion.\+Demos.\+V\+R\+Aiming\+Controller.\+left\+Handed\+Targets}
+
+
+
+Definition at line 52 of file V\+R\+Aiming\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_ac4aa733d606e1865b387ed2a5c349460}\label{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_ac4aa733d606e1865b387ed2a5c349460}} 
+\index{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller@{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller}!lerp\+Speed@{lerp\+Speed}}
+\index{lerp\+Speed@{lerp\+Speed}!Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller@{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller}}
+\subsubsection{\texorpdfstring{lerp\+Speed}{lerpSpeed}}
+{\footnotesize\ttfamily float Root\+Motion.\+Demos.\+V\+R\+Aiming\+Controller.\+lerp\+Speed = 8f}
+
+
+
+Definition at line 64 of file V\+R\+Aiming\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_a30de092c32466a249e2e2359221e965f}\label{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_a30de092c32466a249e2e2359221e965f}} 
+\index{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller@{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller}!pivot\+Motion\+Smooth\+Speed@{pivot\+Motion\+Smooth\+Speed}}
+\index{pivot\+Motion\+Smooth\+Speed@{pivot\+Motion\+Smooth\+Speed}!Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller@{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller}}
+\subsubsection{\texorpdfstring{pivot\+Motion\+Smooth\+Speed}{pivotMotionSmoothSpeed}}
+{\footnotesize\ttfamily float Root\+Motion.\+Demos.\+V\+R\+Aiming\+Controller.\+pivot\+Motion\+Smooth\+Speed = 5f}
+
+
+
+Definition at line 66 of file V\+R\+Aiming\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_a3a845b81233fc8f78c93bcc93cb0cfa5}\label{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_a3a845b81233fc8f78c93bcc93cb0cfa5}} 
+\index{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller@{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller}!pivot\+Motion\+Target@{pivot\+Motion\+Target}}
+\index{pivot\+Motion\+Target@{pivot\+Motion\+Target}!Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller@{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller}}
+\subsubsection{\texorpdfstring{pivot\+Motion\+Target}{pivotMotionTarget}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Demos.\+V\+R\+Aiming\+Controller.\+pivot\+Motion\+Target}
+
+
+
+Definition at line 62 of file V\+R\+Aiming\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_a9771dbdf7c4900af38a7c8595643e7b5}\label{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_a9771dbdf7c4900af38a7c8595643e7b5}} 
+\index{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller@{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller}!pivot\+Motion\+Weight@{pivot\+Motion\+Weight}}
+\index{pivot\+Motion\+Weight@{pivot\+Motion\+Weight}!Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller@{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller}}
+\subsubsection{\texorpdfstring{pivot\+Motion\+Weight}{pivotMotionWeight}}
+{\footnotesize\ttfamily float Root\+Motion.\+Demos.\+V\+R\+Aiming\+Controller.\+pivot\+Motion\+Weight = 0.\+5f}
+
+
+
+Definition at line 68 of file V\+R\+Aiming\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_a24663be32b395b62fbdb07192c977478}\label{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_a24663be32b395b62fbdb07192c977478}} 
+\index{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller@{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller}!right\+Handed\+Targets@{right\+Handed\+Targets}}
+\index{right\+Handed\+Targets@{right\+Handed\+Targets}!Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller@{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller}}
+\subsubsection{\texorpdfstring{right\+Handed\+Targets}{rightHandedTargets}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_root_motion_1_1_demos_1_1_v_r_aiming_controller_1_1_targets}{Targets}} Root\+Motion.\+Demos.\+V\+R\+Aiming\+Controller.\+right\+Handed\+Targets}
+
+
+
+Definition at line 54 of file V\+R\+Aiming\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_a573a4f23d1b58d71cf5aae53c1188b37}\label{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_a573a4f23d1b58d71cf5aae53c1188b37}} 
+\index{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller@{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller}!side\+Offset@{side\+Offset}}
+\index{side\+Offset@{side\+Offset}!Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller@{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller}}
+\subsubsection{\texorpdfstring{side\+Offset}{sideOffset}}
+{\footnotesize\ttfamily float Root\+Motion.\+Demos.\+V\+R\+Aiming\+Controller.\+side\+Offset = 0.\+1f}
+
+
+
+Definition at line 50 of file V\+R\+Aiming\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_a39e139308adb4666fd7fdc490189a3ed}\label{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_a39e139308adb4666fd7fdc490189a3ed}} 
+\index{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller@{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller}!spine\+Twist\+Weight@{spine\+Twist\+Weight}}
+\index{spine\+Twist\+Weight@{spine\+Twist\+Weight}!Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller@{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller}}
+\subsubsection{\texorpdfstring{spine\+Twist\+Weight}{spineTwistWeight}}
+{\footnotesize\ttfamily float Root\+Motion.\+Demos.\+V\+R\+Aiming\+Controller.\+spine\+Twist\+Weight = 1f}
+
+
+
+Definition at line 44 of file V\+R\+Aiming\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_a98b44bcc95c0f555e09fc2ecd124bef7}\label{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_a98b44bcc95c0f555e09fc2ecd124bef7}} 
+\index{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller@{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller}!weapons\+Anchor@{weapons\+Anchor}}
+\index{weapons\+Anchor@{weapons\+Anchor}!Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller@{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller}}
+\subsubsection{\texorpdfstring{weapons\+Anchor}{weaponsAnchor}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Demos.\+V\+R\+Aiming\+Controller.\+weapons\+Anchor}
+
+
+
+Definition at line 60 of file V\+R\+Aiming\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_afa0172fdd1f8cf9ebee12261c514f0b8}\label{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_afa0172fdd1f8cf9ebee12261c514f0b8}} 
+\index{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller@{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller}!weapons\+Pivot@{weapons\+Pivot}}
+\index{weapons\+Pivot@{weapons\+Pivot}!Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller@{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller}}
+\subsubsection{\texorpdfstring{weapons\+Pivot}{weaponsPivot}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Demos.\+V\+R\+Aiming\+Controller.\+weapons\+Pivot}
+
+
+
+Definition at line 58 of file V\+R\+Aiming\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_a3165b535b76344b266cea3ec047fd6e5}\label{class_root_motion_1_1_demos_1_1_v_r_aiming_controller_a3165b535b76344b266cea3ec047fd6e5}} 
+\index{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller@{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller}!weight@{weight}}
+\index{weight@{weight}!Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller@{Root\+Motion\+::\+Demos\+::\+V\+R\+Aiming\+Controller}}
+\subsubsection{\texorpdfstring{weight}{weight}}
+{\footnotesize\ttfamily float Root\+Motion.\+Demos.\+V\+R\+Aiming\+Controller.\+weight = 1f}
+
+
+
+Definition at line 42 of file V\+R\+Aiming\+Controller.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Plugins/\+Root\+Motion/\+Final\+I\+K/\+\_\+\+D\+E\+M\+O\+S/\+Virtual Reality/\+Scripts/\mbox{\hyperlink{_v_r_aiming_controller_8cs}{V\+R\+Aiming\+Controller.\+cs}}\end{DoxyCompactItemize}

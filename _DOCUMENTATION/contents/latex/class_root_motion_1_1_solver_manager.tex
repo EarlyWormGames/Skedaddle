@@ -1,0 +1,150 @@
+\hypertarget{class_root_motion_1_1_solver_manager}{}\section{Root\+Motion.\+Solver\+Manager Class Reference}
+\label{class_root_motion_1_1_solver_manager}\index{Root\+Motion.\+Solver\+Manager@{Root\+Motion.\+Solver\+Manager}}
+
+
+Manages solver initiation and updating  
+
+
+Inheritance diagram for Root\+Motion.\+Solver\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.905830cm]{class_root_motion_1_1_solver_manager}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_root_motion_1_1_solver_manager_a23240e6e1a897a0bb5d646b6c5af659f}{Disable}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{[}D\+E\+P\+R\+E\+C\+A\+T\+ED\mbox{]} Use \char`\"{}enabled = false\char`\"{} instead. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_root_motion_1_1_solver_manager_acabe00dc2ad2b2b805db7ddd3a6c0ed8}{Update\+Solver\+External}} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_root_motion_1_1_solver_manager_a7fc2aab2764fc8e4da5cd714d887801d}{time\+Step}}
+\begin{DoxyCompactList}\small\item\em If zero, will update the solver in every Late\+Update(). Use this for chains that are animated. If $>$ 0, will be used as updating frequency so that the solver will reach its target in the same time on all machines. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_root_motion_1_1_solver_manager_a59c1ad381bba471b13398f8090db6e1a}{fix\+Transforms}} = true
+\begin{DoxyCompactList}\small\item\em If true, will fix all the Transforms used by the solver to their initial state in each Update. This prevents potential problems with unanimated bones and animator culling with a small cost of performance. Not recommended for C\+CD and F\+A\+B\+R\+IK solvers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_root_motion_1_1_solver_manager_abd2008369f3de95712d5748aa4ce6243}{Initiate\+Solver}} ()
+\item 
+virtual void \mbox{\hyperlink{class_root_motion_1_1_solver_manager_ac7a8239a700672570da89d88544a340d}{Update\+Solver}} ()
+\item 
+virtual void \mbox{\hyperlink{class_root_motion_1_1_solver_manager_addb54e92acd91364a9205c5807a42776}{Fix\+Transforms}} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Manages solver initiation and updating 
+
+
+
+Definition at line 9 of file Solver\+Manager.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_solver_manager_a23240e6e1a897a0bb5d646b6c5af659f}\label{class_root_motion_1_1_solver_manager_a23240e6e1a897a0bb5d646b6c5af659f}} 
+\index{Root\+Motion\+::\+Solver\+Manager@{Root\+Motion\+::\+Solver\+Manager}!Disable@{Disable}}
+\index{Disable@{Disable}!Root\+Motion\+::\+Solver\+Manager@{Root\+Motion\+::\+Solver\+Manager}}
+\subsubsection{\texorpdfstring{Disable()}{Disable()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Solver\+Manager.\+Disable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{[}D\+E\+P\+R\+E\+C\+A\+T\+ED\mbox{]} Use \char`\"{}enabled = false\char`\"{} instead. 
+
+
+
+Definition at line 27 of file Solver\+Manager.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_solver_manager_addb54e92acd91364a9205c5807a42776}\label{class_root_motion_1_1_solver_manager_addb54e92acd91364a9205c5807a42776}} 
+\index{Root\+Motion\+::\+Solver\+Manager@{Root\+Motion\+::\+Solver\+Manager}!Fix\+Transforms@{Fix\+Transforms}}
+\index{Fix\+Transforms@{Fix\+Transforms}!Root\+Motion\+::\+Solver\+Manager@{Root\+Motion\+::\+Solver\+Manager}}
+\subsubsection{\texorpdfstring{Fix\+Transforms()}{FixTransforms()}}
+{\footnotesize\ttfamily virtual void Root\+Motion.\+Solver\+Manager.\+Fix\+Transforms (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_finger_rig_ab11b46b8b2c81897b17c451c4c536b1f}{Root\+Motion.\+Final\+I\+K.\+Finger\+Rig}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_biped_i_k_a0fd11761ce3af861bede6abce987608c}{Root\+Motion.\+Final\+I\+K.\+Biped\+IK}}, and \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_ac5d8c4a224b291865a31909a231acf07}{Root\+Motion.\+Final\+I\+K.\+IK}}.
+
+
+
+Definition at line 37 of file Solver\+Manager.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_solver_manager_abd2008369f3de95712d5748aa4ce6243}\label{class_root_motion_1_1_solver_manager_abd2008369f3de95712d5748aa4ce6243}} 
+\index{Root\+Motion\+::\+Solver\+Manager@{Root\+Motion\+::\+Solver\+Manager}!Initiate\+Solver@{Initiate\+Solver}}
+\index{Initiate\+Solver@{Initiate\+Solver}!Root\+Motion\+::\+Solver\+Manager@{Root\+Motion\+::\+Solver\+Manager}}
+\subsubsection{\texorpdfstring{Initiate\+Solver()}{InitiateSolver()}}
+{\footnotesize\ttfamily virtual void Root\+Motion.\+Solver\+Manager.\+Initiate\+Solver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_finger_rig_aa32e72eb590a6e441ed8de3f1ce95655}{Root\+Motion.\+Final\+I\+K.\+Finger\+Rig}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_biped_i_k_aa051dcb53a03e693210670bd530e9acd}{Root\+Motion.\+Final\+I\+K.\+Biped\+IK}}, and \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_a5e26500361f7eb0c6515fa84b9c68e57}{Root\+Motion.\+Final\+I\+K.\+IK}}.
+
+
+
+Definition at line 35 of file Solver\+Manager.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_solver_manager_ac7a8239a700672570da89d88544a340d}\label{class_root_motion_1_1_solver_manager_ac7a8239a700672570da89d88544a340d}} 
+\index{Root\+Motion\+::\+Solver\+Manager@{Root\+Motion\+::\+Solver\+Manager}!Update\+Solver@{Update\+Solver}}
+\index{Update\+Solver@{Update\+Solver}!Root\+Motion\+::\+Solver\+Manager@{Root\+Motion\+::\+Solver\+Manager}}
+\subsubsection{\texorpdfstring{Update\+Solver()}{UpdateSolver()}}
+{\footnotesize\ttfamily virtual void Root\+Motion.\+Solver\+Manager.\+Update\+Solver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_finger_rig_a17665e6e48b665fffb30dfd90f270fca}{Root\+Motion.\+Final\+I\+K.\+Finger\+Rig}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_biped_i_k_a75e17e27c32670ddad2172f03e245632}{Root\+Motion.\+Final\+I\+K.\+Biped\+IK}}, and \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_adec5648de6e1fc9fcbc2de325fc654a2}{Root\+Motion.\+Final\+I\+K.\+IK}}.
+
+
+
+Definition at line 36 of file Solver\+Manager.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_solver_manager_acabe00dc2ad2b2b805db7ddd3a6c0ed8}\label{class_root_motion_1_1_solver_manager_acabe00dc2ad2b2b805db7ddd3a6c0ed8}} 
+\index{Root\+Motion\+::\+Solver\+Manager@{Root\+Motion\+::\+Solver\+Manager}!Update\+Solver\+External@{Update\+Solver\+External}}
+\index{Update\+Solver\+External@{Update\+Solver\+External}!Root\+Motion\+::\+Solver\+Manager@{Root\+Motion\+::\+Solver\+Manager}}
+\subsubsection{\texorpdfstring{Update\+Solver\+External()}{UpdateSolverExternal()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Solver\+Manager.\+Update\+Solver\+External (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 131 of file Solver\+Manager.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_solver_manager_a59c1ad381bba471b13398f8090db6e1a}\label{class_root_motion_1_1_solver_manager_a59c1ad381bba471b13398f8090db6e1a}} 
+\index{Root\+Motion\+::\+Solver\+Manager@{Root\+Motion\+::\+Solver\+Manager}!fix\+Transforms@{fix\+Transforms}}
+\index{fix\+Transforms@{fix\+Transforms}!Root\+Motion\+::\+Solver\+Manager@{Root\+Motion\+::\+Solver\+Manager}}
+\subsubsection{\texorpdfstring{fix\+Transforms}{fixTransforms}}
+{\footnotesize\ttfamily bool Root\+Motion.\+Solver\+Manager.\+fix\+Transforms = true}
+
+
+
+If true, will fix all the Transforms used by the solver to their initial state in each Update. This prevents potential problems with unanimated bones and animator culling with a small cost of performance. Not recommended for C\+CD and F\+A\+B\+R\+IK solvers. 
+
+
+
+Definition at line 22 of file Solver\+Manager.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_solver_manager_a7fc2aab2764fc8e4da5cd714d887801d}\label{class_root_motion_1_1_solver_manager_a7fc2aab2764fc8e4da5cd714d887801d}} 
+\index{Root\+Motion\+::\+Solver\+Manager@{Root\+Motion\+::\+Solver\+Manager}!time\+Step@{time\+Step}}
+\index{time\+Step@{time\+Step}!Root\+Motion\+::\+Solver\+Manager@{Root\+Motion\+::\+Solver\+Manager}}
+\subsubsection{\texorpdfstring{time\+Step}{timeStep}}
+{\footnotesize\ttfamily float Root\+Motion.\+Solver\+Manager.\+time\+Step}
+
+
+
+If zero, will update the solver in every Late\+Update(). Use this for chains that are animated. If $>$ 0, will be used as updating frequency so that the solver will reach its target in the same time on all machines. 
+
+
+
+Definition at line 17 of file Solver\+Manager.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Plugins/\+Root\+Motion/\+Shared Scripts/\mbox{\hyperlink{_solver_manager_8cs}{Solver\+Manager.\+cs}}\end{DoxyCompactItemize}

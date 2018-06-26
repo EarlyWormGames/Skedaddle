@@ -1,0 +1,189 @@
+\hypertarget{class_in_game_g_u_i}{}\section{In\+Game\+G\+UI Class Reference}
+\label{class_in_game_g_u_i}\index{In\+Game\+G\+UI@{In\+Game\+G\+UI}}
+
+
+\mbox{\hyperlink{class_animal}{Animal}} Tag Manager Handles the states of the tags to inform the player of the current status of each animal.  
+
+
+Inheritance diagram for In\+Game\+G\+UI\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_in_game_g_u_i}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_in_game_g_u_i_aeb8c5780050c59cd445fa3281bcdcee6}{Change\+Animal}} (\mbox{\hyperlink{_animal_8cs_a2fa5713399b84d1b88dae9196837af50}{A\+N\+I\+M\+A\+L\+\_\+\+N\+A\+ME}} a\+\_\+name)
+\begin{DoxyCompactList}\small\item\em change the gui based on the Current animal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_in_game_g_u_i_a5b30adb22055f2da74973810a04e10e7}{Start\+Level}} (int a\+\_\+\+Total\+Animals)
+\item 
+void \mbox{\hyperlink{class_in_game_g_u_i_a11794815ae083601d8e81d90cbf8641f}{End\+Level}} (string a\+\_\+level)
+\begin{DoxyCompactList}\small\item\em Reset the animal G\+UI \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_in_game_g_u_i_a4fe29a0f09284e08e713e823b9f5b73f}{Animal\+Enter\+Exit}} (\mbox{\hyperlink{_animal_8cs_a2fa5713399b84d1b88dae9196837af50}{A\+N\+I\+M\+A\+L\+\_\+\+N\+A\+ME}} a\+\_\+name)
+\item 
+void \mbox{\hyperlink{class_in_game_g_u_i_a1fd4667a2bb3474b90738f8e8c8db8c9}{Animal\+Leave\+Exit}} (\mbox{\hyperlink{_animal_8cs_a2fa5713399b84d1b88dae9196837af50}{A\+N\+I\+M\+A\+L\+\_\+\+N\+A\+ME}} a\+\_\+name)
+\item 
+int \mbox{\hyperlink{class_in_game_g_u_i_a83d88a7dd3b94adc2c555f077c852ec6}{Get\+Animal}} (\mbox{\hyperlink{_animal_8cs_a2fa5713399b84d1b88dae9196837af50}{A\+N\+I\+M\+A\+L\+\_\+\+N\+A\+ME}} a\+\_\+name)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_animal_tag}{Animal\+Tag}} \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_in_game_g_u_i_a5f9cd0a6ae4a2ebb4292caa321154d41}{m\+\_\+aa\+Animal\+Tags}}
+\item 
+Color \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_in_game_g_u_i_a695f7ff46144651fde8d49c8803322bc}{m\+\_\+ac\+Colors}} = new Color\mbox{[}4\mbox{]}
+\item 
+Transform \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_in_game_g_u_i_a9b89ef2eec28616bb5c77d8ad9006cb0}{m\+\_\+at\+Target\+Points}}
+\item 
+float \mbox{\hyperlink{class_in_game_g_u_i_a713c3c56cb7dc6c2063d9fa1c50f582f}{m\+\_\+f\+Move\+Speed}} = 15f
+\item 
+float \mbox{\hyperlink{class_in_game_g_u_i_a2324993de9dd4fa25a4ae3d2f86b8a86}{m\+\_\+f\+Colour\+Speed}} = 15f
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{class_animal}{Animal}} Tag Manager Handles the states of the tags to inform the player of the current status of each animal. 
+
+
+
+Definition at line 43 of file In\+Game\+G\+U\+I.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_in_game_g_u_i_a4fe29a0f09284e08e713e823b9f5b73f}\label{class_in_game_g_u_i_a4fe29a0f09284e08e713e823b9f5b73f}} 
+\index{In\+Game\+G\+UI@{In\+Game\+G\+UI}!Animal\+Enter\+Exit@{Animal\+Enter\+Exit}}
+\index{Animal\+Enter\+Exit@{Animal\+Enter\+Exit}!In\+Game\+G\+UI@{In\+Game\+G\+UI}}
+\subsubsection{\texorpdfstring{Animal\+Enter\+Exit()}{AnimalEnterExit()}}
+{\footnotesize\ttfamily void In\+Game\+G\+U\+I.\+Animal\+Enter\+Exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_animal_8cs_a2fa5713399b84d1b88dae9196837af50}{A\+N\+I\+M\+A\+L\+\_\+\+N\+A\+ME}}}]{a\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Definition at line 215 of file In\+Game\+G\+U\+I.\+cs.
+
+\mbox{\Hypertarget{class_in_game_g_u_i_a1fd4667a2bb3474b90738f8e8c8db8c9}\label{class_in_game_g_u_i_a1fd4667a2bb3474b90738f8e8c8db8c9}} 
+\index{In\+Game\+G\+UI@{In\+Game\+G\+UI}!Animal\+Leave\+Exit@{Animal\+Leave\+Exit}}
+\index{Animal\+Leave\+Exit@{Animal\+Leave\+Exit}!In\+Game\+G\+UI@{In\+Game\+G\+UI}}
+\subsubsection{\texorpdfstring{Animal\+Leave\+Exit()}{AnimalLeaveExit()}}
+{\footnotesize\ttfamily void In\+Game\+G\+U\+I.\+Animal\+Leave\+Exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_animal_8cs_a2fa5713399b84d1b88dae9196837af50}{A\+N\+I\+M\+A\+L\+\_\+\+N\+A\+ME}}}]{a\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Definition at line 243 of file In\+Game\+G\+U\+I.\+cs.
+
+\mbox{\Hypertarget{class_in_game_g_u_i_aeb8c5780050c59cd445fa3281bcdcee6}\label{class_in_game_g_u_i_aeb8c5780050c59cd445fa3281bcdcee6}} 
+\index{In\+Game\+G\+UI@{In\+Game\+G\+UI}!Change\+Animal@{Change\+Animal}}
+\index{Change\+Animal@{Change\+Animal}!In\+Game\+G\+UI@{In\+Game\+G\+UI}}
+\subsubsection{\texorpdfstring{Change\+Animal()}{ChangeAnimal()}}
+{\footnotesize\ttfamily void In\+Game\+G\+U\+I.\+Change\+Animal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_animal_8cs_a2fa5713399b84d1b88dae9196837af50}{A\+N\+I\+M\+A\+L\+\_\+\+N\+A\+ME}}}]{a\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+change the gui based on the Current animal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+name} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 170 of file In\+Game\+G\+U\+I.\+cs.
+
+\mbox{\Hypertarget{class_in_game_g_u_i_a11794815ae083601d8e81d90cbf8641f}\label{class_in_game_g_u_i_a11794815ae083601d8e81d90cbf8641f}} 
+\index{In\+Game\+G\+UI@{In\+Game\+G\+UI}!End\+Level@{End\+Level}}
+\index{End\+Level@{End\+Level}!In\+Game\+G\+UI@{In\+Game\+G\+UI}}
+\subsubsection{\texorpdfstring{End\+Level()}{EndLevel()}}
+{\footnotesize\ttfamily void In\+Game\+G\+U\+I.\+End\+Level (\begin{DoxyParamCaption}\item[{string}]{a\+\_\+level }\end{DoxyParamCaption})}
+
+
+
+Reset the animal G\+UI 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+level} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 208 of file In\+Game\+G\+U\+I.\+cs.
+
+\mbox{\Hypertarget{class_in_game_g_u_i_a83d88a7dd3b94adc2c555f077c852ec6}\label{class_in_game_g_u_i_a83d88a7dd3b94adc2c555f077c852ec6}} 
+\index{In\+Game\+G\+UI@{In\+Game\+G\+UI}!Get\+Animal@{Get\+Animal}}
+\index{Get\+Animal@{Get\+Animal}!In\+Game\+G\+UI@{In\+Game\+G\+UI}}
+\subsubsection{\texorpdfstring{Get\+Animal()}{GetAnimal()}}
+{\footnotesize\ttfamily int In\+Game\+G\+U\+I.\+Get\+Animal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_animal_8cs_a2fa5713399b84d1b88dae9196837af50}{A\+N\+I\+M\+A\+L\+\_\+\+N\+A\+ME}}}]{a\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Definition at line 285 of file In\+Game\+G\+U\+I.\+cs.
+
+\mbox{\Hypertarget{class_in_game_g_u_i_a5b30adb22055f2da74973810a04e10e7}\label{class_in_game_g_u_i_a5b30adb22055f2da74973810a04e10e7}} 
+\index{In\+Game\+G\+UI@{In\+Game\+G\+UI}!Start\+Level@{Start\+Level}}
+\index{Start\+Level@{Start\+Level}!In\+Game\+G\+UI@{In\+Game\+G\+UI}}
+\subsubsection{\texorpdfstring{Start\+Level()}{StartLevel()}}
+{\footnotesize\ttfamily void In\+Game\+G\+U\+I.\+Start\+Level (\begin{DoxyParamCaption}\item[{int}]{a\+\_\+\+Total\+Animals }\end{DoxyParamCaption})}
+
+
+
+Definition at line 185 of file In\+Game\+G\+U\+I.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_in_game_g_u_i_a5f9cd0a6ae4a2ebb4292caa321154d41}\label{class_in_game_g_u_i_a5f9cd0a6ae4a2ebb4292caa321154d41}} 
+\index{In\+Game\+G\+UI@{In\+Game\+G\+UI}!m\+\_\+aa\+Animal\+Tags@{m\+\_\+aa\+Animal\+Tags}}
+\index{m\+\_\+aa\+Animal\+Tags@{m\+\_\+aa\+Animal\+Tags}!In\+Game\+G\+UI@{In\+Game\+G\+UI}}
+\subsubsection{\texorpdfstring{m\+\_\+aa\+Animal\+Tags}{m\_aaAnimalTags}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_animal_tag}{Animal\+Tag}} \mbox{[}$\,$\mbox{]} In\+Game\+G\+U\+I.\+m\+\_\+aa\+Animal\+Tags}
+
+
+
+Definition at line 45 of file In\+Game\+G\+U\+I.\+cs.
+
+\mbox{\Hypertarget{class_in_game_g_u_i_a695f7ff46144651fde8d49c8803322bc}\label{class_in_game_g_u_i_a695f7ff46144651fde8d49c8803322bc}} 
+\index{In\+Game\+G\+UI@{In\+Game\+G\+UI}!m\+\_\+ac\+Colors@{m\+\_\+ac\+Colors}}
+\index{m\+\_\+ac\+Colors@{m\+\_\+ac\+Colors}!In\+Game\+G\+UI@{In\+Game\+G\+UI}}
+\subsubsection{\texorpdfstring{m\+\_\+ac\+Colors}{m\_acColors}}
+{\footnotesize\ttfamily Color \mbox{[}$\,$\mbox{]} In\+Game\+G\+U\+I.\+m\+\_\+ac\+Colors = new Color\mbox{[}4\mbox{]}}
+
+
+
+Definition at line 46 of file In\+Game\+G\+U\+I.\+cs.
+
+\mbox{\Hypertarget{class_in_game_g_u_i_a9b89ef2eec28616bb5c77d8ad9006cb0}\label{class_in_game_g_u_i_a9b89ef2eec28616bb5c77d8ad9006cb0}} 
+\index{In\+Game\+G\+UI@{In\+Game\+G\+UI}!m\+\_\+at\+Target\+Points@{m\+\_\+at\+Target\+Points}}
+\index{m\+\_\+at\+Target\+Points@{m\+\_\+at\+Target\+Points}!In\+Game\+G\+UI@{In\+Game\+G\+UI}}
+\subsubsection{\texorpdfstring{m\+\_\+at\+Target\+Points}{m\_atTargetPoints}}
+{\footnotesize\ttfamily Transform \mbox{[}$\,$\mbox{]} In\+Game\+G\+U\+I.\+m\+\_\+at\+Target\+Points}
+
+
+
+Definition at line 48 of file In\+Game\+G\+U\+I.\+cs.
+
+\mbox{\Hypertarget{class_in_game_g_u_i_a2324993de9dd4fa25a4ae3d2f86b8a86}\label{class_in_game_g_u_i_a2324993de9dd4fa25a4ae3d2f86b8a86}} 
+\index{In\+Game\+G\+UI@{In\+Game\+G\+UI}!m\+\_\+f\+Colour\+Speed@{m\+\_\+f\+Colour\+Speed}}
+\index{m\+\_\+f\+Colour\+Speed@{m\+\_\+f\+Colour\+Speed}!In\+Game\+G\+UI@{In\+Game\+G\+UI}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Colour\+Speed}{m\_fColourSpeed}}
+{\footnotesize\ttfamily float In\+Game\+G\+U\+I.\+m\+\_\+f\+Colour\+Speed = 15f}
+
+
+
+Definition at line 50 of file In\+Game\+G\+U\+I.\+cs.
+
+\mbox{\Hypertarget{class_in_game_g_u_i_a713c3c56cb7dc6c2063d9fa1c50f582f}\label{class_in_game_g_u_i_a713c3c56cb7dc6c2063d9fa1c50f582f}} 
+\index{In\+Game\+G\+UI@{In\+Game\+G\+UI}!m\+\_\+f\+Move\+Speed@{m\+\_\+f\+Move\+Speed}}
+\index{m\+\_\+f\+Move\+Speed@{m\+\_\+f\+Move\+Speed}!In\+Game\+G\+UI@{In\+Game\+G\+UI}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Move\+Speed}{m\_fMoveSpeed}}
+{\footnotesize\ttfamily float In\+Game\+G\+U\+I.\+m\+\_\+f\+Move\+Speed = 15f}
+
+
+
+Definition at line 49 of file In\+Game\+G\+U\+I.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+G\+U\+I/\mbox{\hyperlink{_in_game_g_u_i_8cs}{In\+Game\+G\+U\+I.\+cs}}\end{DoxyCompactItemize}

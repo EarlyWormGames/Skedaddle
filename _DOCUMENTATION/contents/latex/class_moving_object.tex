@@ -1,0 +1,254 @@
+\hypertarget{class_moving_object}{}\section{Moving\+Object Class Reference}
+\label{class_moving_object}\index{Moving\+Object@{Moving\+Object}}
+
+
+An Object that can be interacted and moved  
+
+
+Inheritance diagram for Moving\+Object\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_moving_object}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_moving_object_a13f0299fb3749abeb0eb0ed4fd583036}{Move}} (bool forward)
+\begin{DoxyCompactList}\small\item\em Begin movement, starting at 0 (or inverse percentage of current time) \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_moving_object_aebfe91fa850bfb3daecb1475f14fdbb0}{Move}} ()
+\begin{DoxyCompactList}\small\item\em Begin movement, starting at 0 (or inverse percentage of current time), and switch direction \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_moving_object_a6c96ef69cae2a5820addbe6d09e3a7d6}{Stop}} ()
+\begin{DoxyCompactList}\small\item\em Stop movement \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_moving_object_ad6bfc4de0d0a787cc7ee22f592f8969f}{Play}} ()
+\begin{DoxyCompactList}\small\item\em Begin/continue to move in the current direction at the current time \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_moving_object_a2430d5f8025716d6363ed0098f869604}{Speed}} = 1
+\item 
+Animation\+Curve \mbox{\hyperlink{class_moving_object_a8c09cee080e7bc79f13f0efef14ff544}{Moving\+Curve}} = Animation\+Curve.\+Ease\+In\+Out(0, 0, 1, 1)
+\item 
+Unity\+Event \mbox{\hyperlink{class_moving_object_a4a63d850725f5e7e2f2ac3b9ab24d3d3}{Forward\+End}}
+\item 
+Unity\+Event \mbox{\hyperlink{class_moving_object_a0de14b03f3e49dad9b1904313d801f93}{Backward\+End}}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_moving_object_a17c2c8f8e720dc68bf25c0abc59bf5f9}{On\+Start}} ()
+\begin{DoxyCompactList}\small\item\em Allows for child/parent classes to still call Start properly \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_moving_object_a81a2c65568d818f0f3a43c7e37b4fd02}{On\+Update}} ()
+\begin{DoxyCompactList}\small\item\em For generic update usage (animations etc) \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_moving_object_a3ee062f4d319649a0006bc58a9d7a620}{Do\+Slide}} (float time)
+\begin{DoxyCompactList}\small\item\em Called for every frame the object is moving \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_moving_object_aecd5303443cf8969680edd8bffa34983}{is\+Lerping}}
+\item 
+float \mbox{\hyperlink{class_moving_object_aa38641f63fcfb4328378d7d34944b970}{lerp\+Timer}} = 0
+\item 
+bool \mbox{\hyperlink{class_moving_object_a9d2e223a1ea594a5fbec6e79387c1d3c}{moving\+Forward}} = true
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An Object that can be interacted and moved 
+
+
+
+Definition at line 11 of file Moving\+Object.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_moving_object_a3ee062f4d319649a0006bc58a9d7a620}\label{class_moving_object_a3ee062f4d319649a0006bc58a9d7a620}} 
+\index{Moving\+Object@{Moving\+Object}!Do\+Slide@{Do\+Slide}}
+\index{Do\+Slide@{Do\+Slide}!Moving\+Object@{Moving\+Object}}
+\subsubsection{\texorpdfstring{Do\+Slide()}{DoSlide()}}
+{\footnotesize\ttfamily virtual bool Moving\+Object.\+Do\+Slide (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Called for every frame the object is moving 
+
+
+
+Reimplemented in \mbox{\hyperlink{class_sweeping_slider_ac2a74d4cc8483404f577f51aef02589e}{Sweeping\+Slider}}, \mbox{\hyperlink{class_rotating_object_ac1d4caba5c9e39d48195c8b1bc1eb9d0}{Rotating\+Object}}, and \mbox{\hyperlink{class_sliding_object_a5da98cd763d752b6a7378d181b35f3d0}{Sliding\+Object}}.
+
+
+
+Definition at line 71 of file Moving\+Object.\+cs.
+
+\mbox{\Hypertarget{class_moving_object_a13f0299fb3749abeb0eb0ed4fd583036}\label{class_moving_object_a13f0299fb3749abeb0eb0ed4fd583036}} 
+\index{Moving\+Object@{Moving\+Object}!Move@{Move}}
+\index{Move@{Move}!Moving\+Object@{Moving\+Object}}
+\subsubsection{\texorpdfstring{Move()}{Move()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Moving\+Object.\+Move (\begin{DoxyParamCaption}\item[{bool}]{forward }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Begin movement, starting at 0 (or inverse percentage of current time) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em forward} & The direction to move in\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 80 of file Moving\+Object.\+cs.
+
+\mbox{\Hypertarget{class_moving_object_aebfe91fa850bfb3daecb1475f14fdbb0}\label{class_moving_object_aebfe91fa850bfb3daecb1475f14fdbb0}} 
+\index{Moving\+Object@{Moving\+Object}!Move@{Move}}
+\index{Move@{Move}!Moving\+Object@{Moving\+Object}}
+\subsubsection{\texorpdfstring{Move()}{Move()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Moving\+Object.\+Move (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Begin movement, starting at 0 (or inverse percentage of current time), and switch direction 
+
+
+
+Definition at line 94 of file Moving\+Object.\+cs.
+
+\mbox{\Hypertarget{class_moving_object_a17c2c8f8e720dc68bf25c0abc59bf5f9}\label{class_moving_object_a17c2c8f8e720dc68bf25c0abc59bf5f9}} 
+\index{Moving\+Object@{Moving\+Object}!On\+Start@{On\+Start}}
+\index{On\+Start@{On\+Start}!Moving\+Object@{Moving\+Object}}
+\subsubsection{\texorpdfstring{On\+Start()}{OnStart()}}
+{\footnotesize\ttfamily virtual void Moving\+Object.\+On\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Allows for child/parent classes to still call Start properly 
+
+
+
+Reimplemented in \mbox{\hyperlink{class_sweeping_slider_a333d1088bd5ef48fe770e43527f75c49}{Sweeping\+Slider}}.
+
+
+
+Definition at line 61 of file Moving\+Object.\+cs.
+
+\mbox{\Hypertarget{class_moving_object_a81a2c65568d818f0f3a43c7e37b4fd02}\label{class_moving_object_a81a2c65568d818f0f3a43c7e37b4fd02}} 
+\index{Moving\+Object@{Moving\+Object}!On\+Update@{On\+Update}}
+\index{On\+Update@{On\+Update}!Moving\+Object@{Moving\+Object}}
+\subsubsection{\texorpdfstring{On\+Update()}{OnUpdate()}}
+{\footnotesize\ttfamily virtual void Moving\+Object.\+On\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+For generic update usage (animations etc) 
+
+
+
+Definition at line 66 of file Moving\+Object.\+cs.
+
+\mbox{\Hypertarget{class_moving_object_ad6bfc4de0d0a787cc7ee22f592f8969f}\label{class_moving_object_ad6bfc4de0d0a787cc7ee22f592f8969f}} 
+\index{Moving\+Object@{Moving\+Object}!Play@{Play}}
+\index{Play@{Play}!Moving\+Object@{Moving\+Object}}
+\subsubsection{\texorpdfstring{Play()}{Play()}}
+{\footnotesize\ttfamily virtual void Moving\+Object.\+Play (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Begin/continue to move in the current direction at the current time 
+
+
+
+Definition at line 112 of file Moving\+Object.\+cs.
+
+\mbox{\Hypertarget{class_moving_object_a6c96ef69cae2a5820addbe6d09e3a7d6}\label{class_moving_object_a6c96ef69cae2a5820addbe6d09e3a7d6}} 
+\index{Moving\+Object@{Moving\+Object}!Stop@{Stop}}
+\index{Stop@{Stop}!Moving\+Object@{Moving\+Object}}
+\subsubsection{\texorpdfstring{Stop()}{Stop()}}
+{\footnotesize\ttfamily virtual void Moving\+Object.\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Stop movement 
+
+
+
+Definition at line 104 of file Moving\+Object.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_moving_object_a0de14b03f3e49dad9b1904313d801f93}\label{class_moving_object_a0de14b03f3e49dad9b1904313d801f93}} 
+\index{Moving\+Object@{Moving\+Object}!Backward\+End@{Backward\+End}}
+\index{Backward\+End@{Backward\+End}!Moving\+Object@{Moving\+Object}}
+\subsubsection{\texorpdfstring{Backward\+End}{BackwardEnd}}
+{\footnotesize\ttfamily Unity\+Event Moving\+Object.\+Backward\+End}
+
+
+
+Definition at line 18 of file Moving\+Object.\+cs.
+
+\mbox{\Hypertarget{class_moving_object_a4a63d850725f5e7e2f2ac3b9ab24d3d3}\label{class_moving_object_a4a63d850725f5e7e2f2ac3b9ab24d3d3}} 
+\index{Moving\+Object@{Moving\+Object}!Forward\+End@{Forward\+End}}
+\index{Forward\+End@{Forward\+End}!Moving\+Object@{Moving\+Object}}
+\subsubsection{\texorpdfstring{Forward\+End}{ForwardEnd}}
+{\footnotesize\ttfamily Unity\+Event Moving\+Object.\+Forward\+End}
+
+
+
+Definition at line 17 of file Moving\+Object.\+cs.
+
+\mbox{\Hypertarget{class_moving_object_aecd5303443cf8969680edd8bffa34983}\label{class_moving_object_aecd5303443cf8969680edd8bffa34983}} 
+\index{Moving\+Object@{Moving\+Object}!is\+Lerping@{is\+Lerping}}
+\index{is\+Lerping@{is\+Lerping}!Moving\+Object@{Moving\+Object}}
+\subsubsection{\texorpdfstring{is\+Lerping}{isLerping}}
+{\footnotesize\ttfamily bool Moving\+Object.\+is\+Lerping\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 20 of file Moving\+Object.\+cs.
+
+\mbox{\Hypertarget{class_moving_object_aa38641f63fcfb4328378d7d34944b970}\label{class_moving_object_aa38641f63fcfb4328378d7d34944b970}} 
+\index{Moving\+Object@{Moving\+Object}!lerp\+Timer@{lerp\+Timer}}
+\index{lerp\+Timer@{lerp\+Timer}!Moving\+Object@{Moving\+Object}}
+\subsubsection{\texorpdfstring{lerp\+Timer}{lerpTimer}}
+{\footnotesize\ttfamily float Moving\+Object.\+lerp\+Timer = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 21 of file Moving\+Object.\+cs.
+
+\mbox{\Hypertarget{class_moving_object_a8c09cee080e7bc79f13f0efef14ff544}\label{class_moving_object_a8c09cee080e7bc79f13f0efef14ff544}} 
+\index{Moving\+Object@{Moving\+Object}!Moving\+Curve@{Moving\+Curve}}
+\index{Moving\+Curve@{Moving\+Curve}!Moving\+Object@{Moving\+Object}}
+\subsubsection{\texorpdfstring{Moving\+Curve}{MovingCurve}}
+{\footnotesize\ttfamily Animation\+Curve Moving\+Object.\+Moving\+Curve = Animation\+Curve.\+Ease\+In\+Out(0, 0, 1, 1)}
+
+
+
+Definition at line 15 of file Moving\+Object.\+cs.
+
+\mbox{\Hypertarget{class_moving_object_a9d2e223a1ea594a5fbec6e79387c1d3c}\label{class_moving_object_a9d2e223a1ea594a5fbec6e79387c1d3c}} 
+\index{Moving\+Object@{Moving\+Object}!moving\+Forward@{moving\+Forward}}
+\index{moving\+Forward@{moving\+Forward}!Moving\+Object@{Moving\+Object}}
+\subsubsection{\texorpdfstring{moving\+Forward}{movingForward}}
+{\footnotesize\ttfamily bool Moving\+Object.\+moving\+Forward = true\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 22 of file Moving\+Object.\+cs.
+
+\mbox{\Hypertarget{class_moving_object_a2430d5f8025716d6363ed0098f869604}\label{class_moving_object_a2430d5f8025716d6363ed0098f869604}} 
+\index{Moving\+Object@{Moving\+Object}!Speed@{Speed}}
+\index{Speed@{Speed}!Moving\+Object@{Moving\+Object}}
+\subsubsection{\texorpdfstring{Speed}{Speed}}
+{\footnotesize\ttfamily float Moving\+Object.\+Speed = 1}
+
+
+
+Definition at line 14 of file Moving\+Object.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Interactables/\+Other/\mbox{\hyperlink{_moving_object_8cs}{Moving\+Object.\+cs}}\end{DoxyCompactItemize}

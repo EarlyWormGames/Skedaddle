@@ -1,0 +1,166 @@
+\hypertarget{class_root_motion_1_1_demos_1_1_animation_warping}{}\section{Root\+Motion.\+Demos.\+Animation\+Warping Class Reference}
+\label{class_root_motion_1_1_demos_1_1_animation_warping}\index{Root\+Motion.\+Demos.\+Animation\+Warping@{Root\+Motion.\+Demos.\+Animation\+Warping}}
+
+
+Warping an effector from animation space to world space. The weight curve of the warp is used to add the offset from \char`\"{}\+Warp From\char`\"{} to \char`\"{}\+Warp To\char`\"{} to the effector. \char`\"{}\+Warp From\char`\"{} should be a Transform parented to the root of the character, hence in animation space (virtual position where a soccer player\textquotesingle{}s foot hits the ball in the animation). \char`\"{}\+Warp To\char`\"{} should be a Transform in the world space (the actual ball).  
+
+
+Inheritance diagram for Root\+Motion.\+Demos.\+Animation\+Warping\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_root_motion_1_1_demos_1_1_animation_warping}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_root_motion_1_1_demos_1_1_animation_warping_1_1_warp}{Warp}}
+\begin{DoxyCompactList}\small\item\em Definition of a warp from \textquotesingle{}warp\+From\textquotesingle{} to \textquotesingle{}warp\+To\textquotesingle{} by normalized time of the animation \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_animation_warping_a123d7f3cfdbea0d8a48c0d4e0e36a155}{Effector\+Mode}} \{ \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_animation_warping_a123d7f3cfdbea0d8a48c0d4e0e36a155a6def4b21a10fbf438bd93e1d6e24a195}{Effector\+Mode.\+Position\+Offset}}, 
+\mbox{\hyperlink{class_root_motion_1_1_demos_1_1_animation_warping_a123d7f3cfdbea0d8a48c0d4e0e36a155a52f5e0bc3859bc5f5e25130b6c7e8881}{Effector\+Mode.\+Position}}
+ \}
+\begin{DoxyCompactList}\small\item\em Using effector.\+position\+Offset or effector.\+position with effector.\+position\+Weight? \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_animation_warping_a4f658892face38fd94d60ba335d64eb5}{Get\+Warp\+Weight}} (int warp\+Index)
+\begin{DoxyCompactList}\small\item\em Gets the current warping weight of the warp at the specified index. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Animator \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_animation_warping_a5edb4d00881529f02f3d3a1762623faf}{animator}}
+\item 
+\mbox{\hyperlink{class_root_motion_1_1_demos_1_1_animation_warping_a123d7f3cfdbea0d8a48c0d4e0e36a155}{Effector\+Mode}} \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_animation_warping_a160f79a0790fd5c05990de76009e886e}{effector\+Mode}}
+\item 
+\mbox{\hyperlink{struct_root_motion_1_1_demos_1_1_animation_warping_1_1_warp}{Warp}} \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_animation_warping_a30d3516c1cfcca70655566cfa0fa1e1d}{warps}}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_animation_warping_a241d2322b0ebf23fac16d77ee0c632ed}{Start}} ()
+\item 
+override void \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_animation_warping_adae5cbd4af0d90ea0084eb5c0c689dc7}{On\+Modify\+Offset}} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Warping an effector from animation space to world space. The weight curve of the warp is used to add the offset from \char`\"{}\+Warp From\char`\"{} to \char`\"{}\+Warp To\char`\"{} to the effector. \char`\"{}\+Warp From\char`\"{} should be a Transform parented to the root of the character, hence in animation space (virtual position where a soccer player\textquotesingle{}s foot hits the ball in the animation). \char`\"{}\+Warp To\char`\"{} should be a Transform in the world space (the actual ball). 
+
+
+
+Definition at line 13 of file Animation\+Warping.\+cs.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_animation_warping_a123d7f3cfdbea0d8a48c0d4e0e36a155}\label{class_root_motion_1_1_demos_1_1_animation_warping_a123d7f3cfdbea0d8a48c0d4e0e36a155}} 
+\index{Root\+Motion\+::\+Demos\+::\+Animation\+Warping@{Root\+Motion\+::\+Demos\+::\+Animation\+Warping}!Effector\+Mode@{Effector\+Mode}}
+\index{Effector\+Mode@{Effector\+Mode}!Root\+Motion\+::\+Demos\+::\+Animation\+Warping@{Root\+Motion\+::\+Demos\+::\+Animation\+Warping}}
+\subsubsection{\texorpdfstring{Effector\+Mode}{EffectorMode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_animation_warping_a123d7f3cfdbea0d8a48c0d4e0e36a155}{Root\+Motion.\+Demos.\+Animation\+Warping.\+Effector\+Mode}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Using effector.\+position\+Offset or effector.\+position with effector.\+position\+Weight? 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Position\+Offset@{Position\+Offset}!Root\+Motion\+::\+Demos\+::\+Animation\+Warping@{Root\+Motion\+::\+Demos\+::\+Animation\+Warping}}\index{Root\+Motion\+::\+Demos\+::\+Animation\+Warping@{Root\+Motion\+::\+Demos\+::\+Animation\+Warping}!Position\+Offset@{Position\+Offset}}}\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_animation_warping_a123d7f3cfdbea0d8a48c0d4e0e36a155a6def4b21a10fbf438bd93e1d6e24a195}\label{class_root_motion_1_1_demos_1_1_animation_warping_a123d7f3cfdbea0d8a48c0d4e0e36a155a6def4b21a10fbf438bd93e1d6e24a195}} 
+Position\+Offset&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Position@{Position}!Root\+Motion\+::\+Demos\+::\+Animation\+Warping@{Root\+Motion\+::\+Demos\+::\+Animation\+Warping}}\index{Root\+Motion\+::\+Demos\+::\+Animation\+Warping@{Root\+Motion\+::\+Demos\+::\+Animation\+Warping}!Position@{Position}}}\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_animation_warping_a123d7f3cfdbea0d8a48c0d4e0e36a155a52f5e0bc3859bc5f5e25130b6c7e8881}\label{class_root_motion_1_1_demos_1_1_animation_warping_a123d7f3cfdbea0d8a48c0d4e0e36a155a52f5e0bc3859bc5f5e25130b6c7e8881}} 
+Position&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 38 of file Animation\+Warping.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_animation_warping_a4f658892face38fd94d60ba335d64eb5}\label{class_root_motion_1_1_demos_1_1_animation_warping_a4f658892face38fd94d60ba335d64eb5}} 
+\index{Root\+Motion\+::\+Demos\+::\+Animation\+Warping@{Root\+Motion\+::\+Demos\+::\+Animation\+Warping}!Get\+Warp\+Weight@{Get\+Warp\+Weight}}
+\index{Get\+Warp\+Weight@{Get\+Warp\+Weight}!Root\+Motion\+::\+Demos\+::\+Animation\+Warping@{Root\+Motion\+::\+Demos\+::\+Animation\+Warping}}
+\subsubsection{\texorpdfstring{Get\+Warp\+Weight()}{GetWarpWeight()}}
+{\footnotesize\ttfamily float Root\+Motion.\+Demos.\+Animation\+Warping.\+Get\+Warp\+Weight (\begin{DoxyParamCaption}\item[{int}]{warp\+Index }\end{DoxyParamCaption})}
+
+
+
+Gets the current warping weight of the warp at the specified index. 
+
+
+
+Definition at line 64 of file Animation\+Warping.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_animation_warping_adae5cbd4af0d90ea0084eb5c0c689dc7}\label{class_root_motion_1_1_demos_1_1_animation_warping_adae5cbd4af0d90ea0084eb5c0c689dc7}} 
+\index{Root\+Motion\+::\+Demos\+::\+Animation\+Warping@{Root\+Motion\+::\+Demos\+::\+Animation\+Warping}!On\+Modify\+Offset@{On\+Modify\+Offset}}
+\index{On\+Modify\+Offset@{On\+Modify\+Offset}!Root\+Motion\+::\+Demos\+::\+Animation\+Warping@{Root\+Motion\+::\+Demos\+::\+Animation\+Warping}}
+\subsubsection{\texorpdfstring{On\+Modify\+Offset()}{OnModifyOffset()}}
+{\footnotesize\ttfamily override void Root\+Motion.\+Demos.\+Animation\+Warping.\+On\+Modify\+Offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_offset_modifier_a777e9ffb4afca3d8647959a79a1120bb}{Root\+Motion.\+Final\+I\+K.\+Offset\+Modifier}}.
+
+
+
+Definition at line 89 of file Animation\+Warping.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_animation_warping_a241d2322b0ebf23fac16d77ee0c632ed}\label{class_root_motion_1_1_demos_1_1_animation_warping_a241d2322b0ebf23fac16d77ee0c632ed}} 
+\index{Root\+Motion\+::\+Demos\+::\+Animation\+Warping@{Root\+Motion\+::\+Demos\+::\+Animation\+Warping}!Start@{Start}}
+\index{Start@{Start}!Root\+Motion\+::\+Demos\+::\+Animation\+Warping@{Root\+Motion\+::\+Demos\+::\+Animation\+Warping}}
+\subsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily override void Root\+Motion.\+Demos.\+Animation\+Warping.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_offset_modifier_a10d007a731b89218a14935a09552cb77}{Root\+Motion.\+Final\+I\+K.\+Offset\+Modifier}}.
+
+
+
+Definition at line 55 of file Animation\+Warping.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_animation_warping_a5edb4d00881529f02f3d3a1762623faf}\label{class_root_motion_1_1_demos_1_1_animation_warping_a5edb4d00881529f02f3d3a1762623faf}} 
+\index{Root\+Motion\+::\+Demos\+::\+Animation\+Warping@{Root\+Motion\+::\+Demos\+::\+Animation\+Warping}!animator@{animator}}
+\index{animator@{animator}!Root\+Motion\+::\+Demos\+::\+Animation\+Warping@{Root\+Motion\+::\+Demos\+::\+Animation\+Warping}}
+\subsubsection{\texorpdfstring{animator}{animator}}
+{\footnotesize\ttfamily Animator Root\+Motion.\+Demos.\+Animation\+Warping.\+animator}
+
+
+
+Definition at line 44 of file Animation\+Warping.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_animation_warping_a160f79a0790fd5c05990de76009e886e}\label{class_root_motion_1_1_demos_1_1_animation_warping_a160f79a0790fd5c05990de76009e886e}} 
+\index{Root\+Motion\+::\+Demos\+::\+Animation\+Warping@{Root\+Motion\+::\+Demos\+::\+Animation\+Warping}!effector\+Mode@{effector\+Mode}}
+\index{effector\+Mode@{effector\+Mode}!Root\+Motion\+::\+Demos\+::\+Animation\+Warping@{Root\+Motion\+::\+Demos\+::\+Animation\+Warping}}
+\subsubsection{\texorpdfstring{effector\+Mode}{effectorMode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_animation_warping_a123d7f3cfdbea0d8a48c0d4e0e36a155}{Effector\+Mode}} Root\+Motion.\+Demos.\+Animation\+Warping.\+effector\+Mode}
+
+
+
+Definition at line 47 of file Animation\+Warping.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_animation_warping_a30d3516c1cfcca70655566cfa0fa1e1d}\label{class_root_motion_1_1_demos_1_1_animation_warping_a30d3516c1cfcca70655566cfa0fa1e1d}} 
+\index{Root\+Motion\+::\+Demos\+::\+Animation\+Warping@{Root\+Motion\+::\+Demos\+::\+Animation\+Warping}!warps@{warps}}
+\index{warps@{warps}!Root\+Motion\+::\+Demos\+::\+Animation\+Warping@{Root\+Motion\+::\+Demos\+::\+Animation\+Warping}}
+\subsubsection{\texorpdfstring{warps}{warps}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_root_motion_1_1_demos_1_1_animation_warping_1_1_warp}{Warp}} \mbox{[}$\,$\mbox{]} Root\+Motion.\+Demos.\+Animation\+Warping.\+warps}
+
+
+
+Definition at line 51 of file Animation\+Warping.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Plugins/\+Root\+Motion/\+Final\+I\+K/\+\_\+\+D\+E\+M\+O\+S/\+F\+B\+B\+I\+K/\+Scripts/\mbox{\hyperlink{_animation_warping_8cs}{Animation\+Warping.\+cs}}\end{DoxyCompactItemize}

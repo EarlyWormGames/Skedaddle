@@ -1,0 +1,100 @@
+\hypertarget{class_root_motion_1_1_final_i_k_1_1_aim_poser}{}\section{Root\+Motion.\+Final\+I\+K.\+Aim\+Poser Class Reference}
+\label{class_root_motion_1_1_final_i_k_1_1_aim_poser}\index{Root\+Motion.\+Final\+I\+K.\+Aim\+Poser@{Root\+Motion.\+Final\+I\+K.\+Aim\+Poser}}
+
+
+Aim \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_poser}{Poser}} returns a reference by direction.  
+
+
+Inheritance diagram for Root\+Motion.\+Final\+I\+K.\+Aim\+Poser\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_root_motion_1_1_final_i_k_1_1_aim_poser}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_aim_poser_1_1_pose}{Pose}}
+\begin{DoxyCompactList}\small\item\em the pose definition \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_aim_poser_1_1_pose}{Pose}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_aim_poser_a2e38d4b0d15b8076dd44e5a08890504a}{Get\+Pose}} (Vector3 local\+Direction)
+\begin{DoxyCompactList}\small\item\em Gets the pose by direction. Get\+Pose will go through the poses array and return the first pose that has the direction in range. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_aim_poser_a4b925153c05eef6cb1ff51a8c90c8989}{Set\+Pose\+Active}} (\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_aim_poser_1_1_pose}{Pose}} pose)
+\begin{DoxyCompactList}\small\item\em Sets the pose active, increasing it\textquotesingle{}s angle buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_aim_poser_a5b51cba6cf04c2983261e550f1ef7a72}{angle\+Buffer}} = 5f
+\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_aim_poser_1_1_pose}{Pose}} \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_aim_poser_a84ae0b6317b0209189ff41317a968bce}{poses}} = new \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_aim_poser_1_1_pose}{Pose}}\mbox{[}0\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Aim \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_poser}{Poser}} returns a reference by direction. 
+
+
+
+Definition at line 10 of file Aim\+Poser.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_aim_poser_a2e38d4b0d15b8076dd44e5a08890504a}\label{class_root_motion_1_1_final_i_k_1_1_aim_poser_a2e38d4b0d15b8076dd44e5a08890504a}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Aim\+Poser@{Root\+Motion\+::\+Final\+I\+K\+::\+Aim\+Poser}!Get\+Pose@{Get\+Pose}}
+\index{Get\+Pose@{Get\+Pose}!Root\+Motion\+::\+Final\+I\+K\+::\+Aim\+Poser@{Root\+Motion\+::\+Final\+I\+K\+::\+Aim\+Poser}}
+\subsubsection{\texorpdfstring{Get\+Pose()}{GetPose()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_aim_poser_1_1_pose}{Pose}} Root\+Motion.\+Final\+I\+K.\+Aim\+Poser.\+Get\+Pose (\begin{DoxyParamCaption}\item[{Vector3}]{local\+Direction }\end{DoxyParamCaption})}
+
+
+
+Gets the pose by direction. Get\+Pose will go through the poses array and return the first pose that has the direction in range. 
+
+
+
+Definition at line 62 of file Aim\+Poser.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_aim_poser_a4b925153c05eef6cb1ff51a8c90c8989}\label{class_root_motion_1_1_final_i_k_1_1_aim_poser_a4b925153c05eef6cb1ff51a8c90c8989}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Aim\+Poser@{Root\+Motion\+::\+Final\+I\+K\+::\+Aim\+Poser}!Set\+Pose\+Active@{Set\+Pose\+Active}}
+\index{Set\+Pose\+Active@{Set\+Pose\+Active}!Root\+Motion\+::\+Final\+I\+K\+::\+Aim\+Poser@{Root\+Motion\+::\+Final\+I\+K\+::\+Aim\+Poser}}
+\subsubsection{\texorpdfstring{Set\+Pose\+Active()}{SetPoseActive()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+Aim\+Poser.\+Set\+Pose\+Active (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_aim_poser_1_1_pose}{Pose}}}]{pose }\end{DoxyParamCaption})}
+
+
+
+Sets the pose active, increasing it\textquotesingle{}s angle buffer. 
+
+
+
+Definition at line 72 of file Aim\+Poser.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_aim_poser_a5b51cba6cf04c2983261e550f1ef7a72}\label{class_root_motion_1_1_final_i_k_1_1_aim_poser_a5b51cba6cf04c2983261e550f1ef7a72}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Aim\+Poser@{Root\+Motion\+::\+Final\+I\+K\+::\+Aim\+Poser}!angle\+Buffer@{angle\+Buffer}}
+\index{angle\+Buffer@{angle\+Buffer}!Root\+Motion\+::\+Final\+I\+K\+::\+Aim\+Poser@{Root\+Motion\+::\+Final\+I\+K\+::\+Aim\+Poser}}
+\subsubsection{\texorpdfstring{angle\+Buffer}{angleBuffer}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+Aim\+Poser.\+angle\+Buffer = 5f}
+
+
+
+Definition at line 56 of file Aim\+Poser.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_aim_poser_a84ae0b6317b0209189ff41317a968bce}\label{class_root_motion_1_1_final_i_k_1_1_aim_poser_a84ae0b6317b0209189ff41317a968bce}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Aim\+Poser@{Root\+Motion\+::\+Final\+I\+K\+::\+Aim\+Poser}!poses@{poses}}
+\index{poses@{poses}!Root\+Motion\+::\+Final\+I\+K\+::\+Aim\+Poser@{Root\+Motion\+::\+Final\+I\+K\+::\+Aim\+Poser}}
+\subsubsection{\texorpdfstring{poses}{poses}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_aim_poser_1_1_pose}{Pose}} \mbox{[}$\,$\mbox{]} Root\+Motion.\+Final\+I\+K.\+Aim\+Poser.\+poses = new \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_aim_poser_1_1_pose}{Pose}}\mbox{[}0\mbox{]}}
+
+
+
+Definition at line 57 of file Aim\+Poser.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Plugins/\+Root\+Motion/\+Final\+I\+K/\+Tools/\mbox{\hyperlink{_aim_poser_8cs}{Aim\+Poser.\+cs}}\end{DoxyCompactItemize}

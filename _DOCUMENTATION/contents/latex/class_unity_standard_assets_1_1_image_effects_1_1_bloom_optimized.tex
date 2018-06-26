@@ -1,0 +1,175 @@
+\hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized}{}\section{Unity\+Standard\+Assets.\+Image\+Effects.\+Bloom\+Optimized Class Reference}
+\label{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized}\index{Unity\+Standard\+Assets.\+Image\+Effects.\+Bloom\+Optimized@{Unity\+Standard\+Assets.\+Image\+Effects.\+Bloom\+Optimized}}
+Inheritance diagram for Unity\+Standard\+Assets.\+Image\+Effects.\+Bloom\+Optimized\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_ab937d5a1d6ab55f891d5a0ada3ffed8f}{Resolution}} \{ \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_ab937d5a1d6ab55f891d5a0ada3ffed8fa28d0edd045e05cf5af64e35ae0c4c6ef}{Resolution.\+Low}} = 0, 
+\mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_ab937d5a1d6ab55f891d5a0ada3ffed8fa655d20c1ca69519ca647684edbb2db35}{Resolution.\+High}} = 1
+ \}
+\item 
+enum \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_a79317d54ae2cad9590852d264ebeabbf}{Blur\+Type}} \{ \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_a79317d54ae2cad9590852d264ebeabbfaeb6d8ae6f20283755b339c0dc273988b}{Blur\+Type.\+Standard}} = 0, 
+\mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_a79317d54ae2cad9590852d264ebeabbfa801ee3a16d40fe81e3f99291f4fd4949}{Blur\+Type.\+Sgx}} = 1
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override bool \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_acfddd1e3d1f02d7aa8abe96ba18da27f}{Check\+Resources}} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_a0ef0dd7b3e5ffb8f00cf4205470801ee}{threshold}} = 0.\+25f
+\item 
+float \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_a8ec9def7b3e5665976eafa9d258fd394}{intensity}} = 0.\+75f
+\item 
+float \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_ad48371677d49eada1100c19f3f8a977c}{blur\+Size}} = 1.\+0f
+\item 
+int \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_a8ff2522b67093656401cd6d2639ebb78}{blur\+Iterations}} = 1
+\item 
+\mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_a79317d54ae2cad9590852d264ebeabbf}{Blur\+Type}} \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_acb813777e2dbedf40aecc524f7551af6}{blur\+Type}} = \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_a79317d54ae2cad9590852d264ebeabbfaeb6d8ae6f20283755b339c0dc273988b}{Blur\+Type.\+Standard}}
+\item 
+Shader \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_a68b688b90f439f8b2364d1aa275a69e0}{fast\+Bloom\+Shader}} = null
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 9 of file Bloom\+Optimized.\+cs.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_a79317d54ae2cad9590852d264ebeabbf}\label{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_a79317d54ae2cad9590852d264ebeabbf}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized}!Blur\+Type@{Blur\+Type}}
+\index{Blur\+Type@{Blur\+Type}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized}}
+\subsubsection{\texorpdfstring{Blur\+Type}{BlurType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_a79317d54ae2cad9590852d264ebeabbf}{Unity\+Standard\+Assets.\+Image\+Effects.\+Bloom\+Optimized.\+Blur\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Standard@{Standard}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized}}\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized}!Standard@{Standard}}}\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_a79317d54ae2cad9590852d264ebeabbfaeb6d8ae6f20283755b339c0dc273988b}\label{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_a79317d54ae2cad9590852d264ebeabbfaeb6d8ae6f20283755b339c0dc273988b}} 
+Standard&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Sgx@{Sgx}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized}}\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized}!Sgx@{Sgx}}}\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_a79317d54ae2cad9590852d264ebeabbfa801ee3a16d40fe81e3f99291f4fd4949}\label{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_a79317d54ae2cad9590852d264ebeabbfa801ee3a16d40fe81e3f99291f4fd4949}} 
+Sgx&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 18 of file Bloom\+Optimized.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_ab937d5a1d6ab55f891d5a0ada3ffed8f}\label{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_ab937d5a1d6ab55f891d5a0ada3ffed8f}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized}!Resolution@{Resolution}}
+\index{Resolution@{Resolution}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized}}
+\subsubsection{\texorpdfstring{Resolution}{Resolution}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_ab937d5a1d6ab55f891d5a0ada3ffed8f}{Unity\+Standard\+Assets.\+Image\+Effects.\+Bloom\+Optimized.\+Resolution}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Low@{Low}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized}}\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized}!Low@{Low}}}\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_ab937d5a1d6ab55f891d5a0ada3ffed8fa28d0edd045e05cf5af64e35ae0c4c6ef}\label{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_ab937d5a1d6ab55f891d5a0ada3ffed8fa28d0edd045e05cf5af64e35ae0c4c6ef}} 
+Low&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{High@{High}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized}}\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized}!High@{High}}}\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_ab937d5a1d6ab55f891d5a0ada3ffed8fa655d20c1ca69519ca647684edbb2db35}\label{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_ab937d5a1d6ab55f891d5a0ada3ffed8fa655d20c1ca69519ca647684edbb2db35}} 
+High&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 12 of file Bloom\+Optimized.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_acfddd1e3d1f02d7aa8abe96ba18da27f}\label{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_acfddd1e3d1f02d7aa8abe96ba18da27f}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized}!Check\+Resources@{Check\+Resources}}
+\index{Check\+Resources@{Check\+Resources}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized}}
+\subsubsection{\texorpdfstring{Check\+Resources()}{CheckResources()}}
+{\footnotesize\ttfamily override bool Unity\+Standard\+Assets.\+Image\+Effects.\+Bloom\+Optimized.\+Check\+Resources (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_a8866612b25b7158b932efd3b832188f8}{Unity\+Standard\+Assets.\+Image\+Effects.\+Post\+Effects\+Base}}.
+
+
+
+Definition at line 42 of file Bloom\+Optimized.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_a8ff2522b67093656401cd6d2639ebb78}\label{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_a8ff2522b67093656401cd6d2639ebb78}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized}!blur\+Iterations@{blur\+Iterations}}
+\index{blur\+Iterations@{blur\+Iterations}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized}}
+\subsubsection{\texorpdfstring{blur\+Iterations}{blurIterations}}
+{\footnotesize\ttfamily int Unity\+Standard\+Assets.\+Image\+Effects.\+Bloom\+Optimized.\+blur\+Iterations = 1}
+
+
+
+Definition at line 34 of file Bloom\+Optimized.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_ad48371677d49eada1100c19f3f8a977c}\label{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_ad48371677d49eada1100c19f3f8a977c}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized}!blur\+Size@{blur\+Size}}
+\index{blur\+Size@{blur\+Size}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized}}
+\subsubsection{\texorpdfstring{blur\+Size}{blurSize}}
+{\footnotesize\ttfamily float Unity\+Standard\+Assets.\+Image\+Effects.\+Bloom\+Optimized.\+blur\+Size = 1.\+0f}
+
+
+
+Definition at line 30 of file Bloom\+Optimized.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_acb813777e2dbedf40aecc524f7551af6}\label{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_acb813777e2dbedf40aecc524f7551af6}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized}!blur\+Type@{blur\+Type}}
+\index{blur\+Type@{blur\+Type}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized}}
+\subsubsection{\texorpdfstring{blur\+Type}{blurType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_a79317d54ae2cad9590852d264ebeabbf}{Blur\+Type}} Unity\+Standard\+Assets.\+Image\+Effects.\+Bloom\+Optimized.\+blur\+Type = \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_a79317d54ae2cad9590852d264ebeabbfaeb6d8ae6f20283755b339c0dc273988b}{Blur\+Type.\+Standard}}}
+
+
+
+Definition at line 36 of file Bloom\+Optimized.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_a68b688b90f439f8b2364d1aa275a69e0}\label{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_a68b688b90f439f8b2364d1aa275a69e0}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized}!fast\+Bloom\+Shader@{fast\+Bloom\+Shader}}
+\index{fast\+Bloom\+Shader@{fast\+Bloom\+Shader}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized}}
+\subsubsection{\texorpdfstring{fast\+Bloom\+Shader}{fastBloomShader}}
+{\footnotesize\ttfamily Shader Unity\+Standard\+Assets.\+Image\+Effects.\+Bloom\+Optimized.\+fast\+Bloom\+Shader = null}
+
+
+
+Definition at line 38 of file Bloom\+Optimized.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_a8ec9def7b3e5665976eafa9d258fd394}\label{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_a8ec9def7b3e5665976eafa9d258fd394}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized}!intensity@{intensity}}
+\index{intensity@{intensity}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized}}
+\subsubsection{\texorpdfstring{intensity}{intensity}}
+{\footnotesize\ttfamily float Unity\+Standard\+Assets.\+Image\+Effects.\+Bloom\+Optimized.\+intensity = 0.\+75f}
+
+
+
+Definition at line 27 of file Bloom\+Optimized.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_a0ef0dd7b3e5ffb8f00cf4205470801ee}\label{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_a0ef0dd7b3e5ffb8f00cf4205470801ee}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized}!threshold@{threshold}}
+\index{threshold@{threshold}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Bloom\+Optimized}}
+\subsubsection{\texorpdfstring{threshold}{threshold}}
+{\footnotesize\ttfamily float Unity\+Standard\+Assets.\+Image\+Effects.\+Bloom\+Optimized.\+threshold = 0.\+25f}
+
+
+
+Definition at line 25 of file Bloom\+Optimized.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Standard Assets/\+Effects/\+Image\+Effects/\+Scripts/\mbox{\hyperlink{_bloom_optimized_8cs}{Bloom\+Optimized.\+cs}}\end{DoxyCompactItemize}

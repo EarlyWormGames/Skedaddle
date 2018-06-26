@@ -1,0 +1,1411 @@
+\hypertarget{class_animal}{}\section{Animal Class Reference}
+\label{class_animal}\index{Animal@{Animal}}
+Inheritance diagram for Animal\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.545455cm]{class_animal}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_animal_1_1_named_event}{Named\+Event}}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_animal_aa498775210af23df33eb0095e81ecbf7}{S\+O\+U\+N\+D\+\_\+\+E\+V\+E\+NT}} \{ \newline
+\mbox{\hyperlink{class_animal_aa498775210af23df33eb0095e81ecbf7a3d27d990616db778bc13afd5ac36f1cb}{S\+O\+U\+N\+D\+\_\+\+E\+V\+E\+N\+T.\+F\+A\+L\+L\+\_\+\+S\+T\+A\+RT}}, 
+\mbox{\hyperlink{class_animal_aa498775210af23df33eb0095e81ecbf7a6af415714d6653dbbd03f6ca55d743d0}{S\+O\+U\+N\+D\+\_\+\+E\+V\+E\+N\+T.\+F\+A\+L\+L\+\_\+\+E\+ND}}, 
+\mbox{\hyperlink{class_animal_aa498775210af23df33eb0095e81ecbf7a84dea758de9047e1805043c321a59b55}{S\+O\+U\+N\+D\+\_\+\+E\+V\+E\+N\+T.\+F\+A\+L\+L\+\_\+\+S\+T\+OP}}, 
+\mbox{\hyperlink{class_animal_aa498775210af23df33eb0095e81ecbf7a696cb8bbef9283b8362153075786b1cc}{S\+O\+U\+N\+D\+\_\+\+E\+V\+E\+N\+T.\+F\+A\+L\+L\+\_\+\+D\+E\+A\+TH}}, 
+\newline
+\mbox{\hyperlink{class_animal_aa498775210af23df33eb0095e81ecbf7a416b4f92816eac8aacb606ab67307ded}{S\+O\+U\+N\+D\+\_\+\+E\+V\+E\+N\+T.\+E\+L\+E\+C\+T\+R\+O\+\_\+\+D\+E\+A\+TH}}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_animal_adb0b40e67dde94df8dc45f9e8334b493}{Force\+Turn}} (bool a\+\_\+facing\+Left)
+\begin{DoxyCompactList}\small\item\em Force an animal to face a certian direction true = left false = Right \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_animal_a3eddbb966da9cfcd7cd08f96157c01f9}{Move\+Rig}} ()
+\item 
+void \mbox{\hyperlink{class_animal_ab06d0e969d8991b816f024e156608cb5}{Move\+In\+Direction}} (Vector3 a\+\_\+direction)
+\item 
+void \mbox{\hyperlink{class_animal_a676f9175b4ab6957d904e9bb62fdb3b4}{Turn}} (float angle)
+\begin{DoxyCompactList}\small\item\em turn the animal X degrees \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_animal_a9bd4c172143d8daa1f6b3ad12d6a67c2}{Turn}} (\mbox{\hyperlink{_animal_8cs_a57d10208ebba781ae206546ada2002b6}{F\+A\+C\+I\+N\+G\+\_\+\+D\+IR}} direction)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_turn}{Turn}} the animal to face a certian direction. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_animal_ad6e340c5c3ce2f8b2a6a94cb7bc076f3}{Finish\+Turning}} ()
+\item 
+bool \mbox{\hyperlink{class_animal_a06e28a266cca3c46759ea1094630410f}{Move\+To}} (float a\+\_\+x\+Pos)
+\item 
+bool \mbox{\hyperlink{class_animal_a567f0a18ff56a69e2d6531c8edec83d2}{Move\+To}} (Transform a\+\_\+\+Target, bool a\+\_\+x\+Move, bool a\+\_\+y\+Move, bool a\+\_\+z\+Move)
+\begin{DoxyCompactList}\small\item\em Set a target position for the animal to move to and use constraints if needed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_animal_a026f551709b7b9c8d22e3ccc47067bec}{Stop\+Move\+To}} ()
+\item 
+virtual void \mbox{\hyperlink{class_animal_a7edafcb2574e25a06224020ed0e5133c}{Kill}} (\mbox{\hyperlink{_animal_8cs_aa09ea87b75a706096f010aef7b9b1826}{D\+E\+A\+T\+H\+\_\+\+T\+Y\+PE}} a\+\_\+death)
+\begin{DoxyCompactList}\small\item\em Kill the animal \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_animal_a300d7a15f30a1e57ff1cccc86555b18a}{Pull\+Lever}} ()
+\item 
+virtual void \mbox{\hyperlink{class_animal_a10f83b51d56e077b400cf6b81b8f9aed}{On\+Select\+Change}} ()
+\item 
+virtual void \mbox{\hyperlink{class_animal_a001734bbca74a2240ab30be09746ecd1}{On\+Push\+Change}} ()
+\item 
+void \mbox{\hyperlink{class_animal_ab884d829130a352bb85070f3dc0fb888}{Play\+Sound}} (\mbox{\hyperlink{class_animal_aa498775210af23df33eb0095e81ecbf7}{S\+O\+U\+N\+D\+\_\+\+E\+V\+E\+NT}} a\+\_\+type)
+\item 
+void \mbox{\hyperlink{class_animal_a2e31c2fac8842ee6f66e7f79ac99d737}{Set\+Timer}} (bool a\+\_\+\+Run)
+\item 
+virtual float \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_animal_ad1033798d72c010a822937be75c5bdde}{Calculate\+Move\+Speed}} ()
+\item 
+bool \mbox{\hyperlink{class_animal_a4fe2d98f1c17c588fc8f3dc8c1667972}{Can\+Turn}} ()
+\begin{DoxyCompactList}\small\item\em can the animal turn? \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_animal_a50a5002837a408f0032cc6d84ba60d1e}{Can\+Move}} ()
+\begin{DoxyCompactList}\small\item\em can the animal move? \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_animal_ac85273f85e93e6670c2f1346b72be873}{Set\+Direction}} (\mbox{\hyperlink{_animal_8cs_a57d10208ebba781ae206546ada2002b6}{F\+A\+C\+I\+N\+G\+\_\+\+D\+IR}} direction, bool detach)
+\begin{DoxyCompactList}\small\item\em set the direction of the animal and detach from interactable object if needed \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_animal_ac8b6cc0e6eb0a6cb509cf4d562745e36}{Allow\+Selection}} (bool allow)
+\begin{DoxyCompactList}\small\item\em allow animal selection if needed \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_animal_a7b30268c3ad4feb7b84107e195eaac28}{Set\+Collider\+Active}} (bool active, List$<$ \mbox{\hyperlink{class_attachable}{Attachable}} $>$ ignore=null)
+\item 
+void \mbox{\hyperlink{class_animal_a2f02116126d2fddd5938a5f3b9b163d1}{Set\+Collider\+Active}} (bool active, \mbox{\hyperlink{class_attachable}{Attachable}} ignore)
+\item 
+void \mbox{\hyperlink{class_animal_a2ca4f870282a91496124d13b351e8415}{Attach\+Interactable}} (\mbox{\hyperlink{class_attachable}{Attachable}} attachable)
+\begin{DoxyCompactList}\small\item\em Add the interactable object to the animal \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_animal_a70c9a4ffd82a76ec8665f99646858399}{Detach\+Interactable}} ()
+\begin{DoxyCompactList}\small\item\em remove the interactable object from the animal \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_animal_a4809045a8807c4b2e0d7569b806740ee}{Can\+Attach}} ()
+\begin{DoxyCompactList}\small\item\em Check if this object can attach to an interactable \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{_animal_8cs_a2fa5713399b84d1b88dae9196837af50}{A\+N\+I\+M\+A\+L\+\_\+\+N\+A\+ME}} \mbox{\hyperlink{class_animal_ab66ea3e3cb15a2b236ba9ba4d589ca69}{Get\+Name}} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Transform \mbox{\hyperlink{class_animal_a67b099ba034805dad5ee5cc45481cdf1}{m\+\_\+t\+Camera\+Pivot}}
+\item 
+Transform \mbox{\hyperlink{class_animal_a960e8ba99fbe90ef77f4937a60c473e8}{m\+\_\+t\+Lever\+Reference}}
+\item 
+\mbox{\hyperlink{class_animation_extras}{Animation\+Extras}} \mbox{\hyperlink{class_animal_a3e903279d776c821c7e699847fe06cf5}{m\+\_\+e\+Extras}}
+\item 
+Game\+Object \mbox{\hyperlink{class_animal_a4949db860eac422ce2a1a3df77f84bc5}{m\+\_\+go\+I\+K\+Switch}}
+\item 
+Transform \mbox{\hyperlink{class_animal_a7e09edf484465463e391503fc00d53e0}{m\+\_\+t\+Joint\+Root}}
+\item 
+Transform \mbox{\hyperlink{class_animal_a1fa3aebf72a7982519c84f4fff4c2fe6}{m\+\_\+t\+Pelvis}}
+\item 
+Vector3 \mbox{\hyperlink{class_animal_a8d925d74519bd6da8927346e43371576}{m\+\_\+v3\+Pelvis\+Offset}}
+\item 
+Transform \mbox{\hyperlink{class_animal_afbea823db5efa979305809e5a44f0660}{m\+\_\+t\+Collider}}
+\item 
+Transform \mbox{\hyperlink{class_animal_a14776da7c67e6a28ea9ac2145d34c815}{m\+\_\+t\+Object\+Holder}}
+\item 
+float \mbox{\hyperlink{class_animal_a4e411bb9775139ae49634dba20781d64}{m\+\_\+f\+Walk\+Speed}} = 0.\+001f
+\item 
+float \mbox{\hyperlink{class_animal_a66e141cf619fde63384c1759988c95ca}{m\+\_\+f\+Top\+Speed}} = 0.\+05f
+\item 
+float \mbox{\hyperlink{class_animal_a6dfbab9edf6169464fe9a8344032c28e}{m\+\_\+f\+Pull\+Speed\+Mult}} = 0.\+5f
+\item 
+float \mbox{\hyperlink{class_animal_a46f6e3823b8f08a423b762437ebc504b}{m\+\_\+f\+Fall\+Speed\+Mult}} = 0.\+5f
+\item 
+float \mbox{\hyperlink{class_animal_a526af3f4cd5e19f8449ce4a01a4cb65e}{m\+\_\+f\+Turn\+Axis}}
+\item 
+float \mbox{\hyperlink{class_animal_a2b708fd867ff4c7f87c2b38f3391f4ee}{m\+\_\+f\+Rot\+Speed}} = 1f
+\item 
+float \mbox{\hyperlink{class_animal_a208c7380adb491ec2cb389c255172262}{m\+\_\+f\+Spline\+Rot\+Speed}} = 1f
+\item 
+float \mbox{\hyperlink{class_animal_ae003f54a88ce9c5790651eb2e2b739eb}{m\+\_\+f\+Walk\+Anim\+Mult}} = 20
+\item 
+float \mbox{\hyperlink{class_animal_a16a1fc92968f20b95877a6afff3108e7}{m\+\_\+f\+Push\+Anim\+Mult}} = 5
+\item 
+float \mbox{\hyperlink{class_animal_ac662f1892b85515e76ec7873d482df89}{m\+\_\+f\+Forward\+Rotation}} = 180
+\item 
+float \mbox{\hyperlink{class_animal_ae0c82e64109cba8e3186bec644f72ff4}{m\+\_\+f\+Back\+Rotation}} = 0
+\item 
+float \mbox{\hyperlink{class_animal_ae20b6c637e8cd4334fe8e0bff05a7872}{m\+\_\+f\+Left\+Rotation}} = 270
+\item 
+float \mbox{\hyperlink{class_animal_afe3df93e1c665aeb4232690655e81c34}{m\+\_\+f\+Right\+Rotation}} = 90
+\item 
+float \mbox{\hyperlink{class_animal_a62e54a6e632478daff40256ce4d3fbd5}{m\+\_\+f\+Jump\+Wait\+Time}} = 1f
+\item 
+float \mbox{\hyperlink{class_animal_a577330859c3a5bf5b0ae5690eb03dc3b}{m\+\_\+f\+Jump\+Lerp\+Speed}} = 2f
+\item 
+float \mbox{\hyperlink{class_animal_aa644cc3baee4917c5a8ff4ce6a7f5213}{m\+\_\+f\+Jump\+Wait\+Frames}} = 1
+\item 
+float \mbox{\hyperlink{class_animal_ad61d1d395ce25fc4996a0385347b7dd3}{m\+\_\+f\+Ground\+Raycast\+Dist}} = 1f
+\item 
+float \mbox{\hyperlink{class_animal_af615d2651b634514c081cdf5e8d0f5ed}{m\+\_\+f\+Raycast\+Wait\+Time}} = 0f
+\item 
+Layer\+Mask \mbox{\hyperlink{class_animal_a4dac26b3c8c4c5382d1d03ec917fe836}{m\+\_\+l\+Ground\+Check\+Mask}}
+\item 
+Transform \mbox{\hyperlink{class_animal_a52e29a5e08389bff22aa3c58fd51c51e}{m\+\_\+at\+Ground\+Check\+Points}}
+\item 
+Transform \mbox{\hyperlink{class_animal_af82430c5d281f7e015d07f65949b483d}{m\+\_\+at\+Push\+Off\+Check\+Point}}
+\item 
+float \mbox{\hyperlink{class_animal_a983bda54f5ac80081085024ddb6b1199}{m\+\_\+\+X\+Buffer}} = 1
+\item 
+float \mbox{\hyperlink{class_animal_a052f059393b9e50b56bb4b5d16ef8c8d}{m\+\_\+\+Y\+Buffer}} = 1
+\item 
+float \mbox{\hyperlink{class_animal_ac359d09f810b54f1707f02c7958ff639}{m\+\_\+f\+Max\+Fall\+Dist}} = 1f
+\item 
+bool \mbox{\hyperlink{class_animal_a8cb1a64819aedbdff4212914cfd3dd7c}{m\+\_\+b\+Disable\+Fall\+Death}} = false
+\item 
+float \mbox{\hyperlink{class_animal_a228164375564588094f7ddd820f5d859}{m\+\_\+f\+Hit\+Resist}} = 1f
+\item 
+float \mbox{\hyperlink{class_animal_a9df81cf498acab378f652ba5257b8370}{m\+\_\+f\+Sit\+Time}} = 2f
+\item 
+float \mbox{\hyperlink{class_animal_ad159aee4f8a2e5277b2eb5fce15ac797}{m\+\_\+f\+CameraY}} = 0
+\item 
+Vector3 \mbox{\hyperlink{class_animal_a48be84620d7945ca70a60ec8a8ca9578}{m\+\_\+v3\+Default\+Forward}}
+\item 
+Vector3 \mbox{\hyperlink{class_animal_ab80a1e845a4ff60c8d6e227cd48f8633}{m\+\_\+v3\+Death\+Distance}} = new Vector3(0, 0.\+5f, -\/2.\+5f)
+\item 
+float \mbox{\hyperlink{class_animal_a1d872c88c79887ee4d66dfee7e653081}{m\+\_\+f\+Crush\+Force}} = 5
+\item 
+\mbox{\hyperlink{_animal_8cs_aa09ea87b75a706096f010aef7b9b1826}{D\+E\+A\+T\+H\+\_\+\+T\+Y\+PE}} \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_animal_a56374f904c3f6e99ba03fadd06e94800}{m\+\_\+\+No\+Deaths}}
+\item 
+\mbox{\hyperlink{class_animal_1_1_named_event}{Named\+Event}} \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_animal_a7c8b3a199529db24d4177f96cc34f435}{m\+\_\+a\+Sound\+Events}}
+\item 
+\mbox{\hyperlink{class_attachable}{Attachable}} \mbox{\hyperlink{class_animal_a9bed81572e69bafb08e1ee7fe8fbe944}{current\+Attached}}
+\item 
+\mbox{\hyperlink{_animal_8cs_a2fa5713399b84d1b88dae9196837af50}{A\+N\+I\+M\+A\+L\+\_\+\+N\+A\+ME}} \mbox{\hyperlink{class_animal_a1d3cac16f6206eb338093a632d644d9f}{m\+\_\+e\+Name}}
+\item 
+\mbox{\hyperlink{_animal_8cs_ad0d15cd79bb3e3a97e7fb817f1438fcc}{A\+N\+I\+M\+A\+L\+\_\+\+S\+I\+ZE}} \mbox{\hyperlink{class_animal_a832155594812fbbf3b2ed1a698835ee0}{m\+\_\+e\+Size}}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_animal}{Animal}} \mbox{\hyperlink{class_animal_aa0ed151e61e4543ea3b6b176792cf4f5}{Current\+Animal}}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_animal_a088f83df034d3965382b6d8149a7143d}{Move}} ()
+\item 
+virtual void \mbox{\hyperlink{class_animal_a8ed14f752254b7033466bbd0c846a972}{On\+Awake}} ()
+\item 
+virtual void \mbox{\hyperlink{class_animal_a5e8ba3858f4d2c35c4a8d42fdbcc66b5}{On\+Start}} ()
+\item 
+virtual void \mbox{\hyperlink{class_animal_a0b0cf85dbc03ad6ed1878e90c2ac84b1}{On\+Update}} ()
+\item 
+virtual void \mbox{\hyperlink{class_animal_aebce764681f2a949d72b80766beb0752}{On\+Fixed\+Update}} ()
+\item 
+virtual void \mbox{\hyperlink{class_animal_a86612d846fcd1fcf08f7b89586aa11b7}{On\+Death}} (\mbox{\hyperlink{_animal_8cs_aa09ea87b75a706096f010aef7b9b1826}{D\+E\+A\+T\+H\+\_\+\+T\+Y\+PE}} a\+\_\+type)
+\item 
+virtual void \mbox{\hyperlink{class_animal_a1f3b9a46215ec3e502ff609bbf0b4e78}{On\+Attach}} ()
+\begin{DoxyCompactList}\small\item\em called when the animal attches to an object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_animal_aeea0f2bdfa40b980440c8a4ff4820479}{On\+Detach}} ()
+\begin{DoxyCompactList}\small\item\em called when the animal dies \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_animal_a13a58afa816beb7dad10681097a892e0}{m\+\_\+b\+Alive}} = true
+\item 
+float \mbox{\hyperlink{class_animal_a8524e219275547954f825c20f17bbfe0}{m\+\_\+f\+Current\+Speed}}
+\item 
+bool \mbox{\hyperlink{class_animal_a673ca86d1a63c980d0ccacdfeaa2de2e}{m\+\_\+b\+Lean\+Up}} = false
+\item 
+bool \mbox{\hyperlink{class_animal_aaacd73148a6d15b2b21092b20f5d768e}{m\+\_\+b\+Lean\+Down}} = false
+\item 
+bool \mbox{\hyperlink{class_animal_a55878750829ba48c39a10e5ee0c6b56c}{m\+\_\+b\+Front\+Ground\+Detected}} = false
+\item 
+bool \mbox{\hyperlink{class_animal_a935c18a78366e760feac53a0d286c13a}{m\+\_\+b\+Back\+Ground\+Detected}} = false
+\item 
+bool \mbox{\hyperlink{class_animal_a34c35ef0f61aefb64431cc04c82b5054}{m\+\_\+b\+Rest\+Ground\+Detected}} = false
+\item 
+bool \mbox{\hyperlink{class_animal_afb686c69d662317515547b34b8a69186}{m\+\_\+b\+Push\+Off\+Detected}} = false
+\item 
+float \mbox{\hyperlink{class_animal_a5689132f4b5d01cf746ddcdca9f1a9ef}{m\+\_\+f\+Selection\+Timer}} = 0
+\item 
+float \mbox{\hyperlink{class_animal_a1b9b1c77bf11c1b2ea6ad9db79951194}{m\+\_\+f\+Sit\+Timer}} = -\/1f
+\item 
+bool \mbox{\hyperlink{class_animal_a7ae58603453bea1c8a51feca5b36faf7}{m\+\_\+b\+Eyetrack\+Selected}} = false
+\item 
+bool \mbox{\hyperlink{class_animal_a00f65a0b9ad23dfd2e6c65262319548c}{m\+\_\+b\+Gaze\+Running}} = false
+\item 
+float \mbox{\hyperlink{class_animal_aec0a0921e0e2e4be62042fdfb2ab1a9b}{m\+\_\+f\+Gaze\+Timer}} = 0f
+\item 
+Dictionary$<$ Collider, Type $>$ \mbox{\hyperlink{class_animal_a7cc77366452cd8d15d5623dc2b368fee}{m\+\_\+d\+Child\+Colliders}}
+\item 
+Main\+Mapping \mbox{\hyperlink{class_animal_afe1492caf21bd4fc102c0336e9d0c52f}{m\+\_\+input}}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_animal_a461c4f050bcad5e24677b05a80fbcaf4}{Was\+Teleport}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 46 of file Animal.\+cs.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_animal_aa498775210af23df33eb0095e81ecbf7}\label{class_animal_aa498775210af23df33eb0095e81ecbf7}} 
+\index{Animal@{Animal}!S\+O\+U\+N\+D\+\_\+\+E\+V\+E\+NT@{S\+O\+U\+N\+D\+\_\+\+E\+V\+E\+NT}}
+\index{S\+O\+U\+N\+D\+\_\+\+E\+V\+E\+NT@{S\+O\+U\+N\+D\+\_\+\+E\+V\+E\+NT}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{S\+O\+U\+N\+D\+\_\+\+E\+V\+E\+NT}{SOUND\_EVENT}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_animal_aa498775210af23df33eb0095e81ecbf7}{Animal.\+S\+O\+U\+N\+D\+\_\+\+E\+V\+E\+NT}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+A\+L\+L\+\_\+\+S\+T\+A\+RT@{F\+A\+L\+L\+\_\+\+S\+T\+A\+RT}!Animal@{Animal}}\index{Animal@{Animal}!F\+A\+L\+L\+\_\+\+S\+T\+A\+RT@{F\+A\+L\+L\+\_\+\+S\+T\+A\+RT}}}\mbox{\Hypertarget{class_animal_aa498775210af23df33eb0095e81ecbf7a3d27d990616db778bc13afd5ac36f1cb}\label{class_animal_aa498775210af23df33eb0095e81ecbf7a3d27d990616db778bc13afd5ac36f1cb}} 
+F\+A\+L\+L\+\_\+\+S\+T\+A\+RT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+A\+L\+L\+\_\+\+E\+ND@{F\+A\+L\+L\+\_\+\+E\+ND}!Animal@{Animal}}\index{Animal@{Animal}!F\+A\+L\+L\+\_\+\+E\+ND@{F\+A\+L\+L\+\_\+\+E\+ND}}}\mbox{\Hypertarget{class_animal_aa498775210af23df33eb0095e81ecbf7a6af415714d6653dbbd03f6ca55d743d0}\label{class_animal_aa498775210af23df33eb0095e81ecbf7a6af415714d6653dbbd03f6ca55d743d0}} 
+F\+A\+L\+L\+\_\+\+E\+ND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+A\+L\+L\+\_\+\+S\+T\+OP@{F\+A\+L\+L\+\_\+\+S\+T\+OP}!Animal@{Animal}}\index{Animal@{Animal}!F\+A\+L\+L\+\_\+\+S\+T\+OP@{F\+A\+L\+L\+\_\+\+S\+T\+OP}}}\mbox{\Hypertarget{class_animal_aa498775210af23df33eb0095e81ecbf7a84dea758de9047e1805043c321a59b55}\label{class_animal_aa498775210af23df33eb0095e81ecbf7a84dea758de9047e1805043c321a59b55}} 
+F\+A\+L\+L\+\_\+\+S\+T\+OP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+A\+L\+L\+\_\+\+D\+E\+A\+TH@{F\+A\+L\+L\+\_\+\+D\+E\+A\+TH}!Animal@{Animal}}\index{Animal@{Animal}!F\+A\+L\+L\+\_\+\+D\+E\+A\+TH@{F\+A\+L\+L\+\_\+\+D\+E\+A\+TH}}}\mbox{\Hypertarget{class_animal_aa498775210af23df33eb0095e81ecbf7a696cb8bbef9283b8362153075786b1cc}\label{class_animal_aa498775210af23df33eb0095e81ecbf7a696cb8bbef9283b8362153075786b1cc}} 
+F\+A\+L\+L\+\_\+\+D\+E\+A\+TH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\+L\+E\+C\+T\+R\+O\+\_\+\+D\+E\+A\+TH@{E\+L\+E\+C\+T\+R\+O\+\_\+\+D\+E\+A\+TH}!Animal@{Animal}}\index{Animal@{Animal}!E\+L\+E\+C\+T\+R\+O\+\_\+\+D\+E\+A\+TH@{E\+L\+E\+C\+T\+R\+O\+\_\+\+D\+E\+A\+TH}}}\mbox{\Hypertarget{class_animal_aa498775210af23df33eb0095e81ecbf7a416b4f92816eac8aacb606ab67307ded}\label{class_animal_aa498775210af23df33eb0095e81ecbf7a416b4f92816eac8aacb606ab67307ded}} 
+E\+L\+E\+C\+T\+R\+O\+\_\+\+D\+E\+A\+TH&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 55 of file Animal.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_animal_ac8b6cc0e6eb0a6cb509cf4d562745e36}\label{class_animal_ac8b6cc0e6eb0a6cb509cf4d562745e36}} 
+\index{Animal@{Animal}!Allow\+Selection@{Allow\+Selection}}
+\index{Allow\+Selection@{Allow\+Selection}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{Allow\+Selection()}{AllowSelection()}}
+{\footnotesize\ttfamily void Animal.\+Allow\+Selection (\begin{DoxyParamCaption}\item[{bool}]{allow }\end{DoxyParamCaption})}
+
+
+
+allow animal selection if needed 
+
+
+\begin{DoxyParams}{Parameters}
+{\em allow} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1019 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a2ca4f870282a91496124d13b351e8415}\label{class_animal_a2ca4f870282a91496124d13b351e8415}} 
+\index{Animal@{Animal}!Attach\+Interactable@{Attach\+Interactable}}
+\index{Attach\+Interactable@{Attach\+Interactable}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{Attach\+Interactable()}{AttachInteractable()}}
+{\footnotesize\ttfamily void Animal.\+Attach\+Interactable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_attachable}{Attachable}}}]{attachable }\end{DoxyParamCaption})}
+
+
+
+Add the interactable object to the animal 
+
+
+\begin{DoxyParams}{Parameters}
+{\em attachable} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1058 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_ad1033798d72c010a822937be75c5bdde}\label{class_animal_ad1033798d72c010a822937be75c5bdde}} 
+\index{Animal@{Animal}!Calculate\+Move\+Speed@{Calculate\+Move\+Speed}}
+\index{Calculate\+Move\+Speed@{Calculate\+Move\+Speed}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{Calculate\+Move\+Speed()}{CalculateMoveSpeed()}}
+{\footnotesize\ttfamily virtual float \mbox{[}$\,$\mbox{]} Animal.\+Calculate\+Move\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_loris_a5356c9fe0717f3c6fe10be650cbe3c48}{Loris}}, and \mbox{\hyperlink{class_poodle_afded59108342a9d5c41b91305911752b}{Poodle}}.
+
+
+
+Definition at line 953 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a4809045a8807c4b2e0d7569b806740ee}\label{class_animal_a4809045a8807c4b2e0d7569b806740ee}} 
+\index{Animal@{Animal}!Can\+Attach@{Can\+Attach}}
+\index{Can\+Attach@{Can\+Attach}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{Can\+Attach()}{CanAttach()}}
+{\footnotesize\ttfamily virtual bool Animal.\+Can\+Attach (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Check if this object can attach to an interactable 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_poodle_a1176b4dc1a07c88c75498f4fc80aba4a}{Poodle}}.
+
+
+
+Definition at line 1077 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a50a5002837a408f0032cc6d84ba60d1e}\label{class_animal_a50a5002837a408f0032cc6d84ba60d1e}} 
+\index{Animal@{Animal}!Can\+Move@{Can\+Move}}
+\index{Can\+Move@{Can\+Move}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{Can\+Move()}{CanMove()}}
+{\footnotesize\ttfamily virtual bool Animal.\+Can\+Move (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+can the animal move? 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_loris_a58dcb13392476fa95e7f9f26c5f46ce6}{Loris}}.
+
+
+
+Definition at line 986 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a4fe2d98f1c17c588fc8f3dc8c1667972}\label{class_animal_a4fe2d98f1c17c588fc8f3dc8c1667972}} 
+\index{Animal@{Animal}!Can\+Turn@{Can\+Turn}}
+\index{Can\+Turn@{Can\+Turn}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{Can\+Turn()}{CanTurn()}}
+{\footnotesize\ttfamily bool Animal.\+Can\+Turn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+can the animal turn? 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 970 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a70c9a4ffd82a76ec8665f99646858399}\label{class_animal_a70c9a4ffd82a76ec8665f99646858399}} 
+\index{Animal@{Animal}!Detach\+Interactable@{Detach\+Interactable}}
+\index{Detach\+Interactable@{Detach\+Interactable}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{Detach\+Interactable()}{DetachInteractable()}}
+{\footnotesize\ttfamily void Animal.\+Detach\+Interactable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+remove the interactable object from the animal 
+
+
+
+Definition at line 1067 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_ad6e340c5c3ce2f8b2a6a94cb7bc076f3}\label{class_animal_ad6e340c5c3ce2f8b2a6a94cb7bc076f3}} 
+\index{Animal@{Animal}!Finish\+Turning@{Finish\+Turning}}
+\index{Finish\+Turning@{Finish\+Turning}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{Finish\+Turning()}{FinishTurning()}}
+{\footnotesize\ttfamily void Animal.\+Finish\+Turning (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 737 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_adb0b40e67dde94df8dc45f9e8334b493}\label{class_animal_adb0b40e67dde94df8dc45f9e8334b493}} 
+\index{Animal@{Animal}!Force\+Turn@{Force\+Turn}}
+\index{Force\+Turn@{Force\+Turn}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{Force\+Turn()}{ForceTurn()}}
+{\footnotesize\ttfamily void Animal.\+Force\+Turn (\begin{DoxyParamCaption}\item[{bool}]{a\+\_\+facing\+Left }\end{DoxyParamCaption})}
+
+
+
+Force an animal to face a certian direction true = left false = Right 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+facing\+Left} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 635 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_ab66ea3e3cb15a2b236ba9ba4d589ca69}\label{class_animal_ab66ea3e3cb15a2b236ba9ba4d589ca69}} 
+\index{Animal@{Animal}!Get\+Name@{Get\+Name}}
+\index{Get\+Name@{Get\+Name}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{Get\+Name()}{GetName()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{_animal_8cs_a2fa5713399b84d1b88dae9196837af50}{A\+N\+I\+M\+A\+L\+\_\+\+N\+A\+ME}} Animal.\+Get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_loris_afb060974c2d879a9700544f12d0bc819}{Loris}}, \mbox{\hyperlink{class_poodle_a4aa6f80707dff1497fa00f855e28435e}{Poodle}}, \mbox{\hyperlink{class_anteater_a35cbc4139c1215562db29102ed07646a}{Anteater}}, \mbox{\hyperlink{class_zebra_a20dd192a5473bc27ade5c862c9ce7ac4}{Zebra}}, and \mbox{\hyperlink{class_elephant_a838ab3035927faab686cc180cd305481}{Elephant}}.
+
+
+
+Definition at line 1082 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a7edafcb2574e25a06224020ed0e5133c}\label{class_animal_a7edafcb2574e25a06224020ed0e5133c}} 
+\index{Animal@{Animal}!Kill@{Kill}}
+\index{Kill@{Kill}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{Kill()}{Kill()}}
+{\footnotesize\ttfamily virtual void Animal.\+Kill (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_animal_8cs_aa09ea87b75a706096f010aef7b9b1826}{D\+E\+A\+T\+H\+\_\+\+T\+Y\+PE}}}]{a\+\_\+death }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Kill the animal 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+death} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 857 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a088f83df034d3965382b6d8149a7143d}\label{class_animal_a088f83df034d3965382b6d8149a7143d}} 
+\index{Animal@{Animal}!Move@{Move}}
+\index{Move@{Move}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{Move()}{Move()}}
+{\footnotesize\ttfamily virtual void Animal.\+Move (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 645 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_ab06d0e969d8991b816f024e156608cb5}\label{class_animal_ab06d0e969d8991b816f024e156608cb5}} 
+\index{Animal@{Animal}!Move\+In\+Direction@{Move\+In\+Direction}}
+\index{Move\+In\+Direction@{Move\+In\+Direction}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{Move\+In\+Direction()}{MoveInDirection()}}
+{\footnotesize\ttfamily void Animal.\+Move\+In\+Direction (\begin{DoxyParamCaption}\item[{Vector3}]{a\+\_\+direction }\end{DoxyParamCaption})}
+
+
+
+Definition at line 664 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a3eddbb966da9cfcd7cd08f96157c01f9}\label{class_animal_a3eddbb966da9cfcd7cd08f96157c01f9}} 
+\index{Animal@{Animal}!Move\+Rig@{Move\+Rig}}
+\index{Move\+Rig@{Move\+Rig}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{Move\+Rig()}{MoveRig()}}
+{\footnotesize\ttfamily void Animal.\+Move\+Rig (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 650 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a06e28a266cca3c46759ea1094630410f}\label{class_animal_a06e28a266cca3c46759ea1094630410f}} 
+\index{Animal@{Animal}!Move\+To@{Move\+To}}
+\index{Move\+To@{Move\+To}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{Move\+To()}{MoveTo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Animal.\+Move\+To (\begin{DoxyParamCaption}\item[{float}]{a\+\_\+x\+Pos }\end{DoxyParamCaption})}
+
+
+
+Definition at line 748 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a567f0a18ff56a69e2d6531c8edec83d2}\label{class_animal_a567f0a18ff56a69e2d6531c8edec83d2}} 
+\index{Animal@{Animal}!Move\+To@{Move\+To}}
+\index{Move\+To@{Move\+To}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{Move\+To()}{MoveTo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Animal.\+Move\+To (\begin{DoxyParamCaption}\item[{Transform}]{a\+\_\+\+Target,  }\item[{bool}]{a\+\_\+x\+Move,  }\item[{bool}]{a\+\_\+y\+Move,  }\item[{bool}]{a\+\_\+z\+Move }\end{DoxyParamCaption})}
+
+
+
+Set a target position for the animal to move to and use constraints if needed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+\+Target} & \\
+\hline
+{\em a\+\_\+x\+Move} & \\
+\hline
+{\em a\+\_\+y\+Move} & \\
+\hline
+{\em a\+\_\+z\+Move} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 770 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a1f3b9a46215ec3e502ff609bbf0b4e78}\label{class_animal_a1f3b9a46215ec3e502ff609bbf0b4e78}} 
+\index{Animal@{Animal}!On\+Attach@{On\+Attach}}
+\index{On\+Attach@{On\+Attach}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{On\+Attach()}{OnAttach()}}
+{\footnotesize\ttfamily virtual void Animal.\+On\+Attach (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+called when the animal attches to an object. 
+
+
+
+Definition at line 1048 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a8ed14f752254b7033466bbd0c846a972}\label{class_animal_a8ed14f752254b7033466bbd0c846a972}} 
+\index{Animal@{Animal}!On\+Awake@{On\+Awake}}
+\index{On\+Awake@{On\+Awake}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{On\+Awake()}{OnAwake()}}
+{\footnotesize\ttfamily virtual void Animal.\+On\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_loris_abf831310421343c4685d7fb6844c522b}{Loris}}, \mbox{\hyperlink{class_poodle_ac1de5bc05d00449271365b51f90ef80f}{Poodle}}, \mbox{\hyperlink{class_anteater_a616439e723d734df132d25a0a69f2e4a}{Anteater}}, and \mbox{\hyperlink{class_zebra_a8111cfb00cc72c135c1840c4760855f2}{Zebra}}.
+
+
+
+Definition at line 926 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a86612d846fcd1fcf08f7b89586aa11b7}\label{class_animal_a86612d846fcd1fcf08f7b89586aa11b7}} 
+\index{Animal@{Animal}!On\+Death@{On\+Death}}
+\index{On\+Death@{On\+Death}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{On\+Death()}{OnDeath()}}
+{\footnotesize\ttfamily virtual void Animal.\+On\+Death (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_animal_8cs_aa09ea87b75a706096f010aef7b9b1826}{D\+E\+A\+T\+H\+\_\+\+T\+Y\+PE}}}]{a\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_loris_a9edf28bf01dbd817175b366f471a4dda}{Loris}}, and \mbox{\hyperlink{class_poodle_a86cc87a183e2b7b2297d9481c2c0d416}{Poodle}}.
+
+
+
+Definition at line 930 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_aeea0f2bdfa40b980440c8a4ff4820479}\label{class_animal_aeea0f2bdfa40b980440c8a4ff4820479}} 
+\index{Animal@{Animal}!On\+Detach@{On\+Detach}}
+\index{On\+Detach@{On\+Detach}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{On\+Detach()}{OnDetach()}}
+{\footnotesize\ttfamily virtual void Animal.\+On\+Detach (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+called when the animal dies 
+
+
+
+Definition at line 1052 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_aebce764681f2a949d72b80766beb0752}\label{class_animal_aebce764681f2a949d72b80766beb0752}} 
+\index{Animal@{Animal}!On\+Fixed\+Update@{On\+Fixed\+Update}}
+\index{On\+Fixed\+Update@{On\+Fixed\+Update}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{On\+Fixed\+Update()}{OnFixedUpdate()}}
+{\footnotesize\ttfamily virtual void Animal.\+On\+Fixed\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_loris_a2a3cedda95b895253c1ae39844680351}{Loris}}, and \mbox{\hyperlink{class_poodle_a43c5147cedef40592b077814bffda480}{Poodle}}.
+
+
+
+Definition at line 929 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a001734bbca74a2240ab30be09746ecd1}\label{class_animal_a001734bbca74a2240ab30be09746ecd1}} 
+\index{Animal@{Animal}!On\+Push\+Change@{On\+Push\+Change}}
+\index{On\+Push\+Change@{On\+Push\+Change}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{On\+Push\+Change()}{OnPushChange()}}
+{\footnotesize\ttfamily virtual void Animal.\+On\+Push\+Change (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_poodle_a5c281a37883590cab7ffd1bd361e4eac}{Poodle}}.
+
+
+
+Definition at line 924 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a10f83b51d56e077b400cf6b81b8f9aed}\label{class_animal_a10f83b51d56e077b400cf6b81b8f9aed}} 
+\index{Animal@{Animal}!On\+Select\+Change@{On\+Select\+Change}}
+\index{On\+Select\+Change@{On\+Select\+Change}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{On\+Select\+Change()}{OnSelectChange()}}
+{\footnotesize\ttfamily virtual void Animal.\+On\+Select\+Change (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_loris_a9da05849af0ab3b5ff8ac6e47f83a8f9}{Loris}}, \mbox{\hyperlink{class_poodle_a57d0ab14cdd7ac693e010ca42fe52a6e}{Poodle}}, and \mbox{\hyperlink{class_zebra_a3043e9cd3444f7c439e44f8eefbc55e0}{Zebra}}.
+
+
+
+Definition at line 905 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a5e8ba3858f4d2c35c4a8d42fdbcc66b5}\label{class_animal_a5e8ba3858f4d2c35c4a8d42fdbcc66b5}} 
+\index{Animal@{Animal}!On\+Start@{On\+Start}}
+\index{On\+Start@{On\+Start}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{On\+Start()}{OnStart()}}
+{\footnotesize\ttfamily virtual void Animal.\+On\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_elephant_a4e12b9f8aa13e0ecb5b40c1d68f966aa}{Elephant}}.
+
+
+
+Definition at line 927 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a0b0cf85dbc03ad6ed1878e90c2ac84b1}\label{class_animal_a0b0cf85dbc03ad6ed1878e90c2ac84b1}} 
+\index{Animal@{Animal}!On\+Update@{On\+Update}}
+\index{On\+Update@{On\+Update}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{On\+Update()}{OnUpdate()}}
+{\footnotesize\ttfamily virtual void Animal.\+On\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_loris_a398638e87e93178426ab5a0486a564f7}{Loris}}, \mbox{\hyperlink{class_poodle_a48df28b8984d812658dae3516e9e421a}{Poodle}}, \mbox{\hyperlink{class_anteater_a51eaca4815562f28e36517999ed5b77f}{Anteater}}, and \mbox{\hyperlink{class_zebra_af47a27c78f160200774e3b6e740e52be}{Zebra}}.
+
+
+
+Definition at line 928 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_ab884d829130a352bb85070f3dc0fb888}\label{class_animal_ab884d829130a352bb85070f3dc0fb888}} 
+\index{Animal@{Animal}!Play\+Sound@{Play\+Sound}}
+\index{Play\+Sound@{Play\+Sound}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{Play\+Sound()}{PlaySound()}}
+{\footnotesize\ttfamily void Animal.\+Play\+Sound (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal_aa498775210af23df33eb0095e81ecbf7}{S\+O\+U\+N\+D\+\_\+\+E\+V\+E\+NT}}}]{a\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+Definition at line 932 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a300d7a15f30a1e57ff1cccc86555b18a}\label{class_animal_a300d7a15f30a1e57ff1cccc86555b18a}} 
+\index{Animal@{Animal}!Pull\+Lever@{Pull\+Lever}}
+\index{Pull\+Lever@{Pull\+Lever}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{Pull\+Lever()}{PullLever()}}
+{\footnotesize\ttfamily virtual void Animal.\+Pull\+Lever (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 904 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a7b30268c3ad4feb7b84107e195eaac28}\label{class_animal_a7b30268c3ad4feb7b84107e195eaac28}} 
+\index{Animal@{Animal}!Set\+Collider\+Active@{Set\+Collider\+Active}}
+\index{Set\+Collider\+Active@{Set\+Collider\+Active}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{Set\+Collider\+Active()}{SetColliderActive()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Animal.\+Set\+Collider\+Active (\begin{DoxyParamCaption}\item[{bool}]{active,  }\item[{List$<$ \mbox{\hyperlink{class_attachable}{Attachable}} $>$}]{ignore = {\ttfamily null} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1029 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a2f02116126d2fddd5938a5f3b9b163d1}\label{class_animal_a2f02116126d2fddd5938a5f3b9b163d1}} 
+\index{Animal@{Animal}!Set\+Collider\+Active@{Set\+Collider\+Active}}
+\index{Set\+Collider\+Active@{Set\+Collider\+Active}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{Set\+Collider\+Active()}{SetColliderActive()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Animal.\+Set\+Collider\+Active (\begin{DoxyParamCaption}\item[{bool}]{active,  }\item[{\mbox{\hyperlink{class_attachable}{Attachable}}}]{ignore }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1036 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_ac85273f85e93e6670c2f1346b72be873}\label{class_animal_ac85273f85e93e6670c2f1346b72be873}} 
+\index{Animal@{Animal}!Set\+Direction@{Set\+Direction}}
+\index{Set\+Direction@{Set\+Direction}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{Set\+Direction()}{SetDirection()}}
+{\footnotesize\ttfamily void Animal.\+Set\+Direction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_animal_8cs_a57d10208ebba781ae206546ada2002b6}{F\+A\+C\+I\+N\+G\+\_\+\+D\+IR}}}]{direction,  }\item[{bool}]{detach }\end{DoxyParamCaption})}
+
+
+
+set the direction of the animal and detach from interactable object if needed 
+
+
+\begin{DoxyParams}{Parameters}
+{\em direction} & \\
+\hline
+{\em detach} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1003 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a2e31c2fac8842ee6f66e7f79ac99d737}\label{class_animal_a2e31c2fac8842ee6f66e7f79ac99d737}} 
+\index{Animal@{Animal}!Set\+Timer@{Set\+Timer}}
+\index{Set\+Timer@{Set\+Timer}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{Set\+Timer()}{SetTimer()}}
+{\footnotesize\ttfamily void Animal.\+Set\+Timer (\begin{DoxyParamCaption}\item[{bool}]{a\+\_\+\+Run }\end{DoxyParamCaption})}
+
+
+
+Definition at line 944 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a026f551709b7b9c8d22e3ccc47067bec}\label{class_animal_a026f551709b7b9c8d22e3ccc47067bec}} 
+\index{Animal@{Animal}!Stop\+Move\+To@{Stop\+Move\+To}}
+\index{Stop\+Move\+To@{Stop\+Move\+To}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{Stop\+Move\+To()}{StopMoveTo()}}
+{\footnotesize\ttfamily void Animal.\+Stop\+Move\+To (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 806 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a676f9175b4ab6957d904e9bb62fdb3b4}\label{class_animal_a676f9175b4ab6957d904e9bb62fdb3b4}} 
+\index{Animal@{Animal}!Turn@{Turn}}
+\index{Turn@{Turn}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{Turn()}{Turn()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Animal.\+Turn (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})}
+
+
+
+turn the animal X degrees 
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 674 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a9bd4c172143d8daa1f6b3ad12d6a67c2}\label{class_animal_a9bd4c172143d8daa1f6b3ad12d6a67c2}} 
+\index{Animal@{Animal}!Turn@{Turn}}
+\index{Turn@{Turn}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{Turn()}{Turn()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Animal.\+Turn (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_animal_8cs_a57d10208ebba781ae206546ada2002b6}{F\+A\+C\+I\+N\+G\+\_\+\+D\+IR}}}]{direction }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_turn}{Turn}} the animal to face a certian direction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em direction} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 692 of file Animal.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_animal_aa0ed151e61e4543ea3b6b176792cf4f5}\label{class_animal_aa0ed151e61e4543ea3b6b176792cf4f5}} 
+\index{Animal@{Animal}!Current\+Animal@{Current\+Animal}}
+\index{Current\+Animal@{Current\+Animal}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{Current\+Animal}{CurrentAnimal}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_animal}{Animal}} Animal.\+Current\+Animal\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 64 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a9bed81572e69bafb08e1ee7fe8fbe944}\label{class_animal_a9bed81572e69bafb08e1ee7fe8fbe944}} 
+\index{Animal@{Animal}!current\+Attached@{current\+Attached}}
+\index{current\+Attached@{current\+Attached}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{current\+Attached}{currentAttached}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_attachable}{Attachable}} Animal.\+current\+Attached}
+
+
+
+Definition at line 137 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a7c8b3a199529db24d4177f96cc34f435}\label{class_animal_a7c8b3a199529db24d4177f96cc34f435}} 
+\index{Animal@{Animal}!m\+\_\+a\+Sound\+Events@{m\+\_\+a\+Sound\+Events}}
+\index{m\+\_\+a\+Sound\+Events@{m\+\_\+a\+Sound\+Events}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+a\+Sound\+Events}{m\_aSoundEvents}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_animal_1_1_named_event}{Named\+Event}} \mbox{[}$\,$\mbox{]} Animal.\+m\+\_\+a\+Sound\+Events}
+
+
+
+Definition at line 132 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a52e29a5e08389bff22aa3c58fd51c51e}\label{class_animal_a52e29a5e08389bff22aa3c58fd51c51e}} 
+\index{Animal@{Animal}!m\+\_\+at\+Ground\+Check\+Points@{m\+\_\+at\+Ground\+Check\+Points}}
+\index{m\+\_\+at\+Ground\+Check\+Points@{m\+\_\+at\+Ground\+Check\+Points}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+at\+Ground\+Check\+Points}{m\_atGroundCheckPoints}}
+{\footnotesize\ttfamily Transform Animal.\+m\+\_\+at\+Ground\+Check\+Points}
+
+
+
+Definition at line 111 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_af82430c5d281f7e015d07f65949b483d}\label{class_animal_af82430c5d281f7e015d07f65949b483d}} 
+\index{Animal@{Animal}!m\+\_\+at\+Push\+Off\+Check\+Point@{m\+\_\+at\+Push\+Off\+Check\+Point}}
+\index{m\+\_\+at\+Push\+Off\+Check\+Point@{m\+\_\+at\+Push\+Off\+Check\+Point}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+at\+Push\+Off\+Check\+Point}{m\_atPushOffCheckPoint}}
+{\footnotesize\ttfamily Transform Animal.\+m\+\_\+at\+Push\+Off\+Check\+Point}
+
+
+
+Definition at line 112 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a13a58afa816beb7dad10681097a892e0}\label{class_animal_a13a58afa816beb7dad10681097a892e0}} 
+\index{Animal@{Animal}!m\+\_\+b\+Alive@{m\+\_\+b\+Alive}}
+\index{m\+\_\+b\+Alive@{m\+\_\+b\+Alive}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+b\+Alive}{m\_bAlive}}
+{\footnotesize\ttfamily bool Animal.\+m\+\_\+b\+Alive = true\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 231 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a935c18a78366e760feac53a0d286c13a}\label{class_animal_a935c18a78366e760feac53a0d286c13a}} 
+\index{Animal@{Animal}!m\+\_\+b\+Back\+Ground\+Detected@{m\+\_\+b\+Back\+Ground\+Detected}}
+\index{m\+\_\+b\+Back\+Ground\+Detected@{m\+\_\+b\+Back\+Ground\+Detected}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+b\+Back\+Ground\+Detected}{m\_bBackGroundDetected}}
+{\footnotesize\ttfamily bool Animal.\+m\+\_\+b\+Back\+Ground\+Detected = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 239 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a8cb1a64819aedbdff4212914cfd3dd7c}\label{class_animal_a8cb1a64819aedbdff4212914cfd3dd7c}} 
+\index{Animal@{Animal}!m\+\_\+b\+Disable\+Fall\+Death@{m\+\_\+b\+Disable\+Fall\+Death}}
+\index{m\+\_\+b\+Disable\+Fall\+Death@{m\+\_\+b\+Disable\+Fall\+Death}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+b\+Disable\+Fall\+Death}{m\_bDisableFallDeath}}
+{\footnotesize\ttfamily bool Animal.\+m\+\_\+b\+Disable\+Fall\+Death = false}
+
+
+
+Definition at line 122 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a7ae58603453bea1c8a51feca5b36faf7}\label{class_animal_a7ae58603453bea1c8a51feca5b36faf7}} 
+\index{Animal@{Animal}!m\+\_\+b\+Eyetrack\+Selected@{m\+\_\+b\+Eyetrack\+Selected}}
+\index{m\+\_\+b\+Eyetrack\+Selected@{m\+\_\+b\+Eyetrack\+Selected}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+b\+Eyetrack\+Selected}{m\_bEyetrackSelected}}
+{\footnotesize\ttfamily bool Animal.\+m\+\_\+b\+Eyetrack\+Selected = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 247 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a55878750829ba48c39a10e5ee0c6b56c}\label{class_animal_a55878750829ba48c39a10e5ee0c6b56c}} 
+\index{Animal@{Animal}!m\+\_\+b\+Front\+Ground\+Detected@{m\+\_\+b\+Front\+Ground\+Detected}}
+\index{m\+\_\+b\+Front\+Ground\+Detected@{m\+\_\+b\+Front\+Ground\+Detected}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+b\+Front\+Ground\+Detected}{m\_bFrontGroundDetected}}
+{\footnotesize\ttfamily bool Animal.\+m\+\_\+b\+Front\+Ground\+Detected = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 238 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a00f65a0b9ad23dfd2e6c65262319548c}\label{class_animal_a00f65a0b9ad23dfd2e6c65262319548c}} 
+\index{Animal@{Animal}!m\+\_\+b\+Gaze\+Running@{m\+\_\+b\+Gaze\+Running}}
+\index{m\+\_\+b\+Gaze\+Running@{m\+\_\+b\+Gaze\+Running}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+b\+Gaze\+Running}{m\_bGazeRunning}}
+{\footnotesize\ttfamily bool Animal.\+m\+\_\+b\+Gaze\+Running = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 248 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_aaacd73148a6d15b2b21092b20f5d768e}\label{class_animal_aaacd73148a6d15b2b21092b20f5d768e}} 
+\index{Animal@{Animal}!m\+\_\+b\+Lean\+Down@{m\+\_\+b\+Lean\+Down}}
+\index{m\+\_\+b\+Lean\+Down@{m\+\_\+b\+Lean\+Down}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+b\+Lean\+Down}{m\_bLeanDown}}
+{\footnotesize\ttfamily bool Animal.\+m\+\_\+b\+Lean\+Down = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 237 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a673ca86d1a63c980d0ccacdfeaa2de2e}\label{class_animal_a673ca86d1a63c980d0ccacdfeaa2de2e}} 
+\index{Animal@{Animal}!m\+\_\+b\+Lean\+Up@{m\+\_\+b\+Lean\+Up}}
+\index{m\+\_\+b\+Lean\+Up@{m\+\_\+b\+Lean\+Up}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+b\+Lean\+Up}{m\_bLeanUp}}
+{\footnotesize\ttfamily bool Animal.\+m\+\_\+b\+Lean\+Up = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 236 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_afb686c69d662317515547b34b8a69186}\label{class_animal_afb686c69d662317515547b34b8a69186}} 
+\index{Animal@{Animal}!m\+\_\+b\+Push\+Off\+Detected@{m\+\_\+b\+Push\+Off\+Detected}}
+\index{m\+\_\+b\+Push\+Off\+Detected@{m\+\_\+b\+Push\+Off\+Detected}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+b\+Push\+Off\+Detected}{m\_bPushOffDetected}}
+{\footnotesize\ttfamily bool Animal.\+m\+\_\+b\+Push\+Off\+Detected = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 241 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a34c35ef0f61aefb64431cc04c82b5054}\label{class_animal_a34c35ef0f61aefb64431cc04c82b5054}} 
+\index{Animal@{Animal}!m\+\_\+b\+Rest\+Ground\+Detected@{m\+\_\+b\+Rest\+Ground\+Detected}}
+\index{m\+\_\+b\+Rest\+Ground\+Detected@{m\+\_\+b\+Rest\+Ground\+Detected}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+b\+Rest\+Ground\+Detected}{m\_bRestGroundDetected}}
+{\footnotesize\ttfamily bool Animal.\+m\+\_\+b\+Rest\+Ground\+Detected = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 240 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a7cc77366452cd8d15d5623dc2b368fee}\label{class_animal_a7cc77366452cd8d15d5623dc2b368fee}} 
+\index{Animal@{Animal}!m\+\_\+d\+Child\+Colliders@{m\+\_\+d\+Child\+Colliders}}
+\index{m\+\_\+d\+Child\+Colliders@{m\+\_\+d\+Child\+Colliders}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+d\+Child\+Colliders}{m\_dChildColliders}}
+{\footnotesize\ttfamily Dictionary$<$Collider, Type$>$ Animal.\+m\+\_\+d\+Child\+Colliders\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 251 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a3e903279d776c821c7e699847fe06cf5}\label{class_animal_a3e903279d776c821c7e699847fe06cf5}} 
+\index{Animal@{Animal}!m\+\_\+e\+Extras@{m\+\_\+e\+Extras}}
+\index{m\+\_\+e\+Extras@{m\+\_\+e\+Extras}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+e\+Extras}{m\_eExtras}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_animation_extras}{Animation\+Extras}} Animal.\+m\+\_\+e\+Extras}
+
+
+
+Definition at line 72 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a1d3cac16f6206eb338093a632d644d9f}\label{class_animal_a1d3cac16f6206eb338093a632d644d9f}} 
+\index{Animal@{Animal}!m\+\_\+e\+Name@{m\+\_\+e\+Name}}
+\index{m\+\_\+e\+Name@{m\+\_\+e\+Name}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+e\+Name}{m\_eName}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_animal_8cs_a2fa5713399b84d1b88dae9196837af50}{A\+N\+I\+M\+A\+L\+\_\+\+N\+A\+ME}} Animal.\+m\+\_\+e\+Name}
+
+
+
+Definition at line 140 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a832155594812fbbf3b2ed1a698835ee0}\label{class_animal_a832155594812fbbf3b2ed1a698835ee0}} 
+\index{Animal@{Animal}!m\+\_\+e\+Size@{m\+\_\+e\+Size}}
+\index{m\+\_\+e\+Size@{m\+\_\+e\+Size}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+e\+Size}{m\_eSize}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_animal_8cs_ad0d15cd79bb3e3a97e7fb817f1438fcc}{A\+N\+I\+M\+A\+L\+\_\+\+S\+I\+ZE}} Animal.\+m\+\_\+e\+Size}
+
+
+
+Definition at line 142 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_ae0c82e64109cba8e3186bec644f72ff4}\label{class_animal_ae0c82e64109cba8e3186bec644f72ff4}} 
+\index{Animal@{Animal}!m\+\_\+f\+Back\+Rotation@{m\+\_\+f\+Back\+Rotation}}
+\index{m\+\_\+f\+Back\+Rotation@{m\+\_\+f\+Back\+Rotation}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Back\+Rotation}{m\_fBackRotation}}
+{\footnotesize\ttfamily float Animal.\+m\+\_\+f\+Back\+Rotation = 0}
+
+
+
+Definition at line 98 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_ad159aee4f8a2e5277b2eb5fce15ac797}\label{class_animal_ad159aee4f8a2e5277b2eb5fce15ac797}} 
+\index{Animal@{Animal}!m\+\_\+f\+CameraY@{m\+\_\+f\+CameraY}}
+\index{m\+\_\+f\+CameraY@{m\+\_\+f\+CameraY}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+CameraY}{m\_fCameraY}}
+{\footnotesize\ttfamily float Animal.\+m\+\_\+f\+CameraY = 0}
+
+
+
+Definition at line 125 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a1d872c88c79887ee4d66dfee7e653081}\label{class_animal_a1d872c88c79887ee4d66dfee7e653081}} 
+\index{Animal@{Animal}!m\+\_\+f\+Crush\+Force@{m\+\_\+f\+Crush\+Force}}
+\index{m\+\_\+f\+Crush\+Force@{m\+\_\+f\+Crush\+Force}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Crush\+Force}{m\_fCrushForce}}
+{\footnotesize\ttfamily float Animal.\+m\+\_\+f\+Crush\+Force = 5}
+
+
+
+Definition at line 128 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a8524e219275547954f825c20f17bbfe0}\label{class_animal_a8524e219275547954f825c20f17bbfe0}} 
+\index{Animal@{Animal}!m\+\_\+f\+Current\+Speed@{m\+\_\+f\+Current\+Speed}}
+\index{m\+\_\+f\+Current\+Speed@{m\+\_\+f\+Current\+Speed}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Current\+Speed}{m\_fCurrentSpeed}}
+{\footnotesize\ttfamily float Animal.\+m\+\_\+f\+Current\+Speed\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 234 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a46f6e3823b8f08a423b762437ebc504b}\label{class_animal_a46f6e3823b8f08a423b762437ebc504b}} 
+\index{Animal@{Animal}!m\+\_\+f\+Fall\+Speed\+Mult@{m\+\_\+f\+Fall\+Speed\+Mult}}
+\index{m\+\_\+f\+Fall\+Speed\+Mult@{m\+\_\+f\+Fall\+Speed\+Mult}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Fall\+Speed\+Mult}{m\_fFallSpeedMult}}
+{\footnotesize\ttfamily float Animal.\+m\+\_\+f\+Fall\+Speed\+Mult = 0.\+5f}
+
+
+
+Definition at line 84 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_ac662f1892b85515e76ec7873d482df89}\label{class_animal_ac662f1892b85515e76ec7873d482df89}} 
+\index{Animal@{Animal}!m\+\_\+f\+Forward\+Rotation@{m\+\_\+f\+Forward\+Rotation}}
+\index{m\+\_\+f\+Forward\+Rotation@{m\+\_\+f\+Forward\+Rotation}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Forward\+Rotation}{m\_fForwardRotation}}
+{\footnotesize\ttfamily float Animal.\+m\+\_\+f\+Forward\+Rotation = 180}
+
+
+
+Definition at line 97 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_aec0a0921e0e2e4be62042fdfb2ab1a9b}\label{class_animal_aec0a0921e0e2e4be62042fdfb2ab1a9b}} 
+\index{Animal@{Animal}!m\+\_\+f\+Gaze\+Timer@{m\+\_\+f\+Gaze\+Timer}}
+\index{m\+\_\+f\+Gaze\+Timer@{m\+\_\+f\+Gaze\+Timer}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Gaze\+Timer}{m\_fGazeTimer}}
+{\footnotesize\ttfamily float Animal.\+m\+\_\+f\+Gaze\+Timer = 0f\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 249 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_ad61d1d395ce25fc4996a0385347b7dd3}\label{class_animal_ad61d1d395ce25fc4996a0385347b7dd3}} 
+\index{Animal@{Animal}!m\+\_\+f\+Ground\+Raycast\+Dist@{m\+\_\+f\+Ground\+Raycast\+Dist}}
+\index{m\+\_\+f\+Ground\+Raycast\+Dist@{m\+\_\+f\+Ground\+Raycast\+Dist}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Ground\+Raycast\+Dist}{m\_fGroundRaycastDist}}
+{\footnotesize\ttfamily float Animal.\+m\+\_\+f\+Ground\+Raycast\+Dist = 1f}
+
+
+
+Definition at line 108 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a228164375564588094f7ddd820f5d859}\label{class_animal_a228164375564588094f7ddd820f5d859}} 
+\index{Animal@{Animal}!m\+\_\+f\+Hit\+Resist@{m\+\_\+f\+Hit\+Resist}}
+\index{m\+\_\+f\+Hit\+Resist@{m\+\_\+f\+Hit\+Resist}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Hit\+Resist}{m\_fHitResist}}
+{\footnotesize\ttfamily float Animal.\+m\+\_\+f\+Hit\+Resist = 1f}
+
+
+
+Definition at line 123 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a577330859c3a5bf5b0ae5690eb03dc3b}\label{class_animal_a577330859c3a5bf5b0ae5690eb03dc3b}} 
+\index{Animal@{Animal}!m\+\_\+f\+Jump\+Lerp\+Speed@{m\+\_\+f\+Jump\+Lerp\+Speed}}
+\index{m\+\_\+f\+Jump\+Lerp\+Speed@{m\+\_\+f\+Jump\+Lerp\+Speed}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Jump\+Lerp\+Speed}{m\_fJumpLerpSpeed}}
+{\footnotesize\ttfamily float Animal.\+m\+\_\+f\+Jump\+Lerp\+Speed = 2f}
+
+
+
+Definition at line 104 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_aa644cc3baee4917c5a8ff4ce6a7f5213}\label{class_animal_aa644cc3baee4917c5a8ff4ce6a7f5213}} 
+\index{Animal@{Animal}!m\+\_\+f\+Jump\+Wait\+Frames@{m\+\_\+f\+Jump\+Wait\+Frames}}
+\index{m\+\_\+f\+Jump\+Wait\+Frames@{m\+\_\+f\+Jump\+Wait\+Frames}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Jump\+Wait\+Frames}{m\_fJumpWaitFrames}}
+{\footnotesize\ttfamily float Animal.\+m\+\_\+f\+Jump\+Wait\+Frames = 1}
+
+
+
+Definition at line 105 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a62e54a6e632478daff40256ce4d3fbd5}\label{class_animal_a62e54a6e632478daff40256ce4d3fbd5}} 
+\index{Animal@{Animal}!m\+\_\+f\+Jump\+Wait\+Time@{m\+\_\+f\+Jump\+Wait\+Time}}
+\index{m\+\_\+f\+Jump\+Wait\+Time@{m\+\_\+f\+Jump\+Wait\+Time}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Jump\+Wait\+Time}{m\_fJumpWaitTime}}
+{\footnotesize\ttfamily float Animal.\+m\+\_\+f\+Jump\+Wait\+Time = 1f}
+
+
+
+Definition at line 103 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_ae20b6c637e8cd4334fe8e0bff05a7872}\label{class_animal_ae20b6c637e8cd4334fe8e0bff05a7872}} 
+\index{Animal@{Animal}!m\+\_\+f\+Left\+Rotation@{m\+\_\+f\+Left\+Rotation}}
+\index{m\+\_\+f\+Left\+Rotation@{m\+\_\+f\+Left\+Rotation}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Left\+Rotation}{m\_fLeftRotation}}
+{\footnotesize\ttfamily float Animal.\+m\+\_\+f\+Left\+Rotation = 270}
+
+
+
+Definition at line 99 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_ac359d09f810b54f1707f02c7958ff639}\label{class_animal_ac359d09f810b54f1707f02c7958ff639}} 
+\index{Animal@{Animal}!m\+\_\+f\+Max\+Fall\+Dist@{m\+\_\+f\+Max\+Fall\+Dist}}
+\index{m\+\_\+f\+Max\+Fall\+Dist@{m\+\_\+f\+Max\+Fall\+Dist}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Max\+Fall\+Dist}{m\_fMaxFallDist}}
+{\footnotesize\ttfamily float Animal.\+m\+\_\+f\+Max\+Fall\+Dist = 1f}
+
+
+
+Definition at line 121 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a6dfbab9edf6169464fe9a8344032c28e}\label{class_animal_a6dfbab9edf6169464fe9a8344032c28e}} 
+\index{Animal@{Animal}!m\+\_\+f\+Pull\+Speed\+Mult@{m\+\_\+f\+Pull\+Speed\+Mult}}
+\index{m\+\_\+f\+Pull\+Speed\+Mult@{m\+\_\+f\+Pull\+Speed\+Mult}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Pull\+Speed\+Mult}{m\_fPullSpeedMult}}
+{\footnotesize\ttfamily float Animal.\+m\+\_\+f\+Pull\+Speed\+Mult = 0.\+5f}
+
+
+
+Definition at line 83 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a16a1fc92968f20b95877a6afff3108e7}\label{class_animal_a16a1fc92968f20b95877a6afff3108e7}} 
+\index{Animal@{Animal}!m\+\_\+f\+Push\+Anim\+Mult@{m\+\_\+f\+Push\+Anim\+Mult}}
+\index{m\+\_\+f\+Push\+Anim\+Mult@{m\+\_\+f\+Push\+Anim\+Mult}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Push\+Anim\+Mult}{m\_fPushAnimMult}}
+{\footnotesize\ttfamily float Animal.\+m\+\_\+f\+Push\+Anim\+Mult = 5}
+
+
+
+Definition at line 94 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_af615d2651b634514c081cdf5e8d0f5ed}\label{class_animal_af615d2651b634514c081cdf5e8d0f5ed}} 
+\index{Animal@{Animal}!m\+\_\+f\+Raycast\+Wait\+Time@{m\+\_\+f\+Raycast\+Wait\+Time}}
+\index{m\+\_\+f\+Raycast\+Wait\+Time@{m\+\_\+f\+Raycast\+Wait\+Time}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Raycast\+Wait\+Time}{m\_fRaycastWaitTime}}
+{\footnotesize\ttfamily float Animal.\+m\+\_\+f\+Raycast\+Wait\+Time = 0f}
+
+
+
+Definition at line 109 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_afe3df93e1c665aeb4232690655e81c34}\label{class_animal_afe3df93e1c665aeb4232690655e81c34}} 
+\index{Animal@{Animal}!m\+\_\+f\+Right\+Rotation@{m\+\_\+f\+Right\+Rotation}}
+\index{m\+\_\+f\+Right\+Rotation@{m\+\_\+f\+Right\+Rotation}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Right\+Rotation}{m\_fRightRotation}}
+{\footnotesize\ttfamily float Animal.\+m\+\_\+f\+Right\+Rotation = 90}
+
+
+
+Definition at line 100 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a2b708fd867ff4c7f87c2b38f3391f4ee}\label{class_animal_a2b708fd867ff4c7f87c2b38f3391f4ee}} 
+\index{Animal@{Animal}!m\+\_\+f\+Rot\+Speed@{m\+\_\+f\+Rot\+Speed}}
+\index{m\+\_\+f\+Rot\+Speed@{m\+\_\+f\+Rot\+Speed}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Rot\+Speed}{m\_fRotSpeed}}
+{\footnotesize\ttfamily float Animal.\+m\+\_\+f\+Rot\+Speed = 1f}
+
+
+
+Definition at line 89 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a5689132f4b5d01cf746ddcdca9f1a9ef}\label{class_animal_a5689132f4b5d01cf746ddcdca9f1a9ef}} 
+\index{Animal@{Animal}!m\+\_\+f\+Selection\+Timer@{m\+\_\+f\+Selection\+Timer}}
+\index{m\+\_\+f\+Selection\+Timer@{m\+\_\+f\+Selection\+Timer}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Selection\+Timer}{m\_fSelectionTimer}}
+{\footnotesize\ttfamily float Animal.\+m\+\_\+f\+Selection\+Timer = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 244 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a9df81cf498acab378f652ba5257b8370}\label{class_animal_a9df81cf498acab378f652ba5257b8370}} 
+\index{Animal@{Animal}!m\+\_\+f\+Sit\+Time@{m\+\_\+f\+Sit\+Time}}
+\index{m\+\_\+f\+Sit\+Time@{m\+\_\+f\+Sit\+Time}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Sit\+Time}{m\_fSitTime}}
+{\footnotesize\ttfamily float Animal.\+m\+\_\+f\+Sit\+Time = 2f}
+
+
+
+Definition at line 124 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a1b9b1c77bf11c1b2ea6ad9db79951194}\label{class_animal_a1b9b1c77bf11c1b2ea6ad9db79951194}} 
+\index{Animal@{Animal}!m\+\_\+f\+Sit\+Timer@{m\+\_\+f\+Sit\+Timer}}
+\index{m\+\_\+f\+Sit\+Timer@{m\+\_\+f\+Sit\+Timer}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Sit\+Timer}{m\_fSitTimer}}
+{\footnotesize\ttfamily float Animal.\+m\+\_\+f\+Sit\+Timer = -\/1f\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 245 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a208c7380adb491ec2cb389c255172262}\label{class_animal_a208c7380adb491ec2cb389c255172262}} 
+\index{Animal@{Animal}!m\+\_\+f\+Spline\+Rot\+Speed@{m\+\_\+f\+Spline\+Rot\+Speed}}
+\index{m\+\_\+f\+Spline\+Rot\+Speed@{m\+\_\+f\+Spline\+Rot\+Speed}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Spline\+Rot\+Speed}{m\_fSplineRotSpeed}}
+{\footnotesize\ttfamily float Animal.\+m\+\_\+f\+Spline\+Rot\+Speed = 1f}
+
+
+
+Definition at line 90 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a66e141cf619fde63384c1759988c95ca}\label{class_animal_a66e141cf619fde63384c1759988c95ca}} 
+\index{Animal@{Animal}!m\+\_\+f\+Top\+Speed@{m\+\_\+f\+Top\+Speed}}
+\index{m\+\_\+f\+Top\+Speed@{m\+\_\+f\+Top\+Speed}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Top\+Speed}{m\_fTopSpeed}}
+{\footnotesize\ttfamily float Animal.\+m\+\_\+f\+Top\+Speed = 0.\+05f}
+
+
+
+Definition at line 82 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a526af3f4cd5e19f8449ce4a01a4cb65e}\label{class_animal_a526af3f4cd5e19f8449ce4a01a4cb65e}} 
+\index{Animal@{Animal}!m\+\_\+f\+Turn\+Axis@{m\+\_\+f\+Turn\+Axis}}
+\index{m\+\_\+f\+Turn\+Axis@{m\+\_\+f\+Turn\+Axis}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Turn\+Axis}{m\_fTurnAxis}}
+{\footnotesize\ttfamily float Animal.\+m\+\_\+f\+Turn\+Axis}
+
+
+
+Definition at line 87 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_ae003f54a88ce9c5790651eb2e2b739eb}\label{class_animal_ae003f54a88ce9c5790651eb2e2b739eb}} 
+\index{Animal@{Animal}!m\+\_\+f\+Walk\+Anim\+Mult@{m\+\_\+f\+Walk\+Anim\+Mult}}
+\index{m\+\_\+f\+Walk\+Anim\+Mult@{m\+\_\+f\+Walk\+Anim\+Mult}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Walk\+Anim\+Mult}{m\_fWalkAnimMult}}
+{\footnotesize\ttfamily float Animal.\+m\+\_\+f\+Walk\+Anim\+Mult = 20}
+
+
+
+Definition at line 93 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a4e411bb9775139ae49634dba20781d64}\label{class_animal_a4e411bb9775139ae49634dba20781d64}} 
+\index{Animal@{Animal}!m\+\_\+f\+Walk\+Speed@{m\+\_\+f\+Walk\+Speed}}
+\index{m\+\_\+f\+Walk\+Speed@{m\+\_\+f\+Walk\+Speed}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Walk\+Speed}{m\_fWalkSpeed}}
+{\footnotesize\ttfamily float Animal.\+m\+\_\+f\+Walk\+Speed = 0.\+001f}
+
+
+
+Definition at line 81 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a4949db860eac422ce2a1a3df77f84bc5}\label{class_animal_a4949db860eac422ce2a1a3df77f84bc5}} 
+\index{Animal@{Animal}!m\+\_\+go\+I\+K\+Switch@{m\+\_\+go\+I\+K\+Switch}}
+\index{m\+\_\+go\+I\+K\+Switch@{m\+\_\+go\+I\+K\+Switch}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+go\+I\+K\+Switch}{m\_goIKSwitch}}
+{\footnotesize\ttfamily Game\+Object Animal.\+m\+\_\+go\+I\+K\+Switch}
+
+
+
+Definition at line 73 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_afe1492caf21bd4fc102c0336e9d0c52f}\label{class_animal_afe1492caf21bd4fc102c0336e9d0c52f}} 
+\index{Animal@{Animal}!m\+\_\+input@{m\+\_\+input}}
+\index{m\+\_\+input@{m\+\_\+input}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+input}{m\_input}}
+{\footnotesize\ttfamily Main\+Mapping Animal.\+m\+\_\+input\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 253 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a4dac26b3c8c4c5382d1d03ec917fe836}\label{class_animal_a4dac26b3c8c4c5382d1d03ec917fe836}} 
+\index{Animal@{Animal}!m\+\_\+l\+Ground\+Check\+Mask@{m\+\_\+l\+Ground\+Check\+Mask}}
+\index{m\+\_\+l\+Ground\+Check\+Mask@{m\+\_\+l\+Ground\+Check\+Mask}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+l\+Ground\+Check\+Mask}{m\_lGroundCheckMask}}
+{\footnotesize\ttfamily Layer\+Mask Animal.\+m\+\_\+l\+Ground\+Check\+Mask}
+
+
+
+Definition at line 110 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a56374f904c3f6e99ba03fadd06e94800}\label{class_animal_a56374f904c3f6e99ba03fadd06e94800}} 
+\index{Animal@{Animal}!m\+\_\+\+No\+Deaths@{m\+\_\+\+No\+Deaths}}
+\index{m\+\_\+\+No\+Deaths@{m\+\_\+\+No\+Deaths}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+\+No\+Deaths}{m\_NoDeaths}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_animal_8cs_aa09ea87b75a706096f010aef7b9b1826}{D\+E\+A\+T\+H\+\_\+\+T\+Y\+PE}} \mbox{[}$\,$\mbox{]} Animal.\+m\+\_\+\+No\+Deaths}
+
+
+
+Definition at line 129 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a67b099ba034805dad5ee5cc45481cdf1}\label{class_animal_a67b099ba034805dad5ee5cc45481cdf1}} 
+\index{Animal@{Animal}!m\+\_\+t\+Camera\+Pivot@{m\+\_\+t\+Camera\+Pivot}}
+\index{m\+\_\+t\+Camera\+Pivot@{m\+\_\+t\+Camera\+Pivot}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+t\+Camera\+Pivot}{m\_tCameraPivot}}
+{\footnotesize\ttfamily Transform Animal.\+m\+\_\+t\+Camera\+Pivot}
+
+
+
+Definition at line 70 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_afbea823db5efa979305809e5a44f0660}\label{class_animal_afbea823db5efa979305809e5a44f0660}} 
+\index{Animal@{Animal}!m\+\_\+t\+Collider@{m\+\_\+t\+Collider}}
+\index{m\+\_\+t\+Collider@{m\+\_\+t\+Collider}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+t\+Collider}{m\_tCollider}}
+{\footnotesize\ttfamily Transform Animal.\+m\+\_\+t\+Collider}
+
+
+
+Definition at line 77 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a7e09edf484465463e391503fc00d53e0}\label{class_animal_a7e09edf484465463e391503fc00d53e0}} 
+\index{Animal@{Animal}!m\+\_\+t\+Joint\+Root@{m\+\_\+t\+Joint\+Root}}
+\index{m\+\_\+t\+Joint\+Root@{m\+\_\+t\+Joint\+Root}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+t\+Joint\+Root}{m\_tJointRoot}}
+{\footnotesize\ttfamily Transform Animal.\+m\+\_\+t\+Joint\+Root}
+
+
+
+Definition at line 74 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a960e8ba99fbe90ef77f4937a60c473e8}\label{class_animal_a960e8ba99fbe90ef77f4937a60c473e8}} 
+\index{Animal@{Animal}!m\+\_\+t\+Lever\+Reference@{m\+\_\+t\+Lever\+Reference}}
+\index{m\+\_\+t\+Lever\+Reference@{m\+\_\+t\+Lever\+Reference}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+t\+Lever\+Reference}{m\_tLeverReference}}
+{\footnotesize\ttfamily Transform Animal.\+m\+\_\+t\+Lever\+Reference}
+
+
+
+Definition at line 71 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a14776da7c67e6a28ea9ac2145d34c815}\label{class_animal_a14776da7c67e6a28ea9ac2145d34c815}} 
+\index{Animal@{Animal}!m\+\_\+t\+Object\+Holder@{m\+\_\+t\+Object\+Holder}}
+\index{m\+\_\+t\+Object\+Holder@{m\+\_\+t\+Object\+Holder}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+t\+Object\+Holder}{m\_tObjectHolder}}
+{\footnotesize\ttfamily Transform Animal.\+m\+\_\+t\+Object\+Holder}
+
+
+
+Definition at line 78 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a1fa3aebf72a7982519c84f4fff4c2fe6}\label{class_animal_a1fa3aebf72a7982519c84f4fff4c2fe6}} 
+\index{Animal@{Animal}!m\+\_\+t\+Pelvis@{m\+\_\+t\+Pelvis}}
+\index{m\+\_\+t\+Pelvis@{m\+\_\+t\+Pelvis}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+t\+Pelvis}{m\_tPelvis}}
+{\footnotesize\ttfamily Transform Animal.\+m\+\_\+t\+Pelvis}
+
+
+
+Definition at line 75 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_ab80a1e845a4ff60c8d6e227cd48f8633}\label{class_animal_ab80a1e845a4ff60c8d6e227cd48f8633}} 
+\index{Animal@{Animal}!m\+\_\+v3\+Death\+Distance@{m\+\_\+v3\+Death\+Distance}}
+\index{m\+\_\+v3\+Death\+Distance@{m\+\_\+v3\+Death\+Distance}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+v3\+Death\+Distance}{m\_v3DeathDistance}}
+{\footnotesize\ttfamily Vector3 Animal.\+m\+\_\+v3\+Death\+Distance = new Vector3(0, 0.\+5f, -\/2.\+5f)}
+
+
+
+Definition at line 127 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a48be84620d7945ca70a60ec8a8ca9578}\label{class_animal_a48be84620d7945ca70a60ec8a8ca9578}} 
+\index{Animal@{Animal}!m\+\_\+v3\+Default\+Forward@{m\+\_\+v3\+Default\+Forward}}
+\index{m\+\_\+v3\+Default\+Forward@{m\+\_\+v3\+Default\+Forward}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+v3\+Default\+Forward}{m\_v3DefaultForward}}
+{\footnotesize\ttfamily Vector3 Animal.\+m\+\_\+v3\+Default\+Forward}
+
+
+
+Definition at line 126 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a8d925d74519bd6da8927346e43371576}\label{class_animal_a8d925d74519bd6da8927346e43371576}} 
+\index{Animal@{Animal}!m\+\_\+v3\+Pelvis\+Offset@{m\+\_\+v3\+Pelvis\+Offset}}
+\index{m\+\_\+v3\+Pelvis\+Offset@{m\+\_\+v3\+Pelvis\+Offset}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+v3\+Pelvis\+Offset}{m\_v3PelvisOffset}}
+{\footnotesize\ttfamily Vector3 Animal.\+m\+\_\+v3\+Pelvis\+Offset}
+
+
+
+Definition at line 76 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a983bda54f5ac80081085024ddb6b1199}\label{class_animal_a983bda54f5ac80081085024ddb6b1199}} 
+\index{Animal@{Animal}!m\+\_\+\+X\+Buffer@{m\+\_\+\+X\+Buffer}}
+\index{m\+\_\+\+X\+Buffer@{m\+\_\+\+X\+Buffer}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+\+X\+Buffer}{m\_XBuffer}}
+{\footnotesize\ttfamily float Animal.\+m\+\_\+\+X\+Buffer = 1}
+
+
+
+Definition at line 116 of file Animal.\+cs.
+
+\mbox{\Hypertarget{class_animal_a052f059393b9e50b56bb4b5d16ef8c8d}\label{class_animal_a052f059393b9e50b56bb4b5d16ef8c8d}} 
+\index{Animal@{Animal}!m\+\_\+\+Y\+Buffer@{m\+\_\+\+Y\+Buffer}}
+\index{m\+\_\+\+Y\+Buffer@{m\+\_\+\+Y\+Buffer}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Y\+Buffer}{m\_YBuffer}}
+{\footnotesize\ttfamily float Animal.\+m\+\_\+\+Y\+Buffer = 1}
+
+
+
+Definition at line 118 of file Animal.\+cs.
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_animal_a461c4f050bcad5e24677b05a80fbcaf4}\label{class_animal_a461c4f050bcad5e24677b05a80fbcaf4}} 
+\index{Animal@{Animal}!Was\+Teleport@{Was\+Teleport}}
+\index{Was\+Teleport@{Was\+Teleport}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{Was\+Teleport}{WasTeleport}}
+{\footnotesize\ttfamily bool Animal.\+Was\+Teleport\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line 134 of file Animal.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Animal/\mbox{\hyperlink{_animal_8cs}{Animal.\+cs}}\end{DoxyCompactItemize}

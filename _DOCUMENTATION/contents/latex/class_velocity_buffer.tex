@@ -1,0 +1,147 @@
+\hypertarget{class_velocity_buffer}{}\section{Velocity\+Buffer Class Reference}
+\label{class_velocity_buffer}\index{Velocity\+Buffer@{Velocity\+Buffer}}
+
+
+edge smoothing  
+
+
+Inheritance diagram for Velocity\+Buffer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_velocity_buffer}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_velocity_buffer_a2ab38673d716b1fe0286001d9545841a}{Neighbor\+Max\+Support}} \{ \mbox{\hyperlink{class_velocity_buffer_a2ab38673d716b1fe0286001d9545841aa98e0ce3c121a83857e055a5a8f6b83d4}{Neighbor\+Max\+Support.\+Tile\+Size10}}, 
+\mbox{\hyperlink{class_velocity_buffer_a2ab38673d716b1fe0286001d9545841aa83363948170f4d30fa8409dde65992b4}{Neighbor\+Max\+Support.\+Tile\+Size20}}, 
+\mbox{\hyperlink{class_velocity_buffer_a2ab38673d716b1fe0286001d9545841aa9404ba2f79e5361455b69f792f1c019d}{Neighbor\+Max\+Support.\+Tile\+Size40}}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Shader \mbox{\hyperlink{class_velocity_buffer_aa0c5457f2493cd8818284bd347df8675}{velocity\+Shader}}
+\item 
+Render\+Texture \mbox{\hyperlink{class_velocity_buffer_a83972f10466377a2722cd251bfb73868}{velocity\+Buffer}}
+\item 
+Render\+Texture \mbox{\hyperlink{class_velocity_buffer_a7d00846a27b7a8b8121da962fa8cb0af}{velocity\+Neighbor\+Max}}
+\item 
+bool \mbox{\hyperlink{class_velocity_buffer_ab2c515700bb2c2c56d86d32ff654b6ba}{neighbor\+Max\+Gen}} = false
+\item 
+\mbox{\hyperlink{class_velocity_buffer_a2ab38673d716b1fe0286001d9545841a}{Neighbor\+Max\+Support}} \mbox{\hyperlink{class_velocity_buffer_aefa83034e3376b9ff4b675afca2677d3}{neighbor\+Max\+Support}} = \mbox{\hyperlink{class_velocity_buffer_a2ab38673d716b1fe0286001d9545841aa83363948170f4d30fa8409dde65992b4}{Neighbor\+Max\+Support.\+Tile\+Size20}}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_velocity_buffer_aa49f68715d471f95a924c2072896cee2}{time\+Scale}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+edge smoothing 
+
+
+
+Definition at line 14 of file Velocity\+Buffer.\+cs.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_velocity_buffer_a2ab38673d716b1fe0286001d9545841a}\label{class_velocity_buffer_a2ab38673d716b1fe0286001d9545841a}} 
+\index{Velocity\+Buffer@{Velocity\+Buffer}!Neighbor\+Max\+Support@{Neighbor\+Max\+Support}}
+\index{Neighbor\+Max\+Support@{Neighbor\+Max\+Support}!Velocity\+Buffer@{Velocity\+Buffer}}
+\subsubsection{\texorpdfstring{Neighbor\+Max\+Support}{NeighborMaxSupport}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_velocity_buffer_a2ab38673d716b1fe0286001d9545841a}{Velocity\+Buffer.\+Neighbor\+Max\+Support}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Tile\+Size10@{Tile\+Size10}!Velocity\+Buffer@{Velocity\+Buffer}}\index{Velocity\+Buffer@{Velocity\+Buffer}!Tile\+Size10@{Tile\+Size10}}}\mbox{\Hypertarget{class_velocity_buffer_a2ab38673d716b1fe0286001d9545841aa98e0ce3c121a83857e055a5a8f6b83d4}\label{class_velocity_buffer_a2ab38673d716b1fe0286001d9545841aa98e0ce3c121a83857e055a5a8f6b83d4}} 
+Tile\+Size10&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Tile\+Size20@{Tile\+Size20}!Velocity\+Buffer@{Velocity\+Buffer}}\index{Velocity\+Buffer@{Velocity\+Buffer}!Tile\+Size20@{Tile\+Size20}}}\mbox{\Hypertarget{class_velocity_buffer_a2ab38673d716b1fe0286001d9545841aa83363948170f4d30fa8409dde65992b4}\label{class_velocity_buffer_a2ab38673d716b1fe0286001d9545841aa83363948170f4d30fa8409dde65992b4}} 
+Tile\+Size20&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Tile\+Size40@{Tile\+Size40}!Velocity\+Buffer@{Velocity\+Buffer}}\index{Velocity\+Buffer@{Velocity\+Buffer}!Tile\+Size40@{Tile\+Size40}}}\mbox{\Hypertarget{class_velocity_buffer_a2ab38673d716b1fe0286001d9545841aa9404ba2f79e5361455b69f792f1c019d}\label{class_velocity_buffer_a2ab38673d716b1fe0286001d9545841aa9404ba2f79e5361455b69f792f1c019d}} 
+Tile\+Size40&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 32 of file Velocity\+Buffer.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_velocity_buffer_ab2c515700bb2c2c56d86d32ff654b6ba}\label{class_velocity_buffer_ab2c515700bb2c2c56d86d32ff654b6ba}} 
+\index{Velocity\+Buffer@{Velocity\+Buffer}!neighbor\+Max\+Gen@{neighbor\+Max\+Gen}}
+\index{neighbor\+Max\+Gen@{neighbor\+Max\+Gen}!Velocity\+Buffer@{Velocity\+Buffer}}
+\subsubsection{\texorpdfstring{neighbor\+Max\+Gen}{neighborMaxGen}}
+{\footnotesize\ttfamily bool Velocity\+Buffer.\+neighbor\+Max\+Gen = false}
+
+
+
+Definition at line 39 of file Velocity\+Buffer.\+cs.
+
+\mbox{\Hypertarget{class_velocity_buffer_aefa83034e3376b9ff4b675afca2677d3}\label{class_velocity_buffer_aefa83034e3376b9ff4b675afca2677d3}} 
+\index{Velocity\+Buffer@{Velocity\+Buffer}!neighbor\+Max\+Support@{neighbor\+Max\+Support}}
+\index{neighbor\+Max\+Support@{neighbor\+Max\+Support}!Velocity\+Buffer@{Velocity\+Buffer}}
+\subsubsection{\texorpdfstring{neighbor\+Max\+Support}{neighborMaxSupport}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_velocity_buffer_a2ab38673d716b1fe0286001d9545841a}{Neighbor\+Max\+Support}} Velocity\+Buffer.\+neighbor\+Max\+Support = \mbox{\hyperlink{class_velocity_buffer_a2ab38673d716b1fe0286001d9545841aa83363948170f4d30fa8409dde65992b4}{Neighbor\+Max\+Support.\+Tile\+Size20}}}
+
+
+
+Definition at line 40 of file Velocity\+Buffer.\+cs.
+
+\mbox{\Hypertarget{class_velocity_buffer_a83972f10466377a2722cd251bfb73868}\label{class_velocity_buffer_a83972f10466377a2722cd251bfb73868}} 
+\index{Velocity\+Buffer@{Velocity\+Buffer}!velocity\+Buffer@{velocity\+Buffer}}
+\index{velocity\+Buffer@{velocity\+Buffer}!Velocity\+Buffer@{Velocity\+Buffer}}
+\subsubsection{\texorpdfstring{velocity\+Buffer}{velocityBuffer}}
+{\footnotesize\ttfamily Render\+Texture Velocity\+Buffer.\+velocity\+Buffer}
+
+
+
+Definition at line 26 of file Velocity\+Buffer.\+cs.
+
+\mbox{\Hypertarget{class_velocity_buffer_a7d00846a27b7a8b8121da962fa8cb0af}\label{class_velocity_buffer_a7d00846a27b7a8b8121da962fa8cb0af}} 
+\index{Velocity\+Buffer@{Velocity\+Buffer}!velocity\+Neighbor\+Max@{velocity\+Neighbor\+Max}}
+\index{velocity\+Neighbor\+Max@{velocity\+Neighbor\+Max}!Velocity\+Buffer@{Velocity\+Buffer}}
+\subsubsection{\texorpdfstring{velocity\+Neighbor\+Max}{velocityNeighborMax}}
+{\footnotesize\ttfamily Render\+Texture Velocity\+Buffer.\+velocity\+Neighbor\+Max}
+
+
+
+Definition at line 27 of file Velocity\+Buffer.\+cs.
+
+\mbox{\Hypertarget{class_velocity_buffer_aa0c5457f2493cd8818284bd347df8675}\label{class_velocity_buffer_aa0c5457f2493cd8818284bd347df8675}} 
+\index{Velocity\+Buffer@{Velocity\+Buffer}!velocity\+Shader@{velocity\+Shader}}
+\index{velocity\+Shader@{velocity\+Shader}!Velocity\+Buffer@{Velocity\+Buffer}}
+\subsubsection{\texorpdfstring{velocity\+Shader}{velocityShader}}
+{\footnotesize\ttfamily Shader Velocity\+Buffer.\+velocity\+Shader}
+
+
+
+Definition at line 22 of file Velocity\+Buffer.\+cs.
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_velocity_buffer_aa49f68715d471f95a924c2072896cee2}\label{class_velocity_buffer_aa49f68715d471f95a924c2072896cee2}} 
+\index{Velocity\+Buffer@{Velocity\+Buffer}!time\+Scale@{time\+Scale}}
+\index{time\+Scale@{time\+Scale}!Velocity\+Buffer@{Velocity\+Buffer}}
+\subsubsection{\texorpdfstring{time\+Scale}{timeScale}}
+{\footnotesize\ttfamily float Velocity\+Buffer.\+time\+Scale\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line 30 of file Velocity\+Buffer.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Aesthetic/\+Anti Aliasing/\mbox{\hyperlink{_velocity_buffer_8cs}{Velocity\+Buffer.\+cs}}\end{DoxyCompactItemize}

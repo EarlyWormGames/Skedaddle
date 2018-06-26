@@ -1,0 +1,538 @@
+\hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver}{}\section{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver Class Reference}
+\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver}\index{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver@{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver}}
+
+
+The base abstract class for all IK solvers  
+
+
+Inheritance diagram for Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.076923cm]{class_root_motion_1_1_final_i_k_1_1_i_k_solver}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_1_1_bone}{Bone}}
+\begin{DoxyCompactList}\small\item\em Bone type of element in the IK chain. Used in the case of skeletal Transform hierarchies. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_1_1_node}{Node}}
+\begin{DoxyCompactList}\small\item\em Node type of element in the IK chain. Used in the case of mixed/non-\/hierarchical IK systems \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_1_1_point}{Point}}
+\begin{DoxyCompactList}\small\item\em The most basic element type in the IK chain that all other types extend from. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a05cf2b47406dab8d7c9003d3e43c0abe}{Is\+Valid}} ()
+\begin{DoxyCompactList}\small\item\em Determines whether this instance is valid or not. \end{DoxyCompactList}\item 
+abstract bool \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a6ccc7496e7f4e95668e1c1bdaa051d67}{Is\+Valid}} (ref string message)
+\begin{DoxyCompactList}\small\item\em Determines whether this instance is valid or not. If returns false, also fills in an error message. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a6d14097828db1e3b401eaa6ee4dd153e}{Initiate}} (Transform \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_add558b38f163259934c37a0f1b497c06}{root}})
+\begin{DoxyCompactList}\small\item\em Initiate the solver with specified root Transform. Use only if this I\+K\+Solver is not a member of an IK component. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a5d346bbf9eb40d4282bc84befe635edc}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Updates the IK solver. Use only if this I\+K\+Solver is not a member of an IK component or the IK component has been disabled and you intend to manually control the updating. \end{DoxyCompactList}\item 
+virtual Vector3 \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aed08007156944c206abc59fa8da029ab}{Get\+I\+K\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Gets the IK position. N\+O\+TE\+: You are welcome to read I\+K\+Position directly, this method is here only to match the Unity\textquotesingle{}s built in IK A\+PI. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_add472956cde95ced7d35975a5a62167b}{Set\+I\+K\+Position}} (Vector3 position)
+\begin{DoxyCompactList}\small\item\em Sets the IK position. N\+O\+TE\+: You are welcome to set I\+K\+Position directly, this method is here only to match the Unity\textquotesingle{}s built in IK A\+PI. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a1e7f3581aacd744aa9ec017d87f6ad29}{Get\+I\+K\+Position\+Weight}} ()
+\begin{DoxyCompactList}\small\item\em Gets the IK position weight. N\+O\+TE\+: You are welcome to read I\+K\+Position\+Weight directly, this method is here only to match the Unity\textquotesingle{}s built in IK A\+PI. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aa7a25a1a22a0c48fc276a2c34377c00d}{Set\+I\+K\+Position\+Weight}} (float weight)
+\begin{DoxyCompactList}\small\item\em Sets the IK position weight. N\+O\+TE\+: You are welcome to set I\+K\+Position\+Weight directly, this method is here only to match the Unity\textquotesingle{}s built in IK A\+PI. \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_ac109094fde448adf73aca8bf1a351b06}{Get\+Root}} ()
+\begin{DoxyCompactList}\small\item\em Gets the root Transform. \end{DoxyCompactList}\item 
+abstract \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_1_1_point}{I\+K\+Solver.\+Point}} \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a29b0746bebf6bd6645cdeb6617030bff}{Get\+Points}} ()
+\begin{DoxyCompactList}\small\item\em Gets all the points used by the solver. \end{DoxyCompactList}\item 
+abstract \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_1_1_point}{I\+K\+Solver.\+Point}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a8e845886025fb0ca404b85f6747f7281}{Get\+Point}} (Transform transform)
+\begin{DoxyCompactList}\small\item\em Gets the point with the specified Transform. \end{DoxyCompactList}\item 
+abstract void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a266ec32ebdd83faaf37abc41718061b7}{Fix\+Transforms}} ()
+\begin{DoxyCompactList}\small\item\em Fixes all the Transforms used by the solver to their initial state. \end{DoxyCompactList}\item 
+abstract void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a5009a12837b12c96fed91bc6dc0bd4b6}{Store\+Default\+Local\+State}} ()
+\begin{DoxyCompactList}\small\item\em Stores the default local state for the bones used by the solver. \end{DoxyCompactList}\item 
+delegate void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a237d83c7b9c6eace8a21aa5821f0a671}{Update\+Delegate}} ()
+\begin{DoxyCompactList}\small\item\em Delegates solver update events. \end{DoxyCompactList}\item 
+delegate void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_ae3da6a8ccd8224ce56d15c4da5cd1ef7}{Iteration\+Delegate}} (int i)
+\begin{DoxyCompactList}\small\item\em Delegates solver iteration events. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Transform \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_ad167d79b711bf4f3b1066d379dbbbf38}{Contains\+Duplicate\+Bone}} (\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_1_1_bone}{Bone}}\mbox{[}$\,$\mbox{]} bones)
+\begin{DoxyCompactList}\small\item\em Checks if an array of objects contains any duplicates. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a44125b5a4b6e873b26fd02256a3ba73e}{Hierarchy\+Is\+Valid}} (\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_1_1_bone}{I\+K\+Solver.\+Bone}}\mbox{[}$\,$\mbox{]} bones)
+\item 
+static void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a4a8f110f37d9b956d4bb2aff1232f1aa}{Solver\+Rotate\+Bones\+Around\+Point}} (\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_1_1_bone}{Bone}}\mbox{[}$\,$\mbox{]} bones, int index, Vector3 point, Quaternion rotation)
+\item 
+static void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_afb1d9bbe43f8423813c731657eccfb3b}{Solver\+Rotate}} (\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_1_1_bone}{Bone}}\mbox{[}$\,$\mbox{]} bones, int index, Quaternion rotation)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Vector3 \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_ab8cb39df45e14434ce7a18f2ca207ca7}{I\+K\+Position}}
+\begin{DoxyCompactList}\small\item\em The IK position. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a8556d2cdc9eb04701ff0c2cf76cb0c88}{I\+K\+Position\+Weight}} = 1f
+\begin{DoxyCompactList}\small\item\em The IK position weight. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a237d83c7b9c6eace8a21aa5821f0a671}{Update\+Delegate}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a3a7df45ee2ab3b92d527910bde39f64e}{On\+Pre\+Initiate}}
+\begin{DoxyCompactList}\small\item\em Called before initiating the solver. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a237d83c7b9c6eace8a21aa5821f0a671}{Update\+Delegate}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_ac8c1a894c1b45e84f9dd518077c73e25}{On\+Post\+Initiate}}
+\begin{DoxyCompactList}\small\item\em Called after initiating the solver. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a237d83c7b9c6eace8a21aa5821f0a671}{Update\+Delegate}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a509211f13d94e4a89be7e539c465e55a}{On\+Pre\+Update}}
+\begin{DoxyCompactList}\small\item\em Called before updating. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a237d83c7b9c6eace8a21aa5821f0a671}{Update\+Delegate}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a848d38a01f7498761a3f9964a66f0555}{On\+Post\+Update}}
+\begin{DoxyCompactList}\small\item\em Called after writing the solved pose \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+abstract void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a2a8cbf1dfed274fdbc79ff011c468cc6}{On\+Initiate}} ()
+\item 
+abstract void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a3bbcc10c91d82ac266dadc63ea93171d}{On\+Update}} ()
+\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_ac62ff5216c823725d5f9b03e18de9e5a}{Log\+Warning}} (string message)
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a30b719da674d049fd38830c3fc1dcdb1}{Pre\+Solve\+Bones}} (ref \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_1_1_bone}{Bone}}\mbox{[}$\,$\mbox{]} bones)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_ada80dafb158c170cf4475b1727fb6937}{first\+Initiation}} = true
+\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_add558b38f163259934c37a0f1b497c06}{root}}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_ab25232fc4362b290dcd5ee1cfa96ef5e}{initiated}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets a value indicating whether this \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver}{I\+K\+Solver}} has successfully initiated. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The base abstract class for all IK solvers 
+
+
+
+Definition at line 10 of file I\+K\+Solver.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_ad167d79b711bf4f3b1066d379dbbbf38}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_ad167d79b711bf4f3b1066d379dbbbf38}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}!Contains\+Duplicate\+Bone@{Contains\+Duplicate\+Bone}}
+\index{Contains\+Duplicate\+Bone@{Contains\+Duplicate\+Bone}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}}
+\subsubsection{\texorpdfstring{Contains\+Duplicate\+Bone()}{ContainsDuplicateBone()}}
+{\footnotesize\ttfamily static Transform Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver.\+Contains\+Duplicate\+Bone (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_1_1_bone}{Bone}} \mbox{[}$\,$\mbox{]}}]{bones }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Checks if an array of objects contains any duplicates. 
+
+
+
+Definition at line 414 of file I\+K\+Solver.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a266ec32ebdd83faaf37abc41718061b7}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a266ec32ebdd83faaf37abc41718061b7}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}!Fix\+Transforms@{Fix\+Transforms}}
+\index{Fix\+Transforms@{Fix\+Transforms}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}}
+\subsubsection{\texorpdfstring{Fix\+Transforms()}{FixTransforms()}}
+{\footnotesize\ttfamily abstract void Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver.\+Fix\+Transforms (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Fixes all the Transforms used by the solver to their initial state. 
+
+
+
+Implemented in \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_ad2db122b4977cefd66fad54e26d38671}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_look_at_afc01280e8f1020cd817748b235f384c4}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Look\+At}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_trigonometric_a46aa3acfba8c4c23dc23f00f29249d90}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Trigonometric}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_f_a_b_r_i_k_root_a174767501bc62dd1fb760e35a01a6ab0}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+F\+A\+B\+R\+I\+K\+Root}}, and \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a8cd9cbe3bd3bd871cc288e4ef7da4f33}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Heuristic}}.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aed08007156944c206abc59fa8da029ab}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aed08007156944c206abc59fa8da029ab}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}!Get\+I\+K\+Position@{Get\+I\+K\+Position}}
+\index{Get\+I\+K\+Position@{Get\+I\+K\+Position}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}}
+\subsubsection{\texorpdfstring{Get\+I\+K\+Position()}{GetIKPosition()}}
+{\footnotesize\ttfamily virtual Vector3 Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver.\+Get\+I\+K\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the IK position. N\+O\+TE\+: You are welcome to read I\+K\+Position directly, this method is here only to match the Unity\textquotesingle{}s built in IK A\+PI. 
+
+
+
+Reimplemented in \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_f_a_b_r_i_k_a7f4bae5e4ea308ac0b86a1694e60341a}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+F\+A\+B\+R\+IK}}.
+
+
+
+Definition at line 80 of file I\+K\+Solver.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a1e7f3581aacd744aa9ec017d87f6ad29}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a1e7f3581aacd744aa9ec017d87f6ad29}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}!Get\+I\+K\+Position\+Weight@{Get\+I\+K\+Position\+Weight}}
+\index{Get\+I\+K\+Position\+Weight@{Get\+I\+K\+Position\+Weight}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}}
+\subsubsection{\texorpdfstring{Get\+I\+K\+Position\+Weight()}{GetIKPositionWeight()}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver.\+Get\+I\+K\+Position\+Weight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the IK position weight. N\+O\+TE\+: You are welcome to read I\+K\+Position\+Weight directly, this method is here only to match the Unity\textquotesingle{}s built in IK A\+PI. 
+
+
+
+Definition at line 94 of file I\+K\+Solver.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a8e845886025fb0ca404b85f6747f7281}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a8e845886025fb0ca404b85f6747f7281}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}!Get\+Point@{Get\+Point}}
+\index{Get\+Point@{Get\+Point}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}}
+\subsubsection{\texorpdfstring{Get\+Point()}{GetPoint()}}
+{\footnotesize\ttfamily abstract \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_1_1_point}{I\+K\+Solver.\+Point}} Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver.\+Get\+Point (\begin{DoxyParamCaption}\item[{Transform}]{transform }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the point with the specified Transform. 
+
+
+
+Implemented in \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_look_at_ad2a93f6d541ff1a901ba93748094ff9b}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Look\+At}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_f_a_b_r_i_k_root_aee270791ec6890152459f80c211196f0}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+F\+A\+B\+R\+I\+K\+Root}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a6f6fe66f3e434877da9d23e492448fda}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Heuristic}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_trigonometric_a4467e4a83b21ffeb535801b09798bf06}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Trigonometric}}, and \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_a7d50e5600dfb189d37780f8e74b9b5f9}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body}}.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a29b0746bebf6bd6645cdeb6617030bff}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a29b0746bebf6bd6645cdeb6617030bff}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}!Get\+Points@{Get\+Points}}
+\index{Get\+Points@{Get\+Points}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}}
+\subsubsection{\texorpdfstring{Get\+Points()}{GetPoints()}}
+{\footnotesize\ttfamily abstract \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_1_1_point}{I\+K\+Solver.\+Point}} \mbox{[}$\,$\mbox{]} Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver.\+Get\+Points (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets all the points used by the solver. 
+
+
+
+Implemented in \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_look_at_ac2f6da94b707c8482aced5abc64a341f}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Look\+At}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_f_a_b_r_i_k_root_a386a3cb55b688ec13b8bb2299c0f2e75}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+F\+A\+B\+R\+I\+K\+Root}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a1b250288b7b2b165e6e7f30048410f05}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Heuristic}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_trigonometric_a4cdd035f3007bc29385299e6d3c3cea9}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Trigonometric}}, and \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_a3f5d0189403f02d2b30c6174c2a00fbb}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body}}.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_ac109094fde448adf73aca8bf1a351b06}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_ac109094fde448adf73aca8bf1a351b06}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}!Get\+Root@{Get\+Root}}
+\index{Get\+Root@{Get\+Root}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}}
+\subsubsection{\texorpdfstring{Get\+Root()}{GetRoot()}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver.\+Get\+Root (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the root Transform. 
+
+
+
+Definition at line 108 of file I\+K\+Solver.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a44125b5a4b6e873b26fd02256a3ba73e}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a44125b5a4b6e873b26fd02256a3ba73e}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}!Hierarchy\+Is\+Valid@{Hierarchy\+Is\+Valid}}
+\index{Hierarchy\+Is\+Valid@{Hierarchy\+Is\+Valid}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}}
+\subsubsection{\texorpdfstring{Hierarchy\+Is\+Valid()}{HierarchyIsValid()}}
+{\footnotesize\ttfamily static bool Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver.\+Hierarchy\+Is\+Valid (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_1_1_bone}{I\+K\+Solver.\+Bone}} \mbox{[}$\,$\mbox{]}}]{bones }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 426 of file I\+K\+Solver.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a6d14097828db1e3b401eaa6ee4dd153e}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a6d14097828db1e3b401eaa6ee4dd153e}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}!Initiate@{Initiate}}
+\index{Initiate@{Initiate}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}}
+\subsubsection{\texorpdfstring{Initiate()}{Initiate()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver.\+Initiate (\begin{DoxyParamCaption}\item[{Transform}]{root }\end{DoxyParamCaption})}
+
+
+
+Initiate the solver with specified root Transform. Use only if this I\+K\+Solver is not a member of an IK component. 
+
+
+
+Definition at line 30 of file I\+K\+Solver.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a05cf2b47406dab8d7c9003d3e43c0abe}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a05cf2b47406dab8d7c9003d3e43c0abe}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}!Is\+Valid@{Is\+Valid}}
+\index{Is\+Valid@{Is\+Valid}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}}
+\subsubsection{\texorpdfstring{Is\+Valid()}{IsValid()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver.\+Is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Determines whether this instance is valid or not. 
+
+
+
+Definition at line 17 of file I\+K\+Solver.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a6ccc7496e7f4e95668e1c1bdaa051d67}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a6ccc7496e7f4e95668e1c1bdaa051d67}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}!Is\+Valid@{Is\+Valid}}
+\index{Is\+Valid@{Is\+Valid}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}}
+\subsubsection{\texorpdfstring{Is\+Valid()}{IsValid()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily abstract bool Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver.\+Is\+Valid (\begin{DoxyParamCaption}\item[{ref string}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Determines whether this instance is valid or not. If returns false, also fills in an error message. 
+
+
+
+Implemented in \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped_a3a3db44c5ef5d7a508492225ae161f10}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body\+Biped}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_look_at_ae5ed12132b2966c70cd02055844fe20d}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Look\+At}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_trigonometric_a96e4567149a2309a7d1554ec6c8b3e16}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Trigonometric}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_a52e5312dcea8441bec26f0a9c2bf54f2}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a81daa8bcbfe7cf858f2e439de4ade437}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Heuristic}}, and \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_f_a_b_r_i_k_root_aadae32713090c6aa827af13781f4a3da}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+F\+A\+B\+R\+I\+K\+Root}}.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_ae3da6a8ccd8224ce56d15c4da5cd1ef7}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_ae3da6a8ccd8224ce56d15c4da5cd1ef7}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}!Iteration\+Delegate@{Iteration\+Delegate}}
+\index{Iteration\+Delegate@{Iteration\+Delegate}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}}
+\subsubsection{\texorpdfstring{Iteration\+Delegate()}{IterationDelegate()}}
+{\footnotesize\ttfamily delegate void Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver.\+Iteration\+Delegate (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+Delegates solver iteration events. 
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_ac62ff5216c823725d5f9b03e18de9e5a}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_ac62ff5216c823725d5f9b03e18de9e5a}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}!Log\+Warning@{Log\+Warning}}
+\index{Log\+Warning@{Log\+Warning}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}}
+\subsubsection{\texorpdfstring{Log\+Warning()}{LogWarning()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver.\+Log\+Warning (\begin{DoxyParamCaption}\item[{string}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 405 of file I\+K\+Solver.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a2a8cbf1dfed274fdbc79ff011c468cc6}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a2a8cbf1dfed274fdbc79ff011c468cc6}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}!On\+Initiate@{On\+Initiate}}
+\index{On\+Initiate@{On\+Initiate}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}}
+\subsubsection{\texorpdfstring{On\+Initiate()}{OnInitiate()}}
+{\footnotesize\ttfamily abstract void Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver.\+On\+Initiate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_trigonometric_a57ee7178a992a1a4e32387f19af6227f}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Trigonometric}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_look_at_a903b4b46d1636ca48916c268d91a50d3}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Look\+At}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_a314815fbee3caadfd26d449764ee6e5c}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a665700645200f3960f186bb6d3835691}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Heuristic}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_f_a_b_r_i_k_root_aff0059cd604e4b24bece3d9f6ba93837}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+F\+A\+B\+R\+I\+K\+Root}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_ab758f8eb82d72511af5619e483d35f72}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Aim}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_f_a_b_r_i_k_a1d4c5d7ee7db732fca38ca620fecd072}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+F\+A\+B\+R\+IK}}, and \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_c_c_d_ac5297e593852814356258fe9f51a2774}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+C\+CD}}.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a3bbcc10c91d82ac266dadc63ea93171d}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a3bbcc10c91d82ac266dadc63ea93171d}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}!On\+Update@{On\+Update}}
+\index{On\+Update@{On\+Update}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}}
+\subsubsection{\texorpdfstring{On\+Update()}{OnUpdate()}}
+{\footnotesize\ttfamily abstract void Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver.\+On\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_trigonometric_afb9ab7130f7ad4305f5eda94524cc5b6}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Trigonometric}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_look_at_a3ebd64abafa199027645f3b68a405ea5}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Look\+At}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_a465b375253ab446e5f3ae14614290174}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a88c1314811a687a2843f8679c07e82c0}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Heuristic}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_f_a_b_r_i_k_root_ad838b3cfe7d89cada478ca29d484eb6c}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+F\+A\+B\+R\+I\+K\+Root}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_a828674d8e72e508f17bd64a7404c430e}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Aim}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_f_a_b_r_i_k_a566881ceecf156d9a08a21dbfb64b3b1}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+F\+A\+B\+R\+IK}}, and \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_c_c_d_a1f3584003199b9f26fdbe7f6ac912c11}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+C\+CD}}.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a30b719da674d049fd38830c3fc1dcdb1}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a30b719da674d049fd38830c3fc1dcdb1}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}!Pre\+Solve\+Bones@{Pre\+Solve\+Bones}}
+\index{Pre\+Solve\+Bones@{Pre\+Solve\+Bones}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}}
+\subsubsection{\texorpdfstring{Pre\+Solve\+Bones()}{PreSolveBones()}}
+{\footnotesize\ttfamily static float Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver.\+Pre\+Solve\+Bones (\begin{DoxyParamCaption}\item[{ref \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_1_1_bone}{Bone}} \mbox{[}$\,$\mbox{]}}]{bones }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 437 of file I\+K\+Solver.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_add472956cde95ced7d35975a5a62167b}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_add472956cde95ced7d35975a5a62167b}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}!Set\+I\+K\+Position@{Set\+I\+K\+Position}}
+\index{Set\+I\+K\+Position@{Set\+I\+K\+Position}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}}
+\subsubsection{\texorpdfstring{Set\+I\+K\+Position()}{SetIKPosition()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver.\+Set\+I\+K\+Position (\begin{DoxyParamCaption}\item[{Vector3}]{position }\end{DoxyParamCaption})}
+
+
+
+Sets the IK position. N\+O\+TE\+: You are welcome to set I\+K\+Position directly, this method is here only to match the Unity\textquotesingle{}s built in IK A\+PI. 
+
+
+
+Definition at line 87 of file I\+K\+Solver.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aa7a25a1a22a0c48fc276a2c34377c00d}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aa7a25a1a22a0c48fc276a2c34377c00d}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}!Set\+I\+K\+Position\+Weight@{Set\+I\+K\+Position\+Weight}}
+\index{Set\+I\+K\+Position\+Weight@{Set\+I\+K\+Position\+Weight}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}}
+\subsubsection{\texorpdfstring{Set\+I\+K\+Position\+Weight()}{SetIKPositionWeight()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver.\+Set\+I\+K\+Position\+Weight (\begin{DoxyParamCaption}\item[{float}]{weight }\end{DoxyParamCaption})}
+
+
+
+Sets the IK position weight. N\+O\+TE\+: You are welcome to set I\+K\+Position\+Weight directly, this method is here only to match the Unity\textquotesingle{}s built in IK A\+PI. 
+
+
+
+Definition at line 101 of file I\+K\+Solver.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_afb1d9bbe43f8423813c731657eccfb3b}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_afb1d9bbe43f8423813c731657eccfb3b}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}!Solver\+Rotate@{Solver\+Rotate}}
+\index{Solver\+Rotate@{Solver\+Rotate}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}}
+\subsubsection{\texorpdfstring{Solver\+Rotate()}{SolverRotate()}}
+{\footnotesize\ttfamily static void Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver.\+Solver\+Rotate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_1_1_bone}{Bone}} \mbox{[}$\,$\mbox{]}}]{bones,  }\item[{int}]{index,  }\item[{Quaternion}]{rotation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 471 of file I\+K\+Solver.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a4a8f110f37d9b956d4bb2aff1232f1aa}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a4a8f110f37d9b956d4bb2aff1232f1aa}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}!Solver\+Rotate\+Bones\+Around\+Point@{Solver\+Rotate\+Bones\+Around\+Point}}
+\index{Solver\+Rotate\+Bones\+Around\+Point@{Solver\+Rotate\+Bones\+Around\+Point}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}}
+\subsubsection{\texorpdfstring{Solver\+Rotate\+Bones\+Around\+Point()}{SolverRotateBonesAroundPoint()}}
+{\footnotesize\ttfamily static void Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver.\+Solver\+Rotate\+Bones\+Around\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_1_1_bone}{Bone}} \mbox{[}$\,$\mbox{]}}]{bones,  }\item[{int}]{index,  }\item[{Vector3}]{point,  }\item[{Quaternion}]{rotation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 461 of file I\+K\+Solver.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a5009a12837b12c96fed91bc6dc0bd4b6}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a5009a12837b12c96fed91bc6dc0bd4b6}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}!Store\+Default\+Local\+State@{Store\+Default\+Local\+State}}
+\index{Store\+Default\+Local\+State@{Store\+Default\+Local\+State}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}}
+\subsubsection{\texorpdfstring{Store\+Default\+Local\+State()}{StoreDefaultLocalState()}}
+{\footnotesize\ttfamily abstract void Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver.\+Store\+Default\+Local\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Stores the default local state for the bones used by the solver. 
+
+
+
+Implemented in \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_a6218fb49ef96ab8f19a6016c91cb26ad}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Full\+Body}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_look_at_a4afca882415d4749c312c52f349e1d0d}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Look\+At}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_trigonometric_a3bd5cac71942dfc1104cad6326469acb}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Trigonometric}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_f_a_b_r_i_k_root_a6c378e881e1e7dcb7a2ce54ce39e0e88}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+F\+A\+B\+R\+I\+K\+Root}}, and \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a58192848dbddf53c43c8ce54c3346557}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Heuristic}}.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a5d346bbf9eb40d4282bc84befe635edc}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a5d346bbf9eb40d4282bc84befe635edc}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}!Update@{Update}}
+\index{Update@{Update}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Updates the IK solver. Use only if this I\+K\+Solver is not a member of an IK component or the IK component has been disabled and you intend to manually control the updating. 
+
+
+
+Definition at line 55 of file I\+K\+Solver.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a237d83c7b9c6eace8a21aa5821f0a671}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a237d83c7b9c6eace8a21aa5821f0a671}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}!Update\+Delegate@{Update\+Delegate}}
+\index{Update\+Delegate@{Update\+Delegate}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}}
+\subsubsection{\texorpdfstring{Update\+Delegate()}{UpdateDelegate()}}
+{\footnotesize\ttfamily delegate void Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver.\+Update\+Delegate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Delegates solver update events. 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_ada80dafb158c170cf4475b1727fb6937}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_ada80dafb158c170cf4475b1727fb6937}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}!first\+Initiation@{first\+Initiation}}
+\index{first\+Initiation@{first\+Initiation}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}}
+\subsubsection{\texorpdfstring{first\+Initiation}{firstInitiation}}
+{\footnotesize\ttfamily bool Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver.\+first\+Initiation = true\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 402 of file I\+K\+Solver.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_ab8cb39df45e14434ce7a18f2ca207ca7}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_ab8cb39df45e14434ce7a18f2ca207ca7}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}!I\+K\+Position@{I\+K\+Position}}
+\index{I\+K\+Position@{I\+K\+Position}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}}
+\subsubsection{\texorpdfstring{I\+K\+Position}{IKPosition}}
+{\footnotesize\ttfamily Vector3 Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver.\+I\+K\+Position}
+
+
+
+The IK position. 
+
+
+
+Definition at line 69 of file I\+K\+Solver.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a8556d2cdc9eb04701ff0c2cf76cb0c88}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a8556d2cdc9eb04701ff0c2cf76cb0c88}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}!I\+K\+Position\+Weight@{I\+K\+Position\+Weight}}
+\index{I\+K\+Position\+Weight@{I\+K\+Position\+Weight}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}}
+\subsubsection{\texorpdfstring{I\+K\+Position\+Weight}{IKPositionWeight}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver.\+I\+K\+Position\+Weight = 1f}
+
+
+
+The IK position weight. 
+
+
+
+Definition at line 75 of file I\+K\+Solver.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_ac8c1a894c1b45e84f9dd518077c73e25}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_ac8c1a894c1b45e84f9dd518077c73e25}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}!On\+Post\+Initiate@{On\+Post\+Initiate}}
+\index{On\+Post\+Initiate@{On\+Post\+Initiate}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}}
+\subsubsection{\texorpdfstring{On\+Post\+Initiate}{OnPostInitiate}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a237d83c7b9c6eace8a21aa5821f0a671}{Update\+Delegate}} Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver.\+On\+Post\+Initiate}
+
+
+
+Called after initiating the solver. 
+
+
+
+Definition at line 387 of file I\+K\+Solver.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a848d38a01f7498761a3f9964a66f0555}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a848d38a01f7498761a3f9964a66f0555}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}!On\+Post\+Update@{On\+Post\+Update}}
+\index{On\+Post\+Update@{On\+Post\+Update}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}}
+\subsubsection{\texorpdfstring{On\+Post\+Update}{OnPostUpdate}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a237d83c7b9c6eace8a21aa5821f0a671}{Update\+Delegate}} Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver.\+On\+Post\+Update}
+
+
+
+Called after writing the solved pose 
+
+
+
+Definition at line 395 of file I\+K\+Solver.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a3a7df45ee2ab3b92d527910bde39f64e}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a3a7df45ee2ab3b92d527910bde39f64e}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}!On\+Pre\+Initiate@{On\+Pre\+Initiate}}
+\index{On\+Pre\+Initiate@{On\+Pre\+Initiate}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}}
+\subsubsection{\texorpdfstring{On\+Pre\+Initiate}{OnPreInitiate}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a237d83c7b9c6eace8a21aa5821f0a671}{Update\+Delegate}} Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver.\+On\+Pre\+Initiate}
+
+
+
+Called before initiating the solver. 
+
+
+
+Definition at line 383 of file I\+K\+Solver.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a509211f13d94e4a89be7e539c465e55a}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a509211f13d94e4a89be7e539c465e55a}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}!On\+Pre\+Update@{On\+Pre\+Update}}
+\index{On\+Pre\+Update@{On\+Pre\+Update}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}}
+\subsubsection{\texorpdfstring{On\+Pre\+Update}{OnPreUpdate}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a237d83c7b9c6eace8a21aa5821f0a671}{Update\+Delegate}} Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver.\+On\+Pre\+Update}
+
+
+
+Called before updating. 
+
+
+
+Definition at line 391 of file I\+K\+Solver.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_add558b38f163259934c37a0f1b497c06}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_add558b38f163259934c37a0f1b497c06}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}!root@{root}}
+\index{root@{root}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}}
+\subsubsection{\texorpdfstring{root}{root}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver.\+root\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 403 of file I\+K\+Solver.\+cs.
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_ab25232fc4362b290dcd5ee1cfa96ef5e}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_ab25232fc4362b290dcd5ee1cfa96ef5e}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}!initiated@{initiated}}
+\index{initiated@{initiated}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver}}
+\subsubsection{\texorpdfstring{initiated}{initiated}}
+{\footnotesize\ttfamily bool Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver.\+initiated\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets a value indicating whether this \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver}{I\+K\+Solver}} has successfully initiated. 
+
+
+
+Definition at line 115 of file I\+K\+Solver.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Plugins/\+Root\+Motion/\+Final\+I\+K/\+I\+K Solvers/\mbox{\hyperlink{_i_k_solver_8cs}{I\+K\+Solver.\+cs}}\end{DoxyCompactItemize}

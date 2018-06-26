@@ -1,0 +1,435 @@
+\hypertarget{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain}{}\section{Root\+Motion.\+Final\+I\+K.\+F\+B\+I\+K\+Chain Class Reference}
+\label{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain}\index{Root\+Motion.\+Final\+I\+K.\+F\+B\+I\+K\+Chain@{Root\+Motion.\+Final\+I\+K.\+F\+B\+I\+K\+Chain}}
+
+
+A chain of bones in \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body}{I\+K\+Solver\+Full\+Body}}.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_1_1_child_constraint}{Child\+Constraint}}
+\begin{DoxyCompactList}\small\item\em Linear constraint between child chains of a \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain}{F\+B\+I\+K\+Chain}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a2c75de88180a5922368eaa4c4efb3ac9}{Smoothing}} \{ \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a2c75de88180a5922368eaa4c4efb3ac9a6adf97f83acf6453d4a6a4b1070f3754}{Smoothing.\+None}}, 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a2c75de88180a5922368eaa4c4efb3ac9ac1e19c09f700938f0ff7f1fd4722a3ac}{Smoothing.\+Exponential}}, 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a2c75de88180a5922368eaa4c4efb3ac9aec6b5414eb175379ff9efc9b3eef5814}{Smoothing.\+Cubic}}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a2b1b04740285bfe0251784ab66a3631b}{F\+B\+I\+K\+Chain}} ()
+\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a662dea6c56ed0f81a2218f8fcbd4b2e3}{F\+B\+I\+K\+Chain}} (float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a389508e3ea390ab5599169de3f98514b}{pin}}, float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a68367cba3452457c0dea9ed4918f6e62}{pull}}, params Transform\mbox{[}$\,$\mbox{]} node\+Transforms)
+\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_aad75789bdd403e5482af023ec0cc47d7}{Set\+Nodes}} (params Transform\mbox{[}$\,$\mbox{]} bone\+Transforms)
+\item 
+int \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a4158249eab77a3f471243a23e893e783}{Get\+Node\+Index}} (Transform bone\+Transform)
+\item 
+bool \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a29b16757a3f6914b742a0d3561529d24}{Is\+Valid}} (ref string message)
+\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a920f4ea3e2aa7ca61a6e87aa1e01de9a}{Initiate}} (\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body}{I\+K\+Solver\+Full\+Body}} solver)
+\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a588a6e19aec22732f921ec4083786c83}{Read\+Pose}} (\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body}{I\+K\+Solver\+Full\+Body}} solver, bool full\+Body)
+\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a6c3e42a7ffd67e7ec3704b501d4ed964}{Reach}} (\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body}{I\+K\+Solver\+Full\+Body}} solver)
+\item 
+Vector3 \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_acbe23897fbca5d475e2fdcc6b275e44f}{Push}} (\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body}{I\+K\+Solver\+Full\+Body}} solver)
+\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a02a04f84e5fc0c66cda70ffc7207ba2b}{Solve\+Trigonometric}} (\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body}{I\+K\+Solver\+Full\+Body}} solver, bool calculate\+Bend\+Direction=false)
+\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a5d7b8f6e941cf4d392d6018d7a985add}{Stage1}} (\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body}{I\+K\+Solver\+Full\+Body}} solver)
+\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a1d328994fe5179453233c2857618ee20}{Stage2}} (\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body}{I\+K\+Solver\+Full\+Body}} solver, Vector3 position)
+\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_ad6df73725445c8cb869119224261b336}{Solve\+Constraint\+Systems}} (\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body}{I\+K\+Solver\+Full\+Body}} solver)
+\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a7f0450c9a98d8866883efe7b5f1fa9dc}{Forward\+Reach}} (Vector3 position)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a389508e3ea390ab5599169de3f98514b}{pin}}
+\begin{DoxyCompactList}\small\item\em The pin weight. If closer to 1, the chain will be less influenced by child chains. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a68367cba3452457c0dea9ed4918f6e62}{pull}} = 1f
+\begin{DoxyCompactList}\small\item\em The weight of pulling the parent chain. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a96f80d26536e04e98dfdaca47790f700}{push}}
+\begin{DoxyCompactList}\small\item\em The weight of the end-\/effector pushing the shoulder/thigh when the end-\/effector is close to it. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a35344c1d18911c7eb1a38cf636fcc7dd}{push\+Parent}}
+\begin{DoxyCompactList}\small\item\em The amount of push force transferred to the parent (from hand or foot to the body). \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_adb4e385a42a1777f69be173884d6578f}{reach}} = 0.\+1f
+\begin{DoxyCompactList}\small\item\em Only used in 3 segmented chains, pulls the first node closer to the third node. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a2c75de88180a5922368eaa4c4efb3ac9}{Smoothing}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a6e7bc44bee2b83891f598c0db63012ec}{reach\+Smoothing}} = \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a2c75de88180a5922368eaa4c4efb3ac9ac1e19c09f700938f0ff7f1fd4722a3ac}{Smoothing.\+Exponential}}
+\begin{DoxyCompactList}\small\item\em Smoothing the effect of the Reach with the expense of some accuracy. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a2c75de88180a5922368eaa4c4efb3ac9}{Smoothing}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_ac0061137bbb24205fa83bf51a047374f}{push\+Smoothing}} = \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a2c75de88180a5922368eaa4c4efb3ac9ac1e19c09f700938f0ff7f1fd4722a3ac}{Smoothing.\+Exponential}}
+\begin{DoxyCompactList}\small\item\em Smoothing the effect of the Push. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_1_1_node}{I\+K\+Solver.\+Node}} \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_ab19a69e9c38ffec272cba41030cfbb40}{nodes}} = new \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_1_1_node}{I\+K\+Solver.\+Node}}\mbox{[}0\mbox{]}
+\begin{DoxyCompactList}\small\item\em The nodes in this chain. \end{DoxyCompactList}\item 
+int \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a0cc59ce9014a189e49f332a963b912b9}{children}} = new int\mbox{[}0\mbox{]}
+\begin{DoxyCompactList}\small\item\em The child chains. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_1_1_child_constraint}{Child\+Constraint}} \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_ac7a843d4a4b2cd31b37afadc399ade6a}{child\+Constraints}} = new \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_1_1_child_constraint}{Child\+Constraint}}\mbox{[}0\mbox{]}
+\begin{DoxyCompactList}\small\item\em The child constraints are used for example for fixing the distance between left upper arm and right upper arm \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_constraint_bend}{I\+K\+Constraint\+Bend}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a9da22043dfd81c60bb9d3e8b7a7d6e8a}{bend\+Constraint}} = new \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_constraint_bend}{I\+K\+Constraint\+Bend}}()
+\begin{DoxyCompactList}\small\item\em Gets the bend constraint (if this chain has 3 segments). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Vector3 \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a2042f6c29dd84d524542db75c18967eb}{Get\+Dir\+To\+Bend\+Point}} (Vector3 direction, Vector3 bend\+Direction, float direction\+Magnitude)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A chain of bones in \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body}{I\+K\+Solver\+Full\+Body}}. 
+
+
+
+Definition at line 11 of file F\+B\+I\+K\+Chain.\+cs.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a2c75de88180a5922368eaa4c4efb3ac9}\label{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a2c75de88180a5922368eaa4c4efb3ac9}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}!Smoothing@{Smoothing}}
+\index{Smoothing@{Smoothing}!Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}}
+\subsubsection{\texorpdfstring{Smoothing}{Smoothing}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a2c75de88180a5922368eaa4c4efb3ac9}{Root\+Motion.\+Final\+I\+K.\+F\+B\+I\+K\+Chain.\+Smoothing}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{None@{None}!Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}}\index{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}!None@{None}}}\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a2c75de88180a5922368eaa4c4efb3ac9a6adf97f83acf6453d4a6a4b1070f3754}\label{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a2c75de88180a5922368eaa4c4efb3ac9a6adf97f83acf6453d4a6a4b1070f3754}} 
+None&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Exponential@{Exponential}!Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}}\index{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}!Exponential@{Exponential}}}\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a2c75de88180a5922368eaa4c4efb3ac9ac1e19c09f700938f0ff7f1fd4722a3ac}\label{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a2c75de88180a5922368eaa4c4efb3ac9ac1e19c09f700938f0ff7f1fd4722a3ac}} 
+Exponential&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Cubic@{Cubic}!Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}}\index{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}!Cubic@{Cubic}}}\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a2c75de88180a5922368eaa4c4efb3ac9aec6b5414eb175379ff9efc9b3eef5814}\label{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a2c75de88180a5922368eaa4c4efb3ac9aec6b5414eb175379ff9efc9b3eef5814}} 
+Cubic&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 116 of file F\+B\+I\+K\+Chain.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a2b1b04740285bfe0251784ab66a3631b}\label{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a2b1b04740285bfe0251784ab66a3631b}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}!F\+B\+I\+K\+Chain@{F\+B\+I\+K\+Chain}}
+\index{F\+B\+I\+K\+Chain@{F\+B\+I\+K\+Chain}!Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}}
+\subsubsection{\texorpdfstring{F\+B\+I\+K\+Chain()}{FBIKChain()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Root\+Motion.\+Final\+I\+K.\+F\+B\+I\+K\+Chain.\+F\+B\+I\+K\+Chain (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 186 of file F\+B\+I\+K\+Chain.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a662dea6c56ed0f81a2218f8fcbd4b2e3}\label{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a662dea6c56ed0f81a2218f8fcbd4b2e3}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}!F\+B\+I\+K\+Chain@{F\+B\+I\+K\+Chain}}
+\index{F\+B\+I\+K\+Chain@{F\+B\+I\+K\+Chain}!Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}}
+\subsubsection{\texorpdfstring{F\+B\+I\+K\+Chain()}{FBIKChain()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Root\+Motion.\+Final\+I\+K.\+F\+B\+I\+K\+Chain.\+F\+B\+I\+K\+Chain (\begin{DoxyParamCaption}\item[{float}]{pin,  }\item[{float}]{pull,  }\item[{params Transform \mbox{[}$\,$\mbox{]}}]{node\+Transforms }\end{DoxyParamCaption})}
+
+
+
+Definition at line 188 of file F\+B\+I\+K\+Chain.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a7f0450c9a98d8866883efe7b5f1fa9dc}\label{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a7f0450c9a98d8866883efe7b5f1fa9dc}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}!Forward\+Reach@{Forward\+Reach}}
+\index{Forward\+Reach@{Forward\+Reach}!Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}}
+\subsubsection{\texorpdfstring{Forward\+Reach()}{ForwardReach()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+F\+B\+I\+K\+Chain.\+Forward\+Reach (\begin{DoxyParamCaption}\item[{Vector3}]{position }\end{DoxyParamCaption})}
+
+
+
+Definition at line 558 of file F\+B\+I\+K\+Chain.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a2042f6c29dd84d524542db75c18967eb}\label{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a2042f6c29dd84d524542db75c18967eb}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}!Get\+Dir\+To\+Bend\+Point@{Get\+Dir\+To\+Bend\+Point}}
+\index{Get\+Dir\+To\+Bend\+Point@{Get\+Dir\+To\+Bend\+Point}!Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}}
+\subsubsection{\texorpdfstring{Get\+Dir\+To\+Bend\+Point()}{GetDirToBendPoint()}}
+{\footnotesize\ttfamily Vector3 Root\+Motion.\+Final\+I\+K.\+F\+B\+I\+K\+Chain.\+Get\+Dir\+To\+Bend\+Point (\begin{DoxyParamCaption}\item[{Vector3}]{direction,  }\item[{Vector3}]{bend\+Direction,  }\item[{float}]{direction\+Magnitude }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 521 of file F\+B\+I\+K\+Chain.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a4158249eab77a3f471243a23e893e783}\label{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a4158249eab77a3f471243a23e893e783}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}!Get\+Node\+Index@{Get\+Node\+Index}}
+\index{Get\+Node\+Index@{Get\+Node\+Index}!Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}}
+\subsubsection{\texorpdfstring{Get\+Node\+Index()}{GetNodeIndex()}}
+{\footnotesize\ttfamily int Root\+Motion.\+Final\+I\+K.\+F\+B\+I\+K\+Chain.\+Get\+Node\+Index (\begin{DoxyParamCaption}\item[{Transform}]{bone\+Transform }\end{DoxyParamCaption})}
+
+
+
+Definition at line 207 of file F\+B\+I\+K\+Chain.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a920f4ea3e2aa7ca61a6e87aa1e01de9a}\label{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a920f4ea3e2aa7ca61a6e87aa1e01de9a}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}!Initiate@{Initiate}}
+\index{Initiate@{Initiate}!Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}}
+\subsubsection{\texorpdfstring{Initiate()}{Initiate()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+F\+B\+I\+K\+Chain.\+Initiate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body}{I\+K\+Solver\+Full\+Body}}}]{solver }\end{DoxyParamCaption})}
+
+
+
+Definition at line 234 of file F\+B\+I\+K\+Chain.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a29b16757a3f6914b742a0d3561529d24}\label{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a29b16757a3f6914b742a0d3561529d24}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}!Is\+Valid@{Is\+Valid}}
+\index{Is\+Valid@{Is\+Valid}!Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}}
+\subsubsection{\texorpdfstring{Is\+Valid()}{IsValid()}}
+{\footnotesize\ttfamily bool Root\+Motion.\+Final\+I\+K.\+F\+B\+I\+K\+Chain.\+Is\+Valid (\begin{DoxyParamCaption}\item[{ref string}]{message }\end{DoxyParamCaption})}
+
+
+
+Definition at line 217 of file F\+B\+I\+K\+Chain.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_acbe23897fbca5d475e2fdcc6b275e44f}\label{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_acbe23897fbca5d475e2fdcc6b275e44f}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}!Push@{Push}}
+\index{Push@{Push}!Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}}
+\subsubsection{\texorpdfstring{Push()}{Push()}}
+{\footnotesize\ttfamily Vector3 Root\+Motion.\+Final\+I\+K.\+F\+B\+I\+K\+Chain.\+Push (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body}{I\+K\+Solver\+Full\+Body}}}]{solver }\end{DoxyParamCaption})}
+
+
+
+Definition at line 374 of file F\+B\+I\+K\+Chain.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a6c3e42a7ffd67e7ec3704b501d4ed964}\label{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a6c3e42a7ffd67e7ec3704b501d4ed964}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}!Reach@{Reach}}
+\index{Reach@{Reach}!Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}}
+\subsubsection{\texorpdfstring{Reach()}{Reach()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+F\+B\+I\+K\+Chain.\+Reach (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body}{I\+K\+Solver\+Full\+Body}}}]{solver }\end{DoxyParamCaption})}
+
+
+
+Definition at line 337 of file F\+B\+I\+K\+Chain.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a588a6e19aec22732f921ec4083786c83}\label{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a588a6e19aec22732f921ec4083786c83}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}!Read\+Pose@{Read\+Pose}}
+\index{Read\+Pose@{Read\+Pose}!Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}}
+\subsubsection{\texorpdfstring{Read\+Pose()}{ReadPose()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+F\+B\+I\+K\+Chain.\+Read\+Pose (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body}{I\+K\+Solver\+Full\+Body}}}]{solver,  }\item[{bool}]{full\+Body }\end{DoxyParamCaption})}
+
+
+
+Definition at line 261 of file F\+B\+I\+K\+Chain.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_aad75789bdd403e5482af023ec0cc47d7}\label{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_aad75789bdd403e5482af023ec0cc47d7}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}!Set\+Nodes@{Set\+Nodes}}
+\index{Set\+Nodes@{Set\+Nodes}!Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}}
+\subsubsection{\texorpdfstring{Set\+Nodes()}{SetNodes()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+F\+B\+I\+K\+Chain.\+Set\+Nodes (\begin{DoxyParamCaption}\item[{params Transform \mbox{[}$\,$\mbox{]}}]{bone\+Transforms }\end{DoxyParamCaption})}
+
+
+
+Definition at line 200 of file F\+B\+I\+K\+Chain.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_ad6df73725445c8cb869119224261b336}\label{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_ad6df73725445c8cb869119224261b336}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}!Solve\+Constraint\+Systems@{Solve\+Constraint\+Systems}}
+\index{Solve\+Constraint\+Systems@{Solve\+Constraint\+Systems}!Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}}
+\subsubsection{\texorpdfstring{Solve\+Constraint\+Systems()}{SolveConstraintSystems()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+F\+B\+I\+K\+Chain.\+Solve\+Constraint\+Systems (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body}{I\+K\+Solver\+Full\+Body}}}]{solver }\end{DoxyParamCaption})}
+
+
+
+Definition at line 500 of file F\+B\+I\+K\+Chain.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a02a04f84e5fc0c66cda70ffc7207ba2b}\label{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a02a04f84e5fc0c66cda70ffc7207ba2b}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}!Solve\+Trigonometric@{Solve\+Trigonometric}}
+\index{Solve\+Trigonometric@{Solve\+Trigonometric}!Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}}
+\subsubsection{\texorpdfstring{Solve\+Trigonometric()}{SolveTrigonometric()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+F\+B\+I\+K\+Chain.\+Solve\+Trigonometric (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body}{I\+K\+Solver\+Full\+Body}}}]{solver,  }\item[{bool}]{calculate\+Bend\+Direction = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 417 of file F\+B\+I\+K\+Chain.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a5d7b8f6e941cf4d392d6018d7a985add}\label{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a5d7b8f6e941cf4d392d6018d7a985add}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}!Stage1@{Stage1}}
+\index{Stage1@{Stage1}!Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}}
+\subsubsection{\texorpdfstring{Stage1()}{Stage1()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+F\+B\+I\+K\+Chain.\+Stage1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body}{I\+K\+Solver\+Full\+Body}}}]{solver }\end{DoxyParamCaption})}
+
+
+
+Definition at line 449 of file F\+B\+I\+K\+Chain.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a1d328994fe5179453233c2857618ee20}\label{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a1d328994fe5179453233c2857618ee20}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}!Stage2@{Stage2}}
+\index{Stage2@{Stage2}!Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}}
+\subsubsection{\texorpdfstring{Stage2()}{Stage2()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+F\+B\+I\+K\+Chain.\+Stage2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body}{I\+K\+Solver\+Full\+Body}}}]{solver,  }\item[{Vector3}]{position }\end{DoxyParamCaption})}
+
+
+
+Definition at line 482 of file F\+B\+I\+K\+Chain.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a9da22043dfd81c60bb9d3e8b7a7d6e8a}\label{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a9da22043dfd81c60bb9d3e8b7a7d6e8a}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}!bend\+Constraint@{bend\+Constraint}}
+\index{bend\+Constraint@{bend\+Constraint}!Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}}
+\subsubsection{\texorpdfstring{bend\+Constraint}{bendConstraint}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_constraint_bend}{I\+K\+Constraint\+Bend}} Root\+Motion.\+Final\+I\+K.\+F\+B\+I\+K\+Chain.\+bend\+Constraint = new \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_constraint_bend}{I\+K\+Constraint\+Bend}}()}
+
+
+
+Gets the bend constraint (if this chain has 3 segments). 
+
+The bend constraint.
+
+Definition at line 171 of file F\+B\+I\+K\+Chain.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_ac7a843d4a4b2cd31b37afadc399ade6a}\label{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_ac7a843d4a4b2cd31b37afadc399ade6a}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}!child\+Constraints@{child\+Constraints}}
+\index{child\+Constraints@{child\+Constraints}!Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}}
+\subsubsection{\texorpdfstring{child\+Constraints}{childConstraints}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_1_1_child_constraint}{Child\+Constraint}} \mbox{[}$\,$\mbox{]} Root\+Motion.\+Final\+I\+K.\+F\+B\+I\+K\+Chain.\+child\+Constraints = new \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_1_1_child_constraint}{Child\+Constraint}}\mbox{[}0\mbox{]}}
+
+
+
+The child constraints are used for example for fixing the distance between left upper arm and right upper arm 
+
+
+
+Definition at line 166 of file F\+B\+I\+K\+Chain.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a0cc59ce9014a189e49f332a963b912b9}\label{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a0cc59ce9014a189e49f332a963b912b9}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}!children@{children}}
+\index{children@{children}!Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}}
+\subsubsection{\texorpdfstring{children}{children}}
+{\footnotesize\ttfamily int \mbox{[}$\,$\mbox{]} Root\+Motion.\+Final\+I\+K.\+F\+B\+I\+K\+Chain.\+children = new int\mbox{[}0\mbox{]}}
+
+
+
+The child chains. 
+
+
+
+Definition at line 162 of file F\+B\+I\+K\+Chain.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_ab19a69e9c38ffec272cba41030cfbb40}\label{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_ab19a69e9c38ffec272cba41030cfbb40}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}!nodes@{nodes}}
+\index{nodes@{nodes}!Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}}
+\subsubsection{\texorpdfstring{nodes}{nodes}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_1_1_node}{I\+K\+Solver.\+Node}} \mbox{[}$\,$\mbox{]} Root\+Motion.\+Final\+I\+K.\+F\+B\+I\+K\+Chain.\+nodes = new \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_1_1_node}{I\+K\+Solver.\+Node}}\mbox{[}0\mbox{]}}
+
+
+
+The nodes in this chain. 
+
+
+
+Definition at line 158 of file F\+B\+I\+K\+Chain.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a389508e3ea390ab5599169de3f98514b}\label{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a389508e3ea390ab5599169de3f98514b}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}!pin@{pin}}
+\index{pin@{pin}!Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}}
+\subsubsection{\texorpdfstring{pin}{pin}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+F\+B\+I\+K\+Chain.\+pin}
+
+
+
+The pin weight. If closer to 1, the chain will be less influenced by child chains. 
+
+
+
+Definition at line 126 of file F\+B\+I\+K\+Chain.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a68367cba3452457c0dea9ed4918f6e62}\label{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a68367cba3452457c0dea9ed4918f6e62}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}!pull@{pull}}
+\index{pull@{pull}!Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}}
+\subsubsection{\texorpdfstring{pull}{pull}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+F\+B\+I\+K\+Chain.\+pull = 1f}
+
+
+
+The weight of pulling the parent chain. 
+
+
+
+Definition at line 131 of file F\+B\+I\+K\+Chain.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a96f80d26536e04e98dfdaca47790f700}\label{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a96f80d26536e04e98dfdaca47790f700}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}!push@{push}}
+\index{push@{push}!Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}}
+\subsubsection{\texorpdfstring{push}{push}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+F\+B\+I\+K\+Chain.\+push}
+
+
+
+The weight of the end-\/effector pushing the shoulder/thigh when the end-\/effector is close to it. 
+
+
+
+Definition at line 136 of file F\+B\+I\+K\+Chain.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a35344c1d18911c7eb1a38cf636fcc7dd}\label{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a35344c1d18911c7eb1a38cf636fcc7dd}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}!push\+Parent@{push\+Parent}}
+\index{push\+Parent@{push\+Parent}!Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}}
+\subsubsection{\texorpdfstring{push\+Parent}{pushParent}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+F\+B\+I\+K\+Chain.\+push\+Parent}
+
+
+
+The amount of push force transferred to the parent (from hand or foot to the body). 
+
+
+
+Definition at line 141 of file F\+B\+I\+K\+Chain.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_ac0061137bbb24205fa83bf51a047374f}\label{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_ac0061137bbb24205fa83bf51a047374f}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}!push\+Smoothing@{push\+Smoothing}}
+\index{push\+Smoothing@{push\+Smoothing}!Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}}
+\subsubsection{\texorpdfstring{push\+Smoothing}{pushSmoothing}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a2c75de88180a5922368eaa4c4efb3ac9}{Smoothing}} Root\+Motion.\+Final\+I\+K.\+F\+B\+I\+K\+Chain.\+push\+Smoothing = \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a2c75de88180a5922368eaa4c4efb3ac9ac1e19c09f700938f0ff7f1fd4722a3ac}{Smoothing.\+Exponential}}}
+
+
+
+Smoothing the effect of the Push. 
+
+
+
+Definition at line 154 of file F\+B\+I\+K\+Chain.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_adb4e385a42a1777f69be173884d6578f}\label{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_adb4e385a42a1777f69be173884d6578f}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}!reach@{reach}}
+\index{reach@{reach}!Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}}
+\subsubsection{\texorpdfstring{reach}{reach}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+F\+B\+I\+K\+Chain.\+reach = 0.\+1f}
+
+
+
+Only used in 3 segmented chains, pulls the first node closer to the third node. 
+
+
+
+Definition at line 146 of file F\+B\+I\+K\+Chain.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a6e7bc44bee2b83891f598c0db63012ec}\label{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a6e7bc44bee2b83891f598c0db63012ec}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}!reach\+Smoothing@{reach\+Smoothing}}
+\index{reach\+Smoothing@{reach\+Smoothing}!Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain@{Root\+Motion\+::\+Final\+I\+K\+::\+F\+B\+I\+K\+Chain}}
+\subsubsection{\texorpdfstring{reach\+Smoothing}{reachSmoothing}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a2c75de88180a5922368eaa4c4efb3ac9}{Smoothing}} Root\+Motion.\+Final\+I\+K.\+F\+B\+I\+K\+Chain.\+reach\+Smoothing = \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_b_i_k_chain_a2c75de88180a5922368eaa4c4efb3ac9ac1e19c09f700938f0ff7f1fd4722a3ac}{Smoothing.\+Exponential}}}
+
+
+
+Smoothing the effect of the Reach with the expense of some accuracy. 
+
+
+
+Definition at line 150 of file F\+B\+I\+K\+Chain.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Plugins/\+Root\+Motion/\+Final\+I\+K/\+I\+K Solvers/\mbox{\hyperlink{_f_b_i_k_chain_8cs}{F\+B\+I\+K\+Chain.\+cs}}\end{DoxyCompactItemize}

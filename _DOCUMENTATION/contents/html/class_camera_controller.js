@@ -1,0 +1,25 @@
+var class_camera_controller =
+[
+    [ "FollowAnimal", "class_camera_controller.html#a9b8ad016594f7b86daa8406f9f8fe31f", null ],
+    [ "GoToPoint", "class_camera_controller.html#a2720f41abfc672dea4fd3e386eb4e3fa", null ],
+    [ "LerpToPoint", "class_camera_controller.html#a90cd597ab3d5586711544b3f449eb68d", null ],
+    [ "LetThereBeLight", "class_camera_controller.html#a66d5c10c02d5c08b89ad623afde6cdf2", null ],
+    [ "LightsOut", "class_camera_controller.html#acebc21dbad7ad835eb72706bee190c77", null ],
+    [ "Switch", "class_camera_controller.html#ae466f73db5ef581ce90cb69f1f66605a", null ],
+    [ "ViewObject", "class_camera_controller.html#a5fac91ad6dfd73b67cbec8e427b4736e", null ],
+    [ "ViewThenReload", "class_camera_controller.html#a11f7d8c8c178433e5d3a54f62711ff37", null ],
+    [ "m_aLerpCurve", "class_camera_controller.html#a70e07e27e4f1077febe45becebdc9b01", null ],
+    [ "m_bAllowManualOffsets", "class_camera_controller.html#a5a86f74242b3547e6f2d0d85bac35019", null ],
+    [ "m_bFollowAnimalZ", "class_camera_controller.html#ab3e3057150c585361a707031c0fb2d29", null ],
+    [ "m_fAnimalSpeedBuffer", "class_camera_controller.html#af868dbed0987e517c1d5756b3a83610a", null ],
+    [ "m_fCameraSpeed", "class_camera_controller.html#a8798ad2d23175bf6a1fc55905ee8e22a", null ],
+    [ "m_fFocalSpeed", "class_camera_controller.html#ac00593a666b5192bcd109a0eebf7a272", null ],
+    [ "m_fRotateSpeed", "class_camera_controller.html#a2353caba06439ca6ec202ea74d5a607d", null ],
+    [ "m_fYAdd", "class_camera_controller.html#aa5f8628654be31b528a929ae61c5ab52", null ],
+    [ "m_ItsLitFam", "class_camera_controller.html#a85d67c9a5d7cb32ede2fbf569864cfa3", null ],
+    [ "m_LightSpeed", "class_camera_controller.html#a1ff4ea82ac72e8be51d6ed1093fbc5e5", null ],
+    [ "m_rBody", "class_camera_controller.html#ad6e1e777936be668f56a0fe183b6917d", null ],
+    [ "m_VingetteMax", "class_camera_controller.html#a07ce81630c7ad6f66a9d047cfb185e45", null ],
+    [ "m_VingetteSpeed", "class_camera_controller.html#aa0020e312684263a817d73d6c492a54d", null ],
+    [ "camera", "class_camera_controller.html#a6d8239eb360decf9f5cdace7bcd9cc19", null ]
+];

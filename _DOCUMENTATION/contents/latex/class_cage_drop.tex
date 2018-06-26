@@ -1,0 +1,175 @@
+\hypertarget{class_cage_drop}{}\section{Cage\+Drop Class Reference}
+\label{class_cage_drop}\index{Cage\+Drop@{Cage\+Drop}}
+
+
+drop the cage from its hinge joint  
+
+
+Inheritance diagram for Cage\+Drop\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_cage_drop}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_cage_drop_a38a96e29aa7e79a26f97e0ddf6480b2e}{Check\+Info}} (Input\+Control input, \mbox{\hyperlink{class_animal}{Animal}} caller)
+\begin{DoxyCompactList}\small\item\em Check if this interactable uses the key\end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_cage_drop_a4f05fa4967d7317ffd43b8e7b9e42e3d}{Ignore\+Distance}} ()
+\begin{DoxyCompactList}\small\item\em summary$>$Get the distance from point. Used to check keypress\end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_cage_drop_a57457a58730ee0fbad7693ef9d9a78d7}{Get\+Distance}} (Vector3 point)
+\item 
+void \mbox{\hyperlink{class_cage_drop_a5832f1672e4475be50319fa8e23f5cbc}{Interact}} (\mbox{\hyperlink{class_animal}{Animal}} caller)
+\begin{DoxyCompactList}\small\item\em Called on a successful key (and possible distance) check occurred\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Hinge\+Joint \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_cage_drop_a0de7acd4bc329164d0d5c05f45ad7306}{m\+\_\+hj\+Rope}}
+\item 
+Game\+Object \mbox{\hyperlink{class_cage_drop_a5f17536752f100ab73e38f65ab377006}{m\+\_\+go\+Balancer}}
+\item 
+Collider \mbox{\hyperlink{class_cage_drop_ada79b293aef9836e982707e48d6fb0b2}{m\+\_\+\+Floor}}
+\item 
+Collider \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_cage_drop_aff9e0ceae69798752d6fd61ac27263a0}{m\+\_\+\+My\+Colliders}} = new Collider\mbox{[}0\mbox{]}
+\item 
+Collider \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_cage_drop_a4a078e929ab43f3ceed60383dcb6a02c}{m\+\_\+\+Can\+Collide}} = new Collider\mbox{[}0\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+drop the cage from its hinge joint 
+
+
+
+Definition at line 8 of file Cage\+Drop.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_cage_drop_a38a96e29aa7e79a26f97e0ddf6480b2e}\label{class_cage_drop_a38a96e29aa7e79a26f97e0ddf6480b2e}} 
+\index{Cage\+Drop@{Cage\+Drop}!Check\+Info@{Check\+Info}}
+\index{Check\+Info@{Check\+Info}!Cage\+Drop@{Cage\+Drop}}
+\subsubsection{\texorpdfstring{Check\+Info()}{CheckInfo()}}
+{\footnotesize\ttfamily bool Cage\+Drop.\+Check\+Info (\begin{DoxyParamCaption}\item[{Input\+Control}]{input,  }\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{caller }\end{DoxyParamCaption})}
+
+
+
+Check if this interactable uses the key
+
+summary$>$Should this interactable ignore the distance check and automatically interact when possible
+
+Implements \mbox{\hyperlink{interface_i_interactable_a5142ebbddd5d91a93da436941ad77d8e}{I\+Interactable}}.
+
+
+
+Definition at line 43 of file Cage\+Drop.\+cs.
+
+\mbox{\Hypertarget{class_cage_drop_a57457a58730ee0fbad7693ef9d9a78d7}\label{class_cage_drop_a57457a58730ee0fbad7693ef9d9a78d7}} 
+\index{Cage\+Drop@{Cage\+Drop}!Get\+Distance@{Get\+Distance}}
+\index{Get\+Distance@{Get\+Distance}!Cage\+Drop@{Cage\+Drop}}
+\subsubsection{\texorpdfstring{Get\+Distance()}{GetDistance()}}
+{\footnotesize\ttfamily float Cage\+Drop.\+Get\+Distance (\begin{DoxyParamCaption}\item[{Vector3}]{point }\end{DoxyParamCaption})}
+
+
+
+Implements \mbox{\hyperlink{interface_i_interactable_acde3047364ffe9a4ed107513feb21675}{I\+Interactable}}.
+
+
+
+Definition at line 53 of file Cage\+Drop.\+cs.
+
+\mbox{\Hypertarget{class_cage_drop_a4f05fa4967d7317ffd43b8e7b9e42e3d}\label{class_cage_drop_a4f05fa4967d7317ffd43b8e7b9e42e3d}} 
+\index{Cage\+Drop@{Cage\+Drop}!Ignore\+Distance@{Ignore\+Distance}}
+\index{Ignore\+Distance@{Ignore\+Distance}!Cage\+Drop@{Cage\+Drop}}
+\subsubsection{\texorpdfstring{Ignore\+Distance()}{IgnoreDistance()}}
+{\footnotesize\ttfamily bool Cage\+Drop.\+Ignore\+Distance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+summary$>$Get the distance from point. Used to check keypress
+
+
+
+Implements \mbox{\hyperlink{interface_i_interactable_ad184024a0cc6bce38ebcd77c0126fcc5}{I\+Interactable}}.
+
+
+
+Definition at line 48 of file Cage\+Drop.\+cs.
+
+\mbox{\Hypertarget{class_cage_drop_a5832f1672e4475be50319fa8e23f5cbc}\label{class_cage_drop_a5832f1672e4475be50319fa8e23f5cbc}} 
+\index{Cage\+Drop@{Cage\+Drop}!Interact@{Interact}}
+\index{Interact@{Interact}!Cage\+Drop@{Cage\+Drop}}
+\subsubsection{\texorpdfstring{Interact()}{Interact()}}
+{\footnotesize\ttfamily void Cage\+Drop.\+Interact (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{caller }\end{DoxyParamCaption})}
+
+
+
+Called on a successful key (and possible distance) check occurred
+
+
+
+Implements \mbox{\hyperlink{interface_i_interactable_ae38fb77e97bc1066db045b32db647681}{I\+Interactable}}.
+
+
+
+Definition at line 58 of file Cage\+Drop.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_cage_drop_a4a078e929ab43f3ceed60383dcb6a02c}\label{class_cage_drop_a4a078e929ab43f3ceed60383dcb6a02c}} 
+\index{Cage\+Drop@{Cage\+Drop}!m\+\_\+\+Can\+Collide@{m\+\_\+\+Can\+Collide}}
+\index{m\+\_\+\+Can\+Collide@{m\+\_\+\+Can\+Collide}!Cage\+Drop@{Cage\+Drop}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Can\+Collide}{m\_CanCollide}}
+{\footnotesize\ttfamily Collider \mbox{[}$\,$\mbox{]} Cage\+Drop.\+m\+\_\+\+Can\+Collide = new Collider\mbox{[}0\mbox{]}}
+
+
+
+Definition at line 15 of file Cage\+Drop.\+cs.
+
+\mbox{\Hypertarget{class_cage_drop_ada79b293aef9836e982707e48d6fb0b2}\label{class_cage_drop_ada79b293aef9836e982707e48d6fb0b2}} 
+\index{Cage\+Drop@{Cage\+Drop}!m\+\_\+\+Floor@{m\+\_\+\+Floor}}
+\index{m\+\_\+\+Floor@{m\+\_\+\+Floor}!Cage\+Drop@{Cage\+Drop}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Floor}{m\_Floor}}
+{\footnotesize\ttfamily Collider Cage\+Drop.\+m\+\_\+\+Floor}
+
+
+
+Definition at line 13 of file Cage\+Drop.\+cs.
+
+\mbox{\Hypertarget{class_cage_drop_a5f17536752f100ab73e38f65ab377006}\label{class_cage_drop_a5f17536752f100ab73e38f65ab377006}} 
+\index{Cage\+Drop@{Cage\+Drop}!m\+\_\+go\+Balancer@{m\+\_\+go\+Balancer}}
+\index{m\+\_\+go\+Balancer@{m\+\_\+go\+Balancer}!Cage\+Drop@{Cage\+Drop}}
+\subsubsection{\texorpdfstring{m\+\_\+go\+Balancer}{m\_goBalancer}}
+{\footnotesize\ttfamily Game\+Object Cage\+Drop.\+m\+\_\+go\+Balancer}
+
+
+
+Definition at line 11 of file Cage\+Drop.\+cs.
+
+\mbox{\Hypertarget{class_cage_drop_a0de7acd4bc329164d0d5c05f45ad7306}\label{class_cage_drop_a0de7acd4bc329164d0d5c05f45ad7306}} 
+\index{Cage\+Drop@{Cage\+Drop}!m\+\_\+hj\+Rope@{m\+\_\+hj\+Rope}}
+\index{m\+\_\+hj\+Rope@{m\+\_\+hj\+Rope}!Cage\+Drop@{Cage\+Drop}}
+\subsubsection{\texorpdfstring{m\+\_\+hj\+Rope}{m\_hjRope}}
+{\footnotesize\ttfamily Hinge\+Joint \mbox{[}$\,$\mbox{]} Cage\+Drop.\+m\+\_\+hj\+Rope}
+
+
+
+Definition at line 10 of file Cage\+Drop.\+cs.
+
+\mbox{\Hypertarget{class_cage_drop_aff9e0ceae69798752d6fd61ac27263a0}\label{class_cage_drop_aff9e0ceae69798752d6fd61ac27263a0}} 
+\index{Cage\+Drop@{Cage\+Drop}!m\+\_\+\+My\+Colliders@{m\+\_\+\+My\+Colliders}}
+\index{m\+\_\+\+My\+Colliders@{m\+\_\+\+My\+Colliders}!Cage\+Drop@{Cage\+Drop}}
+\subsubsection{\texorpdfstring{m\+\_\+\+My\+Colliders}{m\_MyColliders}}
+{\footnotesize\ttfamily Collider \mbox{[}$\,$\mbox{]} Cage\+Drop.\+m\+\_\+\+My\+Colliders = new Collider\mbox{[}0\mbox{]}}
+
+
+
+Definition at line 14 of file Cage\+Drop.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Aesthetic/\mbox{\hyperlink{_cage_drop_8cs}{Cage\+Drop.\+cs}}\end{DoxyCompactItemize}

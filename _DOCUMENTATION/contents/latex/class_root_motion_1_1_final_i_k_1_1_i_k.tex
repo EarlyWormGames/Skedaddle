@@ -1,0 +1,125 @@
+\hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k}{}\section{Root\+Motion.\+Final\+I\+K.\+IK Class Reference}
+\label{class_root_motion_1_1_final_i_k_1_1_i_k}\index{Root\+Motion.\+Final\+I\+K.\+IK@{Root\+Motion.\+Final\+I\+K.\+IK}}
+
+
+Base abstract class for IK solver components.  
+
+
+Inheritance diagram for Root\+Motion.\+Final\+I\+K.\+IK\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=11.000000cm]{class_root_motion_1_1_final_i_k_1_1_i_k}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+abstract \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver}{I\+K\+Solver}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_ad9ef393e69cd16ba2d6fa06ba06b7a66}{Get\+I\+K\+Solver}} ()
+\begin{DoxyCompactList}\small\item\em Gets the IK component\textquotesingle{}s solver as \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver}{I\+K\+Solver}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_adec5648de6e1fc9fcbc2de325fc654a2}{Update\+Solver}} ()
+\item 
+override void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_a5e26500361f7eb0c6515fa84b9c68e57}{Initiate\+Solver}} ()
+\item 
+override void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_ac5d8c4a224b291865a31909a231acf07}{Fix\+Transforms}} ()
+\item 
+abstract void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_a1922e31d550e27dcc60eca0d62c699c5}{Open\+User\+Manual}} ()
+\item 
+abstract void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_a260f283903b1305b99485c9474c83927}{Open\+Script\+Reference}} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Base abstract class for IK solver components. 
+
+
+
+Definition at line 9 of file I\+K.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_ac5d8c4a224b291865a31909a231acf07}\label{class_root_motion_1_1_final_i_k_1_1_i_k_ac5d8c4a224b291865a31909a231acf07}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+IK}!Fix\+Transforms@{Fix\+Transforms}}
+\index{Fix\+Transforms@{Fix\+Transforms}!Root\+Motion\+::\+Final\+I\+K\+::\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+IK}}
+\subsubsection{\texorpdfstring{Fix\+Transforms()}{FixTransforms()}}
+{\footnotesize\ttfamily override void Root\+Motion.\+Final\+I\+K.\+I\+K.\+Fix\+Transforms (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_root_motion_1_1_solver_manager_addb54e92acd91364a9205c5807a42776}{Root\+Motion.\+Solver\+Manager}}.
+
+
+
+Definition at line 39 of file I\+K.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_ad9ef393e69cd16ba2d6fa06ba06b7a66}\label{class_root_motion_1_1_final_i_k_1_1_i_k_ad9ef393e69cd16ba2d6fa06ba06b7a66}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+IK}!Get\+I\+K\+Solver@{Get\+I\+K\+Solver}}
+\index{Get\+I\+K\+Solver@{Get\+I\+K\+Solver}!Root\+Motion\+::\+Final\+I\+K\+::\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+IK}}
+\subsubsection{\texorpdfstring{Get\+I\+K\+Solver()}{GetIKSolver()}}
+{\footnotesize\ttfamily abstract \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver}{I\+K\+Solver}} Root\+Motion.\+Final\+I\+K.\+I\+K.\+Get\+I\+K\+Solver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the IK component\textquotesingle{}s solver as \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver}{I\+K\+Solver}}. 
+
+
+
+Implemented in \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_full_body_biped_i_k_a40afaf3c61effbcc2ee82ad30c0b4bb7}{Root\+Motion.\+Final\+I\+K.\+Full\+Body\+Biped\+IK}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_aim_i_k_a32e4e1392cf1b39a33e5bb2c8022f941}{Root\+Motion.\+Final\+I\+K.\+Aim\+IK}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_c_c_d_i_k_a0bed91571fde99f94e6cec73ca6db310}{Root\+Motion.\+Final\+I\+K.\+C\+C\+D\+IK}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_a_b_r_i_k_a981c902f3f99de1bc37988fbd2226ce7}{Root\+Motion.\+Final\+I\+K.\+F\+A\+B\+R\+IK}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_a_b_r_i_k_root_a3bc8f9e7db9f8eafb22c95530f2a9f7c}{Root\+Motion.\+Final\+I\+K.\+F\+A\+B\+R\+I\+K\+Root}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_limb_i_k_ad5769cba3e3e93e1872e59138e594e2c}{Root\+Motion.\+Final\+I\+K.\+Limb\+IK}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_look_at_i_k_a9a328d936ed493a056797c85b5e8f9dd}{Root\+Motion.\+Final\+I\+K.\+Look\+At\+IK}}, and \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_trigonometric_i_k_a0f03fc1647caa39a0d3ca07865936df8}{Root\+Motion.\+Final\+I\+K.\+Trigonometric\+IK}}.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_a5e26500361f7eb0c6515fa84b9c68e57}\label{class_root_motion_1_1_final_i_k_1_1_i_k_a5e26500361f7eb0c6515fa84b9c68e57}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+IK}!Initiate\+Solver@{Initiate\+Solver}}
+\index{Initiate\+Solver@{Initiate\+Solver}!Root\+Motion\+::\+Final\+I\+K\+::\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+IK}}
+\subsubsection{\texorpdfstring{Initiate\+Solver()}{InitiateSolver()}}
+{\footnotesize\ttfamily override void Root\+Motion.\+Final\+I\+K.\+I\+K.\+Initiate\+Solver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_root_motion_1_1_solver_manager_abd2008369f3de95712d5748aa4ce6243}{Root\+Motion.\+Solver\+Manager}}.
+
+
+
+Definition at line 33 of file I\+K.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_a260f283903b1305b99485c9474c83927}\label{class_root_motion_1_1_final_i_k_1_1_i_k_a260f283903b1305b99485c9474c83927}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+IK}!Open\+Script\+Reference@{Open\+Script\+Reference}}
+\index{Open\+Script\+Reference@{Open\+Script\+Reference}!Root\+Motion\+::\+Final\+I\+K\+::\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+IK}}
+\subsubsection{\texorpdfstring{Open\+Script\+Reference()}{OpenScriptReference()}}
+{\footnotesize\ttfamily abstract void Root\+Motion.\+Final\+I\+K.\+I\+K.\+Open\+Script\+Reference (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_aim_i_k_a0e574684809fdcb9dcd2a972ecc94871}{Root\+Motion.\+Final\+I\+K.\+Aim\+IK}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_c_c_d_i_k_adf8dc52ac72a005efbc193fe59154b06}{Root\+Motion.\+Final\+I\+K.\+C\+C\+D\+IK}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_a_b_r_i_k_aac64228ef162eaa3e39a159400e7f6d4}{Root\+Motion.\+Final\+I\+K.\+F\+A\+B\+R\+IK}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_a_b_r_i_k_root_a7d313fec290479a2b5bcec328d63fd09}{Root\+Motion.\+Final\+I\+K.\+F\+A\+B\+R\+I\+K\+Root}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_full_body_biped_i_k_aae4e2635775efc0a5f2b1058b7e693fe}{Root\+Motion.\+Final\+I\+K.\+Full\+Body\+Biped\+IK}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_limb_i_k_a06dda0b6311aed7d024f2a286eb77c6c}{Root\+Motion.\+Final\+I\+K.\+Limb\+IK}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_look_at_i_k_a1bab9ccb38d81344fe51e00639efaac1}{Root\+Motion.\+Final\+I\+K.\+Look\+At\+IK}}, and \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_trigonometric_i_k_a11ec745bda457587c622e4c9ccd499bc}{Root\+Motion.\+Final\+I\+K.\+Trigonometric\+IK}}.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_a1922e31d550e27dcc60eca0d62c699c5}\label{class_root_motion_1_1_final_i_k_1_1_i_k_a1922e31d550e27dcc60eca0d62c699c5}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+IK}!Open\+User\+Manual@{Open\+User\+Manual}}
+\index{Open\+User\+Manual@{Open\+User\+Manual}!Root\+Motion\+::\+Final\+I\+K\+::\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+IK}}
+\subsubsection{\texorpdfstring{Open\+User\+Manual()}{OpenUserManual()}}
+{\footnotesize\ttfamily abstract void Root\+Motion.\+Final\+I\+K.\+I\+K.\+Open\+User\+Manual (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_aim_i_k_afdd0f041a17867eb9ea3bdfcabf273c7}{Root\+Motion.\+Final\+I\+K.\+Aim\+IK}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_c_c_d_i_k_a338aeec4a93d1b623f9a20a9e03b9677}{Root\+Motion.\+Final\+I\+K.\+C\+C\+D\+IK}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_a_b_r_i_k_a05b2d0586050c16146e02cde8a0e1b11}{Root\+Motion.\+Final\+I\+K.\+F\+A\+B\+R\+IK}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_a_b_r_i_k_root_a1603e05ce4253accd82d0aee081cc115}{Root\+Motion.\+Final\+I\+K.\+F\+A\+B\+R\+I\+K\+Root}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_full_body_biped_i_k_a18f11840a747ff0163ba5933b026badc}{Root\+Motion.\+Final\+I\+K.\+Full\+Body\+Biped\+IK}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_limb_i_k_a3f518043b978d7a162c7390b5b7c8ca3}{Root\+Motion.\+Final\+I\+K.\+Limb\+IK}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_look_at_i_k_abdc32a69392d71c9ce0f1c68778251a5}{Root\+Motion.\+Final\+I\+K.\+Look\+At\+IK}}, and \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_trigonometric_i_k_a67d1ec2da507e10b46c7446099e49859}{Root\+Motion.\+Final\+I\+K.\+Trigonometric\+IK}}.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_adec5648de6e1fc9fcbc2de325fc654a2}\label{class_root_motion_1_1_final_i_k_1_1_i_k_adec5648de6e1fc9fcbc2de325fc654a2}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+IK}!Update\+Solver@{Update\+Solver}}
+\index{Update\+Solver@{Update\+Solver}!Root\+Motion\+::\+Final\+I\+K\+::\+IK@{Root\+Motion\+::\+Final\+I\+K\+::\+IK}}
+\subsubsection{\texorpdfstring{Update\+Solver()}{UpdateSolver()}}
+{\footnotesize\ttfamily override void Root\+Motion.\+Final\+I\+K.\+I\+K.\+Update\+Solver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_root_motion_1_1_solver_manager_ac7a8239a700672570da89d88544a340d}{Root\+Motion.\+Solver\+Manager}}.
+
+
+
+Definition at line 23 of file I\+K.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Plugins/\+Root\+Motion/\+Final\+I\+K/\+I\+K Components/\mbox{\hyperlink{_i_k_8cs}{I\+K.\+cs}}\end{DoxyCompactItemize}

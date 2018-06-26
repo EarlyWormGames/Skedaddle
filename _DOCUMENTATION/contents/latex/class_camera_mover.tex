@@ -1,0 +1,192 @@
+\hypertarget{class_camera_mover}{}\section{Camera\+Mover Class Reference}
+\label{class_camera_mover}\index{Camera\+Mover@{Camera\+Mover}}
+Inheritance diagram for Camera\+Mover\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_camera_mover}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+abstract void \mbox{\hyperlink{class_camera_mover_ab2f77d1df91324b508a7a45f1f22a04a}{Set\+Current\+Point}} (object data)
+\begin{DoxyCompactList}\small\item\em Sets the current move-\/to and look-\/at points for the camera. Please type check {\itshape data}  before using it \end{DoxyCompactList}\item 
+abstract bool \mbox{\hyperlink{class_camera_mover_ae64e8ff4b4850290695f1cf1f7d866ba}{Set\+Animal\+Enabled}} (\mbox{\hyperlink{_animal_8cs_a2fa5713399b84d1b88dae9196837af50}{A\+N\+I\+M\+A\+L\+\_\+\+N\+A\+ME}} a\+\_\+name, bool a\+\_\+enabled)
+\begin{DoxyCompactList}\small\item\em Set the animal to use to disuse this mover \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{_animal_8cs_a2fa5713399b84d1b88dae9196837af50}{A\+N\+I\+M\+A\+L\+\_\+\+N\+A\+ME}} $>$ \mbox{\hyperlink{class_camera_mover_a5c2dba444b1de7c8354809cf0650fabf}{My\+Animals}} = new List$<$\mbox{\hyperlink{_animal_8cs_a2fa5713399b84d1b88dae9196837af50}{A\+N\+I\+M\+A\+L\+\_\+\+N\+A\+ME}}$>$()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static Vector3 \mbox{\hyperlink{class_camera_mover_af5e137b14fa9ab77c866f8eb5c961373}{Current\+Point}}
+\item 
+static Vector3 \mbox{\hyperlink{class_camera_mover_a52c7a78c67f185461d25120f42395db3}{Look\+At\+Point}}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+abstract void \mbox{\hyperlink{class_camera_mover_ab96169179c915b4c8599c956dc572fc7}{On\+Start}} ()
+\item 
+abstract void \mbox{\hyperlink{class_camera_mover_add4a882d9c8684a75d9d2cdacf90a74f}{On\+Update}} ()
+\item 
+abstract void \mbox{\hyperlink{class_camera_mover_ae1a5b4f8f531adf79cdea73c27ca8203}{Check\+Current\+Animal}} ()
+\begin{DoxyCompactList}\small\item\em Check which \mbox{\hyperlink{class_animal}{Animal}} to use in the next calculation. This should set \mbox{\hyperlink{class_camera_mover_a8b863da058e5a1984fd686e09ee2689f}{current\+Animal}} \end{DoxyCompactList}\item 
+abstract void \mbox{\hyperlink{class_camera_mover_afe44c2188d44a3fdb72acdf0d12563a9}{Calc\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Calculate the camera\textquotesingle{}s next destination \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_animal}{Animal}} \mbox{\hyperlink{class_camera_mover_a8b863da058e5a1984fd686e09ee2689f}{current\+Animal}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 6 of file Camera\+Mover.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_camera_mover_afe44c2188d44a3fdb72acdf0d12563a9}\label{class_camera_mover_afe44c2188d44a3fdb72acdf0d12563a9}} 
+\index{Camera\+Mover@{Camera\+Mover}!Calc\+Position@{Calc\+Position}}
+\index{Calc\+Position@{Calc\+Position}!Camera\+Mover@{Camera\+Mover}}
+\subsubsection{\texorpdfstring{Calc\+Position()}{CalcPosition()}}
+{\footnotesize\ttfamily abstract void Camera\+Mover.\+Calc\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Calculate the camera\textquotesingle{}s next destination 
+
+
+
+Implemented in \mbox{\hyperlink{class_manual_camera_movement_af39bcaa57f616ec5003c1848deefb087}{Manual\+Camera\+Movement}}, and \mbox{\hyperlink{class_camera_spline_a70ec10306e6894532589d3d1dffaa3ae}{Camera\+Spline}}.
+
+\mbox{\Hypertarget{class_camera_mover_ae1a5b4f8f531adf79cdea73c27ca8203}\label{class_camera_mover_ae1a5b4f8f531adf79cdea73c27ca8203}} 
+\index{Camera\+Mover@{Camera\+Mover}!Check\+Current\+Animal@{Check\+Current\+Animal}}
+\index{Check\+Current\+Animal@{Check\+Current\+Animal}!Camera\+Mover@{Camera\+Mover}}
+\subsubsection{\texorpdfstring{Check\+Current\+Animal()}{CheckCurrentAnimal()}}
+{\footnotesize\ttfamily abstract void Camera\+Mover.\+Check\+Current\+Animal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Check which \mbox{\hyperlink{class_animal}{Animal}} to use in the next calculation. This should set \mbox{\hyperlink{class_camera_mover_a8b863da058e5a1984fd686e09ee2689f}{current\+Animal}} 
+
+
+
+Implemented in \mbox{\hyperlink{class_default_camera_movement_a27024061b5779124b7fac73acaed7c1d}{Default\+Camera\+Movement}}.
+
+\mbox{\Hypertarget{class_camera_mover_ab96169179c915b4c8599c956dc572fc7}\label{class_camera_mover_ab96169179c915b4c8599c956dc572fc7}} 
+\index{Camera\+Mover@{Camera\+Mover}!On\+Start@{On\+Start}}
+\index{On\+Start@{On\+Start}!Camera\+Mover@{Camera\+Mover}}
+\subsubsection{\texorpdfstring{On\+Start()}{OnStart()}}
+{\footnotesize\ttfamily abstract void Camera\+Mover.\+On\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_manual_camera_movement_a7d176cf631d84d7c34b2407fd810adcf}{Manual\+Camera\+Movement}}, and \mbox{\hyperlink{class_camera_spline_a8c3df3fb0d0ba26126d97432331a209b}{Camera\+Spline}}.
+
+\mbox{\Hypertarget{class_camera_mover_add4a882d9c8684a75d9d2cdacf90a74f}\label{class_camera_mover_add4a882d9c8684a75d9d2cdacf90a74f}} 
+\index{Camera\+Mover@{Camera\+Mover}!On\+Update@{On\+Update}}
+\index{On\+Update@{On\+Update}!Camera\+Mover@{Camera\+Mover}}
+\subsubsection{\texorpdfstring{On\+Update()}{OnUpdate()}}
+{\footnotesize\ttfamily abstract void Camera\+Mover.\+On\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_manual_camera_movement_a0ea298439b1602ebd031bcccd411e2f4}{Manual\+Camera\+Movement}}, and \mbox{\hyperlink{class_camera_spline_a52812811103b9fca941daf2edd3c763d}{Camera\+Spline}}.
+
+\mbox{\Hypertarget{class_camera_mover_ae64e8ff4b4850290695f1cf1f7d866ba}\label{class_camera_mover_ae64e8ff4b4850290695f1cf1f7d866ba}} 
+\index{Camera\+Mover@{Camera\+Mover}!Set\+Animal\+Enabled@{Set\+Animal\+Enabled}}
+\index{Set\+Animal\+Enabled@{Set\+Animal\+Enabled}!Camera\+Mover@{Camera\+Mover}}
+\subsubsection{\texorpdfstring{Set\+Animal\+Enabled()}{SetAnimalEnabled()}}
+{\footnotesize\ttfamily abstract bool Camera\+Mover.\+Set\+Animal\+Enabled (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_animal_8cs_a2fa5713399b84d1b88dae9196837af50}{A\+N\+I\+M\+A\+L\+\_\+\+N\+A\+ME}}}]{a\+\_\+name,  }\item[{bool}]{a\+\_\+enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Set the animal to use to disuse this mover 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+name} & The \mbox{\hyperlink{class_animal}{Animal}} to set\\
+\hline
+{\em a\+\_\+enabled} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If your code purposefully blocks the enable/disable, return false
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_default_camera_movement_ad456298793af765ca6218d6951dd4973}{Default\+Camera\+Movement}}.
+
+\mbox{\Hypertarget{class_camera_mover_ab2f77d1df91324b508a7a45f1f22a04a}\label{class_camera_mover_ab2f77d1df91324b508a7a45f1f22a04a}} 
+\index{Camera\+Mover@{Camera\+Mover}!Set\+Current\+Point@{Set\+Current\+Point}}
+\index{Set\+Current\+Point@{Set\+Current\+Point}!Camera\+Mover@{Camera\+Mover}}
+\subsubsection{\texorpdfstring{Set\+Current\+Point()}{SetCurrentPoint()}}
+{\footnotesize\ttfamily abstract void Camera\+Mover.\+Set\+Current\+Point (\begin{DoxyParamCaption}\item[{object}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Sets the current move-\/to and look-\/at points for the camera. Please type check {\itshape data}  before using it 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The optional data to send through\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_manual_camera_movement_a5c0dbb93ee2c14d66e55c1ce090a8bb4}{Manual\+Camera\+Movement}}, and \mbox{\hyperlink{class_camera_spline_a8ff1f479307c63e3ecc75d089ff1bfcf}{Camera\+Spline}}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_camera_mover_a8b863da058e5a1984fd686e09ee2689f}\label{class_camera_mover_a8b863da058e5a1984fd686e09ee2689f}} 
+\index{Camera\+Mover@{Camera\+Mover}!current\+Animal@{current\+Animal}}
+\index{current\+Animal@{current\+Animal}!Camera\+Mover@{Camera\+Mover}}
+\subsubsection{\texorpdfstring{current\+Animal}{currentAnimal}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_animal}{Animal}} Camera\+Mover.\+current\+Animal\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 14 of file Camera\+Mover.\+cs.
+
+\mbox{\Hypertarget{class_camera_mover_af5e137b14fa9ab77c866f8eb5c961373}\label{class_camera_mover_af5e137b14fa9ab77c866f8eb5c961373}} 
+\index{Camera\+Mover@{Camera\+Mover}!Current\+Point@{Current\+Point}}
+\index{Current\+Point@{Current\+Point}!Camera\+Mover@{Camera\+Mover}}
+\subsubsection{\texorpdfstring{Current\+Point}{CurrentPoint}}
+{\footnotesize\ttfamily Vector3 Camera\+Mover.\+Current\+Point\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 8 of file Camera\+Mover.\+cs.
+
+\mbox{\Hypertarget{class_camera_mover_a52c7a78c67f185461d25120f42395db3}\label{class_camera_mover_a52c7a78c67f185461d25120f42395db3}} 
+\index{Camera\+Mover@{Camera\+Mover}!Look\+At\+Point@{Look\+At\+Point}}
+\index{Look\+At\+Point@{Look\+At\+Point}!Camera\+Mover@{Camera\+Mover}}
+\subsubsection{\texorpdfstring{Look\+At\+Point}{LookAtPoint}}
+{\footnotesize\ttfamily Vector3 Camera\+Mover.\+Look\+At\+Point\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 9 of file Camera\+Mover.\+cs.
+
+\mbox{\Hypertarget{class_camera_mover_a5c2dba444b1de7c8354809cf0650fabf}\label{class_camera_mover_a5c2dba444b1de7c8354809cf0650fabf}} 
+\index{Camera\+Mover@{Camera\+Mover}!My\+Animals@{My\+Animals}}
+\index{My\+Animals@{My\+Animals}!Camera\+Mover@{Camera\+Mover}}
+\subsubsection{\texorpdfstring{My\+Animals}{MyAnimals}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{_animal_8cs_a2fa5713399b84d1b88dae9196837af50}{A\+N\+I\+M\+A\+L\+\_\+\+N\+A\+ME}}$>$ Camera\+Mover.\+My\+Animals = new List$<$\mbox{\hyperlink{_animal_8cs_a2fa5713399b84d1b88dae9196837af50}{A\+N\+I\+M\+A\+L\+\_\+\+N\+A\+ME}}$>$()}
+
+
+
+Definition at line 11 of file Camera\+Mover.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Camera/\mbox{\hyperlink{_camera_mover_8cs}{Camera\+Mover.\+cs}}\end{DoxyCompactItemize}

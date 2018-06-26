@@ -1,0 +1,204 @@
+\hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_effector}{}\section{Root\+Motion.\+Final\+I\+K.\+Interaction\+Effector Class Reference}
+\label{class_root_motion_1_1_final_i_k_1_1_interaction_effector}\index{Root\+Motion.\+Final\+I\+K.\+Interaction\+Effector@{Root\+Motion.\+Final\+I\+K.\+Interaction\+Effector}}
+
+
+Managing Interactions for a single F\+B\+B\+IK effector.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_effector_ab3dd1265142860d8ec5db881b8a34aa8}{Interaction\+Effector}} (\mbox{\hyperlink{namespace_root_motion_1_1_final_i_k_ae0dd2058c7667b6f132c11a6b860c14a}{Full\+Body\+Biped\+Effector}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_effector_a7c98593a91ed1e12f940f3ab1a5e9c9c}{effector\+Type}})
+\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_effector_ade0431085297e409476a5319837df14d}{Initiate}} (\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_system}{Interaction\+System}} interaction\+System)
+\item 
+bool \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_effector_a3c7c8c7e5c481e68ebfd6b3ed21209a4}{Reset\+To\+Defaults}} (float speed)
+\item 
+bool \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_effector_afa54e633915c39be4d153d023123b8ca}{Pause}} ()
+\item 
+bool \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_effector_a474e0c3490add3ab446305df0ee8ce1f}{Resume}} ()
+\item 
+bool \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_effector_a7ec2ff0c84091865de67d02a2901cc21}{Start}} (\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object}{Interaction\+Object}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_effector_a5c48995c4290262ffcde75ff24dbd84d}{interaction\+Object}}, string tag, float fade\+In\+Time, bool interrupt)
+\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_effector_a6222d7ba53f1a48fe0f38544dbabeb64}{Update}} (Transform root, float speed)
+\item 
+bool \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_effector_a4c00b7caf633a35b43fc9651d327cbef}{Stop}} ()
+\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_effector_a5b5222ee077d98311c7193d34fe420d4}{On\+Post\+F\+B\+B\+IK}} ()
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespace_root_motion_1_1_final_i_k_ae0dd2058c7667b6f132c11a6b860c14a}{Full\+Body\+Biped\+Effector}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_effector_a7c98593a91ed1e12f940f3ab1a5e9c9c}{effector\+Type}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+bool \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_effector_a516fb9d7d9b3990a66fa7ae000398554}{is\+Paused}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object}{Interaction\+Object}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_effector_a5c48995c4290262ffcde75ff24dbd84d}{interaction\+Object}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+bool \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_effector_a4b35edd367b5661a541bc7c0c081cd2e}{in\+Interaction}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_effector_ac3901437a7c632c045991eba167c2dc7}{progress}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Managing Interactions for a single F\+B\+B\+IK effector. 
+
+
+
+Definition at line 12 of file Interaction\+Effector.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_effector_ab3dd1265142860d8ec5db881b8a34aa8}\label{class_root_motion_1_1_final_i_k_1_1_interaction_effector_ab3dd1265142860d8ec5db881b8a34aa8}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector}!Interaction\+Effector@{Interaction\+Effector}}
+\index{Interaction\+Effector@{Interaction\+Effector}!Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector}}
+\subsubsection{\texorpdfstring{Interaction\+Effector()}{InteractionEffector()}}
+{\footnotesize\ttfamily Root\+Motion.\+Final\+I\+K.\+Interaction\+Effector.\+Interaction\+Effector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_root_motion_1_1_final_i_k_ae0dd2058c7667b6f132c11a6b860c14a}{Full\+Body\+Biped\+Effector}}}]{effector\+Type }\end{DoxyParamCaption})}
+
+
+
+Definition at line 39 of file Interaction\+Effector.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_effector_ade0431085297e409476a5319837df14d}\label{class_root_motion_1_1_final_i_k_1_1_interaction_effector_ade0431085297e409476a5319837df14d}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector}!Initiate@{Initiate}}
+\index{Initiate@{Initiate}!Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector}}
+\subsubsection{\texorpdfstring{Initiate()}{Initiate()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+Interaction\+Effector.\+Initiate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_system}{Interaction\+System}}}]{interaction\+System }\end{DoxyParamCaption})}
+
+
+
+Definition at line 44 of file Interaction\+Effector.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_effector_a5b5222ee077d98311c7193d34fe420d4}\label{class_root_motion_1_1_final_i_k_1_1_interaction_effector_a5b5222ee077d98311c7193d34fe420d4}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector}!On\+Post\+F\+B\+B\+IK@{On\+Post\+F\+B\+B\+IK}}
+\index{On\+Post\+F\+B\+B\+IK@{On\+Post\+F\+B\+B\+IK}!Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector}}
+\subsubsection{\texorpdfstring{On\+Post\+F\+B\+B\+I\+K()}{OnPostFBBIK()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+Interaction\+Effector.\+On\+Post\+F\+B\+B\+IK (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 362 of file Interaction\+Effector.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_effector_afa54e633915c39be4d153d023123b8ca}\label{class_root_motion_1_1_final_i_k_1_1_interaction_effector_afa54e633915c39be4d153d023123b8ca}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector}!Pause@{Pause}}
+\index{Pause@{Pause}!Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector}}
+\subsubsection{\texorpdfstring{Pause()}{Pause()}}
+{\footnotesize\ttfamily bool Root\+Motion.\+Final\+I\+K.\+Interaction\+Effector.\+Pause (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 102 of file Interaction\+Effector.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_effector_a3c7c8c7e5c481e68ebfd6b3ed21209a4}\label{class_root_motion_1_1_final_i_k_1_1_interaction_effector_a3c7c8c7e5c481e68ebfd6b3ed21209a4}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector}!Reset\+To\+Defaults@{Reset\+To\+Defaults}}
+\index{Reset\+To\+Defaults@{Reset\+To\+Defaults}!Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector}}
+\subsubsection{\texorpdfstring{Reset\+To\+Defaults()}{ResetToDefaults()}}
+{\footnotesize\ttfamily bool Root\+Motion.\+Final\+I\+K.\+Interaction\+Effector.\+Reset\+To\+Defaults (\begin{DoxyParamCaption}\item[{float}]{speed }\end{DoxyParamCaption})}
+
+
+
+Definition at line 67 of file Interaction\+Effector.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_effector_a474e0c3490add3ab446305df0ee8ce1f}\label{class_root_motion_1_1_final_i_k_1_1_interaction_effector_a474e0c3490add3ab446305df0ee8ce1f}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector}!Resume@{Resume}}
+\index{Resume@{Resume}!Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector}}
+\subsubsection{\texorpdfstring{Resume()}{Resume()}}
+{\footnotesize\ttfamily bool Root\+Motion.\+Final\+I\+K.\+Interaction\+Effector.\+Resume (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 117 of file Interaction\+Effector.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_effector_a7ec2ff0c84091865de67d02a2901cc21}\label{class_root_motion_1_1_final_i_k_1_1_interaction_effector_a7ec2ff0c84091865de67d02a2901cc21}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector}!Start@{Start}}
+\index{Start@{Start}!Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector}}
+\subsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily bool Root\+Motion.\+Final\+I\+K.\+Interaction\+Effector.\+Start (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object}{Interaction\+Object}}}]{interaction\+Object,  }\item[{string}]{tag,  }\item[{float}]{fade\+In\+Time,  }\item[{bool}]{interrupt }\end{DoxyParamCaption})}
+
+
+
+Definition at line 127 of file Interaction\+Effector.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_effector_a4c00b7caf633a35b43fc9651d327cbef}\label{class_root_motion_1_1_final_i_k_1_1_interaction_effector_a4c00b7caf633a35b43fc9651d327cbef}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector}!Stop@{Stop}}
+\index{Stop@{Stop}!Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector}}
+\subsubsection{\texorpdfstring{Stop()}{Stop()}}
+{\footnotesize\ttfamily bool Root\+Motion.\+Final\+I\+K.\+Interaction\+Effector.\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 333 of file Interaction\+Effector.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_effector_a6222d7ba53f1a48fe0f38544dbabeb64}\label{class_root_motion_1_1_final_i_k_1_1_interaction_effector_a6222d7ba53f1a48fe0f38544dbabeb64}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector}!Update@{Update}}
+\index{Update@{Update}!Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+Interaction\+Effector.\+Update (\begin{DoxyParamCaption}\item[{Transform}]{root,  }\item[{float}]{speed }\end{DoxyParamCaption})}
+
+
+
+Definition at line 193 of file Interaction\+Effector.\+cs.
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_effector_a7c98593a91ed1e12f940f3ab1a5e9c9c}\label{class_root_motion_1_1_final_i_k_1_1_interaction_effector_a7c98593a91ed1e12f940f3ab1a5e9c9c}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector}!effector\+Type@{effector\+Type}}
+\index{effector\+Type@{effector\+Type}!Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector}}
+\subsubsection{\texorpdfstring{effector\+Type}{effectorType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_root_motion_1_1_final_i_k_ae0dd2058c7667b6f132c11a6b860c14a}{Full\+Body\+Biped\+Effector}} Root\+Motion.\+Final\+I\+K.\+Interaction\+Effector.\+effector\+Type\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line 15 of file Interaction\+Effector.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_effector_a4b35edd367b5661a541bc7c0c081cd2e}\label{class_root_motion_1_1_final_i_k_1_1_interaction_effector_a4b35edd367b5661a541bc7c0c081cd2e}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector}!in\+Interaction@{in\+Interaction}}
+\index{in\+Interaction@{in\+Interaction}!Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector}}
+\subsubsection{\texorpdfstring{in\+Interaction}{inInteraction}}
+{\footnotesize\ttfamily bool Root\+Motion.\+Final\+I\+K.\+Interaction\+Effector.\+in\+Interaction\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line 22 of file Interaction\+Effector.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_effector_a5c48995c4290262ffcde75ff24dbd84d}\label{class_root_motion_1_1_final_i_k_1_1_interaction_effector_a5c48995c4290262ffcde75ff24dbd84d}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector}!interaction\+Object@{interaction\+Object}}
+\index{interaction\+Object@{interaction\+Object}!Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector}}
+\subsubsection{\texorpdfstring{interaction\+Object}{interactionObject}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object}{Interaction\+Object}} Root\+Motion.\+Final\+I\+K.\+Interaction\+Effector.\+interaction\+Object\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line 20 of file Interaction\+Effector.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_effector_a516fb9d7d9b3990a66fa7ae000398554}\label{class_root_motion_1_1_final_i_k_1_1_interaction_effector_a516fb9d7d9b3990a66fa7ae000398554}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector}!is\+Paused@{is\+Paused}}
+\index{is\+Paused@{is\+Paused}!Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector}}
+\subsubsection{\texorpdfstring{is\+Paused}{isPaused}}
+{\footnotesize\ttfamily bool Root\+Motion.\+Final\+I\+K.\+Interaction\+Effector.\+is\+Paused\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line 18 of file Interaction\+Effector.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_effector_ac3901437a7c632c045991eba167c2dc7}\label{class_root_motion_1_1_final_i_k_1_1_interaction_effector_ac3901437a7c632c045991eba167c2dc7}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector}!progress@{progress}}
+\index{progress@{progress}!Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Effector}}
+\subsubsection{\texorpdfstring{progress}{progress}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+Interaction\+Effector.\+progress\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line 257 of file Interaction\+Effector.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Plugins/\+Root\+Motion/\+Final\+I\+K/\+Interaction\+System/\mbox{\hyperlink{_interaction_effector_8cs}{Interaction\+Effector.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,237 @@
+\hypertarget{class_temporal_reprojection}{}\section{Temporal\+Reprojection Class Reference}
+\label{class_temporal_reprojection}\index{Temporal\+Reprojection@{Temporal\+Reprojection}}
+
+
+AA edge smoothing  
+
+
+Inheritance diagram for Temporal\+Reprojection\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_temporal_reprojection}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_temporal_reprojection_a6b3343c06d004430c301f11de9bc732c}{Neighborhood}} \{ \mbox{\hyperlink{class_temporal_reprojection_a6b3343c06d004430c301f11de9bc732ca297352ecf9ba7bad14f19d2c475bec4b}{Neighborhood.\+Min\+Max3x3}}, 
+\mbox{\hyperlink{class_temporal_reprojection_a6b3343c06d004430c301f11de9bc732ca18aa98e3dd602e39b1c5ba8e71132360}{Neighborhood.\+Min\+Max3x3\+Rounded}}, 
+\mbox{\hyperlink{class_temporal_reprojection_a6b3343c06d004430c301f11de9bc732ca7d8db4b480ddcb323347a4091a7a993a}{Neighborhood.\+Min\+Max4\+Tap\+Varying}}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Shader \mbox{\hyperlink{class_temporal_reprojection_ac0bc023519956124bb77b3a66c95e2b6}{reprojection\+Shader}}
+\item 
+\mbox{\hyperlink{class_temporal_reprojection_a6b3343c06d004430c301f11de9bc732c}{Neighborhood}} \mbox{\hyperlink{class_temporal_reprojection_ac9def060454294eb980e711f3b86024d}{neighborhood}} = \mbox{\hyperlink{class_temporal_reprojection_a6b3343c06d004430c301f11de9bc732ca18aa98e3dd602e39b1c5ba8e71132360}{Neighborhood.\+Min\+Max3x3\+Rounded}}
+\item 
+bool \mbox{\hyperlink{class_temporal_reprojection_aeaba2237b1425f7c5b70e6b80a9d33ba}{unjitter\+Color\+Samples}} = true
+\item 
+bool \mbox{\hyperlink{class_temporal_reprojection_a2fc9ced5dc3ab49a5aa092f0a8818fb0}{unjitter\+Neighborhood}} = false
+\item 
+bool \mbox{\hyperlink{class_temporal_reprojection_a9c344d41248eeac0563ae57ea0f46f2c}{unjitter\+Reprojection}} = false
+\item 
+bool \mbox{\hyperlink{class_temporal_reprojection_a34290c66bbd58600c6500bb3409b1193}{use\+Y\+Co\+Cg}} = false
+\item 
+bool \mbox{\hyperlink{class_temporal_reprojection_ae788c37659836b4f9b83f7c7a91b4fa4}{use\+Clipping}} = true
+\item 
+bool \mbox{\hyperlink{class_temporal_reprojection_a8a1f9e58baaebc49f71508de4f662dad}{use\+Dilation}} = true
+\item 
+bool \mbox{\hyperlink{class_temporal_reprojection_a613476b21f7c7dbb2e75f80eff340ecf}{use\+Motion\+Blur}} = true
+\item 
+bool \mbox{\hyperlink{class_temporal_reprojection_a251662ecec722c2bf165fd8f4f78a3d3}{use\+Optimizations}} = true
+\item 
+float \mbox{\hyperlink{class_temporal_reprojection_ae2291390128d82f715961a16d293ca14}{feedback\+Min}} = 0.\+88f
+\item 
+float \mbox{\hyperlink{class_temporal_reprojection_a85cde61603fca7424314e2d224a1b0ba}{feedback\+Max}} = 0.\+97f
+\item 
+float \mbox{\hyperlink{class_temporal_reprojection_abd4dafd0051b42e74282a5c9a00ebdae}{motion\+Blur\+Strength}} = 1f
+\item 
+bool \mbox{\hyperlink{class_temporal_reprojection_a7f6577e9120313b9beeb30984da54a9c}{motion\+Blur\+Ignore\+FF}} = false
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+AA edge smoothing 
+
+
+
+Definition at line 16 of file Temporal\+Reprojection.\+cs.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_temporal_reprojection_a6b3343c06d004430c301f11de9bc732c}\label{class_temporal_reprojection_a6b3343c06d004430c301f11de9bc732c}} 
+\index{Temporal\+Reprojection@{Temporal\+Reprojection}!Neighborhood@{Neighborhood}}
+\index{Neighborhood@{Neighborhood}!Temporal\+Reprojection@{Temporal\+Reprojection}}
+\subsubsection{\texorpdfstring{Neighborhood}{Neighborhood}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_temporal_reprojection_a6b3343c06d004430c301f11de9bc732c}{Temporal\+Reprojection.\+Neighborhood}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Min\+Max3x3@{Min\+Max3x3}!Temporal\+Reprojection@{Temporal\+Reprojection}}\index{Temporal\+Reprojection@{Temporal\+Reprojection}!Min\+Max3x3@{Min\+Max3x3}}}\mbox{\Hypertarget{class_temporal_reprojection_a6b3343c06d004430c301f11de9bc732ca297352ecf9ba7bad14f19d2c475bec4b}\label{class_temporal_reprojection_a6b3343c06d004430c301f11de9bc732ca297352ecf9ba7bad14f19d2c475bec4b}} 
+Min\+Max3x3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Min\+Max3x3\+Rounded@{Min\+Max3x3\+Rounded}!Temporal\+Reprojection@{Temporal\+Reprojection}}\index{Temporal\+Reprojection@{Temporal\+Reprojection}!Min\+Max3x3\+Rounded@{Min\+Max3x3\+Rounded}}}\mbox{\Hypertarget{class_temporal_reprojection_a6b3343c06d004430c301f11de9bc732ca18aa98e3dd602e39b1c5ba8e71132360}\label{class_temporal_reprojection_a6b3343c06d004430c301f11de9bc732ca18aa98e3dd602e39b1c5ba8e71132360}} 
+Min\+Max3x3\+Rounded&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Min\+Max4\+Tap\+Varying@{Min\+Max4\+Tap\+Varying}!Temporal\+Reprojection@{Temporal\+Reprojection}}\index{Temporal\+Reprojection@{Temporal\+Reprojection}!Min\+Max4\+Tap\+Varying@{Min\+Max4\+Tap\+Varying}}}\mbox{\Hypertarget{class_temporal_reprojection_a6b3343c06d004430c301f11de9bc732ca7d8db4b480ddcb323347a4091a7a993a}\label{class_temporal_reprojection_a6b3343c06d004430c301f11de9bc732ca7d8db4b480ddcb323347a4091a7a993a}} 
+Min\+Max4\+Tap\+Varying&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 26 of file Temporal\+Reprojection.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_temporal_reprojection_a85cde61603fca7424314e2d224a1b0ba}\label{class_temporal_reprojection_a85cde61603fca7424314e2d224a1b0ba}} 
+\index{Temporal\+Reprojection@{Temporal\+Reprojection}!feedback\+Max@{feedback\+Max}}
+\index{feedback\+Max@{feedback\+Max}!Temporal\+Reprojection@{Temporal\+Reprojection}}
+\subsubsection{\texorpdfstring{feedback\+Max}{feedbackMax}}
+{\footnotesize\ttfamily float Temporal\+Reprojection.\+feedback\+Max = 0.\+97f}
+
+
+
+Definition at line 44 of file Temporal\+Reprojection.\+cs.
+
+\mbox{\Hypertarget{class_temporal_reprojection_ae2291390128d82f715961a16d293ca14}\label{class_temporal_reprojection_ae2291390128d82f715961a16d293ca14}} 
+\index{Temporal\+Reprojection@{Temporal\+Reprojection}!feedback\+Min@{feedback\+Min}}
+\index{feedback\+Min@{feedback\+Min}!Temporal\+Reprojection@{Temporal\+Reprojection}}
+\subsubsection{\texorpdfstring{feedback\+Min}{feedbackMin}}
+{\footnotesize\ttfamily float Temporal\+Reprojection.\+feedback\+Min = 0.\+88f}
+
+
+
+Definition at line 43 of file Temporal\+Reprojection.\+cs.
+
+\mbox{\Hypertarget{class_temporal_reprojection_a7f6577e9120313b9beeb30984da54a9c}\label{class_temporal_reprojection_a7f6577e9120313b9beeb30984da54a9c}} 
+\index{Temporal\+Reprojection@{Temporal\+Reprojection}!motion\+Blur\+Ignore\+FF@{motion\+Blur\+Ignore\+FF}}
+\index{motion\+Blur\+Ignore\+FF@{motion\+Blur\+Ignore\+FF}!Temporal\+Reprojection@{Temporal\+Reprojection}}
+\subsubsection{\texorpdfstring{motion\+Blur\+Ignore\+FF}{motionBlurIgnoreFF}}
+{\footnotesize\ttfamily bool Temporal\+Reprojection.\+motion\+Blur\+Ignore\+FF = false}
+
+
+
+Definition at line 47 of file Temporal\+Reprojection.\+cs.
+
+\mbox{\Hypertarget{class_temporal_reprojection_abd4dafd0051b42e74282a5c9a00ebdae}\label{class_temporal_reprojection_abd4dafd0051b42e74282a5c9a00ebdae}} 
+\index{Temporal\+Reprojection@{Temporal\+Reprojection}!motion\+Blur\+Strength@{motion\+Blur\+Strength}}
+\index{motion\+Blur\+Strength@{motion\+Blur\+Strength}!Temporal\+Reprojection@{Temporal\+Reprojection}}
+\subsubsection{\texorpdfstring{motion\+Blur\+Strength}{motionBlurStrength}}
+{\footnotesize\ttfamily float Temporal\+Reprojection.\+motion\+Blur\+Strength = 1f}
+
+
+
+Definition at line 46 of file Temporal\+Reprojection.\+cs.
+
+\mbox{\Hypertarget{class_temporal_reprojection_ac9def060454294eb980e711f3b86024d}\label{class_temporal_reprojection_ac9def060454294eb980e711f3b86024d}} 
+\index{Temporal\+Reprojection@{Temporal\+Reprojection}!neighborhood@{neighborhood}}
+\index{neighborhood@{neighborhood}!Temporal\+Reprojection@{Temporal\+Reprojection}}
+\subsubsection{\texorpdfstring{neighborhood}{neighborhood}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_temporal_reprojection_a6b3343c06d004430c301f11de9bc732c}{Neighborhood}} Temporal\+Reprojection.\+neighborhood = \mbox{\hyperlink{class_temporal_reprojection_a6b3343c06d004430c301f11de9bc732ca18aa98e3dd602e39b1c5ba8e71132360}{Neighborhood.\+Min\+Max3x3\+Rounded}}}
+
+
+
+Definition at line 33 of file Temporal\+Reprojection.\+cs.
+
+\mbox{\Hypertarget{class_temporal_reprojection_ac0bc023519956124bb77b3a66c95e2b6}\label{class_temporal_reprojection_ac0bc023519956124bb77b3a66c95e2b6}} 
+\index{Temporal\+Reprojection@{Temporal\+Reprojection}!reprojection\+Shader@{reprojection\+Shader}}
+\index{reprojection\+Shader@{reprojection\+Shader}!Temporal\+Reprojection@{Temporal\+Reprojection}}
+\subsubsection{\texorpdfstring{reprojection\+Shader}{reprojectionShader}}
+{\footnotesize\ttfamily Shader Temporal\+Reprojection.\+reprojection\+Shader}
+
+
+
+Definition at line 20 of file Temporal\+Reprojection.\+cs.
+
+\mbox{\Hypertarget{class_temporal_reprojection_aeaba2237b1425f7c5b70e6b80a9d33ba}\label{class_temporal_reprojection_aeaba2237b1425f7c5b70e6b80a9d33ba}} 
+\index{Temporal\+Reprojection@{Temporal\+Reprojection}!unjitter\+Color\+Samples@{unjitter\+Color\+Samples}}
+\index{unjitter\+Color\+Samples@{unjitter\+Color\+Samples}!Temporal\+Reprojection@{Temporal\+Reprojection}}
+\subsubsection{\texorpdfstring{unjitter\+Color\+Samples}{unjitterColorSamples}}
+{\footnotesize\ttfamily bool Temporal\+Reprojection.\+unjitter\+Color\+Samples = true}
+
+
+
+Definition at line 34 of file Temporal\+Reprojection.\+cs.
+
+\mbox{\Hypertarget{class_temporal_reprojection_a2fc9ced5dc3ab49a5aa092f0a8818fb0}\label{class_temporal_reprojection_a2fc9ced5dc3ab49a5aa092f0a8818fb0}} 
+\index{Temporal\+Reprojection@{Temporal\+Reprojection}!unjitter\+Neighborhood@{unjitter\+Neighborhood}}
+\index{unjitter\+Neighborhood@{unjitter\+Neighborhood}!Temporal\+Reprojection@{Temporal\+Reprojection}}
+\subsubsection{\texorpdfstring{unjitter\+Neighborhood}{unjitterNeighborhood}}
+{\footnotesize\ttfamily bool Temporal\+Reprojection.\+unjitter\+Neighborhood = false}
+
+
+
+Definition at line 35 of file Temporal\+Reprojection.\+cs.
+
+\mbox{\Hypertarget{class_temporal_reprojection_a9c344d41248eeac0563ae57ea0f46f2c}\label{class_temporal_reprojection_a9c344d41248eeac0563ae57ea0f46f2c}} 
+\index{Temporal\+Reprojection@{Temporal\+Reprojection}!unjitter\+Reprojection@{unjitter\+Reprojection}}
+\index{unjitter\+Reprojection@{unjitter\+Reprojection}!Temporal\+Reprojection@{Temporal\+Reprojection}}
+\subsubsection{\texorpdfstring{unjitter\+Reprojection}{unjitterReprojection}}
+{\footnotesize\ttfamily bool Temporal\+Reprojection.\+unjitter\+Reprojection = false}
+
+
+
+Definition at line 36 of file Temporal\+Reprojection.\+cs.
+
+\mbox{\Hypertarget{class_temporal_reprojection_ae788c37659836b4f9b83f7c7a91b4fa4}\label{class_temporal_reprojection_ae788c37659836b4f9b83f7c7a91b4fa4}} 
+\index{Temporal\+Reprojection@{Temporal\+Reprojection}!use\+Clipping@{use\+Clipping}}
+\index{use\+Clipping@{use\+Clipping}!Temporal\+Reprojection@{Temporal\+Reprojection}}
+\subsubsection{\texorpdfstring{use\+Clipping}{useClipping}}
+{\footnotesize\ttfamily bool Temporal\+Reprojection.\+use\+Clipping = true}
+
+
+
+Definition at line 38 of file Temporal\+Reprojection.\+cs.
+
+\mbox{\Hypertarget{class_temporal_reprojection_a8a1f9e58baaebc49f71508de4f662dad}\label{class_temporal_reprojection_a8a1f9e58baaebc49f71508de4f662dad}} 
+\index{Temporal\+Reprojection@{Temporal\+Reprojection}!use\+Dilation@{use\+Dilation}}
+\index{use\+Dilation@{use\+Dilation}!Temporal\+Reprojection@{Temporal\+Reprojection}}
+\subsubsection{\texorpdfstring{use\+Dilation}{useDilation}}
+{\footnotesize\ttfamily bool Temporal\+Reprojection.\+use\+Dilation = true}
+
+
+
+Definition at line 39 of file Temporal\+Reprojection.\+cs.
+
+\mbox{\Hypertarget{class_temporal_reprojection_a613476b21f7c7dbb2e75f80eff340ecf}\label{class_temporal_reprojection_a613476b21f7c7dbb2e75f80eff340ecf}} 
+\index{Temporal\+Reprojection@{Temporal\+Reprojection}!use\+Motion\+Blur@{use\+Motion\+Blur}}
+\index{use\+Motion\+Blur@{use\+Motion\+Blur}!Temporal\+Reprojection@{Temporal\+Reprojection}}
+\subsubsection{\texorpdfstring{use\+Motion\+Blur}{useMotionBlur}}
+{\footnotesize\ttfamily bool Temporal\+Reprojection.\+use\+Motion\+Blur = true}
+
+
+
+Definition at line 40 of file Temporal\+Reprojection.\+cs.
+
+\mbox{\Hypertarget{class_temporal_reprojection_a251662ecec722c2bf165fd8f4f78a3d3}\label{class_temporal_reprojection_a251662ecec722c2bf165fd8f4f78a3d3}} 
+\index{Temporal\+Reprojection@{Temporal\+Reprojection}!use\+Optimizations@{use\+Optimizations}}
+\index{use\+Optimizations@{use\+Optimizations}!Temporal\+Reprojection@{Temporal\+Reprojection}}
+\subsubsection{\texorpdfstring{use\+Optimizations}{useOptimizations}}
+{\footnotesize\ttfamily bool Temporal\+Reprojection.\+use\+Optimizations = true}
+
+
+
+Definition at line 41 of file Temporal\+Reprojection.\+cs.
+
+\mbox{\Hypertarget{class_temporal_reprojection_a34290c66bbd58600c6500bb3409b1193}\label{class_temporal_reprojection_a34290c66bbd58600c6500bb3409b1193}} 
+\index{Temporal\+Reprojection@{Temporal\+Reprojection}!use\+Y\+Co\+Cg@{use\+Y\+Co\+Cg}}
+\index{use\+Y\+Co\+Cg@{use\+Y\+Co\+Cg}!Temporal\+Reprojection@{Temporal\+Reprojection}}
+\subsubsection{\texorpdfstring{use\+Y\+Co\+Cg}{useYCoCg}}
+{\footnotesize\ttfamily bool Temporal\+Reprojection.\+use\+Y\+Co\+Cg = false}
+
+
+
+Definition at line 37 of file Temporal\+Reprojection.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Aesthetic/\+Anti Aliasing/\mbox{\hyperlink{_temporal_reprojection_8cs}{Temporal\+Reprojection.\+cs}}\end{DoxyCompactItemize}

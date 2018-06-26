@@ -1,0 +1,144 @@
+\hypertarget{class_camera_spline}{}\section{Camera\+Spline Class Reference}
+\label{class_camera_spline}\index{Camera\+Spline@{Camera\+Spline}}
+
+
+Camera spline movement  
+
+
+Inheritance diagram for Camera\+Spline\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_camera_spline}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_camera_spline_a8ff1f479307c63e3ecc75d089ff1bfcf}{Set\+Current\+Point}} (object data)
+\begin{DoxyCompactList}\small\item\em Sets the current move-\/to and look-\/at points for the camera. Please type check {\itshape data}  before using it \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_spline_movement}{Spline\+Movement}} \mbox{\hyperlink{class_camera_spline_ac7054bc6215716c3808cfe21326639a7}{Animal\+Spline}}
+\item 
+bool \mbox{\hyperlink{class_camera_spline_a2d886ed83b154eba17d8d3f7900af697}{Use\+Animal\+Y\+Settings}} = true
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_camera_spline_a8c3df3fb0d0ba26126d97432331a209b}{On\+Start}} ()
+\item 
+override void \mbox{\hyperlink{class_camera_spline_a52812811103b9fca941daf2edd3c763d}{On\+Update}} ()
+\item 
+override void \mbox{\hyperlink{class_camera_spline_a70ec10306e6894532589d3d1dffaa3ae}{Calc\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Calculate the position where the camera is meant to be on the spline \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Camera spline movement 
+
+
+
+Definition at line 9 of file Camera\+Spline.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_camera_spline_a70ec10306e6894532589d3d1dffaa3ae}\label{class_camera_spline_a70ec10306e6894532589d3d1dffaa3ae}} 
+\index{Camera\+Spline@{Camera\+Spline}!Calc\+Position@{Calc\+Position}}
+\index{Calc\+Position@{Calc\+Position}!Camera\+Spline@{Camera\+Spline}}
+\subsubsection{\texorpdfstring{Calc\+Position()}{CalcPosition()}}
+{\footnotesize\ttfamily override void Camera\+Spline.\+Calc\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Calculate the position where the camera is meant to be on the spline 
+
+
+
+Implements \mbox{\hyperlink{class_camera_mover_afe44c2188d44a3fdb72acdf0d12563a9}{Camera\+Mover}}.
+
+
+
+Definition at line 30 of file Camera\+Spline.\+cs.
+
+\mbox{\Hypertarget{class_camera_spline_a8c3df3fb0d0ba26126d97432331a209b}\label{class_camera_spline_a8c3df3fb0d0ba26126d97432331a209b}} 
+\index{Camera\+Spline@{Camera\+Spline}!On\+Start@{On\+Start}}
+\index{On\+Start@{On\+Start}!Camera\+Spline@{Camera\+Spline}}
+\subsubsection{\texorpdfstring{On\+Start()}{OnStart()}}
+{\footnotesize\ttfamily override void Camera\+Spline.\+On\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_camera_mover_ab96169179c915b4c8599c956dc572fc7}{Camera\+Mover}}.
+
+
+
+Definition at line 17 of file Camera\+Spline.\+cs.
+
+\mbox{\Hypertarget{class_camera_spline_a52812811103b9fca941daf2edd3c763d}\label{class_camera_spline_a52812811103b9fca941daf2edd3c763d}} 
+\index{Camera\+Spline@{Camera\+Spline}!On\+Update@{On\+Update}}
+\index{On\+Update@{On\+Update}!Camera\+Spline@{Camera\+Spline}}
+\subsubsection{\texorpdfstring{On\+Update()}{OnUpdate()}}
+{\footnotesize\ttfamily override void Camera\+Spline.\+On\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_camera_mover_add4a882d9c8684a75d9d2cdacf90a74f}{Camera\+Mover}}.
+
+
+
+Definition at line 23 of file Camera\+Spline.\+cs.
+
+\mbox{\Hypertarget{class_camera_spline_a8ff1f479307c63e3ecc75d089ff1bfcf}\label{class_camera_spline_a8ff1f479307c63e3ecc75d089ff1bfcf}} 
+\index{Camera\+Spline@{Camera\+Spline}!Set\+Current\+Point@{Set\+Current\+Point}}
+\index{Set\+Current\+Point@{Set\+Current\+Point}!Camera\+Spline@{Camera\+Spline}}
+\subsubsection{\texorpdfstring{Set\+Current\+Point()}{SetCurrentPoint()}}
+{\footnotesize\ttfamily override void Camera\+Spline.\+Set\+Current\+Point (\begin{DoxyParamCaption}\item[{object}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets the current move-\/to and look-\/at points for the camera. Please type check {\itshape data}  before using it 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The optional data to send through\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_camera_mover_ab2f77d1df91324b508a7a45f1f22a04a}{Camera\+Mover}}.
+
+
+
+Definition at line 128 of file Camera\+Spline.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_camera_spline_ac7054bc6215716c3808cfe21326639a7}\label{class_camera_spline_ac7054bc6215716c3808cfe21326639a7}} 
+\index{Camera\+Spline@{Camera\+Spline}!Animal\+Spline@{Animal\+Spline}}
+\index{Animal\+Spline@{Animal\+Spline}!Camera\+Spline@{Camera\+Spline}}
+\subsubsection{\texorpdfstring{Animal\+Spline}{AnimalSpline}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_spline_movement}{Spline\+Movement}} Camera\+Spline.\+Animal\+Spline}
+
+
+
+Definition at line 11 of file Camera\+Spline.\+cs.
+
+\mbox{\Hypertarget{class_camera_spline_a2d886ed83b154eba17d8d3f7900af697}\label{class_camera_spline_a2d886ed83b154eba17d8d3f7900af697}} 
+\index{Camera\+Spline@{Camera\+Spline}!Use\+Animal\+Y\+Settings@{Use\+Animal\+Y\+Settings}}
+\index{Use\+Animal\+Y\+Settings@{Use\+Animal\+Y\+Settings}!Camera\+Spline@{Camera\+Spline}}
+\subsubsection{\texorpdfstring{Use\+Animal\+Y\+Settings}{UseAnimalYSettings}}
+{\footnotesize\ttfamily bool Camera\+Spline.\+Use\+Animal\+Y\+Settings = true}
+
+
+
+Definition at line 13 of file Camera\+Spline.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Camera/\mbox{\hyperlink{_camera_spline_8cs}{Camera\+Spline.\+cs}}\end{DoxyCompactItemize}

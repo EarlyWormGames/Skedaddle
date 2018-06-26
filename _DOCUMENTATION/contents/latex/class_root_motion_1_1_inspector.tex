@@ -1,0 +1,287 @@
+\hypertarget{class_root_motion_1_1_inspector}{}\section{Root\+Motion.\+Inspector Class Reference}
+\label{class_root_motion_1_1_inspector}\index{Root\+Motion.\+Inspector@{Root\+Motion.\+Inspector}}
+Inheritance diagram for Root\+Motion.\+Inspector\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.777778cm]{class_root_motion_1_1_inspector}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+delegate void \mbox{\hyperlink{class_root_motion_1_1_inspector_a369c57a74b02e7f38059b2bb5e7ef36c}{Draw\+Array\+Element}} (Serialized\+Property prop, bool edit\+Hierarchy)
+\item 
+delegate void \mbox{\hyperlink{class_root_motion_1_1_inspector_aa060038e590bda971023ece8f2945330}{Draw\+Array\+Element\+Label}} (Serialized\+Property prop, bool edit\+Hierarchy)
+\item 
+delegate void \mbox{\hyperlink{class_root_motion_1_1_inspector_a0d030b75017c7036643fb9d039ed39d7}{On\+Add\+To\+Array}} (Serialized\+Property prop)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static string \mbox{\hyperlink{class_root_motion_1_1_inspector_a3b89f376131fbdeec94074fe6759fffa}{Get\+Array\+Name}} (Serialized\+Property array, string empty\+Name, string property\+Name=\char`\"{}\char`\"{})
+\item 
+static string \mbox{\hyperlink{class_root_motion_1_1_inspector_ade26e9bd07d175f8a90415faf13997f5}{Get\+Object\+Reference\+Name}} (Serialized\+Property prop, string empty\+Name)
+\item 
+static void \mbox{\hyperlink{class_root_motion_1_1_inspector_abce58e13dd0ef29c1b0cf84b5332bd3c}{Add\+Array}} (Serialized\+Property prop, G\+U\+I\+Content gui\+Content, bool edit\+Hierarchy, bool change\+Order, \mbox{\hyperlink{class_root_motion_1_1_inspector_a369c57a74b02e7f38059b2bb5e7ef36c}{Draw\+Array\+Element}} draw\+Array\+Element=null, \mbox{\hyperlink{class_root_motion_1_1_inspector_a0d030b75017c7036643fb9d039ed39d7}{On\+Add\+To\+Array}} on\+Add\+To\+Array=null, \mbox{\hyperlink{class_root_motion_1_1_inspector_aa060038e590bda971023ece8f2945330}{Draw\+Array\+Element\+Label}} draw\+Array\+Element\+Label=null, bool show\+Heading=true)
+\item 
+static void \mbox{\hyperlink{class_root_motion_1_1_inspector_a7ef3d167347b2a99dc1797a709534339}{Add\+Content}} (\mbox{\hyperlink{struct_root_motion_1_1_serialized_content}{Serialized\+Content}} content, bool add\+Children=false, params G\+U\+I\+Layout\+Option\mbox{[}$\,$\mbox{]} options)
+\item 
+static void \mbox{\hyperlink{class_root_motion_1_1_inspector_a3048b6d957b237840e8e1f2c312db2a1}{Add\+Clamped\+Float}} (\mbox{\hyperlink{struct_root_motion_1_1_serialized_content}{Serialized\+Content}} content, float min=0f, float max=1f, params G\+U\+I\+Layout\+Option\mbox{[}$\,$\mbox{]} options)
+\item 
+static void \mbox{\hyperlink{class_root_motion_1_1_inspector_a3446ec18e22ca9f9a24292f5800487c5}{Add\+Clamped\+Int}} (\mbox{\hyperlink{struct_root_motion_1_1_serialized_content}{Serialized\+Content}} content, int min=int.\+Min\+Value, int max=int.\+Max\+Value, params G\+U\+I\+Layout\+Option\mbox{[}$\,$\mbox{]} options)
+\item 
+static void \mbox{\hyperlink{class_root_motion_1_1_inspector_ae3b8bee1b12a2d6801eecc66ed015b2a}{Add\+Clamped\+Float}} (Serialized\+Property prop, G\+U\+I\+Content gui\+Content, float min=0f, float max=1f, params G\+U\+I\+Layout\+Option\mbox{[}$\,$\mbox{]} options)
+\item 
+static void \mbox{\hyperlink{class_root_motion_1_1_inspector_a61443f51860ed58be54639559912b50d}{Add\+Clamped\+Int}} (Serialized\+Property prop, G\+U\+I\+Content gui\+Content, int min=int.\+Min\+Value, int max=int.\+Max\+Value, params G\+U\+I\+Layout\+Option\mbox{[}$\,$\mbox{]} options)
+\item 
+static void \mbox{\hyperlink{class_root_motion_1_1_inspector_a403b9146e788460c20703b7727939a5b}{Add\+Object\+Reference}} (Serialized\+Property prop, G\+U\+I\+Content gui\+Content, bool edit\+Hierarchy, int label\+Width, bool align\+To\+Edge=true)
+\item 
+static void \mbox{\hyperlink{class_root_motion_1_1_inspector_ae43406ffdb66cf7d98106053019182a7}{Add\+Object\+Reference}} (Serialized\+Property prop, G\+U\+I\+Content gui\+Content, bool edit\+Hierarchy, int label\+Width, int prop\+Width, bool align\+To\+Edge=true)
+\item 
+static bool \mbox{\hyperlink{class_root_motion_1_1_inspector_aa7a4a02d9390a27d9df08d4ea5881933}{Button}} (string name, string tool\+Tip, \mbox{\hyperlink{_quads_8cs_aef19bab18b9814edeef255c43e4f6bbc}{Object}} undo\+Object, params G\+U\+I\+Layout\+Option\mbox{[}$\,$\mbox{]} options)
+\item 
+static \mbox{\hyperlink{_quads_8cs_aef19bab18b9814edeef255c43e4f6bbc}{Object}} \mbox{\hyperlink{class_root_motion_1_1_inspector_a6437d1e0566072580c22b4ef6def12d7}{Add\+Object}} (\mbox{\hyperlink{_quads_8cs_aef19bab18b9814edeef255c43e4f6bbc}{Object}} input, string name, string tool\+Tip, System.\+Type type, bool allow\+Scene\+Objects, \mbox{\hyperlink{_quads_8cs_aef19bab18b9814edeef255c43e4f6bbc}{Object}} undo\+Object, params G\+U\+I\+Layout\+Option\mbox{[}$\,$\mbox{]} options)
+\item 
+static System.\+Enum \mbox{\hyperlink{class_root_motion_1_1_inspector_afcbc550e7f3c44cfa75b3d654cca3ab6}{Add\+Enum}} (System.\+Enum input, string name, string tool\+Tip, \mbox{\hyperlink{_quads_8cs_aef19bab18b9814edeef255c43e4f6bbc}{Object}} undo\+Object, params G\+U\+I\+Layout\+Option\mbox{[}$\,$\mbox{]} options)
+\item 
+static void \mbox{\hyperlink{class_root_motion_1_1_inspector_ae97e87201fcfa1ef382b9f00e2c6cfce}{Add\+Horizontal\+Slider}} (ref float input, float left\+Value, float right\+Value, string name, string tool\+Tip, \mbox{\hyperlink{_quads_8cs_aef19bab18b9814edeef255c43e4f6bbc}{Object}} undo\+Object, int label\+Width, int min\+Width)
+\item 
+static void \mbox{\hyperlink{class_root_motion_1_1_inspector_a700893d4651ca702d745bbc97c253a45}{Add\+Float}} (ref float input, string name, string tool\+Tip, \mbox{\hyperlink{_quads_8cs_aef19bab18b9814edeef255c43e4f6bbc}{Object}} undo\+Object, float min=-\/Mathf.\+Infinity, float max=Mathf.\+Infinity, params G\+U\+I\+Layout\+Option\mbox{[}$\,$\mbox{]} options)
+\item 
+static void \mbox{\hyperlink{class_root_motion_1_1_inspector_af43d0270035b8725fdddd30252c9cc86}{Add\+Int}} (ref int input, string name, string tool\+Tip, \mbox{\hyperlink{_quads_8cs_aef19bab18b9814edeef255c43e4f6bbc}{Object}} undo\+Object, int min=-\/int.\+Max\+Value, int max=int.\+Max\+Value, params G\+U\+I\+Layout\+Option\mbox{[}$\,$\mbox{]} options)
+\item 
+static void \mbox{\hyperlink{class_root_motion_1_1_inspector_aefa27a7b1823b0db16208072d3d10789}{Add\+Bool}} (ref bool input, string name, string tool\+Tip, \mbox{\hyperlink{_quads_8cs_aef19bab18b9814edeef255c43e4f6bbc}{Object}} undo\+Object)
+\item 
+static void \mbox{\hyperlink{class_root_motion_1_1_inspector_a3f84ec4eb58f18783745ecc0c721b559}{Add\+Vector3}} (ref Vector3 input, string name, \mbox{\hyperlink{_quads_8cs_aef19bab18b9814edeef255c43e4f6bbc}{Object}} undo\+Object, params G\+U\+I\+Layout\+Option\mbox{[}$\,$\mbox{]} options)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{class_root_motion_1_1_inspector_ad19edde302fe0d0cf0d6b4cc9d9cfc28}{indent}} = 16
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 10 of file Inspector.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_inspector_abce58e13dd0ef29c1b0cf84b5332bd3c}\label{class_root_motion_1_1_inspector_abce58e13dd0ef29c1b0cf84b5332bd3c}} 
+\index{Root\+Motion\+::\+Inspector@{Root\+Motion\+::\+Inspector}!Add\+Array@{Add\+Array}}
+\index{Add\+Array@{Add\+Array}!Root\+Motion\+::\+Inspector@{Root\+Motion\+::\+Inspector}}
+\subsubsection{\texorpdfstring{Add\+Array()}{AddArray()}}
+{\footnotesize\ttfamily static void Root\+Motion.\+Inspector.\+Add\+Array (\begin{DoxyParamCaption}\item[{Serialized\+Property}]{prop,  }\item[{G\+U\+I\+Content}]{gui\+Content,  }\item[{bool}]{edit\+Hierarchy,  }\item[{bool}]{change\+Order,  }\item[{\mbox{\hyperlink{class_root_motion_1_1_inspector_a369c57a74b02e7f38059b2bb5e7ef36c}{Draw\+Array\+Element}}}]{draw\+Array\+Element = {\ttfamily null},  }\item[{\mbox{\hyperlink{class_root_motion_1_1_inspector_a0d030b75017c7036643fb9d039ed39d7}{On\+Add\+To\+Array}}}]{on\+Add\+To\+Array = {\ttfamily null},  }\item[{\mbox{\hyperlink{class_root_motion_1_1_inspector_aa060038e590bda971023ece8f2945330}{Draw\+Array\+Element\+Label}}}]{draw\+Array\+Element\+Label = {\ttfamily null},  }\item[{bool}]{show\+Heading = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 35 of file Inspector.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_inspector_aefa27a7b1823b0db16208072d3d10789}\label{class_root_motion_1_1_inspector_aefa27a7b1823b0db16208072d3d10789}} 
+\index{Root\+Motion\+::\+Inspector@{Root\+Motion\+::\+Inspector}!Add\+Bool@{Add\+Bool}}
+\index{Add\+Bool@{Add\+Bool}!Root\+Motion\+::\+Inspector@{Root\+Motion\+::\+Inspector}}
+\subsubsection{\texorpdfstring{Add\+Bool()}{AddBool()}}
+{\footnotesize\ttfamily static void Root\+Motion.\+Inspector.\+Add\+Bool (\begin{DoxyParamCaption}\item[{ref bool}]{input,  }\item[{string}]{name,  }\item[{string}]{tool\+Tip,  }\item[{\mbox{\hyperlink{_quads_8cs_aef19bab18b9814edeef255c43e4f6bbc}{Object}}}]{undo\+Object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 215 of file Inspector.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_inspector_a3048b6d957b237840e8e1f2c312db2a1}\label{class_root_motion_1_1_inspector_a3048b6d957b237840e8e1f2c312db2a1}} 
+\index{Root\+Motion\+::\+Inspector@{Root\+Motion\+::\+Inspector}!Add\+Clamped\+Float@{Add\+Clamped\+Float}}
+\index{Add\+Clamped\+Float@{Add\+Clamped\+Float}!Root\+Motion\+::\+Inspector@{Root\+Motion\+::\+Inspector}}
+\subsubsection{\texorpdfstring{Add\+Clamped\+Float()}{AddClampedFloat()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static void Root\+Motion.\+Inspector.\+Add\+Clamped\+Float (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_root_motion_1_1_serialized_content}{Serialized\+Content}}}]{content,  }\item[{float}]{min = {\ttfamily 0f},  }\item[{float}]{max = {\ttfamily 1f},  }\item[{params G\+U\+I\+Layout\+Option \mbox{[}$\,$\mbox{]}}]{options }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 131 of file Inspector.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_inspector_ae3b8bee1b12a2d6801eecc66ed015b2a}\label{class_root_motion_1_1_inspector_ae3b8bee1b12a2d6801eecc66ed015b2a}} 
+\index{Root\+Motion\+::\+Inspector@{Root\+Motion\+::\+Inspector}!Add\+Clamped\+Float@{Add\+Clamped\+Float}}
+\index{Add\+Clamped\+Float@{Add\+Clamped\+Float}!Root\+Motion\+::\+Inspector@{Root\+Motion\+::\+Inspector}}
+\subsubsection{\texorpdfstring{Add\+Clamped\+Float()}{AddClampedFloat()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void Root\+Motion.\+Inspector.\+Add\+Clamped\+Float (\begin{DoxyParamCaption}\item[{Serialized\+Property}]{prop,  }\item[{G\+U\+I\+Content}]{gui\+Content,  }\item[{float}]{min = {\ttfamily 0f},  }\item[{float}]{max = {\ttfamily 1f},  }\item[{params G\+U\+I\+Layout\+Option \mbox{[}$\,$\mbox{]}}]{options }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 139 of file Inspector.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_inspector_a3446ec18e22ca9f9a24292f5800487c5}\label{class_root_motion_1_1_inspector_a3446ec18e22ca9f9a24292f5800487c5}} 
+\index{Root\+Motion\+::\+Inspector@{Root\+Motion\+::\+Inspector}!Add\+Clamped\+Int@{Add\+Clamped\+Int}}
+\index{Add\+Clamped\+Int@{Add\+Clamped\+Int}!Root\+Motion\+::\+Inspector@{Root\+Motion\+::\+Inspector}}
+\subsubsection{\texorpdfstring{Add\+Clamped\+Int()}{AddClampedInt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static void Root\+Motion.\+Inspector.\+Add\+Clamped\+Int (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_root_motion_1_1_serialized_content}{Serialized\+Content}}}]{content,  }\item[{int}]{min = {\ttfamily int.MinValue},  }\item[{int}]{max = {\ttfamily int.MaxValue},  }\item[{params G\+U\+I\+Layout\+Option \mbox{[}$\,$\mbox{]}}]{options }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 135 of file Inspector.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_inspector_a61443f51860ed58be54639559912b50d}\label{class_root_motion_1_1_inspector_a61443f51860ed58be54639559912b50d}} 
+\index{Root\+Motion\+::\+Inspector@{Root\+Motion\+::\+Inspector}!Add\+Clamped\+Int@{Add\+Clamped\+Int}}
+\index{Add\+Clamped\+Int@{Add\+Clamped\+Int}!Root\+Motion\+::\+Inspector@{Root\+Motion\+::\+Inspector}}
+\subsubsection{\texorpdfstring{Add\+Clamped\+Int()}{AddClampedInt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void Root\+Motion.\+Inspector.\+Add\+Clamped\+Int (\begin{DoxyParamCaption}\item[{Serialized\+Property}]{prop,  }\item[{G\+U\+I\+Content}]{gui\+Content,  }\item[{int}]{min = {\ttfamily int.MinValue},  }\item[{int}]{max = {\ttfamily int.MaxValue},  }\item[{params G\+U\+I\+Layout\+Option \mbox{[}$\,$\mbox{]}}]{options }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 144 of file Inspector.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_inspector_a7ef3d167347b2a99dc1797a709534339}\label{class_root_motion_1_1_inspector_a7ef3d167347b2a99dc1797a709534339}} 
+\index{Root\+Motion\+::\+Inspector@{Root\+Motion\+::\+Inspector}!Add\+Content@{Add\+Content}}
+\index{Add\+Content@{Add\+Content}!Root\+Motion\+::\+Inspector@{Root\+Motion\+::\+Inspector}}
+\subsubsection{\texorpdfstring{Add\+Content()}{AddContent()}}
+{\footnotesize\ttfamily static void Root\+Motion.\+Inspector.\+Add\+Content (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_root_motion_1_1_serialized_content}{Serialized\+Content}}}]{content,  }\item[{bool}]{add\+Children = {\ttfamily false},  }\item[{params G\+U\+I\+Layout\+Option \mbox{[}$\,$\mbox{]}}]{options }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 127 of file Inspector.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_inspector_afcbc550e7f3c44cfa75b3d654cca3ab6}\label{class_root_motion_1_1_inspector_afcbc550e7f3c44cfa75b3d654cca3ab6}} 
+\index{Root\+Motion\+::\+Inspector@{Root\+Motion\+::\+Inspector}!Add\+Enum@{Add\+Enum}}
+\index{Add\+Enum@{Add\+Enum}!Root\+Motion\+::\+Inspector@{Root\+Motion\+::\+Inspector}}
+\subsubsection{\texorpdfstring{Add\+Enum()}{AddEnum()}}
+{\footnotesize\ttfamily static System.\+Enum Root\+Motion.\+Inspector.\+Add\+Enum (\begin{DoxyParamCaption}\item[{System.\+Enum}]{input,  }\item[{string}]{name,  }\item[{string}]{tool\+Tip,  }\item[{\mbox{\hyperlink{_quads_8cs_aef19bab18b9814edeef255c43e4f6bbc}{Object}}}]{undo\+Object,  }\item[{params G\+U\+I\+Layout\+Option \mbox{[}$\,$\mbox{]}}]{options }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 189 of file Inspector.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_inspector_a700893d4651ca702d745bbc97c253a45}\label{class_root_motion_1_1_inspector_a700893d4651ca702d745bbc97c253a45}} 
+\index{Root\+Motion\+::\+Inspector@{Root\+Motion\+::\+Inspector}!Add\+Float@{Add\+Float}}
+\index{Add\+Float@{Add\+Float}!Root\+Motion\+::\+Inspector@{Root\+Motion\+::\+Inspector}}
+\subsubsection{\texorpdfstring{Add\+Float()}{AddFloat()}}
+{\footnotesize\ttfamily static void Root\+Motion.\+Inspector.\+Add\+Float (\begin{DoxyParamCaption}\item[{ref float}]{input,  }\item[{string}]{name,  }\item[{string}]{tool\+Tip,  }\item[{\mbox{\hyperlink{_quads_8cs_aef19bab18b9814edeef255c43e4f6bbc}{Object}}}]{undo\+Object,  }\item[{float}]{min = {\ttfamily -\/Mathf.Infinity},  }\item[{float}]{max = {\ttfamily Mathf.Infinity},  }\item[{params G\+U\+I\+Layout\+Option \mbox{[}$\,$\mbox{]}}]{options }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 207 of file Inspector.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_inspector_ae97e87201fcfa1ef382b9f00e2c6cfce}\label{class_root_motion_1_1_inspector_ae97e87201fcfa1ef382b9f00e2c6cfce}} 
+\index{Root\+Motion\+::\+Inspector@{Root\+Motion\+::\+Inspector}!Add\+Horizontal\+Slider@{Add\+Horizontal\+Slider}}
+\index{Add\+Horizontal\+Slider@{Add\+Horizontal\+Slider}!Root\+Motion\+::\+Inspector@{Root\+Motion\+::\+Inspector}}
+\subsubsection{\texorpdfstring{Add\+Horizontal\+Slider()}{AddHorizontalSlider()}}
+{\footnotesize\ttfamily static void Root\+Motion.\+Inspector.\+Add\+Horizontal\+Slider (\begin{DoxyParamCaption}\item[{ref float}]{input,  }\item[{float}]{left\+Value,  }\item[{float}]{right\+Value,  }\item[{string}]{name,  }\item[{string}]{tool\+Tip,  }\item[{\mbox{\hyperlink{_quads_8cs_aef19bab18b9814edeef255c43e4f6bbc}{Object}}}]{undo\+Object,  }\item[{int}]{label\+Width,  }\item[{int}]{min\+Width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 196 of file Inspector.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_inspector_af43d0270035b8725fdddd30252c9cc86}\label{class_root_motion_1_1_inspector_af43d0270035b8725fdddd30252c9cc86}} 
+\index{Root\+Motion\+::\+Inspector@{Root\+Motion\+::\+Inspector}!Add\+Int@{Add\+Int}}
+\index{Add\+Int@{Add\+Int}!Root\+Motion\+::\+Inspector@{Root\+Motion\+::\+Inspector}}
+\subsubsection{\texorpdfstring{Add\+Int()}{AddInt()}}
+{\footnotesize\ttfamily static void Root\+Motion.\+Inspector.\+Add\+Int (\begin{DoxyParamCaption}\item[{ref int}]{input,  }\item[{string}]{name,  }\item[{string}]{tool\+Tip,  }\item[{\mbox{\hyperlink{_quads_8cs_aef19bab18b9814edeef255c43e4f6bbc}{Object}}}]{undo\+Object,  }\item[{int}]{min = {\ttfamily -\/int.MaxValue},  }\item[{int}]{max = {\ttfamily int.MaxValue},  }\item[{params G\+U\+I\+Layout\+Option \mbox{[}$\,$\mbox{]}}]{options }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 211 of file Inspector.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_inspector_a6437d1e0566072580c22b4ef6def12d7}\label{class_root_motion_1_1_inspector_a6437d1e0566072580c22b4ef6def12d7}} 
+\index{Root\+Motion\+::\+Inspector@{Root\+Motion\+::\+Inspector}!Add\+Object@{Add\+Object}}
+\index{Add\+Object@{Add\+Object}!Root\+Motion\+::\+Inspector@{Root\+Motion\+::\+Inspector}}
+\subsubsection{\texorpdfstring{Add\+Object()}{AddObject()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{_quads_8cs_aef19bab18b9814edeef255c43e4f6bbc}{Object}} Root\+Motion.\+Inspector.\+Add\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_quads_8cs_aef19bab18b9814edeef255c43e4f6bbc}{Object}}}]{input,  }\item[{string}]{name,  }\item[{string}]{tool\+Tip,  }\item[{System.\+Type}]{type,  }\item[{bool}]{allow\+Scene\+Objects,  }\item[{\mbox{\hyperlink{_quads_8cs_aef19bab18b9814edeef255c43e4f6bbc}{Object}}}]{undo\+Object,  }\item[{params G\+U\+I\+Layout\+Option \mbox{[}$\,$\mbox{]}}]{options }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 183 of file Inspector.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_inspector_a403b9146e788460c20703b7727939a5b}\label{class_root_motion_1_1_inspector_a403b9146e788460c20703b7727939a5b}} 
+\index{Root\+Motion\+::\+Inspector@{Root\+Motion\+::\+Inspector}!Add\+Object\+Reference@{Add\+Object\+Reference}}
+\index{Add\+Object\+Reference@{Add\+Object\+Reference}!Root\+Motion\+::\+Inspector@{Root\+Motion\+::\+Inspector}}
+\subsubsection{\texorpdfstring{Add\+Object\+Reference()}{AddObjectReference()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static void Root\+Motion.\+Inspector.\+Add\+Object\+Reference (\begin{DoxyParamCaption}\item[{Serialized\+Property}]{prop,  }\item[{G\+U\+I\+Content}]{gui\+Content,  }\item[{bool}]{edit\+Hierarchy,  }\item[{int}]{label\+Width,  }\item[{bool}]{align\+To\+Edge = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 149 of file Inspector.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_inspector_ae43406ffdb66cf7d98106053019182a7}\label{class_root_motion_1_1_inspector_ae43406ffdb66cf7d98106053019182a7}} 
+\index{Root\+Motion\+::\+Inspector@{Root\+Motion\+::\+Inspector}!Add\+Object\+Reference@{Add\+Object\+Reference}}
+\index{Add\+Object\+Reference@{Add\+Object\+Reference}!Root\+Motion\+::\+Inspector@{Root\+Motion\+::\+Inspector}}
+\subsubsection{\texorpdfstring{Add\+Object\+Reference()}{AddObjectReference()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void Root\+Motion.\+Inspector.\+Add\+Object\+Reference (\begin{DoxyParamCaption}\item[{Serialized\+Property}]{prop,  }\item[{G\+U\+I\+Content}]{gui\+Content,  }\item[{bool}]{edit\+Hierarchy,  }\item[{int}]{label\+Width,  }\item[{int}]{prop\+Width,  }\item[{bool}]{align\+To\+Edge = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 161 of file Inspector.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_inspector_a3f84ec4eb58f18783745ecc0c721b559}\label{class_root_motion_1_1_inspector_a3f84ec4eb58f18783745ecc0c721b559}} 
+\index{Root\+Motion\+::\+Inspector@{Root\+Motion\+::\+Inspector}!Add\+Vector3@{Add\+Vector3}}
+\index{Add\+Vector3@{Add\+Vector3}!Root\+Motion\+::\+Inspector@{Root\+Motion\+::\+Inspector}}
+\subsubsection{\texorpdfstring{Add\+Vector3()}{AddVector3()}}
+{\footnotesize\ttfamily static void Root\+Motion.\+Inspector.\+Add\+Vector3 (\begin{DoxyParamCaption}\item[{ref Vector3}]{input,  }\item[{string}]{name,  }\item[{\mbox{\hyperlink{_quads_8cs_aef19bab18b9814edeef255c43e4f6bbc}{Object}}}]{undo\+Object,  }\item[{params G\+U\+I\+Layout\+Option \mbox{[}$\,$\mbox{]}}]{options }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 225 of file Inspector.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_inspector_aa7a4a02d9390a27d9df08d4ea5881933}\label{class_root_motion_1_1_inspector_aa7a4a02d9390a27d9df08d4ea5881933}} 
+\index{Root\+Motion\+::\+Inspector@{Root\+Motion\+::\+Inspector}!Button@{Button}}
+\index{Button@{Button}!Root\+Motion\+::\+Inspector@{Root\+Motion\+::\+Inspector}}
+\subsubsection{\texorpdfstring{Button()}{Button()}}
+{\footnotesize\ttfamily static bool Root\+Motion.\+Inspector.\+Button (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{string}]{tool\+Tip,  }\item[{\mbox{\hyperlink{_quads_8cs_aef19bab18b9814edeef255c43e4f6bbc}{Object}}}]{undo\+Object,  }\item[{params G\+U\+I\+Layout\+Option \mbox{[}$\,$\mbox{]}}]{options }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 177 of file Inspector.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_inspector_a369c57a74b02e7f38059b2bb5e7ef36c}\label{class_root_motion_1_1_inspector_a369c57a74b02e7f38059b2bb5e7ef36c}} 
+\index{Root\+Motion\+::\+Inspector@{Root\+Motion\+::\+Inspector}!Draw\+Array\+Element@{Draw\+Array\+Element}}
+\index{Draw\+Array\+Element@{Draw\+Array\+Element}!Root\+Motion\+::\+Inspector@{Root\+Motion\+::\+Inspector}}
+\subsubsection{\texorpdfstring{Draw\+Array\+Element()}{DrawArrayElement()}}
+{\footnotesize\ttfamily delegate void Root\+Motion.\+Inspector.\+Draw\+Array\+Element (\begin{DoxyParamCaption}\item[{Serialized\+Property}]{prop,  }\item[{bool}]{edit\+Hierarchy }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_root_motion_1_1_inspector_aa060038e590bda971023ece8f2945330}\label{class_root_motion_1_1_inspector_aa060038e590bda971023ece8f2945330}} 
+\index{Root\+Motion\+::\+Inspector@{Root\+Motion\+::\+Inspector}!Draw\+Array\+Element\+Label@{Draw\+Array\+Element\+Label}}
+\index{Draw\+Array\+Element\+Label@{Draw\+Array\+Element\+Label}!Root\+Motion\+::\+Inspector@{Root\+Motion\+::\+Inspector}}
+\subsubsection{\texorpdfstring{Draw\+Array\+Element\+Label()}{DrawArrayElementLabel()}}
+{\footnotesize\ttfamily delegate void Root\+Motion.\+Inspector.\+Draw\+Array\+Element\+Label (\begin{DoxyParamCaption}\item[{Serialized\+Property}]{prop,  }\item[{bool}]{edit\+Hierarchy }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_root_motion_1_1_inspector_a3b89f376131fbdeec94074fe6759fffa}\label{class_root_motion_1_1_inspector_a3b89f376131fbdeec94074fe6759fffa}} 
+\index{Root\+Motion\+::\+Inspector@{Root\+Motion\+::\+Inspector}!Get\+Array\+Name@{Get\+Array\+Name}}
+\index{Get\+Array\+Name@{Get\+Array\+Name}!Root\+Motion\+::\+Inspector@{Root\+Motion\+::\+Inspector}}
+\subsubsection{\texorpdfstring{Get\+Array\+Name()}{GetArrayName()}}
+{\footnotesize\ttfamily static string Root\+Motion.\+Inspector.\+Get\+Array\+Name (\begin{DoxyParamCaption}\item[{Serialized\+Property}]{array,  }\item[{string}]{empty\+Name,  }\item[{string}]{property\+Name = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 24 of file Inspector.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_inspector_ade26e9bd07d175f8a90415faf13997f5}\label{class_root_motion_1_1_inspector_ade26e9bd07d175f8a90415faf13997f5}} 
+\index{Root\+Motion\+::\+Inspector@{Root\+Motion\+::\+Inspector}!Get\+Object\+Reference\+Name@{Get\+Object\+Reference\+Name}}
+\index{Get\+Object\+Reference\+Name@{Get\+Object\+Reference\+Name}!Root\+Motion\+::\+Inspector@{Root\+Motion\+::\+Inspector}}
+\subsubsection{\texorpdfstring{Get\+Object\+Reference\+Name()}{GetObjectReferenceName()}}
+{\footnotesize\ttfamily static string Root\+Motion.\+Inspector.\+Get\+Object\+Reference\+Name (\begin{DoxyParamCaption}\item[{Serialized\+Property}]{prop,  }\item[{string}]{empty\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 30 of file Inspector.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_inspector_a0d030b75017c7036643fb9d039ed39d7}\label{class_root_motion_1_1_inspector_a0d030b75017c7036643fb9d039ed39d7}} 
+\index{Root\+Motion\+::\+Inspector@{Root\+Motion\+::\+Inspector}!On\+Add\+To\+Array@{On\+Add\+To\+Array}}
+\index{On\+Add\+To\+Array@{On\+Add\+To\+Array}!Root\+Motion\+::\+Inspector@{Root\+Motion\+::\+Inspector}}
+\subsubsection{\texorpdfstring{On\+Add\+To\+Array()}{OnAddToArray()}}
+{\footnotesize\ttfamily delegate void Root\+Motion.\+Inspector.\+On\+Add\+To\+Array (\begin{DoxyParamCaption}\item[{Serialized\+Property}]{prop }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_inspector_ad19edde302fe0d0cf0d6b4cc9d9cfc28}\label{class_root_motion_1_1_inspector_ad19edde302fe0d0cf0d6b4cc9d9cfc28}} 
+\index{Root\+Motion\+::\+Inspector@{Root\+Motion\+::\+Inspector}!indent@{indent}}
+\index{indent@{indent}!Root\+Motion\+::\+Inspector@{Root\+Motion\+::\+Inspector}}
+\subsubsection{\texorpdfstring{indent}{indent}}
+{\footnotesize\ttfamily const int Root\+Motion.\+Inspector.\+indent = 16}
+
+
+
+Definition at line 14 of file Inspector.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Plugins/\+Editor/\+Root\+Motion/\+Shared Scripts/\mbox{\hyperlink{_inspector_8cs}{Inspector.\+cs}}\end{DoxyCompactItemize}

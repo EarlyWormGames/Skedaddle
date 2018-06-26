@@ -1,0 +1,206 @@
+\hypertarget{class_highlighter}{}\section{Highlighter Class Reference}
+\label{class_highlighter}\index{Highlighter@{Highlighter}}
+
+
+Edge detection of a selected object  
+
+
+Inheritance diagram for Highlighter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_highlighter}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_highlighter_a585a556fee5d14c362fbf2fada52a073}{Edge\+Detect\+Mode}} \{ \newline
+\mbox{\hyperlink{class_highlighter_a585a556fee5d14c362fbf2fada52a073a7d24919ed28094f0202232ee6d708fa4}{Edge\+Detect\+Mode.\+Triangle\+Depth\+Normals}} = 0, 
+\mbox{\hyperlink{class_highlighter_a585a556fee5d14c362fbf2fada52a073ac2b6fd3b6c9c392cd93579f3be952a8f}{Edge\+Detect\+Mode.\+Roberts\+Cross\+Depth\+Normals}} = 1, 
+\mbox{\hyperlink{class_highlighter_a585a556fee5d14c362fbf2fada52a073acd3bd205137fb800eb3bb6533468dfe7}{Edge\+Detect\+Mode.\+Sobel\+Depth}} = 2, 
+\mbox{\hyperlink{class_highlighter_a585a556fee5d14c362fbf2fada52a073a98e5dbe639f7850feb04dce03f5744ee}{Edge\+Detect\+Mode.\+Sobel\+Depth\+Thin}} = 3, 
+\newline
+\mbox{\hyperlink{class_highlighter_a585a556fee5d14c362fbf2fada52a073a1707b04c2953253bad60f979add23dea}{Edge\+Detect\+Mode.\+Triangle\+Luminance}} = 4
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_highlighter_a585a556fee5d14c362fbf2fada52a073}{Edge\+Detect\+Mode}} \mbox{\hyperlink{class_highlighter_ab7cc5f640025462979c4da50a25c0e4e}{mode}} = \mbox{\hyperlink{class_highlighter_a585a556fee5d14c362fbf2fada52a073a98e5dbe639f7850feb04dce03f5744ee}{Edge\+Detect\+Mode.\+Sobel\+Depth\+Thin}}
+\item 
+float \mbox{\hyperlink{class_highlighter_ab70ef9aa8d5990cf204dc0b24fa0de08}{sensitivity\+Depth}} = 1.\+0f
+\item 
+float \mbox{\hyperlink{class_highlighter_a6264ca2df3047dcdd093f10b9d79e9e4}{sensitivity\+Normals}} = 1.\+0f
+\item 
+float \mbox{\hyperlink{class_highlighter_aeebc3e4c2907593c7ee658d59dfbae3e}{lum\+Threshold}} = 0.\+2f
+\item 
+float \mbox{\hyperlink{class_highlighter_a0ce6d93b0f65254716c281190cdcabba}{edge\+Exp}} = 1.\+0f
+\item 
+float \mbox{\hyperlink{class_highlighter_af924ebf1c49c5adf1851234227bcc72d}{sample\+Dist}} = 1.\+0f
+\item 
+float \mbox{\hyperlink{class_highlighter_ad170e81e5dfed244569decba30ef16e8}{edges\+Only}} = 0.\+0f
+\item 
+Color \mbox{\hyperlink{class_highlighter_a2e2166dbb3233abd802cc464f2055fea}{edges\+Only\+Bg\+Color}} = Color.\+white
+\item 
+Shader \mbox{\hyperlink{class_highlighter_a8c79a2a4ac04780d9df045df1ea7f025}{m\+\_\+\+Edge\+Detect\+Shader}}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static Game\+Object \mbox{\hyperlink{class_highlighter_a3c59790cacc8f5149a3a642f67cd1168}{Selected}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Edge detection of a selected object 
+
+Note\+: used primarly in the menu 
+
+Definition at line 15 of file Highlighter.\+cs.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_highlighter_a585a556fee5d14c362fbf2fada52a073}\label{class_highlighter_a585a556fee5d14c362fbf2fada52a073}} 
+\index{Highlighter@{Highlighter}!Edge\+Detect\+Mode@{Edge\+Detect\+Mode}}
+\index{Edge\+Detect\+Mode@{Edge\+Detect\+Mode}!Highlighter@{Highlighter}}
+\subsubsection{\texorpdfstring{Edge\+Detect\+Mode}{EdgeDetectMode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_highlighter_a585a556fee5d14c362fbf2fada52a073}{Highlighter.\+Edge\+Detect\+Mode}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Triangle\+Depth\+Normals@{Triangle\+Depth\+Normals}!Highlighter@{Highlighter}}\index{Highlighter@{Highlighter}!Triangle\+Depth\+Normals@{Triangle\+Depth\+Normals}}}\mbox{\Hypertarget{class_highlighter_a585a556fee5d14c362fbf2fada52a073a7d24919ed28094f0202232ee6d708fa4}\label{class_highlighter_a585a556fee5d14c362fbf2fada52a073a7d24919ed28094f0202232ee6d708fa4}} 
+Triangle\+Depth\+Normals&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Roberts\+Cross\+Depth\+Normals@{Roberts\+Cross\+Depth\+Normals}!Highlighter@{Highlighter}}\index{Highlighter@{Highlighter}!Roberts\+Cross\+Depth\+Normals@{Roberts\+Cross\+Depth\+Normals}}}\mbox{\Hypertarget{class_highlighter_a585a556fee5d14c362fbf2fada52a073ac2b6fd3b6c9c392cd93579f3be952a8f}\label{class_highlighter_a585a556fee5d14c362fbf2fada52a073ac2b6fd3b6c9c392cd93579f3be952a8f}} 
+Roberts\+Cross\+Depth\+Normals&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Sobel\+Depth@{Sobel\+Depth}!Highlighter@{Highlighter}}\index{Highlighter@{Highlighter}!Sobel\+Depth@{Sobel\+Depth}}}\mbox{\Hypertarget{class_highlighter_a585a556fee5d14c362fbf2fada52a073acd3bd205137fb800eb3bb6533468dfe7}\label{class_highlighter_a585a556fee5d14c362fbf2fada52a073acd3bd205137fb800eb3bb6533468dfe7}} 
+Sobel\+Depth&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Sobel\+Depth\+Thin@{Sobel\+Depth\+Thin}!Highlighter@{Highlighter}}\index{Highlighter@{Highlighter}!Sobel\+Depth\+Thin@{Sobel\+Depth\+Thin}}}\mbox{\Hypertarget{class_highlighter_a585a556fee5d14c362fbf2fada52a073a98e5dbe639f7850feb04dce03f5744ee}\label{class_highlighter_a585a556fee5d14c362fbf2fada52a073a98e5dbe639f7850feb04dce03f5744ee}} 
+Sobel\+Depth\+Thin&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Triangle\+Luminance@{Triangle\+Luminance}!Highlighter@{Highlighter}}\index{Highlighter@{Highlighter}!Triangle\+Luminance@{Triangle\+Luminance}}}\mbox{\Hypertarget{class_highlighter_a585a556fee5d14c362fbf2fada52a073a1707b04c2953253bad60f979add23dea}\label{class_highlighter_a585a556fee5d14c362fbf2fada52a073a1707b04c2953253bad60f979add23dea}} 
+Triangle\+Luminance&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 17 of file Highlighter.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_highlighter_a0ce6d93b0f65254716c281190cdcabba}\label{class_highlighter_a0ce6d93b0f65254716c281190cdcabba}} 
+\index{Highlighter@{Highlighter}!edge\+Exp@{edge\+Exp}}
+\index{edge\+Exp@{edge\+Exp}!Highlighter@{Highlighter}}
+\subsubsection{\texorpdfstring{edge\+Exp}{edgeExp}}
+{\footnotesize\ttfamily float Highlighter.\+edge\+Exp = 1.\+0f}
+
+
+
+Definition at line 44 of file Highlighter.\+cs.
+
+\mbox{\Hypertarget{class_highlighter_ad170e81e5dfed244569decba30ef16e8}\label{class_highlighter_ad170e81e5dfed244569decba30ef16e8}} 
+\index{Highlighter@{Highlighter}!edges\+Only@{edges\+Only}}
+\index{edges\+Only@{edges\+Only}!Highlighter@{Highlighter}}
+\subsubsection{\texorpdfstring{edges\+Only}{edgesOnly}}
+{\footnotesize\ttfamily float Highlighter.\+edges\+Only = 0.\+0f}
+
+
+
+Definition at line 46 of file Highlighter.\+cs.
+
+\mbox{\Hypertarget{class_highlighter_a2e2166dbb3233abd802cc464f2055fea}\label{class_highlighter_a2e2166dbb3233abd802cc464f2055fea}} 
+\index{Highlighter@{Highlighter}!edges\+Only\+Bg\+Color@{edges\+Only\+Bg\+Color}}
+\index{edges\+Only\+Bg\+Color@{edges\+Only\+Bg\+Color}!Highlighter@{Highlighter}}
+\subsubsection{\texorpdfstring{edges\+Only\+Bg\+Color}{edgesOnlyBgColor}}
+{\footnotesize\ttfamily Color Highlighter.\+edges\+Only\+Bg\+Color = Color.\+white}
+
+
+
+Definition at line 47 of file Highlighter.\+cs.
+
+\mbox{\Hypertarget{class_highlighter_aeebc3e4c2907593c7ee658d59dfbae3e}\label{class_highlighter_aeebc3e4c2907593c7ee658d59dfbae3e}} 
+\index{Highlighter@{Highlighter}!lum\+Threshold@{lum\+Threshold}}
+\index{lum\+Threshold@{lum\+Threshold}!Highlighter@{Highlighter}}
+\subsubsection{\texorpdfstring{lum\+Threshold}{lumThreshold}}
+{\footnotesize\ttfamily float Highlighter.\+lum\+Threshold = 0.\+2f}
+
+
+
+Definition at line 43 of file Highlighter.\+cs.
+
+\mbox{\Hypertarget{class_highlighter_a8c79a2a4ac04780d9df045df1ea7f025}\label{class_highlighter_a8c79a2a4ac04780d9df045df1ea7f025}} 
+\index{Highlighter@{Highlighter}!m\+\_\+\+Edge\+Detect\+Shader@{m\+\_\+\+Edge\+Detect\+Shader}}
+\index{m\+\_\+\+Edge\+Detect\+Shader@{m\+\_\+\+Edge\+Detect\+Shader}!Highlighter@{Highlighter}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Edge\+Detect\+Shader}{m\_EdgeDetectShader}}
+{\footnotesize\ttfamily Shader Highlighter.\+m\+\_\+\+Edge\+Detect\+Shader}
+
+
+
+Definition at line 48 of file Highlighter.\+cs.
+
+\mbox{\Hypertarget{class_highlighter_ab7cc5f640025462979c4da50a25c0e4e}\label{class_highlighter_ab7cc5f640025462979c4da50a25c0e4e}} 
+\index{Highlighter@{Highlighter}!mode@{mode}}
+\index{mode@{mode}!Highlighter@{Highlighter}}
+\subsubsection{\texorpdfstring{mode}{mode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_highlighter_a585a556fee5d14c362fbf2fada52a073}{Edge\+Detect\+Mode}} Highlighter.\+mode = \mbox{\hyperlink{class_highlighter_a585a556fee5d14c362fbf2fada52a073a98e5dbe639f7850feb04dce03f5744ee}{Edge\+Detect\+Mode.\+Sobel\+Depth\+Thin}}}
+
+
+
+Definition at line 40 of file Highlighter.\+cs.
+
+\mbox{\Hypertarget{class_highlighter_af924ebf1c49c5adf1851234227bcc72d}\label{class_highlighter_af924ebf1c49c5adf1851234227bcc72d}} 
+\index{Highlighter@{Highlighter}!sample\+Dist@{sample\+Dist}}
+\index{sample\+Dist@{sample\+Dist}!Highlighter@{Highlighter}}
+\subsubsection{\texorpdfstring{sample\+Dist}{sampleDist}}
+{\footnotesize\ttfamily float Highlighter.\+sample\+Dist = 1.\+0f}
+
+
+
+Definition at line 45 of file Highlighter.\+cs.
+
+\mbox{\Hypertarget{class_highlighter_ab70ef9aa8d5990cf204dc0b24fa0de08}\label{class_highlighter_ab70ef9aa8d5990cf204dc0b24fa0de08}} 
+\index{Highlighter@{Highlighter}!sensitivity\+Depth@{sensitivity\+Depth}}
+\index{sensitivity\+Depth@{sensitivity\+Depth}!Highlighter@{Highlighter}}
+\subsubsection{\texorpdfstring{sensitivity\+Depth}{sensitivityDepth}}
+{\footnotesize\ttfamily float Highlighter.\+sensitivity\+Depth = 1.\+0f}
+
+
+
+Definition at line 41 of file Highlighter.\+cs.
+
+\mbox{\Hypertarget{class_highlighter_a6264ca2df3047dcdd093f10b9d79e9e4}\label{class_highlighter_a6264ca2df3047dcdd093f10b9d79e9e4}} 
+\index{Highlighter@{Highlighter}!sensitivity\+Normals@{sensitivity\+Normals}}
+\index{sensitivity\+Normals@{sensitivity\+Normals}!Highlighter@{Highlighter}}
+\subsubsection{\texorpdfstring{sensitivity\+Normals}{sensitivityNormals}}
+{\footnotesize\ttfamily float Highlighter.\+sensitivity\+Normals = 1.\+0f}
+
+
+
+Definition at line 42 of file Highlighter.\+cs.
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_highlighter_a3c59790cacc8f5149a3a642f67cd1168}\label{class_highlighter_a3c59790cacc8f5149a3a642f67cd1168}} 
+\index{Highlighter@{Highlighter}!Selected@{Selected}}
+\index{Selected@{Selected}!Highlighter@{Highlighter}}
+\subsubsection{\texorpdfstring{Selected}{Selected}}
+{\footnotesize\ttfamily Game\+Object Highlighter.\+Selected\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line 27 of file Highlighter.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Misc/\mbox{\hyperlink{_highlighter_8cs}{Highlighter.\+cs}}\end{DoxyCompactItemize}

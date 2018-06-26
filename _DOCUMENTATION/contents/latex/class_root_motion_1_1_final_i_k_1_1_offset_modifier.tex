@@ -1,0 +1,145 @@
+\hypertarget{class_root_motion_1_1_final_i_k_1_1_offset_modifier}{}\section{Root\+Motion.\+Final\+I\+K.\+Offset\+Modifier Class Reference}
+\label{class_root_motion_1_1_final_i_k_1_1_offset_modifier}\index{Root\+Motion.\+Final\+I\+K.\+Offset\+Modifier@{Root\+Motion.\+Final\+I\+K.\+Offset\+Modifier}}
+
+
+Base class for all F\+B\+B\+IK effector position\+Offset modifiers. Works with animate\+Physics, safe delegates, offset limits.  
+
+
+Inheritance diagram for Root\+Motion.\+Final\+I\+K.\+Offset\+Modifier\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=10.000000cm]{class_root_motion_1_1_final_i_k_1_1_offset_modifier}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_offset_modifier_1_1_offset_limits}{Offset\+Limits}}
+\begin{DoxyCompactList}\small\item\em Limiting effector position offsets \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_offset_modifier_a3a2cd2134e8a197e6a77b48fcf9aa5d4}{weight}} = 1f
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+abstract void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_offset_modifier_a777e9ffb4afca3d8647959a79a1120bb}{On\+Modify\+Offset}} ()
+\item 
+virtual void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_offset_modifier_a10d007a731b89218a14935a09552cb77}{Start}} ()
+\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_offset_modifier_a5c61c7f0be864ad1a3bcc371feec1f53}{Apply\+Limits}} (\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_offset_modifier_1_1_offset_limits}{Offset\+Limits}}\mbox{[}$\,$\mbox{]} limits)
+\item 
+virtual void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_offset_modifier_ac407dea9830e075f9ea4511ba4811d69}{On\+Destroy}} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_full_body_biped_i_k}{Full\+Body\+Biped\+IK}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_offset_modifier_a6423c7ff9da3ad0208cc85524da97ec4}{ik}}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_offset_modifier_ac5aeb27ca30313e6791867cbd4109940}{delta\+Time}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base class for all F\+B\+B\+IK effector position\+Offset modifiers. Works with animate\+Physics, safe delegates, offset limits. 
+
+
+
+Definition at line 9 of file Offset\+Modifier.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_offset_modifier_a5c61c7f0be864ad1a3bcc371feec1f53}\label{class_root_motion_1_1_final_i_k_1_1_offset_modifier_a5c61c7f0be864ad1a3bcc371feec1f53}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Offset\+Modifier@{Root\+Motion\+::\+Final\+I\+K\+::\+Offset\+Modifier}!Apply\+Limits@{Apply\+Limits}}
+\index{Apply\+Limits@{Apply\+Limits}!Root\+Motion\+::\+Final\+I\+K\+::\+Offset\+Modifier@{Root\+Motion\+::\+Final\+I\+K\+::\+Offset\+Modifier}}
+\subsubsection{\texorpdfstring{Apply\+Limits()}{ApplyLimits()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+Offset\+Modifier.\+Apply\+Limits (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_offset_modifier_1_1_offset_limits}{Offset\+Limits}} \mbox{[}$\,$\mbox{]}}]{limits }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 100 of file Offset\+Modifier.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_offset_modifier_ac407dea9830e075f9ea4511ba4811d69}\label{class_root_motion_1_1_final_i_k_1_1_offset_modifier_ac407dea9830e075f9ea4511ba4811d69}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Offset\+Modifier@{Root\+Motion\+::\+Final\+I\+K\+::\+Offset\+Modifier}!On\+Destroy@{On\+Destroy}}
+\index{On\+Destroy@{On\+Destroy}!Root\+Motion\+::\+Final\+I\+K\+::\+Offset\+Modifier@{Root\+Motion\+::\+Final\+I\+K\+::\+Offset\+Modifier}}
+\subsubsection{\texorpdfstring{On\+Destroy()}{OnDestroy()}}
+{\footnotesize\ttfamily virtual void Root\+Motion.\+Final\+I\+K.\+Offset\+Modifier.\+On\+Destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_recoil_a3835ead88696a858c864e7884b269478}{Root\+Motion.\+Final\+I\+K.\+Recoil}}.
+
+
+
+Definition at line 108 of file Offset\+Modifier.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_offset_modifier_a777e9ffb4afca3d8647959a79a1120bb}\label{class_root_motion_1_1_final_i_k_1_1_offset_modifier_a777e9ffb4afca3d8647959a79a1120bb}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Offset\+Modifier@{Root\+Motion\+::\+Final\+I\+K\+::\+Offset\+Modifier}!On\+Modify\+Offset@{On\+Modify\+Offset}}
+\index{On\+Modify\+Offset@{On\+Modify\+Offset}!Root\+Motion\+::\+Final\+I\+K\+::\+Offset\+Modifier@{Root\+Motion\+::\+Final\+I\+K\+::\+Offset\+Modifier}}
+\subsubsection{\texorpdfstring{On\+Modify\+Offset()}{OnModifyOffset()}}
+{\footnotesize\ttfamily abstract void Root\+Motion.\+Final\+I\+K.\+Offset\+Modifier.\+On\+Modify\+Offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_hit_reaction_a46076fa7f2140df3df13553cb32b27d8}{Root\+Motion.\+Final\+I\+K.\+Hit\+Reaction}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_recoil_ab90e5603561322c91818665cc301d38a}{Root\+Motion.\+Final\+I\+K.\+Recoil}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_inertia_a98c184eccf6d8b46f5705f0611263b3e}{Root\+Motion.\+Final\+I\+K.\+Inertia}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_amplifier_ae715d956bcc0f79218cef49659e6f2fb}{Root\+Motion.\+Final\+I\+K.\+Amplifier}}, \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_animation_warping_adae5cbd4af0d90ea0084eb5c0c689dc7}{Root\+Motion.\+Demos.\+Animation\+Warping}}, \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_offset_effector_ac832df1522c8056a353e3506ef3348dc}{Root\+Motion.\+Demos.\+Offset\+Effector}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_body_tilt_a5a68b6792b8b58c5a5aa24ace1569526}{Root\+Motion.\+Final\+I\+K.\+Body\+Tilt}}, and \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_effector_offset_afa21e7814f61b1bb693cf27a076eab4c}{Root\+Motion.\+Demos.\+Effector\+Offset}}.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_offset_modifier_a10d007a731b89218a14935a09552cb77}\label{class_root_motion_1_1_final_i_k_1_1_offset_modifier_a10d007a731b89218a14935a09552cb77}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Offset\+Modifier@{Root\+Motion\+::\+Final\+I\+K\+::\+Offset\+Modifier}!Start@{Start}}
+\index{Start@{Start}!Root\+Motion\+::\+Final\+I\+K\+::\+Offset\+Modifier@{Root\+Motion\+::\+Final\+I\+K\+::\+Offset\+Modifier}}
+\subsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily virtual void Root\+Motion.\+Final\+I\+K.\+Offset\+Modifier.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_animation_warping_a241d2322b0ebf23fac16d77ee0c632ed}{Root\+Motion.\+Demos.\+Animation\+Warping}}, \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_offset_effector_adf550db6cfb59e9b14f0bb0e464d82bd}{Root\+Motion.\+Demos.\+Offset\+Effector}}, and \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_body_tilt_a221000faf3644c7bda0c809ba09acff4}{Root\+Motion.\+Final\+I\+K.\+Body\+Tilt}}.
+
+
+
+Definition at line 75 of file Offset\+Modifier.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_offset_modifier_a6423c7ff9da3ad0208cc85524da97ec4}\label{class_root_motion_1_1_final_i_k_1_1_offset_modifier_a6423c7ff9da3ad0208cc85524da97ec4}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Offset\+Modifier@{Root\+Motion\+::\+Final\+I\+K\+::\+Offset\+Modifier}!ik@{ik}}
+\index{ik@{ik}!Root\+Motion\+::\+Final\+I\+K\+::\+Offset\+Modifier@{Root\+Motion\+::\+Final\+I\+K\+::\+Offset\+Modifier}}
+\subsubsection{\texorpdfstring{ik}{ik}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_full_body_biped_i_k}{Full\+Body\+Biped\+IK}} Root\+Motion.\+Final\+I\+K.\+Offset\+Modifier.\+ik\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 67 of file Offset\+Modifier.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_offset_modifier_a3a2cd2134e8a197e6a77b48fcf9aa5d4}\label{class_root_motion_1_1_final_i_k_1_1_offset_modifier_a3a2cd2134e8a197e6a77b48fcf9aa5d4}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Offset\+Modifier@{Root\+Motion\+::\+Final\+I\+K\+::\+Offset\+Modifier}!weight@{weight}}
+\index{weight@{weight}!Root\+Motion\+::\+Final\+I\+K\+::\+Offset\+Modifier@{Root\+Motion\+::\+Final\+I\+K\+::\+Offset\+Modifier}}
+\subsubsection{\texorpdfstring{weight}{weight}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+Offset\+Modifier.\+weight = 1f}
+
+
+
+Definition at line 64 of file Offset\+Modifier.\+cs.
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_offset_modifier_ac5aeb27ca30313e6791867cbd4109940}\label{class_root_motion_1_1_final_i_k_1_1_offset_modifier_ac5aeb27ca30313e6791867cbd4109940}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Offset\+Modifier@{Root\+Motion\+::\+Final\+I\+K\+::\+Offset\+Modifier}!delta\+Time@{delta\+Time}}
+\index{delta\+Time@{delta\+Time}!Root\+Motion\+::\+Final\+I\+K\+::\+Offset\+Modifier@{Root\+Motion\+::\+Final\+I\+K\+::\+Offset\+Modifier}}
+\subsubsection{\texorpdfstring{delta\+Time}{deltaTime}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+Offset\+Modifier.\+delta\+Time\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 70 of file Offset\+Modifier.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Plugins/\+Root\+Motion/\+Final\+I\+K/\+Tools/\mbox{\hyperlink{_offset_modifier_8cs}{Offset\+Modifier.\+cs}}\end{DoxyCompactItemize}

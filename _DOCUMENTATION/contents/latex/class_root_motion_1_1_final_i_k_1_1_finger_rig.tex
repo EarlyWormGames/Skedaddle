@@ -1,0 +1,232 @@
+\hypertarget{class_root_motion_1_1_final_i_k_1_1_finger_rig}{}\section{Root\+Motion.\+Final\+I\+K.\+Finger\+Rig Class Reference}
+\label{class_root_motion_1_1_final_i_k_1_1_finger_rig}\index{Root\+Motion.\+Final\+I\+K.\+Finger\+Rig@{Root\+Motion.\+Final\+I\+K.\+Finger\+Rig}}
+
+
+Handles \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k}{IK}} for a number of Fingers with 3-\/4 joints.  
+
+
+Inheritance diagram for Root\+Motion.\+Final\+I\+K.\+Finger\+Rig\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_root_motion_1_1_final_i_k_1_1_finger_rig}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_finger_rig_ada25c469ee86aef1bfb916fca8b180ed}{Is\+Valid}} (ref string error\+Message)
+\begin{DoxyCompactList}\small\item\em Is this rig valid? \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_finger_rig_a0473028172a161fbb647501464b6572c}{Auto\+Detect}} ()
+\begin{DoxyCompactList}\small\item\em Attempts to automatically fill in the \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_finger}{Finger}} bones. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_finger_rig_a00b244631d9aa58b617df037522076e4}{Add\+Finger}} (Transform bone1, Transform bone2, Transform bone3, Transform tip, Transform target=null)
+\begin{DoxyCompactList}\small\item\em Adds a finger in run-\/time. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_finger_rig_aa54ad08339b2d3c73d4e2e8a57946014}{Remove\+Finger}} (int index)
+\begin{DoxyCompactList}\small\item\em Removes a finger in runtime. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_finger_rig_a4fc899938332f07b4621ce12129041b2}{Update\+Finger\+Solvers}} ()
+\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_finger_rig_a07b2ccee722533677eaac8031cc24258}{Fix\+Finger\+Transforms}} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_finger_rig_a6527b263ac0f525aa90864f4f6599eb1}{weight}} = 1f
+\begin{DoxyCompactList}\small\item\em The master weight for all fingers. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_finger}{Finger}} \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_finger_rig_a4e61dbcff39c1d064c3f6514c34d44d2}{fingers}} = new \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_finger}{Finger}}\mbox{[}0\mbox{]}
+\begin{DoxyCompactList}\small\item\em The array of Fingers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_finger_rig_aa32e72eb590a6e441ed8de3f1ce95655}{Initiate\+Solver}} ()
+\item 
+override void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_finger_rig_a17665e6e48b665fffb30dfd90f270fca}{Update\+Solver}} ()
+\item 
+override void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_finger_rig_ab11b46b8b2c81897b17c451c4c536b1f}{Fix\+Transforms}} ()
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_finger_rig_a92bf1c8610eef3e8f5f7ee1d13d4460a}{initiated}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Has the rig properly initiated (in play mode only)? \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Handles \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k}{IK}} for a number of Fingers with 3-\/4 joints. 
+
+
+
+Definition at line 165 of file Finger\+Rig.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_finger_rig_a00b244631d9aa58b617df037522076e4}\label{class_root_motion_1_1_final_i_k_1_1_finger_rig_a00b244631d9aa58b617df037522076e4}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig}!Add\+Finger@{Add\+Finger}}
+\index{Add\+Finger@{Add\+Finger}!Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig}}
+\subsubsection{\texorpdfstring{Add\+Finger()}{AddFinger()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+Finger\+Rig.\+Add\+Finger (\begin{DoxyParamCaption}\item[{Transform}]{bone1,  }\item[{Transform}]{bone2,  }\item[{Transform}]{bone3,  }\item[{Transform}]{tip,  }\item[{Transform}]{target = {\ttfamily null} }\end{DoxyParamCaption})}
+
+
+
+Adds a finger in run-\/time. 
+
+
+
+Definition at line 227 of file Finger\+Rig.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_finger_rig_a0473028172a161fbb647501464b6572c}\label{class_root_motion_1_1_final_i_k_1_1_finger_rig_a0473028172a161fbb647501464b6572c}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig}!Auto\+Detect@{Auto\+Detect}}
+\index{Auto\+Detect@{Auto\+Detect}!Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig}}
+\subsubsection{\texorpdfstring{Auto\+Detect()}{AutoDetect()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+Finger\+Rig.\+Auto\+Detect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Attempts to automatically fill in the \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_finger}{Finger}} bones. 
+
+
+
+Definition at line 198 of file Finger\+Rig.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_finger_rig_a07b2ccee722533677eaac8031cc24258}\label{class_root_motion_1_1_final_i_k_1_1_finger_rig_a07b2ccee722533677eaac8031cc24258}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig}!Fix\+Finger\+Transforms@{Fix\+Finger\+Transforms}}
+\index{Fix\+Finger\+Transforms@{Fix\+Finger\+Transforms}!Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig}}
+\subsubsection{\texorpdfstring{Fix\+Finger\+Transforms()}{FixFingerTransforms()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+Finger\+Rig.\+Fix\+Finger\+Transforms (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 297 of file Finger\+Rig.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_finger_rig_ab11b46b8b2c81897b17c451c4c536b1f}\label{class_root_motion_1_1_final_i_k_1_1_finger_rig_ab11b46b8b2c81897b17c451c4c536b1f}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig}!Fix\+Transforms@{Fix\+Transforms}}
+\index{Fix\+Transforms@{Fix\+Transforms}!Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig}}
+\subsubsection{\texorpdfstring{Fix\+Transforms()}{FixTransforms()}}
+{\footnotesize\ttfamily override void Root\+Motion.\+Final\+I\+K.\+Finger\+Rig.\+Fix\+Transforms (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_root_motion_1_1_solver_manager_addb54e92acd91364a9205c5807a42776}{Root\+Motion.\+Solver\+Manager}}.
+
+
+
+Definition at line 307 of file Finger\+Rig.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_finger_rig_aa32e72eb590a6e441ed8de3f1ce95655}\label{class_root_motion_1_1_final_i_k_1_1_finger_rig_aa32e72eb590a6e441ed8de3f1ce95655}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig}!Initiate\+Solver@{Initiate\+Solver}}
+\index{Initiate\+Solver@{Initiate\+Solver}!Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig}}
+\subsubsection{\texorpdfstring{Initiate\+Solver()}{InitiateSolver()}}
+{\footnotesize\ttfamily override void Root\+Motion.\+Final\+I\+K.\+Finger\+Rig.\+Initiate\+Solver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_root_motion_1_1_solver_manager_abd2008369f3de95712d5748aa4ce6243}{Root\+Motion.\+Solver\+Manager}}.
+
+
+
+Definition at line 280 of file Finger\+Rig.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_finger_rig_ada25c469ee86aef1bfb916fca8b180ed}\label{class_root_motion_1_1_final_i_k_1_1_finger_rig_ada25c469ee86aef1bfb916fca8b180ed}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig}!Is\+Valid@{Is\+Valid}}
+\index{Is\+Valid@{Is\+Valid}!Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig}}
+\subsubsection{\texorpdfstring{Is\+Valid()}{IsValid()}}
+{\footnotesize\ttfamily bool Root\+Motion.\+Final\+I\+K.\+Finger\+Rig.\+Is\+Valid (\begin{DoxyParamCaption}\item[{ref string}]{error\+Message }\end{DoxyParamCaption})}
+
+
+
+Is this rig valid? 
+
+
+
+Definition at line 187 of file Finger\+Rig.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_finger_rig_aa54ad08339b2d3c73d4e2e8a57946014}\label{class_root_motion_1_1_final_i_k_1_1_finger_rig_aa54ad08339b2d3c73d4e2e8a57946014}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig}!Remove\+Finger@{Remove\+Finger}}
+\index{Remove\+Finger@{Remove\+Finger}!Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig}}
+\subsubsection{\texorpdfstring{Remove\+Finger()}{RemoveFinger()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+Finger\+Rig.\+Remove\+Finger (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Removes a finger in runtime. 
+
+
+
+Definition at line 246 of file Finger\+Rig.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_finger_rig_a4fc899938332f07b4621ce12129041b2}\label{class_root_motion_1_1_final_i_k_1_1_finger_rig_a4fc899938332f07b4621ce12129041b2}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig}!Update\+Finger\+Solvers@{Update\+Finger\+Solvers}}
+\index{Update\+Finger\+Solvers@{Update\+Finger\+Solvers}!Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig}}
+\subsubsection{\texorpdfstring{Update\+Finger\+Solvers()}{UpdateFingerSolvers()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+Finger\+Rig.\+Update\+Finger\+Solvers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 289 of file Finger\+Rig.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_finger_rig_a17665e6e48b665fffb30dfd90f270fca}\label{class_root_motion_1_1_final_i_k_1_1_finger_rig_a17665e6e48b665fffb30dfd90f270fca}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig}!Update\+Solver@{Update\+Solver}}
+\index{Update\+Solver@{Update\+Solver}!Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig}}
+\subsubsection{\texorpdfstring{Update\+Solver()}{UpdateSolver()}}
+{\footnotesize\ttfamily override void Root\+Motion.\+Final\+I\+K.\+Finger\+Rig.\+Update\+Solver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_root_motion_1_1_solver_manager_ac7a8239a700672570da89d88544a340d}{Root\+Motion.\+Solver\+Manager}}.
+
+
+
+Definition at line 303 of file Finger\+Rig.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_finger_rig_a4e61dbcff39c1d064c3f6514c34d44d2}\label{class_root_motion_1_1_final_i_k_1_1_finger_rig_a4e61dbcff39c1d064c3f6514c34d44d2}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig}!fingers@{fingers}}
+\index{fingers@{fingers}!Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig}}
+\subsubsection{\texorpdfstring{fingers}{fingers}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_finger}{Finger}} \mbox{[}$\,$\mbox{]} Root\+Motion.\+Final\+I\+K.\+Finger\+Rig.\+fingers = new \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_finger}{Finger}}\mbox{[}0\mbox{]}}
+
+
+
+The array of Fingers. 
+
+
+
+Definition at line 177 of file Finger\+Rig.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_finger_rig_a6527b263ac0f525aa90864f4f6599eb1}\label{class_root_motion_1_1_final_i_k_1_1_finger_rig_a6527b263ac0f525aa90864f4f6599eb1}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig}!weight@{weight}}
+\index{weight@{weight}!Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig}}
+\subsubsection{\texorpdfstring{weight}{weight}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+Finger\+Rig.\+weight = 1f}
+
+
+
+The master weight for all fingers. 
+
+
+
+Definition at line 172 of file Finger\+Rig.\+cs.
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_finger_rig_a92bf1c8610eef3e8f5f7ee1d13d4460a}\label{class_root_motion_1_1_final_i_k_1_1_finger_rig_a92bf1c8610eef3e8f5f7ee1d13d4460a}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig}!initiated@{initiated}}
+\index{initiated@{initiated}!Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger\+Rig}}
+\subsubsection{\texorpdfstring{initiated}{initiated}}
+{\footnotesize\ttfamily bool Root\+Motion.\+Final\+I\+K.\+Finger\+Rig.\+initiated\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Has the rig properly initiated (in play mode only)? 
+
+
+
+Definition at line 182 of file Finger\+Rig.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Plugins/\+Root\+Motion/\+Final\+I\+K/\+Finger Rig/\mbox{\hyperlink{_finger_rig_8cs}{Finger\+Rig.\+cs}}\end{DoxyCompactItemize}

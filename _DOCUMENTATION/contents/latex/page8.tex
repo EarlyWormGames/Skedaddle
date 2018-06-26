@@ -1,0 +1,66 @@
+Look\+At IK can be used on any character or other hierarchy of bones to rotate a set of bones to face a target. ~\newline
+Note that if Look\+At\+IK does not fit you requirements, you can also use Aim\+IK, that is very similar, but provides a different set of parameters, to make characters (especially non-\/biped) look at targets.
+
+{\bfseries Getting started\+:}
+\begin{DoxyItemize}
+\item Add the Look\+At\+IK component to the root Game\+Object. That Game\+Object\textquotesingle{}s forward axis will be the forward direction.
+\item Assing Spine, head and eye bones to the component.
+\item Press Play
+\end{DoxyItemize}
+
+{\bfseries Getting started with scripting\+:}
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{public} LookAtIK lookAt;
+
+\textcolor{keywordtype}{void} LateUpdate () \{
+    lookAt.solver.IKPositionWeight = 1f; \textcolor{comment}{// The master weight}
+    
+    lookAt.solver.IKPosition = something; \textcolor{comment}{// Changing the look at target}
+
+    \textcolor{comment}{// Changing the weights of individual body parts}
+    lookAt.solver.bodyWeight = 1f;
+    lookAt.solver.headWeight = 1f;
+    lookAt.solver.eyesWeight = 1f;
+
+    \textcolor{comment}{// Changing the clamp weight of individual body parts}
+    lookAt.solver.clampWeight = 1f;
+    lookAt.solver.clampWeightHead = 1f;
+    lookAt.solver.clampWeightEyes = 1f;
+\}
+\end{DoxyCode}
+
+
+{\bfseries Adding Look\+At\+IK in runtime\+:}
+\begin{DoxyItemize}
+\item Add the Look\+At\+IK component via script
+\item Call Look\+At\+I\+K.\+solver.\+Set\+Chain()
+\end{DoxyItemize}
+
+
+
+{\bfseries Component variables\+:}
+\begin{DoxyItemize}
+\item {\bfseries time\+Step} -\/ if zero, will update the solver in every Late\+Update(). Use this for chains that are animated. If $>$ 0, will be used as updating frequency so that the solver will reach its target in the same time on all machines
+\item {\bfseries fix\+Transforms} -\/ if true, will fix all the Transforms used by the solver to their initial state in each Update. This prevents potential problems with unanimated bones and animator culling with a small cost of performance
+\end{DoxyItemize}
+
+{\bfseries Solver variables\+:}
+\begin{DoxyItemize}
+\item {\bfseries target} -\/ the target Transform. If assigned, solver I\+K\+Position will be automatically set to the position of the target
+\item {\bfseries weight} -\/ the master weight of the solver (multiplies all the other weights)
+\item {\bfseries body\+Weight} -\/ the weight of rotating the spine bones
+\item {\bfseries head\+Weight} -\/ the weight of rotating the head bone
+\item {\bfseries eyes\+Weight} -\/ the weight of rotating the eye bones
+\item {\bfseries clamp\+Weight} -\/ clamping rotation of the spine bones. 0 is free rotation, 1 is completely clamped to zero effect
+\item {\bfseries clamp\+Weight\+Head} -\/ clamping rotation of the head bone. 0 is free rotation, 1 is completely clamped to zero effect
+\item {\bfseries clamp\+Weight\+Eyes} -\/ clamping rotation of the eye bones. 0 is free rotation, 1 is completely clamped to zero effect
+\item {\bfseries clamp\+Smoothing} -\/ the number of sine smoothing iterations applied to clamping to make it smoother
+\item {\bfseries spine\+Weight\+Curve} -\/ normalized weight distribution between the spine bones. The first spine bone is at \char`\"{}time\char`\"{} 0, the last spine bone is at 1
+\item {\bfseries head} -\/ the head bone
+\item {\bfseries spine} -\/ the spine bones in descending order (parents first), bones can be skipped
+\item {\bfseries eyes} -\/ the eye bones
+\end{DoxyItemize}
+
+ 

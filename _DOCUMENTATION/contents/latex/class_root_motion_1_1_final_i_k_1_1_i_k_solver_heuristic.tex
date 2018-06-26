@@ -1,0 +1,423 @@
+\hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic}{}\section{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Heuristic Class Reference}
+\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic}\index{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Heuristic@{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Heuristic}}
+
+
+Contains methods common for all heuristic solvers.  
+
+
+Inheritance diagram for Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Heuristic\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.456140cm]{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a3bc403bfbc0adc7dadd1367b46726669}{Set\+Chain}} (Transform\mbox{[}$\,$\mbox{]} hierarchy, Transform \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_add558b38f163259934c37a0f1b497c06}{root}})
+\begin{DoxyCompactList}\small\item\em Rebuild the bone hierarcy and reinitiate the solver. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a034922fce9f0ca8db348f67c7c0101ce}{Add\+Bone}} (Transform bone)
+\begin{DoxyCompactList}\small\item\em Adds a bone to the chain. \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a58192848dbddf53c43c8ce54c3346557}{Store\+Default\+Local\+State}} ()
+\begin{DoxyCompactList}\small\item\em Stores the default local state for the bones used by the solver. \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a8cd9cbe3bd3bd871cc288e4ef7da4f33}{Fix\+Transforms}} ()
+\begin{DoxyCompactList}\small\item\em Fixes all the Transforms used by the solver to their initial state. \end{DoxyCompactList}\item 
+override bool \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a81daa8bcbfe7cf858f2e439de4ade437}{Is\+Valid}} (ref string message)
+\begin{DoxyCompactList}\small\item\em Determines whether this instance is valid or not. If returns false, also fills in an error message. \end{DoxyCompactList}\item 
+override \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_1_1_point}{I\+K\+Solver.\+Point}} \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a1b250288b7b2b165e6e7f30048410f05}{Get\+Points}} ()
+\begin{DoxyCompactList}\small\item\em Gets all the points used by the solver. \end{DoxyCompactList}\item 
+override \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_1_1_point}{I\+K\+Solver.\+Point}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a6f6fe66f3e434877da9d23e492448fda}{Get\+Point}} (Transform transform)
+\begin{DoxyCompactList}\small\item\em Gets the point with the specified Transform. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a6d9cdc077be656f21ef52db556f810e5}{target}}
+\begin{DoxyCompactList}\small\item\em The target Transform. Solver I\+K\+Position will be automatically set to the position of the target. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a35b1d58890c707bcbb1586af8fd18a54}{tolerance}} = 0f
+\begin{DoxyCompactList}\small\item\em Minimum distance from last reached position. Will stop solving if difference from previous reached position is less than tolerance. If tolerance is zero, will iterate until max\+Iterations. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a1d8d6ed146e85d2595310e4e823a3dc8}{max\+Iterations}} = 4
+\begin{DoxyCompactList}\small\item\em Max iterations per frame \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_aedb395011d886df6e4a534b30d6c7962}{use\+Rotation\+Limits}} = true
+\begin{DoxyCompactList}\small\item\em If true, rotation limits (if excisting) will be applied on each iteration. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a231fb79dcb25a4717507124dfde88703}{XY}}
+\begin{DoxyCompactList}\small\item\em Solve in 2D? \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_1_1_bone}{Bone}} \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_af2f1ea1642dbe9276519e9bbabef2d9d}{bones}} = new \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_1_1_bone}{Bone}}\mbox{[}0\mbox{]}
+\begin{DoxyCompactList}\small\item\em The hierarchy of bones. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a665700645200f3960f186bb6d3835691}{On\+Initiate}} ()
+\item 
+override void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a88c1314811a687a2843f8679c07e82c0}{On\+Update}} ()
+\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_ad2b167b9cce7ca0288226353e44d09d3}{Initiate\+Bones}} ()
+\item 
+Vector3 \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a6bd963fe427300f69903f0d83f6028b7}{Get\+Singularity\+Offset}} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Vector3 \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_ad2cf3502a75ac245a50f98c0b32a375e}{last\+Local\+Direction}}
+\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a87198cadb3c3c02a29963fb0adea739b}{chain\+Length}}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+virtual int \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a837481e0f271443eafa1fc92e5df68e3}{min\+Bones}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+virtual bool \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a4df0a7c687d140f74369b5a698b4f0db}{bone\+Length\+Can\+Be\+Zero}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+virtual bool \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_ac092d123e218306963b4bcd569f403fb}{allow\+Common\+Parent}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+virtual Vector3 \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_ab69f50217e48a3cc1c5f2a031a2cbc82}{local\+Direction}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a05caefab9fbc925be49373cebfc9faf9}{position\+Offset}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Contains methods common for all heuristic solvers. 
+
+
+
+Definition at line 11 of file I\+K\+Solver\+Heuristic.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a034922fce9f0ca8db348f67c7c0101ce}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a034922fce9f0ca8db348f67c7c0101ce}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}!Add\+Bone@{Add\+Bone}}
+\index{Add\+Bone@{Add\+Bone}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}}
+\subsubsection{\texorpdfstring{Add\+Bone()}{AddBone()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Heuristic.\+Add\+Bone (\begin{DoxyParamCaption}\item[{Transform}]{bone }\end{DoxyParamCaption})}
+
+
+
+Adds a bone to the chain. 
+
+
+
+Definition at line 60 of file I\+K\+Solver\+Heuristic.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a8cd9cbe3bd3bd871cc288e4ef7da4f33}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a8cd9cbe3bd3bd871cc288e4ef7da4f33}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}!Fix\+Transforms@{Fix\+Transforms}}
+\index{Fix\+Transforms@{Fix\+Transforms}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}}
+\subsubsection{\texorpdfstring{Fix\+Transforms()}{FixTransforms()}}
+{\footnotesize\ttfamily override void Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Heuristic.\+Fix\+Transforms (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Fixes all the Transforms used by the solver to their initial state. 
+
+
+
+Implements \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a266ec32ebdd83faaf37abc41718061b7}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver}}.
+
+
+
+Definition at line 76 of file I\+K\+Solver\+Heuristic.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a6f6fe66f3e434877da9d23e492448fda}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a6f6fe66f3e434877da9d23e492448fda}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}!Get\+Point@{Get\+Point}}
+\index{Get\+Point@{Get\+Point}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}}
+\subsubsection{\texorpdfstring{Get\+Point()}{GetPoint()}}
+{\footnotesize\ttfamily override \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_1_1_point}{I\+K\+Solver.\+Point}} Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Heuristic.\+Get\+Point (\begin{DoxyParamCaption}\item[{Transform}]{transform }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the point with the specified Transform. 
+
+
+
+Implements \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a8e845886025fb0ca404b85f6747f7281}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver}}.
+
+
+
+Definition at line 125 of file I\+K\+Solver\+Heuristic.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a1b250288b7b2b165e6e7f30048410f05}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a1b250288b7b2b165e6e7f30048410f05}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}!Get\+Points@{Get\+Points}}
+\index{Get\+Points@{Get\+Points}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}}
+\subsubsection{\texorpdfstring{Get\+Points()}{GetPoints()}}
+{\footnotesize\ttfamily override \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_1_1_point}{I\+K\+Solver.\+Point}} \mbox{[}$\,$\mbox{]} Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Heuristic.\+Get\+Points (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets all the points used by the solver. 
+
+
+
+Implements \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a29b0746bebf6bd6645cdeb6617030bff}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver}}.
+
+
+
+Definition at line 121 of file I\+K\+Solver\+Heuristic.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a6bd963fe427300f69903f0d83f6028b7}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a6bd963fe427300f69903f0d83f6028b7}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}!Get\+Singularity\+Offset@{Get\+Singularity\+Offset}}
+\index{Get\+Singularity\+Offset@{Get\+Singularity\+Offset}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}}
+\subsubsection{\texorpdfstring{Get\+Singularity\+Offset()}{GetSingularityOffset()}}
+{\footnotesize\ttfamily Vector3 Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Heuristic.\+Get\+Singularity\+Offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 194 of file I\+K\+Solver\+Heuristic.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_ad2b167b9cce7ca0288226353e44d09d3}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_ad2b167b9cce7ca0288226353e44d09d3}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}!Initiate\+Bones@{Initiate\+Bones}}
+\index{Initiate\+Bones@{Initiate\+Bones}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}}
+\subsubsection{\texorpdfstring{Initiate\+Bones()}{InitiateBones()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Heuristic.\+Initiate\+Bones (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 143 of file I\+K\+Solver\+Heuristic.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a81daa8bcbfe7cf858f2e439de4ade437}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a81daa8bcbfe7cf858f2e439de4ade437}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}!Is\+Valid@{Is\+Valid}}
+\index{Is\+Valid@{Is\+Valid}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}}
+\subsubsection{\texorpdfstring{Is\+Valid()}{IsValid()}}
+{\footnotesize\ttfamily override bool Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Heuristic.\+Is\+Valid (\begin{DoxyParamCaption}\item[{ref string}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Determines whether this instance is valid or not. If returns false, also fills in an error message. 
+
+
+
+Implements \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a6ccc7496e7f4e95668e1c1bdaa051d67}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver}}.
+
+
+
+Definition at line 82 of file I\+K\+Solver\+Heuristic.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a665700645200f3960f186bb6d3835691}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a665700645200f3960f186bb6d3835691}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}!On\+Initiate@{On\+Initiate}}
+\index{On\+Initiate@{On\+Initiate}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}}
+\subsubsection{\texorpdfstring{On\+Initiate()}{OnInitiate()}}
+{\footnotesize\ttfamily override void Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Heuristic.\+On\+Initiate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a2a8cbf1dfed274fdbc79ff011c468cc6}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver}}.
+
+
+
+Definition at line 135 of file I\+K\+Solver\+Heuristic.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a88c1314811a687a2843f8679c07e82c0}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a88c1314811a687a2843f8679c07e82c0}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}!On\+Update@{On\+Update}}
+\index{On\+Update@{On\+Update}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}}
+\subsubsection{\texorpdfstring{On\+Update()}{OnUpdate()}}
+{\footnotesize\ttfamily override void Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Heuristic.\+On\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a3bbcc10c91d82ac266dadc63ea93171d}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver}}.
+
+
+
+Definition at line 136 of file I\+K\+Solver\+Heuristic.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a3bc403bfbc0adc7dadd1367b46726669}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a3bc403bfbc0adc7dadd1367b46726669}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}!Set\+Chain@{Set\+Chain}}
+\index{Set\+Chain@{Set\+Chain}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}}
+\subsubsection{\texorpdfstring{Set\+Chain()}{SetChain()}}
+{\footnotesize\ttfamily bool Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Heuristic.\+Set\+Chain (\begin{DoxyParamCaption}\item[{Transform \mbox{[}$\,$\mbox{]}}]{hierarchy,  }\item[{Transform}]{root }\end{DoxyParamCaption})}
+
+
+
+Rebuild the bone hierarcy and reinitiate the solver. 
+
+\begin{DoxyReturn}{Returns}
+Returns true if the new chain is valid. 
+\end{DoxyReturn}
+
+
+Definition at line 46 of file I\+K\+Solver\+Heuristic.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a58192848dbddf53c43c8ce54c3346557}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a58192848dbddf53c43c8ce54c3346557}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}!Store\+Default\+Local\+State@{Store\+Default\+Local\+State}}
+\index{Store\+Default\+Local\+State@{Store\+Default\+Local\+State}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}}
+\subsubsection{\texorpdfstring{Store\+Default\+Local\+State()}{StoreDefaultLocalState()}}
+{\footnotesize\ttfamily override void Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Heuristic.\+Store\+Default\+Local\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Stores the default local state for the bones used by the solver. 
+
+
+
+Implements \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a5009a12837b12c96fed91bc6dc0bd4b6}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver}}.
+
+
+
+Definition at line 72 of file I\+K\+Solver\+Heuristic.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_af2f1ea1642dbe9276519e9bbabef2d9d}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_af2f1ea1642dbe9276519e9bbabef2d9d}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}!bones@{bones}}
+\index{bones@{bones}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}}
+\subsubsection{\texorpdfstring{bones}{bones}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_1_1_bone}{Bone}} \mbox{[}$\,$\mbox{]} Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Heuristic.\+bones = new \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_1_1_bone}{Bone}}\mbox{[}0\mbox{]}}
+
+
+
+The hierarchy of bones. 
+
+
+
+Definition at line 38 of file I\+K\+Solver\+Heuristic.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a87198cadb3c3c02a29963fb0adea739b}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a87198cadb3c3c02a29963fb0adea739b}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}!chain\+Length@{chain\+Length}}
+\index{chain\+Length@{chain\+Length}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}}
+\subsubsection{\texorpdfstring{chain\+Length}{chainLength}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Heuristic.\+chain\+Length\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 138 of file I\+K\+Solver\+Heuristic.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_ad2cf3502a75ac245a50f98c0b32a375e}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_ad2cf3502a75ac245a50f98c0b32a375e}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}!last\+Local\+Direction@{last\+Local\+Direction}}
+\index{last\+Local\+Direction@{last\+Local\+Direction}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}}
+\subsubsection{\texorpdfstring{last\+Local\+Direction}{lastLocalDirection}}
+{\footnotesize\ttfamily Vector3 Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Heuristic.\+last\+Local\+Direction\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 137 of file I\+K\+Solver\+Heuristic.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a1d8d6ed146e85d2595310e4e823a3dc8}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a1d8d6ed146e85d2595310e4e823a3dc8}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}!max\+Iterations@{max\+Iterations}}
+\index{max\+Iterations@{max\+Iterations}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}}
+\subsubsection{\texorpdfstring{max\+Iterations}{maxIterations}}
+{\footnotesize\ttfamily int Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Heuristic.\+max\+Iterations = 4}
+
+
+
+Max iterations per frame 
+
+
+
+Definition at line 26 of file I\+K\+Solver\+Heuristic.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a6d9cdc077be656f21ef52db556f810e5}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a6d9cdc077be656f21ef52db556f810e5}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}!target@{target}}
+\index{target@{target}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}}
+\subsubsection{\texorpdfstring{target}{target}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Heuristic.\+target}
+
+
+
+The target Transform. Solver I\+K\+Position will be automatically set to the position of the target. 
+
+
+
+Definition at line 18 of file I\+K\+Solver\+Heuristic.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a35b1d58890c707bcbb1586af8fd18a54}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a35b1d58890c707bcbb1586af8fd18a54}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}!tolerance@{tolerance}}
+\index{tolerance@{tolerance}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}}
+\subsubsection{\texorpdfstring{tolerance}{tolerance}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Heuristic.\+tolerance = 0f}
+
+
+
+Minimum distance from last reached position. Will stop solving if difference from previous reached position is less than tolerance. If tolerance is zero, will iterate until max\+Iterations. 
+
+
+
+Definition at line 22 of file I\+K\+Solver\+Heuristic.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_aedb395011d886df6e4a534b30d6c7962}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_aedb395011d886df6e4a534b30d6c7962}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}!use\+Rotation\+Limits@{use\+Rotation\+Limits}}
+\index{use\+Rotation\+Limits@{use\+Rotation\+Limits}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}}
+\subsubsection{\texorpdfstring{use\+Rotation\+Limits}{useRotationLimits}}
+{\footnotesize\ttfamily bool Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Heuristic.\+use\+Rotation\+Limits = true}
+
+
+
+If true, rotation limits (if excisting) will be applied on each iteration. 
+
+
+
+Definition at line 30 of file I\+K\+Solver\+Heuristic.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a231fb79dcb25a4717507124dfde88703}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a231fb79dcb25a4717507124dfde88703}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}!XY@{XY}}
+\index{XY@{XY}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}}
+\subsubsection{\texorpdfstring{XY}{XY}}
+{\footnotesize\ttfamily bool Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Heuristic.\+XY}
+
+
+
+Solve in 2D? 
+
+
+
+Definition at line 34 of file I\+K\+Solver\+Heuristic.\+cs.
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_ac092d123e218306963b4bcd569f403fb}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_ac092d123e218306963b4bcd569f403fb}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}!allow\+Common\+Parent@{allow\+Common\+Parent}}
+\index{allow\+Common\+Parent@{allow\+Common\+Parent}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}}
+\subsubsection{\texorpdfstring{allow\+Common\+Parent}{allowCommonParent}}
+{\footnotesize\ttfamily virtual bool Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Heuristic.\+allow\+Common\+Parent\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 134 of file I\+K\+Solver\+Heuristic.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a4df0a7c687d140f74369b5a698b4f0db}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a4df0a7c687d140f74369b5a698b4f0db}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}!bone\+Length\+Can\+Be\+Zero@{bone\+Length\+Can\+Be\+Zero}}
+\index{bone\+Length\+Can\+Be\+Zero@{bone\+Length\+Can\+Be\+Zero}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}}
+\subsubsection{\texorpdfstring{bone\+Length\+Can\+Be\+Zero}{boneLengthCanBeZero}}
+{\footnotesize\ttfamily virtual bool Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Heuristic.\+bone\+Length\+Can\+Be\+Zero\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 133 of file I\+K\+Solver\+Heuristic.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_ab69f50217e48a3cc1c5f2a031a2cbc82}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_ab69f50217e48a3cc1c5f2a031a2cbc82}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}!local\+Direction@{local\+Direction}}
+\index{local\+Direction@{local\+Direction}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}}
+\subsubsection{\texorpdfstring{local\+Direction}{localDirection}}
+{\footnotesize\ttfamily virtual Vector3 Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Heuristic.\+local\+Direction\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 174 of file I\+K\+Solver\+Heuristic.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a837481e0f271443eafa1fc92e5df68e3}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a837481e0f271443eafa1fc92e5df68e3}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}!min\+Bones@{min\+Bones}}
+\index{min\+Bones@{min\+Bones}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}}
+\subsubsection{\texorpdfstring{min\+Bones}{minBones}}
+{\footnotesize\ttfamily virtual int Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Heuristic.\+min\+Bones\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 132 of file I\+K\+Solver\+Heuristic.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a05caefab9fbc925be49373cebfc9faf9}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_a05caefab9fbc925be49373cebfc9faf9}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}!position\+Offset@{position\+Offset}}
+\index{position\+Offset@{position\+Offset}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Heuristic}}
+\subsubsection{\texorpdfstring{position\+Offset}{positionOffset}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Heuristic.\+position\+Offset\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 183 of file I\+K\+Solver\+Heuristic.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Plugins/\+Root\+Motion/\+Final\+I\+K/\+I\+K Solvers/\mbox{\hyperlink{_i_k_solver_heuristic_8cs}{I\+K\+Solver\+Heuristic.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,122 @@
+\hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_c_c_d}{}\section{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+C\+CD Class Reference}
+\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_c_c_d}\index{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+C\+CD@{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+C\+CD}}
+
+
+C\+CD (Cyclic Coordinate Descent) constrainable heuristic inverse kinematics algorithm.  
+
+
+Inheritance diagram for Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+C\+CD\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_root_motion_1_1_final_i_k_1_1_i_k_solver_c_c_d}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_c_c_d_a99b22c85ea89d228dc3a85b0dab23d06}{Fade\+Out\+Bone\+Weights}} ()
+\begin{DoxyCompactList}\small\item\em C\+CD tends to overemphasise the rotations of the bones closer to the target position. Reducing bone weight down the hierarchy will compensate for this effect. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_c_c_d_a9816879c84a69d87e498f3c200110a0d}{Solve\+Virtual}} (\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_1_1_bone}{I\+K\+Solver.\+Bone}}\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_heuristic_af2f1ea1642dbe9276519e9bbabef2d9d}{bones}}, Vector3 target\+Position, float weight)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_ae3da6a8ccd8224ce56d15c4da5cd1ef7}{Iteration\+Delegate}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_c_c_d_a8dd20d15fc2179df1e1cfb3d476804df}{On\+Pre\+Iteration}}
+\begin{DoxyCompactList}\small\item\em Called before each iteration of the solver. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_c_c_d_ac5297e593852814356258fe9f51a2774}{On\+Initiate}} ()
+\item 
+override void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_c_c_d_a1f3584003199b9f26fdbe7f6ac912c11}{On\+Update}} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+C\+CD (Cyclic Coordinate Descent) constrainable heuristic inverse kinematics algorithm. 
+
+
+
+Definition at line 11 of file I\+K\+Solver\+C\+C\+D.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_c_c_d_a99b22c85ea89d228dc3a85b0dab23d06}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_c_c_d_a99b22c85ea89d228dc3a85b0dab23d06}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+C\+CD@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+C\+CD}!Fade\+Out\+Bone\+Weights@{Fade\+Out\+Bone\+Weights}}
+\index{Fade\+Out\+Bone\+Weights@{Fade\+Out\+Bone\+Weights}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+C\+CD@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+C\+CD}}
+\subsubsection{\texorpdfstring{Fade\+Out\+Bone\+Weights()}{FadeOutBoneWeights()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+C\+C\+D.\+Fade\+Out\+Bone\+Weights (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+C\+CD tends to overemphasise the rotations of the bones closer to the target position. Reducing bone weight down the hierarchy will compensate for this effect. 
+
+
+
+Definition at line 18 of file I\+K\+Solver\+C\+C\+D.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_c_c_d_ac5297e593852814356258fe9f51a2774}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_c_c_d_ac5297e593852814356258fe9f51a2774}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+C\+CD@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+C\+CD}!On\+Initiate@{On\+Initiate}}
+\index{On\+Initiate@{On\+Initiate}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+C\+CD@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+C\+CD}}
+\subsubsection{\texorpdfstring{On\+Initiate()}{OnInitiate()}}
+{\footnotesize\ttfamily override void Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+C\+C\+D.\+On\+Initiate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a2a8cbf1dfed274fdbc79ff011c468cc6}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver}}.
+
+
+
+Definition at line 36 of file I\+K\+Solver\+C\+C\+D.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_c_c_d_a1f3584003199b9f26fdbe7f6ac912c11}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_c_c_d_a1f3584003199b9f26fdbe7f6ac912c11}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+C\+CD@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+C\+CD}!On\+Update@{On\+Update}}
+\index{On\+Update@{On\+Update}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+C\+CD@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+C\+CD}}
+\subsubsection{\texorpdfstring{On\+Update()}{OnUpdate()}}
+{\footnotesize\ttfamily override void Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+C\+C\+D.\+On\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a3bbcc10c91d82ac266dadc63ea93171d}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver}}.
+
+
+
+Definition at line 42 of file I\+K\+Solver\+C\+C\+D.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_c_c_d_a9816879c84a69d87e498f3c200110a0d}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_c_c_d_a9816879c84a69d87e498f3c200110a0d}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+C\+CD@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+C\+CD}!Solve\+Virtual@{Solve\+Virtual}}
+\index{Solve\+Virtual@{Solve\+Virtual}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+C\+CD@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+C\+CD}}
+\subsubsection{\texorpdfstring{Solve\+Virtual()}{SolveVirtual()}}
+{\footnotesize\ttfamily static void Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+C\+C\+D.\+Solve\+Virtual (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_1_1_bone}{I\+K\+Solver.\+Bone}} \mbox{[}$\,$\mbox{]}}]{bones,  }\item[{Vector3}]{target\+Position,  }\item[{float}]{weight }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 117 of file I\+K\+Solver\+C\+C\+D.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_c_c_d_a8dd20d15fc2179df1e1cfb3d476804df}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_c_c_d_a8dd20d15fc2179df1e1cfb3d476804df}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+C\+CD@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+C\+CD}!On\+Pre\+Iteration@{On\+Pre\+Iteration}}
+\index{On\+Pre\+Iteration@{On\+Pre\+Iteration}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+C\+CD@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+C\+CD}}
+\subsubsection{\texorpdfstring{On\+Pre\+Iteration}{OnPreIteration}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_ae3da6a8ccd8224ce56d15c4da5cd1ef7}{Iteration\+Delegate}} Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+C\+C\+D.\+On\+Pre\+Iteration}
+
+
+
+Called before each iteration of the solver. 
+
+
+
+Definition at line 32 of file I\+K\+Solver\+C\+C\+D.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Plugins/\+Root\+Motion/\+Final\+I\+K/\+I\+K Solvers/\mbox{\hyperlink{_i_k_solver_c_c_d_8cs}{I\+K\+Solver\+C\+C\+D.\+cs}}\end{DoxyCompactItemize}

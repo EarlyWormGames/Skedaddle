@@ -1,0 +1,239 @@
+\hypertarget{class_options_area}{}\section{Options\+Area Class Reference}
+\label{class_options_area}\index{Options\+Area@{Options\+Area}}
+
+
+Opetions selection that can be chosen in the menu inherits from gui navigation to allow it to be a selectable object though \mbox{\hyperlink{class_g_u_i_navigation}{G\+U\+I\+Navigation}} system.  
+
+
+Inheritance diagram for Options\+Area\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_options_area}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_options_area_a2dc4be3a6a17378055632ac3d0c124e7}{Select}} ()
+\begin{DoxyCompactList}\small\item\em Select this as the current navigaiton object \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_options_area_abecd9cd9d7c96ae63dde5110cce7c364}{Deselect}} ()
+\begin{DoxyCompactList}\small\item\em deselect the current \mbox{\hyperlink{class_g_u_i_navigation}{G\+U\+I\+Navigation}} object \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_options_area_a1ee78382652a273de4911c8a2894ee36}{Click}} ()
+\item 
+override void \mbox{\hyperlink{class_options_area_a8a38de01790a717037f8c3aae3e83b85}{Exit}} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Transform \mbox{\hyperlink{class_options_area_a1de4aba313b17d844664ea81e7fec4bb}{m\+\_\+t\+Move\+Point}}
+\item 
+Transform \mbox{\hyperlink{class_options_area_a7aa5c91471e3a5bcdbf0e38e3be8cacc}{m\+\_\+t\+Look\+Point}}
+\item 
+float \mbox{\hyperlink{class_options_area_a8e365fbd3aa90685b71aaff67b14797f}{m\+\_\+f\+My\+Focus}} = 1f
+\item 
+float \mbox{\hyperlink{class_options_area_a2c57b5d9bc4ef6dae87e98a5c5c31de6}{m\+\_\+f\+My\+Focal\+Size}} = 1f
+\item 
+Animator \mbox{\hyperlink{class_options_area_a7598d72d506cdca00f7d5882a315464c}{m\+\_\+a\+Controller}}
+\item 
+\mbox{\hyperlink{class_trunk_folder}{Trunk\+Folder}} \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_options_area_aef24a9270c1caae2bbced4f6987dda0a}{m\+\_\+at\+Folders}}
+\item 
+float \mbox{\hyperlink{class_options_area_a4cb4df1c8c9977349692d75b6f16a018}{m\+\_\+f\+Open\+Wait}} = 1f
+\item 
+float \mbox{\hyperlink{class_options_area_a8c0394c87bffd811c9abc33c532878c2}{m\+\_\+f\+Start\+Diff}} = 0.\+2f
+\item 
+Layer\+Mask \mbox{\hyperlink{class_options_area_a8c9824e0ef97f503a011f8a00811f7c0}{m\+\_\+l\+Options\+Layer}}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_options_area_af06ad11cd346ebbc8c4f3314471710b3}{On\+Update}} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Opetions selection that can be chosen in the menu inherits from gui navigation to allow it to be a selectable object though \mbox{\hyperlink{class_g_u_i_navigation}{G\+U\+I\+Navigation}} system. 
+
+
+
+Definition at line 9 of file Options\+Area.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_options_area_a1ee78382652a273de4911c8a2894ee36}\label{class_options_area_a1ee78382652a273de4911c8a2894ee36}} 
+\index{Options\+Area@{Options\+Area}!Click@{Click}}
+\index{Click@{Click}!Options\+Area@{Options\+Area}}
+\subsubsection{\texorpdfstring{Click()}{Click()}}
+{\footnotesize\ttfamily override void Options\+Area.\+Click (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_g_u_i_navigation_a175178a8bf2832e74c13f83bf8e8f714}{G\+U\+I\+Navigation}}.
+
+
+
+Definition at line 100 of file Options\+Area.\+cs.
+
+\mbox{\Hypertarget{class_options_area_abecd9cd9d7c96ae63dde5110cce7c364}\label{class_options_area_abecd9cd9d7c96ae63dde5110cce7c364}} 
+\index{Options\+Area@{Options\+Area}!Deselect@{Deselect}}
+\index{Deselect@{Deselect}!Options\+Area@{Options\+Area}}
+\subsubsection{\texorpdfstring{Deselect()}{Deselect()}}
+{\footnotesize\ttfamily override void Options\+Area.\+Deselect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+deselect the current \mbox{\hyperlink{class_g_u_i_navigation}{G\+U\+I\+Navigation}} object 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_g_u_i_navigation_a98563f06446b45814ff78978b472e948}{G\+U\+I\+Navigation}}.
+
+
+
+Definition at line 95 of file Options\+Area.\+cs.
+
+\mbox{\Hypertarget{class_options_area_a8a38de01790a717037f8c3aae3e83b85}\label{class_options_area_a8a38de01790a717037f8c3aae3e83b85}} 
+\index{Options\+Area@{Options\+Area}!Exit@{Exit}}
+\index{Exit@{Exit}!Options\+Area@{Options\+Area}}
+\subsubsection{\texorpdfstring{Exit()}{Exit()}}
+{\footnotesize\ttfamily override void Options\+Area.\+Exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_area_a96ef46550ca800c223f4db8f0b93e86b}{Area}}.
+
+
+
+Definition at line 117 of file Options\+Area.\+cs.
+
+\mbox{\Hypertarget{class_options_area_af06ad11cd346ebbc8c4f3314471710b3}\label{class_options_area_af06ad11cd346ebbc8c4f3314471710b3}} 
+\index{Options\+Area@{Options\+Area}!On\+Update@{On\+Update}}
+\index{On\+Update@{On\+Update}!Options\+Area@{Options\+Area}}
+\subsubsection{\texorpdfstring{On\+Update()}{OnUpdate()}}
+{\footnotesize\ttfamily override void Options\+Area.\+On\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_g_u_i_navigation_aad668226e400889bceea3914750b949e}{G\+U\+I\+Navigation}}.
+
+
+
+Definition at line 29 of file Options\+Area.\+cs.
+
+\mbox{\Hypertarget{class_options_area_a2dc4be3a6a17378055632ac3d0c124e7}\label{class_options_area_a2dc4be3a6a17378055632ac3d0c124e7}} 
+\index{Options\+Area@{Options\+Area}!Select@{Select}}
+\index{Select@{Select}!Options\+Area@{Options\+Area}}
+\subsubsection{\texorpdfstring{Select()}{Select()}}
+{\footnotesize\ttfamily override void Options\+Area.\+Select (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Select this as the current navigaiton object 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_g_u_i_navigation_a4c40fc7986ac35247bc8f77c615e7847}{G\+U\+I\+Navigation}}.
+
+
+
+Definition at line 89 of file Options\+Area.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_options_area_a7598d72d506cdca00f7d5882a315464c}\label{class_options_area_a7598d72d506cdca00f7d5882a315464c}} 
+\index{Options\+Area@{Options\+Area}!m\+\_\+a\+Controller@{m\+\_\+a\+Controller}}
+\index{m\+\_\+a\+Controller@{m\+\_\+a\+Controller}!Options\+Area@{Options\+Area}}
+\subsubsection{\texorpdfstring{m\+\_\+a\+Controller}{m\_aController}}
+{\footnotesize\ttfamily Animator Options\+Area.\+m\+\_\+a\+Controller}
+
+
+
+Definition at line 16 of file Options\+Area.\+cs.
+
+\mbox{\Hypertarget{class_options_area_aef24a9270c1caae2bbced4f6987dda0a}\label{class_options_area_aef24a9270c1caae2bbced4f6987dda0a}} 
+\index{Options\+Area@{Options\+Area}!m\+\_\+at\+Folders@{m\+\_\+at\+Folders}}
+\index{m\+\_\+at\+Folders@{m\+\_\+at\+Folders}!Options\+Area@{Options\+Area}}
+\subsubsection{\texorpdfstring{m\+\_\+at\+Folders}{m\_atFolders}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_trunk_folder}{Trunk\+Folder}} \mbox{[}$\,$\mbox{]} Options\+Area.\+m\+\_\+at\+Folders}
+
+
+
+Definition at line 18 of file Options\+Area.\+cs.
+
+\mbox{\Hypertarget{class_options_area_a2c57b5d9bc4ef6dae87e98a5c5c31de6}\label{class_options_area_a2c57b5d9bc4ef6dae87e98a5c5c31de6}} 
+\index{Options\+Area@{Options\+Area}!m\+\_\+f\+My\+Focal\+Size@{m\+\_\+f\+My\+Focal\+Size}}
+\index{m\+\_\+f\+My\+Focal\+Size@{m\+\_\+f\+My\+Focal\+Size}!Options\+Area@{Options\+Area}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+My\+Focal\+Size}{m\_fMyFocalSize}}
+{\footnotesize\ttfamily float Options\+Area.\+m\+\_\+f\+My\+Focal\+Size = 1f}
+
+
+
+Definition at line 14 of file Options\+Area.\+cs.
+
+\mbox{\Hypertarget{class_options_area_a8e365fbd3aa90685b71aaff67b14797f}\label{class_options_area_a8e365fbd3aa90685b71aaff67b14797f}} 
+\index{Options\+Area@{Options\+Area}!m\+\_\+f\+My\+Focus@{m\+\_\+f\+My\+Focus}}
+\index{m\+\_\+f\+My\+Focus@{m\+\_\+f\+My\+Focus}!Options\+Area@{Options\+Area}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+My\+Focus}{m\_fMyFocus}}
+{\footnotesize\ttfamily float Options\+Area.\+m\+\_\+f\+My\+Focus = 1f}
+
+
+
+Definition at line 13 of file Options\+Area.\+cs.
+
+\mbox{\Hypertarget{class_options_area_a4cb4df1c8c9977349692d75b6f16a018}\label{class_options_area_a4cb4df1c8c9977349692d75b6f16a018}} 
+\index{Options\+Area@{Options\+Area}!m\+\_\+f\+Open\+Wait@{m\+\_\+f\+Open\+Wait}}
+\index{m\+\_\+f\+Open\+Wait@{m\+\_\+f\+Open\+Wait}!Options\+Area@{Options\+Area}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Open\+Wait}{m\_fOpenWait}}
+{\footnotesize\ttfamily float Options\+Area.\+m\+\_\+f\+Open\+Wait = 1f}
+
+
+
+Definition at line 19 of file Options\+Area.\+cs.
+
+\mbox{\Hypertarget{class_options_area_a8c0394c87bffd811c9abc33c532878c2}\label{class_options_area_a8c0394c87bffd811c9abc33c532878c2}} 
+\index{Options\+Area@{Options\+Area}!m\+\_\+f\+Start\+Diff@{m\+\_\+f\+Start\+Diff}}
+\index{m\+\_\+f\+Start\+Diff@{m\+\_\+f\+Start\+Diff}!Options\+Area@{Options\+Area}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Start\+Diff}{m\_fStartDiff}}
+{\footnotesize\ttfamily float Options\+Area.\+m\+\_\+f\+Start\+Diff = 0.\+2f}
+
+
+
+Definition at line 20 of file Options\+Area.\+cs.
+
+\mbox{\Hypertarget{class_options_area_a8c9824e0ef97f503a011f8a00811f7c0}\label{class_options_area_a8c9824e0ef97f503a011f8a00811f7c0}} 
+\index{Options\+Area@{Options\+Area}!m\+\_\+l\+Options\+Layer@{m\+\_\+l\+Options\+Layer}}
+\index{m\+\_\+l\+Options\+Layer@{m\+\_\+l\+Options\+Layer}!Options\+Area@{Options\+Area}}
+\subsubsection{\texorpdfstring{m\+\_\+l\+Options\+Layer}{m\_lOptionsLayer}}
+{\footnotesize\ttfamily Layer\+Mask Options\+Area.\+m\+\_\+l\+Options\+Layer}
+
+
+
+Definition at line 21 of file Options\+Area.\+cs.
+
+\mbox{\Hypertarget{class_options_area_a7aa5c91471e3a5bcdbf0e38e3be8cacc}\label{class_options_area_a7aa5c91471e3a5bcdbf0e38e3be8cacc}} 
+\index{Options\+Area@{Options\+Area}!m\+\_\+t\+Look\+Point@{m\+\_\+t\+Look\+Point}}
+\index{m\+\_\+t\+Look\+Point@{m\+\_\+t\+Look\+Point}!Options\+Area@{Options\+Area}}
+\subsubsection{\texorpdfstring{m\+\_\+t\+Look\+Point}{m\_tLookPoint}}
+{\footnotesize\ttfamily Transform Options\+Area.\+m\+\_\+t\+Look\+Point}
+
+
+
+Definition at line 12 of file Options\+Area.\+cs.
+
+\mbox{\Hypertarget{class_options_area_a1de4aba313b17d844664ea81e7fec4bb}\label{class_options_area_a1de4aba313b17d844664ea81e7fec4bb}} 
+\index{Options\+Area@{Options\+Area}!m\+\_\+t\+Move\+Point@{m\+\_\+t\+Move\+Point}}
+\index{m\+\_\+t\+Move\+Point@{m\+\_\+t\+Move\+Point}!Options\+Area@{Options\+Area}}
+\subsubsection{\texorpdfstring{m\+\_\+t\+Move\+Point}{m\_tMovePoint}}
+{\footnotesize\ttfamily Transform Options\+Area.\+m\+\_\+t\+Move\+Point}
+
+
+
+Definition at line 11 of file Options\+Area.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Menu/\mbox{\hyperlink{_options_area_8cs}{Options\+Area.\+cs}}\end{DoxyCompactItemize}

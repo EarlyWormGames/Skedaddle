@@ -1,0 +1,297 @@
+\hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim}{}\section{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Aim Class Reference}
+\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim}\index{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Aim@{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Aim}}
+
+
+Rotates a hierarchy of bones to make a Transform aim at a target. If there are problems with continuity and the solver get\textquotesingle{}s jumpy, make sure to keep I\+K\+Position at a safe distance from the transform and try decreasing solver and bone weights.  
+
+
+Inheritance diagram for Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Aim\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_a2c2dd7833dfbe068e128b4f43d60a518}{Get\+Angle}} ()
+\begin{DoxyCompactList}\small\item\em Gets the angular offset. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_ad6f81e751d6eec2cf869e5f58cf88447}{transform}}
+\begin{DoxyCompactList}\small\item\em The transform that we want to aim at I\+K\+Position. \end{DoxyCompactList}\item 
+Vector3 \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_ac1ffdbd44a0254be3d72828bc0bd11df}{axis}} = Vector3.\+forward
+\begin{DoxyCompactList}\small\item\em The local axis of the Transform that you want to be aimed at I\+K\+Position. \end{DoxyCompactList}\item 
+Vector3 \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_a811b744d5627bd7dfcb69ae08a4c97d7}{pole\+Axis}} = Vector3.\+up
+\begin{DoxyCompactList}\small\item\em Keeps that axis of the Aim Transform directed at the pole\+Position. \end{DoxyCompactList}\item 
+Vector3 \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_a5442b95ebced2ae6fe00b1deab40d424}{pole\+Position}}
+\begin{DoxyCompactList}\small\item\em The position in world space to keep the pole axis of the Aim Transform directed at. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_ae7f291710b7fcc0b68d54aa22fa6ce0a}{pole\+Weight}}
+\begin{DoxyCompactList}\small\item\em The weight of the Pole. \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_a5b48ef967484730e0be491a6049f784d}{pole\+Target}}
+\begin{DoxyCompactList}\small\item\em If assigned, will automatically set pole\+Position to the position of this Transform. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_a395cfdc5139757e70fb71f8d895f0a25}{clamp\+Weight}} = 0.\+1f
+\begin{DoxyCompactList}\small\item\em Clamping rotation of the solver. 0 is free rotation, 1 is completely clamped to transform axis. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_a5649fc7443e8a63e25216ca67f872301}{clamp\+Smoothing}} = 2
+\begin{DoxyCompactList}\small\item\em Number of sine smoothing iterations applied to clamping to make it smoother. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_ae3da6a8ccd8224ce56d15c4da5cd1ef7}{Iteration\+Delegate}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_ad224be6292bc0e6e01979d89ac2d5e11}{On\+Pre\+Iteration}}
+\begin{DoxyCompactList}\small\item\em Called before each iteration of the solver. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_ab758f8eb82d72511af5619e483d35f72}{On\+Initiate}} ()
+\item 
+override void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_a828674d8e72e508f17bd64a7404c430e}{On\+Update}} ()
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Vector3 \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_ada13db8445b9222b2bc50d7427c8fe2d}{transform\+Axis}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the Axis of the Aim\+Transform is world space. \end{DoxyCompactList}\item 
+Vector3 \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_a2131a40de8820e5f02dddfa4dc6305f2}{transform\+Pole\+Axis}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the Pole Axis of the Aim\+Transform is world space. \end{DoxyCompactList}\item 
+override int \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_a0dc837dae42f3d9f9a7e1fcc19a8df20}{min\+Bones}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+override Vector3 \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_aea84fc8bfd53afc1070e0dd1f9b8148a}{local\+Direction}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Rotates a hierarchy of bones to make a Transform aim at a target. If there are problems with continuity and the solver get\textquotesingle{}s jumpy, make sure to keep I\+K\+Position at a safe distance from the transform and try decreasing solver and bone weights. 
+
+
+
+Definition at line 12 of file I\+K\+Solver\+Aim.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_a2c2dd7833dfbe068e128b4f43d60a518}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_a2c2dd7833dfbe068e128b4f43d60a518}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim}!Get\+Angle@{Get\+Angle}}
+\index{Get\+Angle@{Get\+Angle}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim}}
+\subsubsection{\texorpdfstring{Get\+Angle()}{GetAngle()}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Aim.\+Get\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the angular offset. 
+
+
+
+Definition at line 55 of file I\+K\+Solver\+Aim.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_ab758f8eb82d72511af5619e483d35f72}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_ab758f8eb82d72511af5619e483d35f72}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim}!On\+Initiate@{On\+Initiate}}
+\index{On\+Initiate@{On\+Initiate}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim}}
+\subsubsection{\texorpdfstring{On\+Initiate()}{OnInitiate()}}
+{\footnotesize\ttfamily override void Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Aim.\+On\+Initiate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a2a8cbf1dfed274fdbc79ff011c468cc6}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver}}.
+
+
+
+Definition at line 84 of file I\+K\+Solver\+Aim.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_a828674d8e72e508f17bd64a7404c430e}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_a828674d8e72e508f17bd64a7404c430e}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim}!On\+Update@{On\+Update}}
+\index{On\+Update@{On\+Update}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim}}
+\subsubsection{\texorpdfstring{On\+Update()}{OnUpdate()}}
+{\footnotesize\ttfamily override void Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Aim.\+On\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_a3bbcc10c91d82ac266dadc63ea93171d}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver}}.
+
+
+
+Definition at line 99 of file I\+K\+Solver\+Aim.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_ac1ffdbd44a0254be3d72828bc0bd11df}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_ac1ffdbd44a0254be3d72828bc0bd11df}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim}!axis@{axis}}
+\index{axis@{axis}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim}}
+\subsubsection{\texorpdfstring{axis}{axis}}
+{\footnotesize\ttfamily Vector3 Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Aim.\+axis = Vector3.\+forward}
+
+
+
+The local axis of the Transform that you want to be aimed at I\+K\+Position. 
+
+
+
+Definition at line 23 of file I\+K\+Solver\+Aim.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_a5649fc7443e8a63e25216ca67f872301}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_a5649fc7443e8a63e25216ca67f872301}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim}!clamp\+Smoothing@{clamp\+Smoothing}}
+\index{clamp\+Smoothing@{clamp\+Smoothing}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim}}
+\subsubsection{\texorpdfstring{clamp\+Smoothing}{clampSmoothing}}
+{\footnotesize\ttfamily int Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Aim.\+clamp\+Smoothing = 2}
+
+
+
+Number of sine smoothing iterations applied to clamping to make it smoother. 
+
+
+
+Definition at line 50 of file I\+K\+Solver\+Aim.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_a395cfdc5139757e70fb71f8d895f0a25}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_a395cfdc5139757e70fb71f8d895f0a25}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim}!clamp\+Weight@{clamp\+Weight}}
+\index{clamp\+Weight@{clamp\+Weight}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim}}
+\subsubsection{\texorpdfstring{clamp\+Weight}{clampWeight}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Aim.\+clamp\+Weight = 0.\+1f}
+
+
+
+Clamping rotation of the solver. 0 is free rotation, 1 is completely clamped to transform axis. 
+
+
+
+Definition at line 45 of file I\+K\+Solver\+Aim.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_ad224be6292bc0e6e01979d89ac2d5e11}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_ad224be6292bc0e6e01979d89ac2d5e11}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim}!On\+Pre\+Iteration@{On\+Pre\+Iteration}}
+\index{On\+Pre\+Iteration@{On\+Pre\+Iteration}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim}}
+\subsubsection{\texorpdfstring{On\+Pre\+Iteration}{OnPreIteration}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_ae3da6a8ccd8224ce56d15c4da5cd1ef7}{Iteration\+Delegate}} Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Aim.\+On\+Pre\+Iteration}
+
+
+
+Called before each iteration of the solver. 
+
+
+
+Definition at line 80 of file I\+K\+Solver\+Aim.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_a811b744d5627bd7dfcb69ae08a4c97d7}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_a811b744d5627bd7dfcb69ae08a4c97d7}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim}!pole\+Axis@{pole\+Axis}}
+\index{pole\+Axis@{pole\+Axis}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim}}
+\subsubsection{\texorpdfstring{pole\+Axis}{poleAxis}}
+{\footnotesize\ttfamily Vector3 Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Aim.\+pole\+Axis = Vector3.\+up}
+
+
+
+Keeps that axis of the Aim Transform directed at the pole\+Position. 
+
+
+
+Definition at line 27 of file I\+K\+Solver\+Aim.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_a5442b95ebced2ae6fe00b1deab40d424}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_a5442b95ebced2ae6fe00b1deab40d424}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim}!pole\+Position@{pole\+Position}}
+\index{pole\+Position@{pole\+Position}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim}}
+\subsubsection{\texorpdfstring{pole\+Position}{polePosition}}
+{\footnotesize\ttfamily Vector3 Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Aim.\+pole\+Position}
+
+
+
+The position in world space to keep the pole axis of the Aim Transform directed at. 
+
+
+
+Definition at line 31 of file I\+K\+Solver\+Aim.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_a5b48ef967484730e0be491a6049f784d}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_a5b48ef967484730e0be491a6049f784d}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim}!pole\+Target@{pole\+Target}}
+\index{pole\+Target@{pole\+Target}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim}}
+\subsubsection{\texorpdfstring{pole\+Target}{poleTarget}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Aim.\+pole\+Target}
+
+
+
+If assigned, will automatically set pole\+Position to the position of this Transform. 
+
+
+
+Definition at line 40 of file I\+K\+Solver\+Aim.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_ae7f291710b7fcc0b68d54aa22fa6ce0a}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_ae7f291710b7fcc0b68d54aa22fa6ce0a}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim}!pole\+Weight@{pole\+Weight}}
+\index{pole\+Weight@{pole\+Weight}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim}}
+\subsubsection{\texorpdfstring{pole\+Weight}{poleWeight}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Aim.\+pole\+Weight}
+
+
+
+The weight of the Pole. 
+
+
+
+Definition at line 36 of file I\+K\+Solver\+Aim.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_ad6f81e751d6eec2cf869e5f58cf88447}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_ad6f81e751d6eec2cf869e5f58cf88447}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim}!transform@{transform}}
+\index{transform@{transform}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim}}
+\subsubsection{\texorpdfstring{transform}{transform}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Aim.\+transform}
+
+
+
+The transform that we want to aim at I\+K\+Position. 
+
+
+
+Definition at line 19 of file I\+K\+Solver\+Aim.\+cs.
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_aea84fc8bfd53afc1070e0dd1f9b8148a}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_aea84fc8bfd53afc1070e0dd1f9b8148a}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim}!local\+Direction@{local\+Direction}}
+\index{local\+Direction@{local\+Direction}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim}}
+\subsubsection{\texorpdfstring{local\+Direction}{localDirection}}
+{\footnotesize\ttfamily override Vector3 Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Aim.\+local\+Direction\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 257 of file I\+K\+Solver\+Aim.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_a0dc837dae42f3d9f9a7e1fcc19a8df20}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_a0dc837dae42f3d9f9a7e1fcc19a8df20}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim}!min\+Bones@{min\+Bones}}
+\index{min\+Bones@{min\+Bones}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim}}
+\subsubsection{\texorpdfstring{min\+Bones}{minBones}}
+{\footnotesize\ttfamily override int Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Aim.\+min\+Bones\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 156 of file I\+K\+Solver\+Aim.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_ada13db8445b9222b2bc50d7427c8fe2d}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_ada13db8445b9222b2bc50d7427c8fe2d}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim}!transform\+Axis@{transform\+Axis}}
+\index{transform\+Axis@{transform\+Axis}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim}}
+\subsubsection{\texorpdfstring{transform\+Axis}{transformAxis}}
+{\footnotesize\ttfamily Vector3 Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Aim.\+transform\+Axis\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the Axis of the Aim\+Transform is world space. 
+
+
+
+Definition at line 62 of file I\+K\+Solver\+Aim.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_a2131a40de8820e5f02dddfa4dc6305f2}\label{class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim_a2131a40de8820e5f02dddfa4dc6305f2}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim}!transform\+Pole\+Axis@{transform\+Pole\+Axis}}
+\index{transform\+Pole\+Axis@{transform\+Pole\+Axis}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Solver\+Aim}}
+\subsubsection{\texorpdfstring{transform\+Pole\+Axis}{transformPoleAxis}}
+{\footnotesize\ttfamily Vector3 Root\+Motion.\+Final\+I\+K.\+I\+K\+Solver\+Aim.\+transform\+Pole\+Axis\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the Pole Axis of the Aim\+Transform is world space. 
+
+
+
+Definition at line 71 of file I\+K\+Solver\+Aim.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Plugins/\+Root\+Motion/\+Final\+I\+K/\+I\+K Solvers/\mbox{\hyperlink{_i_k_solver_aim_8cs}{I\+K\+Solver\+Aim.\+cs}}\end{DoxyCompactItemize}

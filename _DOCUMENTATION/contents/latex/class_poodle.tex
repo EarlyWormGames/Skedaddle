@@ -1,0 +1,355 @@
+\hypertarget{class_poodle}{}\section{Poodle Class Reference}
+\label{class_poodle}\index{Poodle@{Poodle}}
+Inheritance diagram for Poodle\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_poodle}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_poodle_a57d0ab14cdd7ac693e010ca42fe52a6e}{On\+Select\+Change}} ()
+\item 
+void \mbox{\hyperlink{class_poodle_aea810427376cee41f4e99fc020c50d70}{Pickup\+Loris}} (\mbox{\hyperlink{class_loris}{Loris}} loris)
+\item 
+void \mbox{\hyperlink{class_poodle_a5e80c74cffb2d8235abf064eb729bfec}{Drop\+Loris}} ()
+\item 
+override void \mbox{\hyperlink{class_poodle_a5c281a37883590cab7ffd1bd361e4eac}{On\+Push\+Change}} ()
+\item 
+override float \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_poodle_afded59108342a9d5c41b91305911752b}{Calculate\+Move\+Speed}} ()
+\item 
+override bool \mbox{\hyperlink{class_poodle_a1176b4dc1a07c88c75498f4fc80aba4a}{Can\+Attach}} ()
+\begin{DoxyCompactList}\small\item\em Check if this object can attach to an interactable \end{DoxyCompactList}\item 
+override \mbox{\hyperlink{_animal_8cs_a2fa5713399b84d1b88dae9196837af50}{A\+N\+I\+M\+A\+L\+\_\+\+N\+A\+ME}} \mbox{\hyperlink{class_poodle_a4aa6f80707dff1497fa00f855e28435e}{Get\+Name}} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_poodle_a66af4f17ace4a85c5280b7692a26fa0c}{m\+\_\+f\+Pelvis\+Correction\+Dampening}} = 1
+\item 
+float \mbox{\hyperlink{class_poodle_a134048ef3ba7ed3b67ca48822925c64c}{m\+\_\+f\+Push\+Force}}
+\item 
+float \mbox{\hyperlink{class_poodle_a09afc8011fdd8762fe83e4c56796d75a}{m\+\_\+\+I\+K\+Ledge\+Blend}}
+\item 
+float \mbox{\hyperlink{class_poodle_a4001bc9e52ae2ea7ae9e8af49baf1b48}{m\+\_\+f\+I\+K\+Dampen}} = 1
+\item 
+bool \mbox{\hyperlink{class_poodle_af814dd8bc3a241f977fcc3cd6f4e81d7}{m\+\_\+b\+I\+K\+Animation\+Fix}}
+\item 
+float \mbox{\hyperlink{class_poodle_a673508ffb04736432dbacf012f3ca0ef}{m\+\_\+\+Run\+Buffer}} = 2f
+\item 
+float \mbox{\hyperlink{class_poodle_acba2d379c3793b44fda2ea6b5dc45202}{m\+\_\+f\+Run\+Speed\+Mult}} = 1.\+5f
+\item 
+Vector3 \mbox{\hyperlink{class_poodle_ab04d1e89fcda03d28adc20257e7eb91d}{Box\+Cast\+Size}} = Vector3.\+one
+\item 
+float \mbox{\hyperlink{class_poodle_a8ce5f871336e0b20db5e56f59044cf2e}{Box\+Cast\+Distance}} = 1
+\item 
+float \mbox{\hyperlink{class_poodle_a8f3004f4bdff69af0fac2ee8bd0646cd}{Box\+Cast\+Y\+\_\+\+Offset}}
+\item 
+Transform \mbox{\hyperlink{class_poodle_a75a53eff0fa4c18603e09edf63ffbbf6}{Loris\+Holder}}
+\item 
+Layer\+Mask \mbox{\hyperlink{class_poodle_a3b1ec14dd7f47087bc37e16fadd568a4}{Loris\+Check\+Layer}}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_poodle_ac1de5bc05d00449271365b51f90ef80f}{On\+Awake}} ()
+\item 
+override void \mbox{\hyperlink{class_poodle_a48df28b8984d812658dae3516e9e421a}{On\+Update}} ()
+\item 
+override void \mbox{\hyperlink{class_poodle_a43c5147cedef40592b077814bffda480}{On\+Fixed\+Update}} ()
+\item 
+override void \mbox{\hyperlink{class_poodle_a86cc87a183e2b7b2297d9481c2c0d416}{On\+Death}} (\mbox{\hyperlink{_animal_8cs_aa09ea87b75a706096f010aef7b9b1826}{D\+E\+A\+T\+H\+\_\+\+T\+Y\+PE}} a\+\_\+type)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 5 of file Poodle.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_poodle_afded59108342a9d5c41b91305911752b}\label{class_poodle_afded59108342a9d5c41b91305911752b}} 
+\index{Poodle@{Poodle}!Calculate\+Move\+Speed@{Calculate\+Move\+Speed}}
+\index{Calculate\+Move\+Speed@{Calculate\+Move\+Speed}!Poodle@{Poodle}}
+\subsubsection{\texorpdfstring{Calculate\+Move\+Speed()}{CalculateMoveSpeed()}}
+{\footnotesize\ttfamily override float \mbox{[}$\,$\mbox{]} Poodle.\+Calculate\+Move\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_animal_ad1033798d72c010a822937be75c5bdde}{Animal}}.
+
+
+
+Definition at line 347 of file Poodle.\+cs.
+
+\mbox{\Hypertarget{class_poodle_a1176b4dc1a07c88c75498f4fc80aba4a}\label{class_poodle_a1176b4dc1a07c88c75498f4fc80aba4a}} 
+\index{Poodle@{Poodle}!Can\+Attach@{Can\+Attach}}
+\index{Can\+Attach@{Can\+Attach}!Poodle@{Poodle}}
+\subsubsection{\texorpdfstring{Can\+Attach()}{CanAttach()}}
+{\footnotesize\ttfamily override bool Poodle.\+Can\+Attach (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Check if this object can attach to an interactable 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_animal_a4809045a8807c4b2e0d7569b806740ee}{Animal}}.
+
+
+
+Definition at line 378 of file Poodle.\+cs.
+
+\mbox{\Hypertarget{class_poodle_a5e80c74cffb2d8235abf064eb729bfec}\label{class_poodle_a5e80c74cffb2d8235abf064eb729bfec}} 
+\index{Poodle@{Poodle}!Drop\+Loris@{Drop\+Loris}}
+\index{Drop\+Loris@{Drop\+Loris}!Poodle@{Poodle}}
+\subsubsection{\texorpdfstring{Drop\+Loris()}{DropLoris()}}
+{\footnotesize\ttfamily void Poodle.\+Drop\+Loris (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 285 of file Poodle.\+cs.
+
+\mbox{\Hypertarget{class_poodle_a4aa6f80707dff1497fa00f855e28435e}\label{class_poodle_a4aa6f80707dff1497fa00f855e28435e}} 
+\index{Poodle@{Poodle}!Get\+Name@{Get\+Name}}
+\index{Get\+Name@{Get\+Name}!Poodle@{Poodle}}
+\subsubsection{\texorpdfstring{Get\+Name()}{GetName()}}
+{\footnotesize\ttfamily override \mbox{\hyperlink{_animal_8cs_a2fa5713399b84d1b88dae9196837af50}{A\+N\+I\+M\+A\+L\+\_\+\+N\+A\+ME}} Poodle.\+Get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_animal_ab66ea3e3cb15a2b236ba9ba4d589ca69}{Animal}}.
+
+
+
+Definition at line 383 of file Poodle.\+cs.
+
+\mbox{\Hypertarget{class_poodle_ac1de5bc05d00449271365b51f90ef80f}\label{class_poodle_ac1de5bc05d00449271365b51f90ef80f}} 
+\index{Poodle@{Poodle}!On\+Awake@{On\+Awake}}
+\index{On\+Awake@{On\+Awake}!Poodle@{Poodle}}
+\subsubsection{\texorpdfstring{On\+Awake()}{OnAwake()}}
+{\footnotesize\ttfamily override void Poodle.\+On\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_animal_a8ed14f752254b7033466bbd0c846a972}{Animal}}.
+
+
+
+Definition at line 47 of file Poodle.\+cs.
+
+\mbox{\Hypertarget{class_poodle_a86cc87a183e2b7b2297d9481c2c0d416}\label{class_poodle_a86cc87a183e2b7b2297d9481c2c0d416}} 
+\index{Poodle@{Poodle}!On\+Death@{On\+Death}}
+\index{On\+Death@{On\+Death}!Poodle@{Poodle}}
+\subsubsection{\texorpdfstring{On\+Death()}{OnDeath()}}
+{\footnotesize\ttfamily override void Poodle.\+On\+Death (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_animal_8cs_aa09ea87b75a706096f010aef7b9b1826}{D\+E\+A\+T\+H\+\_\+\+T\+Y\+PE}}}]{a\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_animal_a86612d846fcd1fcf08f7b89586aa11b7}{Animal}}.
+
+
+
+Definition at line 337 of file Poodle.\+cs.
+
+\mbox{\Hypertarget{class_poodle_a43c5147cedef40592b077814bffda480}\label{class_poodle_a43c5147cedef40592b077814bffda480}} 
+\index{Poodle@{Poodle}!On\+Fixed\+Update@{On\+Fixed\+Update}}
+\index{On\+Fixed\+Update@{On\+Fixed\+Update}!Poodle@{Poodle}}
+\subsubsection{\texorpdfstring{On\+Fixed\+Update()}{OnFixedUpdate()}}
+{\footnotesize\ttfamily override void Poodle.\+On\+Fixed\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_animal_aebce764681f2a949d72b80766beb0752}{Animal}}.
+
+
+
+Definition at line 311 of file Poodle.\+cs.
+
+\mbox{\Hypertarget{class_poodle_a5c281a37883590cab7ffd1bd361e4eac}\label{class_poodle_a5c281a37883590cab7ffd1bd361e4eac}} 
+\index{Poodle@{Poodle}!On\+Push\+Change@{On\+Push\+Change}}
+\index{On\+Push\+Change@{On\+Push\+Change}!Poodle@{Poodle}}
+\subsubsection{\texorpdfstring{On\+Push\+Change()}{OnPushChange()}}
+{\footnotesize\ttfamily override void Poodle.\+On\+Push\+Change (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_animal_a001734bbca74a2240ab30be09746ecd1}{Animal}}.
+
+
+
+Definition at line 296 of file Poodle.\+cs.
+
+\mbox{\Hypertarget{class_poodle_a57d0ab14cdd7ac693e010ca42fe52a6e}\label{class_poodle_a57d0ab14cdd7ac693e010ca42fe52a6e}} 
+\index{Poodle@{Poodle}!On\+Select\+Change@{On\+Select\+Change}}
+\index{On\+Select\+Change@{On\+Select\+Change}!Poodle@{Poodle}}
+\subsubsection{\texorpdfstring{On\+Select\+Change()}{OnSelectChange()}}
+{\footnotesize\ttfamily override void Poodle.\+On\+Select\+Change (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_animal_a10f83b51d56e077b400cf6b81b8f9aed}{Animal}}.
+
+
+
+Definition at line 54 of file Poodle.\+cs.
+
+\mbox{\Hypertarget{class_poodle_a48df28b8984d812658dae3516e9e421a}\label{class_poodle_a48df28b8984d812658dae3516e9e421a}} 
+\index{Poodle@{Poodle}!On\+Update@{On\+Update}}
+\index{On\+Update@{On\+Update}!Poodle@{Poodle}}
+\subsubsection{\texorpdfstring{On\+Update()}{OnUpdate()}}
+{\footnotesize\ttfamily override void Poodle.\+On\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_animal_a0b0cf85dbc03ad6ed1878e90c2ac84b1}{Animal}}.
+
+
+
+Definition at line 69 of file Poodle.\+cs.
+
+\mbox{\Hypertarget{class_poodle_aea810427376cee41f4e99fc020c50d70}\label{class_poodle_aea810427376cee41f4e99fc020c50d70}} 
+\index{Poodle@{Poodle}!Pickup\+Loris@{Pickup\+Loris}}
+\index{Pickup\+Loris@{Pickup\+Loris}!Poodle@{Poodle}}
+\subsubsection{\texorpdfstring{Pickup\+Loris()}{PickupLoris()}}
+{\footnotesize\ttfamily void Poodle.\+Pickup\+Loris (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_loris}{Loris}}}]{loris }\end{DoxyParamCaption})}
+
+
+
+Definition at line 263 of file Poodle.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_poodle_a8ce5f871336e0b20db5e56f59044cf2e}\label{class_poodle_a8ce5f871336e0b20db5e56f59044cf2e}} 
+\index{Poodle@{Poodle}!Box\+Cast\+Distance@{Box\+Cast\+Distance}}
+\index{Box\+Cast\+Distance@{Box\+Cast\+Distance}!Poodle@{Poodle}}
+\subsubsection{\texorpdfstring{Box\+Cast\+Distance}{BoxCastDistance}}
+{\footnotesize\ttfamily float Poodle.\+Box\+Cast\+Distance = 1}
+
+
+
+Definition at line 25 of file Poodle.\+cs.
+
+\mbox{\Hypertarget{class_poodle_ab04d1e89fcda03d28adc20257e7eb91d}\label{class_poodle_ab04d1e89fcda03d28adc20257e7eb91d}} 
+\index{Poodle@{Poodle}!Box\+Cast\+Size@{Box\+Cast\+Size}}
+\index{Box\+Cast\+Size@{Box\+Cast\+Size}!Poodle@{Poodle}}
+\subsubsection{\texorpdfstring{Box\+Cast\+Size}{BoxCastSize}}
+{\footnotesize\ttfamily Vector3 Poodle.\+Box\+Cast\+Size = Vector3.\+one}
+
+
+
+Definition at line 23 of file Poodle.\+cs.
+
+\mbox{\Hypertarget{class_poodle_a8f3004f4bdff69af0fac2ee8bd0646cd}\label{class_poodle_a8f3004f4bdff69af0fac2ee8bd0646cd}} 
+\index{Poodle@{Poodle}!Box\+Cast\+Y\+\_\+\+Offset@{Box\+Cast\+Y\+\_\+\+Offset}}
+\index{Box\+Cast\+Y\+\_\+\+Offset@{Box\+Cast\+Y\+\_\+\+Offset}!Poodle@{Poodle}}
+\subsubsection{\texorpdfstring{Box\+Cast\+Y\+\_\+\+Offset}{BoxCastY\_Offset}}
+{\footnotesize\ttfamily float Poodle.\+Box\+Cast\+Y\+\_\+\+Offset}
+
+
+
+Definition at line 26 of file Poodle.\+cs.
+
+\mbox{\Hypertarget{class_poodle_a3b1ec14dd7f47087bc37e16fadd568a4}\label{class_poodle_a3b1ec14dd7f47087bc37e16fadd568a4}} 
+\index{Poodle@{Poodle}!Loris\+Check\+Layer@{Loris\+Check\+Layer}}
+\index{Loris\+Check\+Layer@{Loris\+Check\+Layer}!Poodle@{Poodle}}
+\subsubsection{\texorpdfstring{Loris\+Check\+Layer}{LorisCheckLayer}}
+{\footnotesize\ttfamily Layer\+Mask Poodle.\+Loris\+Check\+Layer}
+
+
+
+Definition at line 28 of file Poodle.\+cs.
+
+\mbox{\Hypertarget{class_poodle_a75a53eff0fa4c18603e09edf63ffbbf6}\label{class_poodle_a75a53eff0fa4c18603e09edf63ffbbf6}} 
+\index{Poodle@{Poodle}!Loris\+Holder@{Loris\+Holder}}
+\index{Loris\+Holder@{Loris\+Holder}!Poodle@{Poodle}}
+\subsubsection{\texorpdfstring{Loris\+Holder}{LorisHolder}}
+{\footnotesize\ttfamily Transform Poodle.\+Loris\+Holder}
+
+
+
+Definition at line 27 of file Poodle.\+cs.
+
+\mbox{\Hypertarget{class_poodle_af814dd8bc3a241f977fcc3cd6f4e81d7}\label{class_poodle_af814dd8bc3a241f977fcc3cd6f4e81d7}} 
+\index{Poodle@{Poodle}!m\+\_\+b\+I\+K\+Animation\+Fix@{m\+\_\+b\+I\+K\+Animation\+Fix}}
+\index{m\+\_\+b\+I\+K\+Animation\+Fix@{m\+\_\+b\+I\+K\+Animation\+Fix}!Poodle@{Poodle}}
+\subsubsection{\texorpdfstring{m\+\_\+b\+I\+K\+Animation\+Fix}{m\_bIKAnimationFix}}
+{\footnotesize\ttfamily bool Poodle.\+m\+\_\+b\+I\+K\+Animation\+Fix}
+
+
+
+Definition at line 16 of file Poodle.\+cs.
+
+\mbox{\Hypertarget{class_poodle_a4001bc9e52ae2ea7ae9e8af49baf1b48}\label{class_poodle_a4001bc9e52ae2ea7ae9e8af49baf1b48}} 
+\index{Poodle@{Poodle}!m\+\_\+f\+I\+K\+Dampen@{m\+\_\+f\+I\+K\+Dampen}}
+\index{m\+\_\+f\+I\+K\+Dampen@{m\+\_\+f\+I\+K\+Dampen}!Poodle@{Poodle}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+I\+K\+Dampen}{m\_fIKDampen}}
+{\footnotesize\ttfamily float Poodle.\+m\+\_\+f\+I\+K\+Dampen = 1}
+
+
+
+Definition at line 14 of file Poodle.\+cs.
+
+\mbox{\Hypertarget{class_poodle_a66af4f17ace4a85c5280b7692a26fa0c}\label{class_poodle_a66af4f17ace4a85c5280b7692a26fa0c}} 
+\index{Poodle@{Poodle}!m\+\_\+f\+Pelvis\+Correction\+Dampening@{m\+\_\+f\+Pelvis\+Correction\+Dampening}}
+\index{m\+\_\+f\+Pelvis\+Correction\+Dampening@{m\+\_\+f\+Pelvis\+Correction\+Dampening}!Poodle@{Poodle}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Pelvis\+Correction\+Dampening}{m\_fPelvisCorrectionDampening}}
+{\footnotesize\ttfamily float Poodle.\+m\+\_\+f\+Pelvis\+Correction\+Dampening = 1}
+
+
+
+Definition at line 11 of file Poodle.\+cs.
+
+\mbox{\Hypertarget{class_poodle_a134048ef3ba7ed3b67ca48822925c64c}\label{class_poodle_a134048ef3ba7ed3b67ca48822925c64c}} 
+\index{Poodle@{Poodle}!m\+\_\+f\+Push\+Force@{m\+\_\+f\+Push\+Force}}
+\index{m\+\_\+f\+Push\+Force@{m\+\_\+f\+Push\+Force}!Poodle@{Poodle}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Push\+Force}{m\_fPushForce}}
+{\footnotesize\ttfamily float Poodle.\+m\+\_\+f\+Push\+Force}
+
+
+
+Definition at line 12 of file Poodle.\+cs.
+
+\mbox{\Hypertarget{class_poodle_acba2d379c3793b44fda2ea6b5dc45202}\label{class_poodle_acba2d379c3793b44fda2ea6b5dc45202}} 
+\index{Poodle@{Poodle}!m\+\_\+f\+Run\+Speed\+Mult@{m\+\_\+f\+Run\+Speed\+Mult}}
+\index{m\+\_\+f\+Run\+Speed\+Mult@{m\+\_\+f\+Run\+Speed\+Mult}!Poodle@{Poodle}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Run\+Speed\+Mult}{m\_fRunSpeedMult}}
+{\footnotesize\ttfamily float Poodle.\+m\+\_\+f\+Run\+Speed\+Mult = 1.\+5f}
+
+
+
+Definition at line 19 of file Poodle.\+cs.
+
+\mbox{\Hypertarget{class_poodle_a09afc8011fdd8762fe83e4c56796d75a}\label{class_poodle_a09afc8011fdd8762fe83e4c56796d75a}} 
+\index{Poodle@{Poodle}!m\+\_\+\+I\+K\+Ledge\+Blend@{m\+\_\+\+I\+K\+Ledge\+Blend}}
+\index{m\+\_\+\+I\+K\+Ledge\+Blend@{m\+\_\+\+I\+K\+Ledge\+Blend}!Poodle@{Poodle}}
+\subsubsection{\texorpdfstring{m\+\_\+\+I\+K\+Ledge\+Blend}{m\_IKLedgeBlend}}
+{\footnotesize\ttfamily float Poodle.\+m\+\_\+\+I\+K\+Ledge\+Blend}
+
+
+
+Definition at line 13 of file Poodle.\+cs.
+
+\mbox{\Hypertarget{class_poodle_a673508ffb04736432dbacf012f3ca0ef}\label{class_poodle_a673508ffb04736432dbacf012f3ca0ef}} 
+\index{Poodle@{Poodle}!m\+\_\+\+Run\+Buffer@{m\+\_\+\+Run\+Buffer}}
+\index{m\+\_\+\+Run\+Buffer@{m\+\_\+\+Run\+Buffer}!Poodle@{Poodle}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Run\+Buffer}{m\_RunBuffer}}
+{\footnotesize\ttfamily float Poodle.\+m\+\_\+\+Run\+Buffer = 2f}
+
+
+
+Definition at line 18 of file Poodle.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Animal/\mbox{\hyperlink{_poodle_8cs}{Poodle.\+cs}}\end{DoxyCompactItemize}

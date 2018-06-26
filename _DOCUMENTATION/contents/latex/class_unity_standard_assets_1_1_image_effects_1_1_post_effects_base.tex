@@ -1,0 +1,207 @@
+\hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base}{}\section{Unity\+Standard\+Assets.\+Image\+Effects.\+Post\+Effects\+Base Class Reference}
+\label{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base}\index{Unity\+Standard\+Assets.\+Image\+Effects.\+Post\+Effects\+Base@{Unity\+Standard\+Assets.\+Image\+Effects.\+Post\+Effects\+Base}}
+Inheritance diagram for Unity\+Standard\+Assets.\+Image\+Effects.\+Post\+Effects\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_a8866612b25b7158b932efd3b832188f8}{Check\+Resources}} ()
+\item 
+bool \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_a0843db7636c8937b5496045ca5f99b2a}{Dx11\+Support}} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Material \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_aaf026c79c57ca6862aab5d0fd0aa6cc6}{Check\+Shader\+And\+Create\+Material}} (Shader s, Material m2\+Create)
+\item 
+Material \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_a094b34a919f4464b894a5645feb5e97d}{Create\+Material}} (Shader s, Material m2\+Create)
+\item 
+bool \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_ad8aac442bf04a0767c8060bbd290ecee}{Check\+Support}} ()
+\item 
+void \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_a701b58ca625f3920f128f850235007f8}{Start}} ()
+\item 
+bool \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_aaa6ffafa1623a2716c0c80118a5c46ea}{Check\+Support}} (bool need\+Depth)
+\item 
+bool \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_a52ae735f5a89cf323b9f33b2115f3520}{Check\+Support}} (bool need\+Depth, bool need\+Hdr)
+\item 
+void \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_ab5e0ddeb8eef7651c566d78c9b3b0d4b}{Report\+Auto\+Disable}} ()
+\item 
+void \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_a57dc8025f94e36483c53b482cd289d99}{Not\+Supported}} ()
+\item 
+void \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_a111dac8859a0c49146813131057b9630}{Draw\+Border}} (Render\+Texture dest, Material material)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_afe07c7112eeb27534eabb78239ef7613}{support\+H\+D\+R\+Textures}} = true
+\item 
+bool \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_ac75c4f2bba947de476c75a262822a24c}{support\+D\+X11}} = false
+\item 
+bool \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_a5084bc03b21b083a1ef01a9cbb5c1f37}{is\+Supported}} = true
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 8 of file Post\+Effects\+Base.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_a8866612b25b7158b932efd3b832188f8}\label{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_a8866612b25b7158b932efd3b832188f8}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base}!Check\+Resources@{Check\+Resources}}
+\index{Check\+Resources@{Check\+Resources}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base}}
+\subsubsection{\texorpdfstring{Check\+Resources()}{CheckResources()}}
+{\footnotesize\ttfamily virtual bool Unity\+Standard\+Assets.\+Image\+Effects.\+Post\+Effects\+Base.\+Check\+Resources (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_camera_motion_blur_a4d123b09d7f7ce64ff061fe228d01fca}{Unity\+Standard\+Assets.\+Image\+Effects.\+Camera\+Motion\+Blur}}, \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_depth_of_field_deprecated_a58771c7e642e157ab5967aed241c9c3d}{Unity\+Standard\+Assets.\+Image\+Effects.\+Depth\+Of\+Field\+Deprecated}}, \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_antialiasing_a9a152887fccdeaf69e9041c84fc42051}{Unity\+Standard\+Assets.\+Image\+Effects.\+Antialiasing}}, \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_bloom_ac5626c3769fbfaa55d651d22801e0017}{Unity\+Standard\+Assets.\+Image\+Effects.\+Bloom}}, \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_bloom_and_flares_a5f5645224068a6a5273f3617bbd73c63}{Unity\+Standard\+Assets.\+Image\+Effects.\+Bloom\+And\+Flares}}, \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_color_correction_curves_a502331f270ce998ece3592ca9ad0c156}{Unity\+Standard\+Assets.\+Image\+Effects.\+Color\+Correction\+Curves}}, \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_tonemapping_a2e9b0425c0f9ee9abe087130789ab8b8}{Unity\+Standard\+Assets.\+Image\+Effects.\+Tonemapping}}, \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_depth_of_field_a09a1b9c73fd7e06974c88090eff0b951}{Unity\+Standard\+Assets.\+Image\+Effects.\+Depth\+Of\+Field}}, \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_sun_shafts_a46ba317bea3182a8d6ff88a52744ff9c}{Unity\+Standard\+Assets.\+Image\+Effects.\+Sun\+Shafts}}, \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_bloom_optimized_acfddd1e3d1f02d7aa8abe96ba18da27f}{Unity\+Standard\+Assets.\+Image\+Effects.\+Bloom\+Optimized}}, \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_noise_and_grain_ab7994ccecddd5183487f9dfee8bf7ab5}{Unity\+Standard\+Assets.\+Image\+Effects.\+Noise\+And\+Grain}}, \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_tilt_shift_a6104d3359c6ded06aa89fba59ecf404e}{Unity\+Standard\+Assets.\+Image\+Effects.\+Tilt\+Shift}}, \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_vignette_and_chromatic_aberration_a7d939cec23cf992b53e3c17f0c730889}{Unity\+Standard\+Assets.\+Image\+Effects.\+Vignette\+And\+Chromatic\+Aberration}}, \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_ac72609e0a21d65869e4240c8511d8b83}{Unity\+Standard\+Assets.\+Image\+Effects.\+Edge\+Detection}}, \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_blur_optimized_a5d4870a78379d6dd5d74afcf5dbd79e5}{Unity\+Standard\+Assets.\+Image\+Effects.\+Blur\+Optimized}}, \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_global_fog_af644a7d78d3aef80dbc6faa274051776}{Unity\+Standard\+Assets.\+Image\+Effects.\+Global\+Fog}}, \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_screen_overlay_ad0235de5f915871090fa5789c43242a8}{Unity\+Standard\+Assets.\+Image\+Effects.\+Screen\+Overlay}}, \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_contrast_enhance_adfe9a436236fbb2df7edfbeaa7490406}{Unity\+Standard\+Assets.\+Image\+Effects.\+Contrast\+Enhance}}, \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_screen_space_ambient_obscurance_aa05dd1fc7e3faf1cee9c5bc09e840434}{Unity\+Standard\+Assets.\+Image\+Effects.\+Screen\+Space\+Ambient\+Obscurance}}, \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_crease_shading_a66866d2b64013cd8e1931a9d0e19f101}{Unity\+Standard\+Assets.\+Image\+Effects.\+Crease\+Shading}}, \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_fisheye_aab758a8fa12b52a196cec8cdd9e66c03}{Unity\+Standard\+Assets.\+Image\+Effects.\+Fisheye}}, and \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_color_correction_lookup_a509c6ad96fc5b0d58ac768c076bd84cf}{Unity\+Standard\+Assets.\+Image\+Effects.\+Color\+Correction\+Lookup}}.
+
+
+
+Definition at line 79 of file Post\+Effects\+Base.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_aaf026c79c57ca6862aab5d0fd0aa6cc6}\label{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_aaf026c79c57ca6862aab5d0fd0aa6cc6}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base}!Check\+Shader\+And\+Create\+Material@{Check\+Shader\+And\+Create\+Material}}
+\index{Check\+Shader\+And\+Create\+Material@{Check\+Shader\+And\+Create\+Material}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base}}
+\subsubsection{\texorpdfstring{Check\+Shader\+And\+Create\+Material()}{CheckShaderAndCreateMaterial()}}
+{\footnotesize\ttfamily Material Unity\+Standard\+Assets.\+Image\+Effects.\+Post\+Effects\+Base.\+Check\+Shader\+And\+Create\+Material (\begin{DoxyParamCaption}\item[{Shader}]{s,  }\item[{Material}]{m2\+Create }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 14 of file Post\+Effects\+Base.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_ad8aac442bf04a0767c8060bbd290ecee}\label{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_ad8aac442bf04a0767c8060bbd290ecee}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base}!Check\+Support@{Check\+Support}}
+\index{Check\+Support@{Check\+Support}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base}}
+\subsubsection{\texorpdfstring{Check\+Support()}{CheckSupport()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool Unity\+Standard\+Assets.\+Image\+Effects.\+Post\+Effects\+Base.\+Check\+Support (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 73 of file Post\+Effects\+Base.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_aaa6ffafa1623a2716c0c80118a5c46ea}\label{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_aaa6ffafa1623a2716c0c80118a5c46ea}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base}!Check\+Support@{Check\+Support}}
+\index{Check\+Support@{Check\+Support}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base}}
+\subsubsection{\texorpdfstring{Check\+Support()}{CheckSupport()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool Unity\+Standard\+Assets.\+Image\+Effects.\+Post\+Effects\+Base.\+Check\+Support (\begin{DoxyParamCaption}\item[{bool}]{need\+Depth }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 91 of file Post\+Effects\+Base.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_a52ae735f5a89cf323b9f33b2115f3520}\label{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_a52ae735f5a89cf323b9f33b2115f3520}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base}!Check\+Support@{Check\+Support}}
+\index{Check\+Support@{Check\+Support}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base}}
+\subsubsection{\texorpdfstring{Check\+Support()}{CheckSupport()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool Unity\+Standard\+Assets.\+Image\+Effects.\+Post\+Effects\+Base.\+Check\+Support (\begin{DoxyParamCaption}\item[{bool}]{need\+Depth,  }\item[{bool}]{need\+Hdr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 115 of file Post\+Effects\+Base.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_a094b34a919f4464b894a5645feb5e97d}\label{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_a094b34a919f4464b894a5645feb5e97d}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base}!Create\+Material@{Create\+Material}}
+\index{Create\+Material@{Create\+Material}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base}}
+\subsubsection{\texorpdfstring{Create\+Material()}{CreateMaterial()}}
+{\footnotesize\ttfamily Material Unity\+Standard\+Assets.\+Image\+Effects.\+Post\+Effects\+Base.\+Create\+Material (\begin{DoxyParamCaption}\item[{Shader}]{s,  }\item[{Material}]{m2\+Create }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 43 of file Post\+Effects\+Base.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_a111dac8859a0c49146813131057b9630}\label{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_a111dac8859a0c49146813131057b9630}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base}!Draw\+Border@{Draw\+Border}}
+\index{Draw\+Border@{Draw\+Border}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base}}
+\subsubsection{\texorpdfstring{Draw\+Border()}{DrawBorder()}}
+{\footnotesize\ttfamily void Unity\+Standard\+Assets.\+Image\+Effects.\+Post\+Effects\+Base.\+Draw\+Border (\begin{DoxyParamCaption}\item[{Render\+Texture}]{dest,  }\item[{Material}]{material }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 165 of file Post\+Effects\+Base.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_a0843db7636c8937b5496045ca5f99b2a}\label{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_a0843db7636c8937b5496045ca5f99b2a}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base}!Dx11\+Support@{Dx11\+Support}}
+\index{Dx11\+Support@{Dx11\+Support}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base}}
+\subsubsection{\texorpdfstring{Dx11\+Support()}{Dx11Support()}}
+{\footnotesize\ttfamily bool Unity\+Standard\+Assets.\+Image\+Effects.\+Post\+Effects\+Base.\+Dx11\+Support (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 130 of file Post\+Effects\+Base.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_a57dc8025f94e36483c53b482cd289d99}\label{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_a57dc8025f94e36483c53b482cd289d99}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base}!Not\+Supported@{Not\+Supported}}
+\index{Not\+Supported@{Not\+Supported}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base}}
+\subsubsection{\texorpdfstring{Not\+Supported()}{NotSupported()}}
+{\footnotesize\ttfamily void Unity\+Standard\+Assets.\+Image\+Effects.\+Post\+Effects\+Base.\+Not\+Supported (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 157 of file Post\+Effects\+Base.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_ab5e0ddeb8eef7651c566d78c9b3b0d4b}\label{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_ab5e0ddeb8eef7651c566d78c9b3b0d4b}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base}!Report\+Auto\+Disable@{Report\+Auto\+Disable}}
+\index{Report\+Auto\+Disable@{Report\+Auto\+Disable}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base}}
+\subsubsection{\texorpdfstring{Report\+Auto\+Disable()}{ReportAutoDisable()}}
+{\footnotesize\ttfamily void Unity\+Standard\+Assets.\+Image\+Effects.\+Post\+Effects\+Base.\+Report\+Auto\+Disable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 136 of file Post\+Effects\+Base.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_a701b58ca625f3920f128f850235007f8}\label{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_a701b58ca625f3920f128f850235007f8}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base}!Start@{Start}}
+\index{Start@{Start}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base}}
+\subsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Unity\+Standard\+Assets.\+Image\+Effects.\+Post\+Effects\+Base.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 86 of file Post\+Effects\+Base.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_a5084bc03b21b083a1ef01a9cbb5c1f37}\label{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_a5084bc03b21b083a1ef01a9cbb5c1f37}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base}!is\+Supported@{is\+Supported}}
+\index{is\+Supported@{is\+Supported}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base}}
+\subsubsection{\texorpdfstring{is\+Supported}{isSupported}}
+{\footnotesize\ttfamily bool Unity\+Standard\+Assets.\+Image\+Effects.\+Post\+Effects\+Base.\+is\+Supported = true\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 12 of file Post\+Effects\+Base.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_ac75c4f2bba947de476c75a262822a24c}\label{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_ac75c4f2bba947de476c75a262822a24c}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base}!support\+D\+X11@{support\+D\+X11}}
+\index{support\+D\+X11@{support\+D\+X11}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base}}
+\subsubsection{\texorpdfstring{support\+D\+X11}{supportDX11}}
+{\footnotesize\ttfamily bool Unity\+Standard\+Assets.\+Image\+Effects.\+Post\+Effects\+Base.\+support\+D\+X11 = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 11 of file Post\+Effects\+Base.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_afe07c7112eeb27534eabb78239ef7613}\label{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_afe07c7112eeb27534eabb78239ef7613}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base}!support\+H\+D\+R\+Textures@{support\+H\+D\+R\+Textures}}
+\index{support\+H\+D\+R\+Textures@{support\+H\+D\+R\+Textures}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Post\+Effects\+Base}}
+\subsubsection{\texorpdfstring{support\+H\+D\+R\+Textures}{supportHDRTextures}}
+{\footnotesize\ttfamily bool Unity\+Standard\+Assets.\+Image\+Effects.\+Post\+Effects\+Base.\+support\+H\+D\+R\+Textures = true\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 10 of file Post\+Effects\+Base.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Standard Assets/\+Effects/\+Image\+Effects/\+Scripts/\mbox{\hyperlink{_post_effects_base_8cs}{Post\+Effects\+Base.\+cs}}\end{DoxyCompactItemize}

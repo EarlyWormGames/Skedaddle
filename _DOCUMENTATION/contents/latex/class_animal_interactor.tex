@@ -1,0 +1,254 @@
+\hypertarget{class_animal_interactor}{}\section{Animal\+Interactor Class Reference}
+\label{class_animal_interactor}\index{Animal\+Interactor@{Animal\+Interactor}}
+
+
+Base class for listening to keypresses when an \mbox{\hyperlink{class_animal}{Animal}} is nearby  
+
+
+Inheritance diagram for Animal\+Interactor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_animal_interactor}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_animal_interactor_a12da79f6eb050c54043ff783e7c2a725}{Check\+Info}} (Input\+Control input, \mbox{\hyperlink{class_animal}{Animal}} caller)
+\begin{DoxyCompactList}\small\item\em Default simply checks if the {\itshape caller}  works with \mbox{\hyperlink{class_animal_trigger_ae8394dfcf5f91b8c413959a4d6baa3a9}{Animal\+Trigger.\+Allows\+Animal(\+Animal)}} \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_animal_interactor_a92693dc7d95858e69c2f787507f14acb}{Get\+Distance}} (Vector3 point)
+\item 
+bool \mbox{\hyperlink{class_animal_interactor_a51de9b553e86019f8d45d10915fe960c}{Ignore\+Distance}} ()
+\begin{DoxyCompactList}\small\item\em summary$>$Get the distance from point. Used to check keypress\end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_animal_interactor_ab7aa5df1cd2596715b1edf39752ae02f}{Interact}} (\mbox{\hyperlink{class_animal}{Animal}} caller)
+\begin{DoxyCompactList}\small\item\em Called on a successful key (and possible distance) check occurred\end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_animal_interactor_a91ee9e749597002a9d8b48055f3ee0ce}{Animal\+Enter}} (\mbox{\hyperlink{class_animal}{Animal}} animal)
+\begin{DoxyCompactList}\small\item\em An \mbox{\hyperlink{class_animal}{Animal}} has entered the trigger \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_animal_interactor_a0ff1e2c10b462d19357913cbf1f2d023}{Animal\+Exit}} (\mbox{\hyperlink{class_animal}{Animal}} animal)
+\begin{DoxyCompactList}\small\item\em An \mbox{\hyperlink{class_animal}{Animal}} has exited the trigger \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ Input\+Action $>$ \mbox{\hyperlink{class_animal_interactor_a7de0dae23f6270d02fb18a1fcd9daeb1}{Usable\+Keys}} = new List$<$Input\+Action$>$()
+\item 
+Transform \mbox{\hyperlink{class_animal_interactor_abad93e377f12a32e8b96e0285c7fc1b2}{Interact\+Point}}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual float \mbox{\hyperlink{class_animal_interactor_a2ad1cb30f205eb70a693ab12f7c635af}{Check\+Distance}} (Vector3 point)
+\begin{DoxyCompactList}\small\item\em Default checks the distance between {\itshape point}  and \mbox{\hyperlink{class_animal_interactor_abad93e377f12a32e8b96e0285c7fc1b2}{Interact\+Point}} \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_animal_interactor_aa69a72f1594b510e34f70b55d6d72564}{Should\+Ignore\+Distance}} ()
+\item 
+abstract void \mbox{\hyperlink{class_animal_interactor_a522811ab410a5acbc12362e29263c5a8}{Do\+Interact}} (\mbox{\hyperlink{class_animal}{Animal}} caller)
+\item 
+void \mbox{\hyperlink{class_animal_interactor_ab391bd0cc25697723efb18162d4cfbcc}{Keys\+To\+String}} ()
+\begin{DoxyCompactList}\small\item\em Loads \mbox{\hyperlink{class_animal_interactor_a7de0dae23f6270d02fb18a1fcd9daeb1}{Usable\+Keys}} into key\+Strings \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_animal_interactor_a25c06ce53b655dc41349cbe0df85ce3f}{keys\+Registered}} = false
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Base class for listening to keypresses when an \mbox{\hyperlink{class_animal}{Animal}} is nearby 
+
+
+
+Definition at line 9 of file Animal\+Interactor.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_animal_interactor_a91ee9e749597002a9d8b48055f3ee0ce}\label{class_animal_interactor_a91ee9e749597002a9d8b48055f3ee0ce}} 
+\index{Animal\+Interactor@{Animal\+Interactor}!Animal\+Enter@{Animal\+Enter}}
+\index{Animal\+Enter@{Animal\+Enter}!Animal\+Interactor@{Animal\+Interactor}}
+\subsubsection{\texorpdfstring{Animal\+Enter()}{AnimalEnter()}}
+{\footnotesize\ttfamily override void Animal\+Interactor.\+Animal\+Enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{animal }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+An \mbox{\hyperlink{class_animal}{Animal}} has entered the trigger 
+
+
+
+Implements \mbox{\hyperlink{class_animal_trigger_a03181803fa268e0bfcbdc752ee733c40}{Animal\+Trigger}}.
+
+
+
+Definition at line 55 of file Animal\+Interactor.\+cs.
+
+\mbox{\Hypertarget{class_animal_interactor_a0ff1e2c10b462d19357913cbf1f2d023}\label{class_animal_interactor_a0ff1e2c10b462d19357913cbf1f2d023}} 
+\index{Animal\+Interactor@{Animal\+Interactor}!Animal\+Exit@{Animal\+Exit}}
+\index{Animal\+Exit@{Animal\+Exit}!Animal\+Interactor@{Animal\+Interactor}}
+\subsubsection{\texorpdfstring{Animal\+Exit()}{AnimalExit()}}
+{\footnotesize\ttfamily override void Animal\+Interactor.\+Animal\+Exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{animal }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+An \mbox{\hyperlink{class_animal}{Animal}} has exited the trigger 
+
+
+
+Implements \mbox{\hyperlink{class_animal_trigger_aa1a7c2e90de76c2e089b2bae01813f5c}{Animal\+Trigger}}.
+
+
+
+Definition at line 70 of file Animal\+Interactor.\+cs.
+
+\mbox{\Hypertarget{class_animal_interactor_a2ad1cb30f205eb70a693ab12f7c635af}\label{class_animal_interactor_a2ad1cb30f205eb70a693ab12f7c635af}} 
+\index{Animal\+Interactor@{Animal\+Interactor}!Check\+Distance@{Check\+Distance}}
+\index{Check\+Distance@{Check\+Distance}!Animal\+Interactor@{Animal\+Interactor}}
+\subsubsection{\texorpdfstring{Check\+Distance()}{CheckDistance()}}
+{\footnotesize\ttfamily virtual float Animal\+Interactor.\+Check\+Distance (\begin{DoxyParamCaption}\item[{Vector3}]{point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Default checks the distance between {\itshape point}  and \mbox{\hyperlink{class_animal_interactor_abad93e377f12a32e8b96e0285c7fc1b2}{Interact\+Point}} 
+
+
+
+Definition at line 34 of file Animal\+Interactor.\+cs.
+
+\mbox{\Hypertarget{class_animal_interactor_a12da79f6eb050c54043ff783e7c2a725}\label{class_animal_interactor_a12da79f6eb050c54043ff783e7c2a725}} 
+\index{Animal\+Interactor@{Animal\+Interactor}!Check\+Info@{Check\+Info}}
+\index{Check\+Info@{Check\+Info}!Animal\+Interactor@{Animal\+Interactor}}
+\subsubsection{\texorpdfstring{Check\+Info()}{CheckInfo()}}
+{\footnotesize\ttfamily bool Animal\+Interactor.\+Check\+Info (\begin{DoxyParamCaption}\item[{Input\+Control}]{input,  }\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{caller }\end{DoxyParamCaption})}
+
+
+
+Default simply checks if the {\itshape caller}  works with \mbox{\hyperlink{class_animal_trigger_ae8394dfcf5f91b8c413959a4d6baa3a9}{Animal\+Trigger.\+Allows\+Animal(\+Animal)}} 
+
+
+
+Implements \mbox{\hyperlink{interface_i_interactable_a5142ebbddd5d91a93da436941ad77d8e}{I\+Interactable}}.
+
+
+
+Definition at line 21 of file Animal\+Interactor.\+cs.
+
+\mbox{\Hypertarget{class_animal_interactor_a522811ab410a5acbc12362e29263c5a8}\label{class_animal_interactor_a522811ab410a5acbc12362e29263c5a8}} 
+\index{Animal\+Interactor@{Animal\+Interactor}!Do\+Interact@{Do\+Interact}}
+\index{Do\+Interact@{Do\+Interact}!Animal\+Interactor@{Animal\+Interactor}}
+\subsubsection{\texorpdfstring{Do\+Interact()}{DoInteract()}}
+{\footnotesize\ttfamily abstract void Animal\+Interactor.\+Do\+Interact (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{caller }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_chest_a61fad29e7dd236a2fbfce7b9c2e51841}{Chest}}, \mbox{\hyperlink{class_event_interact_a42b9c48803be9e90086d545a07fb1b74}{Event\+Interact}}, \mbox{\hyperlink{class_pickup_loris_ab6d5a9254471e0936b93d0b3a0cbd69c}{Pickup\+Loris}}, and \mbox{\hyperlink{class_fall_object_a5d796a5c10e490ce3bb5356b49eaae29}{Fall\+Object}}.
+
+\mbox{\Hypertarget{class_animal_interactor_a92693dc7d95858e69c2f787507f14acb}\label{class_animal_interactor_a92693dc7d95858e69c2f787507f14acb}} 
+\index{Animal\+Interactor@{Animal\+Interactor}!Get\+Distance@{Get\+Distance}}
+\index{Get\+Distance@{Get\+Distance}!Animal\+Interactor@{Animal\+Interactor}}
+\subsubsection{\texorpdfstring{Get\+Distance()}{GetDistance()}}
+{\footnotesize\ttfamily float Animal\+Interactor.\+Get\+Distance (\begin{DoxyParamCaption}\item[{Vector3}]{point }\end{DoxyParamCaption})}
+
+
+
+Implements \mbox{\hyperlink{interface_i_interactable_acde3047364ffe9a4ed107513feb21675}{I\+Interactable}}.
+
+
+
+Definition at line 26 of file Animal\+Interactor.\+cs.
+
+\mbox{\Hypertarget{class_animal_interactor_a51de9b553e86019f8d45d10915fe960c}\label{class_animal_interactor_a51de9b553e86019f8d45d10915fe960c}} 
+\index{Animal\+Interactor@{Animal\+Interactor}!Ignore\+Distance@{Ignore\+Distance}}
+\index{Ignore\+Distance@{Ignore\+Distance}!Animal\+Interactor@{Animal\+Interactor}}
+\subsubsection{\texorpdfstring{Ignore\+Distance()}{IgnoreDistance()}}
+{\footnotesize\ttfamily bool Animal\+Interactor.\+Ignore\+Distance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+summary$>$Get the distance from point. Used to check keypress
+
+
+
+Implements \mbox{\hyperlink{interface_i_interactable_ad184024a0cc6bce38ebcd77c0126fcc5}{I\+Interactable}}.
+
+
+
+Definition at line 42 of file Animal\+Interactor.\+cs.
+
+\mbox{\Hypertarget{class_animal_interactor_ab7aa5df1cd2596715b1edf39752ae02f}\label{class_animal_interactor_ab7aa5df1cd2596715b1edf39752ae02f}} 
+\index{Animal\+Interactor@{Animal\+Interactor}!Interact@{Interact}}
+\index{Interact@{Interact}!Animal\+Interactor@{Animal\+Interactor}}
+\subsubsection{\texorpdfstring{Interact()}{Interact()}}
+{\footnotesize\ttfamily void Animal\+Interactor.\+Interact (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{caller }\end{DoxyParamCaption})}
+
+
+
+Called on a successful key (and possible distance) check occurred
+
+
+
+Implements \mbox{\hyperlink{interface_i_interactable_ae38fb77e97bc1066db045b32db647681}{I\+Interactable}}.
+
+
+
+Definition at line 47 of file Animal\+Interactor.\+cs.
+
+\mbox{\Hypertarget{class_animal_interactor_ab391bd0cc25697723efb18162d4cfbcc}\label{class_animal_interactor_ab391bd0cc25697723efb18162d4cfbcc}} 
+\index{Animal\+Interactor@{Animal\+Interactor}!Keys\+To\+String@{Keys\+To\+String}}
+\index{Keys\+To\+String@{Keys\+To\+String}!Animal\+Interactor@{Animal\+Interactor}}
+\subsubsection{\texorpdfstring{Keys\+To\+String()}{KeysToString()}}
+{\footnotesize\ttfamily void Animal\+Interactor.\+Keys\+To\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Loads \mbox{\hyperlink{class_animal_interactor_a7de0dae23f6270d02fb18a1fcd9daeb1}{Usable\+Keys}} into key\+Strings 
+
+
+
+Definition at line 85 of file Animal\+Interactor.\+cs.
+
+\mbox{\Hypertarget{class_animal_interactor_aa69a72f1594b510e34f70b55d6d72564}\label{class_animal_interactor_aa69a72f1594b510e34f70b55d6d72564}} 
+\index{Animal\+Interactor@{Animal\+Interactor}!Should\+Ignore\+Distance@{Should\+Ignore\+Distance}}
+\index{Should\+Ignore\+Distance@{Should\+Ignore\+Distance}!Animal\+Interactor@{Animal\+Interactor}}
+\subsubsection{\texorpdfstring{Should\+Ignore\+Distance()}{ShouldIgnoreDistance()}}
+{\footnotesize\ttfamily virtual bool Animal\+Interactor.\+Should\+Ignore\+Distance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 52 of file Animal\+Interactor.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_animal_interactor_abad93e377f12a32e8b96e0285c7fc1b2}\label{class_animal_interactor_abad93e377f12a32e8b96e0285c7fc1b2}} 
+\index{Animal\+Interactor@{Animal\+Interactor}!Interact\+Point@{Interact\+Point}}
+\index{Interact\+Point@{Interact\+Point}!Animal\+Interactor@{Animal\+Interactor}}
+\subsubsection{\texorpdfstring{Interact\+Point}{InteractPoint}}
+{\footnotesize\ttfamily Transform Animal\+Interactor.\+Interact\+Point}
+
+
+
+Definition at line 13 of file Animal\+Interactor.\+cs.
+
+\mbox{\Hypertarget{class_animal_interactor_a25c06ce53b655dc41349cbe0df85ce3f}\label{class_animal_interactor_a25c06ce53b655dc41349cbe0df85ce3f}} 
+\index{Animal\+Interactor@{Animal\+Interactor}!keys\+Registered@{keys\+Registered}}
+\index{keys\+Registered@{keys\+Registered}!Animal\+Interactor@{Animal\+Interactor}}
+\subsubsection{\texorpdfstring{keys\+Registered}{keysRegistered}}
+{\footnotesize\ttfamily bool Animal\+Interactor.\+keys\+Registered = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 15 of file Animal\+Interactor.\+cs.
+
+\mbox{\Hypertarget{class_animal_interactor_a7de0dae23f6270d02fb18a1fcd9daeb1}\label{class_animal_interactor_a7de0dae23f6270d02fb18a1fcd9daeb1}} 
+\index{Animal\+Interactor@{Animal\+Interactor}!Usable\+Keys@{Usable\+Keys}}
+\index{Usable\+Keys@{Usable\+Keys}!Animal\+Interactor@{Animal\+Interactor}}
+\subsubsection{\texorpdfstring{Usable\+Keys}{UsableKeys}}
+{\footnotesize\ttfamily List$<$Input\+Action$>$ Animal\+Interactor.\+Usable\+Keys = new List$<$Input\+Action$>$()}
+
+
+
+Definition at line 12 of file Animal\+Interactor.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Interactables/\mbox{\hyperlink{_animal_interactor_8cs}{Animal\+Interactor.\+cs}}\end{DoxyCompactItemize}

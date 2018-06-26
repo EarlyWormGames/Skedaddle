@@ -1,0 +1,258 @@
+\hypertarget{class_dig}{}\section{Dig Class Reference}
+\label{class_dig}\index{Dig@{Dig}}
+Inheritance diagram for Dig\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{class_dig}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_dig_ad8530d5a6d6c5ae296f722f3d2a618d4}{Start\+Spline}} ()
+\begin{DoxyCompactList}\small\item\em Start the digging spline \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dig_a75281eb5b1b5803c8f01b3ac8509cb51}{Dirt\+Explode}} ()
+\begin{DoxyCompactList}\small\item\em Trigger \mbox{\hyperlink{class_dig_a02ef58f6d518aa38c5a21cb0409738e7}{On\+Dirt\+Explode}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dig_a41a34352c7a9451667d16ae3bc8adfee}{Finish}} ()
+\begin{DoxyCompactList}\small\item\em Called once the \mbox{\hyperlink{class_anteater}{Anteater}} has finished the ending animation \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Transform \mbox{\hyperlink{class_dig_a03d78ff0b4137ed67c431c84f6cdc17e}{Start\+Point}}
+\item 
+Transform \mbox{\hyperlink{class_dig_abe73eea22eaad35e4e5e1d5d358449d9}{Finish\+Point}}
+\item 
+\mbox{\hyperlink{class_bezier_spline_follower}{Bezier\+Spline\+Follower}} \mbox{\hyperlink{class_dig_accc036a410b9deba82251868996985ac}{Spline}}
+\item 
+\mbox{\hyperlink{_animal_8cs_a57d10208ebba781ae206546ada2002b6}{F\+A\+C\+I\+N\+G\+\_\+\+D\+IR}} \mbox{\hyperlink{class_dig_a1d6e052403f935b802289c4089818dd9}{Start\+Direction}}
+\item 
+Unity\+Event \mbox{\hyperlink{class_dig_a81532022107f8a49340a38600d73f03e}{On\+Spline\+Start}}
+\item 
+Unity\+Event \mbox{\hyperlink{class_dig_a02ef58f6d518aa38c5a21cb0409738e7}{On\+Dirt\+Explode}}
+\item 
+bool \mbox{\hyperlink{class_dig_a27228504e869fda59d4bafed8c1a7b40}{Reverse}}
+\item 
+bool \mbox{\hyperlink{class_dig_a34e2de7c2acdaa8167f20609590d6b30}{Wall\+Dig\+Start}}
+\item 
+bool \mbox{\hyperlink{class_dig_a31ff02a0fcc0aa163ca780e5fa19b300}{Wall\+Dig\+End}}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_dig_a4363c202ea7096a10548d4fc5cb53c70}{On\+Start}} ()
+\item 
+override bool \mbox{\hyperlink{class_dig_abec7f4de75d9d61991eca406c402fb51}{Check\+Detach}} ()
+\item 
+override void \mbox{\hyperlink{class_dig_a1b5c5ca71b632a658f9f1a0bd5e40658}{Do\+Interact}} (\mbox{\hyperlink{class_animal}{Animal}} caller)
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+override bool \mbox{\hyperlink{class_dig_a4bd8b131556afd7267d3da7de9dbe923}{Head\+Trigger\+Only}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 6 of file Dig.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_dig_abec7f4de75d9d61991eca406c402fb51}\label{class_dig_abec7f4de75d9d61991eca406c402fb51}} 
+\index{Dig@{Dig}!Check\+Detach@{Check\+Detach}}
+\index{Check\+Detach@{Check\+Detach}!Dig@{Dig}}
+\subsubsection{\texorpdfstring{Check\+Detach()}{CheckDetach()}}
+{\footnotesize\ttfamily override bool Dig.\+Check\+Detach (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_attachable_a5cd6ea1bf16c527c033e6f09681f84f8}{Attachable}}.
+
+
+
+Definition at line 48 of file Dig.\+cs.
+
+\mbox{\Hypertarget{class_dig_a75281eb5b1b5803c8f01b3ac8509cb51}\label{class_dig_a75281eb5b1b5803c8f01b3ac8509cb51}} 
+\index{Dig@{Dig}!Dirt\+Explode@{Dirt\+Explode}}
+\index{Dirt\+Explode@{Dirt\+Explode}!Dig@{Dig}}
+\subsubsection{\texorpdfstring{Dirt\+Explode()}{DirtExplode()}}
+{\footnotesize\ttfamily void Dig.\+Dirt\+Explode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Trigger \mbox{\hyperlink{class_dig_a02ef58f6d518aa38c5a21cb0409738e7}{On\+Dirt\+Explode}} 
+
+
+
+Definition at line 98 of file Dig.\+cs.
+
+\mbox{\Hypertarget{class_dig_a1b5c5ca71b632a658f9f1a0bd5e40658}\label{class_dig_a1b5c5ca71b632a658f9f1a0bd5e40658}} 
+\index{Dig@{Dig}!Do\+Interact@{Do\+Interact}}
+\index{Do\+Interact@{Do\+Interact}!Dig@{Dig}}
+\subsubsection{\texorpdfstring{Do\+Interact()}{DoInteract()}}
+{\footnotesize\ttfamily override void Dig.\+Do\+Interact (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{caller }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_attachable_interact_a9b07a54f1dbb96777c4bd287dfe438e3}{Attachable\+Interact}}.
+
+
+
+Definition at line 53 of file Dig.\+cs.
+
+\mbox{\Hypertarget{class_dig_a41a34352c7a9451667d16ae3bc8adfee}\label{class_dig_a41a34352c7a9451667d16ae3bc8adfee}} 
+\index{Dig@{Dig}!Finish@{Finish}}
+\index{Finish@{Finish}!Dig@{Dig}}
+\subsubsection{\texorpdfstring{Finish()}{Finish()}}
+{\footnotesize\ttfamily void Dig.\+Finish (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Called once the \mbox{\hyperlink{class_anteater}{Anteater}} has finished the ending animation 
+
+
+
+Definition at line 120 of file Dig.\+cs.
+
+\mbox{\Hypertarget{class_dig_a4363c202ea7096a10548d4fc5cb53c70}\label{class_dig_a4363c202ea7096a10548d4fc5cb53c70}} 
+\index{Dig@{Dig}!On\+Start@{On\+Start}}
+\index{On\+Start@{On\+Start}!Dig@{Dig}}
+\subsubsection{\texorpdfstring{On\+Start()}{OnStart()}}
+{\footnotesize\ttfamily override void Dig.\+On\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_attachable_a3c05c0b07b831881a7ab245057d34d30}{Attachable}}.
+
+
+
+Definition at line 35 of file Dig.\+cs.
+
+\mbox{\Hypertarget{class_dig_ad8530d5a6d6c5ae296f722f3d2a618d4}\label{class_dig_ad8530d5a6d6c5ae296f722f3d2a618d4}} 
+\index{Dig@{Dig}!Start\+Spline@{Start\+Spline}}
+\index{Start\+Spline@{Start\+Spline}!Dig@{Dig}}
+\subsubsection{\texorpdfstring{Start\+Spline()}{StartSpline()}}
+{\footnotesize\ttfamily void Dig.\+Start\+Spline (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Start the digging spline 
+
+
+
+Definition at line 84 of file Dig.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_dig_abe73eea22eaad35e4e5e1d5d358449d9}\label{class_dig_abe73eea22eaad35e4e5e1d5d358449d9}} 
+\index{Dig@{Dig}!Finish\+Point@{Finish\+Point}}
+\index{Finish\+Point@{Finish\+Point}!Dig@{Dig}}
+\subsubsection{\texorpdfstring{Finish\+Point}{FinishPoint}}
+{\footnotesize\ttfamily Transform Dig.\+Finish\+Point}
+
+
+
+Definition at line 9 of file Dig.\+cs.
+
+\mbox{\Hypertarget{class_dig_a02ef58f6d518aa38c5a21cb0409738e7}\label{class_dig_a02ef58f6d518aa38c5a21cb0409738e7}} 
+\index{Dig@{Dig}!On\+Dirt\+Explode@{On\+Dirt\+Explode}}
+\index{On\+Dirt\+Explode@{On\+Dirt\+Explode}!Dig@{Dig}}
+\subsubsection{\texorpdfstring{On\+Dirt\+Explode}{OnDirtExplode}}
+{\footnotesize\ttfamily Unity\+Event Dig.\+On\+Dirt\+Explode}
+
+
+
+Definition at line 15 of file Dig.\+cs.
+
+\mbox{\Hypertarget{class_dig_a81532022107f8a49340a38600d73f03e}\label{class_dig_a81532022107f8a49340a38600d73f03e}} 
+\index{Dig@{Dig}!On\+Spline\+Start@{On\+Spline\+Start}}
+\index{On\+Spline\+Start@{On\+Spline\+Start}!Dig@{Dig}}
+\subsubsection{\texorpdfstring{On\+Spline\+Start}{OnSplineStart}}
+{\footnotesize\ttfamily Unity\+Event Dig.\+On\+Spline\+Start}
+
+
+
+Definition at line 14 of file Dig.\+cs.
+
+\mbox{\Hypertarget{class_dig_a27228504e869fda59d4bafed8c1a7b40}\label{class_dig_a27228504e869fda59d4bafed8c1a7b40}} 
+\index{Dig@{Dig}!Reverse@{Reverse}}
+\index{Reverse@{Reverse}!Dig@{Dig}}
+\subsubsection{\texorpdfstring{Reverse}{Reverse}}
+{\footnotesize\ttfamily bool Dig.\+Reverse}
+
+
+
+Definition at line 17 of file Dig.\+cs.
+
+\mbox{\Hypertarget{class_dig_accc036a410b9deba82251868996985ac}\label{class_dig_accc036a410b9deba82251868996985ac}} 
+\index{Dig@{Dig}!Spline@{Spline}}
+\index{Spline@{Spline}!Dig@{Dig}}
+\subsubsection{\texorpdfstring{Spline}{Spline}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bezier_spline_follower}{Bezier\+Spline\+Follower}} Dig.\+Spline}
+
+
+
+Definition at line 10 of file Dig.\+cs.
+
+\mbox{\Hypertarget{class_dig_a1d6e052403f935b802289c4089818dd9}\label{class_dig_a1d6e052403f935b802289c4089818dd9}} 
+\index{Dig@{Dig}!Start\+Direction@{Start\+Direction}}
+\index{Start\+Direction@{Start\+Direction}!Dig@{Dig}}
+\subsubsection{\texorpdfstring{Start\+Direction}{StartDirection}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_animal_8cs_a57d10208ebba781ae206546ada2002b6}{F\+A\+C\+I\+N\+G\+\_\+\+D\+IR}} Dig.\+Start\+Direction}
+
+
+
+Definition at line 12 of file Dig.\+cs.
+
+\mbox{\Hypertarget{class_dig_a03d78ff0b4137ed67c431c84f6cdc17e}\label{class_dig_a03d78ff0b4137ed67c431c84f6cdc17e}} 
+\index{Dig@{Dig}!Start\+Point@{Start\+Point}}
+\index{Start\+Point@{Start\+Point}!Dig@{Dig}}
+\subsubsection{\texorpdfstring{Start\+Point}{StartPoint}}
+{\footnotesize\ttfamily Transform Dig.\+Start\+Point}
+
+
+
+Definition at line 8 of file Dig.\+cs.
+
+\mbox{\Hypertarget{class_dig_a31ff02a0fcc0aa163ca780e5fa19b300}\label{class_dig_a31ff02a0fcc0aa163ca780e5fa19b300}} 
+\index{Dig@{Dig}!Wall\+Dig\+End@{Wall\+Dig\+End}}
+\index{Wall\+Dig\+End@{Wall\+Dig\+End}!Dig@{Dig}}
+\subsubsection{\texorpdfstring{Wall\+Dig\+End}{WallDigEnd}}
+{\footnotesize\ttfamily bool Dig.\+Wall\+Dig\+End}
+
+
+
+Definition at line 19 of file Dig.\+cs.
+
+\mbox{\Hypertarget{class_dig_a34e2de7c2acdaa8167f20609590d6b30}\label{class_dig_a34e2de7c2acdaa8167f20609590d6b30}} 
+\index{Dig@{Dig}!Wall\+Dig\+Start@{Wall\+Dig\+Start}}
+\index{Wall\+Dig\+Start@{Wall\+Dig\+Start}!Dig@{Dig}}
+\subsubsection{\texorpdfstring{Wall\+Dig\+Start}{WallDigStart}}
+{\footnotesize\ttfamily bool Dig.\+Wall\+Dig\+Start}
+
+
+
+Definition at line 18 of file Dig.\+cs.
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_dig_a4bd8b131556afd7267d3da7de9dbe923}\label{class_dig_a4bd8b131556afd7267d3da7de9dbe923}} 
+\index{Dig@{Dig}!Head\+Trigger\+Only@{Head\+Trigger\+Only}}
+\index{Head\+Trigger\+Only@{Head\+Trigger\+Only}!Dig@{Dig}}
+\subsubsection{\texorpdfstring{Head\+Trigger\+Only}{HeadTriggerOnly}}
+{\footnotesize\ttfamily override bool Dig.\+Head\+Trigger\+Only\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 20 of file Dig.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Interactables/\+Attachables/\mbox{\hyperlink{_dig_8cs}{Dig.\+cs}}\end{DoxyCompactItemize}

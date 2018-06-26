@@ -1,0 +1,246 @@
+\hypertarget{class_bridge_maker}{}\section{Bridge\+Maker Class Reference}
+\label{class_bridge_maker}\index{Bridge\+Maker@{Bridge\+Maker}}
+Inheritance diagram for Bridge\+Maker\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{class_bridge_maker}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_bridge_maker_a9f0d946af5000826f91a6f7d0e361d63}{Build\+Bridge}} ()
+\begin{DoxyCompactList}\small\item\em Callback from the animator to make the invisible bridge active \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Game\+Object \mbox{\hyperlink{class_bridge_maker_aa0754a0cca5b4eec8d5c2499ea686585}{m\+\_\+go\+Bridge}}
+\item 
+Transform \mbox{\hyperlink{class_bridge_maker_a48e84bd735a7502381ca3c9643f9ddee}{m\+\_\+t\+Move\+Point}}
+\item 
+Transform \mbox{\hyperlink{class_bridge_maker_a913b130db8c564a77b4b9a6b574193ab}{m\+\_\+t\+Bridge\+Anchor}}
+\item 
+Game\+Object \mbox{\hyperlink{class_bridge_maker_a489b2a9b18690bb1f700d4ff68a348fa}{m\+\_\+a\+Tongue}}
+\item 
+float \mbox{\hyperlink{class_bridge_maker_a9b028952ab2da7f925ff7d800ac36d86}{m\+\_\+f\+Head\+Weight}}
+\item 
+float \mbox{\hyperlink{class_bridge_maker_a888d30d1a8a79526a5bbff7cd1ccc519}{m\+\_\+\+Bridge\+Tongue\+Original\+Distance}}
+\item 
+float \mbox{\hyperlink{class_bridge_maker_a9c58da197b7f29a9b3db6568a4d97a71}{m\+\_\+\+Bridge\+End\+Animation\+Start}}
+\item 
+bool \mbox{\hyperlink{class_bridge_maker_ad55b41d1c790535433258f43e433e4af}{m\+\_\+\+Is\+Vertical}}
+\item 
+Unity\+Event \mbox{\hyperlink{class_bridge_maker_a574e911b6ef9a75d85919380a5245d6b}{On\+Build\+Bridge}}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_bridge_maker_a5aeea9e7555a542ec1d1fab4e3a9126f}{On\+Start}} ()
+\item 
+override void \mbox{\hyperlink{class_bridge_maker_a6c7c0e10a22698192076b53c8bc55d07}{On\+Update}} ()
+\item 
+override void \mbox{\hyperlink{class_bridge_maker_a667e3fa3514b0256b73ce3149dabaf90}{Do\+Interact}} (\mbox{\hyperlink{class_animal}{Animal}} caller)
+\item 
+override void \mbox{\hyperlink{class_bridge_maker_a5d9583fb209bfca47eabb33ce0bbe1bf}{On\+Detach}} (\mbox{\hyperlink{class_animal}{Animal}} animal)
+\begin{DoxyCompactList}\small\item\em summary$>$Check if this object is attachable\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+override bool \mbox{\hyperlink{class_bridge_maker_ae19669b24ef7131ae7d9bfe8fc9f72cf}{Head\+Trigger\+Only}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 6 of file Bridge\+Maker.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_bridge_maker_a9f0d946af5000826f91a6f7d0e361d63}\label{class_bridge_maker_a9f0d946af5000826f91a6f7d0e361d63}} 
+\index{Bridge\+Maker@{Bridge\+Maker}!Build\+Bridge@{Build\+Bridge}}
+\index{Build\+Bridge@{Build\+Bridge}!Bridge\+Maker@{Bridge\+Maker}}
+\subsubsection{\texorpdfstring{Build\+Bridge()}{BuildBridge()}}
+{\footnotesize\ttfamily void Bridge\+Maker.\+Build\+Bridge (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Callback from the animator to make the invisible bridge active 
+
+
+
+Definition at line 193 of file Bridge\+Maker.\+cs.
+
+\mbox{\Hypertarget{class_bridge_maker_a667e3fa3514b0256b73ce3149dabaf90}\label{class_bridge_maker_a667e3fa3514b0256b73ce3149dabaf90}} 
+\index{Bridge\+Maker@{Bridge\+Maker}!Do\+Interact@{Do\+Interact}}
+\index{Do\+Interact@{Do\+Interact}!Bridge\+Maker@{Bridge\+Maker}}
+\subsubsection{\texorpdfstring{Do\+Interact()}{DoInteract()}}
+{\footnotesize\ttfamily override void Bridge\+Maker.\+Do\+Interact (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{caller }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_attachable_interact_a9b07a54f1dbb96777c4bd287dfe438e3}{Attachable\+Interact}}.
+
+
+
+Definition at line 151 of file Bridge\+Maker.\+cs.
+
+\mbox{\Hypertarget{class_bridge_maker_a5d9583fb209bfca47eabb33ce0bbe1bf}\label{class_bridge_maker_a5d9583fb209bfca47eabb33ce0bbe1bf}} 
+\index{Bridge\+Maker@{Bridge\+Maker}!On\+Detach@{On\+Detach}}
+\index{On\+Detach@{On\+Detach}!Bridge\+Maker@{Bridge\+Maker}}
+\subsubsection{\texorpdfstring{On\+Detach()}{OnDetach()}}
+{\footnotesize\ttfamily override void Bridge\+Maker.\+On\+Detach (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{animal }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+summary$>$Check if this object is attachable
+
+
+
+Reimplemented from \mbox{\hyperlink{class_attachable_abe7cf9d7930393610c7c9c4ae14b12d7}{Attachable}}.
+
+
+
+Definition at line 201 of file Bridge\+Maker.\+cs.
+
+\mbox{\Hypertarget{class_bridge_maker_a5aeea9e7555a542ec1d1fab4e3a9126f}\label{class_bridge_maker_a5aeea9e7555a542ec1d1fab4e3a9126f}} 
+\index{Bridge\+Maker@{Bridge\+Maker}!On\+Start@{On\+Start}}
+\index{On\+Start@{On\+Start}!Bridge\+Maker@{Bridge\+Maker}}
+\subsubsection{\texorpdfstring{On\+Start()}{OnStart()}}
+{\footnotesize\ttfamily override void Bridge\+Maker.\+On\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_attachable_a3c05c0b07b831881a7ab245057d34d30}{Attachable}}.
+
+
+
+Definition at line 43 of file Bridge\+Maker.\+cs.
+
+\mbox{\Hypertarget{class_bridge_maker_a6c7c0e10a22698192076b53c8bc55d07}\label{class_bridge_maker_a6c7c0e10a22698192076b53c8bc55d07}} 
+\index{Bridge\+Maker@{Bridge\+Maker}!On\+Update@{On\+Update}}
+\index{On\+Update@{On\+Update}!Bridge\+Maker@{Bridge\+Maker}}
+\subsubsection{\texorpdfstring{On\+Update()}{OnUpdate()}}
+{\footnotesize\ttfamily override void Bridge\+Maker.\+On\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_attachable_abb659a66efacd6fa09fa1d7125c7b5e6}{Attachable}}.
+
+
+
+Definition at line 65 of file Bridge\+Maker.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_bridge_maker_a489b2a9b18690bb1f700d4ff68a348fa}\label{class_bridge_maker_a489b2a9b18690bb1f700d4ff68a348fa}} 
+\index{Bridge\+Maker@{Bridge\+Maker}!m\+\_\+a\+Tongue@{m\+\_\+a\+Tongue}}
+\index{m\+\_\+a\+Tongue@{m\+\_\+a\+Tongue}!Bridge\+Maker@{Bridge\+Maker}}
+\subsubsection{\texorpdfstring{m\+\_\+a\+Tongue}{m\_aTongue}}
+{\footnotesize\ttfamily Game\+Object Bridge\+Maker.\+m\+\_\+a\+Tongue}
+
+
+
+Definition at line 14 of file Bridge\+Maker.\+cs.
+
+\mbox{\Hypertarget{class_bridge_maker_a9c58da197b7f29a9b3db6568a4d97a71}\label{class_bridge_maker_a9c58da197b7f29a9b3db6568a4d97a71}} 
+\index{Bridge\+Maker@{Bridge\+Maker}!m\+\_\+\+Bridge\+End\+Animation\+Start@{m\+\_\+\+Bridge\+End\+Animation\+Start}}
+\index{m\+\_\+\+Bridge\+End\+Animation\+Start@{m\+\_\+\+Bridge\+End\+Animation\+Start}!Bridge\+Maker@{Bridge\+Maker}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Bridge\+End\+Animation\+Start}{m\_BridgeEndAnimationStart}}
+{\footnotesize\ttfamily float Bridge\+Maker.\+m\+\_\+\+Bridge\+End\+Animation\+Start}
+
+
+
+Definition at line 17 of file Bridge\+Maker.\+cs.
+
+\mbox{\Hypertarget{class_bridge_maker_a888d30d1a8a79526a5bbff7cd1ccc519}\label{class_bridge_maker_a888d30d1a8a79526a5bbff7cd1ccc519}} 
+\index{Bridge\+Maker@{Bridge\+Maker}!m\+\_\+\+Bridge\+Tongue\+Original\+Distance@{m\+\_\+\+Bridge\+Tongue\+Original\+Distance}}
+\index{m\+\_\+\+Bridge\+Tongue\+Original\+Distance@{m\+\_\+\+Bridge\+Tongue\+Original\+Distance}!Bridge\+Maker@{Bridge\+Maker}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Bridge\+Tongue\+Original\+Distance}{m\_BridgeTongueOriginalDistance}}
+{\footnotesize\ttfamily float Bridge\+Maker.\+m\+\_\+\+Bridge\+Tongue\+Original\+Distance}
+
+
+
+Definition at line 16 of file Bridge\+Maker.\+cs.
+
+\mbox{\Hypertarget{class_bridge_maker_a9b028952ab2da7f925ff7d800ac36d86}\label{class_bridge_maker_a9b028952ab2da7f925ff7d800ac36d86}} 
+\index{Bridge\+Maker@{Bridge\+Maker}!m\+\_\+f\+Head\+Weight@{m\+\_\+f\+Head\+Weight}}
+\index{m\+\_\+f\+Head\+Weight@{m\+\_\+f\+Head\+Weight}!Bridge\+Maker@{Bridge\+Maker}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Head\+Weight}{m\_fHeadWeight}}
+{\footnotesize\ttfamily float Bridge\+Maker.\+m\+\_\+f\+Head\+Weight}
+
+
+
+Definition at line 15 of file Bridge\+Maker.\+cs.
+
+\mbox{\Hypertarget{class_bridge_maker_aa0754a0cca5b4eec8d5c2499ea686585}\label{class_bridge_maker_aa0754a0cca5b4eec8d5c2499ea686585}} 
+\index{Bridge\+Maker@{Bridge\+Maker}!m\+\_\+go\+Bridge@{m\+\_\+go\+Bridge}}
+\index{m\+\_\+go\+Bridge@{m\+\_\+go\+Bridge}!Bridge\+Maker@{Bridge\+Maker}}
+\subsubsection{\texorpdfstring{m\+\_\+go\+Bridge}{m\_goBridge}}
+{\footnotesize\ttfamily Game\+Object Bridge\+Maker.\+m\+\_\+go\+Bridge}
+
+
+
+Definition at line 11 of file Bridge\+Maker.\+cs.
+
+\mbox{\Hypertarget{class_bridge_maker_ad55b41d1c790535433258f43e433e4af}\label{class_bridge_maker_ad55b41d1c790535433258f43e433e4af}} 
+\index{Bridge\+Maker@{Bridge\+Maker}!m\+\_\+\+Is\+Vertical@{m\+\_\+\+Is\+Vertical}}
+\index{m\+\_\+\+Is\+Vertical@{m\+\_\+\+Is\+Vertical}!Bridge\+Maker@{Bridge\+Maker}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Is\+Vertical}{m\_IsVertical}}
+{\footnotesize\ttfamily bool Bridge\+Maker.\+m\+\_\+\+Is\+Vertical}
+
+
+
+Definition at line 18 of file Bridge\+Maker.\+cs.
+
+\mbox{\Hypertarget{class_bridge_maker_a913b130db8c564a77b4b9a6b574193ab}\label{class_bridge_maker_a913b130db8c564a77b4b9a6b574193ab}} 
+\index{Bridge\+Maker@{Bridge\+Maker}!m\+\_\+t\+Bridge\+Anchor@{m\+\_\+t\+Bridge\+Anchor}}
+\index{m\+\_\+t\+Bridge\+Anchor@{m\+\_\+t\+Bridge\+Anchor}!Bridge\+Maker@{Bridge\+Maker}}
+\subsubsection{\texorpdfstring{m\+\_\+t\+Bridge\+Anchor}{m\_tBridgeAnchor}}
+{\footnotesize\ttfamily Transform Bridge\+Maker.\+m\+\_\+t\+Bridge\+Anchor}
+
+
+
+Definition at line 13 of file Bridge\+Maker.\+cs.
+
+\mbox{\Hypertarget{class_bridge_maker_a48e84bd735a7502381ca3c9643f9ddee}\label{class_bridge_maker_a48e84bd735a7502381ca3c9643f9ddee}} 
+\index{Bridge\+Maker@{Bridge\+Maker}!m\+\_\+t\+Move\+Point@{m\+\_\+t\+Move\+Point}}
+\index{m\+\_\+t\+Move\+Point@{m\+\_\+t\+Move\+Point}!Bridge\+Maker@{Bridge\+Maker}}
+\subsubsection{\texorpdfstring{m\+\_\+t\+Move\+Point}{m\_tMovePoint}}
+{\footnotesize\ttfamily Transform Bridge\+Maker.\+m\+\_\+t\+Move\+Point}
+
+
+
+Definition at line 12 of file Bridge\+Maker.\+cs.
+
+\mbox{\Hypertarget{class_bridge_maker_a574e911b6ef9a75d85919380a5245d6b}\label{class_bridge_maker_a574e911b6ef9a75d85919380a5245d6b}} 
+\index{Bridge\+Maker@{Bridge\+Maker}!On\+Build\+Bridge@{On\+Build\+Bridge}}
+\index{On\+Build\+Bridge@{On\+Build\+Bridge}!Bridge\+Maker@{Bridge\+Maker}}
+\subsubsection{\texorpdfstring{On\+Build\+Bridge}{OnBuildBridge}}
+{\footnotesize\ttfamily Unity\+Event Bridge\+Maker.\+On\+Build\+Bridge}
+
+
+
+Definition at line 20 of file Bridge\+Maker.\+cs.
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_bridge_maker_ae19669b24ef7131ae7d9bfe8fc9f72cf}\label{class_bridge_maker_ae19669b24ef7131ae7d9bfe8fc9f72cf}} 
+\index{Bridge\+Maker@{Bridge\+Maker}!Head\+Trigger\+Only@{Head\+Trigger\+Only}}
+\index{Head\+Trigger\+Only@{Head\+Trigger\+Only}!Bridge\+Maker@{Bridge\+Maker}}
+\subsubsection{\texorpdfstring{Head\+Trigger\+Only}{HeadTriggerOnly}}
+{\footnotesize\ttfamily override bool Bridge\+Maker.\+Head\+Trigger\+Only\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 30 of file Bridge\+Maker.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Interactables/\+Attachables/\mbox{\hyperlink{_bridge_maker_8cs}{Bridge\+Maker.\+cs}}\end{DoxyCompactItemize}

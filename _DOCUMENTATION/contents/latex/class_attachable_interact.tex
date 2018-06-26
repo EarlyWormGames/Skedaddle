@@ -1,0 +1,299 @@
+\hypertarget{class_attachable_interact}{}\section{Attachable\+Interact Class Reference}
+\label{class_attachable_interact}\index{Attachable\+Interact@{Attachable\+Interact}}
+Inheritance diagram for Attachable\+Interact\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{class_attachable_interact}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_attachable_interact_a8426a9821130ecde5ed75517ca2ee5d7}{Check\+Info}} (Input\+Control input, \mbox{\hyperlink{class_animal}{Animal}} caller)
+\begin{DoxyCompactList}\small\item\em Default simply checks if the {\itshape caller}  works with \mbox{\hyperlink{class_animal_trigger_ae8394dfcf5f91b8c413959a4d6baa3a9}{Animal\+Trigger.\+Allows\+Animal(\+Animal)}} \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_attachable_interact_abeaa046ec8352957e008cde245fd4f65}{Get\+Distance}} (Vector3 point)
+\item 
+bool \mbox{\hyperlink{class_attachable_interact_a2778c59435948c3a3794664ceadc0c7f}{Ignore\+Distance}} ()
+\begin{DoxyCompactList}\small\item\em summary$>$Get the distance from point. Used to check keypress\end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_attachable_interact_a3ce9d2122b8b014f608ed3ed1004f909}{Interact}} (\mbox{\hyperlink{class_animal}{Animal}} caller)
+\begin{DoxyCompactList}\small\item\em Called on a successful key (and possible distance) check occurred\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ Input\+Action $>$ \mbox{\hyperlink{class_attachable_interact_a3c3ffc1d5b3cfd3bc9b4fde20a772901}{Usable\+Keys}} = new List$<$Input\+Action$>$()
+\item 
+Transform \mbox{\hyperlink{class_attachable_interact_ad46e0ca3808d58ab5e1102e379d6cb7e}{Interact\+Point}}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{class_attachable_interact_a7efc3c845dc5112e6c744eee254094e6}{Check\+Input}} (Input\+Control input, \mbox{\hyperlink{class_animal}{Animal}} caller)
+\begin{DoxyCompactList}\small\item\em Default simply checks if the {\itshape caller}  works with \mbox{\hyperlink{class_animal_trigger_ae8394dfcf5f91b8c413959a4d6baa3a9}{Animal\+Trigger.\+Allows\+Animal(\+Animal)}} \end{DoxyCompactList}\item 
+virtual float \mbox{\hyperlink{class_attachable_interact_aa6b840e4c36f09981e31b2b33bc9d45a}{Check\+Distance}} (Vector3 point)
+\begin{DoxyCompactList}\small\item\em Default checks the distance between {\itshape point}  and \mbox{\hyperlink{class_attachable_interact_ad46e0ca3808d58ab5e1102e379d6cb7e}{Interact\+Point}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_attachable_interact_afdc25b120520c75cf102b314877c498b}{Register\+Keys}} ()
+\begin{DoxyCompactList}\small\item\em Register the Usable\+Axes and \mbox{\hyperlink{class_attachable_interact_a3c3ffc1d5b3cfd3bc9b4fde20a772901}{Usable\+Keys}} to the \mbox{\hyperlink{class_interact_checker}{Interact\+Checker}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_attachable_interact_ab657260ae7954daa9d4c5f938790910d}{Unregister\+Keys}} ()
+\begin{DoxyCompactList}\small\item\em Unregister the Usable\+Axes and \mbox{\hyperlink{class_attachable_interact_a3c3ffc1d5b3cfd3bc9b4fde20a772901}{Usable\+Keys}} from the \mbox{\hyperlink{class_interact_checker}{Interact\+Checker}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_attachable_interact_a346d5fc16847e2c6c0349b3387ceab45}{Keys\+To\+String}} ()
+\begin{DoxyCompactList}\small\item\em Loads \mbox{\hyperlink{class_attachable_interact_a3c3ffc1d5b3cfd3bc9b4fde20a772901}{Usable\+Keys}} into key\+Strings \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_attachable_interact_a376127af23be5456604ee5ec39f02b9b}{On\+Animal\+Enter}} (\mbox{\hyperlink{class_animal}{Animal}} animal)
+\item 
+override void \mbox{\hyperlink{class_attachable_interact_a072c261c7ec9235f62c441fbac876b8f}{On\+Animal\+Exit}} (\mbox{\hyperlink{class_animal}{Animal}} animal)
+\item 
+virtual bool \mbox{\hyperlink{class_attachable_interact_adbfe794fcb2bb817dbc62310c43c687e}{Should\+Ignore\+Distance}} ()
+\item 
+abstract void \mbox{\hyperlink{class_attachable_interact_a9b07a54f1dbb96777c4bd287dfe438e3}{Do\+Interact}} (\mbox{\hyperlink{class_animal}{Animal}} caller)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_attachable_interact_a27e2c7faf9280bbc0e52c6360c79daf6}{keys\+Registered}} = false
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 6 of file Attachable\+Interact.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_attachable_interact_aa6b840e4c36f09981e31b2b33bc9d45a}\label{class_attachable_interact_aa6b840e4c36f09981e31b2b33bc9d45a}} 
+\index{Attachable\+Interact@{Attachable\+Interact}!Check\+Distance@{Check\+Distance}}
+\index{Check\+Distance@{Check\+Distance}!Attachable\+Interact@{Attachable\+Interact}}
+\subsubsection{\texorpdfstring{Check\+Distance()}{CheckDistance()}}
+{\footnotesize\ttfamily virtual float Attachable\+Interact.\+Check\+Distance (\begin{DoxyParamCaption}\item[{Vector3}]{point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Default checks the distance between {\itshape point}  and \mbox{\hyperlink{class_attachable_interact_ad46e0ca3808d58ab5e1102e379d6cb7e}{Interact\+Point}} 
+
+
+
+Reimplemented in \mbox{\hyperlink{class_ladder_object_a9199b2da6f97c758e595a4ccdf7c98b0}{Ladder\+Object}}.
+
+
+
+Definition at line 42 of file Attachable\+Interact.\+cs.
+
+\mbox{\Hypertarget{class_attachable_interact_a8426a9821130ecde5ed75517ca2ee5d7}\label{class_attachable_interact_a8426a9821130ecde5ed75517ca2ee5d7}} 
+\index{Attachable\+Interact@{Attachable\+Interact}!Check\+Info@{Check\+Info}}
+\index{Check\+Info@{Check\+Info}!Attachable\+Interact@{Attachable\+Interact}}
+\subsubsection{\texorpdfstring{Check\+Info()}{CheckInfo()}}
+{\footnotesize\ttfamily bool Attachable\+Interact.\+Check\+Info (\begin{DoxyParamCaption}\item[{Input\+Control}]{input,  }\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{caller }\end{DoxyParamCaption})}
+
+
+
+Default simply checks if the {\itshape caller}  works with \mbox{\hyperlink{class_animal_trigger_ae8394dfcf5f91b8c413959a4d6baa3a9}{Animal\+Trigger.\+Allows\+Animal(\+Animal)}} 
+
+
+
+Implements \mbox{\hyperlink{interface_i_interactable_a5142ebbddd5d91a93da436941ad77d8e}{I\+Interactable}}.
+
+
+
+Definition at line 18 of file Attachable\+Interact.\+cs.
+
+\mbox{\Hypertarget{class_attachable_interact_a7efc3c845dc5112e6c744eee254094e6}\label{class_attachable_interact_a7efc3c845dc5112e6c744eee254094e6}} 
+\index{Attachable\+Interact@{Attachable\+Interact}!Check\+Input@{Check\+Input}}
+\index{Check\+Input@{Check\+Input}!Attachable\+Interact@{Attachable\+Interact}}
+\subsubsection{\texorpdfstring{Check\+Input()}{CheckInput()}}
+{\footnotesize\ttfamily virtual bool Attachable\+Interact.\+Check\+Input (\begin{DoxyParamCaption}\item[{Input\+Control}]{input,  }\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{caller }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Default simply checks if the {\itshape caller}  works with \mbox{\hyperlink{class_animal_trigger_ae8394dfcf5f91b8c413959a4d6baa3a9}{Animal\+Trigger.\+Allows\+Animal(\+Animal)}} 
+
+
+
+Reimplemented in \mbox{\hyperlink{class_ladder_object_aa18c443d78ab35fa3aba0d6ce7328539}{Ladder\+Object}}, and \mbox{\hyperlink{class_trampoline_a7cd4dba8195da3407019ef918daa1280}{Trampoline}}.
+
+
+
+Definition at line 26 of file Attachable\+Interact.\+cs.
+
+\mbox{\Hypertarget{class_attachable_interact_a9b07a54f1dbb96777c4bd287dfe438e3}\label{class_attachable_interact_a9b07a54f1dbb96777c4bd287dfe438e3}} 
+\index{Attachable\+Interact@{Attachable\+Interact}!Do\+Interact@{Do\+Interact}}
+\index{Do\+Interact@{Do\+Interact}!Attachable\+Interact@{Attachable\+Interact}}
+\subsubsection{\texorpdfstring{Do\+Interact()}{DoInteract()}}
+{\footnotesize\ttfamily abstract void Attachable\+Interact.\+Do\+Interact (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{caller }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_ladder_object_ad7c09ffac9842f0a4ffb799f5caa78cf}{Ladder\+Object}}, \mbox{\hyperlink{class_bridge_maker_a667e3fa3514b0256b73ce3149dabaf90}{Bridge\+Maker}}, \mbox{\hyperlink{class_climb_jump_a65ed10c05b80b5b2fe2df7112546f2fc}{Climb\+Jump}}, \mbox{\hyperlink{class_trampoline_a37c1ae11b89a61be854133cfa1628572}{Trampoline}}, \mbox{\hyperlink{class_p_p_object_a3359bdf648e8252f0d7326c65bbf9d73}{P\+P\+Object}}, \mbox{\hyperlink{class_dig_a1b5c5ca71b632a658f9f1a0bd5e40658}{Dig}}, \mbox{\hyperlink{class_trap_chest_afe04e422ad7c45f5de0509504412c3dc}{Trap\+Chest}}, \mbox{\hyperlink{class_animal_spline_mover_aa8555455eae08f3834a1cafb97a21c36}{Animal\+Spline\+Mover}}, \mbox{\hyperlink{class_lever_a0a1c141e11547a71e93492bebbd045d7}{Lever}}, and \mbox{\hyperlink{class_lever_animated_a63d3742fe2e3b7597c7eecbc57ae7a0e}{Lever\+Animated}}.
+
+\mbox{\Hypertarget{class_attachable_interact_abeaa046ec8352957e008cde245fd4f65}\label{class_attachable_interact_abeaa046ec8352957e008cde245fd4f65}} 
+\index{Attachable\+Interact@{Attachable\+Interact}!Get\+Distance@{Get\+Distance}}
+\index{Get\+Distance@{Get\+Distance}!Attachable\+Interact@{Attachable\+Interact}}
+\subsubsection{\texorpdfstring{Get\+Distance()}{GetDistance()}}
+{\footnotesize\ttfamily float Attachable\+Interact.\+Get\+Distance (\begin{DoxyParamCaption}\item[{Vector3}]{point }\end{DoxyParamCaption})}
+
+
+
+Implements \mbox{\hyperlink{interface_i_interactable_acde3047364ffe9a4ed107513feb21675}{I\+Interactable}}.
+
+
+
+Definition at line 34 of file Attachable\+Interact.\+cs.
+
+\mbox{\Hypertarget{class_attachable_interact_a2778c59435948c3a3794664ceadc0c7f}\label{class_attachable_interact_a2778c59435948c3a3794664ceadc0c7f}} 
+\index{Attachable\+Interact@{Attachable\+Interact}!Ignore\+Distance@{Ignore\+Distance}}
+\index{Ignore\+Distance@{Ignore\+Distance}!Attachable\+Interact@{Attachable\+Interact}}
+\subsubsection{\texorpdfstring{Ignore\+Distance()}{IgnoreDistance()}}
+{\footnotesize\ttfamily bool Attachable\+Interact.\+Ignore\+Distance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+summary$>$Get the distance from point. Used to check keypress
+
+
+
+Implements \mbox{\hyperlink{interface_i_interactable_ad184024a0cc6bce38ebcd77c0126fcc5}{I\+Interactable}}.
+
+
+
+Definition at line 50 of file Attachable\+Interact.\+cs.
+
+\mbox{\Hypertarget{class_attachable_interact_a3ce9d2122b8b014f608ed3ed1004f909}\label{class_attachable_interact_a3ce9d2122b8b014f608ed3ed1004f909}} 
+\index{Attachable\+Interact@{Attachable\+Interact}!Interact@{Interact}}
+\index{Interact@{Interact}!Attachable\+Interact@{Attachable\+Interact}}
+\subsubsection{\texorpdfstring{Interact()}{Interact()}}
+{\footnotesize\ttfamily void Attachable\+Interact.\+Interact (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{caller }\end{DoxyParamCaption})}
+
+
+
+Called on a successful key (and possible distance) check occurred
+
+
+
+Implements \mbox{\hyperlink{interface_i_interactable_ae38fb77e97bc1066db045b32db647681}{I\+Interactable}}.
+
+
+
+Definition at line 55 of file Attachable\+Interact.\+cs.
+
+\mbox{\Hypertarget{class_attachable_interact_a346d5fc16847e2c6c0349b3387ceab45}\label{class_attachable_interact_a346d5fc16847e2c6c0349b3387ceab45}} 
+\index{Attachable\+Interact@{Attachable\+Interact}!Keys\+To\+String@{Keys\+To\+String}}
+\index{Keys\+To\+String@{Keys\+To\+String}!Attachable\+Interact@{Attachable\+Interact}}
+\subsubsection{\texorpdfstring{Keys\+To\+String()}{KeysToString()}}
+{\footnotesize\ttfamily void Attachable\+Interact.\+Keys\+To\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Loads \mbox{\hyperlink{class_attachable_interact_a3c3ffc1d5b3cfd3bc9b4fde20a772901}{Usable\+Keys}} into key\+Strings 
+
+
+
+Definition at line 93 of file Attachable\+Interact.\+cs.
+
+\mbox{\Hypertarget{class_attachable_interact_a376127af23be5456604ee5ec39f02b9b}\label{class_attachable_interact_a376127af23be5456604ee5ec39f02b9b}} 
+\index{Attachable\+Interact@{Attachable\+Interact}!On\+Animal\+Enter@{On\+Animal\+Enter}}
+\index{On\+Animal\+Enter@{On\+Animal\+Enter}!Attachable\+Interact@{Attachable\+Interact}}
+\subsubsection{\texorpdfstring{On\+Animal\+Enter()}{OnAnimalEnter()}}
+{\footnotesize\ttfamily override void Attachable\+Interact.\+On\+Animal\+Enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{animal }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_attachable_a068e297fb6be04b5162db5ce61290020}{Attachable}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_trampoline_a593abd52ed17139a320ee418aff6b120}{Trampoline}}, \mbox{\hyperlink{class_climb_jump_a66b008bb35c83a5cf66d7f70ca0c4acf}{Climb\+Jump}}, and \mbox{\hyperlink{class_animal_spline_mover_acadeba87020c2abcea749a5a522fff54}{Animal\+Spline\+Mover}}.
+
+
+
+Definition at line 101 of file Attachable\+Interact.\+cs.
+
+\mbox{\Hypertarget{class_attachable_interact_a072c261c7ec9235f62c441fbac876b8f}\label{class_attachable_interact_a072c261c7ec9235f62c441fbac876b8f}} 
+\index{Attachable\+Interact@{Attachable\+Interact}!On\+Animal\+Exit@{On\+Animal\+Exit}}
+\index{On\+Animal\+Exit@{On\+Animal\+Exit}!Attachable\+Interact@{Attachable\+Interact}}
+\subsubsection{\texorpdfstring{On\+Animal\+Exit()}{OnAnimalExit()}}
+{\footnotesize\ttfamily override void Attachable\+Interact.\+On\+Animal\+Exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{animal }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_attachable_a6de7e01430734a291be84f3065b45537}{Attachable}}.
+
+
+
+Definition at line 109 of file Attachable\+Interact.\+cs.
+
+\mbox{\Hypertarget{class_attachable_interact_afdc25b120520c75cf102b314877c498b}\label{class_attachable_interact_afdc25b120520c75cf102b314877c498b}} 
+\index{Attachable\+Interact@{Attachable\+Interact}!Register\+Keys@{Register\+Keys}}
+\index{Register\+Keys@{Register\+Keys}!Attachable\+Interact@{Attachable\+Interact}}
+\subsubsection{\texorpdfstring{Register\+Keys()}{RegisterKeys()}}
+{\footnotesize\ttfamily void Attachable\+Interact.\+Register\+Keys (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Register the Usable\+Axes and \mbox{\hyperlink{class_attachable_interact_a3c3ffc1d5b3cfd3bc9b4fde20a772901}{Usable\+Keys}} to the \mbox{\hyperlink{class_interact_checker}{Interact\+Checker}} 
+
+
+
+Definition at line 66 of file Attachable\+Interact.\+cs.
+
+\mbox{\Hypertarget{class_attachable_interact_adbfe794fcb2bb817dbc62310c43c687e}\label{class_attachable_interact_adbfe794fcb2bb817dbc62310c43c687e}} 
+\index{Attachable\+Interact@{Attachable\+Interact}!Should\+Ignore\+Distance@{Should\+Ignore\+Distance}}
+\index{Should\+Ignore\+Distance@{Should\+Ignore\+Distance}!Attachable\+Interact@{Attachable\+Interact}}
+\subsubsection{\texorpdfstring{Should\+Ignore\+Distance()}{ShouldIgnoreDistance()}}
+{\footnotesize\ttfamily virtual bool Attachable\+Interact.\+Should\+Ignore\+Distance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 117 of file Attachable\+Interact.\+cs.
+
+\mbox{\Hypertarget{class_attachable_interact_ab657260ae7954daa9d4c5f938790910d}\label{class_attachable_interact_ab657260ae7954daa9d4c5f938790910d}} 
+\index{Attachable\+Interact@{Attachable\+Interact}!Unregister\+Keys@{Unregister\+Keys}}
+\index{Unregister\+Keys@{Unregister\+Keys}!Attachable\+Interact@{Attachable\+Interact}}
+\subsubsection{\texorpdfstring{Unregister\+Keys()}{UnregisterKeys()}}
+{\footnotesize\ttfamily void Attachable\+Interact.\+Unregister\+Keys (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Unregister the Usable\+Axes and \mbox{\hyperlink{class_attachable_interact_a3c3ffc1d5b3cfd3bc9b4fde20a772901}{Usable\+Keys}} from the \mbox{\hyperlink{class_interact_checker}{Interact\+Checker}} 
+
+
+
+Definition at line 81 of file Attachable\+Interact.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_attachable_interact_ad46e0ca3808d58ab5e1102e379d6cb7e}\label{class_attachable_interact_ad46e0ca3808d58ab5e1102e379d6cb7e}} 
+\index{Attachable\+Interact@{Attachable\+Interact}!Interact\+Point@{Interact\+Point}}
+\index{Interact\+Point@{Interact\+Point}!Attachable\+Interact@{Attachable\+Interact}}
+\subsubsection{\texorpdfstring{Interact\+Point}{InteractPoint}}
+{\footnotesize\ttfamily Transform Attachable\+Interact.\+Interact\+Point}
+
+
+
+Definition at line 10 of file Attachable\+Interact.\+cs.
+
+\mbox{\Hypertarget{class_attachable_interact_a27e2c7faf9280bbc0e52c6360c79daf6}\label{class_attachable_interact_a27e2c7faf9280bbc0e52c6360c79daf6}} 
+\index{Attachable\+Interact@{Attachable\+Interact}!keys\+Registered@{keys\+Registered}}
+\index{keys\+Registered@{keys\+Registered}!Attachable\+Interact@{Attachable\+Interact}}
+\subsubsection{\texorpdfstring{keys\+Registered}{keysRegistered}}
+{\footnotesize\ttfamily bool Attachable\+Interact.\+keys\+Registered = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 12 of file Attachable\+Interact.\+cs.
+
+\mbox{\Hypertarget{class_attachable_interact_a3c3ffc1d5b3cfd3bc9b4fde20a772901}\label{class_attachable_interact_a3c3ffc1d5b3cfd3bc9b4fde20a772901}} 
+\index{Attachable\+Interact@{Attachable\+Interact}!Usable\+Keys@{Usable\+Keys}}
+\index{Usable\+Keys@{Usable\+Keys}!Attachable\+Interact@{Attachable\+Interact}}
+\subsubsection{\texorpdfstring{Usable\+Keys}{UsableKeys}}
+{\footnotesize\ttfamily List$<$Input\+Action$>$ Attachable\+Interact.\+Usable\+Keys = new List$<$Input\+Action$>$()}
+
+
+
+Definition at line 9 of file Attachable\+Interact.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Interactables/\mbox{\hyperlink{_attachable_interact_8cs}{Attachable\+Interact.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,201 @@
+\hypertarget{class_root_motion_1_1_demos_1_1_touch_walls_1_1_effector_link}{}\section{Root\+Motion.\+Demos.\+Touch\+Walls.\+Effector\+Link Class Reference}
+\label{class_root_motion_1_1_demos_1_1_touch_walls_1_1_effector_link}\index{Root\+Motion.\+Demos.\+Touch\+Walls.\+Effector\+Link@{Root\+Motion.\+Demos.\+Touch\+Walls.\+Effector\+Link}}
+
+
+Touching functionality for an effector  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_touch_walls_1_1_effector_link_aaf3747ff183dc5646f7848bacd1c8a68}{Initiate}} (\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_system}{Interaction\+System}} \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_touch_walls_aaf86751db277b9b271d627f6a1229281}{interaction\+System}})
+\item 
+void \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_touch_walls_1_1_effector_link_a3dfcc54cf99e52df6cf82297f2bc5108}{Update}} (\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_system}{Interaction\+System}} \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_touch_walls_aaf86751db277b9b271d627f6a1229281}{interaction\+System}})
+\item 
+void \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_touch_walls_1_1_effector_link_a65670aa39db4bf9dbc93ed717c2436ef}{Destroy}} (\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_system}{Interaction\+System}} \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_touch_walls_aaf86751db277b9b271d627f6a1229281}{interaction\+System}})
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_touch_walls_1_1_effector_link_a4d7ed48db14bce4373795dbd0c1c29f7}{enabled}} = true
+\item 
+\mbox{\hyperlink{namespace_root_motion_1_1_final_i_k_ae0dd2058c7667b6f132c11a6b860c14a}{Full\+Body\+Biped\+Effector}} \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_touch_walls_1_1_effector_link_ad95c1b2c205ac382d73e96adc685e277}{effector\+Type}}
+\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object}{Interaction\+Object}} \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_touch_walls_1_1_effector_link_ad2e71ee75cf5051af38c27d45cd48c04}{interaction\+Object}}
+\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_touch_walls_1_1_effector_link_ae7570f5ea8964939d1be01f1969d48b2}{spherecast\+From}}
+\item 
+float \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_touch_walls_1_1_effector_link_a6d48ef98f8bd83df8bb002f8e8b7cdff}{spherecast\+Radius}} = 0.\+1f
+\item 
+float \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_touch_walls_1_1_effector_link_ad429c4909dd802da493f1ba6ca49f760}{min\+Distance}} = 0.\+3f
+\item 
+Layer\+Mask \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_touch_walls_1_1_effector_link_a05c65e03e34ce7c256848bc01af5f6ea}{touch\+Layers}}
+\item 
+float \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_touch_walls_1_1_effector_link_aaa205fb0854ec5350dca028c5e16a0f8}{lerp\+Speed}} = 10f
+\item 
+float \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_touch_walls_1_1_effector_link_a94c2bf45f7348f87c7c94cf25272dd66}{min\+Switch\+Time}} = 0.\+2f
+\item 
+float \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_touch_walls_1_1_effector_link_af00931613b8335b40fe82c8793884e68}{release\+Distance}} = 0.\+4f
+\item 
+bool \mbox{\hyperlink{class_root_motion_1_1_demos_1_1_touch_walls_1_1_effector_link_a3624d22fe1c9655d95422839cf4612e0}{sliding}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Touching functionality for an effector 
+
+
+
+Definition at line 16 of file Touch\+Walls.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_touch_walls_1_1_effector_link_a65670aa39db4bf9dbc93ed717c2436ef}\label{class_root_motion_1_1_demos_1_1_touch_walls_1_1_effector_link_a65670aa39db4bf9dbc93ed717c2436ef}} 
+\index{Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link@{Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link}!Destroy@{Destroy}}
+\index{Destroy@{Destroy}!Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link@{Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link}}
+\subsubsection{\texorpdfstring{Destroy()}{Destroy()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Demos.\+Touch\+Walls.\+Effector\+Link.\+Destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_system}{Interaction\+System}}}]{interaction\+System }\end{DoxyParamCaption})}
+
+
+
+Definition at line 157 of file Touch\+Walls.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_touch_walls_1_1_effector_link_aaf3747ff183dc5646f7848bacd1c8a68}\label{class_root_motion_1_1_demos_1_1_touch_walls_1_1_effector_link_aaf3747ff183dc5646f7848bacd1c8a68}} 
+\index{Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link@{Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link}!Initiate@{Initiate}}
+\index{Initiate@{Initiate}!Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link@{Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link}}
+\subsubsection{\texorpdfstring{Initiate()}{Initiate()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Demos.\+Touch\+Walls.\+Effector\+Link.\+Initiate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_system}{Interaction\+System}}}]{interaction\+System }\end{DoxyParamCaption})}
+
+
+
+Definition at line 40 of file Touch\+Walls.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_touch_walls_1_1_effector_link_a3dfcc54cf99e52df6cf82297f2bc5108}\label{class_root_motion_1_1_demos_1_1_touch_walls_1_1_effector_link_a3dfcc54cf99e52df6cf82297f2bc5108}} 
+\index{Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link@{Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link}!Update@{Update}}
+\index{Update@{Update}!Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link@{Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Demos.\+Touch\+Walls.\+Effector\+Link.\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_system}{Interaction\+System}}}]{interaction\+System }\end{DoxyParamCaption})}
+
+
+
+Definition at line 69 of file Touch\+Walls.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_touch_walls_1_1_effector_link_ad95c1b2c205ac382d73e96adc685e277}\label{class_root_motion_1_1_demos_1_1_touch_walls_1_1_effector_link_ad95c1b2c205ac382d73e96adc685e277}} 
+\index{Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link@{Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link}!effector\+Type@{effector\+Type}}
+\index{effector\+Type@{effector\+Type}!Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link@{Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link}}
+\subsubsection{\texorpdfstring{effector\+Type}{effectorType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_root_motion_1_1_final_i_k_ae0dd2058c7667b6f132c11a6b860c14a}{Full\+Body\+Biped\+Effector}} Root\+Motion.\+Demos.\+Touch\+Walls.\+Effector\+Link.\+effector\+Type}
+
+
+
+Definition at line 18 of file Touch\+Walls.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_touch_walls_1_1_effector_link_a4d7ed48db14bce4373795dbd0c1c29f7}\label{class_root_motion_1_1_demos_1_1_touch_walls_1_1_effector_link_a4d7ed48db14bce4373795dbd0c1c29f7}} 
+\index{Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link@{Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link}!enabled@{enabled}}
+\index{enabled@{enabled}!Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link@{Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link}}
+\subsubsection{\texorpdfstring{enabled}{enabled}}
+{\footnotesize\ttfamily bool Root\+Motion.\+Demos.\+Touch\+Walls.\+Effector\+Link.\+enabled = true}
+
+
+
+Definition at line 17 of file Touch\+Walls.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_touch_walls_1_1_effector_link_ad2e71ee75cf5051af38c27d45cd48c04}\label{class_root_motion_1_1_demos_1_1_touch_walls_1_1_effector_link_ad2e71ee75cf5051af38c27d45cd48c04}} 
+\index{Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link@{Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link}!interaction\+Object@{interaction\+Object}}
+\index{interaction\+Object@{interaction\+Object}!Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link@{Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link}}
+\subsubsection{\texorpdfstring{interaction\+Object}{interactionObject}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object}{Interaction\+Object}} Root\+Motion.\+Demos.\+Touch\+Walls.\+Effector\+Link.\+interaction\+Object}
+
+
+
+Definition at line 19 of file Touch\+Walls.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_touch_walls_1_1_effector_link_aaa205fb0854ec5350dca028c5e16a0f8}\label{class_root_motion_1_1_demos_1_1_touch_walls_1_1_effector_link_aaa205fb0854ec5350dca028c5e16a0f8}} 
+\index{Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link@{Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link}!lerp\+Speed@{lerp\+Speed}}
+\index{lerp\+Speed@{lerp\+Speed}!Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link@{Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link}}
+\subsubsection{\texorpdfstring{lerp\+Speed}{lerpSpeed}}
+{\footnotesize\ttfamily float Root\+Motion.\+Demos.\+Touch\+Walls.\+Effector\+Link.\+lerp\+Speed = 10f}
+
+
+
+Definition at line 24 of file Touch\+Walls.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_touch_walls_1_1_effector_link_ad429c4909dd802da493f1ba6ca49f760}\label{class_root_motion_1_1_demos_1_1_touch_walls_1_1_effector_link_ad429c4909dd802da493f1ba6ca49f760}} 
+\index{Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link@{Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link}!min\+Distance@{min\+Distance}}
+\index{min\+Distance@{min\+Distance}!Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link@{Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link}}
+\subsubsection{\texorpdfstring{min\+Distance}{minDistance}}
+{\footnotesize\ttfamily float Root\+Motion.\+Demos.\+Touch\+Walls.\+Effector\+Link.\+min\+Distance = 0.\+3f}
+
+
+
+Definition at line 22 of file Touch\+Walls.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_touch_walls_1_1_effector_link_a94c2bf45f7348f87c7c94cf25272dd66}\label{class_root_motion_1_1_demos_1_1_touch_walls_1_1_effector_link_a94c2bf45f7348f87c7c94cf25272dd66}} 
+\index{Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link@{Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link}!min\+Switch\+Time@{min\+Switch\+Time}}
+\index{min\+Switch\+Time@{min\+Switch\+Time}!Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link@{Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link}}
+\subsubsection{\texorpdfstring{min\+Switch\+Time}{minSwitchTime}}
+{\footnotesize\ttfamily float Root\+Motion.\+Demos.\+Touch\+Walls.\+Effector\+Link.\+min\+Switch\+Time = 0.\+2f}
+
+
+
+Definition at line 25 of file Touch\+Walls.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_touch_walls_1_1_effector_link_af00931613b8335b40fe82c8793884e68}\label{class_root_motion_1_1_demos_1_1_touch_walls_1_1_effector_link_af00931613b8335b40fe82c8793884e68}} 
+\index{Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link@{Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link}!release\+Distance@{release\+Distance}}
+\index{release\+Distance@{release\+Distance}!Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link@{Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link}}
+\subsubsection{\texorpdfstring{release\+Distance}{releaseDistance}}
+{\footnotesize\ttfamily float Root\+Motion.\+Demos.\+Touch\+Walls.\+Effector\+Link.\+release\+Distance = 0.\+4f}
+
+
+
+Definition at line 26 of file Touch\+Walls.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_touch_walls_1_1_effector_link_a3624d22fe1c9655d95422839cf4612e0}\label{class_root_motion_1_1_demos_1_1_touch_walls_1_1_effector_link_a3624d22fe1c9655d95422839cf4612e0}} 
+\index{Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link@{Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link}!sliding@{sliding}}
+\index{sliding@{sliding}!Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link@{Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link}}
+\subsubsection{\texorpdfstring{sliding}{sliding}}
+{\footnotesize\ttfamily bool Root\+Motion.\+Demos.\+Touch\+Walls.\+Effector\+Link.\+sliding}
+
+
+
+Definition at line 27 of file Touch\+Walls.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_touch_walls_1_1_effector_link_ae7570f5ea8964939d1be01f1969d48b2}\label{class_root_motion_1_1_demos_1_1_touch_walls_1_1_effector_link_ae7570f5ea8964939d1be01f1969d48b2}} 
+\index{Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link@{Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link}!spherecast\+From@{spherecast\+From}}
+\index{spherecast\+From@{spherecast\+From}!Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link@{Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link}}
+\subsubsection{\texorpdfstring{spherecast\+From}{spherecastFrom}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Demos.\+Touch\+Walls.\+Effector\+Link.\+spherecast\+From}
+
+
+
+Definition at line 20 of file Touch\+Walls.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_touch_walls_1_1_effector_link_a6d48ef98f8bd83df8bb002f8e8b7cdff}\label{class_root_motion_1_1_demos_1_1_touch_walls_1_1_effector_link_a6d48ef98f8bd83df8bb002f8e8b7cdff}} 
+\index{Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link@{Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link}!spherecast\+Radius@{spherecast\+Radius}}
+\index{spherecast\+Radius@{spherecast\+Radius}!Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link@{Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link}}
+\subsubsection{\texorpdfstring{spherecast\+Radius}{spherecastRadius}}
+{\footnotesize\ttfamily float Root\+Motion.\+Demos.\+Touch\+Walls.\+Effector\+Link.\+spherecast\+Radius = 0.\+1f}
+
+
+
+Definition at line 21 of file Touch\+Walls.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_demos_1_1_touch_walls_1_1_effector_link_a05c65e03e34ce7c256848bc01af5f6ea}\label{class_root_motion_1_1_demos_1_1_touch_walls_1_1_effector_link_a05c65e03e34ce7c256848bc01af5f6ea}} 
+\index{Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link@{Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link}!touch\+Layers@{touch\+Layers}}
+\index{touch\+Layers@{touch\+Layers}!Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link@{Root\+Motion\+::\+Demos\+::\+Touch\+Walls\+::\+Effector\+Link}}
+\subsubsection{\texorpdfstring{touch\+Layers}{touchLayers}}
+{\footnotesize\ttfamily Layer\+Mask Root\+Motion.\+Demos.\+Touch\+Walls.\+Effector\+Link.\+touch\+Layers}
+
+
+
+Definition at line 23 of file Touch\+Walls.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Plugins/\+Root\+Motion/\+Final\+I\+K/\+\_\+\+D\+E\+M\+O\+S/\+F\+B\+B\+I\+K/\+Scripts/\mbox{\hyperlink{_touch_walls_8cs}{Touch\+Walls.\+cs}}\end{DoxyCompactItemize}

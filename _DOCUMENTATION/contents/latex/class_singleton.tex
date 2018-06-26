@@ -1,0 +1,180 @@
+\hypertarget{class_singleton}{}\section{Singleton$<$ T $>$ Class Template Reference}
+\label{class_singleton}\index{Singleton$<$ T $>$@{Singleton$<$ T $>$}}
+
+
+Base class \mbox{\hyperlink{class_singleton}{Singleton}}  
+
+
+Inheritance diagram for Singleton$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_singleton}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_singleton_a3af6527458f79b1ade7ab76b30286b6b}{Dispose}} ()
+\item 
+virtual void \mbox{\hyperlink{class_singleton_a35f0214fbbe0e59abe738b18a2377647}{Reset}} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_singleton_ae464548552a00e691241cd16b5b2fc39}{Instance\+Exists}} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_singleton_a7b7616e1b036d495f429f3e044bb3652}{m\+\_\+b\+Log\+Singleton\+Messages}} = true
+\item 
+bool \mbox{\hyperlink{class_singleton_abd3bfd9c53c4075668cf836e56b7b9c1}{m\+\_\+b\+Destroy\+Entire\+Object}} = false
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_singleton_a45ddae0b74be7efd7a92f3c2941fa4c0}{Dont\+Destroy}} ()
+\item 
+virtual void \mbox{\hyperlink{class_singleton_a2fe04de8c37c320855283a1a1274ea26}{On\+Created}} ()
+\begin{DoxyCompactList}\small\item\em Only called when it was created via calling T.\+Instance \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_singleton_aac558b29781a363c0845b0359c8f85ff}{On\+Awake}} ()
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static T \mbox{\hyperlink{class_singleton_a54103e8475b2a352ee759d5732307534}{Instance}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base class \mbox{\hyperlink{class_singleton}{Singleton}} 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em Mono\+Behaviour}]\end{description}
+\end{Desc}
+
+
+Definition at line 10 of file Singleton.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_singleton_a3af6527458f79b1ade7ab76b30286b6b}\label{class_singleton_a3af6527458f79b1ade7ab76b30286b6b}} 
+\index{Singleton@{Singleton}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!Singleton@{Singleton}}
+\subsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{class_singleton}{Singleton}}$<$ T $>$.Dispose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 105 of file Singleton.\+cs.
+
+\mbox{\Hypertarget{class_singleton_a45ddae0b74be7efd7a92f3c2941fa4c0}\label{class_singleton_a45ddae0b74be7efd7a92f3c2941fa4c0}} 
+\index{Singleton@{Singleton}!Dont\+Destroy@{Dont\+Destroy}}
+\index{Dont\+Destroy@{Dont\+Destroy}!Singleton@{Singleton}}
+\subsubsection{\texorpdfstring{Dont\+Destroy()}{DontDestroy()}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{class_singleton}{Singleton}}$<$ T $>$.Dont\+Destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 40 of file Singleton.\+cs.
+
+\mbox{\Hypertarget{class_singleton_ae464548552a00e691241cd16b5b2fc39}\label{class_singleton_ae464548552a00e691241cd16b5b2fc39}} 
+\index{Singleton@{Singleton}!Instance\+Exists@{Instance\+Exists}}
+\index{Instance\+Exists@{Instance\+Exists}!Singleton@{Singleton}}
+\subsubsection{\texorpdfstring{Instance\+Exists()}{InstanceExists()}}
+{\footnotesize\ttfamily static bool \mbox{\hyperlink{class_singleton}{Singleton}}$<$ T $>$.Instance\+Exists (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 93 of file Singleton.\+cs.
+
+\mbox{\Hypertarget{class_singleton_aac558b29781a363c0845b0359c8f85ff}\label{class_singleton_aac558b29781a363c0845b0359c8f85ff}} 
+\index{Singleton@{Singleton}!On\+Awake@{On\+Awake}}
+\index{On\+Awake@{On\+Awake}!Singleton@{Singleton}}
+\subsubsection{\texorpdfstring{On\+Awake()}{OnAwake()}}
+{\footnotesize\ttfamily virtual void \mbox{\hyperlink{class_singleton}{Singleton}}$<$ T $>$.On\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_e_w_eye_tracking_a0f2a94f353f615f9c10721fd2641bdb6}{E\+W\+Eye\+Tracking}}, \mbox{\hyperlink{class_game_manager_a30d19f2d0dbdc657e6f216a99e4be4af}{Game\+Manager}}, and \mbox{\hyperlink{class_save_manager_a74ded72b7bc7c81cc87722a84518ebcf}{Save\+Manager}}.
+
+
+
+Definition at line 103 of file Singleton.\+cs.
+
+\mbox{\Hypertarget{class_singleton_a2fe04de8c37c320855283a1a1274ea26}\label{class_singleton_a2fe04de8c37c320855283a1a1274ea26}} 
+\index{Singleton@{Singleton}!On\+Created@{On\+Created}}
+\index{On\+Created@{On\+Created}!Singleton@{Singleton}}
+\subsubsection{\texorpdfstring{On\+Created()}{OnCreated()}}
+{\footnotesize\ttfamily virtual void \mbox{\hyperlink{class_singleton}{Singleton}}$<$ T $>$.On\+Created (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Only called when it was created via calling T.\+Instance 
+
+
+
+Definition at line 101 of file Singleton.\+cs.
+
+\mbox{\Hypertarget{class_singleton_a35f0214fbbe0e59abe738b18a2377647}\label{class_singleton_a35f0214fbbe0e59abe738b18a2377647}} 
+\index{Singleton@{Singleton}!Reset@{Reset}}
+\index{Reset@{Reset}!Singleton@{Singleton}}
+\subsubsection{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily virtual void \mbox{\hyperlink{class_singleton}{Singleton}}$<$ T $>$.Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_e_w_debug_aac177b62905530131ea9a05026f95725}{E\+W\+Debug}}.
+
+
+
+Definition at line 117 of file Singleton.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_singleton_abd3bfd9c53c4075668cf836e56b7b9c1}\label{class_singleton_abd3bfd9c53c4075668cf836e56b7b9c1}} 
+\index{Singleton@{Singleton}!m\+\_\+b\+Destroy\+Entire\+Object@{m\+\_\+b\+Destroy\+Entire\+Object}}
+\index{m\+\_\+b\+Destroy\+Entire\+Object@{m\+\_\+b\+Destroy\+Entire\+Object}!Singleton@{Singleton}}
+\subsubsection{\texorpdfstring{m\+\_\+b\+Destroy\+Entire\+Object}{m\_bDestroyEntireObject}}
+{\footnotesize\ttfamily bool \mbox{\hyperlink{class_singleton}{Singleton}}$<$ T $>$.m\+\_\+b\+Destroy\+Entire\+Object = false}
+
+
+
+Definition at line 16 of file Singleton.\+cs.
+
+\mbox{\Hypertarget{class_singleton_a7b7616e1b036d495f429f3e044bb3652}\label{class_singleton_a7b7616e1b036d495f429f3e044bb3652}} 
+\index{Singleton@{Singleton}!m\+\_\+b\+Log\+Singleton\+Messages@{m\+\_\+b\+Log\+Singleton\+Messages}}
+\index{m\+\_\+b\+Log\+Singleton\+Messages@{m\+\_\+b\+Log\+Singleton\+Messages}!Singleton@{Singleton}}
+\subsubsection{\texorpdfstring{m\+\_\+b\+Log\+Singleton\+Messages}{m\_bLogSingletonMessages}}
+{\footnotesize\ttfamily bool \mbox{\hyperlink{class_singleton}{Singleton}}$<$ T $>$.m\+\_\+b\+Log\+Singleton\+Messages = true}
+
+
+
+Definition at line 15 of file Singleton.\+cs.
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_singleton_a54103e8475b2a352ee759d5732307534}\label{class_singleton_a54103e8475b2a352ee759d5732307534}} 
+\index{Singleton@{Singleton}!Instance@{Instance}}
+\index{Instance@{Instance}!Singleton@{Singleton}}
+\subsubsection{\texorpdfstring{Instance}{Instance}}
+{\footnotesize\ttfamily T \mbox{\hyperlink{class_singleton}{Singleton}}$<$ T $>$.Instance\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Definition at line 46 of file Singleton.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+System/\mbox{\hyperlink{_singleton_8cs}{Singleton.\+cs}}\end{DoxyCompactItemize}

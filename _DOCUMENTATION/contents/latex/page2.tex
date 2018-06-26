@@ -1,0 +1,68 @@
+IK system for standard biped characters that is designed to replicate and enhance the behaviour of the Unity\textquotesingle{}s built-\/in character IK setup.
+
+{\bfseries Biped\+IK or Full\+Body\+Biped\+IK?} ~\newline
+Originally the only benefit of Biped\+IK over Full\+Body\+Biped\+IK was it\textquotesingle{}s much better performance. However, since Final\+IK 0.\+4, we are able to set F\+B\+B\+IK solver iteration count to 0, in which case the full body effect will not be solved and it is almost as fast as Biped\+IK. This allows for much easier optimization of IK on characters in the distance. Therefore, since 0.\+4, Full\+Body\+Biped\+IK component is the recommended solution for solving biped characters.
+
+{\bfseries Biped\+IK or Unity\textquotesingle{}s Animator IK?}
+\begin{DoxyItemize}
+\item Animator IK does not allow the modifiaction of any of even the most basic solver parameters, such as limb bend direction, which makes the system difficult, if not impossible to use or extend in slightly more advanced use cases. Even in the simplest of cases, Animator can produce unnatural poses or bend a limb in unwanted direction and there is nothing that can be done to work around the problem.
+\item Animator IK lacks a spine solver.
+\item Animator\textquotesingle{}s Look\+At functionality can often solve to weird poses such as bending the spine backwards when looking over the shoulder.
+\item Biped\+IK also incorporates Aim\+IK.
+\item Biped\+IK does N\+OT require Unity Pro.
+\end{DoxyItemize}
+
+To simplify migration from Unity\textquotesingle{}s built-\/in Animator IK, Biped\+IK supports the same A\+PI, so you can just go from animator.\+Set\+I\+K\+Position(...) to biped\+I\+K.\+Set\+I\+K\+Position(...).
+
+Biped\+IK, like any other component in the Final\+IK package, goes out of it\textquotesingle{}s way to minimize the work required for set up. Biped\+IK automatically detects the biped bones based on the bone structure of the character and the most common naming conventions, so unless you have named your bones in Chinese, you should have Biped\+IK ready for work as soon as you can drop in the component. If Biped\+IK fails to recognize the bone references or you just want to change them, you can always manage the references from the inspector.
+
+
+
+{\bfseries Getting started\+:}
+\begin{DoxyItemize}
+\item Add the Biped\+IK component to the root of your character (the same Game\+Object that has the Animator/\+Animation component)
+\item Make sure the auto-\/detected biped references are correct
+\item Press play, weigh in the solvers
+\end{DoxyItemize}
+
+{\bfseries Accessing the solvers of Biped IK\+:}
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{public} BipedIK bipedIK;
+
+\textcolor{keywordtype}{void} LateUpdate () \{
+    bipedIK.solvers.leftFoot.IKPosition = something;
+    bipedIK.solvers.spine.IKPosition = something;
+    ...
+\}
+\end{DoxyCode}
+
+
+{\bfseries Adding Biped\+IK in runtime\+:}
+\begin{DoxyItemize}
+\item Add the Biped\+IK component via script
+\item Assign Biped\+I\+K.\+references
+\item Optionally call Biped\+I\+K.\+Set\+To\+Defaults() to set the parameters of the solvers to default Biped\+IK values. Otherwise default values of each solver are used.
+\end{DoxyItemize}
+
+{\bfseries Component variables\+:}
+\begin{DoxyItemize}
+\item {\bfseries time\+Step} -\/ if zero, will update the solver in every Late\+Update(). Use this for chains that are animated. If $>$ 0, will be used as updating frequency so that the solver will reach its target in the same time on all machines
+\item {\bfseries fix\+Transforms} -\/ if true, will fix all the Transforms used by the solver to their initial state in each Update. This prevents potential problems with unanimated bones and animator culling with a small cost of performance
+\item {\bfseries references} -\/ references to the character bones that Biped\+IK needs to build it\textquotesingle{}s solver.
+\end{DoxyItemize}
+
+{\bfseries Solver variables\+:}
+\begin{DoxyItemize}
+\item \href{page7.html}{\tt Left Foot}
+\item \href{page7.html}{\tt Right Foot}
+\item \href{page7.html}{\tt Left Hand}
+\item \href{page7.html}{\tt Right Hand}
+\item \href{page4.html}{\tt Spine}
+\item \href{page1.html}{\tt Aim}
+\item \href{page8.html}{\tt Look At}
+\item {\bfseries Pelvis} -\/ Pos Offset and Rot Offset can be used to offset the pelvis of the character from it\textquotesingle{}s animated position/rotation. Pos Weight and Rot Weight can be used to translate and rotate the pelvis to biped\+I\+K.\+solvers.\+pelvis.\+position and biped\+I\+K.\+solvers.\+pelvis.\+rotation.
+\end{DoxyItemize}
+
+ 

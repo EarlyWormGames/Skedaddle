@@ -1,0 +1,226 @@
+\hypertarget{class_climb_jump}{}\section{Climb\+Jump Class Reference}
+\label{class_climb_jump}\index{Climb\+Jump@{Climb\+Jump}}
+Inheritance diagram for Climb\+Jump\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.000000cm]{class_climb_jump}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static float \mbox{\hyperlink{class_climb_jump_a3a61d393fe89a5a9062af8d33e1881d7}{Get\+Multiplier}} (\mbox{\hyperlink{_animal_8cs_a57d10208ebba781ae206546ada2002b6}{F\+A\+C\+I\+N\+G\+\_\+\+D\+IR}} direction)
+\begin{DoxyCompactList}\small\item\em Get the animation multiplier for \mbox{\hyperlink{_animal_8cs_a57d10208ebba781ae206546ada2002b6}{F\+A\+C\+I\+N\+G\+\_\+\+D\+IR}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_climb_jump_a1a5693023b987aa23829b8a0377d9dc2}{Do\+On\+Trigger}} = false
+\item 
+bool \mbox{\hyperlink{class_climb_jump_adf154cf72f285b44e4169ae2c945134b}{Break\+Spline\+Connection}} = false
+\item 
+\mbox{\hyperlink{_animal_8cs_a57d10208ebba781ae206546ada2002b6}{F\+A\+C\+I\+N\+G\+\_\+\+D\+IR}} \mbox{\hyperlink{class_climb_jump_aba36d59845979b06dc89df544064a284}{Direction}} = \mbox{\hyperlink{_animal_8cs_a57d10208ebba781ae206546ada2002b6a21507b40c80068eda19865706fdc2403}{F\+A\+C\+I\+N\+G\+\_\+\+D\+I\+R.\+R\+I\+G\+HT}}
+\item 
+Transform \mbox{\hyperlink{class_climb_jump_a2c6a0bce88d430514c8edd50faf572a3}{Anchor\+Point}}
+\item 
+\mbox{\hyperlink{class_attachable}{Attachable}} \mbox{\hyperlink{class_climb_jump_a1828a3600e286c5563ff59966bdc5ee3}{Transition\+To}}
+\item 
+\mbox{\hyperlink{_animal_8cs_ad0d15cd79bb3e3a97e7fb817f1438fcc}{A\+N\+I\+M\+A\+L\+\_\+\+S\+I\+ZE}} \mbox{\hyperlink{class_climb_jump_ab06506a0317a9830f1dcd7b19a920cc9}{Auto\+Climb\+Size}}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_climb_jump_a094788a5de43e24f111eec10ba0a3c88}{On\+Start}} ()
+\item 
+override bool \mbox{\hyperlink{class_climb_jump_a16ddafaf15a3e7effb11ee3f433721f1}{Check\+Detach}} ()
+\item 
+override void \mbox{\hyperlink{class_climb_jump_a66b008bb35c83a5cf66d7f70ca0c4acf}{On\+Animal\+Enter}} (\mbox{\hyperlink{class_animal}{Animal}} a\+\_\+animal)
+\item 
+override void \mbox{\hyperlink{class_climb_jump_a65ed10c05b80b5b2fe2df7112546f2fc}{Do\+Interact}} (\mbox{\hyperlink{class_animal}{Animal}} caller)
+\item 
+virtual bool \mbox{\hyperlink{class_climb_jump_aa112e141ea3e2ddb0325f65e4171fdac}{Try\+Climb}} (\mbox{\hyperlink{class_animal}{Animal}} animal)
+\begin{DoxyCompactList}\small\item\em Default always returns true. Meant to allow children to prevent climbing \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+override bool \mbox{\hyperlink{class_climb_jump_a794d5397520c8d0420f6e1bd7a1c5ae8}{Head\+Trigger\+Only}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 6 of file Climb\+Jump.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_climb_jump_a16ddafaf15a3e7effb11ee3f433721f1}\label{class_climb_jump_a16ddafaf15a3e7effb11ee3f433721f1}} 
+\index{Climb\+Jump@{Climb\+Jump}!Check\+Detach@{Check\+Detach}}
+\index{Check\+Detach@{Check\+Detach}!Climb\+Jump@{Climb\+Jump}}
+\subsubsection{\texorpdfstring{Check\+Detach()}{CheckDetach()}}
+{\footnotesize\ttfamily override bool Climb\+Jump.\+Check\+Detach (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_attachable_a5cd6ea1bf16c527c033e6f09681f84f8}{Attachable}}.
+
+
+
+Definition at line 28 of file Climb\+Jump.\+cs.
+
+\mbox{\Hypertarget{class_climb_jump_a65ed10c05b80b5b2fe2df7112546f2fc}\label{class_climb_jump_a65ed10c05b80b5b2fe2df7112546f2fc}} 
+\index{Climb\+Jump@{Climb\+Jump}!Do\+Interact@{Do\+Interact}}
+\index{Do\+Interact@{Do\+Interact}!Climb\+Jump@{Climb\+Jump}}
+\subsubsection{\texorpdfstring{Do\+Interact()}{DoInteract()}}
+{\footnotesize\ttfamily override void Climb\+Jump.\+Do\+Interact (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{caller }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_attachable_interact_a9b07a54f1dbb96777c4bd287dfe438e3}{Attachable\+Interact}}.
+
+
+
+Definition at line 134 of file Climb\+Jump.\+cs.
+
+\mbox{\Hypertarget{class_climb_jump_a3a61d393fe89a5a9062af8d33e1881d7}\label{class_climb_jump_a3a61d393fe89a5a9062af8d33e1881d7}} 
+\index{Climb\+Jump@{Climb\+Jump}!Get\+Multiplier@{Get\+Multiplier}}
+\index{Get\+Multiplier@{Get\+Multiplier}!Climb\+Jump@{Climb\+Jump}}
+\subsubsection{\texorpdfstring{Get\+Multiplier()}{GetMultiplier()}}
+{\footnotesize\ttfamily static float Climb\+Jump.\+Get\+Multiplier (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_animal_8cs_a57d10208ebba781ae206546ada2002b6}{F\+A\+C\+I\+N\+G\+\_\+\+D\+IR}}}]{direction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the animation multiplier for \mbox{\hyperlink{_animal_8cs_a57d10208ebba781ae206546ada2002b6}{F\+A\+C\+I\+N\+G\+\_\+\+D\+IR}} 
+
+
+
+Definition at line 187 of file Climb\+Jump.\+cs.
+
+\mbox{\Hypertarget{class_climb_jump_a66b008bb35c83a5cf66d7f70ca0c4acf}\label{class_climb_jump_a66b008bb35c83a5cf66d7f70ca0c4acf}} 
+\index{Climb\+Jump@{Climb\+Jump}!On\+Animal\+Enter@{On\+Animal\+Enter}}
+\index{On\+Animal\+Enter@{On\+Animal\+Enter}!Climb\+Jump@{Climb\+Jump}}
+\subsubsection{\texorpdfstring{On\+Animal\+Enter()}{OnAnimalEnter()}}
+{\footnotesize\ttfamily override void Climb\+Jump.\+On\+Animal\+Enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{a\+\_\+animal }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_attachable_interact_a376127af23be5456604ee5ec39f02b9b}{Attachable\+Interact}}.
+
+
+
+Definition at line 33 of file Climb\+Jump.\+cs.
+
+\mbox{\Hypertarget{class_climb_jump_a094788a5de43e24f111eec10ba0a3c88}\label{class_climb_jump_a094788a5de43e24f111eec10ba0a3c88}} 
+\index{Climb\+Jump@{Climb\+Jump}!On\+Start@{On\+Start}}
+\index{On\+Start@{On\+Start}!Climb\+Jump@{Climb\+Jump}}
+\subsubsection{\texorpdfstring{On\+Start()}{OnStart()}}
+{\footnotesize\ttfamily override void Climb\+Jump.\+On\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_attachable_a3c05c0b07b831881a7ab245057d34d30}{Attachable}}.
+
+
+
+Definition at line 19 of file Climb\+Jump.\+cs.
+
+\mbox{\Hypertarget{class_climb_jump_aa112e141ea3e2ddb0325f65e4171fdac}\label{class_climb_jump_aa112e141ea3e2ddb0325f65e4171fdac}} 
+\index{Climb\+Jump@{Climb\+Jump}!Try\+Climb@{Try\+Climb}}
+\index{Try\+Climb@{Try\+Climb}!Climb\+Jump@{Climb\+Jump}}
+\subsubsection{\texorpdfstring{Try\+Climb()}{TryClimb()}}
+{\footnotesize\ttfamily virtual bool Climb\+Jump.\+Try\+Climb (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{animal }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Default always returns true. Meant to allow children to prevent climbing 
+
+
+
+Reimplemented in \mbox{\hyperlink{class_blockable_climb_jump_a58cf472a84d9fb9f01800f75b56fd197}{Blockable\+Climb\+Jump}}.
+
+
+
+Definition at line 179 of file Climb\+Jump.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_climb_jump_a2c6a0bce88d430514c8edd50faf572a3}\label{class_climb_jump_a2c6a0bce88d430514c8edd50faf572a3}} 
+\index{Climb\+Jump@{Climb\+Jump}!Anchor\+Point@{Anchor\+Point}}
+\index{Anchor\+Point@{Anchor\+Point}!Climb\+Jump@{Climb\+Jump}}
+\subsubsection{\texorpdfstring{Anchor\+Point}{AnchorPoint}}
+{\footnotesize\ttfamily Transform Climb\+Jump.\+Anchor\+Point}
+
+
+
+Definition at line 11 of file Climb\+Jump.\+cs.
+
+\mbox{\Hypertarget{class_climb_jump_ab06506a0317a9830f1dcd7b19a920cc9}\label{class_climb_jump_ab06506a0317a9830f1dcd7b19a920cc9}} 
+\index{Climb\+Jump@{Climb\+Jump}!Auto\+Climb\+Size@{Auto\+Climb\+Size}}
+\index{Auto\+Climb\+Size@{Auto\+Climb\+Size}!Climb\+Jump@{Climb\+Jump}}
+\subsubsection{\texorpdfstring{Auto\+Climb\+Size}{AutoClimbSize}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_animal_8cs_ad0d15cd79bb3e3a97e7fb817f1438fcc}{A\+N\+I\+M\+A\+L\+\_\+\+S\+I\+ZE}} Climb\+Jump.\+Auto\+Climb\+Size}
+
+
+
+Definition at line 13 of file Climb\+Jump.\+cs.
+
+\mbox{\Hypertarget{class_climb_jump_adf154cf72f285b44e4169ae2c945134b}\label{class_climb_jump_adf154cf72f285b44e4169ae2c945134b}} 
+\index{Climb\+Jump@{Climb\+Jump}!Break\+Spline\+Connection@{Break\+Spline\+Connection}}
+\index{Break\+Spline\+Connection@{Break\+Spline\+Connection}!Climb\+Jump@{Climb\+Jump}}
+\subsubsection{\texorpdfstring{Break\+Spline\+Connection}{BreakSplineConnection}}
+{\footnotesize\ttfamily bool Climb\+Jump.\+Break\+Spline\+Connection = false}
+
+
+
+Definition at line 9 of file Climb\+Jump.\+cs.
+
+\mbox{\Hypertarget{class_climb_jump_aba36d59845979b06dc89df544064a284}\label{class_climb_jump_aba36d59845979b06dc89df544064a284}} 
+\index{Climb\+Jump@{Climb\+Jump}!Direction@{Direction}}
+\index{Direction@{Direction}!Climb\+Jump@{Climb\+Jump}}
+\subsubsection{\texorpdfstring{Direction}{Direction}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_animal_8cs_a57d10208ebba781ae206546ada2002b6}{F\+A\+C\+I\+N\+G\+\_\+\+D\+IR}} Climb\+Jump.\+Direction = \mbox{\hyperlink{_animal_8cs_a57d10208ebba781ae206546ada2002b6a21507b40c80068eda19865706fdc2403}{F\+A\+C\+I\+N\+G\+\_\+\+D\+I\+R.\+R\+I\+G\+HT}}}
+
+
+
+Definition at line 10 of file Climb\+Jump.\+cs.
+
+\mbox{\Hypertarget{class_climb_jump_a1a5693023b987aa23829b8a0377d9dc2}\label{class_climb_jump_a1a5693023b987aa23829b8a0377d9dc2}} 
+\index{Climb\+Jump@{Climb\+Jump}!Do\+On\+Trigger@{Do\+On\+Trigger}}
+\index{Do\+On\+Trigger@{Do\+On\+Trigger}!Climb\+Jump@{Climb\+Jump}}
+\subsubsection{\texorpdfstring{Do\+On\+Trigger}{DoOnTrigger}}
+{\footnotesize\ttfamily bool Climb\+Jump.\+Do\+On\+Trigger = false}
+
+
+
+Definition at line 8 of file Climb\+Jump.\+cs.
+
+\mbox{\Hypertarget{class_climb_jump_a1828a3600e286c5563ff59966bdc5ee3}\label{class_climb_jump_a1828a3600e286c5563ff59966bdc5ee3}} 
+\index{Climb\+Jump@{Climb\+Jump}!Transition\+To@{Transition\+To}}
+\index{Transition\+To@{Transition\+To}!Climb\+Jump@{Climb\+Jump}}
+\subsubsection{\texorpdfstring{Transition\+To}{TransitionTo}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_attachable}{Attachable}} Climb\+Jump.\+Transition\+To}
+
+
+
+Definition at line 12 of file Climb\+Jump.\+cs.
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_climb_jump_a794d5397520c8d0420f6e1bd7a1c5ae8}\label{class_climb_jump_a794d5397520c8d0420f6e1bd7a1c5ae8}} 
+\index{Climb\+Jump@{Climb\+Jump}!Head\+Trigger\+Only@{Head\+Trigger\+Only}}
+\index{Head\+Trigger\+Only@{Head\+Trigger\+Only}!Climb\+Jump@{Climb\+Jump}}
+\subsubsection{\texorpdfstring{Head\+Trigger\+Only}{HeadTriggerOnly}}
+{\footnotesize\ttfamily override bool Climb\+Jump.\+Head\+Trigger\+Only\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 14 of file Climb\+Jump.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Interactables/\+Attachables/\mbox{\hyperlink{_climb_jump_8cs}{Climb\+Jump.\+cs}}\end{DoxyCompactItemize}

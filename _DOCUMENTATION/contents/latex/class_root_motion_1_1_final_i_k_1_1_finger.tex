@@ -1,0 +1,235 @@
+\hypertarget{class_root_motion_1_1_final_i_k_1_1_finger}{}\section{Root\+Motion.\+Final\+I\+K.\+Finger Class Reference}
+\label{class_root_motion_1_1_final_i_k_1_1_finger}\index{Root\+Motion.\+Final\+I\+K.\+Finger@{Root\+Motion.\+Final\+I\+K.\+Finger}}
+
+
+Contains a \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_limb_i_k}{Limb\+IK}} solver and some additional logic to handle the finger.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_finger_ae9efb1adbdb73e37114b8cccfae88d9b}{Is\+Valid}} (ref string error\+Message)
+\begin{DoxyCompactList}\small\item\em Is this finger setup valid? \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_finger_a0ddbb8827ec12d4b95e422ef2680e68f}{Initiate}} (Transform hand, int index)
+\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_finger_aa660ea3d2f1dc6b02cf1c402d8f441b5}{Fix\+Transforms}} ()
+\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_finger_ac994621fdf68a9b8e081123bb69e8da5}{Update}} (float master\+Weight)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_finger_a3f4cdb44118e5c6a8b242ffbffbac71f}{weight}} = 1f
+\begin{DoxyCompactList}\small\item\em Master Weight for the finger. \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_finger_a24de3747cc8d19bff62a9fd8738bd6a1}{bone1}}
+\begin{DoxyCompactList}\small\item\em The first bone of the finger. \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_finger_abc15a27e3f3c80abf25ae8f4fcacc8d5}{bone2}}
+\begin{DoxyCompactList}\small\item\em The second bone of the finger. \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_finger_a54e39bb6774532ac0e36128f010d294a}{bone3}}
+\begin{DoxyCompactList}\small\item\em The (optional) third bone of the finger. This can be ignored for thumbs. \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_finger_a33571b5ae2a49a1c5b601b4f8852c5d5}{tip}}
+\begin{DoxyCompactList}\small\item\em The fingertip object. If your character doesn\textquotesingle{}t have tip bones, you can create an empty Game\+Object and parent it to the last bone in the finger. Place it to the tip of the finger. \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_finger_a51474eeb423e2acf8ac4f33a19055086}{target}}
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k}{IK}} target (optional, can use I\+K\+Position and I\+K\+Rotation directly). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_finger_acb849481d6e0992851e8dfd2315291fd}{initiated}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Has the finger properly initiated (in play mode only)? \end{DoxyCompactList}\item 
+Vector3 \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_finger_ae16402119be9f6353f90c65a29a98195}{I\+K\+Position}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k}{IK}} target position if target is not used. \end{DoxyCompactList}\item 
+Quaternion \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_finger_a23f205bf349624ed830df25e7e9e7bb9}{I\+K\+Rotation}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k}{IK}} target rotation if target is not used. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains a \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_limb_i_k}{Limb\+IK}} solver and some additional logic to handle the finger. 
+
+
+
+Definition at line 12 of file Finger\+Rig.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_finger_aa660ea3d2f1dc6b02cf1c402d8f441b5}\label{class_root_motion_1_1_final_i_k_1_1_finger_aa660ea3d2f1dc6b02cf1c402d8f441b5}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Finger@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger}!Fix\+Transforms@{Fix\+Transforms}}
+\index{Fix\+Transforms@{Fix\+Transforms}!Root\+Motion\+::\+Final\+I\+K\+::\+Finger@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger}}
+\subsubsection{\texorpdfstring{Fix\+Transforms()}{FixTransforms()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+Finger.\+Fix\+Transforms (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 123 of file Finger\+Rig.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_finger_a0ddbb8827ec12d4b95e422ef2680e68f}\label{class_root_motion_1_1_final_i_k_1_1_finger_a0ddbb8827ec12d4b95e422ef2680e68f}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Finger@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger}!Initiate@{Initiate}}
+\index{Initiate@{Initiate}!Root\+Motion\+::\+Final\+I\+K\+::\+Finger@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger}}
+\subsubsection{\texorpdfstring{Initiate()}{Initiate()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+Finger.\+Initiate (\begin{DoxyParamCaption}\item[{Transform}]{hand,  }\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Definition at line 92 of file Finger\+Rig.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_finger_ae9efb1adbdb73e37114b8cccfae88d9b}\label{class_root_motion_1_1_final_i_k_1_1_finger_ae9efb1adbdb73e37114b8cccfae88d9b}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Finger@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger}!Is\+Valid@{Is\+Valid}}
+\index{Is\+Valid@{Is\+Valid}!Root\+Motion\+::\+Final\+I\+K\+::\+Finger@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger}}
+\subsubsection{\texorpdfstring{Is\+Valid()}{IsValid()}}
+{\footnotesize\ttfamily bool Root\+Motion.\+Final\+I\+K.\+Finger.\+Is\+Valid (\begin{DoxyParamCaption}\item[{ref string}]{error\+Message }\end{DoxyParamCaption})}
+
+
+
+Is this finger setup valid? 
+
+
+
+Definition at line 77 of file Finger\+Rig.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_finger_ac994621fdf68a9b8e081123bb69e8da5}\label{class_root_motion_1_1_final_i_k_1_1_finger_ac994621fdf68a9b8e081123bb69e8da5}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Finger@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger}!Update@{Update}}
+\index{Update@{Update}!Root\+Motion\+::\+Final\+I\+K\+::\+Finger@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+Finger.\+Update (\begin{DoxyParamCaption}\item[{float}]{master\+Weight }\end{DoxyParamCaption})}
+
+
+
+Definition at line 135 of file Finger\+Rig.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_finger_a24de3747cc8d19bff62a9fd8738bd6a1}\label{class_root_motion_1_1_final_i_k_1_1_finger_a24de3747cc8d19bff62a9fd8738bd6a1}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Finger@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger}!bone1@{bone1}}
+\index{bone1@{bone1}!Root\+Motion\+::\+Final\+I\+K\+::\+Finger@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger}}
+\subsubsection{\texorpdfstring{bone1}{bone1}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Final\+I\+K.\+Finger.\+bone1}
+
+
+
+The first bone of the finger. 
+
+
+
+Definition at line 23 of file Finger\+Rig.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_finger_abc15a27e3f3c80abf25ae8f4fcacc8d5}\label{class_root_motion_1_1_final_i_k_1_1_finger_abc15a27e3f3c80abf25ae8f4fcacc8d5}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Finger@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger}!bone2@{bone2}}
+\index{bone2@{bone2}!Root\+Motion\+::\+Final\+I\+K\+::\+Finger@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger}}
+\subsubsection{\texorpdfstring{bone2}{bone2}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Final\+I\+K.\+Finger.\+bone2}
+
+
+
+The second bone of the finger. 
+
+
+
+Definition at line 28 of file Finger\+Rig.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_finger_a54e39bb6774532ac0e36128f010d294a}\label{class_root_motion_1_1_final_i_k_1_1_finger_a54e39bb6774532ac0e36128f010d294a}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Finger@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger}!bone3@{bone3}}
+\index{bone3@{bone3}!Root\+Motion\+::\+Final\+I\+K\+::\+Finger@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger}}
+\subsubsection{\texorpdfstring{bone3}{bone3}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Final\+I\+K.\+Finger.\+bone3}
+
+
+
+The (optional) third bone of the finger. This can be ignored for thumbs. 
+
+
+
+Definition at line 33 of file Finger\+Rig.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_finger_a51474eeb423e2acf8ac4f33a19055086}\label{class_root_motion_1_1_final_i_k_1_1_finger_a51474eeb423e2acf8ac4f33a19055086}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Finger@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger}!target@{target}}
+\index{target@{target}!Root\+Motion\+::\+Final\+I\+K\+::\+Finger@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger}}
+\subsubsection{\texorpdfstring{target}{target}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Final\+I\+K.\+Finger.\+target}
+
+
+
+The \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k}{IK}} target (optional, can use I\+K\+Position and I\+K\+Rotation directly). 
+
+
+
+Definition at line 43 of file Finger\+Rig.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_finger_a33571b5ae2a49a1c5b601b4f8852c5d5}\label{class_root_motion_1_1_final_i_k_1_1_finger_a33571b5ae2a49a1c5b601b4f8852c5d5}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Finger@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger}!tip@{tip}}
+\index{tip@{tip}!Root\+Motion\+::\+Final\+I\+K\+::\+Finger@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger}}
+\subsubsection{\texorpdfstring{tip}{tip}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Final\+I\+K.\+Finger.\+tip}
+
+
+
+The fingertip object. If your character doesn\textquotesingle{}t have tip bones, you can create an empty Game\+Object and parent it to the last bone in the finger. Place it to the tip of the finger. 
+
+
+
+Definition at line 38 of file Finger\+Rig.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_finger_a3f4cdb44118e5c6a8b242ffbffbac71f}\label{class_root_motion_1_1_final_i_k_1_1_finger_a3f4cdb44118e5c6a8b242ffbffbac71f}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Finger@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger}!weight@{weight}}
+\index{weight@{weight}!Root\+Motion\+::\+Final\+I\+K\+::\+Finger@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger}}
+\subsubsection{\texorpdfstring{weight}{weight}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+Finger.\+weight = 1f}
+
+
+
+Master Weight for the finger. 
+
+
+
+Definition at line 18 of file Finger\+Rig.\+cs.
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_finger_ae16402119be9f6353f90c65a29a98195}\label{class_root_motion_1_1_final_i_k_1_1_finger_ae16402119be9f6353f90c65a29a98195}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Finger@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger}!I\+K\+Position@{I\+K\+Position}}
+\index{I\+K\+Position@{I\+K\+Position}!Root\+Motion\+::\+Final\+I\+K\+::\+Finger@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger}}
+\subsubsection{\texorpdfstring{I\+K\+Position}{IKPosition}}
+{\footnotesize\ttfamily Vector3 Root\+Motion.\+Final\+I\+K.\+Finger.\+I\+K\+Position\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k}{IK}} target position if target is not used. 
+
+
+
+Definition at line 53 of file Finger\+Rig.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_finger_a23f205bf349624ed830df25e7e9e7bb9}\label{class_root_motion_1_1_final_i_k_1_1_finger_a23f205bf349624ed830df25e7e9e7bb9}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Finger@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger}!I\+K\+Rotation@{I\+K\+Rotation}}
+\index{I\+K\+Rotation@{I\+K\+Rotation}!Root\+Motion\+::\+Final\+I\+K\+::\+Finger@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger}}
+\subsubsection{\texorpdfstring{I\+K\+Rotation}{IKRotation}}
+{\footnotesize\ttfamily Quaternion Root\+Motion.\+Final\+I\+K.\+Finger.\+I\+K\+Rotation\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k}{IK}} target rotation if target is not used. 
+
+
+
+Definition at line 65 of file Finger\+Rig.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_finger_acb849481d6e0992851e8dfd2315291fd}\label{class_root_motion_1_1_final_i_k_1_1_finger_acb849481d6e0992851e8dfd2315291fd}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Finger@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger}!initiated@{initiated}}
+\index{initiated@{initiated}!Root\+Motion\+::\+Final\+I\+K\+::\+Finger@{Root\+Motion\+::\+Final\+I\+K\+::\+Finger}}
+\subsubsection{\texorpdfstring{initiated}{initiated}}
+{\footnotesize\ttfamily bool Root\+Motion.\+Final\+I\+K.\+Finger.\+initiated\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Has the finger properly initiated (in play mode only)? 
+
+
+
+Definition at line 48 of file Finger\+Rig.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Plugins/\+Root\+Motion/\+Final\+I\+K/\+Finger Rig/\mbox{\hyperlink{_finger_rig_8cs}{Finger\+Rig.\+cs}}\end{DoxyCompactItemize}

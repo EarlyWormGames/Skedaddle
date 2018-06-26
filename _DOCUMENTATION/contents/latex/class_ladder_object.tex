@@ -1,0 +1,446 @@
+\hypertarget{class_ladder_object}{}\section{Ladder\+Object Class Reference}
+\label{class_ladder_object}\index{Ladder\+Object@{Ladder\+Object}}
+Inheritance diagram for Ladder\+Object\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{class_ladder_object}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_ladder_object_aafddc5cca113a7d13673a778c6edb9ac}{Find\+Closest\+Point}} (Vector3 position)
+\begin{DoxyCompactList}\small\item\em Find the \mbox{\hyperlink{class_ladder_object_a6d87f62a0637a961b199cbc46947f268}{Points}} item closest to {\itshape position}  \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ladder_object}{Ladder\+Object}} \mbox{\hyperlink{class_ladder_object_a445278889295eecb94978527519a939d}{Get\+Shimmy\+Object}} (Vector3 position, Vector3 direction, float distance, Vector3 box\+Size, Color debug\+Color)
+\begin{DoxyCompactList}\small\item\em Gets the closest \mbox{\hyperlink{class_ladder_object}{Ladder\+Object}} that triggers a Physics overlap \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ladder_object_a0471a8e39366827430f1d685e02947a4}{Is\+Point\+In\+Range}} (float y\+Point)
+\begin{DoxyCompactList}\small\item\em Check if a y position is within this ladder\textquotesingle{}s range \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ladder_object_a08d0308b642574244b62c2281a1f03c7}{Shimmy}} (\mbox{\hyperlink{class_ladder_object}{Ladder\+Object}} shimmy\+Object)
+\begin{DoxyCompactList}\small\item\em Tells the loris to detach and then shimmy to {\itshape shimmy\+Object}  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_ladder_object_aa466f4797dc3eb5c97f1b44861a23872}{Low\+Exit}} = true
+\item 
+bool \mbox{\hyperlink{class_ladder_object_a4ab6f84e191215d1c73ef980cf46ead2}{High\+Exit}} = true
+\item 
+\mbox{\hyperlink{class_attachable}{Attachable}} \mbox{\hyperlink{class_ladder_object_a8b3611b37cdc792abaf9ce4d825d42c7}{Top\+Transition}}
+\item 
+float \mbox{\hyperlink{class_ladder_object_a7fab140049f0d2a427a9778fff4553b3}{Rotate\+Speed}} = 5
+\item 
+\mbox{\hyperlink{_ignore_axis_8cs_aa61b0141055d583a4f5b013297a1d48f}{Ignore\+Axis}} \mbox{\hyperlink{class_ladder_object_acef7b0cbc039eea9e32cd5e56bbc9fae}{Axes\+To\+Ignore}} = \mbox{\hyperlink{_ignore_axis_8cs_aa61b0141055d583a4f5b013297a1d48fa02129bb861061d1a052c592e2dc6b383}{Ignore\+Axis.\+X}} $\vert$ \mbox{\hyperlink{_ignore_axis_8cs_aa61b0141055d583a4f5b013297a1d48fa21c2e59531c8710156d34a3c30ac81d5}{Ignore\+Axis.\+Z}}
+\item 
+\mbox{\hyperlink{_animal_8cs_a57d10208ebba781ae206546ada2002b6}{F\+A\+C\+I\+N\+G\+\_\+\+D\+IR}} \mbox{\hyperlink{class_ladder_object_a6f93daf035514b3c105c31a7a1351be7}{Direction}}
+\item 
+bool \mbox{\hyperlink{class_ladder_object_adb3c861b53e404aa95a11436fe23cde6}{Is\+Rope}} = false
+\item 
+Transform \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_ladder_object_a6d87f62a0637a961b199cbc46947f268}{Points}}
+\item 
+Unity\+Event \mbox{\hyperlink{class_ladder_object_ab1104ffe4ebc8977633affb6c7e3fda6}{On\+Enter}}
+\item 
+bool \mbox{\hyperlink{class_ladder_object_a86fa41ca3666a9924efed8179d0a9107}{Force\+Move\+To\+Closest}} = true
+\item 
+bool \mbox{\hyperlink{class_ladder_object_a4ffcf3a6cc34dd6a74d0b0c72c06915f}{Disable\+Collision}}
+\item 
+bool \mbox{\hyperlink{class_ladder_object_ab54cdfaf922b790774eb7f689aac83df}{Use\+ExitZ}} = true
+\item 
+Layer\+Mask \mbox{\hyperlink{class_ladder_object_a4b023b52fe14507f89ceb8a051184536}{Shimmy\+Layer}} = 1 $<$$<$ 11
+\item 
+float \mbox{\hyperlink{class_ladder_object_a80845108cd678da40fc9519acdd5f9a4}{move\+Velocity}}
+\item 
+float \mbox{\hyperlink{class_ladder_object_acc99f7b844cc4eb9c9147a6bdf09f086}{current\+Speed}}
+\item 
+bool \mbox{\hyperlink{class_ladder_object_a2d1cd0321fb3ff25a0225edf53f2be3b}{Try\+Shimmy\+Left}}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_ladder_object_a2b6508ecfa48b616813c22c113650637}{On\+Start}} ()
+\item 
+override bool \mbox{\hyperlink{class_ladder_object_aa18c443d78ab35fa3aba0d6ce7328539}{Check\+Input}} (Input\+Control input, \mbox{\hyperlink{class_animal}{Animal}} caller)
+\begin{DoxyCompactList}\small\item\em Default simply checks if the {\itshape caller}  works with \mbox{\hyperlink{class_animal_trigger_ae8394dfcf5f91b8c413959a4d6baa3a9}{Animal\+Trigger.\+Allows\+Animal(\+Animal)}} \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_ladder_object_a0ea09ce266154cd7be7ddb15c7f31874}{On\+Update}} ()
+\item 
+override void \mbox{\hyperlink{class_ladder_object_ad7c09ffac9842f0a4ffb799f5caa78cf}{Do\+Interact}} (\mbox{\hyperlink{class_animal}{Animal}} caller)
+\item 
+override void \mbox{\hyperlink{class_ladder_object_a0d40bcecf87fe56cd97b5550d352e258}{On\+Detach}} (\mbox{\hyperlink{class_animal}{Animal}} animal)
+\begin{DoxyCompactList}\small\item\em summary$>$Check if this object is attachable\end{DoxyCompactList}\item 
+override float \mbox{\hyperlink{class_ladder_object_a9199b2da6f97c758e595a4ccdf7c98b0}{Check\+Distance}} (Vector3 point)
+\begin{DoxyCompactList}\small\item\em Default checks the distance between {\itshape point}  and \mbox{\hyperlink{class_attachable_interact_ad46e0ca3808d58ab5e1102e379d6cb7e}{Interact\+Point}} \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_ladder_object_ae0bd6ffec9b6cd52fa349df754d2f1fa}{On\+Attach}} ()
+\begin{DoxyCompactList}\small\item\em Called when attaching to an \mbox{\hyperlink{class_animal}{Animal}}\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+override bool \mbox{\hyperlink{class_ladder_object_a5034b325b06adadbf863c453ad06f1bd}{Head\+Trigger\+Only}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 7 of file Ladder\+Object.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_ladder_object_a9199b2da6f97c758e595a4ccdf7c98b0}\label{class_ladder_object_a9199b2da6f97c758e595a4ccdf7c98b0}} 
+\index{Ladder\+Object@{Ladder\+Object}!Check\+Distance@{Check\+Distance}}
+\index{Check\+Distance@{Check\+Distance}!Ladder\+Object@{Ladder\+Object}}
+\subsubsection{\texorpdfstring{Check\+Distance()}{CheckDistance()}}
+{\footnotesize\ttfamily override float Ladder\+Object.\+Check\+Distance (\begin{DoxyParamCaption}\item[{Vector3}]{point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Default checks the distance between {\itshape point}  and \mbox{\hyperlink{class_attachable_interact_ad46e0ca3808d58ab5e1102e379d6cb7e}{Interact\+Point}} 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_attachable_interact_aa6b840e4c36f09981e31b2b33bc9d45a}{Attachable\+Interact}}.
+
+
+
+Definition at line 401 of file Ladder\+Object.\+cs.
+
+\mbox{\Hypertarget{class_ladder_object_aa18c443d78ab35fa3aba0d6ce7328539}\label{class_ladder_object_aa18c443d78ab35fa3aba0d6ce7328539}} 
+\index{Ladder\+Object@{Ladder\+Object}!Check\+Input@{Check\+Input}}
+\index{Check\+Input@{Check\+Input}!Ladder\+Object@{Ladder\+Object}}
+\subsubsection{\texorpdfstring{Check\+Input()}{CheckInput()}}
+{\footnotesize\ttfamily override bool Ladder\+Object.\+Check\+Input (\begin{DoxyParamCaption}\item[{Input\+Control}]{input,  }\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{caller }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Default simply checks if the {\itshape caller}  works with \mbox{\hyperlink{class_animal_trigger_ae8394dfcf5f91b8c413959a4d6baa3a9}{Animal\+Trigger.\+Allows\+Animal(\+Animal)}} 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_attachable_interact_a7efc3c845dc5112e6c744eee254094e6}{Attachable\+Interact}}.
+
+
+
+Definition at line 58 of file Ladder\+Object.\+cs.
+
+\mbox{\Hypertarget{class_ladder_object_ad7c09ffac9842f0a4ffb799f5caa78cf}\label{class_ladder_object_ad7c09ffac9842f0a4ffb799f5caa78cf}} 
+\index{Ladder\+Object@{Ladder\+Object}!Do\+Interact@{Do\+Interact}}
+\index{Do\+Interact@{Do\+Interact}!Ladder\+Object@{Ladder\+Object}}
+\subsubsection{\texorpdfstring{Do\+Interact()}{DoInteract()}}
+{\footnotesize\ttfamily override void Ladder\+Object.\+Do\+Interact (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{caller }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_attachable_interact_a9b07a54f1dbb96777c4bd287dfe438e3}{Attachable\+Interact}}.
+
+
+
+Definition at line 180 of file Ladder\+Object.\+cs.
+
+\mbox{\Hypertarget{class_ladder_object_aafddc5cca113a7d13673a778c6edb9ac}\label{class_ladder_object_aafddc5cca113a7d13673a778c6edb9ac}} 
+\index{Ladder\+Object@{Ladder\+Object}!Find\+Closest\+Point@{Find\+Closest\+Point}}
+\index{Find\+Closest\+Point@{Find\+Closest\+Point}!Ladder\+Object@{Ladder\+Object}}
+\subsubsection{\texorpdfstring{Find\+Closest\+Point()}{FindClosestPoint()}}
+{\footnotesize\ttfamily int Ladder\+Object.\+Find\+Closest\+Point (\begin{DoxyParamCaption}\item[{Vector3}]{position }\end{DoxyParamCaption})}
+
+
+
+Find the \mbox{\hyperlink{class_ladder_object_a6d87f62a0637a961b199cbc46947f268}{Points}} item closest to {\itshape position}  
+
+
+
+Definition at line 291 of file Ladder\+Object.\+cs.
+
+\mbox{\Hypertarget{class_ladder_object_a445278889295eecb94978527519a939d}\label{class_ladder_object_a445278889295eecb94978527519a939d}} 
+\index{Ladder\+Object@{Ladder\+Object}!Get\+Shimmy\+Object@{Get\+Shimmy\+Object}}
+\index{Get\+Shimmy\+Object@{Get\+Shimmy\+Object}!Ladder\+Object@{Ladder\+Object}}
+\subsubsection{\texorpdfstring{Get\+Shimmy\+Object()}{GetShimmyObject()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_ladder_object}{Ladder\+Object}} Ladder\+Object.\+Get\+Shimmy\+Object (\begin{DoxyParamCaption}\item[{Vector3}]{position,  }\item[{Vector3}]{direction,  }\item[{float}]{distance,  }\item[{Vector3}]{box\+Size,  }\item[{Color}]{debug\+Color }\end{DoxyParamCaption})}
+
+
+
+Gets the closest \mbox{\hyperlink{class_ladder_object}{Ladder\+Object}} that triggers a Physics overlap 
+
+
+
+Definition at line 334 of file Ladder\+Object.\+cs.
+
+\mbox{\Hypertarget{class_ladder_object_a0471a8e39366827430f1d685e02947a4}\label{class_ladder_object_a0471a8e39366827430f1d685e02947a4}} 
+\index{Ladder\+Object@{Ladder\+Object}!Is\+Point\+In\+Range@{Is\+Point\+In\+Range}}
+\index{Is\+Point\+In\+Range@{Is\+Point\+In\+Range}!Ladder\+Object@{Ladder\+Object}}
+\subsubsection{\texorpdfstring{Is\+Point\+In\+Range()}{IsPointInRange()}}
+{\footnotesize\ttfamily bool Ladder\+Object.\+Is\+Point\+In\+Range (\begin{DoxyParamCaption}\item[{float}]{y\+Point }\end{DoxyParamCaption})}
+
+
+
+Check if a y position is within this ladder\textquotesingle{}s range 
+
+
+\begin{DoxyParams}{Parameters}
+{\em y\+Point} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 378 of file Ladder\+Object.\+cs.
+
+\mbox{\Hypertarget{class_ladder_object_ae0bd6ffec9b6cd52fa349df754d2f1fa}\label{class_ladder_object_ae0bd6ffec9b6cd52fa349df754d2f1fa}} 
+\index{Ladder\+Object@{Ladder\+Object}!On\+Attach@{On\+Attach}}
+\index{On\+Attach@{On\+Attach}!Ladder\+Object@{Ladder\+Object}}
+\subsubsection{\texorpdfstring{On\+Attach()}{OnAttach()}}
+{\footnotesize\ttfamily override void Ladder\+Object.\+On\+Attach (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Called when attaching to an \mbox{\hyperlink{class_animal}{Animal}}
+
+summary$>$Called when detaching from an \mbox{\hyperlink{class_animal}{Animal}}
+
+Reimplemented from \mbox{\hyperlink{class_attachable_a813281e423def538cd834f0db80c9ec8}{Attachable}}.
+
+
+
+Definition at line 412 of file Ladder\+Object.\+cs.
+
+\mbox{\Hypertarget{class_ladder_object_a0d40bcecf87fe56cd97b5550d352e258}\label{class_ladder_object_a0d40bcecf87fe56cd97b5550d352e258}} 
+\index{Ladder\+Object@{Ladder\+Object}!On\+Detach@{On\+Detach}}
+\index{On\+Detach@{On\+Detach}!Ladder\+Object@{Ladder\+Object}}
+\subsubsection{\texorpdfstring{On\+Detach()}{OnDetach()}}
+{\footnotesize\ttfamily override void Ladder\+Object.\+On\+Detach (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{animal }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+summary$>$Check if this object is attachable
+
+
+
+Reimplemented from \mbox{\hyperlink{class_attachable_abe7cf9d7930393610c7c9c4ae14b12d7}{Attachable}}.
+
+
+
+Definition at line 250 of file Ladder\+Object.\+cs.
+
+\mbox{\Hypertarget{class_ladder_object_a2b6508ecfa48b616813c22c113650637}\label{class_ladder_object_a2b6508ecfa48b616813c22c113650637}} 
+\index{Ladder\+Object@{Ladder\+Object}!On\+Start@{On\+Start}}
+\index{On\+Start@{On\+Start}!Ladder\+Object@{Ladder\+Object}}
+\subsubsection{\texorpdfstring{On\+Start()}{OnStart()}}
+{\footnotesize\ttfamily override void Ladder\+Object.\+On\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_attachable_a3c05c0b07b831881a7ab245057d34d30}{Attachable}}.
+
+
+
+Definition at line 48 of file Ladder\+Object.\+cs.
+
+\mbox{\Hypertarget{class_ladder_object_a0ea09ce266154cd7be7ddb15c7f31874}\label{class_ladder_object_a0ea09ce266154cd7be7ddb15c7f31874}} 
+\index{Ladder\+Object@{Ladder\+Object}!On\+Update@{On\+Update}}
+\index{On\+Update@{On\+Update}!Ladder\+Object@{Ladder\+Object}}
+\subsubsection{\texorpdfstring{On\+Update()}{OnUpdate()}}
+{\footnotesize\ttfamily override void Ladder\+Object.\+On\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_attachable_abb659a66efacd6fa09fa1d7125c7b5e6}{Attachable}}.
+
+
+
+Definition at line 66 of file Ladder\+Object.\+cs.
+
+\mbox{\Hypertarget{class_ladder_object_a08d0308b642574244b62c2281a1f03c7}\label{class_ladder_object_a08d0308b642574244b62c2281a1f03c7}} 
+\index{Ladder\+Object@{Ladder\+Object}!Shimmy@{Shimmy}}
+\index{Shimmy@{Shimmy}!Ladder\+Object@{Ladder\+Object}}
+\subsubsection{\texorpdfstring{Shimmy()}{Shimmy()}}
+{\footnotesize\ttfamily void Ladder\+Object.\+Shimmy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ladder_object}{Ladder\+Object}}}]{shimmy\+Object }\end{DoxyParamCaption})}
+
+
+
+Tells the loris to detach and then shimmy to {\itshape shimmy\+Object}  
+
+
+
+Definition at line 391 of file Ladder\+Object.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_ladder_object_acef7b0cbc039eea9e32cd5e56bbc9fae}\label{class_ladder_object_acef7b0cbc039eea9e32cd5e56bbc9fae}} 
+\index{Ladder\+Object@{Ladder\+Object}!Axes\+To\+Ignore@{Axes\+To\+Ignore}}
+\index{Axes\+To\+Ignore@{Axes\+To\+Ignore}!Ladder\+Object@{Ladder\+Object}}
+\subsubsection{\texorpdfstring{Axes\+To\+Ignore}{AxesToIgnore}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_ignore_axis_8cs_aa61b0141055d583a4f5b013297a1d48f}{Ignore\+Axis}} Ladder\+Object.\+Axes\+To\+Ignore = \mbox{\hyperlink{_ignore_axis_8cs_aa61b0141055d583a4f5b013297a1d48fa02129bb861061d1a052c592e2dc6b383}{Ignore\+Axis.\+X}} $\vert$ \mbox{\hyperlink{_ignore_axis_8cs_aa61b0141055d583a4f5b013297a1d48fa21c2e59531c8710156d34a3c30ac81d5}{Ignore\+Axis.\+Z}}}
+
+
+
+Definition at line 16 of file Ladder\+Object.\+cs.
+
+\mbox{\Hypertarget{class_ladder_object_acc99f7b844cc4eb9c9147a6bdf09f086}\label{class_ladder_object_acc99f7b844cc4eb9c9147a6bdf09f086}} 
+\index{Ladder\+Object@{Ladder\+Object}!current\+Speed@{current\+Speed}}
+\index{current\+Speed@{current\+Speed}!Ladder\+Object@{Ladder\+Object}}
+\subsubsection{\texorpdfstring{current\+Speed}{currentSpeed}}
+{\footnotesize\ttfamily float Ladder\+Object.\+current\+Speed}
+
+
+
+Definition at line 33 of file Ladder\+Object.\+cs.
+
+\mbox{\Hypertarget{class_ladder_object_a6f93daf035514b3c105c31a7a1351be7}\label{class_ladder_object_a6f93daf035514b3c105c31a7a1351be7}} 
+\index{Ladder\+Object@{Ladder\+Object}!Direction@{Direction}}
+\index{Direction@{Direction}!Ladder\+Object@{Ladder\+Object}}
+\subsubsection{\texorpdfstring{Direction}{Direction}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_animal_8cs_a57d10208ebba781ae206546ada2002b6}{F\+A\+C\+I\+N\+G\+\_\+\+D\+IR}} Ladder\+Object.\+Direction}
+
+
+
+Definition at line 17 of file Ladder\+Object.\+cs.
+
+\mbox{\Hypertarget{class_ladder_object_a4ffcf3a6cc34dd6a74d0b0c72c06915f}\label{class_ladder_object_a4ffcf3a6cc34dd6a74d0b0c72c06915f}} 
+\index{Ladder\+Object@{Ladder\+Object}!Disable\+Collision@{Disable\+Collision}}
+\index{Disable\+Collision@{Disable\+Collision}!Ladder\+Object@{Ladder\+Object}}
+\subsubsection{\texorpdfstring{Disable\+Collision}{DisableCollision}}
+{\footnotesize\ttfamily bool Ladder\+Object.\+Disable\+Collision}
+
+
+
+Definition at line 26 of file Ladder\+Object.\+cs.
+
+\mbox{\Hypertarget{class_ladder_object_a86fa41ca3666a9924efed8179d0a9107}\label{class_ladder_object_a86fa41ca3666a9924efed8179d0a9107}} 
+\index{Ladder\+Object@{Ladder\+Object}!Force\+Move\+To\+Closest@{Force\+Move\+To\+Closest}}
+\index{Force\+Move\+To\+Closest@{Force\+Move\+To\+Closest}!Ladder\+Object@{Ladder\+Object}}
+\subsubsection{\texorpdfstring{Force\+Move\+To\+Closest}{ForceMoveToClosest}}
+{\footnotesize\ttfamily bool Ladder\+Object.\+Force\+Move\+To\+Closest = true}
+
+
+
+Definition at line 25 of file Ladder\+Object.\+cs.
+
+\mbox{\Hypertarget{class_ladder_object_a4ab6f84e191215d1c73ef980cf46ead2}\label{class_ladder_object_a4ab6f84e191215d1c73ef980cf46ead2}} 
+\index{Ladder\+Object@{Ladder\+Object}!High\+Exit@{High\+Exit}}
+\index{High\+Exit@{High\+Exit}!Ladder\+Object@{Ladder\+Object}}
+\subsubsection{\texorpdfstring{High\+Exit}{HighExit}}
+{\footnotesize\ttfamily bool Ladder\+Object.\+High\+Exit = true}
+
+
+
+Definition at line 11 of file Ladder\+Object.\+cs.
+
+\mbox{\Hypertarget{class_ladder_object_adb3c861b53e404aa95a11436fe23cde6}\label{class_ladder_object_adb3c861b53e404aa95a11436fe23cde6}} 
+\index{Ladder\+Object@{Ladder\+Object}!Is\+Rope@{Is\+Rope}}
+\index{Is\+Rope@{Is\+Rope}!Ladder\+Object@{Ladder\+Object}}
+\subsubsection{\texorpdfstring{Is\+Rope}{IsRope}}
+{\footnotesize\ttfamily bool Ladder\+Object.\+Is\+Rope = false}
+
+
+
+Definition at line 18 of file Ladder\+Object.\+cs.
+
+\mbox{\Hypertarget{class_ladder_object_aa466f4797dc3eb5c97f1b44861a23872}\label{class_ladder_object_aa466f4797dc3eb5c97f1b44861a23872}} 
+\index{Ladder\+Object@{Ladder\+Object}!Low\+Exit@{Low\+Exit}}
+\index{Low\+Exit@{Low\+Exit}!Ladder\+Object@{Ladder\+Object}}
+\subsubsection{\texorpdfstring{Low\+Exit}{LowExit}}
+{\footnotesize\ttfamily bool Ladder\+Object.\+Low\+Exit = true}
+
+
+
+Definition at line 10 of file Ladder\+Object.\+cs.
+
+\mbox{\Hypertarget{class_ladder_object_a80845108cd678da40fc9519acdd5f9a4}\label{class_ladder_object_a80845108cd678da40fc9519acdd5f9a4}} 
+\index{Ladder\+Object@{Ladder\+Object}!move\+Velocity@{move\+Velocity}}
+\index{move\+Velocity@{move\+Velocity}!Ladder\+Object@{Ladder\+Object}}
+\subsubsection{\texorpdfstring{move\+Velocity}{moveVelocity}}
+{\footnotesize\ttfamily float Ladder\+Object.\+move\+Velocity}
+
+
+
+Definition at line 31 of file Ladder\+Object.\+cs.
+
+\mbox{\Hypertarget{class_ladder_object_ab1104ffe4ebc8977633affb6c7e3fda6}\label{class_ladder_object_ab1104ffe4ebc8977633affb6c7e3fda6}} 
+\index{Ladder\+Object@{Ladder\+Object}!On\+Enter@{On\+Enter}}
+\index{On\+Enter@{On\+Enter}!Ladder\+Object@{Ladder\+Object}}
+\subsubsection{\texorpdfstring{On\+Enter}{OnEnter}}
+{\footnotesize\ttfamily Unity\+Event Ladder\+Object.\+On\+Enter}
+
+
+
+Definition at line 22 of file Ladder\+Object.\+cs.
+
+\mbox{\Hypertarget{class_ladder_object_a6d87f62a0637a961b199cbc46947f268}\label{class_ladder_object_a6d87f62a0637a961b199cbc46947f268}} 
+\index{Ladder\+Object@{Ladder\+Object}!Points@{Points}}
+\index{Points@{Points}!Ladder\+Object@{Ladder\+Object}}
+\subsubsection{\texorpdfstring{Points}{Points}}
+{\footnotesize\ttfamily Transform \mbox{[}$\,$\mbox{]} Ladder\+Object.\+Points}
+
+
+
+Definition at line 21 of file Ladder\+Object.\+cs.
+
+\mbox{\Hypertarget{class_ladder_object_a7fab140049f0d2a427a9778fff4553b3}\label{class_ladder_object_a7fab140049f0d2a427a9778fff4553b3}} 
+\index{Ladder\+Object@{Ladder\+Object}!Rotate\+Speed@{Rotate\+Speed}}
+\index{Rotate\+Speed@{Rotate\+Speed}!Ladder\+Object@{Ladder\+Object}}
+\subsubsection{\texorpdfstring{Rotate\+Speed}{RotateSpeed}}
+{\footnotesize\ttfamily float Ladder\+Object.\+Rotate\+Speed = 5}
+
+
+
+Definition at line 15 of file Ladder\+Object.\+cs.
+
+\mbox{\Hypertarget{class_ladder_object_a4b023b52fe14507f89ceb8a051184536}\label{class_ladder_object_a4b023b52fe14507f89ceb8a051184536}} 
+\index{Ladder\+Object@{Ladder\+Object}!Shimmy\+Layer@{Shimmy\+Layer}}
+\index{Shimmy\+Layer@{Shimmy\+Layer}!Ladder\+Object@{Ladder\+Object}}
+\subsubsection{\texorpdfstring{Shimmy\+Layer}{ShimmyLayer}}
+{\footnotesize\ttfamily Layer\+Mask Ladder\+Object.\+Shimmy\+Layer = 1 $<$$<$ 11}
+
+
+
+Definition at line 28 of file Ladder\+Object.\+cs.
+
+\mbox{\Hypertarget{class_ladder_object_a8b3611b37cdc792abaf9ce4d825d42c7}\label{class_ladder_object_a8b3611b37cdc792abaf9ce4d825d42c7}} 
+\index{Ladder\+Object@{Ladder\+Object}!Top\+Transition@{Top\+Transition}}
+\index{Top\+Transition@{Top\+Transition}!Ladder\+Object@{Ladder\+Object}}
+\subsubsection{\texorpdfstring{Top\+Transition}{TopTransition}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_attachable}{Attachable}} Ladder\+Object.\+Top\+Transition}
+
+
+
+Definition at line 12 of file Ladder\+Object.\+cs.
+
+\mbox{\Hypertarget{class_ladder_object_a2d1cd0321fb3ff25a0225edf53f2be3b}\label{class_ladder_object_a2d1cd0321fb3ff25a0225edf53f2be3b}} 
+\index{Ladder\+Object@{Ladder\+Object}!Try\+Shimmy\+Left@{Try\+Shimmy\+Left}}
+\index{Try\+Shimmy\+Left@{Try\+Shimmy\+Left}!Ladder\+Object@{Ladder\+Object}}
+\subsubsection{\texorpdfstring{Try\+Shimmy\+Left}{TryShimmyLeft}}
+{\footnotesize\ttfamily bool Ladder\+Object.\+Try\+Shimmy\+Left}
+
+
+
+Definition at line 36 of file Ladder\+Object.\+cs.
+
+\mbox{\Hypertarget{class_ladder_object_ab54cdfaf922b790774eb7f689aac83df}\label{class_ladder_object_ab54cdfaf922b790774eb7f689aac83df}} 
+\index{Ladder\+Object@{Ladder\+Object}!Use\+ExitZ@{Use\+ExitZ}}
+\index{Use\+ExitZ@{Use\+ExitZ}!Ladder\+Object@{Ladder\+Object}}
+\subsubsection{\texorpdfstring{Use\+ExitZ}{UseExitZ}}
+{\footnotesize\ttfamily bool Ladder\+Object.\+Use\+ExitZ = true}
+
+
+
+Definition at line 27 of file Ladder\+Object.\+cs.
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_ladder_object_a5034b325b06adadbf863c453ad06f1bd}\label{class_ladder_object_a5034b325b06adadbf863c453ad06f1bd}} 
+\index{Ladder\+Object@{Ladder\+Object}!Head\+Trigger\+Only@{Head\+Trigger\+Only}}
+\index{Head\+Trigger\+Only@{Head\+Trigger\+Only}!Ladder\+Object@{Ladder\+Object}}
+\subsubsection{\texorpdfstring{Head\+Trigger\+Only}{HeadTriggerOnly}}
+{\footnotesize\ttfamily override bool Ladder\+Object.\+Head\+Trigger\+Only\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 37 of file Ladder\+Object.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Interactables/\+Attachables/\mbox{\hyperlink{_ladder_object_8cs}{Ladder\+Object.\+cs}}\end{DoxyCompactItemize}

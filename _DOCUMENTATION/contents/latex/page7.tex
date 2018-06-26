@@ -1,0 +1,81 @@
+Limb\+IK extends Trigonometric\+IK to specialize on the 3-\/segmented hand and leg character limb types.
+
+Limb\+IK comes with multiple {\bfseries Bend Modifiers\+:}
+\begin{DoxyItemize}
+\item Animation\+: tries to maintain bend direction as it is in the animation
+\item Target\+: rotates the bend direction with the target I\+K\+Rotation
+\item Parent\+: rotates the bend direction along with the parent Transform (pelvis or clavicle)
+\item Arm\+: keeps the arm bent in a biometrically natural and relaxed way (also most expensive of the above).
+\item Goal\+: bends the arm towards the \char`\"{}\+Bend Goal\char`\"{} Transform.
+\end{DoxyItemize}
+
+N\+O\+TE\+: Bend Modifiers are only applied if Bend Modfier Weight is greater than 0.
+
+The I\+K\+Solver\+Limb.\+maintain\+Rotation\+Weight property allows to maintain the world space rotation of the last bone fixed as it was before solving the limb. ~\newline
+This is most useful when we need to reposition a foot, but maintain it\textquotesingle{}s rotation as it was animated to ensure proper alignment with the ground surface.
+
+{\bfseries Getting started\+:}
+\begin{DoxyItemize}
+\item Add the Limb\+IK component to the root of your character (the character should be facing it\textquotesingle{}s forward direction)
+\item Assign the limb bones to bone1, bone2 and bone3 in the Limb\+IK component (bones can be skipped, which means you can also use Limb\+IK on a 4-\/segment limb).
+\item Press Play
+\end{DoxyItemize}
+
+{\bfseries Getting started with scripting\+:}
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{public} LimbIK limbIK;
+
+\textcolor{keywordtype}{void} LateUpdate () \{
+    \textcolor{comment}{// Changing the target position, rotation and weights}
+    limbIK.solver.IKPosition = something;
+    limbIK.solver.IKRotation = something;
+    limbIK.solver.IKPositionWeight = something;
+    limbIK.solver.IKRotationWeight = something;
+
+    \textcolor{comment}{// Changing the automatic bend modifier}
+    limbIK.solver.bendModifier = IKSolverLimb.BendModifier.Animation; \textcolor{comment}{// Will maintain the bending
+       direction as it is animated.}
+    limbIK.solver.bendModifier = IKSolverLimb.BendModifier.Target; \textcolor{comment}{// Will bend the limb with the target
+       rotation}
+    limbIK.solver.bendModifier = IKSolverLimb.BendModifier.Parent; \textcolor{comment}{// Will bend the limb with the parent
+       bone (pelvis or shoulder)}
+
+    \textcolor{comment}{// Will try to maintain the bend direction in the most biometrically relaxed way for the arms. }
+    \textcolor{comment}{// Will not work for the legs.}
+    limbIK.solver.bendModifier = IKSolverLimb.BendModifier.Arm; 
+\}
+\end{DoxyCode}
+
+
+{\bfseries Adding Limb\+IK in runtime\+:}
+\begin{DoxyItemize}
+\item Add the Limb\+IK component via script
+\item Call Limb\+I\+K.\+solver.\+Set\+Chain()
+\end{DoxyItemize}
+
+
+
+{\bfseries Component variables\+:}
+\begin{DoxyItemize}
+\item {\bfseries time\+Step} -\/ if zero, will update the solver in every Late\+Update(). Use this for chains that are animated. If $>$ 0, will be used as updating frequency so that the solver will reach its target in the same time on all machines
+\item {\bfseries fix\+Transforms} -\/ if true, will fix all the Transforms used by the solver to their initial state in each Update. This prevents potential problems with unanimated bones and animator culling with a small cost of performance
+\end{DoxyItemize}
+
+{\bfseries Solver variables\+:}
+\begin{DoxyItemize}
+\item {\bfseries bone1} -\/ the first bone (upper arm or thigh)
+\item {\bfseries bone2} -\/ the second bone (forearm or calf)
+\item {\bfseries bone3} -\/ the third bone (hand or foot)
+\item {\bfseries target} -\/ the target Transform. If assigned, solver I\+K\+Position and I\+K\+Rotation will be automatically set to the position of the target
+\item {\bfseries position\+Weight} -\/ the weight of solving to the target position (I\+K\+Position)
+\item {\bfseries rotation\+Weight} -\/ the weight of solving to the target rotation (I\+K\+Rotation)
+\item {\bfseries bend\+Normal} -\/ normal of the plane defined by the positions of the bones. When the limb bends, the second bone will always be positioned somewhere on that plane
+\item {\bfseries Avatar\+I\+K\+Goal} -\/ the \href{http://docs.unity3d.com/ScriptReference/AvatarIKGoal.html}{\tt Avatar\+I\+K\+Goal} of this solver. This is only used by the \char`\"{}\+Arm\char`\"{} bend modifier
+\item {\bfseries maintain\+Rotation\+Weight} -\/ weight of maintaining the rotation of the third bone as it was before solving
+\item {\bfseries bend\+Modifier} -\/ a selection of automatic modifiers of the bend normal
+\item {\bfseries bend\+Modifier\+Weight} -\/ the weight of the bend modifier
+\end{DoxyItemize}
+
+ 

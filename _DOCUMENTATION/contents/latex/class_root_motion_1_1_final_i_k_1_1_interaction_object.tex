@@ -1,0 +1,318 @@
+\hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_object}{}\section{Root\+Motion.\+Final\+I\+K.\+Interaction\+Object Class Reference}
+\label{class_root_motion_1_1_final_i_k_1_1_interaction_object}\index{Root\+Motion.\+Final\+I\+K.\+Interaction\+Object@{Root\+Motion.\+Final\+I\+K.\+Interaction\+Object}}
+
+
+Object than the \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_system}{Interaction\+System}} can interact with.  
+
+
+Inheritance diagram for Root\+Motion.\+Final\+I\+K.\+Interaction\+Object\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_root_motion_1_1_final_i_k_1_1_interaction_object}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object_1_1_animator_event}{Animator\+Event}}
+\begin{DoxyCompactList}\small\item\em Calls an animation on an interaction event. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object_1_1_interaction_event}{Interaction\+Event}}
+\begin{DoxyCompactList}\small\item\em Predefined interaction events for pausing, picking up, triggering animations and sending messages. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object_1_1_message}{Message}}
+\begin{DoxyCompactList}\small\item\em Definition of a message sent by an \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object_1_1_interaction_event}{Interaction\+Event}}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object_1_1_multiplier}{Multiplier}}
+\begin{DoxyCompactList}\small\item\em Multiplies a weight curve and uses the result for another F\+B\+B\+IK channel. (to reduce the amount of work with Animation\+Curves) \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object_1_1_weight_curve}{Weight\+Curve}}
+\begin{DoxyCompactList}\small\item\em A Weight curve for various F\+B\+B\+IK channels. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object_ae8d77c984a0f9257d83636d05067ad14}{Initiate}} ()
+\begin{DoxyCompactList}\small\item\em Call if you have changed the curves in play mode or added/removed Interaction\+Targets. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_target}{Interaction\+Target}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object_a946e3d9232fa533ef0c246eecb8ccbb5}{Get\+Target}} (\mbox{\hyperlink{namespace_root_motion_1_1_final_i_k_ae0dd2058c7667b6f132c11a6b860c14a}{Full\+Body\+Biped\+Effector}} effector\+Type, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_system}{Interaction\+System}} interaction\+System)
+\begin{DoxyCompactList}\small\item\em Gets the \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_target}{Interaction\+Target}} of the specified effector type and \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_system}{Interaction\+System}} tag. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object_a04c4786c46909ea5cd1b6954f69c49a2}{Curve\+Used}} (\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object_1_1_weight_curve_a74c8be2e80ace86b130c88e275300b27}{Weight\+Curve.\+Type}} type)
+\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_target}{Interaction\+Target}} \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object_ae4eab207230e4d8cb7d818e11804ba15}{Get\+Targets}} ()
+\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object_a24037892e4871633a3ad3ba72e7a0d0f}{Get\+Target}} (\mbox{\hyperlink{namespace_root_motion_1_1_final_i_k_ae0dd2058c7667b6f132c11a6b860c14a}{Full\+Body\+Biped\+Effector}} effector\+Type, string tag)
+\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object_accd0d6d527e3961d08d1145bcd966429}{On\+Start\+Interaction}} (\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_system}{Interaction\+System}} interaction\+System)
+\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object_a0aaccdd85aa57b6cbb254594846e18e1}{Apply}} (\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped}{I\+K\+Solver\+Full\+Body\+Biped}} solver, \mbox{\hyperlink{namespace_root_motion_1_1_final_i_k_ae0dd2058c7667b6f132c11a6b860c14a}{Full\+Body\+Biped\+Effector}} effector, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_target}{Interaction\+Target}} target, float timer, float weight)
+\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object_a005ae5c3bbe368690cc488272170449d}{Get\+Value}} (\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object_1_1_weight_curve_a74c8be2e80ace86b130c88e275300b27}{Weight\+Curve.\+Type}} weight\+Curve\+Type, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_target}{Interaction\+Target}} target, float timer)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object_a75b123a9c0b837079def9544569923b4}{other\+Look\+At\+Target}}
+\begin{DoxyCompactList}\small\item\em If the Interaction System has a \textquotesingle{}Look At\textquotesingle{} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_look_at_i_k}{Look\+At\+IK}} component assigned, will use it to make the character look at the specified Transform. If unassigned, will look at this Game\+Object. \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object_a6f08d5b22b8286aad0168efdf1340353}{other\+Targets\+Root}}
+\begin{DoxyCompactList}\small\item\em The root Transform of the Interaction\+Targets. If null, will use this Game\+Object. Get\+Components\+In\+Children$<$\+Interaction\+Target$>$() will be used at initiation to find all Interaction\+Targets associated with this \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object}{Interaction\+Object}}. \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object_a48b9b33f43b92c3f6fb5d5a8108c1dfb}{position\+Offset\+Space}}
+\begin{DoxyCompactList}\small\item\em If assigned, all Position\+Offset channels will be applied in the rotation space of this Transform. If not, they will be in the rotation space of the character. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object_1_1_weight_curve}{Weight\+Curve}} \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object_a3ae0829b89959bc751999003d7e3fd95}{weight\+Curves}}
+\begin{DoxyCompactList}\small\item\em The weight curves for the interaction. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object_1_1_multiplier}{Multiplier}} \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object_adbff188ad1baf1072b8db4e80a8d7ec4}{multipliers}}
+\begin{DoxyCompactList}\small\item\em The weight curve multipliers for the interaction. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object_1_1_interaction_event}{Interaction\+Event}} \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object_a604315fc84c3269ff2c0a804dec65df4}{events}}
+\begin{DoxyCompactList}\small\item\em The interaction events. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object_aa565d19aa7d062cf236f5d8fd3915eca}{length}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the length of the interaction (the longest curve). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_system}{Interaction\+System}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object_a2c0ba73ce6e5b272ef88b3b6a950b9a9}{last\+Used\+Interaction\+System}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The last \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_system}{Interaction\+System}} that started an interaction with this \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object}{Interaction\+Object}}. \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object_a24623f2aaaa949e16a4e48f03d8bc7d8}{look\+At\+Target}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the look at target (returns other\+Look\+At\+Target if not null). \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object_a73da4365ee244b4780c68bdc1a1ec2dd}{targets\+Root}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Object than the \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_system}{Interaction\+System}} can interact with. 
+
+
+
+Definition at line 11 of file Interaction\+Object.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_object_a0aaccdd85aa57b6cbb254594846e18e1}\label{class_root_motion_1_1_final_i_k_1_1_interaction_object_a0aaccdd85aa57b6cbb254594846e18e1}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object}!Apply@{Apply}}
+\index{Apply@{Apply}!Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object}}
+\subsubsection{\texorpdfstring{Apply()}{Apply()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+Interaction\+Object.\+Apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped}{I\+K\+Solver\+Full\+Body\+Biped}}}]{solver,  }\item[{\mbox{\hyperlink{namespace_root_motion_1_1_final_i_k_ae0dd2058c7667b6f132c11a6b860c14a}{Full\+Body\+Biped\+Effector}}}]{effector,  }\item[{\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_target}{Interaction\+Target}}}]{target,  }\item[{float}]{timer,  }\item[{float}]{weight }\end{DoxyParamCaption})}
+
+
+
+Definition at line 378 of file Interaction\+Object.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_object_a04c4786c46909ea5cd1b6954f69c49a2}\label{class_root_motion_1_1_final_i_k_1_1_interaction_object_a04c4786c46909ea5cd1b6954f69c49a2}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object}!Curve\+Used@{Curve\+Used}}
+\index{Curve\+Used@{Curve\+Used}!Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object}}
+\subsubsection{\texorpdfstring{Curve\+Used()}{CurveUsed()}}
+{\footnotesize\ttfamily bool Root\+Motion.\+Final\+I\+K.\+Interaction\+Object.\+Curve\+Used (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object_1_1_weight_curve_a74c8be2e80ace86b130c88e275300b27}{Weight\+Curve.\+Type}}}]{type }\end{DoxyParamCaption})}
+
+
+
+Definition at line 346 of file Interaction\+Object.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_object_a946e3d9232fa533ef0c246eecb8ccbb5}\label{class_root_motion_1_1_final_i_k_1_1_interaction_object_a946e3d9232fa533ef0c246eecb8ccbb5}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object}!Get\+Target@{Get\+Target}}
+\index{Get\+Target@{Get\+Target}!Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object}}
+\subsubsection{\texorpdfstring{Get\+Target()}{GetTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_target}{Interaction\+Target}} Root\+Motion.\+Final\+I\+K.\+Interaction\+Object.\+Get\+Target (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_root_motion_1_1_final_i_k_ae0dd2058c7667b6f132c11a6b860c14a}{Full\+Body\+Biped\+Effector}}}]{effector\+Type,  }\item[{\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_system}{Interaction\+System}}}]{interaction\+System }\end{DoxyParamCaption})}
+
+
+
+Gets the \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_target}{Interaction\+Target}} of the specified effector type and \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_system}{Interaction\+System}} tag. 
+
+
+
+Definition at line 327 of file Interaction\+Object.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_object_a24037892e4871633a3ad3ba72e7a0d0f}\label{class_root_motion_1_1_final_i_k_1_1_interaction_object_a24037892e4871633a3ad3ba72e7a0d0f}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object}!Get\+Target@{Get\+Target}}
+\index{Get\+Target@{Get\+Target}!Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object}}
+\subsubsection{\texorpdfstring{Get\+Target()}{GetTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Final\+I\+K.\+Interaction\+Object.\+Get\+Target (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_root_motion_1_1_final_i_k_ae0dd2058c7667b6f132c11a6b860c14a}{Full\+Body\+Biped\+Effector}}}]{effector\+Type,  }\item[{string}]{tag }\end{DoxyParamCaption})}
+
+
+
+Definition at line 362 of file Interaction\+Object.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_object_ae4eab207230e4d8cb7d818e11804ba15}\label{class_root_motion_1_1_final_i_k_1_1_interaction_object_ae4eab207230e4d8cb7d818e11804ba15}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object}!Get\+Targets@{Get\+Targets}}
+\index{Get\+Targets@{Get\+Targets}!Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object}}
+\subsubsection{\texorpdfstring{Get\+Targets()}{GetTargets()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_target}{Interaction\+Target}} \mbox{[}$\,$\mbox{]} Root\+Motion.\+Final\+I\+K.\+Interaction\+Object.\+Get\+Targets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 357 of file Interaction\+Object.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_object_a005ae5c3bbe368690cc488272170449d}\label{class_root_motion_1_1_final_i_k_1_1_interaction_object_a005ae5c3bbe368690cc488272170449d}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object}!Get\+Value@{Get\+Value}}
+\index{Get\+Value@{Get\+Value}!Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object}}
+\subsubsection{\texorpdfstring{Get\+Value()}{GetValue()}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+Interaction\+Object.\+Get\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object_1_1_weight_curve_a74c8be2e80ace86b130c88e275300b27}{Weight\+Curve.\+Type}}}]{weight\+Curve\+Type,  }\item[{\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_target}{Interaction\+Target}}}]{target,  }\item[{float}]{timer }\end{DoxyParamCaption})}
+
+
+
+Definition at line 404 of file Interaction\+Object.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_object_ae8d77c984a0f9257d83636d05067ad14}\label{class_root_motion_1_1_final_i_k_1_1_interaction_object_ae8d77c984a0f9257d83636d05067ad14}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object}!Initiate@{Initiate}}
+\index{Initiate@{Initiate}!Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object}}
+\subsubsection{\texorpdfstring{Initiate()}{Initiate()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+Interaction\+Object.\+Initiate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Call if you have changed the curves in play mode or added/removed Interaction\+Targets. 
+
+
+
+Definition at line 297 of file Interaction\+Object.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_object_accd0d6d527e3961d08d1145bcd966429}\label{class_root_motion_1_1_final_i_k_1_1_interaction_object_accd0d6d527e3961d08d1145bcd966429}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object}!On\+Start\+Interaction@{On\+Start\+Interaction}}
+\index{On\+Start\+Interaction@{On\+Start\+Interaction}!Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object}}
+\subsubsection{\texorpdfstring{On\+Start\+Interaction()}{OnStartInteraction()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+Interaction\+Object.\+On\+Start\+Interaction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_system}{Interaction\+System}}}]{interaction\+System }\end{DoxyParamCaption})}
+
+
+
+Definition at line 373 of file Interaction\+Object.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_object_a604315fc84c3269ff2c0a804dec65df4}\label{class_root_motion_1_1_final_i_k_1_1_interaction_object_a604315fc84c3269ff2c0a804dec65df4}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object}!events@{events}}
+\index{events@{events}!Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object}}
+\subsubsection{\texorpdfstring{events}{events}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object_1_1_interaction_event}{Interaction\+Event}} \mbox{[}$\,$\mbox{]} Root\+Motion.\+Final\+I\+K.\+Interaction\+Object.\+events}
+
+
+
+The interaction events. 
+
+
+
+Definition at line 283 of file Interaction\+Object.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_object_adbff188ad1baf1072b8db4e80a8d7ec4}\label{class_root_motion_1_1_final_i_k_1_1_interaction_object_adbff188ad1baf1072b8db4e80a8d7ec4}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object}!multipliers@{multipliers}}
+\index{multipliers@{multipliers}!Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object}}
+\subsubsection{\texorpdfstring{multipliers}{multipliers}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object_1_1_multiplier}{Multiplier}} \mbox{[}$\,$\mbox{]} Root\+Motion.\+Final\+I\+K.\+Interaction\+Object.\+multipliers}
+
+
+
+The weight curve multipliers for the interaction. 
+
+
+
+Definition at line 279 of file Interaction\+Object.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_object_a75b123a9c0b837079def9544569923b4}\label{class_root_motion_1_1_final_i_k_1_1_interaction_object_a75b123a9c0b837079def9544569923b4}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object}!other\+Look\+At\+Target@{other\+Look\+At\+Target}}
+\index{other\+Look\+At\+Target@{other\+Look\+At\+Target}!Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object}}
+\subsubsection{\texorpdfstring{other\+Look\+At\+Target}{otherLookAtTarget}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Final\+I\+K.\+Interaction\+Object.\+other\+Look\+At\+Target}
+
+
+
+If the Interaction System has a \textquotesingle{}Look At\textquotesingle{} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_look_at_i_k}{Look\+At\+IK}} component assigned, will use it to make the character look at the specified Transform. If unassigned, will look at this Game\+Object. 
+
+
+
+Definition at line 261 of file Interaction\+Object.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_object_a6f08d5b22b8286aad0168efdf1340353}\label{class_root_motion_1_1_final_i_k_1_1_interaction_object_a6f08d5b22b8286aad0168efdf1340353}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object}!other\+Targets\+Root@{other\+Targets\+Root}}
+\index{other\+Targets\+Root@{other\+Targets\+Root}!Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object}}
+\subsubsection{\texorpdfstring{other\+Targets\+Root}{otherTargetsRoot}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Final\+I\+K.\+Interaction\+Object.\+other\+Targets\+Root}
+
+
+
+The root Transform of the Interaction\+Targets. If null, will use this Game\+Object. Get\+Components\+In\+Children$<$\+Interaction\+Target$>$() will be used at initiation to find all Interaction\+Targets associated with this \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object}{Interaction\+Object}}. 
+
+
+
+Definition at line 266 of file Interaction\+Object.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_object_a48b9b33f43b92c3f6fb5d5a8108c1dfb}\label{class_root_motion_1_1_final_i_k_1_1_interaction_object_a48b9b33f43b92c3f6fb5d5a8108c1dfb}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object}!position\+Offset\+Space@{position\+Offset\+Space}}
+\index{position\+Offset\+Space@{position\+Offset\+Space}!Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object}}
+\subsubsection{\texorpdfstring{position\+Offset\+Space}{positionOffsetSpace}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Final\+I\+K.\+Interaction\+Object.\+position\+Offset\+Space}
+
+
+
+If assigned, all Position\+Offset channels will be applied in the rotation space of this Transform. If not, they will be in the rotation space of the character. 
+
+
+
+Definition at line 271 of file Interaction\+Object.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_object_a3ae0829b89959bc751999003d7e3fd95}\label{class_root_motion_1_1_final_i_k_1_1_interaction_object_a3ae0829b89959bc751999003d7e3fd95}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object}!weight\+Curves@{weight\+Curves}}
+\index{weight\+Curves@{weight\+Curves}!Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object}}
+\subsubsection{\texorpdfstring{weight\+Curves}{weightCurves}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object_1_1_weight_curve}{Weight\+Curve}} \mbox{[}$\,$\mbox{]} Root\+Motion.\+Final\+I\+K.\+Interaction\+Object.\+weight\+Curves}
+
+
+
+The weight curves for the interaction. 
+
+
+
+Definition at line 275 of file Interaction\+Object.\+cs.
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_object_a2c0ba73ce6e5b272ef88b3b6a950b9a9}\label{class_root_motion_1_1_final_i_k_1_1_interaction_object_a2c0ba73ce6e5b272ef88b3b6a950b9a9}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object}!last\+Used\+Interaction\+System@{last\+Used\+Interaction\+System}}
+\index{last\+Used\+Interaction\+System@{last\+Used\+Interaction\+System}!Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object}}
+\subsubsection{\texorpdfstring{last\+Used\+Interaction\+System}{lastUsedInteractionSystem}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_system}{Interaction\+System}} Root\+Motion.\+Final\+I\+K.\+Interaction\+Object.\+last\+Used\+Interaction\+System\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The last \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_system}{Interaction\+System}} that started an interaction with this \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object}{Interaction\+Object}}. 
+
+The last used interaction system.
+
+Definition at line 292 of file Interaction\+Object.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_object_aa565d19aa7d062cf236f5d8fd3915eca}\label{class_root_motion_1_1_final_i_k_1_1_interaction_object_aa565d19aa7d062cf236f5d8fd3915eca}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object}!length@{length}}
+\index{length@{length}!Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object}}
+\subsubsection{\texorpdfstring{length}{length}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+Interaction\+Object.\+length\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the length of the interaction (the longest curve). 
+
+
+
+Definition at line 287 of file Interaction\+Object.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_object_a24623f2aaaa949e16a4e48f03d8bc7d8}\label{class_root_motion_1_1_final_i_k_1_1_interaction_object_a24623f2aaaa949e16a4e48f03d8bc7d8}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object}!look\+At\+Target@{look\+At\+Target}}
+\index{look\+At\+Target@{look\+At\+Target}!Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object}}
+\subsubsection{\texorpdfstring{look\+At\+Target}{lookAtTarget}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Final\+I\+K.\+Interaction\+Object.\+look\+At\+Target\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the look at target (returns other\+Look\+At\+Target if not null). 
+
+
+
+Definition at line 317 of file Interaction\+Object.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_object_a73da4365ee244b4780c68bdc1a1ec2dd}\label{class_root_motion_1_1_final_i_k_1_1_interaction_object_a73da4365ee244b4780c68bdc1a1ec2dd}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object}!targets\+Root@{targets\+Root}}
+\index{targets\+Root@{targets\+Root}!Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Object}}
+\subsubsection{\texorpdfstring{targets\+Root}{targetsRoot}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Final\+I\+K.\+Interaction\+Object.\+targets\+Root\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line 429 of file Interaction\+Object.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Plugins/\+Root\+Motion/\+Final\+I\+K/\+Interaction\+System/\mbox{\hyperlink{_interaction_object_8cs}{Interaction\+Object.\+cs}}\end{DoxyCompactItemize}

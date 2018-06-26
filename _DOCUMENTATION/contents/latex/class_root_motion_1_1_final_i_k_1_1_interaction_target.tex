@@ -1,0 +1,208 @@
+\hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_target}{}\section{Root\+Motion.\+Final\+I\+K.\+Interaction\+Target Class Reference}
+\label{class_root_motion_1_1_final_i_k_1_1_interaction_target}\index{Root\+Motion.\+Final\+I\+K.\+Interaction\+Target@{Root\+Motion.\+Final\+I\+K.\+Interaction\+Target}}
+
+
+The target of an effector in the \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_system}{Interaction\+System}}.  
+
+
+Inheritance diagram for Root\+Motion.\+Final\+I\+K.\+Interaction\+Target\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_root_motion_1_1_final_i_k_1_1_interaction_target}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_target_1_1_multiplier}{Multiplier}}
+\begin{DoxyCompactList}\small\item\em Multiplies the value of a weight curve for this effector target. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_target_ab6685ed16287fbda1f35f0a4a656ce45}{Get\+Value}} (\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object_1_1_weight_curve_a74c8be2e80ace86b130c88e275300b27}{Interaction\+Object.\+Weight\+Curve.\+Type}} curve\+Type)
+\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_target_ad12044ac58c437ad6ac440fc6e36df1e}{Reset\+Rotation}} ()
+\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_target_a2defe70ebefa8e54f20149967572da21}{Rotate\+To}} (Vector3 position)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespace_root_motion_1_1_final_i_k_ae0dd2058c7667b6f132c11a6b860c14a}{Full\+Body\+Biped\+Effector}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_target_aee5d6153ee0db382892b8af4d3eaef49}{effector\+Type}}
+\begin{DoxyCompactList}\small\item\em The type of the F\+B\+B\+IK effector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_target_1_1_multiplier}{Multiplier}} \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_target_ae8fd42003a4a2ee7f8dfd70aec0042c9}{multipliers}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object}{Interaction\+Object}} weight curve multipliers for this effector target. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_target_a07a0f69b80289668ebc348e10164be6d}{interaction\+Speed\+Mlp}} = 1f
+\begin{DoxyCompactList}\small\item\em The interaction speed multiplier for this effector. This can be used to make interactions faster/slower for specific effectors. \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_target_a042a6f413a9ea2cb467dce6d8ed9739d}{pivot}}
+\begin{DoxyCompactList}\small\item\em The pivot to twist/swing this interaction target about. For symmetric objects that can be interacted with from a certain angular range. \end{DoxyCompactList}\item 
+Vector3 \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_target_a13656ac7b32e6a0c35673e41d9faee89}{twist\+Axis}} = Vector3.\+up
+\begin{DoxyCompactList}\small\item\em The axis of twisting the interaction target. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_target_a7e63518b5f31ba27e7356f6f7acc9f88}{twist\+Weight}} = 1f
+\begin{DoxyCompactList}\small\item\em The weight of twisting the interaction target towards the effector bone in the start of the interaction. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_target_a541a52625071374548c87c8d2b6468e2}{swing\+Weight}}
+\begin{DoxyCompactList}\small\item\em The weight of swinging the interaction target towards the effector bone in the start of the interaction. Swing is defined as a 3-\/\+D\+OF rotation around any axis, while twist is only around the twist axis. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_target_aecda5592f199021ea5741bd870706a4a}{rotate\+Once}} = true
+\begin{DoxyCompactList}\small\item\em If true, will twist/swing around the pivot only once at the start of the interaction. If false, will continue rotating throuout the whole interaction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The target of an effector in the \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_system}{Interaction\+System}}. 
+
+
+
+Definition at line 12 of file Interaction\+Target.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_target_ab6685ed16287fbda1f35f0a4a656ce45}\label{class_root_motion_1_1_final_i_k_1_1_interaction_target_ab6685ed16287fbda1f35f0a4a656ce45}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Target@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Target}!Get\+Value@{Get\+Value}}
+\index{Get\+Value@{Get\+Value}!Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Target@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Target}}
+\subsubsection{\texorpdfstring{Get\+Value()}{GetValue()}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+Interaction\+Target.\+Get\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object_1_1_weight_curve_a74c8be2e80ace86b130c88e275300b27}{Interaction\+Object.\+Weight\+Curve.\+Type}}}]{curve\+Type }\end{DoxyParamCaption})}
+
+
+
+Definition at line 112 of file Interaction\+Target.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_target_ad12044ac58c437ad6ac440fc6e36df1e}\label{class_root_motion_1_1_final_i_k_1_1_interaction_target_ad12044ac58c437ad6ac440fc6e36df1e}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Target@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Target}!Reset\+Rotation@{Reset\+Rotation}}
+\index{Reset\+Rotation@{Reset\+Rotation}!Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Target@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Target}}
+\subsubsection{\texorpdfstring{Reset\+Rotation()}{ResetRotation()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+Interaction\+Target.\+Reset\+Rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 118 of file Interaction\+Target.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_target_a2defe70ebefa8e54f20149967572da21}\label{class_root_motion_1_1_final_i_k_1_1_interaction_target_a2defe70ebefa8e54f20149967572da21}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Target@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Target}!Rotate\+To@{Rotate\+To}}
+\index{Rotate\+To@{Rotate\+To}!Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Target@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Target}}
+\subsubsection{\texorpdfstring{Rotate\+To()}{RotateTo()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+Interaction\+Target.\+Rotate\+To (\begin{DoxyParamCaption}\item[{Vector3}]{position }\end{DoxyParamCaption})}
+
+
+
+Definition at line 123 of file Interaction\+Target.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_target_aee5d6153ee0db382892b8af4d3eaef49}\label{class_root_motion_1_1_final_i_k_1_1_interaction_target_aee5d6153ee0db382892b8af4d3eaef49}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Target@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Target}!effector\+Type@{effector\+Type}}
+\index{effector\+Type@{effector\+Type}!Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Target@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Target}}
+\subsubsection{\texorpdfstring{effector\+Type}{effectorType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_root_motion_1_1_final_i_k_ae0dd2058c7667b6f132c11a6b860c14a}{Full\+Body\+Biped\+Effector}} Root\+Motion.\+Final\+I\+K.\+Interaction\+Target.\+effector\+Type}
+
+
+
+The type of the F\+B\+B\+IK effector. 
+
+
+
+Definition at line 71 of file Interaction\+Target.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_target_a07a0f69b80289668ebc348e10164be6d}\label{class_root_motion_1_1_final_i_k_1_1_interaction_target_a07a0f69b80289668ebc348e10164be6d}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Target@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Target}!interaction\+Speed\+Mlp@{interaction\+Speed\+Mlp}}
+\index{interaction\+Speed\+Mlp@{interaction\+Speed\+Mlp}!Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Target@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Target}}
+\subsubsection{\texorpdfstring{interaction\+Speed\+Mlp}{interactionSpeedMlp}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+Interaction\+Target.\+interaction\+Speed\+Mlp = 1f}
+
+
+
+The interaction speed multiplier for this effector. This can be used to make interactions faster/slower for specific effectors. 
+
+
+
+Definition at line 81 of file Interaction\+Target.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_target_ae8fd42003a4a2ee7f8dfd70aec0042c9}\label{class_root_motion_1_1_final_i_k_1_1_interaction_target_ae8fd42003a4a2ee7f8dfd70aec0042c9}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Target@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Target}!multipliers@{multipliers}}
+\index{multipliers@{multipliers}!Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Target@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Target}}
+\subsubsection{\texorpdfstring{multipliers}{multipliers}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_target_1_1_multiplier}{Multiplier}} \mbox{[}$\,$\mbox{]} Root\+Motion.\+Final\+I\+K.\+Interaction\+Target.\+multipliers}
+
+
+
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_interaction_object}{Interaction\+Object}} weight curve multipliers for this effector target. 
+
+
+
+Definition at line 76 of file Interaction\+Target.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_target_a042a6f413a9ea2cb467dce6d8ed9739d}\label{class_root_motion_1_1_final_i_k_1_1_interaction_target_a042a6f413a9ea2cb467dce6d8ed9739d}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Target@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Target}!pivot@{pivot}}
+\index{pivot@{pivot}!Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Target@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Target}}
+\subsubsection{\texorpdfstring{pivot}{pivot}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Final\+I\+K.\+Interaction\+Target.\+pivot}
+
+
+
+The pivot to twist/swing this interaction target about. For symmetric objects that can be interacted with from a certain angular range. 
+
+
+
+Definition at line 86 of file Interaction\+Target.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_target_aecda5592f199021ea5741bd870706a4a}\label{class_root_motion_1_1_final_i_k_1_1_interaction_target_aecda5592f199021ea5741bd870706a4a}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Target@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Target}!rotate\+Once@{rotate\+Once}}
+\index{rotate\+Once@{rotate\+Once}!Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Target@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Target}}
+\subsubsection{\texorpdfstring{rotate\+Once}{rotateOnce}}
+{\footnotesize\ttfamily bool Root\+Motion.\+Final\+I\+K.\+Interaction\+Target.\+rotate\+Once = true}
+
+
+
+If true, will twist/swing around the pivot only once at the start of the interaction. If false, will continue rotating throuout the whole interaction. 
+
+
+
+Definition at line 106 of file Interaction\+Target.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_target_a541a52625071374548c87c8d2b6468e2}\label{class_root_motion_1_1_final_i_k_1_1_interaction_target_a541a52625071374548c87c8d2b6468e2}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Target@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Target}!swing\+Weight@{swing\+Weight}}
+\index{swing\+Weight@{swing\+Weight}!Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Target@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Target}}
+\subsubsection{\texorpdfstring{swing\+Weight}{swingWeight}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+Interaction\+Target.\+swing\+Weight}
+
+
+
+The weight of swinging the interaction target towards the effector bone in the start of the interaction. Swing is defined as a 3-\/\+D\+OF rotation around any axis, while twist is only around the twist axis. 
+
+
+
+Definition at line 101 of file Interaction\+Target.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_target_a13656ac7b32e6a0c35673e41d9faee89}\label{class_root_motion_1_1_final_i_k_1_1_interaction_target_a13656ac7b32e6a0c35673e41d9faee89}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Target@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Target}!twist\+Axis@{twist\+Axis}}
+\index{twist\+Axis@{twist\+Axis}!Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Target@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Target}}
+\subsubsection{\texorpdfstring{twist\+Axis}{twistAxis}}
+{\footnotesize\ttfamily Vector3 Root\+Motion.\+Final\+I\+K.\+Interaction\+Target.\+twist\+Axis = Vector3.\+up}
+
+
+
+The axis of twisting the interaction target. 
+
+
+
+Definition at line 91 of file Interaction\+Target.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_interaction_target_a7e63518b5f31ba27e7356f6f7acc9f88}\label{class_root_motion_1_1_final_i_k_1_1_interaction_target_a7e63518b5f31ba27e7356f6f7acc9f88}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Target@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Target}!twist\+Weight@{twist\+Weight}}
+\index{twist\+Weight@{twist\+Weight}!Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Target@{Root\+Motion\+::\+Final\+I\+K\+::\+Interaction\+Target}}
+\subsubsection{\texorpdfstring{twist\+Weight}{twistWeight}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+Interaction\+Target.\+twist\+Weight = 1f}
+
+
+
+The weight of twisting the interaction target towards the effector bone in the start of the interaction. 
+
+
+
+Definition at line 96 of file Interaction\+Target.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Plugins/\+Root\+Motion/\+Final\+I\+K/\+Interaction\+System/\mbox{\hyperlink{_interaction_target_8cs}{Interaction\+Target.\+cs}}\end{DoxyCompactItemize}

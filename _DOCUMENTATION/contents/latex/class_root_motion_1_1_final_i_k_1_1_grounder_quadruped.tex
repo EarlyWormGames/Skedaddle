@@ -1,0 +1,432 @@
+\hypertarget{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped}{}\section{Root\+Motion.\+Final\+I\+K.\+Grounder\+Quadruped Class Reference}
+\label{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped}\index{Root\+Motion.\+Final\+I\+K.\+Grounder\+Quadruped@{Root\+Motion.\+Final\+I\+K.\+Grounder\+Quadruped}}
+
+
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounding}{Grounding}} for \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_limb_i_k}{Limb\+IK}}, C\+CD and/or \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_a_b_r_i_k}{F\+A\+B\+R\+IK}} solvers.  
+
+
+Inheritance diagram for Root\+Motion.\+Final\+I\+K.\+Grounder\+Quadruped\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_root_motion_1_1_final_i_k_1_1_grounder_quadruped_1_1_foot}{Foot}}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a05edde8488de6e2564d75302724dbda7}{Reset\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Resets this \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder}{Grounder}} so characters can be teleported instananeously. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounding}{Grounding}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a726fa8fbb9d7e8d0cd3b21baca6f3148}{foreleg\+Solver}} = new \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounding}{Grounding}}()
+\begin{DoxyCompactList}\small\item\em The Grounding solver for the forelegs. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a4e873b5daad3d41836c2bf5e6071d7eb}{Pelvis\+Straighten\+Weight}} = 0.\+5f
+\begin{DoxyCompactList}\small\item\em The weight of how much the pelvis is pulled down by the shoulders when the pelvis is higher \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_aaab39b94a895710f9628c14f7a0c75bd}{Shoulder\+Straighten\+Weight}} = 0.\+5f
+\begin{DoxyCompactList}\small\item\em The weight of how much the shoulders are pulled down by the pelvis when the shoulders are higher \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a9824078dbb8a7521e99b0ccb92524f96}{Pelvis\+Lower\+Speed}} = 1
+\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a360b7c1d02814a1796faca9aacfa47e6}{Shoulder\+Lower\+Speed}} = 1
+\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_add153a6a03dca1351267957e5d52d831}{Head\+Lower\+Amount}}
+\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a8eb4575c1389a92192d357aa5f42cdc0}{Head\+Lower\+Speed}} = 1
+\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a97e4b6347784bbd75e69f162587fae13}{root\+Rotation\+Weight}} = 0.\+5f
+\begin{DoxyCompactList}\small\item\em The weight of rotating the character root to the ground angle (range\+: 0 -\/ 1). \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_aa1f3caa665b0ef4c10f99cd3e99b5702}{min\+Root\+Rotation}} = -\/25f
+\begin{DoxyCompactList}\small\item\em The maximum angle of rotating the quadruped downwards (going downhill, range\+: -\/90 -\/ 0). \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a1ae3cb660578b39db1bb683aecdba964}{max\+Root\+Rotation}} = 45f
+\begin{DoxyCompactList}\small\item\em The maximum angle of rotating the quadruped upwards (going uphill, range\+: 0 -\/ 90). \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a736b656b2b63c9b287b3c1f186fa667e}{root\+Rotation\+Speed}} = 5f
+\begin{DoxyCompactList}\small\item\em The speed of interpolating the character root rotation (range\+: 0 -\/ inf). \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_afe10dd0488a49bb92114bccf069d3892}{max\+Leg\+Offset}} = 0.\+5f
+\begin{DoxyCompactList}\small\item\em The maximum \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k}{IK}} offset for the legs (range\+: 0 -\/ inf). \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a643c89f74432b0f52025b66e7c167787}{max\+Fore\+Leg\+Offset}} = 0.\+5f
+\begin{DoxyCompactList}\small\item\em The maximum \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k}{IK}} offset for the forelegs (range\+: 0 -\/ inf). \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_aac90017fa140ce1a04a24b55f2fd88be}{maintain\+Head\+Rotation\+Weight}} = 0.\+5f
+\begin{DoxyCompactList}\small\item\em The weight of maintaining the head\textquotesingle{}s rotation as it was before solving the \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounding}{Grounding}} (range\+: 0 -\/ 1). \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_ad70def3d5184b754d565595486e05940}{character\+Root}}
+\begin{DoxyCompactList}\small\item\em The root Transform of the character, with the rigidbody and the collider. \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a30b84102626a5ba9a58511255e48df88}{pelvis}}
+\begin{DoxyCompactList}\small\item\em The pelvis transform. Common ancestor of both legs and the spine. \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a1e38165485263fbab858217c4ba27316}{last\+Spine\+Bone}}
+\begin{DoxyCompactList}\small\item\em The last bone in the spine that is the common parent for both forelegs. \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_afd3aebf64eb863401c0c32a3586514c6}{head}}
+\begin{DoxyCompactList}\small\item\em The head (optional, if you intend to maintain it\textquotesingle{}s rotation). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k}{IK}} \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a9730d74e7b4337aae310d93e3d69061a}{legs}}
+\begin{DoxyCompactList}\small\item\em IK componets of the hindlegs. Can be any type of \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k}{IK}} components. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k}{IK}} \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a50487adce0ddc122a7a127c9b74148e3}{forelegs}}
+\begin{DoxyCompactList}\small\item\em IK components for the forelegs. Can be any type of \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k}{IK}} components. \end{DoxyCompactList}\item 
+Vector3 \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_ac94f40f64bc3d052b0dd9121d23cf7b4}{gravity}} = Vector3.\+down
+\begin{DoxyCompactList}\small\item\em When using \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped}{Grounder\+Quadruped}} on a spherical object, update this vector to always point towards the center of that object. \end{DoxyCompactList}\item 
+Quaternion \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_acbf7a45c9eecccca78ad3a133d7babbe}{Pelvis\+Rotation}}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a46706210fd77e841924c04b4bf70098b}{Open\+User\+Manual}} ()
+\item 
+override void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_ab5958dc0d24bb8a70d2a3ec4f3a7f433}{Open\+Script\+Reference}} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounding}{Grounding}} for \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_limb_i_k}{Limb\+IK}}, C\+CD and/or \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_a_b_r_i_k}{F\+A\+B\+R\+IK}} solvers. 
+
+
+
+Definition at line 11 of file Grounder\+Quadruped.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_ab5958dc0d24bb8a70d2a3ec4f3a7f433}\label{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_ab5958dc0d24bb8a70d2a3ec4f3a7f433}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}!Open\+Script\+Reference@{Open\+Script\+Reference}}
+\index{Open\+Script\+Reference@{Open\+Script\+Reference}!Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}}
+\subsubsection{\texorpdfstring{Open\+Script\+Reference()}{OpenScriptReference()}}
+{\footnotesize\ttfamily override void Root\+Motion.\+Final\+I\+K.\+Grounder\+Quadruped.\+Open\+Script\+Reference (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder_a76777e591f7aac441ea52b1b92c41886}{Root\+Motion.\+Final\+I\+K.\+Grounder}}.
+
+
+
+Definition at line 21 of file Grounder\+Quadruped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a46706210fd77e841924c04b4bf70098b}\label{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a46706210fd77e841924c04b4bf70098b}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}!Open\+User\+Manual@{Open\+User\+Manual}}
+\index{Open\+User\+Manual@{Open\+User\+Manual}!Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}}
+\subsubsection{\texorpdfstring{Open\+User\+Manual()}{OpenUserManual()}}
+{\footnotesize\ttfamily override void Root\+Motion.\+Final\+I\+K.\+Grounder\+Quadruped.\+Open\+User\+Manual (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder_af214d235ecea1b81ec637b1b61f756cb}{Root\+Motion.\+Final\+I\+K.\+Grounder}}.
+
+
+
+Definition at line 15 of file Grounder\+Quadruped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a05edde8488de6e2564d75302724dbda7}\label{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a05edde8488de6e2564d75302724dbda7}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}!Reset\+Position@{Reset\+Position}}
+\index{Reset\+Position@{Reset\+Position}!Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}}
+\subsubsection{\texorpdfstring{Reset\+Position()}{ResetPosition()}}
+{\footnotesize\ttfamily override void Root\+Motion.\+Final\+I\+K.\+Grounder\+Quadruped.\+Reset\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Resets this \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder}{Grounder}} so characters can be teleported instananeously. 
+
+
+
+Implements \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder_aecbd8b5addf2948f4d5fcd00a1b03314}{Root\+Motion.\+Final\+I\+K.\+Grounder}}.
+
+
+
+Definition at line 123 of file Grounder\+Quadruped.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_ad70def3d5184b754d565595486e05940}\label{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_ad70def3d5184b754d565595486e05940}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}!character\+Root@{character\+Root}}
+\index{character\+Root@{character\+Root}!Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}}
+\subsubsection{\texorpdfstring{character\+Root}{characterRoot}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Final\+I\+K.\+Grounder\+Quadruped.\+character\+Root}
+
+
+
+The root Transform of the character, with the rigidbody and the collider. 
+
+
+
+Definition at line 91 of file Grounder\+Quadruped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a50487adce0ddc122a7a127c9b74148e3}\label{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a50487adce0ddc122a7a127c9b74148e3}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}!forelegs@{forelegs}}
+\index{forelegs@{forelegs}!Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}}
+\subsubsection{\texorpdfstring{forelegs}{forelegs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k}{IK}} \mbox{[}$\,$\mbox{]} Root\+Motion.\+Final\+I\+K.\+Grounder\+Quadruped.\+forelegs}
+
+
+
+IK components for the forelegs. Can be any type of \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k}{IK}} components. 
+
+
+
+Definition at line 114 of file Grounder\+Quadruped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a726fa8fbb9d7e8d0cd3b21baca6f3148}\label{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a726fa8fbb9d7e8d0cd3b21baca6f3148}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}!foreleg\+Solver@{foreleg\+Solver}}
+\index{foreleg\+Solver@{foreleg\+Solver}!Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}}
+\subsubsection{\texorpdfstring{foreleg\+Solver}{forelegSolver}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounding}{Grounding}} Root\+Motion.\+Final\+I\+K.\+Grounder\+Quadruped.\+foreleg\+Solver = new \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounding}{Grounding}}()}
+
+
+
+The Grounding solver for the forelegs. 
+
+
+
+Definition at line 31 of file Grounder\+Quadruped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_ac94f40f64bc3d052b0dd9121d23cf7b4}\label{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_ac94f40f64bc3d052b0dd9121d23cf7b4}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}!gravity@{gravity}}
+\index{gravity@{gravity}!Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}}
+\subsubsection{\texorpdfstring{gravity}{gravity}}
+{\footnotesize\ttfamily Vector3 Root\+Motion.\+Final\+I\+K.\+Grounder\+Quadruped.\+gravity = Vector3.\+down}
+
+
+
+When using \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped}{Grounder\+Quadruped}} on a spherical object, update this vector to always point towards the center of that object. 
+
+
+
+Definition at line 118 of file Grounder\+Quadruped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_afd3aebf64eb863401c0c32a3586514c6}\label{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_afd3aebf64eb863401c0c32a3586514c6}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}!head@{head}}
+\index{head@{head}!Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}}
+\subsubsection{\texorpdfstring{head}{head}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Final\+I\+K.\+Grounder\+Quadruped.\+head}
+
+
+
+The head (optional, if you intend to maintain it\textquotesingle{}s rotation). 
+
+
+
+Definition at line 106 of file Grounder\+Quadruped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_add153a6a03dca1351267957e5d52d831}\label{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_add153a6a03dca1351267957e5d52d831}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}!Head\+Lower\+Amount@{Head\+Lower\+Amount}}
+\index{Head\+Lower\+Amount@{Head\+Lower\+Amount}!Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}}
+\subsubsection{\texorpdfstring{Head\+Lower\+Amount}{HeadLowerAmount}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+Grounder\+Quadruped.\+Head\+Lower\+Amount}
+
+
+
+Definition at line 46 of file Grounder\+Quadruped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a8eb4575c1389a92192d357aa5f42cdc0}\label{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a8eb4575c1389a92192d357aa5f42cdc0}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}!Head\+Lower\+Speed@{Head\+Lower\+Speed}}
+\index{Head\+Lower\+Speed@{Head\+Lower\+Speed}!Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}}
+\subsubsection{\texorpdfstring{Head\+Lower\+Speed}{HeadLowerSpeed}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+Grounder\+Quadruped.\+Head\+Lower\+Speed = 1}
+
+
+
+Definition at line 47 of file Grounder\+Quadruped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a1e38165485263fbab858217c4ba27316}\label{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a1e38165485263fbab858217c4ba27316}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}!last\+Spine\+Bone@{last\+Spine\+Bone}}
+\index{last\+Spine\+Bone@{last\+Spine\+Bone}!Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}}
+\subsubsection{\texorpdfstring{last\+Spine\+Bone}{lastSpineBone}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Final\+I\+K.\+Grounder\+Quadruped.\+last\+Spine\+Bone}
+
+
+
+The last bone in the spine that is the common parent for both forelegs. 
+
+
+
+Definition at line 101 of file Grounder\+Quadruped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a9730d74e7b4337aae310d93e3d69061a}\label{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a9730d74e7b4337aae310d93e3d69061a}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}!legs@{legs}}
+\index{legs@{legs}!Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}}
+\subsubsection{\texorpdfstring{legs}{legs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k}{IK}} \mbox{[}$\,$\mbox{]} Root\+Motion.\+Final\+I\+K.\+Grounder\+Quadruped.\+legs}
+
+
+
+IK componets of the hindlegs. Can be any type of \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k}{IK}} components. 
+
+
+
+Definition at line 110 of file Grounder\+Quadruped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_aac90017fa140ce1a04a24b55f2fd88be}\label{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_aac90017fa140ce1a04a24b55f2fd88be}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}!maintain\+Head\+Rotation\+Weight@{maintain\+Head\+Rotation\+Weight}}
+\index{maintain\+Head\+Rotation\+Weight@{maintain\+Head\+Rotation\+Weight}!Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}}
+\subsubsection{\texorpdfstring{maintain\+Head\+Rotation\+Weight}{maintainHeadRotationWeight}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+Grounder\+Quadruped.\+maintain\+Head\+Rotation\+Weight = 0.\+5f}
+
+
+
+The weight of maintaining the head\textquotesingle{}s rotation as it was before solving the \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_grounding}{Grounding}} (range\+: 0 -\/ 1). 
+
+
+
+Definition at line 86 of file Grounder\+Quadruped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a643c89f74432b0f52025b66e7c167787}\label{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a643c89f74432b0f52025b66e7c167787}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}!max\+Fore\+Leg\+Offset@{max\+Fore\+Leg\+Offset}}
+\index{max\+Fore\+Leg\+Offset@{max\+Fore\+Leg\+Offset}!Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}}
+\subsubsection{\texorpdfstring{max\+Fore\+Leg\+Offset}{maxForeLegOffset}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+Grounder\+Quadruped.\+max\+Fore\+Leg\+Offset = 0.\+5f}
+
+
+
+The maximum \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k}{IK}} offset for the forelegs (range\+: 0 -\/ inf). 
+
+
+
+Definition at line 80 of file Grounder\+Quadruped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_afe10dd0488a49bb92114bccf069d3892}\label{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_afe10dd0488a49bb92114bccf069d3892}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}!max\+Leg\+Offset@{max\+Leg\+Offset}}
+\index{max\+Leg\+Offset@{max\+Leg\+Offset}!Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}}
+\subsubsection{\texorpdfstring{max\+Leg\+Offset}{maxLegOffset}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+Grounder\+Quadruped.\+max\+Leg\+Offset = 0.\+5f}
+
+
+
+The maximum \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k}{IK}} offset for the legs (range\+: 0 -\/ inf). 
+
+
+
+Definition at line 75 of file Grounder\+Quadruped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a1ae3cb660578b39db1bb683aecdba964}\label{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a1ae3cb660578b39db1bb683aecdba964}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}!max\+Root\+Rotation@{max\+Root\+Rotation}}
+\index{max\+Root\+Rotation@{max\+Root\+Rotation}!Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}}
+\subsubsection{\texorpdfstring{max\+Root\+Rotation}{maxRootRotation}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+Grounder\+Quadruped.\+max\+Root\+Rotation = 45f}
+
+
+
+The maximum angle of rotating the quadruped upwards (going uphill, range\+: 0 -\/ 90). 
+
+
+
+Definition at line 65 of file Grounder\+Quadruped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_aa1f3caa665b0ef4c10f99cd3e99b5702}\label{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_aa1f3caa665b0ef4c10f99cd3e99b5702}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}!min\+Root\+Rotation@{min\+Root\+Rotation}}
+\index{min\+Root\+Rotation@{min\+Root\+Rotation}!Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}}
+\subsubsection{\texorpdfstring{min\+Root\+Rotation}{minRootRotation}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+Grounder\+Quadruped.\+min\+Root\+Rotation = -\/25f}
+
+
+
+The maximum angle of rotating the quadruped downwards (going downhill, range\+: -\/90 -\/ 0). 
+
+
+
+Definition at line 59 of file Grounder\+Quadruped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a30b84102626a5ba9a58511255e48df88}\label{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a30b84102626a5ba9a58511255e48df88}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}!pelvis@{pelvis}}
+\index{pelvis@{pelvis}!Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}}
+\subsubsection{\texorpdfstring{pelvis}{pelvis}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Final\+I\+K.\+Grounder\+Quadruped.\+pelvis}
+
+
+
+The pelvis transform. Common ancestor of both legs and the spine. 
+
+
+
+Definition at line 96 of file Grounder\+Quadruped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a9824078dbb8a7521e99b0ccb92524f96}\label{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a9824078dbb8a7521e99b0ccb92524f96}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}!Pelvis\+Lower\+Speed@{Pelvis\+Lower\+Speed}}
+\index{Pelvis\+Lower\+Speed@{Pelvis\+Lower\+Speed}!Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}}
+\subsubsection{\texorpdfstring{Pelvis\+Lower\+Speed}{PelvisLowerSpeed}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+Grounder\+Quadruped.\+Pelvis\+Lower\+Speed = 1}
+
+
+
+Definition at line 44 of file Grounder\+Quadruped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_acbf7a45c9eecccca78ad3a133d7babbe}\label{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_acbf7a45c9eecccca78ad3a133d7babbe}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}!Pelvis\+Rotation@{Pelvis\+Rotation}}
+\index{Pelvis\+Rotation@{Pelvis\+Rotation}!Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}}
+\subsubsection{\texorpdfstring{Pelvis\+Rotation}{PelvisRotation}}
+{\footnotesize\ttfamily Quaternion Root\+Motion.\+Final\+I\+K.\+Grounder\+Quadruped.\+Pelvis\+Rotation}
+
+
+
+Definition at line 119 of file Grounder\+Quadruped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a4e873b5daad3d41836c2bf5e6071d7eb}\label{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a4e873b5daad3d41836c2bf5e6071d7eb}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}!Pelvis\+Straighten\+Weight@{Pelvis\+Straighten\+Weight}}
+\index{Pelvis\+Straighten\+Weight@{Pelvis\+Straighten\+Weight}!Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}}
+\subsubsection{\texorpdfstring{Pelvis\+Straighten\+Weight}{PelvisStraightenWeight}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+Grounder\+Quadruped.\+Pelvis\+Straighten\+Weight = 0.\+5f}
+
+
+
+The weight of how much the pelvis is pulled down by the shoulders when the pelvis is higher 
+
+
+
+Definition at line 37 of file Grounder\+Quadruped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a736b656b2b63c9b287b3c1f186fa667e}\label{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a736b656b2b63c9b287b3c1f186fa667e}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}!root\+Rotation\+Speed@{root\+Rotation\+Speed}}
+\index{root\+Rotation\+Speed@{root\+Rotation\+Speed}!Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}}
+\subsubsection{\texorpdfstring{root\+Rotation\+Speed}{rootRotationSpeed}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+Grounder\+Quadruped.\+root\+Rotation\+Speed = 5f}
+
+
+
+The speed of interpolating the character root rotation (range\+: 0 -\/ inf). 
+
+
+
+Definition at line 70 of file Grounder\+Quadruped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a97e4b6347784bbd75e69f162587fae13}\label{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a97e4b6347784bbd75e69f162587fae13}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}!root\+Rotation\+Weight@{root\+Rotation\+Weight}}
+\index{root\+Rotation\+Weight@{root\+Rotation\+Weight}!Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}}
+\subsubsection{\texorpdfstring{root\+Rotation\+Weight}{rootRotationWeight}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+Grounder\+Quadruped.\+root\+Rotation\+Weight = 0.\+5f}
+
+
+
+The weight of rotating the character root to the ground angle (range\+: 0 -\/ 1). 
+
+
+
+Definition at line 53 of file Grounder\+Quadruped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a360b7c1d02814a1796faca9aacfa47e6}\label{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_a360b7c1d02814a1796faca9aacfa47e6}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}!Shoulder\+Lower\+Speed@{Shoulder\+Lower\+Speed}}
+\index{Shoulder\+Lower\+Speed@{Shoulder\+Lower\+Speed}!Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}}
+\subsubsection{\texorpdfstring{Shoulder\+Lower\+Speed}{ShoulderLowerSpeed}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+Grounder\+Quadruped.\+Shoulder\+Lower\+Speed = 1}
+
+
+
+Definition at line 45 of file Grounder\+Quadruped.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_aaab39b94a895710f9628c14f7a0c75bd}\label{class_root_motion_1_1_final_i_k_1_1_grounder_quadruped_aaab39b94a895710f9628c14f7a0c75bd}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}!Shoulder\+Straighten\+Weight@{Shoulder\+Straighten\+Weight}}
+\index{Shoulder\+Straighten\+Weight@{Shoulder\+Straighten\+Weight}!Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped@{Root\+Motion\+::\+Final\+I\+K\+::\+Grounder\+Quadruped}}
+\subsubsection{\texorpdfstring{Shoulder\+Straighten\+Weight}{ShoulderStraightenWeight}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+Grounder\+Quadruped.\+Shoulder\+Straighten\+Weight = 0.\+5f}
+
+
+
+The weight of how much the shoulders are pulled down by the pelvis when the shoulders are higher 
+
+
+
+Definition at line 43 of file Grounder\+Quadruped.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Plugins/\+Root\+Motion/\+Final\+I\+K/\+Grounder/\mbox{\hyperlink{_grounder_quadruped_8cs}{Grounder\+Quadruped.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,187 @@
+\hypertarget{page10_overview}{}\section{Overview}\label{page10_overview}
+The Interaction System is designed for the easy setup of full body IK interactions with the dynamic game environment. It requires a character with Full\+Body\+Biped\+IK and consists of 3 main components\+: {\bfseries Interaction\+System, Interaction\+Object} and {\bfseries Interaction\+Target.}
+
+{\bfseries Getting started\+:}
+\begin{DoxyItemize}
+\item Add the Interaction\+System component to a F\+B\+B\+IK character
+\item Add the Interaction\+Object component to an object you wish to interact with
+\item Create a Position\+Weight weight curve, that consists of 3 keyframes \{(0, 0), (1, 1), (2, 0)\}, where x is horizontal and y is vertical value.
+\item Add the Interaction\+System\+Test\+G\+UI component to the character and fill out its fields for quick debugging of the interaction
+\item Play the scene and press the G\+UI button to start the interaction
+\end{DoxyItemize}
+
+{\bfseries Getting started with coding\+:} ~\newline
+
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{using} \mbox{\hyperlink{namespace_root_motion}{RootMotion}}.\mbox{\hyperlink{namespace_root_motion_1_1_final_i_k}{FinalIK}};
+
+\textcolor{keyword}{public} InteractionSystem interactionSystem; \textcolor{comment}{// Reference to the InteractionSystem component on the
+       character}
+\textcolor{keyword}{public} InteractionObject button; \textcolor{comment}{// The object to interact with}
+\textcolor{keyword}{public} \textcolor{keywordtype}{bool} interrupt; \textcolor{comment}{// If true, interactions can be called before the current interaction has finished}
+
+\textcolor{keywordtype}{void} OnGUI() \{
+    \textcolor{comment}{// Starting an interaction}
+    \textcolor{keywordflow}{if} (GUILayout.Button(\textcolor{stringliteral}{"Press Button"})) \{
+        interactionSystem.StartInteraction(\mbox{\hyperlink{namespace_root_motion_1_1_final_i_k_ae0dd2058c7667b6f132c11a6b860c14a}{FullBodyBipedEffector}}.RightHand, button, 
+      interrupt);
+    \}
+\}
+\end{DoxyCode}
+
+
+See the \href{http://www.root-motion.com/finalikdox/html/class_root_motion_1_1_final_i_k_1_1_interaction_system.html}{\tt A\+PI reference of the Interaction System } for all the interaction functions. See the Interaction demo scene and the \mbox{\hyperlink{_interaction_demo_8cs}{Interaction\+Demo.\+cs}} for more examples.\hypertarget{page10_components}{}\section{Components of the Interaction System}\label{page10_components}
+\hypertarget{page10_interactionSystem}{}\subsection{Interaction\+System}\label{page10_interactionSystem}
+This component should be added to the same game object that has the F\+B\+B\+IK component. It is the main driver and the main interface for controlling the interactions of it\textquotesingle{}s character.
+
+{\bfseries Component variables\+:}
+\begin{DoxyItemize}
+\item {\bfseries target\+Tag} -\/ if not empty, only the targets with the specified tag will be used by this interaction system. This is useful if there are characters in the game with different bone orientations.
+\item {\bfseries fade\+In\+Time} -\/ the time of fading in all the channels used by the interaction (weight of the effector, reach, pull..)
+\item {\bfseries speed} -\/ the master speed for all interactions of this character.
+\item {\bfseries reset\+To\+Defaults\+Speed} -\/ if $>$ 0, lerps all the F\+B\+B\+IK channels used by the Interaction System back to their default or initial values when not in interaction.
+\item {\bfseries collider} the collider that registers On\+Trigger\+Enter and On\+Trigger\+Exit events with Interaction\+Triggers.
+\item {\bfseries camera} will be used by Interaction Triggers that need the camera\textquotesingle{}s position. Assign the first person view character camera.
+\item {\bfseries cam\+Raycast\+Layers} the layers that will be raycasted from the camera (along camera.\+forward). All Interaction\+Trigger look at target colliders should be included.
+\item {\bfseries cam\+Raycast\+Distance} max distance of raycasting from the camera.
+\item {\bfseries full\+Body} -\/ reference to the Full\+Body\+Biped\+IK component.
+\item {\bfseries look\+At} -\/ Look At uses a Look\+At\+IK component to automatically turn the body/head/eyes to the Interaction Object. ~\newline
+{\bfseries iK} -\/ reference to the Look\+At\+IK component, ~\newline
+{\bfseries lerp\+Speed} -\/ the speed of interpolating the Look\+At\+IK target to the position of the Interaction Objectm ~\newline
+{\bfseries weight\+Speed} -\/ the speed of weighing in/out the Look\+At\+IK weight.
+\end{DoxyItemize}
+
+
+
+~\newline
+ \hypertarget{page10_interactionObject}{}\subsection{Interaction\+Object}\label{page10_interactionObject}
+This component should be added to the game objects that we wish to interact with. It contains most of the information about the nature of the interactions. It does not specify which body part(s) will be used, but rather the look and feel and the animation of the interaction. That way the characteristics of an interaction are defined by the object and can be shared between multiple effectors. So for instance a button will be pressed in the same manner, regardless of which effector is used for it.
+
+{\bfseries Animating Interaction Objects\+:} ~\newline
+ The Interaction System introduces the concept of animating objects rather than animating characters. So instead of animating a character opening a door or pressing a button, we can just animate the door opening or the button being pressed and have the Interaction System move the character to follow that animation. This approach gives us great freedom over the dynamics of the interactions, even allowing for multiple simultaneous animated interactions. You can animate an Interaction Object with the dope sheet and then call that animation by using the On\+Start\+Animation, On\+Trigger\+Animation, On\+Release\+Animation and On\+End\+Animation animator events that you can find on the Interaction\+Object component.
+
+{\bfseries Component variables\+:}
+\begin{DoxyItemize}
+\item {\bfseries other\+Look\+At\+Target} -\/ the look at target. If null, will look at this Game\+Object. This only has an effect when the Interaction\+Look\+At component is used.
+\item {\bfseries other\+Targets\+Root} -\/ the root Transform of the Interaction\+Targets. That will be used to automatically find all the Interaction\+Target components, so all the Interaction\+Targets should be parented to that.
+\item {\bfseries position\+Offset\+Space} -\/ if assigned, all Position\+Offset channels will be applied in the rotation space of this Transform. If not, they will be in the rotation space of the character.
+\item {\bfseries weight\+Curves} -\/ The weight curves define the process of the interaction. The interaction will be as long as the longest weight curve in that list. The horizontal value of the curve represents time since the interaction start. The vertical value represents the weight of it\textquotesingle{}s channel. So if we had a weight curve for Position\+Weight with 3 keyframes \{(0, 0), (1, 1), (2, 0)\} where a keyframe represents (time, value), then the position\+Weight of an effector will reach 1 at 1 second from the interaction start and fall back to 0 at 2 secods from the interaction start. The curve types stand for the following\+: ~\newline
+{\bfseries Position\+Weight} -\/ I\+K\+Effector.\+position\+Weight, ~\newline
+{\bfseries Rotation\+Weight} -\/ I\+K\+Effector.\+rotation\+Weight, ~\newline
+{\bfseries Position\+OffsetX} -\/ X offset from the interpolation direction relative to the character rotation, ~\newline
+{\bfseries Position\+OffsetY} -\/ Y offset from the interpolation direction relative to the character rotation, ~\newline
+{\bfseries Position\+OffsetZ} -\/ Z offset from the interpolation direction relative to the character rotation, ~\newline
+{\bfseries Pull} -\/ pull value of the limb used in the interaction (F\+B\+I\+K\+Chain.\+pull), ~\newline
+{\bfseries Reach} -\/ reach value of the limb used in the interaction (F\+B\+I\+K\+Chain.\+reach), ~\newline
+{\bfseries Rotate\+Bone\+Weight} -\/ rotating the bone after F\+B\+B\+IK is finished. In many cases using this instead of Rotation\+Weight will give you a more stable and smooth looking result. ~\newline
+{\bfseries Push} -\/ push value of the limb used in the interaction (F\+B\+I\+K\+Chain.\+push), ~\newline
+{\bfseries Push\+Parent} -\/ push\+Parent value of the limb used in the interaction (F\+B\+I\+K\+Chain.\+push\+Parent), ~\newline
+{\bfseries Poser\+Weight} -\/ weight of the hand/generic Poser.
+\item {\bfseries multipliers} -\/ the weight curve multipliers are designed for reducing the amount of work with Animation\+Curves. If you needed the rotation\+Weight curve to be the same as the position\+Weight curve, you could use a multipier instead of duplicating the curve. In that case the multiplier would look like this\+: Curve = Position\+Weight, Multiplier = 1 and Result = Rotation\+Weight. If null, will use the Interaction\+Object game object.
+\item {\bfseries events} -\/ events can be used to trigger animations, messages, interaction pause or pick-\/ups at certain time since interaction start. ~\newline
+{\bfseries time} -\/ time of triggering the event (since interaction start), ~\newline
+{\bfseries pause} -\/ if true, will pause the interaction on this event. The interaction can be resumed by calling Interaction\+System.\+Resume\+Interaction(\+Full\+Body\+Biped\+Effector effector\+Type) or Interaction\+System.\+Resume\+All(), ~\newline
+{\bfseries pick\+Up} -\/ if true, the Interaction Object will be parented to the bone of the interacting effector. This only works as expected if a single effector is interacting with this object. For 2-\/handed pick-\/ups please see the \char`\"{}\+Interaction Pick\+Up2\+Handed\char`\"{} demo, ~\newline
+{\bfseries animations} -\/ the list of animations called on this event. The \char`\"{}\+Animator\char`\"{} or \char`\"{}\+Animation\char`\"{} refers to the the animator component that the \char`\"{}\+Animation State\char`\"{} cross-\/fade (using \char`\"{}\+Cross Fade Time\char`\"{}) will be called upon. \char`\"{}\+Layer\char`\"{} is the layer of the Animation State and if \char`\"{}\+Reset Normalized Time\char`\"{} is checked, the animation will always begin from the start. ~\newline
+{\bfseries messages} -\/ the list of messages sent on this event (using \href{http://docs.unity3d.com/ScriptReference/GameObject.SendMessage.html}{\tt Game\+Object.\+Send\+Message()}, all messages require a receiver). \char`\"{}\+Function\char`\"{} is the name of the function called on the \char`\"{}\+Recipient\char`\"{} game object.
+\end{DoxyItemize}
+
+
+
+~\newline
+ \hypertarget{page10_interactionTarget}{}\subsection{Interaction\+Target}\label{page10_interactionTarget}
+If the Interaction Object has no Interaction Targets, the position and rotation of the Interaction Object itself will be used for all the effectors as the target. However if you needed to pose a hand very precisely, you will need to create an Interaction Target. Normally you would first pose a duplicate of the character\textquotesingle{}s hand, parent it to the Interaction Object and add the Interaction\+Target component. The Interaction Objects will automatically find all the Interaction Targets in their hierarchies and use them for the corresponding effectors.
+
+
+
+{\bfseries Working with Interaction Targets\+:}
+\begin{DoxyItemize}
+\item See this \href{https://www.youtube.com/watch?v=sVWdCNEnxAE}{\tt tutorial video }
+\item Duplicate your character, position and pose a hand to the Interaction Object
+\item Parent the hand hierarchy to the Interaction Object, delete the rest of the character
+\item Add the Interaction\+Target component to the hand bone, fill out it\textquotesingle{}s fields
+\item Add the Hand\+Poser (or Generic\+Poser) component to the hand bone of the character (not the hand that you just posed). That will make the fingers match the posed target.
+\item Play the scene to try out the interaction
+\end{DoxyItemize}
+
+{\bfseries Component variables\+:}
+\begin{DoxyItemize}
+\item {\bfseries effector\+Type} -\/ the type of the F\+B\+B\+IK effector that this target corresponds to
+\item {\bfseries multipliers} -\/ the weight curve multipliers enable you to override weight curve values for different effectors.
+\item {\bfseries interaction\+Speed\+Mlp} -\/ this enables you to change the speed of the interaction for different effectors.
+\item {\bfseries pivot} -\/ the pivot to twist/swing this interaction target about (The blue dot with an axis and a circle around it on the image above). Very often you would want to acces an object from any angle, the pivot enables the Interaction System to rotate the target to face the direction towards the character.
+\item {\bfseries twist\+Axis} -\/ the axis of twisting the interaction target (The blue axis on the image above. The circle visualizes the twist rotation).
+\item {\bfseries twist\+Weight} -\/ the weight of twisting the interaction target towards the effector bone in the start of the interaction.
+\item {\bfseries swing\+Weight} -\/ the weight of swinging the interaction target towards the effector bone in the start of the interaction. This will make the direction from the pivot to the Interaction\+Target match the direction from the pivot to the effector bone.
+\item {\bfseries rotate\+Once} -\/ if true, will twist/swing around the pivot only once at the start of the interaction
+\end{DoxyItemize}
+
+
+
+~\newline
+ \hypertarget{page10_interactionTrigger}{}\subsection{Interaction\+Trigger}\label{page10_interactionTrigger}
+With most Interaction Objects, there is a certain angular and positional range in which they are naturally accessible and reachable to the character. For example, a button can only be pressed with a left hand if the character is within a reasonable range and more or less facing towards it. The Interaction Trigger was specifically designed for the purpose of defining those ranges for each effector and object.
+
+
+
+The image above shows an Interaction\+Trigger defining the ranges of interaction with a door handle for the left hand and for the right hand." ~\newline
+The green sphere is the trigger Collider on the game object that will register this Interaction\+Trigger with the Interaction\+System of the character. ~\newline
+The circle defines the range of position in which the character is able to interact with the door. ~\newline
+The purple range defines the angular range of character forward in which it is able to open the door with the right hand, the pink range is the same for the left hand.
+
+{\bfseries Getting started}
+\begin{DoxyItemize}
+\item Add the Interaction\+System component to the character,
+\item make sure the game object that has the Interaction\+System component also has a Collider and a Rigidbody,
+\item create an Interaction\+Object to interact with, add a weight curve, for example \{(0, 0), (1, 1), (2, 0)\}, for Position\+Weight,
+\item create an empty game object, name it \char`\"{}\+Trigger\char`\"{}, parent it to the Interaction Object, add the Interaction\+Trigger component,
+\item add a trigger collider to the Interaction\+Trigger component, make sure it is able to trigger On\+Trigger\+Enter calls on the Interaction\+System game object,
+\item assign the Interaction\+Object game object to Interaction\+Trigger\textquotesingle{}s \char`\"{}\+Target\char`\"{}. That will be the reference of direction from the trigger to the object,
+\item add a \char`\"{}\+Range\char`\"{}, add an \char`\"{}\+Interaction\char`\"{} to that range, assign the Interaction\+Object to the \char`\"{}\+Interaction Objet\char`\"{},
+\item specify the F\+B\+B\+IK effector that you want to use for the interaction,
+\item set \char`\"{}\+Max Distance\char`\"{} to something like 1 (you can see it visualized with a circle in the Scene view),
+\item set \char`\"{}\+Max Angle\char`\"{} to 180, so you can trigger the interaction from any angle,
+\item follow the instructions below to create a script that controls the triggering (see \mbox{\hyperlink{_user_control_interactions_8cs}{User\+Control\+Interactions.\+cs}} for a full example)\+:
+\end{DoxyItemize}
+
+The Interaction\+System will automatically maintain a list of triggers that the character\textquotesingle{}s collider is in contact with. That list can be accessed by Interaction\+System.\+triggers\+In\+Range; That list contains only the triggers that have a suitable effector range for the current position and rotation of the character.
+
+You can find the closest trigger for the character by\+: 
+\begin{DoxyCode}
+\textcolor{keywordtype}{int} closestTriggerIndex = interactionSystem.GetClosestTriggerIndex();
+\end{DoxyCode}
+
+
+if Get\+Closest\+Trigger\+Index returns -\/1, there are no valid triggers currently in range. If not, you can trigger the interaction by
+
+
+\begin{DoxyCode}
+interactionSystem.TriggerInteraction(closestTriggerIndex, \textcolor{keyword}{false});
+\end{DoxyCode}
+
+
+See the Interaction Trigger demo scene and the \mbox{\hyperlink{_user_control_interactions_8cs}{User\+Control\+Interactions.\+cs}} script for a full example on how to make the Interaction Triggers work.
+
+{\bfseries Component variables}
+\begin{DoxyItemize}
+\item {\bfseries ranges} -\/ the valid ranges of the character\textquotesingle{}s and/or it\textquotesingle{}s camera\textquotesingle{}s position for triggering interaction when the character is in contact with the collider of this trigger.
+\item {\bfseries character\+Position} -\/ The range for the character\textquotesingle{}s position and rotation. ~\newline
+{\bfseries use} -\/ if false, will not care where the character stands, as long as it is in contact with the trigger collider. ~\newline
+{\bfseries offset} -\/ the offset of the character\textquotesingle{}s position relative to the trigger in XZ plane. Y position of the character is unlimited as long as it is contact with the collider. ~\newline
+{\bfseries angle\+Offset} -\/ angle offset from the default forward direction. ~\newline
+{\bfseries max\+Angle} -\/ max angular offset of the character\textquotesingle{}s forward from the direction of this trigger. ~\newline
+{\bfseries radius} -\/ max offset of the character\textquotesingle{}s position from this range\textquotesingle{}s center. ~\newline
+{\bfseries orbit} -\/ if true, will rotate the trigger around it\textquotesingle{}s Y axis relative to the position of the character, so the object can be interacted with from all sides. ~\newline
+{\bfseries fix\+Y\+Axis} -\/ fixes the Y axis of the trigger to Vector3.\+up. This makes the trigger symmetrical relative to the object. For example a gun will be able to be picked up from the same direction relative to the barrel no matter which side the gun is resting on.
+\item {\bfseries camera\+Position} -\/ The range for the character camera\textquotesingle{}s position and rotation. ~\newline
+{\bfseries look\+At\+Target} -\/ what the camera should be looking at to trigger the interaction? ~\newline
+{\bfseries direction} -\/ the direction from the look\+At\+Target towards the camera (in look\+At\+Target\textquotesingle{}s space). ~\newline
+{\bfseries max\+Distance} -\/ max distance from the look\+At\+Target to the camera. ~\newline
+{\bfseries max\+Angle} -\/ max angle between the direction and the direction towards the camera. ~\newline
+{\bfseries fix\+Y\+Axis} -\/ fixes the Y axis of the trigger to Vector3.\+up. This makes the trigger symmetrical relative to the object.
+\item {\bfseries interactions} -\/ the definitions of interactions that will be called on Interaction\+System.\+Trigger\+Interaction.
+\end{DoxyItemize}
+
+  

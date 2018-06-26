@@ -1,0 +1,188 @@
+\hypertarget{class_stomper}{}\section{Stomper Class Reference}
+\label{class_stomper}\index{Stomper@{Stomper}}
+
+
+ 
+
+
+Inheritance diagram for Stomper\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_stomper}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_stomper_aae04e54d13bcee7c7b32dbea23aebcb3}{e\+Stomp\+State}} \{ \newline
+\mbox{\hyperlink{class_stomper_aae04e54d13bcee7c7b32dbea23aebcb3a479ab1b75080105c17b10096543dc8c5}{e\+Stomp\+State.\+F\+A\+LL}}, 
+\mbox{\hyperlink{class_stomper_aae04e54d13bcee7c7b32dbea23aebcb3a691340ccb1f6550c9bdda6a1466b5537}{e\+Stomp\+State.\+T\+O\+P\+\_\+\+W\+A\+IT}}, 
+\mbox{\hyperlink{class_stomper_aae04e54d13bcee7c7b32dbea23aebcb3a49c08d83927c163a001f9a8908c2fa03}{e\+Stomp\+State.\+L\+A\+U\+N\+CH}}, 
+\mbox{\hyperlink{class_stomper_aae04e54d13bcee7c7b32dbea23aebcb3ad5cc6a0064b5c25ba37826aa3fda910c}{e\+Stomp\+State.\+W\+A\+IT}}, 
+\newline
+\mbox{\hyperlink{class_stomper_aae04e54d13bcee7c7b32dbea23aebcb3a31c1814360e4e67f1adf1d03aa1c47e1}{e\+Stomp\+State.\+C\+L\+I\+MB}}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Rigidbody \mbox{\hyperlink{class_stomper_a7da016f677f4790bf788148c111f91b8}{m\+\_\+r\+Body}}
+\item 
+float \mbox{\hyperlink{class_stomper_a6a6d454eff5ecbf9cf1dc78a984e26b6}{m\+\_\+f\+Stomp\+Speed}} = 10f
+\item 
+Transform \mbox{\hyperlink{class_stomper_aa2600c8a8e29d398ffe137de4758778c}{m\+\_\+t\+Bottom}}
+\item 
+float \mbox{\hyperlink{class_stomper_a742e053718f2ebe038939111ca82e145}{m\+\_\+f\+Bottom\+Wait\+Time}} = 1f
+\item 
+float \mbox{\hyperlink{class_stomper_aceefb2a1222aa344e4b9ccc27c039dcf}{m\+\_\+f\+Lerp\+Time}} = 6f
+\item 
+float \mbox{\hyperlink{class_stomper_a8028ba092cfd285cbe34f6c412139117}{m\+\_\+f\+Top\+Wait\+Time}} = 1f
+\item 
+Animation\+Curve \mbox{\hyperlink{class_stomper_a4b0c5cafe1628a7ad76f5ad8960df5d6}{m\+\_\+a\+Curve}}
+\item 
+Particle\+System \mbox{\hyperlink{class_stomper_a4925fffe3de9b6947c48143d3aa70faf}{m\+\_\+ps\+Dust\+Particle}}
+\item 
+float \mbox{\hyperlink{class_stomper_a630b141381162d3d49fa54b6b5091367}{m\+\_\+f\+Start\+Wait}} = 0f
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+
+
+Definition at line 7 of file Stomper.\+cs.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_stomper_aae04e54d13bcee7c7b32dbea23aebcb3}\label{class_stomper_aae04e54d13bcee7c7b32dbea23aebcb3}} 
+\index{Stomper@{Stomper}!e\+Stomp\+State@{e\+Stomp\+State}}
+\index{e\+Stomp\+State@{e\+Stomp\+State}!Stomper@{Stomper}}
+\subsubsection{\texorpdfstring{e\+Stomp\+State}{eStompState}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_stomper_aae04e54d13bcee7c7b32dbea23aebcb3}{Stomper.\+e\+Stomp\+State}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+A\+LL@{F\+A\+LL}!Stomper@{Stomper}}\index{Stomper@{Stomper}!F\+A\+LL@{F\+A\+LL}}}\mbox{\Hypertarget{class_stomper_aae04e54d13bcee7c7b32dbea23aebcb3a479ab1b75080105c17b10096543dc8c5}\label{class_stomper_aae04e54d13bcee7c7b32dbea23aebcb3a479ab1b75080105c17b10096543dc8c5}} 
+F\+A\+LL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+O\+P\+\_\+\+W\+A\+IT@{T\+O\+P\+\_\+\+W\+A\+IT}!Stomper@{Stomper}}\index{Stomper@{Stomper}!T\+O\+P\+\_\+\+W\+A\+IT@{T\+O\+P\+\_\+\+W\+A\+IT}}}\mbox{\Hypertarget{class_stomper_aae04e54d13bcee7c7b32dbea23aebcb3a691340ccb1f6550c9bdda6a1466b5537}\label{class_stomper_aae04e54d13bcee7c7b32dbea23aebcb3a691340ccb1f6550c9bdda6a1466b5537}} 
+T\+O\+P\+\_\+\+W\+A\+IT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L\+A\+U\+N\+CH@{L\+A\+U\+N\+CH}!Stomper@{Stomper}}\index{Stomper@{Stomper}!L\+A\+U\+N\+CH@{L\+A\+U\+N\+CH}}}\mbox{\Hypertarget{class_stomper_aae04e54d13bcee7c7b32dbea23aebcb3a49c08d83927c163a001f9a8908c2fa03}\label{class_stomper_aae04e54d13bcee7c7b32dbea23aebcb3a49c08d83927c163a001f9a8908c2fa03}} 
+L\+A\+U\+N\+CH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W\+A\+IT@{W\+A\+IT}!Stomper@{Stomper}}\index{Stomper@{Stomper}!W\+A\+IT@{W\+A\+IT}}}\mbox{\Hypertarget{class_stomper_aae04e54d13bcee7c7b32dbea23aebcb3ad5cc6a0064b5c25ba37826aa3fda910c}\label{class_stomper_aae04e54d13bcee7c7b32dbea23aebcb3ad5cc6a0064b5c25ba37826aa3fda910c}} 
+W\+A\+IT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+L\+I\+MB@{C\+L\+I\+MB}!Stomper@{Stomper}}\index{Stomper@{Stomper}!C\+L\+I\+MB@{C\+L\+I\+MB}}}\mbox{\Hypertarget{class_stomper_aae04e54d13bcee7c7b32dbea23aebcb3a31c1814360e4e67f1adf1d03aa1c47e1}\label{class_stomper_aae04e54d13bcee7c7b32dbea23aebcb3a31c1814360e4e67f1adf1d03aa1c47e1}} 
+C\+L\+I\+MB&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 9 of file Stomper.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_stomper_a4b0c5cafe1628a7ad76f5ad8960df5d6}\label{class_stomper_a4b0c5cafe1628a7ad76f5ad8960df5d6}} 
+\index{Stomper@{Stomper}!m\+\_\+a\+Curve@{m\+\_\+a\+Curve}}
+\index{m\+\_\+a\+Curve@{m\+\_\+a\+Curve}!Stomper@{Stomper}}
+\subsubsection{\texorpdfstring{m\+\_\+a\+Curve}{m\_aCurve}}
+{\footnotesize\ttfamily Animation\+Curve Stomper.\+m\+\_\+a\+Curve}
+
+
+
+Definition at line 28 of file Stomper.\+cs.
+
+\mbox{\Hypertarget{class_stomper_a742e053718f2ebe038939111ca82e145}\label{class_stomper_a742e053718f2ebe038939111ca82e145}} 
+\index{Stomper@{Stomper}!m\+\_\+f\+Bottom\+Wait\+Time@{m\+\_\+f\+Bottom\+Wait\+Time}}
+\index{m\+\_\+f\+Bottom\+Wait\+Time@{m\+\_\+f\+Bottom\+Wait\+Time}!Stomper@{Stomper}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Bottom\+Wait\+Time}{m\_fBottomWaitTime}}
+{\footnotesize\ttfamily float Stomper.\+m\+\_\+f\+Bottom\+Wait\+Time = 1f}
+
+
+
+Definition at line 25 of file Stomper.\+cs.
+
+\mbox{\Hypertarget{class_stomper_aceefb2a1222aa344e4b9ccc27c039dcf}\label{class_stomper_aceefb2a1222aa344e4b9ccc27c039dcf}} 
+\index{Stomper@{Stomper}!m\+\_\+f\+Lerp\+Time@{m\+\_\+f\+Lerp\+Time}}
+\index{m\+\_\+f\+Lerp\+Time@{m\+\_\+f\+Lerp\+Time}!Stomper@{Stomper}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Lerp\+Time}{m\_fLerpTime}}
+{\footnotesize\ttfamily float Stomper.\+m\+\_\+f\+Lerp\+Time = 6f}
+
+
+
+Definition at line 26 of file Stomper.\+cs.
+
+\mbox{\Hypertarget{class_stomper_a630b141381162d3d49fa54b6b5091367}\label{class_stomper_a630b141381162d3d49fa54b6b5091367}} 
+\index{Stomper@{Stomper}!m\+\_\+f\+Start\+Wait@{m\+\_\+f\+Start\+Wait}}
+\index{m\+\_\+f\+Start\+Wait@{m\+\_\+f\+Start\+Wait}!Stomper@{Stomper}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Start\+Wait}{m\_fStartWait}}
+{\footnotesize\ttfamily float Stomper.\+m\+\_\+f\+Start\+Wait = 0f}
+
+
+
+Definition at line 31 of file Stomper.\+cs.
+
+\mbox{\Hypertarget{class_stomper_a6a6d454eff5ecbf9cf1dc78a984e26b6}\label{class_stomper_a6a6d454eff5ecbf9cf1dc78a984e26b6}} 
+\index{Stomper@{Stomper}!m\+\_\+f\+Stomp\+Speed@{m\+\_\+f\+Stomp\+Speed}}
+\index{m\+\_\+f\+Stomp\+Speed@{m\+\_\+f\+Stomp\+Speed}!Stomper@{Stomper}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Stomp\+Speed}{m\_fStompSpeed}}
+{\footnotesize\ttfamily float Stomper.\+m\+\_\+f\+Stomp\+Speed = 10f}
+
+
+
+Definition at line 23 of file Stomper.\+cs.
+
+\mbox{\Hypertarget{class_stomper_a8028ba092cfd285cbe34f6c412139117}\label{class_stomper_a8028ba092cfd285cbe34f6c412139117}} 
+\index{Stomper@{Stomper}!m\+\_\+f\+Top\+Wait\+Time@{m\+\_\+f\+Top\+Wait\+Time}}
+\index{m\+\_\+f\+Top\+Wait\+Time@{m\+\_\+f\+Top\+Wait\+Time}!Stomper@{Stomper}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Top\+Wait\+Time}{m\_fTopWaitTime}}
+{\footnotesize\ttfamily float Stomper.\+m\+\_\+f\+Top\+Wait\+Time = 1f}
+
+
+
+Definition at line 27 of file Stomper.\+cs.
+
+\mbox{\Hypertarget{class_stomper_a4925fffe3de9b6947c48143d3aa70faf}\label{class_stomper_a4925fffe3de9b6947c48143d3aa70faf}} 
+\index{Stomper@{Stomper}!m\+\_\+ps\+Dust\+Particle@{m\+\_\+ps\+Dust\+Particle}}
+\index{m\+\_\+ps\+Dust\+Particle@{m\+\_\+ps\+Dust\+Particle}!Stomper@{Stomper}}
+\subsubsection{\texorpdfstring{m\+\_\+ps\+Dust\+Particle}{m\_psDustParticle}}
+{\footnotesize\ttfamily Particle\+System Stomper.\+m\+\_\+ps\+Dust\+Particle}
+
+
+
+Definition at line 29 of file Stomper.\+cs.
+
+\mbox{\Hypertarget{class_stomper_a7da016f677f4790bf788148c111f91b8}\label{class_stomper_a7da016f677f4790bf788148c111f91b8}} 
+\index{Stomper@{Stomper}!m\+\_\+r\+Body@{m\+\_\+r\+Body}}
+\index{m\+\_\+r\+Body@{m\+\_\+r\+Body}!Stomper@{Stomper}}
+\subsubsection{\texorpdfstring{m\+\_\+r\+Body}{m\_rBody}}
+{\footnotesize\ttfamily Rigidbody Stomper.\+m\+\_\+r\+Body}
+
+
+
+Definition at line 21 of file Stomper.\+cs.
+
+\mbox{\Hypertarget{class_stomper_aa2600c8a8e29d398ffe137de4758778c}\label{class_stomper_aa2600c8a8e29d398ffe137de4758778c}} 
+\index{Stomper@{Stomper}!m\+\_\+t\+Bottom@{m\+\_\+t\+Bottom}}
+\index{m\+\_\+t\+Bottom@{m\+\_\+t\+Bottom}!Stomper@{Stomper}}
+\subsubsection{\texorpdfstring{m\+\_\+t\+Bottom}{m\_tBottom}}
+{\footnotesize\ttfamily Transform Stomper.\+m\+\_\+t\+Bottom}
+
+
+
+Definition at line 24 of file Stomper.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Interactables/\+Other/\mbox{\hyperlink{_stomper_8cs}{Stomper.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,204 @@
+\hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection}{}\section{Unity\+Standard\+Assets.\+Image\+Effects.\+Edge\+Detection Class Reference}
+\label{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection}\index{Unity\+Standard\+Assets.\+Image\+Effects.\+Edge\+Detection@{Unity\+Standard\+Assets.\+Image\+Effects.\+Edge\+Detection}}
+Inheritance diagram for Unity\+Standard\+Assets.\+Image\+Effects.\+Edge\+Detection\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_a6da59c4041099c1f590eb1e4fc64d0b1}{Edge\+Detect\+Mode}} \{ \newline
+\mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_a6da59c4041099c1f590eb1e4fc64d0b1a7d24919ed28094f0202232ee6d708fa4}{Edge\+Detect\+Mode.\+Triangle\+Depth\+Normals}} = 0, 
+\mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_a6da59c4041099c1f590eb1e4fc64d0b1ac2b6fd3b6c9c392cd93579f3be952a8f}{Edge\+Detect\+Mode.\+Roberts\+Cross\+Depth\+Normals}} = 1, 
+\mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_a6da59c4041099c1f590eb1e4fc64d0b1acd3bd205137fb800eb3bb6533468dfe7}{Edge\+Detect\+Mode.\+Sobel\+Depth}} = 2, 
+\mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_a6da59c4041099c1f590eb1e4fc64d0b1a98e5dbe639f7850feb04dce03f5744ee}{Edge\+Detect\+Mode.\+Sobel\+Depth\+Thin}} = 3, 
+\newline
+\mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_a6da59c4041099c1f590eb1e4fc64d0b1a1707b04c2953253bad60f979add23dea}{Edge\+Detect\+Mode.\+Triangle\+Luminance}} = 4
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override bool \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_ac72609e0a21d65869e4240c8511d8b83}{Check\+Resources}} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_a6da59c4041099c1f590eb1e4fc64d0b1}{Edge\+Detect\+Mode}} \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_aba444f32988b872cf709946d75eefb6a}{mode}} = \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_a6da59c4041099c1f590eb1e4fc64d0b1a98e5dbe639f7850feb04dce03f5744ee}{Edge\+Detect\+Mode.\+Sobel\+Depth\+Thin}}
+\item 
+float \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_a0284f65303c62643e48d4df5971ca1d9}{sensitivity\+Depth}} = 1.\+0f
+\item 
+float \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_abcada6169dbaee43b868d7ca30c200eb}{sensitivity\+Normals}} = 1.\+0f
+\item 
+float \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_a64a02522a743c2ea329076ceed0199b9}{lum\+Threshold}} = 0.\+2f
+\item 
+float \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_a077fdb63102170684248bb7e4156e0bd}{edge\+Exp}} = 1.\+0f
+\item 
+float \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_a57b1200f59628f5eb4ae3edda6e4d433}{sample\+Dist}} = 1.\+0f
+\item 
+float \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_a4690f3058d1202ede950b77f76e7a1de}{edges\+Only}} = 0.\+0f
+\item 
+Color \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_adf6fcab3d2b0feb09e7fee606fcfe815}{edges\+Only\+Bg\+Color}} = Color.\+white
+\item 
+Shader \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_a5b16193ceaa3c8c019ebf3ac78253c00}{edge\+Detect\+Shader}}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 9 of file Edge\+Detection.\+cs.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_a6da59c4041099c1f590eb1e4fc64d0b1}\label{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_a6da59c4041099c1f590eb1e4fc64d0b1}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection}!Edge\+Detect\+Mode@{Edge\+Detect\+Mode}}
+\index{Edge\+Detect\+Mode@{Edge\+Detect\+Mode}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection}}
+\subsubsection{\texorpdfstring{Edge\+Detect\+Mode}{EdgeDetectMode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_a6da59c4041099c1f590eb1e4fc64d0b1}{Unity\+Standard\+Assets.\+Image\+Effects.\+Edge\+Detection.\+Edge\+Detect\+Mode}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Triangle\+Depth\+Normals@{Triangle\+Depth\+Normals}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection}}\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection}!Triangle\+Depth\+Normals@{Triangle\+Depth\+Normals}}}\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_a6da59c4041099c1f590eb1e4fc64d0b1a7d24919ed28094f0202232ee6d708fa4}\label{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_a6da59c4041099c1f590eb1e4fc64d0b1a7d24919ed28094f0202232ee6d708fa4}} 
+Triangle\+Depth\+Normals&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Roberts\+Cross\+Depth\+Normals@{Roberts\+Cross\+Depth\+Normals}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection}}\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection}!Roberts\+Cross\+Depth\+Normals@{Roberts\+Cross\+Depth\+Normals}}}\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_a6da59c4041099c1f590eb1e4fc64d0b1ac2b6fd3b6c9c392cd93579f3be952a8f}\label{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_a6da59c4041099c1f590eb1e4fc64d0b1ac2b6fd3b6c9c392cd93579f3be952a8f}} 
+Roberts\+Cross\+Depth\+Normals&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Sobel\+Depth@{Sobel\+Depth}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection}}\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection}!Sobel\+Depth@{Sobel\+Depth}}}\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_a6da59c4041099c1f590eb1e4fc64d0b1acd3bd205137fb800eb3bb6533468dfe7}\label{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_a6da59c4041099c1f590eb1e4fc64d0b1acd3bd205137fb800eb3bb6533468dfe7}} 
+Sobel\+Depth&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Sobel\+Depth\+Thin@{Sobel\+Depth\+Thin}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection}}\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection}!Sobel\+Depth\+Thin@{Sobel\+Depth\+Thin}}}\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_a6da59c4041099c1f590eb1e4fc64d0b1a98e5dbe639f7850feb04dce03f5744ee}\label{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_a6da59c4041099c1f590eb1e4fc64d0b1a98e5dbe639f7850feb04dce03f5744ee}} 
+Sobel\+Depth\+Thin&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Triangle\+Luminance@{Triangle\+Luminance}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection}}\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection}!Triangle\+Luminance@{Triangle\+Luminance}}}\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_a6da59c4041099c1f590eb1e4fc64d0b1a1707b04c2953253bad60f979add23dea}\label{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_a6da59c4041099c1f590eb1e4fc64d0b1a1707b04c2953253bad60f979add23dea}} 
+Triangle\+Luminance&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 11 of file Edge\+Detection.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_ac72609e0a21d65869e4240c8511d8b83}\label{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_ac72609e0a21d65869e4240c8511d8b83}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection}!Check\+Resources@{Check\+Resources}}
+\index{Check\+Resources@{Check\+Resources}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection}}
+\subsubsection{\texorpdfstring{Check\+Resources()}{CheckResources()}}
+{\footnotesize\ttfamily override bool Unity\+Standard\+Assets.\+Image\+Effects.\+Edge\+Detection.\+Check\+Resources (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_a8866612b25b7158b932efd3b832188f8}{Unity\+Standard\+Assets.\+Image\+Effects.\+Post\+Effects\+Base}}.
+
+
+
+Definition at line 35 of file Edge\+Detection.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_a5b16193ceaa3c8c019ebf3ac78253c00}\label{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_a5b16193ceaa3c8c019ebf3ac78253c00}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection}!edge\+Detect\+Shader@{edge\+Detect\+Shader}}
+\index{edge\+Detect\+Shader@{edge\+Detect\+Shader}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection}}
+\subsubsection{\texorpdfstring{edge\+Detect\+Shader}{edgeDetectShader}}
+{\footnotesize\ttfamily Shader Unity\+Standard\+Assets.\+Image\+Effects.\+Edge\+Detection.\+edge\+Detect\+Shader}
+
+
+
+Definition at line 30 of file Edge\+Detection.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_a077fdb63102170684248bb7e4156e0bd}\label{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_a077fdb63102170684248bb7e4156e0bd}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection}!edge\+Exp@{edge\+Exp}}
+\index{edge\+Exp@{edge\+Exp}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection}}
+\subsubsection{\texorpdfstring{edge\+Exp}{edgeExp}}
+{\footnotesize\ttfamily float Unity\+Standard\+Assets.\+Image\+Effects.\+Edge\+Detection.\+edge\+Exp = 1.\+0f}
+
+
+
+Definition at line 25 of file Edge\+Detection.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_a4690f3058d1202ede950b77f76e7a1de}\label{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_a4690f3058d1202ede950b77f76e7a1de}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection}!edges\+Only@{edges\+Only}}
+\index{edges\+Only@{edges\+Only}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection}}
+\subsubsection{\texorpdfstring{edges\+Only}{edgesOnly}}
+{\footnotesize\ttfamily float Unity\+Standard\+Assets.\+Image\+Effects.\+Edge\+Detection.\+edges\+Only = 0.\+0f}
+
+
+
+Definition at line 27 of file Edge\+Detection.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_adf6fcab3d2b0feb09e7fee606fcfe815}\label{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_adf6fcab3d2b0feb09e7fee606fcfe815}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection}!edges\+Only\+Bg\+Color@{edges\+Only\+Bg\+Color}}
+\index{edges\+Only\+Bg\+Color@{edges\+Only\+Bg\+Color}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection}}
+\subsubsection{\texorpdfstring{edges\+Only\+Bg\+Color}{edgesOnlyBgColor}}
+{\footnotesize\ttfamily Color Unity\+Standard\+Assets.\+Image\+Effects.\+Edge\+Detection.\+edges\+Only\+Bg\+Color = Color.\+white}
+
+
+
+Definition at line 28 of file Edge\+Detection.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_a64a02522a743c2ea329076ceed0199b9}\label{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_a64a02522a743c2ea329076ceed0199b9}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection}!lum\+Threshold@{lum\+Threshold}}
+\index{lum\+Threshold@{lum\+Threshold}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection}}
+\subsubsection{\texorpdfstring{lum\+Threshold}{lumThreshold}}
+{\footnotesize\ttfamily float Unity\+Standard\+Assets.\+Image\+Effects.\+Edge\+Detection.\+lum\+Threshold = 0.\+2f}
+
+
+
+Definition at line 24 of file Edge\+Detection.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_aba444f32988b872cf709946d75eefb6a}\label{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_aba444f32988b872cf709946d75eefb6a}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection}!mode@{mode}}
+\index{mode@{mode}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection}}
+\subsubsection{\texorpdfstring{mode}{mode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_a6da59c4041099c1f590eb1e4fc64d0b1}{Edge\+Detect\+Mode}} Unity\+Standard\+Assets.\+Image\+Effects.\+Edge\+Detection.\+mode = \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_a6da59c4041099c1f590eb1e4fc64d0b1a98e5dbe639f7850feb04dce03f5744ee}{Edge\+Detect\+Mode.\+Sobel\+Depth\+Thin}}}
+
+
+
+Definition at line 21 of file Edge\+Detection.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_a57b1200f59628f5eb4ae3edda6e4d433}\label{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_a57b1200f59628f5eb4ae3edda6e4d433}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection}!sample\+Dist@{sample\+Dist}}
+\index{sample\+Dist@{sample\+Dist}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection}}
+\subsubsection{\texorpdfstring{sample\+Dist}{sampleDist}}
+{\footnotesize\ttfamily float Unity\+Standard\+Assets.\+Image\+Effects.\+Edge\+Detection.\+sample\+Dist = 1.\+0f}
+
+
+
+Definition at line 26 of file Edge\+Detection.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_a0284f65303c62643e48d4df5971ca1d9}\label{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_a0284f65303c62643e48d4df5971ca1d9}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection}!sensitivity\+Depth@{sensitivity\+Depth}}
+\index{sensitivity\+Depth@{sensitivity\+Depth}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection}}
+\subsubsection{\texorpdfstring{sensitivity\+Depth}{sensitivityDepth}}
+{\footnotesize\ttfamily float Unity\+Standard\+Assets.\+Image\+Effects.\+Edge\+Detection.\+sensitivity\+Depth = 1.\+0f}
+
+
+
+Definition at line 22 of file Edge\+Detection.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_abcada6169dbaee43b868d7ca30c200eb}\label{class_unity_standard_assets_1_1_image_effects_1_1_edge_detection_abcada6169dbaee43b868d7ca30c200eb}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection}!sensitivity\+Normals@{sensitivity\+Normals}}
+\index{sensitivity\+Normals@{sensitivity\+Normals}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Edge\+Detection}}
+\subsubsection{\texorpdfstring{sensitivity\+Normals}{sensitivityNormals}}
+{\footnotesize\ttfamily float Unity\+Standard\+Assets.\+Image\+Effects.\+Edge\+Detection.\+sensitivity\+Normals = 1.\+0f}
+
+
+
+Definition at line 23 of file Edge\+Detection.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Standard Assets/\+Effects/\+Image\+Effects/\+Scripts/\mbox{\hyperlink{_edge_detection_8cs}{Edge\+Detection.\+cs}}\end{DoxyCompactItemize}

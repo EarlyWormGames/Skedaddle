@@ -1,0 +1,327 @@
+\hypertarget{class_pendulum}{}\section{Pendulum Class Reference}
+\label{class_pendulum}\index{Pendulum@{Pendulum}}
+
+
+Swinging object from a point above.  
+
+
+Inheritance diagram for Pendulum\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_pendulum}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_pendulum_a92ffc3bfaffb36119d44ec1e294e7f94}{Swing\+Time\+Change}} (float new\+Swing\+Time)
+\item 
+void \mbox{\hyperlink{class_pendulum_a17768e1c761cd5cd094e75b1e70f3147}{Switch}} ()
+\item 
+void \mbox{\hyperlink{class_pendulum_a434f2a286d40ece8198d30a1511d5597}{Reset\+Timer}} ()
+\item 
+void \mbox{\hyperlink{class_pendulum_a56bbfd6f6dbd2ab68ea6497a7d1f4065}{Swing}} ()
+\item 
+void \mbox{\hyperlink{class_pendulum_a011916372c24b9024a1d2399c6baaf10}{Stop}} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_pendulum_a4e3df49f9efcd5e1df29a84557720e34}{m\+\_\+b\+Swing}} = true
+\item 
+Transform \mbox{\hyperlink{class_pendulum_a1f4b8a46360de1da1a0326e5968e1959}{m\+\_\+t\+Swing\+Object}}
+\item 
+bool \mbox{\hyperlink{class_pendulum_ad761f0180bb98c4f810c3e326d6dc7b1}{m\+\_\+b\+Do\+Once}} = false
+\item 
+Animation\+Curve \mbox{\hyperlink{class_pendulum_a8563691dcaa4c6d49be47d22d534f3d6}{m\+\_\+a\+Rest\+Curve}}
+\item 
+Animation\+Curve \mbox{\hyperlink{class_pendulum_a4e6a19a283d1ebbe16b33e6ca4516967}{m\+\_\+a\+Swing\+Curve}}
+\item 
+float \mbox{\hyperlink{class_pendulum_a9dea0e58df8856dbc4d07230bf9c17b6}{Left\+Rotation}}
+\item 
+float \mbox{\hyperlink{class_pendulum_aba3b1c8ada6a5211ee0bc50303ee40ca}{Right\+Rotation}}
+\item 
+float \mbox{\hyperlink{class_pendulum_a54e8b55f827d764934414900ed1dbd7d}{m\+\_\+f\+Swing\+Time}} = 2f
+\item 
+float \mbox{\hyperlink{class_pendulum_a8a81c618b9f7fe4ecaf68a96165a9de7}{m\+\_\+f\+Rest\+Angle}}
+\item 
+float \mbox{\hyperlink{class_pendulum_a5fb9cfa9cc7af735eb6d4415e1abaf74}{m\+\_\+f\+Rest\+Time}} = 2f
+\item 
+bool \mbox{\hyperlink{class_pendulum_a12661344b4893ab6a6ba99d074c582a5}{m\+\_\+b\+Right\+On\+Rest}} = false
+\item 
+Game\+Object \mbox{\hyperlink{class_pendulum_a09edfe58b1f4cf3e11e3495af512d71f}{m\+\_\+\+Head\+Object}}
+\item 
+Game\+Object \mbox{\hyperlink{class_pendulum_a8ebe2dbe7370d7c583079208dd30e006}{m\+\_\+go\+Head\+Shatter}}
+\item 
+Particle\+System \mbox{\hyperlink{class_pendulum_ad72d7ca75ee2d3db8de1faceb3aa74b2}{m\+\_\+ps\+Explosion}}
+\item 
+bool \mbox{\hyperlink{class_pendulum_a2eed509ac7e18228a72ac72955ebec4b}{m\+\_\+b\+Destroy\+On\+Smash}} = false
+\item 
+float \mbox{\hyperlink{class_pendulum_ae2149fc5b8efb92487fbb0fc39e5e75e}{m\+\_\+f\+Shard\+Force}} = 2
+\item 
+float \mbox{\hyperlink{class_pendulum_a8a9bf6eb834060c588a83ff0b3bcfb57}{m\+\_\+\+Force}} = 50
+\item 
+float \mbox{\hyperlink{class_pendulum_a6a774a542e6c6be8b1b9257143aad31a}{m\+\_\+\+Death\+Force}} = 10
+\item 
+float \mbox{\hyperlink{class_pendulum_af69a15b434d176d78a361f1baab1a8ae}{m\+\_\+\+Death\+Up\+Force}} = 3
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Swinging object from a point above. 
+
+
+
+Definition at line 8 of file Pendulum.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_pendulum_a434f2a286d40ece8198d30a1511d5597}\label{class_pendulum_a434f2a286d40ece8198d30a1511d5597}} 
+\index{Pendulum@{Pendulum}!Reset\+Timer@{Reset\+Timer}}
+\index{Reset\+Timer@{Reset\+Timer}!Pendulum@{Pendulum}}
+\subsubsection{\texorpdfstring{Reset\+Timer()}{ResetTimer()}}
+{\footnotesize\ttfamily void Pendulum.\+Reset\+Timer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 132 of file Pendulum.\+cs.
+
+\mbox{\Hypertarget{class_pendulum_a011916372c24b9024a1d2399c6baaf10}\label{class_pendulum_a011916372c24b9024a1d2399c6baaf10}} 
+\index{Pendulum@{Pendulum}!Stop@{Stop}}
+\index{Stop@{Stop}!Pendulum@{Pendulum}}
+\subsubsection{\texorpdfstring{Stop()}{Stop()}}
+{\footnotesize\ttfamily void Pendulum.\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 146 of file Pendulum.\+cs.
+
+\mbox{\Hypertarget{class_pendulum_a56bbfd6f6dbd2ab68ea6497a7d1f4065}\label{class_pendulum_a56bbfd6f6dbd2ab68ea6497a7d1f4065}} 
+\index{Pendulum@{Pendulum}!Swing@{Swing}}
+\index{Swing@{Swing}!Pendulum@{Pendulum}}
+\subsubsection{\texorpdfstring{Swing()}{Swing()}}
+{\footnotesize\ttfamily void Pendulum.\+Swing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 138 of file Pendulum.\+cs.
+
+\mbox{\Hypertarget{class_pendulum_a92ffc3bfaffb36119d44ec1e294e7f94}\label{class_pendulum_a92ffc3bfaffb36119d44ec1e294e7f94}} 
+\index{Pendulum@{Pendulum}!Swing\+Time\+Change@{Swing\+Time\+Change}}
+\index{Swing\+Time\+Change@{Swing\+Time\+Change}!Pendulum@{Pendulum}}
+\subsubsection{\texorpdfstring{Swing\+Time\+Change()}{SwingTimeChange()}}
+{\footnotesize\ttfamily void Pendulum.\+Swing\+Time\+Change (\begin{DoxyParamCaption}\item[{float}]{new\+Swing\+Time }\end{DoxyParamCaption})}
+
+
+
+Definition at line 122 of file Pendulum.\+cs.
+
+\mbox{\Hypertarget{class_pendulum_a17768e1c761cd5cd094e75b1e70f3147}\label{class_pendulum_a17768e1c761cd5cd094e75b1e70f3147}} 
+\index{Pendulum@{Pendulum}!Switch@{Switch}}
+\index{Switch@{Switch}!Pendulum@{Pendulum}}
+\subsubsection{\texorpdfstring{Switch()}{Switch()}}
+{\footnotesize\ttfamily void Pendulum.\+Switch (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 127 of file Pendulum.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_pendulum_a9dea0e58df8856dbc4d07230bf9c17b6}\label{class_pendulum_a9dea0e58df8856dbc4d07230bf9c17b6}} 
+\index{Pendulum@{Pendulum}!Left\+Rotation@{Left\+Rotation}}
+\index{Left\+Rotation@{Left\+Rotation}!Pendulum@{Pendulum}}
+\subsubsection{\texorpdfstring{Left\+Rotation}{LeftRotation}}
+{\footnotesize\ttfamily float Pendulum.\+Left\+Rotation}
+
+
+
+Definition at line 23 of file Pendulum.\+cs.
+
+\mbox{\Hypertarget{class_pendulum_a8563691dcaa4c6d49be47d22d534f3d6}\label{class_pendulum_a8563691dcaa4c6d49be47d22d534f3d6}} 
+\index{Pendulum@{Pendulum}!m\+\_\+a\+Rest\+Curve@{m\+\_\+a\+Rest\+Curve}}
+\index{m\+\_\+a\+Rest\+Curve@{m\+\_\+a\+Rest\+Curve}!Pendulum@{Pendulum}}
+\subsubsection{\texorpdfstring{m\+\_\+a\+Rest\+Curve}{m\_aRestCurve}}
+{\footnotesize\ttfamily Animation\+Curve Pendulum.\+m\+\_\+a\+Rest\+Curve}
+
+
+
+Definition at line 19 of file Pendulum.\+cs.
+
+\mbox{\Hypertarget{class_pendulum_a4e6a19a283d1ebbe16b33e6ca4516967}\label{class_pendulum_a4e6a19a283d1ebbe16b33e6ca4516967}} 
+\index{Pendulum@{Pendulum}!m\+\_\+a\+Swing\+Curve@{m\+\_\+a\+Swing\+Curve}}
+\index{m\+\_\+a\+Swing\+Curve@{m\+\_\+a\+Swing\+Curve}!Pendulum@{Pendulum}}
+\subsubsection{\texorpdfstring{m\+\_\+a\+Swing\+Curve}{m\_aSwingCurve}}
+{\footnotesize\ttfamily Animation\+Curve Pendulum.\+m\+\_\+a\+Swing\+Curve}
+
+
+
+Definition at line 20 of file Pendulum.\+cs.
+
+\mbox{\Hypertarget{class_pendulum_a2eed509ac7e18228a72ac72955ebec4b}\label{class_pendulum_a2eed509ac7e18228a72ac72955ebec4b}} 
+\index{Pendulum@{Pendulum}!m\+\_\+b\+Destroy\+On\+Smash@{m\+\_\+b\+Destroy\+On\+Smash}}
+\index{m\+\_\+b\+Destroy\+On\+Smash@{m\+\_\+b\+Destroy\+On\+Smash}!Pendulum@{Pendulum}}
+\subsubsection{\texorpdfstring{m\+\_\+b\+Destroy\+On\+Smash}{m\_bDestroyOnSmash}}
+{\footnotesize\ttfamily bool Pendulum.\+m\+\_\+b\+Destroy\+On\+Smash = false}
+
+
+
+Definition at line 35 of file Pendulum.\+cs.
+
+\mbox{\Hypertarget{class_pendulum_ad761f0180bb98c4f810c3e326d6dc7b1}\label{class_pendulum_ad761f0180bb98c4f810c3e326d6dc7b1}} 
+\index{Pendulum@{Pendulum}!m\+\_\+b\+Do\+Once@{m\+\_\+b\+Do\+Once}}
+\index{m\+\_\+b\+Do\+Once@{m\+\_\+b\+Do\+Once}!Pendulum@{Pendulum}}
+\subsubsection{\texorpdfstring{m\+\_\+b\+Do\+Once}{m\_bDoOnce}}
+{\footnotesize\ttfamily bool Pendulum.\+m\+\_\+b\+Do\+Once = false}
+
+
+
+Definition at line 16 of file Pendulum.\+cs.
+
+\mbox{\Hypertarget{class_pendulum_a12661344b4893ab6a6ba99d074c582a5}\label{class_pendulum_a12661344b4893ab6a6ba99d074c582a5}} 
+\index{Pendulum@{Pendulum}!m\+\_\+b\+Right\+On\+Rest@{m\+\_\+b\+Right\+On\+Rest}}
+\index{m\+\_\+b\+Right\+On\+Rest@{m\+\_\+b\+Right\+On\+Rest}!Pendulum@{Pendulum}}
+\subsubsection{\texorpdfstring{m\+\_\+b\+Right\+On\+Rest}{m\_bRightOnRest}}
+{\footnotesize\ttfamily bool Pendulum.\+m\+\_\+b\+Right\+On\+Rest = false}
+
+
+
+Definition at line 29 of file Pendulum.\+cs.
+
+\mbox{\Hypertarget{class_pendulum_a4e3df49f9efcd5e1df29a84557720e34}\label{class_pendulum_a4e3df49f9efcd5e1df29a84557720e34}} 
+\index{Pendulum@{Pendulum}!m\+\_\+b\+Swing@{m\+\_\+b\+Swing}}
+\index{m\+\_\+b\+Swing@{m\+\_\+b\+Swing}!Pendulum@{Pendulum}}
+\subsubsection{\texorpdfstring{m\+\_\+b\+Swing}{m\_bSwing}}
+{\footnotesize\ttfamily bool Pendulum.\+m\+\_\+b\+Swing = true}
+
+
+
+Definition at line 14 of file Pendulum.\+cs.
+
+\mbox{\Hypertarget{class_pendulum_a6a774a542e6c6be8b1b9257143aad31a}\label{class_pendulum_a6a774a542e6c6be8b1b9257143aad31a}} 
+\index{Pendulum@{Pendulum}!m\+\_\+\+Death\+Force@{m\+\_\+\+Death\+Force}}
+\index{m\+\_\+\+Death\+Force@{m\+\_\+\+Death\+Force}!Pendulum@{Pendulum}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Death\+Force}{m\_DeathForce}}
+{\footnotesize\ttfamily float Pendulum.\+m\+\_\+\+Death\+Force = 10}
+
+
+
+Definition at line 38 of file Pendulum.\+cs.
+
+\mbox{\Hypertarget{class_pendulum_af69a15b434d176d78a361f1baab1a8ae}\label{class_pendulum_af69a15b434d176d78a361f1baab1a8ae}} 
+\index{Pendulum@{Pendulum}!m\+\_\+\+Death\+Up\+Force@{m\+\_\+\+Death\+Up\+Force}}
+\index{m\+\_\+\+Death\+Up\+Force@{m\+\_\+\+Death\+Up\+Force}!Pendulum@{Pendulum}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Death\+Up\+Force}{m\_DeathUpForce}}
+{\footnotesize\ttfamily float Pendulum.\+m\+\_\+\+Death\+Up\+Force = 3}
+
+
+
+Definition at line 39 of file Pendulum.\+cs.
+
+\mbox{\Hypertarget{class_pendulum_a8a9bf6eb834060c588a83ff0b3bcfb57}\label{class_pendulum_a8a9bf6eb834060c588a83ff0b3bcfb57}} 
+\index{Pendulum@{Pendulum}!m\+\_\+\+Force@{m\+\_\+\+Force}}
+\index{m\+\_\+\+Force@{m\+\_\+\+Force}!Pendulum@{Pendulum}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Force}{m\_Force}}
+{\footnotesize\ttfamily float Pendulum.\+m\+\_\+\+Force = 50}
+
+
+
+Definition at line 37 of file Pendulum.\+cs.
+
+\mbox{\Hypertarget{class_pendulum_a8a81c618b9f7fe4ecaf68a96165a9de7}\label{class_pendulum_a8a81c618b9f7fe4ecaf68a96165a9de7}} 
+\index{Pendulum@{Pendulum}!m\+\_\+f\+Rest\+Angle@{m\+\_\+f\+Rest\+Angle}}
+\index{m\+\_\+f\+Rest\+Angle@{m\+\_\+f\+Rest\+Angle}!Pendulum@{Pendulum}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Rest\+Angle}{m\_fRestAngle}}
+{\footnotesize\ttfamily float Pendulum.\+m\+\_\+f\+Rest\+Angle}
+
+
+
+Definition at line 26 of file Pendulum.\+cs.
+
+\mbox{\Hypertarget{class_pendulum_a5fb9cfa9cc7af735eb6d4415e1abaf74}\label{class_pendulum_a5fb9cfa9cc7af735eb6d4415e1abaf74}} 
+\index{Pendulum@{Pendulum}!m\+\_\+f\+Rest\+Time@{m\+\_\+f\+Rest\+Time}}
+\index{m\+\_\+f\+Rest\+Time@{m\+\_\+f\+Rest\+Time}!Pendulum@{Pendulum}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Rest\+Time}{m\_fRestTime}}
+{\footnotesize\ttfamily float Pendulum.\+m\+\_\+f\+Rest\+Time = 2f}
+
+
+
+Definition at line 27 of file Pendulum.\+cs.
+
+\mbox{\Hypertarget{class_pendulum_ae2149fc5b8efb92487fbb0fc39e5e75e}\label{class_pendulum_ae2149fc5b8efb92487fbb0fc39e5e75e}} 
+\index{Pendulum@{Pendulum}!m\+\_\+f\+Shard\+Force@{m\+\_\+f\+Shard\+Force}}
+\index{m\+\_\+f\+Shard\+Force@{m\+\_\+f\+Shard\+Force}!Pendulum@{Pendulum}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Shard\+Force}{m\_fShardForce}}
+{\footnotesize\ttfamily float Pendulum.\+m\+\_\+f\+Shard\+Force = 2}
+
+
+
+Definition at line 36 of file Pendulum.\+cs.
+
+\mbox{\Hypertarget{class_pendulum_a54e8b55f827d764934414900ed1dbd7d}\label{class_pendulum_a54e8b55f827d764934414900ed1dbd7d}} 
+\index{Pendulum@{Pendulum}!m\+\_\+f\+Swing\+Time@{m\+\_\+f\+Swing\+Time}}
+\index{m\+\_\+f\+Swing\+Time@{m\+\_\+f\+Swing\+Time}!Pendulum@{Pendulum}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Swing\+Time}{m\_fSwingTime}}
+{\footnotesize\ttfamily float Pendulum.\+m\+\_\+f\+Swing\+Time = 2f}
+
+
+
+Definition at line 25 of file Pendulum.\+cs.
+
+\mbox{\Hypertarget{class_pendulum_a8ebe2dbe7370d7c583079208dd30e006}\label{class_pendulum_a8ebe2dbe7370d7c583079208dd30e006}} 
+\index{Pendulum@{Pendulum}!m\+\_\+go\+Head\+Shatter@{m\+\_\+go\+Head\+Shatter}}
+\index{m\+\_\+go\+Head\+Shatter@{m\+\_\+go\+Head\+Shatter}!Pendulum@{Pendulum}}
+\subsubsection{\texorpdfstring{m\+\_\+go\+Head\+Shatter}{m\_goHeadShatter}}
+{\footnotesize\ttfamily Game\+Object Pendulum.\+m\+\_\+go\+Head\+Shatter}
+
+
+
+Definition at line 33 of file Pendulum.\+cs.
+
+\mbox{\Hypertarget{class_pendulum_a09edfe58b1f4cf3e11e3495af512d71f}\label{class_pendulum_a09edfe58b1f4cf3e11e3495af512d71f}} 
+\index{Pendulum@{Pendulum}!m\+\_\+\+Head\+Object@{m\+\_\+\+Head\+Object}}
+\index{m\+\_\+\+Head\+Object@{m\+\_\+\+Head\+Object}!Pendulum@{Pendulum}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Head\+Object}{m\_HeadObject}}
+{\footnotesize\ttfamily Game\+Object Pendulum.\+m\+\_\+\+Head\+Object}
+
+
+
+Definition at line 32 of file Pendulum.\+cs.
+
+\mbox{\Hypertarget{class_pendulum_ad72d7ca75ee2d3db8de1faceb3aa74b2}\label{class_pendulum_ad72d7ca75ee2d3db8de1faceb3aa74b2}} 
+\index{Pendulum@{Pendulum}!m\+\_\+ps\+Explosion@{m\+\_\+ps\+Explosion}}
+\index{m\+\_\+ps\+Explosion@{m\+\_\+ps\+Explosion}!Pendulum@{Pendulum}}
+\subsubsection{\texorpdfstring{m\+\_\+ps\+Explosion}{m\_psExplosion}}
+{\footnotesize\ttfamily Particle\+System Pendulum.\+m\+\_\+ps\+Explosion}
+
+
+
+Definition at line 34 of file Pendulum.\+cs.
+
+\mbox{\Hypertarget{class_pendulum_a1f4b8a46360de1da1a0326e5968e1959}\label{class_pendulum_a1f4b8a46360de1da1a0326e5968e1959}} 
+\index{Pendulum@{Pendulum}!m\+\_\+t\+Swing\+Object@{m\+\_\+t\+Swing\+Object}}
+\index{m\+\_\+t\+Swing\+Object@{m\+\_\+t\+Swing\+Object}!Pendulum@{Pendulum}}
+\subsubsection{\texorpdfstring{m\+\_\+t\+Swing\+Object}{m\_tSwingObject}}
+{\footnotesize\ttfamily Transform Pendulum.\+m\+\_\+t\+Swing\+Object}
+
+
+
+Definition at line 15 of file Pendulum.\+cs.
+
+\mbox{\Hypertarget{class_pendulum_aba3b1c8ada6a5211ee0bc50303ee40ca}\label{class_pendulum_aba3b1c8ada6a5211ee0bc50303ee40ca}} 
+\index{Pendulum@{Pendulum}!Right\+Rotation@{Right\+Rotation}}
+\index{Right\+Rotation@{Right\+Rotation}!Pendulum@{Pendulum}}
+\subsubsection{\texorpdfstring{Right\+Rotation}{RightRotation}}
+{\footnotesize\ttfamily float Pendulum.\+Right\+Rotation}
+
+
+
+Definition at line 24 of file Pendulum.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Interactables/\+Other/\mbox{\hyperlink{_pendulum_8cs}{Pendulum.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,449 @@
+\hypertarget{class_attachable}{}\section{Attachable Class Reference}
+\label{class_attachable}\index{Attachable@{Attachable}}
+Inheritance diagram for Attachable\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{class_attachable}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+sealed override void \mbox{\hyperlink{class_attachable_a78b678ddd2860e245fd1ce5350414b8e}{Animal\+Enter}} (\mbox{\hyperlink{class_animal}{Animal}} animal)
+\begin{DoxyCompactList}\small\item\em An \mbox{\hyperlink{class_animal}{Animal}} has entered the trigger \end{DoxyCompactList}\item 
+sealed override void \mbox{\hyperlink{class_attachable_adef6aa1287071d15d2724de7c0badbd8}{Animal\+Exit}} (\mbox{\hyperlink{class_animal}{Animal}} animal)
+\begin{DoxyCompactList}\small\item\em An \mbox{\hyperlink{class_animal}{Animal}} has exited the trigger \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_attachable_ad8e67a23808330a401d6cf95f30d4ead}{Try\+Detach\+Other}} (\mbox{\hyperlink{class_animal}{Animal}} animal=null)
+\item 
+void \mbox{\hyperlink{class_attachable_a4d8883f6f87f40cbe09ef20e50f84975}{Attach}} (\mbox{\hyperlink{class_animal}{Animal}} attach\+To)
+\begin{DoxyCompactList}\small\item\em Called when interact key pressed and was selected for use\end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_attachable_a85cfa28ce6929e32b158c067b0421e7d}{Detach}} (\mbox{\hyperlink{class_attachable}{Attachable}} caller, \mbox{\hyperlink{class_animal}{Animal}} animal=null)
+\item 
+virtual bool \mbox{\hyperlink{class_attachable_ab48b28f7aaf8a83d7b38d68c60ed1eff}{Check\+Attach}} ()
+\begin{DoxyCompactList}\small\item\em summary$>$Check if this object is detachable\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_attachable_a63695e26ad1e6e27d3d252451524f18e}{Remove\+All}} (List$<$ \mbox{\hyperlink{class_animal}{Animal}} $>$ animals, List$<$ \mbox{\hyperlink{class_attachable}{Attachable}} $>$ ignore=null)
+\begin{DoxyCompactList}\small\item\em Removes {\itshape animals}  from all Action\+Objects in the scene \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_attachable_a2431a3ad3f6a1a2a4d697e6cc661d55c}{Remove\+All}} (\mbox{\hyperlink{class_animal}{Animal}} animal, \mbox{\hyperlink{class_attachable}{Attachable}} ignore=null)
+\begin{DoxyCompactList}\small\item\em Removes {\itshape animal}  from all Action\+Objects in the scene \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_attachable_a3b2ed27cc6ed8d9548b8fc6256a24c19}{Remove\+All}} (\mbox{\hyperlink{class_animal}{Animal}} animal, List$<$ \mbox{\hyperlink{class_attachable}{Attachable}} $>$ ignore)
+\begin{DoxyCompactList}\small\item\em Removes {\itshape animal}  from all Action\+Objects in the scene \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_attachable_a813281e423def538cd834f0db80c9ec8}{On\+Attach}} ()
+\begin{DoxyCompactList}\small\item\em Called when attaching to an \mbox{\hyperlink{class_animal}{Animal}}\end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_attachable_abe7cf9d7930393610c7c9c4ae14b12d7}{On\+Detach}} (\mbox{\hyperlink{class_animal}{Animal}} animal)
+\begin{DoxyCompactList}\small\item\em summary$>$Check if this object is attachable\end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_attachable_a5cd6ea1bf16c527c033e6f09681f84f8}{Check\+Detach}} ()
+\item 
+virtual void \mbox{\hyperlink{class_attachable_a068e297fb6be04b5162db5ce61290020}{On\+Animal\+Enter}} (\mbox{\hyperlink{class_animal}{Animal}} animal)
+\item 
+virtual void \mbox{\hyperlink{class_attachable_a6de7e01430734a291be84f3065b45537}{On\+Animal\+Exit}} (\mbox{\hyperlink{class_animal}{Animal}} animal)
+\item 
+virtual void \mbox{\hyperlink{class_attachable_a10b95ee6da8ee9cb6b0fe1085abd7205}{On\+Awake}} ()
+\item 
+virtual void \mbox{\hyperlink{class_attachable_a3c05c0b07b831881a7ab245057d34d30}{On\+Start}} ()
+\item 
+virtual void \mbox{\hyperlink{class_attachable_abb659a66efacd6fa09fa1d7125c7b5e6}{On\+Update}} ()
+\item 
+virtual void \mbox{\hyperlink{class_attachable_a948016df773dff01ee30da2c903e5495}{On\+Destroying}} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_attachable_a0a30ee7e7b2c59e52732ee993b0e5089}{Being\+Destroyed}}
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static List$<$ \mbox{\hyperlink{class_attachable}{Attachable}} $>$ \mbox{\hyperlink{class_attachable_a0dd1e27d821e792b4ec611836053ea86}{Current\+Attachables}} = new List$<$\mbox{\hyperlink{class_attachable}{Attachable}}$>$()
+\begin{DoxyCompactList}\small\item\em summary$>$The currently attached \mbox{\hyperlink{class_animal}{Animal}}\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_animal}{Animal}} \mbox{\hyperlink{class_attachable_a767ba973f26c60f69dd597c9bb3cdf61}{Attached\+Animal}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em summary$>$Does this object prevent the \mbox{\hyperlink{class_attachable_a767ba973f26c60f69dd597c9bb3cdf61}{Attached\+Animal}} from turning?\end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_attachable_a57e1cb75b892a9acb9a55c68859d6ced}{Blocks\+Turn}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em summary$>$Does this object prevent the \mbox{\hyperlink{class_attachable_a767ba973f26c60f69dd597c9bb3cdf61}{Attached\+Animal}} from moving?\end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_attachable_acfc4ace299ec00b5bdf02bec42a1ba35}{Blocks\+Movement}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em summary$>$Can this object force others to detach?\end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_attachable_a569316796ad397c633f321fb40d2dcd8}{Can\+Detach}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em summary$>$A collection of \mbox{\hyperlink{class_animal}{Animal}}s that are currently inside this object\textquotesingle{}s trigger(s)\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 3 of file Attachable.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_attachable_a78b678ddd2860e245fd1ce5350414b8e}\label{class_attachable_a78b678ddd2860e245fd1ce5350414b8e}} 
+\index{Attachable@{Attachable}!Animal\+Enter@{Animal\+Enter}}
+\index{Animal\+Enter@{Animal\+Enter}!Attachable@{Attachable}}
+\subsubsection{\texorpdfstring{Animal\+Enter()}{AnimalEnter()}}
+{\footnotesize\ttfamily sealed override void Attachable.\+Animal\+Enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{animal }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+An \mbox{\hyperlink{class_animal}{Animal}} has entered the trigger 
+
+
+
+Implements \mbox{\hyperlink{class_animal_trigger_a03181803fa268e0bfcbdc752ee733c40}{Animal\+Trigger}}.
+
+
+
+Definition at line 19 of file Attachable.\+cs.
+
+\mbox{\Hypertarget{class_attachable_adef6aa1287071d15d2724de7c0badbd8}\label{class_attachable_adef6aa1287071d15d2724de7c0badbd8}} 
+\index{Attachable@{Attachable}!Animal\+Exit@{Animal\+Exit}}
+\index{Animal\+Exit@{Animal\+Exit}!Attachable@{Attachable}}
+\subsubsection{\texorpdfstring{Animal\+Exit()}{AnimalExit()}}
+{\footnotesize\ttfamily sealed override void Attachable.\+Animal\+Exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{animal }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+An \mbox{\hyperlink{class_animal}{Animal}} has exited the trigger 
+
+
+
+Implements \mbox{\hyperlink{class_animal_trigger_aa1a7c2e90de76c2e089b2bae01813f5c}{Animal\+Trigger}}.
+
+
+
+Definition at line 24 of file Attachable.\+cs.
+
+\mbox{\Hypertarget{class_attachable_a4d8883f6f87f40cbe09ef20e50f84975}\label{class_attachable_a4d8883f6f87f40cbe09ef20e50f84975}} 
+\index{Attachable@{Attachable}!Attach@{Attach}}
+\index{Attach@{Attach}!Attachable@{Attachable}}
+\subsubsection{\texorpdfstring{Attach()}{Attach()}}
+{\footnotesize\ttfamily void Attachable.\+Attach (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{attach\+To }\end{DoxyParamCaption})}
+
+
+
+Called when interact key pressed and was selected for use
+
+summary$>$Called to detach the interactabe from an \mbox{\hyperlink{class_animal}{Animal}}
+
+Definition at line 98 of file Attachable.\+cs.
+
+\mbox{\Hypertarget{class_attachable_ab48b28f7aaf8a83d7b38d68c60ed1eff}\label{class_attachable_ab48b28f7aaf8a83d7b38d68c60ed1eff}} 
+\index{Attachable@{Attachable}!Check\+Attach@{Check\+Attach}}
+\index{Check\+Attach@{Check\+Attach}!Attachable@{Attachable}}
+\subsubsection{\texorpdfstring{Check\+Attach()}{CheckAttach()}}
+{\footnotesize\ttfamily virtual bool Attachable.\+Check\+Attach (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+summary$>$Check if this object is detachable
+
+
+
+Definition at line 129 of file Attachable.\+cs.
+
+\mbox{\Hypertarget{class_attachable_a5cd6ea1bf16c527c033e6f09681f84f8}\label{class_attachable_a5cd6ea1bf16c527c033e6f09681f84f8}} 
+\index{Attachable@{Attachable}!Check\+Detach@{Check\+Detach}}
+\index{Check\+Detach@{Check\+Detach}!Attachable@{Attachable}}
+\subsubsection{\texorpdfstring{Check\+Detach()}{CheckDetach()}}
+{\footnotesize\ttfamily virtual bool Attachable.\+Check\+Detach (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_trampoline_a88fb0d537bb19917501307544d3e50b5}{Trampoline}}, \mbox{\hyperlink{class_dig_abec7f4de75d9d61991eca406c402fb51}{Dig}}, \mbox{\hyperlink{class_trap_chest_ab8f0424386ce3ac8f7e0a08bd503c4f5}{Trap\+Chest}}, \mbox{\hyperlink{class_climb_jump_a16ddafaf15a3e7effb11ee3f433721f1}{Climb\+Jump}}, and \mbox{\hyperlink{class_lever_a564e83f71f387279a5e6ef4c1617e990}{Lever}}.
+
+
+
+Definition at line 131 of file Attachable.\+cs.
+
+\mbox{\Hypertarget{class_attachable_a85cfa28ce6929e32b158c067b0421e7d}\label{class_attachable_a85cfa28ce6929e32b158c067b0421e7d}} 
+\index{Attachable@{Attachable}!Detach@{Detach}}
+\index{Detach@{Detach}!Attachable@{Attachable}}
+\subsubsection{\texorpdfstring{Detach()}{Detach()}}
+{\footnotesize\ttfamily bool Attachable.\+Detach (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_attachable}{Attachable}}}]{caller,  }\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{animal = {\ttfamily null} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 106 of file Attachable.\+cs.
+
+\mbox{\Hypertarget{class_attachable_a068e297fb6be04b5162db5ce61290020}\label{class_attachable_a068e297fb6be04b5162db5ce61290020}} 
+\index{Attachable@{Attachable}!On\+Animal\+Enter@{On\+Animal\+Enter}}
+\index{On\+Animal\+Enter@{On\+Animal\+Enter}!Attachable@{Attachable}}
+\subsubsection{\texorpdfstring{On\+Animal\+Enter()}{OnAnimalEnter()}}
+{\footnotesize\ttfamily virtual void Attachable.\+On\+Animal\+Enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{animal }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_attachable_interact_a376127af23be5456604ee5ec39f02b9b}{Attachable\+Interact}}, \mbox{\hyperlink{class_trampoline_a593abd52ed17139a320ee418aff6b120}{Trampoline}}, \mbox{\hyperlink{class_cannon_a972f062f1aba8d3f3ab95e47c6129506}{Cannon}}, \mbox{\hyperlink{class_climb_jump_a66b008bb35c83a5cf66d7f70ca0c4acf}{Climb\+Jump}}, and \mbox{\hyperlink{class_animal_spline_mover_acadeba87020c2abcea749a5a522fff54}{Animal\+Spline\+Mover}}.
+
+
+
+Definition at line 133 of file Attachable.\+cs.
+
+\mbox{\Hypertarget{class_attachable_a6de7e01430734a291be84f3065b45537}\label{class_attachable_a6de7e01430734a291be84f3065b45537}} 
+\index{Attachable@{Attachable}!On\+Animal\+Exit@{On\+Animal\+Exit}}
+\index{On\+Animal\+Exit@{On\+Animal\+Exit}!Attachable@{Attachable}}
+\subsubsection{\texorpdfstring{On\+Animal\+Exit()}{OnAnimalExit()}}
+{\footnotesize\ttfamily virtual void Attachable.\+On\+Animal\+Exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{animal }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_attachable_interact_a072c261c7ec9235f62c441fbac876b8f}{Attachable\+Interact}}.
+
+
+
+Definition at line 134 of file Attachable.\+cs.
+
+\mbox{\Hypertarget{class_attachable_a813281e423def538cd834f0db80c9ec8}\label{class_attachable_a813281e423def538cd834f0db80c9ec8}} 
+\index{Attachable@{Attachable}!On\+Attach@{On\+Attach}}
+\index{On\+Attach@{On\+Attach}!Attachable@{Attachable}}
+\subsubsection{\texorpdfstring{On\+Attach()}{OnAttach()}}
+{\footnotesize\ttfamily virtual void Attachable.\+On\+Attach (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Called when attaching to an \mbox{\hyperlink{class_animal}{Animal}}
+
+summary$>$Called when detaching from an \mbox{\hyperlink{class_animal}{Animal}}
+
+Reimplemented in \mbox{\hyperlink{class_ladder_object_ae0bd6ffec9b6cd52fa349df754d2f1fa}{Ladder\+Object}}.
+
+
+
+Definition at line 125 of file Attachable.\+cs.
+
+\mbox{\Hypertarget{class_attachable_a10b95ee6da8ee9cb6b0fe1085abd7205}\label{class_attachable_a10b95ee6da8ee9cb6b0fe1085abd7205}} 
+\index{Attachable@{Attachable}!On\+Awake@{On\+Awake}}
+\index{On\+Awake@{On\+Awake}!Attachable@{Attachable}}
+\subsubsection{\texorpdfstring{On\+Awake()}{OnAwake()}}
+{\footnotesize\ttfamily virtual void Attachable.\+On\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 135 of file Attachable.\+cs.
+
+\mbox{\Hypertarget{class_attachable_a948016df773dff01ee30da2c903e5495}\label{class_attachable_a948016df773dff01ee30da2c903e5495}} 
+\index{Attachable@{Attachable}!On\+Destroying@{On\+Destroying}}
+\index{On\+Destroying@{On\+Destroying}!Attachable@{Attachable}}
+\subsubsection{\texorpdfstring{On\+Destroying()}{OnDestroying()}}
+{\footnotesize\ttfamily virtual void Attachable.\+On\+Destroying (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 138 of file Attachable.\+cs.
+
+\mbox{\Hypertarget{class_attachable_abe7cf9d7930393610c7c9c4ae14b12d7}\label{class_attachable_abe7cf9d7930393610c7c9c4ae14b12d7}} 
+\index{Attachable@{Attachable}!On\+Detach@{On\+Detach}}
+\index{On\+Detach@{On\+Detach}!Attachable@{Attachable}}
+\subsubsection{\texorpdfstring{On\+Detach()}{OnDetach()}}
+{\footnotesize\ttfamily virtual void Attachable.\+On\+Detach (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{animal }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+summary$>$Check if this object is attachable
+
+
+
+Reimplemented in \mbox{\hyperlink{class_trampoline_a2bb01ad135e9dfe5ad5685aaea9936c9}{Trampoline}}, \mbox{\hyperlink{class_ladder_object_a0d40bcecf87fe56cd97b5550d352e258}{Ladder\+Object}}, \mbox{\hyperlink{class_bridge_maker_a5d9583fb209bfca47eabb33ce0bbe1bf}{Bridge\+Maker}}, \mbox{\hyperlink{class_p_p_object_a2cf5c46651860b997fd937c30e29d6b8}{P\+P\+Object}}, and \mbox{\hyperlink{class_lever_abe5f0492971af0f479a638b39ed6e9d9}{Lever}}.
+
+
+
+Definition at line 127 of file Attachable.\+cs.
+
+\mbox{\Hypertarget{class_attachable_a3c05c0b07b831881a7ab245057d34d30}\label{class_attachable_a3c05c0b07b831881a7ab245057d34d30}} 
+\index{Attachable@{Attachable}!On\+Start@{On\+Start}}
+\index{On\+Start@{On\+Start}!Attachable@{Attachable}}
+\subsubsection{\texorpdfstring{On\+Start()}{OnStart()}}
+{\footnotesize\ttfamily virtual void Attachable.\+On\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_ladder_object_a2b6508ecfa48b616813c22c113650637}{Ladder\+Object}}, \mbox{\hyperlink{class_bridge_maker_a5aeea9e7555a542ec1d1fab4e3a9126f}{Bridge\+Maker}}, \mbox{\hyperlink{class_trampoline_a8ca649f9cd7a2ec2510ab39888c3dd16}{Trampoline}}, \mbox{\hyperlink{class_dig_a4363c202ea7096a10548d4fc5cb53c70}{Dig}}, \mbox{\hyperlink{class_cannon_ab530656c8ae8981ced0162cfdd8f9cb2}{Cannon}}, \mbox{\hyperlink{class_p_p_object_a365b36598fc60a7d6470147aae73121b}{P\+P\+Object}}, \mbox{\hyperlink{class_climb_jump_a094788a5de43e24f111eec10ba0a3c88}{Climb\+Jump}}, \mbox{\hyperlink{class_lever_af2c615a25c4a7296e38f5120173347c9}{Lever}}, \mbox{\hyperlink{class_trap_chest_a4579ba0a67f7426ffeea20df606c9ea7}{Trap\+Chest}}, and \mbox{\hyperlink{class_animal_spline_mover_aa088e9d7a088c6b2125a5388d13b95a7}{Animal\+Spline\+Mover}}.
+
+
+
+Definition at line 136 of file Attachable.\+cs.
+
+\mbox{\Hypertarget{class_attachable_abb659a66efacd6fa09fa1d7125c7b5e6}\label{class_attachable_abb659a66efacd6fa09fa1d7125c7b5e6}} 
+\index{Attachable@{Attachable}!On\+Update@{On\+Update}}
+\index{On\+Update@{On\+Update}!Attachable@{Attachable}}
+\subsubsection{\texorpdfstring{On\+Update()}{OnUpdate()}}
+{\footnotesize\ttfamily virtual void Attachable.\+On\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_cannon_aa5d69c897923c5ac5bdcc16b18f1cf85}{Cannon}}, \mbox{\hyperlink{class_trampoline_acb12701ada778aa924cf51b892abc364}{Trampoline}}, \mbox{\hyperlink{class_ladder_object_a0ea09ce266154cd7be7ddb15c7f31874}{Ladder\+Object}}, \mbox{\hyperlink{class_bridge_maker_a6c7c0e10a22698192076b53c8bc55d07}{Bridge\+Maker}}, \mbox{\hyperlink{class_lever_a951c61f78d4f24b33d4ceb7ac3d53efb}{Lever}}, \mbox{\hyperlink{class_p_p_object_a74855705698504fae01ef77b0cee6313}{P\+P\+Object}}, and \mbox{\hyperlink{class_trap_chest_a8e86df57796079618494f48e727cc782}{Trap\+Chest}}.
+
+
+
+Definition at line 137 of file Attachable.\+cs.
+
+\mbox{\Hypertarget{class_attachable_a63695e26ad1e6e27d3d252451524f18e}\label{class_attachable_a63695e26ad1e6e27d3d252451524f18e}} 
+\index{Attachable@{Attachable}!Remove\+All@{Remove\+All}}
+\index{Remove\+All@{Remove\+All}!Attachable@{Attachable}}
+\subsubsection{\texorpdfstring{Remove\+All()}{RemoveAll()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily static void Attachable.\+Remove\+All (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{class_animal}{Animal}} $>$}]{animals,  }\item[{List$<$ \mbox{\hyperlink{class_attachable}{Attachable}} $>$}]{ignore = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Removes {\itshape animals}  from all Action\+Objects in the scene 
+
+
+\begin{DoxyParams}{Parameters}
+{\em animals} & The \mbox{\hyperlink{class_animal}{Animal}}s to remove\\
+\hline
+{\em ignore} & Optional\+: ignore these Action\+Objects\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 51 of file Attachable.\+cs.
+
+\mbox{\Hypertarget{class_attachable_a2431a3ad3f6a1a2a4d697e6cc661d55c}\label{class_attachable_a2431a3ad3f6a1a2a4d697e6cc661d55c}} 
+\index{Attachable@{Attachable}!Remove\+All@{Remove\+All}}
+\index{Remove\+All@{Remove\+All}!Attachable@{Attachable}}
+\subsubsection{\texorpdfstring{Remove\+All()}{RemoveAll()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily static void Attachable.\+Remove\+All (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{animal,  }\item[{\mbox{\hyperlink{class_attachable}{Attachable}}}]{ignore = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Removes {\itshape animal}  from all Action\+Objects in the scene 
+
+
+\begin{DoxyParams}{Parameters}
+{\em animal} & The \mbox{\hyperlink{class_animal}{Animal}} to remove\\
+\hline
+{\em ignore} & Optional\+: ignore Action\+Object\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 74 of file Attachable.\+cs.
+
+\mbox{\Hypertarget{class_attachable_a3b2ed27cc6ed8d9548b8fc6256a24c19}\label{class_attachable_a3b2ed27cc6ed8d9548b8fc6256a24c19}} 
+\index{Attachable@{Attachable}!Remove\+All@{Remove\+All}}
+\index{Remove\+All@{Remove\+All}!Attachable@{Attachable}}
+\subsubsection{\texorpdfstring{Remove\+All()}{RemoveAll()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily static void Attachable.\+Remove\+All (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{animal,  }\item[{List$<$ \mbox{\hyperlink{class_attachable}{Attachable}} $>$}]{ignore }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Removes {\itshape animal}  from all Action\+Objects in the scene 
+
+
+\begin{DoxyParams}{Parameters}
+{\em animal} & The \mbox{\hyperlink{class_animal}{Animal}} to remove\\
+\hline
+{\em ignore} & Ignore Action\+Object\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 88 of file Attachable.\+cs.
+
+\mbox{\Hypertarget{class_attachable_ad8e67a23808330a401d6cf95f30d4ead}\label{class_attachable_ad8e67a23808330a401d6cf95f30d4ead}} 
+\index{Attachable@{Attachable}!Try\+Detach\+Other@{Try\+Detach\+Other}}
+\index{Try\+Detach\+Other@{Try\+Detach\+Other}!Attachable@{Attachable}}
+\subsubsection{\texorpdfstring{Try\+Detach\+Other()}{TryDetachOther()}}
+{\footnotesize\ttfamily bool Attachable.\+Try\+Detach\+Other (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{animal = {\ttfamily null} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 29 of file Attachable.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_attachable_a0a30ee7e7b2c59e52732ee993b0e5089}\label{class_attachable_a0a30ee7e7b2c59e52732ee993b0e5089}} 
+\index{Attachable@{Attachable}!Being\+Destroyed@{Being\+Destroyed}}
+\index{Being\+Destroyed@{Being\+Destroyed}!Attachable@{Attachable}}
+\subsubsection{\texorpdfstring{Being\+Destroyed}{BeingDestroyed}}
+{\footnotesize\ttfamily bool Attachable.\+Being\+Destroyed\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 17 of file Attachable.\+cs.
+
+\mbox{\Hypertarget{class_attachable_a0dd1e27d821e792b4ec611836053ea86}\label{class_attachable_a0dd1e27d821e792b4ec611836053ea86}} 
+\index{Attachable@{Attachable}!Current\+Attachables@{Current\+Attachables}}
+\index{Current\+Attachables@{Current\+Attachables}!Attachable@{Attachable}}
+\subsubsection{\texorpdfstring{Current\+Attachables}{CurrentAttachables}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_attachable}{Attachable}}$>$ Attachable.\+Current\+Attachables = new List$<$\mbox{\hyperlink{class_attachable}{Attachable}}$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+summary$>$The currently attached \mbox{\hyperlink{class_animal}{Animal}}
+
+
+
+Definition at line 5 of file Attachable.\+cs.
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_attachable_a767ba973f26c60f69dd597c9bb3cdf61}\label{class_attachable_a767ba973f26c60f69dd597c9bb3cdf61}} 
+\index{Attachable@{Attachable}!Attached\+Animal@{Attached\+Animal}}
+\index{Attached\+Animal@{Attached\+Animal}!Attachable@{Attachable}}
+\subsubsection{\texorpdfstring{Attached\+Animal}{AttachedAnimal}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_animal}{Animal}} Attachable.\+Attached\+Animal\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+summary$>$Does this object prevent the \mbox{\hyperlink{class_attachable_a767ba973f26c60f69dd597c9bb3cdf61}{Attached\+Animal}} from turning?
+
+
+
+Definition at line 8 of file Attachable.\+cs.
+
+\mbox{\Hypertarget{class_attachable_acfc4ace299ec00b5bdf02bec42a1ba35}\label{class_attachable_acfc4ace299ec00b5bdf02bec42a1ba35}} 
+\index{Attachable@{Attachable}!Blocks\+Movement@{Blocks\+Movement}}
+\index{Blocks\+Movement@{Blocks\+Movement}!Attachable@{Attachable}}
+\subsubsection{\texorpdfstring{Blocks\+Movement}{BlocksMovement}}
+{\footnotesize\ttfamily bool Attachable.\+Blocks\+Movement\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+summary$>$Can this object force others to detach?
+
+
+
+Definition at line 12 of file Attachable.\+cs.
+
+\mbox{\Hypertarget{class_attachable_a57e1cb75b892a9acb9a55c68859d6ced}\label{class_attachable_a57e1cb75b892a9acb9a55c68859d6ced}} 
+\index{Attachable@{Attachable}!Blocks\+Turn@{Blocks\+Turn}}
+\index{Blocks\+Turn@{Blocks\+Turn}!Attachable@{Attachable}}
+\subsubsection{\texorpdfstring{Blocks\+Turn}{BlocksTurn}}
+{\footnotesize\ttfamily bool Attachable.\+Blocks\+Turn\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+summary$>$Does this object prevent the \mbox{\hyperlink{class_attachable_a767ba973f26c60f69dd597c9bb3cdf61}{Attached\+Animal}} from moving?
+
+
+
+Definition at line 10 of file Attachable.\+cs.
+
+\mbox{\Hypertarget{class_attachable_a569316796ad397c633f321fb40d2dcd8}\label{class_attachable_a569316796ad397c633f321fb40d2dcd8}} 
+\index{Attachable@{Attachable}!Can\+Detach@{Can\+Detach}}
+\index{Can\+Detach@{Can\+Detach}!Attachable@{Attachable}}
+\subsubsection{\texorpdfstring{Can\+Detach}{CanDetach}}
+{\footnotesize\ttfamily bool Attachable.\+Can\+Detach\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+summary$>$A collection of \mbox{\hyperlink{class_animal}{Animal}}s that are currently inside this object\textquotesingle{}s trigger(s)
+
+
+
+Definition at line 14 of file Attachable.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Interactables/\mbox{\hyperlink{_attachable_8cs}{Attachable.\+cs}}\end{DoxyCompactItemize}

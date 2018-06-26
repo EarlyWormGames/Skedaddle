@@ -1,0 +1,228 @@
+\hypertarget{class_bezier_spline_follower}{}\section{Bezier\+Spline\+Follower Class Reference}
+\label{class_bezier_spline_follower}\index{Bezier\+Spline\+Follower@{Bezier\+Spline\+Follower}}
+Inheritance diagram for Bezier\+Spline\+Follower\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_bezier_spline_follower}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_bezier_spline_follower_1_1_follower_event}{Follower\+Event}}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_bezier_spline_follower_a418bf6c27ad6a16dbd39b309bee6a602}{e\+Loop\+Type}} \{ \mbox{\hyperlink{class_bezier_spline_follower_a418bf6c27ad6a16dbd39b309bee6a602a6adf97f83acf6453d4a6a4b1070f3754}{e\+Loop\+Type.\+None}}, 
+\mbox{\hyperlink{class_bezier_spline_follower_a418bf6c27ad6a16dbd39b309bee6a602a89d7b10cb4238977d2b523dfd9ea7745}{e\+Loop\+Type.\+Loop}}, 
+\mbox{\hyperlink{class_bezier_spline_follower_a418bf6c27ad6a16dbd39b309bee6a602a99e52704462d3580db3528cad7ea9660}{e\+Loop\+Type.\+Ping\+Pong}}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_bezier_spline_follower_a3619ed2ff2189fc411c3d9c67d4fa0ec}{Follow}} ()
+\item 
+void \mbox{\hyperlink{class_bezier_spline_follower_a54b7a38ffdce65e5e38c18774a558ef2}{Follow}} (bool reverse)
+\item 
+float \mbox{\hyperlink{class_bezier_spline_follower_ad7f72b44b84a3572bdee23536aef8004}{Get\+Time}} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_bezier_spline}{Bezier\+Spline}} \mbox{\hyperlink{class_bezier_spline_follower_ad19dcd82c226227a5a1009a8939d3603}{m\+\_\+\+Spline}}
+\item 
+Transform \mbox{\hyperlink{class_bezier_spline_follower_a271d6de7eb8b8502157a3b14939be03e}{m\+\_\+\+Move\+Object}}
+\item 
+float \mbox{\hyperlink{class_bezier_spline_follower_a73321223457f715c52ce6f134fa17696}{m\+\_\+\+Follow\+Time}} = 5
+\item 
+Animation\+Curve \mbox{\hyperlink{class_bezier_spline_follower_a924000fca223028d37b074e9e12a2adb}{m\+\_\+\+Curve}} = Animation\+Curve.\+Linear(0, 0, 1, 1)
+\item 
+\mbox{\hyperlink{class_bezier_spline_follower_a418bf6c27ad6a16dbd39b309bee6a602}{e\+Loop\+Type}} \mbox{\hyperlink{class_bezier_spline_follower_a8a8c112838dde8ae3911db4104e59278}{m\+\_\+\+Loop\+Type}}
+\item 
+int \mbox{\hyperlink{class_bezier_spline_follower_a83a5314b505ad1a49dd429ab6e57c415}{m\+\_\+\+Loop\+Times}} = 5
+\item 
+bool \mbox{\hyperlink{class_bezier_spline_follower_a692ca3e755fcb4e472bd725016e31183}{m\+\_\+\+Follow\+On\+Start}} = false
+\item 
+bool \mbox{\hyperlink{class_bezier_spline_follower_a2f778f4fac97ed680a42203ac395e964}{m\+\_\+\+Lookat}} = false
+\item 
+\mbox{\hyperlink{class_bezier_spline_follower_1_1_follower_event}{Follower\+Event}} \mbox{\hyperlink{class_bezier_spline_follower_af95926bc84f097c69a5aeaff540e0197}{On\+Path\+End}}
+\item 
+\mbox{\hyperlink{_ignore_axis_8cs_aa61b0141055d583a4f5b013297a1d48f}{Ignore\+Axis}} \mbox{\hyperlink{class_bezier_spline_follower_a93464a77def4cdfa03248a7be07c3eff}{Axes\+To\+Ignore}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 12 of file Bezier\+Spline\+Follower.\+cs.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_bezier_spline_follower_a418bf6c27ad6a16dbd39b309bee6a602}\label{class_bezier_spline_follower_a418bf6c27ad6a16dbd39b309bee6a602}} 
+\index{Bezier\+Spline\+Follower@{Bezier\+Spline\+Follower}!e\+Loop\+Type@{e\+Loop\+Type}}
+\index{e\+Loop\+Type@{e\+Loop\+Type}!Bezier\+Spline\+Follower@{Bezier\+Spline\+Follower}}
+\subsubsection{\texorpdfstring{e\+Loop\+Type}{eLoopType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_bezier_spline_follower_a418bf6c27ad6a16dbd39b309bee6a602}{Bezier\+Spline\+Follower.\+e\+Loop\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{None@{None}!Bezier\+Spline\+Follower@{Bezier\+Spline\+Follower}}\index{Bezier\+Spline\+Follower@{Bezier\+Spline\+Follower}!None@{None}}}\mbox{\Hypertarget{class_bezier_spline_follower_a418bf6c27ad6a16dbd39b309bee6a602a6adf97f83acf6453d4a6a4b1070f3754}\label{class_bezier_spline_follower_a418bf6c27ad6a16dbd39b309bee6a602a6adf97f83acf6453d4a6a4b1070f3754}} 
+None&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Loop@{Loop}!Bezier\+Spline\+Follower@{Bezier\+Spline\+Follower}}\index{Bezier\+Spline\+Follower@{Bezier\+Spline\+Follower}!Loop@{Loop}}}\mbox{\Hypertarget{class_bezier_spline_follower_a418bf6c27ad6a16dbd39b309bee6a602a89d7b10cb4238977d2b523dfd9ea7745}\label{class_bezier_spline_follower_a418bf6c27ad6a16dbd39b309bee6a602a89d7b10cb4238977d2b523dfd9ea7745}} 
+Loop&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Ping\+Pong@{Ping\+Pong}!Bezier\+Spline\+Follower@{Bezier\+Spline\+Follower}}\index{Bezier\+Spline\+Follower@{Bezier\+Spline\+Follower}!Ping\+Pong@{Ping\+Pong}}}\mbox{\Hypertarget{class_bezier_spline_follower_a418bf6c27ad6a16dbd39b309bee6a602a99e52704462d3580db3528cad7ea9660}\label{class_bezier_spline_follower_a418bf6c27ad6a16dbd39b309bee6a602a99e52704462d3580db3528cad7ea9660}} 
+Ping\+Pong&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 17 of file Bezier\+Spline\+Follower.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_bezier_spline_follower_a3619ed2ff2189fc411c3d9c67d4fa0ec}\label{class_bezier_spline_follower_a3619ed2ff2189fc411c3d9c67d4fa0ec}} 
+\index{Bezier\+Spline\+Follower@{Bezier\+Spline\+Follower}!Follow@{Follow}}
+\index{Follow@{Follow}!Bezier\+Spline\+Follower@{Bezier\+Spline\+Follower}}
+\subsubsection{\texorpdfstring{Follow()}{Follow()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Bezier\+Spline\+Follower.\+Follow (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 115 of file Bezier\+Spline\+Follower.\+cs.
+
+\mbox{\Hypertarget{class_bezier_spline_follower_a54b7a38ffdce65e5e38c18774a558ef2}\label{class_bezier_spline_follower_a54b7a38ffdce65e5e38c18774a558ef2}} 
+\index{Bezier\+Spline\+Follower@{Bezier\+Spline\+Follower}!Follow@{Follow}}
+\index{Follow@{Follow}!Bezier\+Spline\+Follower@{Bezier\+Spline\+Follower}}
+\subsubsection{\texorpdfstring{Follow()}{Follow()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Bezier\+Spline\+Follower.\+Follow (\begin{DoxyParamCaption}\item[{bool}]{reverse }\end{DoxyParamCaption})}
+
+
+
+Definition at line 122 of file Bezier\+Spline\+Follower.\+cs.
+
+\mbox{\Hypertarget{class_bezier_spline_follower_ad7f72b44b84a3572bdee23536aef8004}\label{class_bezier_spline_follower_ad7f72b44b84a3572bdee23536aef8004}} 
+\index{Bezier\+Spline\+Follower@{Bezier\+Spline\+Follower}!Get\+Time@{Get\+Time}}
+\index{Get\+Time@{Get\+Time}!Bezier\+Spline\+Follower@{Bezier\+Spline\+Follower}}
+\subsubsection{\texorpdfstring{Get\+Time()}{GetTime()}}
+{\footnotesize\ttfamily float Bezier\+Spline\+Follower.\+Get\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 142 of file Bezier\+Spline\+Follower.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_bezier_spline_follower_a93464a77def4cdfa03248a7be07c3eff}\label{class_bezier_spline_follower_a93464a77def4cdfa03248a7be07c3eff}} 
+\index{Bezier\+Spline\+Follower@{Bezier\+Spline\+Follower}!Axes\+To\+Ignore@{Axes\+To\+Ignore}}
+\index{Axes\+To\+Ignore@{Axes\+To\+Ignore}!Bezier\+Spline\+Follower@{Bezier\+Spline\+Follower}}
+\subsubsection{\texorpdfstring{Axes\+To\+Ignore}{AxesToIgnore}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_ignore_axis_8cs_aa61b0141055d583a4f5b013297a1d48f}{Ignore\+Axis}} Bezier\+Spline\+Follower.\+Axes\+To\+Ignore}
+
+
+
+Definition at line 36 of file Bezier\+Spline\+Follower.\+cs.
+
+\mbox{\Hypertarget{class_bezier_spline_follower_a924000fca223028d37b074e9e12a2adb}\label{class_bezier_spline_follower_a924000fca223028d37b074e9e12a2adb}} 
+\index{Bezier\+Spline\+Follower@{Bezier\+Spline\+Follower}!m\+\_\+\+Curve@{m\+\_\+\+Curve}}
+\index{m\+\_\+\+Curve@{m\+\_\+\+Curve}!Bezier\+Spline\+Follower@{Bezier\+Spline\+Follower}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Curve}{m\_Curve}}
+{\footnotesize\ttfamily Animation\+Curve Bezier\+Spline\+Follower.\+m\+\_\+\+Curve = Animation\+Curve.\+Linear(0, 0, 1, 1)}
+
+
+
+Definition at line 27 of file Bezier\+Spline\+Follower.\+cs.
+
+\mbox{\Hypertarget{class_bezier_spline_follower_a692ca3e755fcb4e472bd725016e31183}\label{class_bezier_spline_follower_a692ca3e755fcb4e472bd725016e31183}} 
+\index{Bezier\+Spline\+Follower@{Bezier\+Spline\+Follower}!m\+\_\+\+Follow\+On\+Start@{m\+\_\+\+Follow\+On\+Start}}
+\index{m\+\_\+\+Follow\+On\+Start@{m\+\_\+\+Follow\+On\+Start}!Bezier\+Spline\+Follower@{Bezier\+Spline\+Follower}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Follow\+On\+Start}{m\_FollowOnStart}}
+{\footnotesize\ttfamily bool Bezier\+Spline\+Follower.\+m\+\_\+\+Follow\+On\+Start = false}
+
+
+
+Definition at line 30 of file Bezier\+Spline\+Follower.\+cs.
+
+\mbox{\Hypertarget{class_bezier_spline_follower_a73321223457f715c52ce6f134fa17696}\label{class_bezier_spline_follower_a73321223457f715c52ce6f134fa17696}} 
+\index{Bezier\+Spline\+Follower@{Bezier\+Spline\+Follower}!m\+\_\+\+Follow\+Time@{m\+\_\+\+Follow\+Time}}
+\index{m\+\_\+\+Follow\+Time@{m\+\_\+\+Follow\+Time}!Bezier\+Spline\+Follower@{Bezier\+Spline\+Follower}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Follow\+Time}{m\_FollowTime}}
+{\footnotesize\ttfamily float Bezier\+Spline\+Follower.\+m\+\_\+\+Follow\+Time = 5}
+
+
+
+Definition at line 26 of file Bezier\+Spline\+Follower.\+cs.
+
+\mbox{\Hypertarget{class_bezier_spline_follower_a2f778f4fac97ed680a42203ac395e964}\label{class_bezier_spline_follower_a2f778f4fac97ed680a42203ac395e964}} 
+\index{Bezier\+Spline\+Follower@{Bezier\+Spline\+Follower}!m\+\_\+\+Lookat@{m\+\_\+\+Lookat}}
+\index{m\+\_\+\+Lookat@{m\+\_\+\+Lookat}!Bezier\+Spline\+Follower@{Bezier\+Spline\+Follower}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Lookat}{m\_Lookat}}
+{\footnotesize\ttfamily bool Bezier\+Spline\+Follower.\+m\+\_\+\+Lookat = false}
+
+
+
+Definition at line 31 of file Bezier\+Spline\+Follower.\+cs.
+
+\mbox{\Hypertarget{class_bezier_spline_follower_a83a5314b505ad1a49dd429ab6e57c415}\label{class_bezier_spline_follower_a83a5314b505ad1a49dd429ab6e57c415}} 
+\index{Bezier\+Spline\+Follower@{Bezier\+Spline\+Follower}!m\+\_\+\+Loop\+Times@{m\+\_\+\+Loop\+Times}}
+\index{m\+\_\+\+Loop\+Times@{m\+\_\+\+Loop\+Times}!Bezier\+Spline\+Follower@{Bezier\+Spline\+Follower}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Loop\+Times}{m\_LoopTimes}}
+{\footnotesize\ttfamily int Bezier\+Spline\+Follower.\+m\+\_\+\+Loop\+Times = 5}
+
+
+
+Definition at line 29 of file Bezier\+Spline\+Follower.\+cs.
+
+\mbox{\Hypertarget{class_bezier_spline_follower_a8a8c112838dde8ae3911db4104e59278}\label{class_bezier_spline_follower_a8a8c112838dde8ae3911db4104e59278}} 
+\index{Bezier\+Spline\+Follower@{Bezier\+Spline\+Follower}!m\+\_\+\+Loop\+Type@{m\+\_\+\+Loop\+Type}}
+\index{m\+\_\+\+Loop\+Type@{m\+\_\+\+Loop\+Type}!Bezier\+Spline\+Follower@{Bezier\+Spline\+Follower}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Loop\+Type}{m\_LoopType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bezier_spline_follower_a418bf6c27ad6a16dbd39b309bee6a602}{e\+Loop\+Type}} Bezier\+Spline\+Follower.\+m\+\_\+\+Loop\+Type}
+
+
+
+Definition at line 28 of file Bezier\+Spline\+Follower.\+cs.
+
+\mbox{\Hypertarget{class_bezier_spline_follower_a271d6de7eb8b8502157a3b14939be03e}\label{class_bezier_spline_follower_a271d6de7eb8b8502157a3b14939be03e}} 
+\index{Bezier\+Spline\+Follower@{Bezier\+Spline\+Follower}!m\+\_\+\+Move\+Object@{m\+\_\+\+Move\+Object}}
+\index{m\+\_\+\+Move\+Object@{m\+\_\+\+Move\+Object}!Bezier\+Spline\+Follower@{Bezier\+Spline\+Follower}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Move\+Object}{m\_MoveObject}}
+{\footnotesize\ttfamily Transform Bezier\+Spline\+Follower.\+m\+\_\+\+Move\+Object}
+
+
+
+Definition at line 25 of file Bezier\+Spline\+Follower.\+cs.
+
+\mbox{\Hypertarget{class_bezier_spline_follower_ad19dcd82c226227a5a1009a8939d3603}\label{class_bezier_spline_follower_ad19dcd82c226227a5a1009a8939d3603}} 
+\index{Bezier\+Spline\+Follower@{Bezier\+Spline\+Follower}!m\+\_\+\+Spline@{m\+\_\+\+Spline}}
+\index{m\+\_\+\+Spline@{m\+\_\+\+Spline}!Bezier\+Spline\+Follower@{Bezier\+Spline\+Follower}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Spline}{m\_Spline}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bezier_spline}{Bezier\+Spline}} Bezier\+Spline\+Follower.\+m\+\_\+\+Spline}
+
+
+
+Definition at line 24 of file Bezier\+Spline\+Follower.\+cs.
+
+\mbox{\Hypertarget{class_bezier_spline_follower_af95926bc84f097c69a5aeaff540e0197}\label{class_bezier_spline_follower_af95926bc84f097c69a5aeaff540e0197}} 
+\index{Bezier\+Spline\+Follower@{Bezier\+Spline\+Follower}!On\+Path\+End@{On\+Path\+End}}
+\index{On\+Path\+End@{On\+Path\+End}!Bezier\+Spline\+Follower@{Bezier\+Spline\+Follower}}
+\subsubsection{\texorpdfstring{On\+Path\+End}{OnPathEnd}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bezier_spline_follower_1_1_follower_event}{Follower\+Event}} Bezier\+Spline\+Follower.\+On\+Path\+End}
+
+
+
+Definition at line 33 of file Bezier\+Spline\+Follower.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Plugins/\+Spline/\mbox{\hyperlink{_bezier_spline_follower_8cs}{Bezier\+Spline\+Follower.\+cs}}\end{DoxyCompactItemize}

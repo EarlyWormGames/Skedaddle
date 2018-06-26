@@ -1,0 +1,411 @@
+\hypertarget{class_loris}{}\section{Loris Class Reference}
+\label{class_loris}\index{Loris@{Loris}}
+Inheritance diagram for Loris\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_loris}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_loris_af59a730da01aa24a64c53e17f1882493}{Get\+Light\+Status}} ()
+\item 
+override void \mbox{\hyperlink{class_loris_a9da05849af0ab3b5ff8ac6e47f83a8f9}{On\+Select\+Change}} ()
+\item 
+void \mbox{\hyperlink{class_loris_a502badf5cc594eb1f1f2dd1068c09ecd}{Let\+Go\+Of\+Poodle}} ()
+\begin{DoxyCompactList}\small\item\em Call when you want the loris to be dropped by the poodle \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_loris_aa7b28f6b9624e4a55e63c77a077dc6ad}{Climb\+Change}} (\mbox{\hyperlink{_animal_8cs_a57d10208ebba781ae206546ada2002b6}{F\+A\+C\+I\+N\+G\+\_\+\+D\+IR}} a\+\_\+facing\+Type, bool a\+\_\+is\+Rope)
+\begin{DoxyCompactList}\small\item\em set the facing direction of the loris when climbing \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_loris_a07f351bb7f66abc3ac7dd879997bd510}{Set\+Night\+Vision}} (bool a\+\_\+\+On)
+\begin{DoxyCompactList}\small\item\em turn night vision on/off \end{DoxyCompactList}\item 
+override float \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_loris_a5356c9fe0717f3c6fe10be650cbe3c48}{Calculate\+Move\+Speed}} ()
+\item 
+override bool \mbox{\hyperlink{class_loris_a58dcb13392476fa95e7f9f26c5f46ce6}{Can\+Move}} ()
+\begin{DoxyCompactList}\small\item\em Can the loris move? \end{DoxyCompactList}\item 
+override \mbox{\hyperlink{_animal_8cs_a2fa5713399b84d1b88dae9196837af50}{A\+N\+I\+M\+A\+L\+\_\+\+N\+A\+ME}} \mbox{\hyperlink{class_loris_afb060974c2d879a9700544f12d0bc819}{Get\+Name}} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_loris_ad704caa18e48116db085af96db58acd3}{m\+\_\+f\+Climb\+Speed}} = 1f
+\item 
+float \mbox{\hyperlink{class_loris_a141ebd60dc9439a00f94affa2d0ec5e7}{m\+\_\+f\+Climb\+Top\+Speed}} = 1.\+5f
+\item 
+float \mbox{\hyperlink{class_loris_afbb9d1bac775eacd615dc1489327f3e8}{m\+\_\+f\+Climb\+Stop\+Speed}} = 0.\+2f
+\item 
+Vector3 \mbox{\hyperlink{class_loris_a5670a1a0e9f65b9146215986a49c3e56}{m\+\_\+f\+Shimmy\+Box\+Size}} = new Vector3(0.\+1f, 0.\+1f, 0.\+1f)
+\item 
+float \mbox{\hyperlink{class_loris_a1f41085121cb3240e345a2d53bd5e840}{m\+\_\+f\+Shimmy\+Distance}} = 0.\+6f
+\item 
+Light \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_loris_a9fe9fb5f26fa4f270af644bcb9b25928}{m\+\_\+l\+Vision\+Light}} = new Light\mbox{[}0\mbox{]}
+\item 
+float \mbox{\hyperlink{class_loris_a89041a7720a6ae252dd13b81648892e5}{m\+\_\+f\+On\+Intensity}} = 1.\+68f
+\item 
+float \mbox{\hyperlink{class_loris_a364370951ea508ff14e22dfa5aeca15c}{m\+\_\+f\+Light\+Speed}} = 1f
+\item 
+Vector2 \mbox{\hyperlink{class_loris_afff951d4ffc192f4dba6f2686dd56cc3}{m\+\_\+v2\+Idle\+Change\+Time}}
+\item 
+bool \mbox{\hyperlink{class_loris_a638ddfa87af7ce10bedad80d2351c288}{m\+\_\+b\+Start\+With\+N\+V\+On}} = false
+\item 
+float \mbox{\hyperlink{class_loris_ae88da935b4f5503437e00306a5c96f10}{m\+\_\+f\+Drop\+Time}} = 0.\+3f
+\item 
+float \mbox{\hyperlink{class_loris_a67c3123eb7a601fd6a01ee8551e9922b}{m\+\_\+f\+Climb\+Buffer}} = 0.\+5f
+\item 
+float \mbox{\hyperlink{class_loris_a46c347f318e42fee40899930955ffb47}{m\+\_\+f\+Climb\+Anim\+Mult}} = 100
+\item 
+float \mbox{\hyperlink{class_loris_a27903c2a983dc22ff7300b4bd556cc24}{m\+\_\+f\+Climb\+Anim\+Minimum}} = 0.\+005f
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_loris_abf831310421343c4685d7fb6844c522b}{On\+Awake}} ()
+\item 
+override void \mbox{\hyperlink{class_loris_a398638e87e93178426ab5a0486a564f7}{On\+Update}} ()
+\item 
+override void \mbox{\hyperlink{class_loris_a2a3cedda95b895253c1ae39844680351}{On\+Fixed\+Update}} ()
+\item 
+override void \mbox{\hyperlink{class_loris_a9edf28bf01dbd817175b366f471a4dda}{On\+Death}} (\mbox{\hyperlink{_animal_8cs_aa09ea87b75a706096f010aef7b9b1826}{D\+E\+A\+T\+H\+\_\+\+T\+Y\+PE}} a\+\_\+type)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 6 of file Loris.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_loris_a5356c9fe0717f3c6fe10be650cbe3c48}\label{class_loris_a5356c9fe0717f3c6fe10be650cbe3c48}} 
+\index{Loris@{Loris}!Calculate\+Move\+Speed@{Calculate\+Move\+Speed}}
+\index{Calculate\+Move\+Speed@{Calculate\+Move\+Speed}!Loris@{Loris}}
+\subsubsection{\texorpdfstring{Calculate\+Move\+Speed()}{CalculateMoveSpeed()}}
+{\footnotesize\ttfamily override float \mbox{[}$\,$\mbox{]} Loris.\+Calculate\+Move\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_animal_ad1033798d72c010a822937be75c5bdde}{Animal}}.
+
+
+
+Definition at line 470 of file Loris.\+cs.
+
+\mbox{\Hypertarget{class_loris_a58dcb13392476fa95e7f9f26c5f46ce6}\label{class_loris_a58dcb13392476fa95e7f9f26c5f46ce6}} 
+\index{Loris@{Loris}!Can\+Move@{Can\+Move}}
+\index{Can\+Move@{Can\+Move}!Loris@{Loris}}
+\subsubsection{\texorpdfstring{Can\+Move()}{CanMove()}}
+{\footnotesize\ttfamily override bool Loris.\+Can\+Move (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Can the loris move? 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_animal_a50a5002837a408f0032cc6d84ba60d1e}{Animal}}.
+
+
+
+Definition at line 497 of file Loris.\+cs.
+
+\mbox{\Hypertarget{class_loris_aa7b28f6b9624e4a55e63c77a077dc6ad}\label{class_loris_aa7b28f6b9624e4a55e63c77a077dc6ad}} 
+\index{Loris@{Loris}!Climb\+Change@{Climb\+Change}}
+\index{Climb\+Change@{Climb\+Change}!Loris@{Loris}}
+\subsubsection{\texorpdfstring{Climb\+Change()}{ClimbChange()}}
+{\footnotesize\ttfamily void Loris.\+Climb\+Change (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_animal_8cs_a57d10208ebba781ae206546ada2002b6}{F\+A\+C\+I\+N\+G\+\_\+\+D\+IR}}}]{a\+\_\+facing\+Type,  }\item[{bool}]{a\+\_\+is\+Rope }\end{DoxyParamCaption})}
+
+
+
+set the facing direction of the loris when climbing 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+facing\+Type} & \\
+\hline
+{\em a\+\_\+is\+Rope} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 420 of file Loris.\+cs.
+
+\mbox{\Hypertarget{class_loris_af59a730da01aa24a64c53e17f1882493}\label{class_loris_af59a730da01aa24a64c53e17f1882493}} 
+\index{Loris@{Loris}!Get\+Light\+Status@{Get\+Light\+Status}}
+\index{Get\+Light\+Status@{Get\+Light\+Status}!Loris@{Loris}}
+\subsubsection{\texorpdfstring{Get\+Light\+Status()}{GetLightStatus()}}
+{\footnotesize\ttfamily bool Loris.\+Get\+Light\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 50 of file Loris.\+cs.
+
+\mbox{\Hypertarget{class_loris_afb060974c2d879a9700544f12d0bc819}\label{class_loris_afb060974c2d879a9700544f12d0bc819}} 
+\index{Loris@{Loris}!Get\+Name@{Get\+Name}}
+\index{Get\+Name@{Get\+Name}!Loris@{Loris}}
+\subsubsection{\texorpdfstring{Get\+Name()}{GetName()}}
+{\footnotesize\ttfamily override \mbox{\hyperlink{_animal_8cs_a2fa5713399b84d1b88dae9196837af50}{A\+N\+I\+M\+A\+L\+\_\+\+N\+A\+ME}} Loris.\+Get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_animal_ab66ea3e3cb15a2b236ba9ba4d589ca69}{Animal}}.
+
+
+
+Definition at line 503 of file Loris.\+cs.
+
+\mbox{\Hypertarget{class_loris_a502badf5cc594eb1f1f2dd1068c09ecd}\label{class_loris_a502badf5cc594eb1f1f2dd1068c09ecd}} 
+\index{Loris@{Loris}!Let\+Go\+Of\+Poodle@{Let\+Go\+Of\+Poodle}}
+\index{Let\+Go\+Of\+Poodle@{Let\+Go\+Of\+Poodle}!Loris@{Loris}}
+\subsubsection{\texorpdfstring{Let\+Go\+Of\+Poodle()}{LetGoOfPoodle()}}
+{\footnotesize\ttfamily void Loris.\+Let\+Go\+Of\+Poodle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Call when you want the loris to be dropped by the poodle 
+
+
+
+Definition at line 383 of file Loris.\+cs.
+
+\mbox{\Hypertarget{class_loris_abf831310421343c4685d7fb6844c522b}\label{class_loris_abf831310421343c4685d7fb6844c522b}} 
+\index{Loris@{Loris}!On\+Awake@{On\+Awake}}
+\index{On\+Awake@{On\+Awake}!Loris@{Loris}}
+\subsubsection{\texorpdfstring{On\+Awake()}{OnAwake()}}
+{\footnotesize\ttfamily override void Loris.\+On\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_animal_a8ed14f752254b7033466bbd0c846a972}{Animal}}.
+
+
+
+Definition at line 63 of file Loris.\+cs.
+
+\mbox{\Hypertarget{class_loris_a9edf28bf01dbd817175b366f471a4dda}\label{class_loris_a9edf28bf01dbd817175b366f471a4dda}} 
+\index{Loris@{Loris}!On\+Death@{On\+Death}}
+\index{On\+Death@{On\+Death}!Loris@{Loris}}
+\subsubsection{\texorpdfstring{On\+Death()}{OnDeath()}}
+{\footnotesize\ttfamily override void Loris.\+On\+Death (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_animal_8cs_aa09ea87b75a706096f010aef7b9b1826}{D\+E\+A\+T\+H\+\_\+\+T\+Y\+PE}}}]{a\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_animal_a86612d846fcd1fcf08f7b89586aa11b7}{Animal}}.
+
+
+
+Definition at line 441 of file Loris.\+cs.
+
+\mbox{\Hypertarget{class_loris_a2a3cedda95b895253c1ae39844680351}\label{class_loris_a2a3cedda95b895253c1ae39844680351}} 
+\index{Loris@{Loris}!On\+Fixed\+Update@{On\+Fixed\+Update}}
+\index{On\+Fixed\+Update@{On\+Fixed\+Update}!Loris@{Loris}}
+\subsubsection{\texorpdfstring{On\+Fixed\+Update()}{OnFixedUpdate()}}
+{\footnotesize\ttfamily override void Loris.\+On\+Fixed\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_animal_aebce764681f2a949d72b80766beb0752}{Animal}}.
+
+
+
+Definition at line 410 of file Loris.\+cs.
+
+\mbox{\Hypertarget{class_loris_a9da05849af0ab3b5ff8ac6e47f83a8f9}\label{class_loris_a9da05849af0ab3b5ff8ac6e47f83a8f9}} 
+\index{Loris@{Loris}!On\+Select\+Change@{On\+Select\+Change}}
+\index{On\+Select\+Change@{On\+Select\+Change}!Loris@{Loris}}
+\subsubsection{\texorpdfstring{On\+Select\+Change()}{OnSelectChange()}}
+{\footnotesize\ttfamily override void Loris.\+On\+Select\+Change (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_animal_a10f83b51d56e077b400cf6b81b8f9aed}{Animal}}.
+
+
+
+Definition at line 367 of file Loris.\+cs.
+
+\mbox{\Hypertarget{class_loris_a398638e87e93178426ab5a0486a564f7}\label{class_loris_a398638e87e93178426ab5a0486a564f7}} 
+\index{Loris@{Loris}!On\+Update@{On\+Update}}
+\index{On\+Update@{On\+Update}!Loris@{Loris}}
+\subsubsection{\texorpdfstring{On\+Update()}{OnUpdate()}}
+{\footnotesize\ttfamily override void Loris.\+On\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_animal_a0b0cf85dbc03ad6ed1878e90c2ac84b1}{Animal}}.
+
+
+
+Definition at line 72 of file Loris.\+cs.
+
+\mbox{\Hypertarget{class_loris_a07f351bb7f66abc3ac7dd879997bd510}\label{class_loris_a07f351bb7f66abc3ac7dd879997bd510}} 
+\index{Loris@{Loris}!Set\+Night\+Vision@{Set\+Night\+Vision}}
+\index{Set\+Night\+Vision@{Set\+Night\+Vision}!Loris@{Loris}}
+\subsubsection{\texorpdfstring{Set\+Night\+Vision()}{SetNightVision()}}
+{\footnotesize\ttfamily void Loris.\+Set\+Night\+Vision (\begin{DoxyParamCaption}\item[{bool}]{a\+\_\+\+On }\end{DoxyParamCaption})}
+
+
+
+turn night vision on/off 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+\+On} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 462 of file Loris.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_loris_a638ddfa87af7ce10bedad80d2351c288}\label{class_loris_a638ddfa87af7ce10bedad80d2351c288}} 
+\index{Loris@{Loris}!m\+\_\+b\+Start\+With\+N\+V\+On@{m\+\_\+b\+Start\+With\+N\+V\+On}}
+\index{m\+\_\+b\+Start\+With\+N\+V\+On@{m\+\_\+b\+Start\+With\+N\+V\+On}!Loris@{Loris}}
+\subsubsection{\texorpdfstring{m\+\_\+b\+Start\+With\+N\+V\+On}{m\_bStartWithNVOn}}
+{\footnotesize\ttfamily bool Loris.\+m\+\_\+b\+Start\+With\+N\+V\+On = false}
+
+
+
+Definition at line 23 of file Loris.\+cs.
+
+\mbox{\Hypertarget{class_loris_a27903c2a983dc22ff7300b4bd556cc24}\label{class_loris_a27903c2a983dc22ff7300b4bd556cc24}} 
+\index{Loris@{Loris}!m\+\_\+f\+Climb\+Anim\+Minimum@{m\+\_\+f\+Climb\+Anim\+Minimum}}
+\index{m\+\_\+f\+Climb\+Anim\+Minimum@{m\+\_\+f\+Climb\+Anim\+Minimum}!Loris@{Loris}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Climb\+Anim\+Minimum}{m\_fClimbAnimMinimum}}
+{\footnotesize\ttfamily float Loris.\+m\+\_\+f\+Climb\+Anim\+Minimum = 0.\+005f}
+
+
+
+Definition at line 31 of file Loris.\+cs.
+
+\mbox{\Hypertarget{class_loris_a46c347f318e42fee40899930955ffb47}\label{class_loris_a46c347f318e42fee40899930955ffb47}} 
+\index{Loris@{Loris}!m\+\_\+f\+Climb\+Anim\+Mult@{m\+\_\+f\+Climb\+Anim\+Mult}}
+\index{m\+\_\+f\+Climb\+Anim\+Mult@{m\+\_\+f\+Climb\+Anim\+Mult}!Loris@{Loris}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Climb\+Anim\+Mult}{m\_fClimbAnimMult}}
+{\footnotesize\ttfamily float Loris.\+m\+\_\+f\+Climb\+Anim\+Mult = 100}
+
+
+
+Definition at line 30 of file Loris.\+cs.
+
+\mbox{\Hypertarget{class_loris_a67c3123eb7a601fd6a01ee8551e9922b}\label{class_loris_a67c3123eb7a601fd6a01ee8551e9922b}} 
+\index{Loris@{Loris}!m\+\_\+f\+Climb\+Buffer@{m\+\_\+f\+Climb\+Buffer}}
+\index{m\+\_\+f\+Climb\+Buffer@{m\+\_\+f\+Climb\+Buffer}!Loris@{Loris}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Climb\+Buffer}{m\_fClimbBuffer}}
+{\footnotesize\ttfamily float Loris.\+m\+\_\+f\+Climb\+Buffer = 0.\+5f}
+
+
+
+Definition at line 28 of file Loris.\+cs.
+
+\mbox{\Hypertarget{class_loris_ad704caa18e48116db085af96db58acd3}\label{class_loris_ad704caa18e48116db085af96db58acd3}} 
+\index{Loris@{Loris}!m\+\_\+f\+Climb\+Speed@{m\+\_\+f\+Climb\+Speed}}
+\index{m\+\_\+f\+Climb\+Speed@{m\+\_\+f\+Climb\+Speed}!Loris@{Loris}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Climb\+Speed}{m\_fClimbSpeed}}
+{\footnotesize\ttfamily float Loris.\+m\+\_\+f\+Climb\+Speed = 1f}
+
+
+
+Definition at line 12 of file Loris.\+cs.
+
+\mbox{\Hypertarget{class_loris_afbb9d1bac775eacd615dc1489327f3e8}\label{class_loris_afbb9d1bac775eacd615dc1489327f3e8}} 
+\index{Loris@{Loris}!m\+\_\+f\+Climb\+Stop\+Speed@{m\+\_\+f\+Climb\+Stop\+Speed}}
+\index{m\+\_\+f\+Climb\+Stop\+Speed@{m\+\_\+f\+Climb\+Stop\+Speed}!Loris@{Loris}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Climb\+Stop\+Speed}{m\_fClimbStopSpeed}}
+{\footnotesize\ttfamily float Loris.\+m\+\_\+f\+Climb\+Stop\+Speed = 0.\+2f}
+
+
+
+Definition at line 14 of file Loris.\+cs.
+
+\mbox{\Hypertarget{class_loris_a141ebd60dc9439a00f94affa2d0ec5e7}\label{class_loris_a141ebd60dc9439a00f94affa2d0ec5e7}} 
+\index{Loris@{Loris}!m\+\_\+f\+Climb\+Top\+Speed@{m\+\_\+f\+Climb\+Top\+Speed}}
+\index{m\+\_\+f\+Climb\+Top\+Speed@{m\+\_\+f\+Climb\+Top\+Speed}!Loris@{Loris}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Climb\+Top\+Speed}{m\_fClimbTopSpeed}}
+{\footnotesize\ttfamily float Loris.\+m\+\_\+f\+Climb\+Top\+Speed = 1.\+5f}
+
+
+
+Definition at line 13 of file Loris.\+cs.
+
+\mbox{\Hypertarget{class_loris_ae88da935b4f5503437e00306a5c96f10}\label{class_loris_ae88da935b4f5503437e00306a5c96f10}} 
+\index{Loris@{Loris}!m\+\_\+f\+Drop\+Time@{m\+\_\+f\+Drop\+Time}}
+\index{m\+\_\+f\+Drop\+Time@{m\+\_\+f\+Drop\+Time}!Loris@{Loris}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Drop\+Time}{m\_fDropTime}}
+{\footnotesize\ttfamily float Loris.\+m\+\_\+f\+Drop\+Time = 0.\+3f}
+
+
+
+Definition at line 25 of file Loris.\+cs.
+
+\mbox{\Hypertarget{class_loris_a364370951ea508ff14e22dfa5aeca15c}\label{class_loris_a364370951ea508ff14e22dfa5aeca15c}} 
+\index{Loris@{Loris}!m\+\_\+f\+Light\+Speed@{m\+\_\+f\+Light\+Speed}}
+\index{m\+\_\+f\+Light\+Speed@{m\+\_\+f\+Light\+Speed}!Loris@{Loris}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Light\+Speed}{m\_fLightSpeed}}
+{\footnotesize\ttfamily float Loris.\+m\+\_\+f\+Light\+Speed = 1f}
+
+
+
+Definition at line 21 of file Loris.\+cs.
+
+\mbox{\Hypertarget{class_loris_a89041a7720a6ae252dd13b81648892e5}\label{class_loris_a89041a7720a6ae252dd13b81648892e5}} 
+\index{Loris@{Loris}!m\+\_\+f\+On\+Intensity@{m\+\_\+f\+On\+Intensity}}
+\index{m\+\_\+f\+On\+Intensity@{m\+\_\+f\+On\+Intensity}!Loris@{Loris}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+On\+Intensity}{m\_fOnIntensity}}
+{\footnotesize\ttfamily float Loris.\+m\+\_\+f\+On\+Intensity = 1.\+68f}
+
+
+
+Definition at line 20 of file Loris.\+cs.
+
+\mbox{\Hypertarget{class_loris_a5670a1a0e9f65b9146215986a49c3e56}\label{class_loris_a5670a1a0e9f65b9146215986a49c3e56}} 
+\index{Loris@{Loris}!m\+\_\+f\+Shimmy\+Box\+Size@{m\+\_\+f\+Shimmy\+Box\+Size}}
+\index{m\+\_\+f\+Shimmy\+Box\+Size@{m\+\_\+f\+Shimmy\+Box\+Size}!Loris@{Loris}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Shimmy\+Box\+Size}{m\_fShimmyBoxSize}}
+{\footnotesize\ttfamily Vector3 Loris.\+m\+\_\+f\+Shimmy\+Box\+Size = new Vector3(0.\+1f, 0.\+1f, 0.\+1f)}
+
+
+
+Definition at line 15 of file Loris.\+cs.
+
+\mbox{\Hypertarget{class_loris_a1f41085121cb3240e345a2d53bd5e840}\label{class_loris_a1f41085121cb3240e345a2d53bd5e840}} 
+\index{Loris@{Loris}!m\+\_\+f\+Shimmy\+Distance@{m\+\_\+f\+Shimmy\+Distance}}
+\index{m\+\_\+f\+Shimmy\+Distance@{m\+\_\+f\+Shimmy\+Distance}!Loris@{Loris}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Shimmy\+Distance}{m\_fShimmyDistance}}
+{\footnotesize\ttfamily float Loris.\+m\+\_\+f\+Shimmy\+Distance = 0.\+6f}
+
+
+
+Definition at line 16 of file Loris.\+cs.
+
+\mbox{\Hypertarget{class_loris_a9fe9fb5f26fa4f270af644bcb9b25928}\label{class_loris_a9fe9fb5f26fa4f270af644bcb9b25928}} 
+\index{Loris@{Loris}!m\+\_\+l\+Vision\+Light@{m\+\_\+l\+Vision\+Light}}
+\index{m\+\_\+l\+Vision\+Light@{m\+\_\+l\+Vision\+Light}!Loris@{Loris}}
+\subsubsection{\texorpdfstring{m\+\_\+l\+Vision\+Light}{m\_lVisionLight}}
+{\footnotesize\ttfamily Light \mbox{[}$\,$\mbox{]} Loris.\+m\+\_\+l\+Vision\+Light = new Light\mbox{[}0\mbox{]}}
+
+
+
+Definition at line 19 of file Loris.\+cs.
+
+\mbox{\Hypertarget{class_loris_afff951d4ffc192f4dba6f2686dd56cc3}\label{class_loris_afff951d4ffc192f4dba6f2686dd56cc3}} 
+\index{Loris@{Loris}!m\+\_\+v2\+Idle\+Change\+Time@{m\+\_\+v2\+Idle\+Change\+Time}}
+\index{m\+\_\+v2\+Idle\+Change\+Time@{m\+\_\+v2\+Idle\+Change\+Time}!Loris@{Loris}}
+\subsubsection{\texorpdfstring{m\+\_\+v2\+Idle\+Change\+Time}{m\_v2IdleChangeTime}}
+{\footnotesize\ttfamily Vector2 Loris.\+m\+\_\+v2\+Idle\+Change\+Time}
+
+
+
+Definition at line 22 of file Loris.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Animal/\mbox{\hyperlink{_loris_8cs}{Loris.\+cs}}\end{DoxyCompactItemize}

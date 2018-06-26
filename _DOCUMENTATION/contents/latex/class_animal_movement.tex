@@ -1,0 +1,260 @@
+\hypertarget{class_animal_movement}{}\section{Animal\+Movement Class Reference}
+\label{class_animal_movement}\index{Animal\+Movement@{Animal\+Movement}}
+
+
+Allows an \mbox{\hyperlink{class_animal}{Animal}} to move.  
+
+
+Inheritance diagram for Animal\+Movement\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_animal_movement}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_animal_movement_a95055592a16686acb6ff78fc5b59f9e7}{Try\+Move}} (Vector3 point, float addY=0.\+01f)
+\begin{DoxyCompactList}\small\item\em Try to move the body to a position, sweepcasting along the way \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_animal_movement_a7da29b5a06c968139cb342c2508d9cc7}{Set\+Spline}} (\mbox{\hyperlink{class_spline_movement}{Spline\+Movement}} spline)
+\begin{DoxyCompactList}\small\item\em Sets the current \mbox{\hyperlink{class_spline_movement}{Spline\+Movement}} for this object to follow \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_animal_movement_a920df529c4783a9adccd1f4fca9bb1b2}{Stop\+Spline}} ()
+\begin{DoxyCompactList}\small\item\em Stop this object from following a spline and reset any values \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_animal_movement_ae514c884c8eb98e4b21eed0219e2fea5}{Deceleration\+Rate}} = 1
+\item 
+Transform \mbox{\hyperlink{class_animal_movement_a699040bd8fe7cac326c62b93c2248ee0}{Forward\+Dictator}}
+\item 
+\mbox{\hyperlink{class_spline_movement}{Spline\+Movement}} \mbox{\hyperlink{class_animal_movement_a03fe5bb09df01348e477660e63ee0b28}{Follow\+Spline}}
+\item 
+float \mbox{\hyperlink{class_animal_movement_a518271696ae1161577cf3999fa0ae93c}{Rotate\+Lerp\+Speed}} = 5
+\item 
+float \mbox{\hyperlink{class_animal_movement_ad8807562e391a924199f420eed40e6ba}{Sweep\+Y\+Add}} = 0.\+1f
+\item 
+Axis\+Action \mbox{\hyperlink{class_animal_movement_a0e2d0c0b3fe2fa0d0777cba809fd56ae}{Move\+Axis\+Key}}
+\item 
+bool \mbox{\hyperlink{class_animal_movement_a60fedb1b7c82f4d2322253dbdc3d82f9}{Move\+With\+Ground}} = true
+\item 
+bool \mbox{\hyperlink{class_animal_movement_a82027772be00ed9b175e7a65848d88a2}{Rotate\+With\+Ground}} = true
+\item 
+\mbox{\hyperlink{_ignore_axis_8cs_aa61b0141055d583a4f5b013297a1d48f}{Ignore\+Axis}} \mbox{\hyperlink{class_animal_movement_abe1357180ff4eb0ad9a0f7cc886a252b}{Rotate\+Ignore}} = \mbox{\hyperlink{_ignore_axis_8cs_aa61b0141055d583a4f5b013297a1d48fa02129bb861061d1a052c592e2dc6b383}{Ignore\+Axis.\+X}} $\vert$ \mbox{\hyperlink{_ignore_axis_8cs_aa61b0141055d583a4f5b013297a1d48fa21c2e59531c8710156d34a3c30ac81d5}{Ignore\+Axis.\+Z}}
+\item 
+Layer\+Mask \mbox{\hyperlink{class_animal_movement_a40e11d2a05542f83a9cda374437e1551}{Ground\+Layers}}
+\item 
+float \mbox{\hyperlink{class_animal_movement_a77461117bfd11a143fc92795d517aa89}{Raycast\+Distance}} = 0.\+1f
+\item 
+float \mbox{\hyperlink{class_animal_movement_a44a9971f842144f953ba86af6e1a76f8}{move\+Velocity}}
+\item 
+float \mbox{\hyperlink{class_animal_movement_ada208ed3d52f913996f3d4df70e84bbe}{current\+Speed}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Allows an \mbox{\hyperlink{class_animal}{Animal}} to move. 
+
+Attach this script to any Game\+Object that has an \mbox{\hyperlink{class_animal}{Animal}} script attached. ~\newline
+ This will allow for linear movement, as well as following a \mbox{\hyperlink{class_spline_movement}{Spline\+Movement}}. ~\newline
+It also has many helpful features, such as the \mbox{\hyperlink{class_animal_movement_a60fedb1b7c82f4d2322253dbdc3d82f9}{Move\+With\+Ground}} property, which will allow an \mbox{\hyperlink{class_animal}{Animal}} to stick to the current Collider the \mbox{\hyperlink{class_animal}{Animal}} is sitting on. 
+
+Definition at line 14 of file Animal\+Movement.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_animal_movement_a7da29b5a06c968139cb342c2508d9cc7}\label{class_animal_movement_a7da29b5a06c968139cb342c2508d9cc7}} 
+\index{Animal\+Movement@{Animal\+Movement}!Set\+Spline@{Set\+Spline}}
+\index{Set\+Spline@{Set\+Spline}!Animal\+Movement@{Animal\+Movement}}
+\subsubsection{\texorpdfstring{Set\+Spline()}{SetSpline()}}
+{\footnotesize\ttfamily void Animal\+Movement.\+Set\+Spline (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_spline_movement}{Spline\+Movement}}}]{spline }\end{DoxyParamCaption})}
+
+
+
+Sets the current \mbox{\hyperlink{class_spline_movement}{Spline\+Movement}} for this object to follow 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spline} & The \mbox{\hyperlink{class_spline_movement}{Spline\+Movement}} to follow\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 330 of file Animal\+Movement.\+cs.
+
+\mbox{\Hypertarget{class_animal_movement_a920df529c4783a9adccd1f4fca9bb1b2}\label{class_animal_movement_a920df529c4783a9adccd1f4fca9bb1b2}} 
+\index{Animal\+Movement@{Animal\+Movement}!Stop\+Spline@{Stop\+Spline}}
+\index{Stop\+Spline@{Stop\+Spline}!Animal\+Movement@{Animal\+Movement}}
+\subsubsection{\texorpdfstring{Stop\+Spline()}{StopSpline()}}
+{\footnotesize\ttfamily void Animal\+Movement.\+Stop\+Spline (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Stop this object from following a spline and reset any values 
+
+
+
+Definition at line 348 of file Animal\+Movement.\+cs.
+
+\mbox{\Hypertarget{class_animal_movement_a95055592a16686acb6ff78fc5b59f9e7}\label{class_animal_movement_a95055592a16686acb6ff78fc5b59f9e7}} 
+\index{Animal\+Movement@{Animal\+Movement}!Try\+Move@{Try\+Move}}
+\index{Try\+Move@{Try\+Move}!Animal\+Movement@{Animal\+Movement}}
+\subsubsection{\texorpdfstring{Try\+Move()}{TryMove()}}
+{\footnotesize\ttfamily bool Animal\+Movement.\+Try\+Move (\begin{DoxyParamCaption}\item[{Vector3}]{point,  }\item[{float}]{addY = {\ttfamily 0.01f} }\end{DoxyParamCaption})}
+
+
+
+Try to move the body to a position, sweepcasting along the way 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & The point to move the \mbox{\hyperlink{class_animal}{Animal}} to\\
+\hline
+{\em addY} & The point to move the \mbox{\hyperlink{class_animal}{Animal}} to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true when no collision occurs and the \mbox{\hyperlink{class_animal}{Animal}} has moved
+\end{DoxyReturn}
+
+
+Definition at line 308 of file Animal\+Movement.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_animal_movement_ada208ed3d52f913996f3d4df70e84bbe}\label{class_animal_movement_ada208ed3d52f913996f3d4df70e84bbe}} 
+\index{Animal\+Movement@{Animal\+Movement}!current\+Speed@{current\+Speed}}
+\index{current\+Speed@{current\+Speed}!Animal\+Movement@{Animal\+Movement}}
+\subsubsection{\texorpdfstring{current\+Speed}{currentSpeed}}
+{\footnotesize\ttfamily float Animal\+Movement.\+current\+Speed}
+
+
+
+Definition at line 61 of file Animal\+Movement.\+cs.
+
+\mbox{\Hypertarget{class_animal_movement_ae514c884c8eb98e4b21eed0219e2fea5}\label{class_animal_movement_ae514c884c8eb98e4b21eed0219e2fea5}} 
+\index{Animal\+Movement@{Animal\+Movement}!Deceleration\+Rate@{Deceleration\+Rate}}
+\index{Deceleration\+Rate@{Deceleration\+Rate}!Animal\+Movement@{Animal\+Movement}}
+\subsubsection{\texorpdfstring{Deceleration\+Rate}{DecelerationRate}}
+{\footnotesize\ttfamily float Animal\+Movement.\+Deceleration\+Rate = 1}
+
+
+
+Definition at line 16 of file Animal\+Movement.\+cs.
+
+\mbox{\Hypertarget{class_animal_movement_a03fe5bb09df01348e477660e63ee0b28}\label{class_animal_movement_a03fe5bb09df01348e477660e63ee0b28}} 
+\index{Animal\+Movement@{Animal\+Movement}!Follow\+Spline@{Follow\+Spline}}
+\index{Follow\+Spline@{Follow\+Spline}!Animal\+Movement@{Animal\+Movement}}
+\subsubsection{\texorpdfstring{Follow\+Spline}{FollowSpline}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_spline_movement}{Spline\+Movement}} Animal\+Movement.\+Follow\+Spline}
+
+
+
+Definition at line 27 of file Animal\+Movement.\+cs.
+
+\mbox{\Hypertarget{class_animal_movement_a699040bd8fe7cac326c62b93c2248ee0}\label{class_animal_movement_a699040bd8fe7cac326c62b93c2248ee0}} 
+\index{Animal\+Movement@{Animal\+Movement}!Forward\+Dictator@{Forward\+Dictator}}
+\index{Forward\+Dictator@{Forward\+Dictator}!Animal\+Movement@{Animal\+Movement}}
+\subsubsection{\texorpdfstring{Forward\+Dictator}{ForwardDictator}}
+{\footnotesize\ttfamily Transform Animal\+Movement.\+Forward\+Dictator}
+
+
+
+Definition at line 22 of file Animal\+Movement.\+cs.
+
+\mbox{\Hypertarget{class_animal_movement_a40e11d2a05542f83a9cda374437e1551}\label{class_animal_movement_a40e11d2a05542f83a9cda374437e1551}} 
+\index{Animal\+Movement@{Animal\+Movement}!Ground\+Layers@{Ground\+Layers}}
+\index{Ground\+Layers@{Ground\+Layers}!Animal\+Movement@{Animal\+Movement}}
+\subsubsection{\texorpdfstring{Ground\+Layers}{GroundLayers}}
+{\footnotesize\ttfamily Layer\+Mask Animal\+Movement.\+Ground\+Layers}
+
+
+
+Definition at line 50 of file Animal\+Movement.\+cs.
+
+\mbox{\Hypertarget{class_animal_movement_a0e2d0c0b3fe2fa0d0777cba809fd56ae}\label{class_animal_movement_a0e2d0c0b3fe2fa0d0777cba809fd56ae}} 
+\index{Animal\+Movement@{Animal\+Movement}!Move\+Axis\+Key@{Move\+Axis\+Key}}
+\index{Move\+Axis\+Key@{Move\+Axis\+Key}!Animal\+Movement@{Animal\+Movement}}
+\subsubsection{\texorpdfstring{Move\+Axis\+Key}{MoveAxisKey}}
+{\footnotesize\ttfamily Axis\+Action Animal\+Movement.\+Move\+Axis\+Key}
+
+
+
+Definition at line 31 of file Animal\+Movement.\+cs.
+
+\mbox{\Hypertarget{class_animal_movement_a44a9971f842144f953ba86af6e1a76f8}\label{class_animal_movement_a44a9971f842144f953ba86af6e1a76f8}} 
+\index{Animal\+Movement@{Animal\+Movement}!move\+Velocity@{move\+Velocity}}
+\index{move\+Velocity@{move\+Velocity}!Animal\+Movement@{Animal\+Movement}}
+\subsubsection{\texorpdfstring{move\+Velocity}{moveVelocity}}
+{\footnotesize\ttfamily float Animal\+Movement.\+move\+Velocity}
+
+
+
+Definition at line 59 of file Animal\+Movement.\+cs.
+
+\mbox{\Hypertarget{class_animal_movement_a60fedb1b7c82f4d2322253dbdc3d82f9}\label{class_animal_movement_a60fedb1b7c82f4d2322253dbdc3d82f9}} 
+\index{Animal\+Movement@{Animal\+Movement}!Move\+With\+Ground@{Move\+With\+Ground}}
+\index{Move\+With\+Ground@{Move\+With\+Ground}!Animal\+Movement@{Animal\+Movement}}
+\subsubsection{\texorpdfstring{Move\+With\+Ground}{MoveWithGround}}
+{\footnotesize\ttfamily bool Animal\+Movement.\+Move\+With\+Ground = true}
+
+
+
+Definition at line 41 of file Animal\+Movement.\+cs.
+
+\mbox{\Hypertarget{class_animal_movement_a77461117bfd11a143fc92795d517aa89}\label{class_animal_movement_a77461117bfd11a143fc92795d517aa89}} 
+\index{Animal\+Movement@{Animal\+Movement}!Raycast\+Distance@{Raycast\+Distance}}
+\index{Raycast\+Distance@{Raycast\+Distance}!Animal\+Movement@{Animal\+Movement}}
+\subsubsection{\texorpdfstring{Raycast\+Distance}{RaycastDistance}}
+{\footnotesize\ttfamily float Animal\+Movement.\+Raycast\+Distance = 0.\+1f}
+
+
+
+Definition at line 51 of file Animal\+Movement.\+cs.
+
+\mbox{\Hypertarget{class_animal_movement_abe1357180ff4eb0ad9a0f7cc886a252b}\label{class_animal_movement_abe1357180ff4eb0ad9a0f7cc886a252b}} 
+\index{Animal\+Movement@{Animal\+Movement}!Rotate\+Ignore@{Rotate\+Ignore}}
+\index{Rotate\+Ignore@{Rotate\+Ignore}!Animal\+Movement@{Animal\+Movement}}
+\subsubsection{\texorpdfstring{Rotate\+Ignore}{RotateIgnore}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_ignore_axis_8cs_aa61b0141055d583a4f5b013297a1d48f}{Ignore\+Axis}} Animal\+Movement.\+Rotate\+Ignore = \mbox{\hyperlink{_ignore_axis_8cs_aa61b0141055d583a4f5b013297a1d48fa02129bb861061d1a052c592e2dc6b383}{Ignore\+Axis.\+X}} $\vert$ \mbox{\hyperlink{_ignore_axis_8cs_aa61b0141055d583a4f5b013297a1d48fa21c2e59531c8710156d34a3c30ac81d5}{Ignore\+Axis.\+Z}}}
+
+
+
+Definition at line 49 of file Animal\+Movement.\+cs.
+
+\mbox{\Hypertarget{class_animal_movement_a518271696ae1161577cf3999fa0ae93c}\label{class_animal_movement_a518271696ae1161577cf3999fa0ae93c}} 
+\index{Animal\+Movement@{Animal\+Movement}!Rotate\+Lerp\+Speed@{Rotate\+Lerp\+Speed}}
+\index{Rotate\+Lerp\+Speed@{Rotate\+Lerp\+Speed}!Animal\+Movement@{Animal\+Movement}}
+\subsubsection{\texorpdfstring{Rotate\+Lerp\+Speed}{RotateLerpSpeed}}
+{\footnotesize\ttfamily float Animal\+Movement.\+Rotate\+Lerp\+Speed = 5}
+
+
+
+Definition at line 29 of file Animal\+Movement.\+cs.
+
+\mbox{\Hypertarget{class_animal_movement_a82027772be00ed9b175e7a65848d88a2}\label{class_animal_movement_a82027772be00ed9b175e7a65848d88a2}} 
+\index{Animal\+Movement@{Animal\+Movement}!Rotate\+With\+Ground@{Rotate\+With\+Ground}}
+\index{Rotate\+With\+Ground@{Rotate\+With\+Ground}!Animal\+Movement@{Animal\+Movement}}
+\subsubsection{\texorpdfstring{Rotate\+With\+Ground}{RotateWithGround}}
+{\footnotesize\ttfamily bool Animal\+Movement.\+Rotate\+With\+Ground = true}
+
+
+
+Definition at line 47 of file Animal\+Movement.\+cs.
+
+\mbox{\Hypertarget{class_animal_movement_ad8807562e391a924199f420eed40e6ba}\label{class_animal_movement_ad8807562e391a924199f420eed40e6ba}} 
+\index{Animal\+Movement@{Animal\+Movement}!Sweep\+Y\+Add@{Sweep\+Y\+Add}}
+\index{Sweep\+Y\+Add@{Sweep\+Y\+Add}!Animal\+Movement@{Animal\+Movement}}
+\subsubsection{\texorpdfstring{Sweep\+Y\+Add}{SweepYAdd}}
+{\footnotesize\ttfamily float Animal\+Movement.\+Sweep\+Y\+Add = 0.\+1f}
+
+
+
+Definition at line 30 of file Animal\+Movement.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Animal/\mbox{\hyperlink{_animal_movement_8cs}{Animal\+Movement.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,53 @@
+Multi-\/effector F\+A\+B\+R\+IK system. ~\newline
+F\+A\+B\+R\+I\+K\+Root is a component that connects F\+A\+B\+R\+IK chains together to form extremely complicated IK systems with multiple branches, end-\/effectors and rotation limits.
+
+{\bfseries Getting started\+:}
+\begin{DoxyItemize}
+\item Create multiple F\+A\+B\+R\+IK chains, position them as you want them to be connected. The chains don\textquotesingle{}t have to be parented to each other
+\item Make sure the first bone of a child chain is in the same position as the last bone of it\textquotesingle{}s parent
+\item Create a new Game\+Object, add the F\+A\+B\+R\+I\+K\+Root component
+\item Add all the F\+A\+B\+R\+IK chains to \char`\"{}\+Chains\char`\"{} in the F\+A\+B\+R\+I\+K\+Root component
+\item Press Play
+\end{DoxyItemize}
+
+{\bfseries Accessing the chains of F\+A\+B\+R\+I\+K\+Root\+:}
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{public} FABRIKRoot fabrikRoot;
+
+\textcolor{keywordtype}{void} LateUpdate () \{
+    Debug.Log(fabrikRoot.solver.chains[index].ik.name);
+\}
+\end{DoxyCode}
+
+
+{\bfseries Limitations\+:}
+\begin{DoxyItemize}
+\item Separate F\+A\+B\+R\+IK chains can not use the same bones, they must be fully independent
+\item The last bone of a F\+A\+B\+R\+IK chain must be in the same position as it\textquotesingle{}s child chain\textquotesingle{}s first bone
+\end{DoxyItemize}
+
+ {\bfseries Component variables\+:}
+\begin{DoxyItemize}
+\item {\bfseries time\+Step} -\/ if zero, will update the solver in every Late\+Update(). Use this for chains that are animated. If $>$ 0, will be used as updating frequency so that the solver will reach its target in the same time on all machines
+\item {\bfseries fix\+Transforms} -\/ if true, will fix all the Transforms used by the solver to their initial state in each Update. This prevents potential problems with unanimated bones and animator culling with a small cost of performance
+\end{DoxyItemize}
+
+{\bfseries Solver variables\+:}
+\begin{DoxyItemize}
+\item {\bfseries weight} -\/ the solver weight for smoothly blending out the effect of the IK
+\item {\bfseries iterations} -\/ max iterations per frame.
+\item {\bfseries root\+Pin} -\/ the weight of pinning the first chains to the Transform that the component is attached to
+\item {\bfseries chains} -\/ the list of F\+A\+B\+R\+IK components used by this F\+A\+B\+R\+I\+K\+Root
+\end{DoxyItemize}
+
+{\bfseries Chain variables\+:}
+\begin{DoxyItemize}
+\item {\bfseries IK} -\/ the F\+A\+B\+R\+IK component used
+\item {\bfseries pull} -\/ parent pull weight. How much does this chain pull it\textquotesingle{}s parent?
+\item {\bfseries pin} -\/ resistance to being pulled by child chains. If 1, this chain can not be pulled out of place by it\textquotesingle{}s child chains
+\item {\bfseries children} -\/ indexes (of the \char`\"{}\+Chains\char`\"{} array) of the direct children of this chain. Don\textquotesingle{}t add children of the children.
+\end{DoxyItemize}
+
+ 

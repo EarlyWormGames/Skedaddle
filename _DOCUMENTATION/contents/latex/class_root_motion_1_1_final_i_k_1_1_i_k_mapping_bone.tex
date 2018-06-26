@@ -1,0 +1,183 @@
+\hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_bone}{}\section{Root\+Motion.\+Final\+I\+K.\+I\+K\+Mapping\+Bone Class Reference}
+\label{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_bone}\index{Root\+Motion.\+Final\+I\+K.\+I\+K\+Mapping\+Bone@{Root\+Motion.\+Final\+I\+K.\+I\+K\+Mapping\+Bone}}
+
+
+Maps a single bone to a node in IK Solver  
+
+
+Inheritance diagram for Root\+Motion.\+Final\+I\+K.\+I\+K\+Mapping\+Bone\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_bone}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override bool \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_bone_ae6cdd8926b914a52dcef66e131733bd3}{Is\+Valid}} (\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver}{I\+K\+Solver}} solver, ref string message)
+\begin{DoxyCompactList}\small\item\em Determines whether this \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_bone}{I\+K\+Mapping\+Bone}} is valid. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_bone_af37ad89a40c913273dbda0cedfa13564}{I\+K\+Mapping\+Bone}} ()
+\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_bone_a4b9e8c52109aebd7b49138131dbe70e1}{I\+K\+Mapping\+Bone}} (Transform \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_bone_a9d9f697b00a63ce7c5e5680d97cf8b5f}{bone}})
+\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_bone_aa8ef31cdff87a68f606a2c64a29ef2ef}{Store\+Default\+Local\+State}} ()
+\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_bone_ae14b0c6333c40c71009b791c84695620}{Fix\+Transforms}} ()
+\item 
+override void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_bone_a7eea7aefe2699d7b01ebafe17543c6bd}{Initiate}} (\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body}{I\+K\+Solver\+Full\+Body}} solver)
+\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_bone_a538b21a94c446a812a001503cc0e20be}{Read\+Pose}} ()
+\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_bone_ae4255d613a7c727e017fe21c55eb021f}{Write\+Pose}} (float solver\+Weight)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_bone_a9d9f697b00a63ce7c5e5680d97cf8b5f}{bone}}
+\begin{DoxyCompactList}\small\item\em The bone transform. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_bone_a2d578028cb3d40fff8fdf8ef6d90a7e6}{maintain\+Rotation\+Weight}} = 1f
+\begin{DoxyCompactList}\small\item\em The weight of maintaining the bone\textquotesingle{}s rotation after solver has finished. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Maps a single bone to a node in IK Solver 
+
+
+
+Definition at line 10 of file I\+K\+Mapping\+Bone.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_bone_af37ad89a40c913273dbda0cedfa13564}\label{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_bone_af37ad89a40c913273dbda0cedfa13564}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Mapping\+Bone@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Mapping\+Bone}!I\+K\+Mapping\+Bone@{I\+K\+Mapping\+Bone}}
+\index{I\+K\+Mapping\+Bone@{I\+K\+Mapping\+Bone}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Mapping\+Bone@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Mapping\+Bone}}
+\subsubsection{\texorpdfstring{I\+K\+Mapping\+Bone()}{IKMappingBone()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Root\+Motion.\+Final\+I\+K.\+I\+K\+Mapping\+Bone.\+I\+K\+Mapping\+Bone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 43 of file I\+K\+Mapping\+Bone.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_bone_a4b9e8c52109aebd7b49138131dbe70e1}\label{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_bone_a4b9e8c52109aebd7b49138131dbe70e1}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Mapping\+Bone@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Mapping\+Bone}!I\+K\+Mapping\+Bone@{I\+K\+Mapping\+Bone}}
+\index{I\+K\+Mapping\+Bone@{I\+K\+Mapping\+Bone}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Mapping\+Bone@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Mapping\+Bone}}
+\subsubsection{\texorpdfstring{I\+K\+Mapping\+Bone()}{IKMappingBone()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Root\+Motion.\+Final\+I\+K.\+I\+K\+Mapping\+Bone.\+I\+K\+Mapping\+Bone (\begin{DoxyParamCaption}\item[{Transform}]{bone }\end{DoxyParamCaption})}
+
+
+
+Definition at line 45 of file I\+K\+Mapping\+Bone.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_bone_ae14b0c6333c40c71009b791c84695620}\label{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_bone_ae14b0c6333c40c71009b791c84695620}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Mapping\+Bone@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Mapping\+Bone}!Fix\+Transforms@{Fix\+Transforms}}
+\index{Fix\+Transforms@{Fix\+Transforms}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Mapping\+Bone@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Mapping\+Bone}}
+\subsubsection{\texorpdfstring{Fix\+Transforms()}{FixTransforms()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+I\+K\+Mapping\+Bone.\+Fix\+Transforms (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 53 of file I\+K\+Mapping\+Bone.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_bone_a7eea7aefe2699d7b01ebafe17543c6bd}\label{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_bone_a7eea7aefe2699d7b01ebafe17543c6bd}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Mapping\+Bone@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Mapping\+Bone}!Initiate@{Initiate}}
+\index{Initiate@{Initiate}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Mapping\+Bone@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Mapping\+Bone}}
+\subsubsection{\texorpdfstring{Initiate()}{Initiate()}}
+{\footnotesize\ttfamily override void Root\+Motion.\+Final\+I\+K.\+I\+K\+Mapping\+Bone.\+Initiate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body}{I\+K\+Solver\+Full\+Body}}}]{solver }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_a530ab0e13f90bde214eba3a23ed24d73}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Mapping}}.
+
+
+
+Definition at line 60 of file I\+K\+Mapping\+Bone.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_bone_ae6cdd8926b914a52dcef66e131733bd3}\label{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_bone_ae6cdd8926b914a52dcef66e131733bd3}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Mapping\+Bone@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Mapping\+Bone}!Is\+Valid@{Is\+Valid}}
+\index{Is\+Valid@{Is\+Valid}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Mapping\+Bone@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Mapping\+Bone}}
+\subsubsection{\texorpdfstring{Is\+Valid()}{IsValid()}}
+{\footnotesize\ttfamily override bool Root\+Motion.\+Final\+I\+K.\+I\+K\+Mapping\+Bone.\+Is\+Valid (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver}{I\+K\+Solver}}}]{solver,  }\item[{ref string}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Determines whether this \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_bone}{I\+K\+Mapping\+Bone}} is valid. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_a4a81f9083afd318e2578de48fa914870}{Root\+Motion.\+Final\+I\+K.\+I\+K\+Mapping}}.
+
+
+
+Definition at line 28 of file I\+K\+Mapping\+Bone.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_bone_a538b21a94c446a812a001503cc0e20be}\label{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_bone_a538b21a94c446a812a001503cc0e20be}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Mapping\+Bone@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Mapping\+Bone}!Read\+Pose@{Read\+Pose}}
+\index{Read\+Pose@{Read\+Pose}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Mapping\+Bone@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Mapping\+Bone}}
+\subsubsection{\texorpdfstring{Read\+Pose()}{ReadPose()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+I\+K\+Mapping\+Bone.\+Read\+Pose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 69 of file I\+K\+Mapping\+Bone.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_bone_aa8ef31cdff87a68f606a2c64a29ef2ef}\label{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_bone_aa8ef31cdff87a68f606a2c64a29ef2ef}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Mapping\+Bone@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Mapping\+Bone}!Store\+Default\+Local\+State@{Store\+Default\+Local\+State}}
+\index{Store\+Default\+Local\+State@{Store\+Default\+Local\+State}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Mapping\+Bone@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Mapping\+Bone}}
+\subsubsection{\texorpdfstring{Store\+Default\+Local\+State()}{StoreDefaultLocalState()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+I\+K\+Mapping\+Bone.\+Store\+Default\+Local\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 49 of file I\+K\+Mapping\+Bone.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_bone_ae4255d613a7c727e017fe21c55eb021f}\label{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_bone_ae4255d613a7c727e017fe21c55eb021f}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Mapping\+Bone@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Mapping\+Bone}!Write\+Pose@{Write\+Pose}}
+\index{Write\+Pose@{Write\+Pose}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Mapping\+Bone@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Mapping\+Bone}}
+\subsubsection{\texorpdfstring{Write\+Pose()}{WritePose()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+I\+K\+Mapping\+Bone.\+Write\+Pose (\begin{DoxyParamCaption}\item[{float}]{solver\+Weight }\end{DoxyParamCaption})}
+
+
+
+Definition at line 73 of file I\+K\+Mapping\+Bone.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_bone_a9d9f697b00a63ce7c5e5680d97cf8b5f}\label{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_bone_a9d9f697b00a63ce7c5e5680d97cf8b5f}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Mapping\+Bone@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Mapping\+Bone}!bone@{bone}}
+\index{bone@{bone}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Mapping\+Bone@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Mapping\+Bone}}
+\subsubsection{\texorpdfstring{bone}{bone}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Final\+I\+K.\+I\+K\+Mapping\+Bone.\+bone}
+
+
+
+The bone transform. 
+
+
+
+Definition at line 17 of file I\+K\+Mapping\+Bone.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_bone_a2d578028cb3d40fff8fdf8ef6d90a7e6}\label{class_root_motion_1_1_final_i_k_1_1_i_k_mapping_bone_a2d578028cb3d40fff8fdf8ef6d90a7e6}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Mapping\+Bone@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Mapping\+Bone}!maintain\+Rotation\+Weight@{maintain\+Rotation\+Weight}}
+\index{maintain\+Rotation\+Weight@{maintain\+Rotation\+Weight}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Mapping\+Bone@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Mapping\+Bone}}
+\subsubsection{\texorpdfstring{maintain\+Rotation\+Weight}{maintainRotationWeight}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+I\+K\+Mapping\+Bone.\+maintain\+Rotation\+Weight = 1f}
+
+
+
+The weight of maintaining the bone\textquotesingle{}s rotation after solver has finished. 
+
+
+
+Definition at line 23 of file I\+K\+Mapping\+Bone.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Plugins/\+Root\+Motion/\+Final\+I\+K/\+I\+K Solvers/\mbox{\hyperlink{_i_k_mapping_bone_8cs}{I\+K\+Mapping\+Bone.\+cs}}\end{DoxyCompactItemize}

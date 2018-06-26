@@ -1,0 +1,261 @@
+\hypertarget{class_lever}{}\section{Lever Class Reference}
+\label{class_lever}\index{Lever@{Lever}}
+Inheritance diagram for Lever\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.000000cm]{class_lever}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_lever_ad4664a40ec2e5b79f131462cdaffe2e6}{Switch\+Off}} ()
+\item 
+void \mbox{\hyperlink{class_lever_a6a6784337a703362735b8aefe6823fc9}{Switch\+On}} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_animal_8cs_a57d10208ebba781ae206546ada2002b6}{F\+A\+C\+I\+N\+G\+\_\+\+D\+IR}} \mbox{\hyperlink{class_lever_a948c5bd1e0375b4678efc859d8a5c436}{Direction}}
+\item 
+bool \mbox{\hyperlink{class_lever_af2383e630c7e08865af9311f7fb8cb2e}{Only\+Once}}
+\item 
+Unity\+Event \mbox{\hyperlink{class_lever_af3917ece96d129c91aa972d1ed478a1c}{On\+Switch\+On}}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_lever_af2c615a25c4a7296e38f5120173347c9}{On\+Start}} ()
+\item 
+override bool \mbox{\hyperlink{class_lever_a564e83f71f387279a5e6ef4c1617e990}{Check\+Detach}} ()
+\item 
+override void \mbox{\hyperlink{class_lever_a0a1c141e11547a71e93492bebbd045d7}{Do\+Interact}} (\mbox{\hyperlink{class_animal}{Animal}} caller)
+\item 
+override void \mbox{\hyperlink{class_lever_a951c61f78d4f24b33d4ceb7ac3d53efb}{On\+Update}} ()
+\item 
+virtual void \mbox{\hyperlink{class_lever_af15223c9c4a5fd08045bd4a7aca73351}{Do\+Switch\+Off}} ()
+\item 
+virtual void \mbox{\hyperlink{class_lever_a9941602be9b41c21f29d18050941aa68}{Do\+Switch\+On}} ()
+\item 
+override void \mbox{\hyperlink{class_lever_abe5f0492971af0f479a638b39ed6e9d9}{On\+Detach}} (\mbox{\hyperlink{class_animal}{Animal}} anim)
+\begin{DoxyCompactList}\small\item\em summary$>$Check if this object is attachable\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_lever_ae7619f913adb314011fac83c4f218db5}{Is\+On}}
+\item 
+bool \mbox{\hyperlink{class_lever_ae8882d10f3ab2572d162a6338e2ec36d}{triggered}}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+override bool \mbox{\hyperlink{class_lever_afe56ba98c4cdf20260b7152caab3f3d9}{Head\+Trigger\+Only}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 6 of file Lever.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_lever_a564e83f71f387279a5e6ef4c1617e990}\label{class_lever_a564e83f71f387279a5e6ef4c1617e990}} 
+\index{Lever@{Lever}!Check\+Detach@{Check\+Detach}}
+\index{Check\+Detach@{Check\+Detach}!Lever@{Lever}}
+\subsubsection{\texorpdfstring{Check\+Detach()}{CheckDetach()}}
+{\footnotesize\ttfamily override bool Lever.\+Check\+Detach (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_attachable_a5cd6ea1bf16c527c033e6f09681f84f8}{Attachable}}.
+
+
+
+Definition at line 25 of file Lever.\+cs.
+
+\mbox{\Hypertarget{class_lever_a0a1c141e11547a71e93492bebbd045d7}\label{class_lever_a0a1c141e11547a71e93492bebbd045d7}} 
+\index{Lever@{Lever}!Do\+Interact@{Do\+Interact}}
+\index{Do\+Interact@{Do\+Interact}!Lever@{Lever}}
+\subsubsection{\texorpdfstring{Do\+Interact()}{DoInteract()}}
+{\footnotesize\ttfamily override void Lever.\+Do\+Interact (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{caller }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_attachable_interact_a9b07a54f1dbb96777c4bd287dfe438e3}{Attachable\+Interact}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_lever_animated_a63d3742fe2e3b7597c7eecbc57ae7a0e}{Lever\+Animated}}.
+
+
+
+Definition at line 30 of file Lever.\+cs.
+
+\mbox{\Hypertarget{class_lever_af15223c9c4a5fd08045bd4a7aca73351}\label{class_lever_af15223c9c4a5fd08045bd4a7aca73351}} 
+\index{Lever@{Lever}!Do\+Switch\+Off@{Do\+Switch\+Off}}
+\index{Do\+Switch\+Off@{Do\+Switch\+Off}!Lever@{Lever}}
+\subsubsection{\texorpdfstring{Do\+Switch\+Off()}{DoSwitchOff()}}
+{\footnotesize\ttfamily virtual void Lever.\+Do\+Switch\+Off (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_lever_animated_a2b56274f9c38469d1bb76321b87dc397}{Lever\+Animated}}.
+
+
+
+Definition at line 69 of file Lever.\+cs.
+
+\mbox{\Hypertarget{class_lever_a9941602be9b41c21f29d18050941aa68}\label{class_lever_a9941602be9b41c21f29d18050941aa68}} 
+\index{Lever@{Lever}!Do\+Switch\+On@{Do\+Switch\+On}}
+\index{Do\+Switch\+On@{Do\+Switch\+On}!Lever@{Lever}}
+\subsubsection{\texorpdfstring{Do\+Switch\+On()}{DoSwitchOn()}}
+{\footnotesize\ttfamily virtual void Lever.\+Do\+Switch\+On (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_lever_animated_a2b655bf2b974e395ab4ffb343056c63d}{Lever\+Animated}}.
+
+
+
+Definition at line 75 of file Lever.\+cs.
+
+\mbox{\Hypertarget{class_lever_abe5f0492971af0f479a638b39ed6e9d9}\label{class_lever_abe5f0492971af0f479a638b39ed6e9d9}} 
+\index{Lever@{Lever}!On\+Detach@{On\+Detach}}
+\index{On\+Detach@{On\+Detach}!Lever@{Lever}}
+\subsubsection{\texorpdfstring{On\+Detach()}{OnDetach()}}
+{\footnotesize\ttfamily override void Lever.\+On\+Detach (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{animal }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+summary$>$Check if this object is attachable
+
+
+
+Reimplemented from \mbox{\hyperlink{class_attachable_abe7cf9d7930393610c7c9c4ae14b12d7}{Attachable}}.
+
+
+
+Definition at line 81 of file Lever.\+cs.
+
+\mbox{\Hypertarget{class_lever_af2c615a25c4a7296e38f5120173347c9}\label{class_lever_af2c615a25c4a7296e38f5120173347c9}} 
+\index{Lever@{Lever}!On\+Start@{On\+Start}}
+\index{On\+Start@{On\+Start}!Lever@{Lever}}
+\subsubsection{\texorpdfstring{On\+Start()}{OnStart()}}
+{\footnotesize\ttfamily override void Lever.\+On\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_attachable_a3c05c0b07b831881a7ab245057d34d30}{Attachable}}.
+
+
+
+Definition at line 16 of file Lever.\+cs.
+
+\mbox{\Hypertarget{class_lever_a951c61f78d4f24b33d4ceb7ac3d53efb}\label{class_lever_a951c61f78d4f24b33d4ceb7ac3d53efb}} 
+\index{Lever@{Lever}!On\+Update@{On\+Update}}
+\index{On\+Update@{On\+Update}!Lever@{Lever}}
+\subsubsection{\texorpdfstring{On\+Update()}{OnUpdate()}}
+{\footnotesize\ttfamily override void Lever.\+On\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_attachable_abb659a66efacd6fa09fa1d7125c7b5e6}{Attachable}}.
+
+
+
+Definition at line 49 of file Lever.\+cs.
+
+\mbox{\Hypertarget{class_lever_ad4664a40ec2e5b79f131462cdaffe2e6}\label{class_lever_ad4664a40ec2e5b79f131462cdaffe2e6}} 
+\index{Lever@{Lever}!Switch\+Off@{Switch\+Off}}
+\index{Switch\+Off@{Switch\+Off}!Lever@{Lever}}
+\subsubsection{\texorpdfstring{Switch\+Off()}{SwitchOff()}}
+{\footnotesize\ttfamily void Lever.\+Switch\+Off (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 66 of file Lever.\+cs.
+
+\mbox{\Hypertarget{class_lever_a6a6784337a703362735b8aefe6823fc9}\label{class_lever_a6a6784337a703362735b8aefe6823fc9}} 
+\index{Lever@{Lever}!Switch\+On@{Switch\+On}}
+\index{Switch\+On@{Switch\+On}!Lever@{Lever}}
+\subsubsection{\texorpdfstring{Switch\+On()}{SwitchOn()}}
+{\footnotesize\ttfamily void Lever.\+Switch\+On (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 67 of file Lever.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_lever_a948c5bd1e0375b4678efc859d8a5c436}\label{class_lever_a948c5bd1e0375b4678efc859d8a5c436}} 
+\index{Lever@{Lever}!Direction@{Direction}}
+\index{Direction@{Direction}!Lever@{Lever}}
+\subsubsection{\texorpdfstring{Direction}{Direction}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_animal_8cs_a57d10208ebba781ae206546ada2002b6}{F\+A\+C\+I\+N\+G\+\_\+\+D\+IR}} Lever.\+Direction}
+
+
+
+Definition at line 8 of file Lever.\+cs.
+
+\mbox{\Hypertarget{class_lever_ae7619f913adb314011fac83c4f218db5}\label{class_lever_ae7619f913adb314011fac83c4f218db5}} 
+\index{Lever@{Lever}!Is\+On@{Is\+On}}
+\index{Is\+On@{Is\+On}!Lever@{Lever}}
+\subsubsection{\texorpdfstring{Is\+On}{IsOn}}
+{\footnotesize\ttfamily bool Lever.\+Is\+On\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 13 of file Lever.\+cs.
+
+\mbox{\Hypertarget{class_lever_af2383e630c7e08865af9311f7fb8cb2e}\label{class_lever_af2383e630c7e08865af9311f7fb8cb2e}} 
+\index{Lever@{Lever}!Only\+Once@{Only\+Once}}
+\index{Only\+Once@{Only\+Once}!Lever@{Lever}}
+\subsubsection{\texorpdfstring{Only\+Once}{OnlyOnce}}
+{\footnotesize\ttfamily bool Lever.\+Only\+Once}
+
+
+
+Definition at line 9 of file Lever.\+cs.
+
+\mbox{\Hypertarget{class_lever_af3917ece96d129c91aa972d1ed478a1c}\label{class_lever_af3917ece96d129c91aa972d1ed478a1c}} 
+\index{Lever@{Lever}!On\+Switch\+On@{On\+Switch\+On}}
+\index{On\+Switch\+On@{On\+Switch\+On}!Lever@{Lever}}
+\subsubsection{\texorpdfstring{On\+Switch\+On}{OnSwitchOn}}
+{\footnotesize\ttfamily Unity\+Event Lever.\+On\+Switch\+On}
+
+
+
+Definition at line 10 of file Lever.\+cs.
+
+\mbox{\Hypertarget{class_lever_ae8882d10f3ab2572d162a6338e2ec36d}\label{class_lever_ae8882d10f3ab2572d162a6338e2ec36d}} 
+\index{Lever@{Lever}!triggered@{triggered}}
+\index{triggered@{triggered}!Lever@{Lever}}
+\subsubsection{\texorpdfstring{triggered}{triggered}}
+{\footnotesize\ttfamily bool Lever.\+triggered\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 14 of file Lever.\+cs.
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_lever_afe56ba98c4cdf20260b7152caab3f3d9}\label{class_lever_afe56ba98c4cdf20260b7152caab3f3d9}} 
+\index{Lever@{Lever}!Head\+Trigger\+Only@{Head\+Trigger\+Only}}
+\index{Head\+Trigger\+Only@{Head\+Trigger\+Only}!Lever@{Lever}}
+\subsubsection{\texorpdfstring{Head\+Trigger\+Only}{HeadTriggerOnly}}
+{\footnotesize\ttfamily override bool Lever.\+Head\+Trigger\+Only\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 11 of file Lever.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Interactables/\+Attachables/\mbox{\hyperlink{_lever_8cs}{Lever.\+cs}}\end{DoxyCompactItemize}

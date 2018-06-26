@@ -1,0 +1,221 @@
+\hypertarget{class_mono_interacter}{}\section{Mono\+Interacter Class Reference}
+\label{class_mono_interacter}\index{Mono\+Interacter@{Mono\+Interacter}}
+
+
+Input handler for singular objects  
+
+
+Inheritance diagram for Mono\+Interacter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_mono_interacter}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_mono_interacter_ac79722c1e38867f96166dbae403f0110}{Check\+Info}} (Input\+Control input, \mbox{\hyperlink{class_animal}{Animal}} caller)
+\begin{DoxyCompactList}\small\item\em Default simply returns true. Keys are already registered \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_mono_interacter_aa94f17988ac01fa0c8feac0406a775f0}{Get\+Distance}} (Vector3 point)
+\item 
+bool \mbox{\hyperlink{class_mono_interacter_adbdd4ad781e4fce595a14c2ee6258463}{Ignore\+Distance}} ()
+\begin{DoxyCompactList}\small\item\em summary$>$Get the distance from point. Used to check keypress\end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mono_interacter_ae732e07805c24cad447adf6218658f23}{Interact}} (\mbox{\hyperlink{class_animal}{Animal}} caller)
+\begin{DoxyCompactList}\small\item\em Called on a successful key (and possible distance) check occurred\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ Input\+Action $>$ \mbox{\hyperlink{class_mono_interacter_a29fdba9686647d0a6c83244a8c17973a}{Usable\+Keys}} = new List$<$Input\+Action$>$()
+\item 
+Transform \mbox{\hyperlink{class_mono_interacter_a311fa1a8d88a508851977760b6db955e}{Interact\+Point}}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual float \mbox{\hyperlink{class_mono_interacter_a3d36c682922d670329f90e5573e67c45}{Check\+Distance}} (Vector3 point)
+\begin{DoxyCompactList}\small\item\em Default checks the distance between {\itshape point}  and \mbox{\hyperlink{class_mono_interacter_a311fa1a8d88a508851977760b6db955e}{Interact\+Point}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mono_interacter_a704a1522a1fad421361e62c04161132f}{Keys\+To\+String}} ()
+\begin{DoxyCompactList}\small\item\em Loads \mbox{\hyperlink{class_mono_interacter_a29fdba9686647d0a6c83244a8c17973a}{Usable\+Keys}} into key\+Strings \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_mono_interacter_ae24d7fd0cab970a144df6fded900fb01}{Check\+Input}} (Input\+Control input, \mbox{\hyperlink{class_animal}{Animal}} caller)
+\item 
+virtual bool \mbox{\hyperlink{class_mono_interacter_af09c79465a1a2a721c8a841405e608fa}{Should\+Ignore\+Distance}} ()
+\item 
+abstract void \mbox{\hyperlink{class_mono_interacter_a707ff1aa57e76942005e27243ad1f296}{Do\+Interact}} (\mbox{\hyperlink{class_animal}{Animal}} caller)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_mono_interacter_afe9a65dfabee6f8d8e1fa56eb503fa38}{keys\+Registered}} = false
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Input handler for singular objects 
+
+
+
+Definition at line 9 of file Mono\+Interacter.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_mono_interacter_a3d36c682922d670329f90e5573e67c45}\label{class_mono_interacter_a3d36c682922d670329f90e5573e67c45}} 
+\index{Mono\+Interacter@{Mono\+Interacter}!Check\+Distance@{Check\+Distance}}
+\index{Check\+Distance@{Check\+Distance}!Mono\+Interacter@{Mono\+Interacter}}
+\subsubsection{\texorpdfstring{Check\+Distance()}{CheckDistance()}}
+{\footnotesize\ttfamily virtual float Mono\+Interacter.\+Check\+Distance (\begin{DoxyParamCaption}\item[{Vector3}]{point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Default checks the distance between {\itshape point}  and \mbox{\hyperlink{class_mono_interacter_a311fa1a8d88a508851977760b6db955e}{Interact\+Point}} 
+
+
+
+Definition at line 33 of file Mono\+Interacter.\+cs.
+
+\mbox{\Hypertarget{class_mono_interacter_ac79722c1e38867f96166dbae403f0110}\label{class_mono_interacter_ac79722c1e38867f96166dbae403f0110}} 
+\index{Mono\+Interacter@{Mono\+Interacter}!Check\+Info@{Check\+Info}}
+\index{Check\+Info@{Check\+Info}!Mono\+Interacter@{Mono\+Interacter}}
+\subsubsection{\texorpdfstring{Check\+Info()}{CheckInfo()}}
+{\footnotesize\ttfamily bool Mono\+Interacter.\+Check\+Info (\begin{DoxyParamCaption}\item[{Input\+Control}]{input,  }\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{caller }\end{DoxyParamCaption})}
+
+
+
+Default simply returns true. Keys are already registered 
+
+
+
+Implements \mbox{\hyperlink{interface_i_interactable_a5142ebbddd5d91a93da436941ad77d8e}{I\+Interactable}}.
+
+
+
+Definition at line 20 of file Mono\+Interacter.\+cs.
+
+\mbox{\Hypertarget{class_mono_interacter_ae24d7fd0cab970a144df6fded900fb01}\label{class_mono_interacter_ae24d7fd0cab970a144df6fded900fb01}} 
+\index{Mono\+Interacter@{Mono\+Interacter}!Check\+Input@{Check\+Input}}
+\index{Check\+Input@{Check\+Input}!Mono\+Interacter@{Mono\+Interacter}}
+\subsubsection{\texorpdfstring{Check\+Input()}{CheckInput()}}
+{\footnotesize\ttfamily virtual bool Mono\+Interacter.\+Check\+Input (\begin{DoxyParamCaption}\item[{Input\+Control}]{input,  }\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{caller }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 62 of file Mono\+Interacter.\+cs.
+
+\mbox{\Hypertarget{class_mono_interacter_a707ff1aa57e76942005e27243ad1f296}\label{class_mono_interacter_a707ff1aa57e76942005e27243ad1f296}} 
+\index{Mono\+Interacter@{Mono\+Interacter}!Do\+Interact@{Do\+Interact}}
+\index{Do\+Interact@{Do\+Interact}!Mono\+Interacter@{Mono\+Interacter}}
+\subsubsection{\texorpdfstring{Do\+Interact()}{DoInteract()}}
+{\footnotesize\ttfamily abstract void Mono\+Interacter.\+Do\+Interact (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{caller }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+\mbox{\Hypertarget{class_mono_interacter_aa94f17988ac01fa0c8feac0406a775f0}\label{class_mono_interacter_aa94f17988ac01fa0c8feac0406a775f0}} 
+\index{Mono\+Interacter@{Mono\+Interacter}!Get\+Distance@{Get\+Distance}}
+\index{Get\+Distance@{Get\+Distance}!Mono\+Interacter@{Mono\+Interacter}}
+\subsubsection{\texorpdfstring{Get\+Distance()}{GetDistance()}}
+{\footnotesize\ttfamily float Mono\+Interacter.\+Get\+Distance (\begin{DoxyParamCaption}\item[{Vector3}]{point }\end{DoxyParamCaption})}
+
+
+
+Implements \mbox{\hyperlink{interface_i_interactable_acde3047364ffe9a4ed107513feb21675}{I\+Interactable}}.
+
+
+
+Definition at line 25 of file Mono\+Interacter.\+cs.
+
+\mbox{\Hypertarget{class_mono_interacter_adbdd4ad781e4fce595a14c2ee6258463}\label{class_mono_interacter_adbdd4ad781e4fce595a14c2ee6258463}} 
+\index{Mono\+Interacter@{Mono\+Interacter}!Ignore\+Distance@{Ignore\+Distance}}
+\index{Ignore\+Distance@{Ignore\+Distance}!Mono\+Interacter@{Mono\+Interacter}}
+\subsubsection{\texorpdfstring{Ignore\+Distance()}{IgnoreDistance()}}
+{\footnotesize\ttfamily bool Mono\+Interacter.\+Ignore\+Distance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+summary$>$Get the distance from point. Used to check keypress
+
+
+
+Implements \mbox{\hyperlink{interface_i_interactable_ad184024a0cc6bce38ebcd77c0126fcc5}{I\+Interactable}}.
+
+
+
+Definition at line 41 of file Mono\+Interacter.\+cs.
+
+\mbox{\Hypertarget{class_mono_interacter_ae732e07805c24cad447adf6218658f23}\label{class_mono_interacter_ae732e07805c24cad447adf6218658f23}} 
+\index{Mono\+Interacter@{Mono\+Interacter}!Interact@{Interact}}
+\index{Interact@{Interact}!Mono\+Interacter@{Mono\+Interacter}}
+\subsubsection{\texorpdfstring{Interact()}{Interact()}}
+{\footnotesize\ttfamily void Mono\+Interacter.\+Interact (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{caller }\end{DoxyParamCaption})}
+
+
+
+Called on a successful key (and possible distance) check occurred
+
+
+
+Implements \mbox{\hyperlink{interface_i_interactable_ae38fb77e97bc1066db045b32db647681}{I\+Interactable}}.
+
+
+
+Definition at line 46 of file Mono\+Interacter.\+cs.
+
+\mbox{\Hypertarget{class_mono_interacter_a704a1522a1fad421361e62c04161132f}\label{class_mono_interacter_a704a1522a1fad421361e62c04161132f}} 
+\index{Mono\+Interacter@{Mono\+Interacter}!Keys\+To\+String@{Keys\+To\+String}}
+\index{Keys\+To\+String@{Keys\+To\+String}!Mono\+Interacter@{Mono\+Interacter}}
+\subsubsection{\texorpdfstring{Keys\+To\+String()}{KeysToString()}}
+{\footnotesize\ttfamily void Mono\+Interacter.\+Keys\+To\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Loads \mbox{\hyperlink{class_mono_interacter_a29fdba9686647d0a6c83244a8c17973a}{Usable\+Keys}} into key\+Strings 
+
+
+
+Definition at line 54 of file Mono\+Interacter.\+cs.
+
+\mbox{\Hypertarget{class_mono_interacter_af09c79465a1a2a721c8a841405e608fa}\label{class_mono_interacter_af09c79465a1a2a721c8a841405e608fa}} 
+\index{Mono\+Interacter@{Mono\+Interacter}!Should\+Ignore\+Distance@{Should\+Ignore\+Distance}}
+\index{Should\+Ignore\+Distance@{Should\+Ignore\+Distance}!Mono\+Interacter@{Mono\+Interacter}}
+\subsubsection{\texorpdfstring{Should\+Ignore\+Distance()}{ShouldIgnoreDistance()}}
+{\footnotesize\ttfamily virtual bool Mono\+Interacter.\+Should\+Ignore\+Distance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 63 of file Mono\+Interacter.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_mono_interacter_a311fa1a8d88a508851977760b6db955e}\label{class_mono_interacter_a311fa1a8d88a508851977760b6db955e}} 
+\index{Mono\+Interacter@{Mono\+Interacter}!Interact\+Point@{Interact\+Point}}
+\index{Interact\+Point@{Interact\+Point}!Mono\+Interacter@{Mono\+Interacter}}
+\subsubsection{\texorpdfstring{Interact\+Point}{InteractPoint}}
+{\footnotesize\ttfamily Transform Mono\+Interacter.\+Interact\+Point}
+
+
+
+Definition at line 12 of file Mono\+Interacter.\+cs.
+
+\mbox{\Hypertarget{class_mono_interacter_afe9a65dfabee6f8d8e1fa56eb503fa38}\label{class_mono_interacter_afe9a65dfabee6f8d8e1fa56eb503fa38}} 
+\index{Mono\+Interacter@{Mono\+Interacter}!keys\+Registered@{keys\+Registered}}
+\index{keys\+Registered@{keys\+Registered}!Mono\+Interacter@{Mono\+Interacter}}
+\subsubsection{\texorpdfstring{keys\+Registered}{keysRegistered}}
+{\footnotesize\ttfamily bool Mono\+Interacter.\+keys\+Registered = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 14 of file Mono\+Interacter.\+cs.
+
+\mbox{\Hypertarget{class_mono_interacter_a29fdba9686647d0a6c83244a8c17973a}\label{class_mono_interacter_a29fdba9686647d0a6c83244a8c17973a}} 
+\index{Mono\+Interacter@{Mono\+Interacter}!Usable\+Keys@{Usable\+Keys}}
+\index{Usable\+Keys@{Usable\+Keys}!Mono\+Interacter@{Mono\+Interacter}}
+\subsubsection{\texorpdfstring{Usable\+Keys}{UsableKeys}}
+{\footnotesize\ttfamily List$<$Input\+Action$>$ Mono\+Interacter.\+Usable\+Keys = new List$<$Input\+Action$>$()}
+
+
+
+Definition at line 11 of file Mono\+Interacter.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Interactables/\mbox{\hyperlink{_mono_interacter_8cs}{Mono\+Interacter.\+cs}}\end{DoxyCompactItemize}

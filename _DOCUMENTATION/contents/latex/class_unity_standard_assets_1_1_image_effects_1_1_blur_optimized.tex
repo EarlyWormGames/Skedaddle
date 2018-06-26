@@ -1,0 +1,163 @@
+\hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_blur_optimized}{}\section{Unity\+Standard\+Assets.\+Image\+Effects.\+Blur\+Optimized Class Reference}
+\label{class_unity_standard_assets_1_1_image_effects_1_1_blur_optimized}\index{Unity\+Standard\+Assets.\+Image\+Effects.\+Blur\+Optimized@{Unity\+Standard\+Assets.\+Image\+Effects.\+Blur\+Optimized}}
+Inheritance diagram for Unity\+Standard\+Assets.\+Image\+Effects.\+Blur\+Optimized\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_unity_standard_assets_1_1_image_effects_1_1_blur_optimized}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_blur_optimized_a5e014aebbf344dbbec6748cd537b0790}{Blur\+Type}} \{ \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_blur_optimized_a5e014aebbf344dbbec6748cd537b0790acf52c93fe9c4abb6723ffded2ad3d603}{Blur\+Type.\+Standard\+Gauss}} = 0, 
+\mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_blur_optimized_a5e014aebbf344dbbec6748cd537b0790ae495e7c6368fbaa74bee67eb9c985c19}{Blur\+Type.\+Sgx\+Gauss}} = 1
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override bool \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_blur_optimized_a5d4870a78379d6dd5d74afcf5dbd79e5}{Check\+Resources}} ()
+\item 
+void \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_blur_optimized_acf5c55ca6e567831664893b623c5d446}{On\+Disable}} ()
+\item 
+void \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_blur_optimized_abec08a4c7ce57545389426ca41a6491d}{On\+Render\+Image}} (Render\+Texture source, Render\+Texture destination)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_blur_optimized_a19e07e0ba50a164698d1b78884dff182}{downsample}} = 1
+\item 
+float \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_blur_optimized_a76eb4bf88962770b9791b64df3c60408}{blur\+Size}} = 3.\+0f
+\item 
+int \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_blur_optimized_acc965e0aba51c9917b577449e13eb61f}{blur\+Iterations}} = 2
+\item 
+\mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_blur_optimized_a5e014aebbf344dbbec6748cd537b0790}{Blur\+Type}} \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_blur_optimized_a65821cd7517fbb96a9333b9a14df967d}{blur\+Type}} = \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_blur_optimized_a5e014aebbf344dbbec6748cd537b0790acf52c93fe9c4abb6723ffded2ad3d603}{Blur\+Type.\+Standard\+Gauss}}
+\item 
+Shader \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_blur_optimized_ae2dcb0d61dd83dfca75a9fa3676d6a3c}{blur\+Shader}} = null
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 9 of file Blur\+Optimized.\+cs.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_blur_optimized_a5e014aebbf344dbbec6748cd537b0790}\label{class_unity_standard_assets_1_1_image_effects_1_1_blur_optimized_a5e014aebbf344dbbec6748cd537b0790}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Blur\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Blur\+Optimized}!Blur\+Type@{Blur\+Type}}
+\index{Blur\+Type@{Blur\+Type}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Blur\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Blur\+Optimized}}
+\subsubsection{\texorpdfstring{Blur\+Type}{BlurType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_blur_optimized_a5e014aebbf344dbbec6748cd537b0790}{Unity\+Standard\+Assets.\+Image\+Effects.\+Blur\+Optimized.\+Blur\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Standard\+Gauss@{Standard\+Gauss}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Blur\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Blur\+Optimized}}\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Blur\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Blur\+Optimized}!Standard\+Gauss@{Standard\+Gauss}}}\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_blur_optimized_a5e014aebbf344dbbec6748cd537b0790acf52c93fe9c4abb6723ffded2ad3d603}\label{class_unity_standard_assets_1_1_image_effects_1_1_blur_optimized_a5e014aebbf344dbbec6748cd537b0790acf52c93fe9c4abb6723ffded2ad3d603}} 
+Standard\+Gauss&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Sgx\+Gauss@{Sgx\+Gauss}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Blur\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Blur\+Optimized}}\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Blur\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Blur\+Optimized}!Sgx\+Gauss@{Sgx\+Gauss}}}\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_blur_optimized_a5e014aebbf344dbbec6748cd537b0790ae495e7c6368fbaa74bee67eb9c985c19}\label{class_unity_standard_assets_1_1_image_effects_1_1_blur_optimized_a5e014aebbf344dbbec6748cd537b0790ae495e7c6368fbaa74bee67eb9c985c19}} 
+Sgx\+Gauss&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 15 of file Blur\+Optimized.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_blur_optimized_a5d4870a78379d6dd5d74afcf5dbd79e5}\label{class_unity_standard_assets_1_1_image_effects_1_1_blur_optimized_a5d4870a78379d6dd5d74afcf5dbd79e5}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Blur\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Blur\+Optimized}!Check\+Resources@{Check\+Resources}}
+\index{Check\+Resources@{Check\+Resources}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Blur\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Blur\+Optimized}}
+\subsubsection{\texorpdfstring{Check\+Resources()}{CheckResources()}}
+{\footnotesize\ttfamily override bool Unity\+Standard\+Assets.\+Image\+Effects.\+Blur\+Optimized.\+Check\+Resources (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_post_effects_base_a8866612b25b7158b932efd3b832188f8}{Unity\+Standard\+Assets.\+Image\+Effects.\+Post\+Effects\+Base}}.
+
+
+
+Definition at line 32 of file Blur\+Optimized.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_blur_optimized_acf5c55ca6e567831664893b623c5d446}\label{class_unity_standard_assets_1_1_image_effects_1_1_blur_optimized_acf5c55ca6e567831664893b623c5d446}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Blur\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Blur\+Optimized}!On\+Disable@{On\+Disable}}
+\index{On\+Disable@{On\+Disable}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Blur\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Blur\+Optimized}}
+\subsubsection{\texorpdfstring{On\+Disable()}{OnDisable()}}
+{\footnotesize\ttfamily void Unity\+Standard\+Assets.\+Image\+Effects.\+Blur\+Optimized.\+On\+Disable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 42 of file Blur\+Optimized.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_blur_optimized_abec08a4c7ce57545389426ca41a6491d}\label{class_unity_standard_assets_1_1_image_effects_1_1_blur_optimized_abec08a4c7ce57545389426ca41a6491d}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Blur\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Blur\+Optimized}!On\+Render\+Image@{On\+Render\+Image}}
+\index{On\+Render\+Image@{On\+Render\+Image}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Blur\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Blur\+Optimized}}
+\subsubsection{\texorpdfstring{On\+Render\+Image()}{OnRenderImage()}}
+{\footnotesize\ttfamily void Unity\+Standard\+Assets.\+Image\+Effects.\+Blur\+Optimized.\+On\+Render\+Image (\begin{DoxyParamCaption}\item[{Render\+Texture}]{source,  }\item[{Render\+Texture}]{destination }\end{DoxyParamCaption})}
+
+
+
+Definition at line 47 of file Blur\+Optimized.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_blur_optimized_acc965e0aba51c9917b577449e13eb61f}\label{class_unity_standard_assets_1_1_image_effects_1_1_blur_optimized_acc965e0aba51c9917b577449e13eb61f}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Blur\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Blur\+Optimized}!blur\+Iterations@{blur\+Iterations}}
+\index{blur\+Iterations@{blur\+Iterations}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Blur\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Blur\+Optimized}}
+\subsubsection{\texorpdfstring{blur\+Iterations}{blurIterations}}
+{\footnotesize\ttfamily int Unity\+Standard\+Assets.\+Image\+Effects.\+Blur\+Optimized.\+blur\+Iterations = 2}
+
+
+
+Definition at line 24 of file Blur\+Optimized.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_blur_optimized_ae2dcb0d61dd83dfca75a9fa3676d6a3c}\label{class_unity_standard_assets_1_1_image_effects_1_1_blur_optimized_ae2dcb0d61dd83dfca75a9fa3676d6a3c}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Blur\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Blur\+Optimized}!blur\+Shader@{blur\+Shader}}
+\index{blur\+Shader@{blur\+Shader}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Blur\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Blur\+Optimized}}
+\subsubsection{\texorpdfstring{blur\+Shader}{blurShader}}
+{\footnotesize\ttfamily Shader Unity\+Standard\+Assets.\+Image\+Effects.\+Blur\+Optimized.\+blur\+Shader = null}
+
+
+
+Definition at line 28 of file Blur\+Optimized.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_blur_optimized_a76eb4bf88962770b9791b64df3c60408}\label{class_unity_standard_assets_1_1_image_effects_1_1_blur_optimized_a76eb4bf88962770b9791b64df3c60408}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Blur\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Blur\+Optimized}!blur\+Size@{blur\+Size}}
+\index{blur\+Size@{blur\+Size}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Blur\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Blur\+Optimized}}
+\subsubsection{\texorpdfstring{blur\+Size}{blurSize}}
+{\footnotesize\ttfamily float Unity\+Standard\+Assets.\+Image\+Effects.\+Blur\+Optimized.\+blur\+Size = 3.\+0f}
+
+
+
+Definition at line 21 of file Blur\+Optimized.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_blur_optimized_a65821cd7517fbb96a9333b9a14df967d}\label{class_unity_standard_assets_1_1_image_effects_1_1_blur_optimized_a65821cd7517fbb96a9333b9a14df967d}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Blur\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Blur\+Optimized}!blur\+Type@{blur\+Type}}
+\index{blur\+Type@{blur\+Type}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Blur\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Blur\+Optimized}}
+\subsubsection{\texorpdfstring{blur\+Type}{blurType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_blur_optimized_a5e014aebbf344dbbec6748cd537b0790}{Blur\+Type}} Unity\+Standard\+Assets.\+Image\+Effects.\+Blur\+Optimized.\+blur\+Type = \mbox{\hyperlink{class_unity_standard_assets_1_1_image_effects_1_1_blur_optimized_a5e014aebbf344dbbec6748cd537b0790acf52c93fe9c4abb6723ffded2ad3d603}{Blur\+Type.\+Standard\+Gauss}}}
+
+
+
+Definition at line 26 of file Blur\+Optimized.\+cs.
+
+\mbox{\Hypertarget{class_unity_standard_assets_1_1_image_effects_1_1_blur_optimized_a19e07e0ba50a164698d1b78884dff182}\label{class_unity_standard_assets_1_1_image_effects_1_1_blur_optimized_a19e07e0ba50a164698d1b78884dff182}} 
+\index{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Blur\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Blur\+Optimized}!downsample@{downsample}}
+\index{downsample@{downsample}!Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Blur\+Optimized@{Unity\+Standard\+Assets\+::\+Image\+Effects\+::\+Blur\+Optimized}}
+\subsubsection{\texorpdfstring{downsample}{downsample}}
+{\footnotesize\ttfamily int Unity\+Standard\+Assets.\+Image\+Effects.\+Blur\+Optimized.\+downsample = 1}
+
+
+
+Definition at line 13 of file Blur\+Optimized.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Standard Assets/\+Effects/\+Image\+Effects/\+Scripts/\mbox{\hyperlink{_blur_optimized_8cs}{Blur\+Optimized.\+cs}}\end{DoxyCompactItemize}

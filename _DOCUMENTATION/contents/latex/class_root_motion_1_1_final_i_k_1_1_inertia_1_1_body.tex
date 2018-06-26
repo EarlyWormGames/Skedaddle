@@ -1,0 +1,134 @@
+\hypertarget{class_root_motion_1_1_final_i_k_1_1_inertia_1_1_body}{}\section{Root\+Motion.\+Final\+I\+K.\+Inertia.\+Body Class Reference}
+\label{class_root_motion_1_1_final_i_k_1_1_inertia_1_1_body}\index{Root\+Motion.\+Final\+I\+K.\+Inertia.\+Body@{Root\+Motion.\+Final\+I\+K.\+Inertia.\+Body}}
+
+
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_inertia_1_1_body}{Body}} is just following it\textquotesingle{}s transform in a lazy and bouncy way.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_inertia_1_1_body_1_1_effector_link}{Effector\+Link}}
+\begin{DoxyCompactList}\small\item\em Linking this to an effector \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_inertia_1_1_body_a801423a6f567439c5d3d8e133f6c7bb6}{Reset}} ()
+\item 
+void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_inertia_1_1_body_ade2cd8542554e3f678dda6a746742c26}{Update}} (\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped}{I\+K\+Solver\+Full\+Body\+Biped}} solver, float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_offset_modifier_a3a2cd2134e8a197e6a77b48fcf9aa5d4}{weight}}, float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_offset_modifier_ac5aeb27ca30313e6791867cbd4109940}{delta\+Time}})
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Transform \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_inertia_1_1_body_a091d2f617b503e98752f8da42b4331b1}{transform}}
+\item 
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_inertia_1_1_body_1_1_effector_link}{Effector\+Link}} \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_inertia_1_1_body_a003d4260f0c55128c2f4883b934c0f4f}{effector\+Links}}
+\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_inertia_1_1_body_a6c85a65f736e7006a4be07b29315022b}{speed}} = 10f
+\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_inertia_1_1_body_a1246408c23da6f4cd2661600e2296f12}{acceleration}} = 3f
+\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_inertia_1_1_body_a691db5d3e9a7941d864dc24289c8edd3}{match\+Velocity}}
+\item 
+float \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_inertia_1_1_body_a382d01159b6285e7aaee7085031ccb21}{gravity}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_inertia_1_1_body}{Body}} is just following it\textquotesingle{}s transform in a lazy and bouncy way. 
+
+
+
+Definition at line 15 of file Inertia.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_inertia_1_1_body_a801423a6f567439c5d3d8e133f6c7bb6}\label{class_root_motion_1_1_final_i_k_1_1_inertia_1_1_body_a801423a6f567439c5d3d8e133f6c7bb6}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Inertia\+::\+Body@{Root\+Motion\+::\+Final\+I\+K\+::\+Inertia\+::\+Body}!Reset@{Reset}}
+\index{Reset@{Reset}!Root\+Motion\+::\+Final\+I\+K\+::\+Inertia\+::\+Body@{Root\+Motion\+::\+Final\+I\+K\+::\+Inertia\+::\+Body}}
+\subsubsection{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+Inertia.\+Body.\+Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 48 of file Inertia.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_inertia_1_1_body_ade2cd8542554e3f678dda6a746742c26}\label{class_root_motion_1_1_final_i_k_1_1_inertia_1_1_body_ade2cd8542554e3f678dda6a746742c26}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Inertia\+::\+Body@{Root\+Motion\+::\+Final\+I\+K\+::\+Inertia\+::\+Body}!Update@{Update}}
+\index{Update@{Update}!Root\+Motion\+::\+Final\+I\+K\+::\+Inertia\+::\+Body@{Root\+Motion\+::\+Final\+I\+K\+::\+Inertia\+::\+Body}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Root\+Motion.\+Final\+I\+K.\+Inertia.\+Body.\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_solver_full_body_biped}{I\+K\+Solver\+Full\+Body\+Biped}}}]{solver,  }\item[{float}]{weight,  }\item[{float}]{delta\+Time }\end{DoxyParamCaption})}
+
+
+
+Definition at line 56 of file Inertia.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_inertia_1_1_body_a1246408c23da6f4cd2661600e2296f12}\label{class_root_motion_1_1_final_i_k_1_1_inertia_1_1_body_a1246408c23da6f4cd2661600e2296f12}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Inertia\+::\+Body@{Root\+Motion\+::\+Final\+I\+K\+::\+Inertia\+::\+Body}!acceleration@{acceleration}}
+\index{acceleration@{acceleration}!Root\+Motion\+::\+Final\+I\+K\+::\+Inertia\+::\+Body@{Root\+Motion\+::\+Final\+I\+K\+::\+Inertia\+::\+Body}}
+\subsubsection{\texorpdfstring{acceleration}{acceleration}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+Inertia.\+Body.\+acceleration = 3f}
+
+
+
+Definition at line 35 of file Inertia.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_inertia_1_1_body_a003d4260f0c55128c2f4883b934c0f4f}\label{class_root_motion_1_1_final_i_k_1_1_inertia_1_1_body_a003d4260f0c55128c2f4883b934c0f4f}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Inertia\+::\+Body@{Root\+Motion\+::\+Final\+I\+K\+::\+Inertia\+::\+Body}!effector\+Links@{effector\+Links}}
+\index{effector\+Links@{effector\+Links}!Root\+Motion\+::\+Final\+I\+K\+::\+Inertia\+::\+Body@{Root\+Motion\+::\+Final\+I\+K\+::\+Inertia\+::\+Body}}
+\subsubsection{\texorpdfstring{effector\+Links}{effectorLinks}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_inertia_1_1_body_1_1_effector_link}{Effector\+Link}} \mbox{[}$\,$\mbox{]} Root\+Motion.\+Final\+I\+K.\+Inertia.\+Body.\+effector\+Links}
+
+
+
+Definition at line 31 of file Inertia.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_inertia_1_1_body_a382d01159b6285e7aaee7085031ccb21}\label{class_root_motion_1_1_final_i_k_1_1_inertia_1_1_body_a382d01159b6285e7aaee7085031ccb21}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Inertia\+::\+Body@{Root\+Motion\+::\+Final\+I\+K\+::\+Inertia\+::\+Body}!gravity@{gravity}}
+\index{gravity@{gravity}!Root\+Motion\+::\+Final\+I\+K\+::\+Inertia\+::\+Body@{Root\+Motion\+::\+Final\+I\+K\+::\+Inertia\+::\+Body}}
+\subsubsection{\texorpdfstring{gravity}{gravity}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+Inertia.\+Body.\+gravity}
+
+
+
+Definition at line 39 of file Inertia.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_inertia_1_1_body_a691db5d3e9a7941d864dc24289c8edd3}\label{class_root_motion_1_1_final_i_k_1_1_inertia_1_1_body_a691db5d3e9a7941d864dc24289c8edd3}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Inertia\+::\+Body@{Root\+Motion\+::\+Final\+I\+K\+::\+Inertia\+::\+Body}!match\+Velocity@{match\+Velocity}}
+\index{match\+Velocity@{match\+Velocity}!Root\+Motion\+::\+Final\+I\+K\+::\+Inertia\+::\+Body@{Root\+Motion\+::\+Final\+I\+K\+::\+Inertia\+::\+Body}}
+\subsubsection{\texorpdfstring{match\+Velocity}{matchVelocity}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+Inertia.\+Body.\+match\+Velocity}
+
+
+
+Definition at line 37 of file Inertia.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_inertia_1_1_body_a6c85a65f736e7006a4be07b29315022b}\label{class_root_motion_1_1_final_i_k_1_1_inertia_1_1_body_a6c85a65f736e7006a4be07b29315022b}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Inertia\+::\+Body@{Root\+Motion\+::\+Final\+I\+K\+::\+Inertia\+::\+Body}!speed@{speed}}
+\index{speed@{speed}!Root\+Motion\+::\+Final\+I\+K\+::\+Inertia\+::\+Body@{Root\+Motion\+::\+Final\+I\+K\+::\+Inertia\+::\+Body}}
+\subsubsection{\texorpdfstring{speed}{speed}}
+{\footnotesize\ttfamily float Root\+Motion.\+Final\+I\+K.\+Inertia.\+Body.\+speed = 10f}
+
+
+
+Definition at line 33 of file Inertia.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_inertia_1_1_body_a091d2f617b503e98752f8da42b4331b1}\label{class_root_motion_1_1_final_i_k_1_1_inertia_1_1_body_a091d2f617b503e98752f8da42b4331b1}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+Inertia\+::\+Body@{Root\+Motion\+::\+Final\+I\+K\+::\+Inertia\+::\+Body}!transform@{transform}}
+\index{transform@{transform}!Root\+Motion\+::\+Final\+I\+K\+::\+Inertia\+::\+Body@{Root\+Motion\+::\+Final\+I\+K\+::\+Inertia\+::\+Body}}
+\subsubsection{\texorpdfstring{transform}{transform}}
+{\footnotesize\ttfamily Transform Root\+Motion.\+Final\+I\+K.\+Inertia.\+Body.\+transform}
+
+
+
+Definition at line 29 of file Inertia.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Plugins/\+Root\+Motion/\+Final\+I\+K/\+Tools/\mbox{\hyperlink{_inertia_8cs}{Inertia.\+cs}}\end{DoxyCompactItemize}

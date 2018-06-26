@@ -1,0 +1,163 @@
+\hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_inspector}{}\section{Root\+Motion.\+Final\+I\+K.\+I\+K\+Inspector Class Reference}
+\label{class_root_motion_1_1_final_i_k_1_1_i_k_inspector}\index{Root\+Motion.\+Final\+I\+K.\+I\+K\+Inspector@{Root\+Motion.\+Final\+I\+K.\+I\+K\+Inspector}}
+Inheritance diagram for Root\+Motion.\+Final\+I\+K.\+I\+K\+Inspector\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=10.000000cm]{class_root_motion_1_1_final_i_k_1_1_i_k_inspector}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_inspector_ab0e6409806547537f952f3cdadb3b9d9}{On\+Inspector\+G\+UI}} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+abstract void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_inspector_a6a32ab00e4234074b64acfebb4945153}{Add\+Inspector}} ()
+\item 
+abstract Mono\+Behaviour \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_inspector_a4c4528d5f5ce9af9e30c049138a5a5ca}{Get\+Mono\+Behaviour}} (out int execution\+Order)
+\item 
+virtual void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_inspector_a2909376aa17c40b7d7577761165d1c67}{On\+Apply\+Modified\+Properties}} ()
+\item 
+virtual void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_inspector_a462bc6acec264d59597f3c6a211f179f}{On\+Enable\+Virtual}} ()
+\item 
+virtual void \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_inspector_aeebe6bda6ad5ac9c1ee0fae830259c3b}{Add\+Warning\+Box}} (string message)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Serialized\+Property \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_inspector_a23d050c4ae7cb036f580a9dc9bc8763b}{solver}}
+\item 
+\mbox{\hyperlink{struct_root_motion_1_1_serialized_content}{Serialized\+Content}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_inspector_a9740af7bf75f6214f6d2963834f440d5}{time\+Step}}
+\item 
+\mbox{\hyperlink{struct_root_motion_1_1_serialized_content}{Serialized\+Content}} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_inspector_a1602fc96b8299816f6f55de96c6c9396}{fix\+Transforms}}
+\item 
+\mbox{\hyperlink{struct_root_motion_1_1_serialized_content}{Serialized\+Content}} \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_i_k_inspector_a1031a72559f76bb44e3c7f66a56207b9}{content}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 10 of file I\+K\+Inspector.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_inspector_a6a32ab00e4234074b64acfebb4945153}\label{class_root_motion_1_1_final_i_k_1_1_i_k_inspector_a6a32ab00e4234074b64acfebb4945153}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Inspector@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Inspector}!Add\+Inspector@{Add\+Inspector}}
+\index{Add\+Inspector@{Add\+Inspector}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Inspector@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Inspector}}
+\subsubsection{\texorpdfstring{Add\+Inspector()}{AddInspector()}}
+{\footnotesize\ttfamily abstract void Root\+Motion.\+Final\+I\+K.\+I\+K\+Inspector.\+Add\+Inspector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_full_body_biped_i_k_inspector_aa14e7b3a4ce0385ef84caa026651c6f8}{Root\+Motion.\+Final\+I\+K.\+Full\+Body\+Biped\+I\+K\+Inspector}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_aim_i_k_inspector_a38161555789256bb549928855fd891c1}{Root\+Motion.\+Final\+I\+K.\+Aim\+I\+K\+Inspector}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_c_c_d_i_k_inspector_ac6f83997f8ad1931a3e824852464f10e}{Root\+Motion.\+Final\+I\+K.\+C\+C\+D\+I\+K\+Inspector}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_a_b_r_i_k_inspector_a5c0631e80477937b171baee777b628b9}{Root\+Motion.\+Final\+I\+K.\+F\+A\+B\+R\+I\+K\+Inspector}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_limb_i_k_inspector_ae12aea2335d772442ac52560d85a702b}{Root\+Motion.\+Final\+I\+K.\+Limb\+I\+K\+Inspector}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_look_at_i_k_inspector_a8f3c86ba133bbbbda630b49ccec1fb7b}{Root\+Motion.\+Final\+I\+K.\+Look\+At\+I\+K\+Inspector}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_trigonometric_i_k_inspector_a05d2542ef28ba5180b029c82502ed877}{Root\+Motion.\+Final\+I\+K.\+Trigonometric\+I\+K\+Inspector}}, and \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_a_b_r_i_k_root_inspector_ac2cb8badb18c83369ddf9bffef415a68}{Root\+Motion.\+Final\+I\+K.\+F\+A\+B\+R\+I\+K\+Root\+Inspector}}.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_inspector_aeebe6bda6ad5ac9c1ee0fae830259c3b}\label{class_root_motion_1_1_final_i_k_1_1_i_k_inspector_aeebe6bda6ad5ac9c1ee0fae830259c3b}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Inspector@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Inspector}!Add\+Warning\+Box@{Add\+Warning\+Box}}
+\index{Add\+Warning\+Box@{Add\+Warning\+Box}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Inspector@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Inspector}}
+\subsubsection{\texorpdfstring{Add\+Warning\+Box()}{AddWarningBox()}}
+{\footnotesize\ttfamily virtual void Root\+Motion.\+Final\+I\+K.\+I\+K\+Inspector.\+Add\+Warning\+Box (\begin{DoxyParamCaption}\item[{string}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 43 of file I\+K\+Inspector.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_inspector_a4c4528d5f5ce9af9e30c049138a5a5ca}\label{class_root_motion_1_1_final_i_k_1_1_i_k_inspector_a4c4528d5f5ce9af9e30c049138a5a5ca}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Inspector@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Inspector}!Get\+Mono\+Behaviour@{Get\+Mono\+Behaviour}}
+\index{Get\+Mono\+Behaviour@{Get\+Mono\+Behaviour}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Inspector@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Inspector}}
+\subsubsection{\texorpdfstring{Get\+Mono\+Behaviour()}{GetMonoBehaviour()}}
+{\footnotesize\ttfamily abstract Mono\+Behaviour Root\+Motion.\+Final\+I\+K.\+I\+K\+Inspector.\+Get\+Mono\+Behaviour (\begin{DoxyParamCaption}\item[{out int}]{execution\+Order }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_full_body_biped_i_k_inspector_a5eb8e15b2fa1f2aeb03c68c79eac9887}{Root\+Motion.\+Final\+I\+K.\+Full\+Body\+Biped\+I\+K\+Inspector}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_a_b_r_i_k_root_inspector_adbfccfa739bbac889779f0f728913138}{Root\+Motion.\+Final\+I\+K.\+F\+A\+B\+R\+I\+K\+Root\+Inspector}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_aim_i_k_inspector_a52c15b4c53fd1abe0ca8cafc3fe9bd2a}{Root\+Motion.\+Final\+I\+K.\+Aim\+I\+K\+Inspector}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_c_c_d_i_k_inspector_a2077a0326ba192d01ada269d2fbd4ab3}{Root\+Motion.\+Final\+I\+K.\+C\+C\+D\+I\+K\+Inspector}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_a_b_r_i_k_inspector_ab4f6ad50b690754771819f879a728646}{Root\+Motion.\+Final\+I\+K.\+F\+A\+B\+R\+I\+K\+Inspector}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_limb_i_k_inspector_a0ce61fd92732d883e1a8ea693e535756}{Root\+Motion.\+Final\+I\+K.\+Limb\+I\+K\+Inspector}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_look_at_i_k_inspector_a42e09d47ffaafec4efd8292dc4817182}{Root\+Motion.\+Final\+I\+K.\+Look\+At\+I\+K\+Inspector}}, and \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_trigonometric_i_k_inspector_a5480f458e1727afab24bb318e752aef8}{Root\+Motion.\+Final\+I\+K.\+Trigonometric\+I\+K\+Inspector}}.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_inspector_a2909376aa17c40b7d7577761165d1c67}\label{class_root_motion_1_1_final_i_k_1_1_i_k_inspector_a2909376aa17c40b7d7577761165d1c67}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Inspector@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Inspector}!On\+Apply\+Modified\+Properties@{On\+Apply\+Modified\+Properties}}
+\index{On\+Apply\+Modified\+Properties@{On\+Apply\+Modified\+Properties}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Inspector@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Inspector}}
+\subsubsection{\texorpdfstring{On\+Apply\+Modified\+Properties()}{OnApplyModifiedProperties()}}
+{\footnotesize\ttfamily virtual void Root\+Motion.\+Final\+I\+K.\+I\+K\+Inspector.\+On\+Apply\+Modified\+Properties (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_aim_i_k_inspector_a49f6b6386293ca03782ebd2b9394494e}{Root\+Motion.\+Final\+I\+K.\+Aim\+I\+K\+Inspector}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_c_c_d_i_k_inspector_a38d0e00d987c69c86bbb08fddc35336e}{Root\+Motion.\+Final\+I\+K.\+C\+C\+D\+I\+K\+Inspector}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_f_a_b_r_i_k_inspector_a6a86f10a812820a3857c7d9a0c21a1b9}{Root\+Motion.\+Final\+I\+K.\+F\+A\+B\+R\+I\+K\+Inspector}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_limb_i_k_inspector_a0811b1bc9ecabe082219a89830c086b2}{Root\+Motion.\+Final\+I\+K.\+Limb\+I\+K\+Inspector}}, \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_look_at_i_k_inspector_ad277b6a27244d6d7f71323ff324411a7}{Root\+Motion.\+Final\+I\+K.\+Look\+At\+I\+K\+Inspector}}, and \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_trigonometric_i_k_inspector_a164e4136ae40980590ea2d284d10a1e8}{Root\+Motion.\+Final\+I\+K.\+Trigonometric\+I\+K\+Inspector}}.
+
+
+
+Definition at line 19 of file I\+K\+Inspector.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_inspector_a462bc6acec264d59597f3c6a211f179f}\label{class_root_motion_1_1_final_i_k_1_1_i_k_inspector_a462bc6acec264d59597f3c6a211f179f}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Inspector@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Inspector}!On\+Enable\+Virtual@{On\+Enable\+Virtual}}
+\index{On\+Enable\+Virtual@{On\+Enable\+Virtual}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Inspector@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Inspector}}
+\subsubsection{\texorpdfstring{On\+Enable\+Virtual()}{OnEnableVirtual()}}
+{\footnotesize\ttfamily virtual void Root\+Motion.\+Final\+I\+K.\+I\+K\+Inspector.\+On\+Enable\+Virtual (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_root_motion_1_1_final_i_k_1_1_full_body_biped_i_k_inspector_aabfeb6f3917b1ba7fb58725b9ea11a3a}{Root\+Motion.\+Final\+I\+K.\+Full\+Body\+Biped\+I\+K\+Inspector}}.
+
+
+
+Definition at line 20 of file I\+K\+Inspector.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_inspector_ab0e6409806547537f952f3cdadb3b9d9}\label{class_root_motion_1_1_final_i_k_1_1_i_k_inspector_ab0e6409806547537f952f3cdadb3b9d9}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Inspector@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Inspector}!On\+Inspector\+G\+UI@{On\+Inspector\+G\+UI}}
+\index{On\+Inspector\+G\+UI@{On\+Inspector\+G\+UI}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Inspector@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Inspector}}
+\subsubsection{\texorpdfstring{On\+Inspector\+G\+U\+I()}{OnInspectorGUI()}}
+{\footnotesize\ttfamily override void Root\+Motion.\+Final\+I\+K.\+I\+K\+Inspector.\+On\+Inspector\+G\+UI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 53 of file I\+K\+Inspector.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_inspector_a1031a72559f76bb44e3c7f66a56207b9}\label{class_root_motion_1_1_final_i_k_1_1_i_k_inspector_a1031a72559f76bb44e3c7f66a56207b9}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Inspector@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Inspector}!content@{content}}
+\index{content@{content}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Inspector@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Inspector}}
+\subsubsection{\texorpdfstring{content}{content}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_root_motion_1_1_serialized_content}{Serialized\+Content}} \mbox{[}$\,$\mbox{]} Root\+Motion.\+Final\+I\+K.\+I\+K\+Inspector.\+content\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 18 of file I\+K\+Inspector.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_inspector_a1602fc96b8299816f6f55de96c6c9396}\label{class_root_motion_1_1_final_i_k_1_1_i_k_inspector_a1602fc96b8299816f6f55de96c6c9396}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Inspector@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Inspector}!fix\+Transforms@{fix\+Transforms}}
+\index{fix\+Transforms@{fix\+Transforms}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Inspector@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Inspector}}
+\subsubsection{\texorpdfstring{fix\+Transforms}{fixTransforms}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_root_motion_1_1_serialized_content}{Serialized\+Content}} Root\+Motion.\+Final\+I\+K.\+I\+K\+Inspector.\+fix\+Transforms\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 17 of file I\+K\+Inspector.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_inspector_a23d050c4ae7cb036f580a9dc9bc8763b}\label{class_root_motion_1_1_final_i_k_1_1_i_k_inspector_a23d050c4ae7cb036f580a9dc9bc8763b}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Inspector@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Inspector}!solver@{solver}}
+\index{solver@{solver}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Inspector@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Inspector}}
+\subsubsection{\texorpdfstring{solver}{solver}}
+{\footnotesize\ttfamily Serialized\+Property Root\+Motion.\+Final\+I\+K.\+I\+K\+Inspector.\+solver\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 15 of file I\+K\+Inspector.\+cs.
+
+\mbox{\Hypertarget{class_root_motion_1_1_final_i_k_1_1_i_k_inspector_a9740af7bf75f6214f6d2963834f440d5}\label{class_root_motion_1_1_final_i_k_1_1_i_k_inspector_a9740af7bf75f6214f6d2963834f440d5}} 
+\index{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Inspector@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Inspector}!time\+Step@{time\+Step}}
+\index{time\+Step@{time\+Step}!Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Inspector@{Root\+Motion\+::\+Final\+I\+K\+::\+I\+K\+Inspector}}
+\subsubsection{\texorpdfstring{time\+Step}{timeStep}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_root_motion_1_1_serialized_content}{Serialized\+Content}} Root\+Motion.\+Final\+I\+K.\+I\+K\+Inspector.\+time\+Step\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 16 of file I\+K\+Inspector.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Plugins/\+Editor/\+Root\+Motion/\+Final\+I\+K/\mbox{\hyperlink{_i_k_inspector_8cs}{I\+K\+Inspector.\+cs}}\end{DoxyCompactItemize}

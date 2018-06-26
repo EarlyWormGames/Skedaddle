@@ -1,0 +1,152 @@
+Aim\+IK solver is a modification of the C\+CD algorithm that rotates a hierarchy of bones to make a child Transform of that hierarchy aim at a target. It differs from the basic built-\/in Animator.\+Set\+Look\+At\+Position or the Look\+At\+IK functionality, because it is able to accurately aim transforms that are not aligned to the main axis of the hierarchy.
+
+Aim\+IK can produce very stabile and natural looking retargeting of character animation, it hence has great potential for use in weapon aiming systems. With Aim\+IK we are able to offset a single forward aiming pose or animation to aim at targets even almost behind the character. It is only the Quaternion singularity point at 180 degrees offset, where the solver can not know which way to turn the spine. Just like Look\+At\+IK, Aim\+IK provides a clamp\+Weight property to avoid problems with that singularity issue.
+
+Aim\+IK also works with rotation limits, however it is more prone to get jammed than other constrained solvers, should the chain be heavily constrained.
+
+Aim provides high accuracy at a very good speed, still it is necessary to keep in mind to maintain the target position at a safe distance from the aiming Transform. If distance to the target position is less than distance to the aiming Transform, the solver will try to roll in on itself and might be unable to produce a finite result.
+
+ {\bfseries Getting started\+:}
+\begin{DoxyItemize}
+\item Set up your character\textquotesingle{}s Animator/\+Animation to play an aiming forward animation/pose
+\item Add the Aim\+IK component to your character
+\item Assign the spine bones to \char`\"{}\+Bones\char`\"{} in the component, one by one in descending order (parents first).
+\item Assign the Aim Transform (the Transform that you want to aim at the target). It could be the gun, the hand bone or just an empty game object parented to the hand
+\item Make sure Axis represents the local axis of the Aim Transform that you want to be aimed at the target. For example if the blue (z) axis of a gun is pointing towards it\textquotesingle{}s barrel, you will need to set Axis to (0, 0, 1).
+\item Set weight to 1, press Play
+\item Move the target handle around in Scene View to see how Aim\+IK behaves
+\end{DoxyItemize}
+
+{\bfseries Component variables\+:}
+\begin{DoxyItemize}
+\item {\bfseries time\+Step} -\/ if zero, will update the solver in every Late\+Update(). Use this for chains that are animated. If $>$ 0, will be used as updating frequency so that the solver will reach its target in the same time on all machines
+\item {\bfseries fix\+Transforms} -\/ if true, will fix all the Transforms used by the solver to their initial state in each Update. This prevents potential problems with unanimated bones and animator culling with a small cost of performance
+\end{DoxyItemize}
+
+{\bfseries Solver variables\+:}
+\begin{DoxyItemize}
+\item {\bfseries target} -\/ the target Transform. If assigned, solver I\+K\+Position will be automatically set to the position of the target.
+\item {\bfseries pole\+Target} -\/ if assigned, will automatically set pole\+Position to the position of this Transform. I\+K\+Solver\+Aim.\+pole\+Position keeps another axis (pole\+Axis) of the Aim Transform oriented towards I\+K\+Solver\+Aim.\+pole\+Position.
+\item {\bfseries transform} -\/ (Aim Transform) the Transform that we want to aim at the I\+K\+Position (usually the gun or the flashlight, represented as the pink cone on the image above).
+\item {\bfseries axis} -\/ the local axis of the Aim Transform that you want to be aimed at the I\+K\+Position. For example if the blue (z) axis of a gun is pointing towards it\textquotesingle{}s barrel, you will need to set Axis to (0, 0, 1).
+\item {\bfseries pole\+Axis} -\/ the local axis of the Aim Transform that you want to keep oriented towards I\+K\+Solver\+Aim.\+pole\+Position
+\item {\bfseries weight} -\/ the solver weight for smoothly blending out the effect of the IK
+\item {\bfseries pole\+Weight} -\/ the weight of keeping the pole\+Axis of the Aim\+Transform oriented towards pole\+Position.
+\item {\bfseries tolerance} -\/ minimum offset from last reached angle. Will stop solving if difference from previous reached angle is less than tolerance. If tolerance is zero, will iterate until max\+Iterations.
+\item {\bfseries max\+Iterations} -\/ max iterations per frame. If tolerance is 0, will always iterate until max\+Iterations
+\item {\bfseries clamp\+Weight} -\/ clamping rotation of the solver. 0 is free rotation, 1 is completely clamped to zero effect
+\item {\bfseries clamp\+Smoothing} -\/ the number of sine smoothing iterations applied to clamping to make it smoother.
+\item {\bfseries bones} -\/ bones used by the solver to orient the Aim Transform to the target. All bones need to be direct ancestors of the Aim Transform and sorted in descending order. You can skip bones in the hierarchy and the Aim Transform itself can also be included. The bone hierarchy can not be branched, meaning you cant assing bones from both hands. Bone weight determines how strongly it is used in bending the hierarchy
+\end{DoxyItemize}
+
+
+
+{\bfseries Script References\+:}
+\begin{DoxyItemize}
+\item \href{http://www.root-motion.com/finalikdox/html/class_root_motion_1_1_final_i_k_1_1_i_k_solver_aim.html}{\tt Solver }
+\item \href{http://www.root-motion.com/finalikdox/html/class_root_motion_1_1_final_i_k_1_1_aim_i_k.html}{\tt Component}
+\end{DoxyItemize}
+
+{\bfseries Changing the aiming target\+:}
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{public} AimIK aimIK;
+
+\textcolor{keywordtype}{void} LateUpdate () \{
+    aimIK.solver.IKPosition = something;
+\}
+\end{DoxyCode}
+
+
+{\bfseries Using the Pole\+:}
+
+The pole\+Position can be helpful when making weapon aiming setups. Let\textquotesingle{}s say we have a gun that\textquotesingle{}s local Z axis is facing towards it\textquotesingle{}s barrel and local Y axis is facing up. In this case we have to set Aim\+IK \char`\"{}\+Axis\char`\"{} to (0, 0, 1) and \char`\"{}\+Pole Axis\char`\"{} to (0, 1, 0). If we now play the scene and set \char`\"{}\+Weight\char`\"{} and \char`\"{}\+Pole Weight\char`\"{} to 1, we will have 2 handles, one for the aiming target and the other for twisting the gun and the body of the character.
+
+Adjusting the Pole by script\+:
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{public} AimIK aimIK;
+
+\textcolor{keywordtype}{void} LateUpdate () \{
+    aimIK.solver.polePosition = something;
+    aimIK.solver.poleWeight = 1f;
+\}
+\end{DoxyCode}
+
+
+{\bfseries Changing the Aim Transform\+:}
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{public} AimIK aimIK;
+
+\textcolor{keywordtype}{void} LateUpdate () \{
+    aimIK.solver.transform = something;
+    aimIK.solver.axis = localAxisOfTheTransformToAimAtTheTarget;
+\}
+\end{DoxyCode}
+
+
+{\bfseries Adding Aim\+IK in runtime\+:}
+\begin{DoxyItemize}
+\item Add the Aim\+IK component via script
+\item Call Aim\+I\+K.\+solver.\+Set\+Chain()
+\end{DoxyItemize}
+
+{\bfseries Changing Aim\+IK bone hierarchy in runtime\+:} 
+\begin{DoxyCode}
+\textcolor{keyword}{public} AimIK aimIK;
+
+\textcolor{keyword}{public} Transform[] newBones;
+
+\textcolor{keywordtype}{void} Change() \{
+    aimIK.solver.SetChain(newBones, aim.transform);
+\}
+\end{DoxyCode}
+
+
+{\bfseries Using Aim\+IK with Rotation Limits\+:} ~\newline
+ It is sometimes necessary to limit the effect of Aim\+IK on one of the bones in it\textquotesingle{}s chain. Usually when you wish to use the elbow joint in the process of aiming a single handed weapon or when you wish to limit the rotation of a spine bone to twisting only. If you just added the Rotation\+Limit component to the bone, it would also interfere with the animation (keep the spine stiff), not just the IK. You can make the Rotation\+Limit only have an effect on the Aim\+IK by defaulting it\textquotesingle{}s rotation each frame before Aim\+IK solves\+:
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{public} AimIK aimIK;
+
+\textcolor{keywordtype}{void} LateUpdate() \{
+    \textcolor{comment}{// Set current animated localRotation as default local rotation for the rotation limits so they will
+       not interfere with the animation, but only the IK}
+    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < aimIK.solver.bones.Length; i++) \{
+        \textcolor{keywordflow}{if} (aimIK.solver.bones[i].rotationLimit != null) \{
+            aimIK.solver.bones[i].rotationLimit.SetDefaultLocalRotation();
+        \}
+    \}
+\}
+\end{DoxyCode}
+
+
+Please note that each Rotation\+Limit decreases the probability of the solver smoothly reaching it\textquotesingle{}s target. ~\newline
+ Since Final\+IK 0.\+4 introduced the pole\+Position and pole\+Weight, using Rotation Limits on characters can in most cases be avoided by using the pole to keep the body upright.
+
+{\bfseries Bone weights} ~\newline
+ Each bone in the \char`\"{}\+Bones\char`\"{} has a weight parameter. It determines how much proportionally is a bone used in the solving process. Fox example if you do not wish a certain spine bone to bend too much, you can just decrease it\textquotesingle{}s weight.
+
+{\bfseries Aiming 2-\/handed weapons\+:} ~\newline
+ When aiming 2-\/handed weapons, we can use only the spine bones (common parents for both hands) in the Aim\+IK bone hierarchy. If we used the arm bones, the other hand would loose contact with the object. Sometimes using just the spine bones is not enough though, as the spine would bend exessively and the character would end up in unnatural poses. We can solve this problem, by adding some of the arm bones (the arm that is holding the object) to Aim\+IK and then use Full\+Body\+Biped\+IK or Limb\+IK to put the other hand back on its place after Aim\+IK is done. Take a look at this \href{https://www.youtube.com/watch?v=5DlTjasmTLk}{\tt tutorial video} to see how it could be done.
+
+{\bfseries Redirecting animation\+:} ~\newline
+ Aim\+IK is perfect for keeping objects steadily aimed at the target. Sometimes those objects have a lot of swinging motion in the animation, like swinging a sword for example, and it is not good to use Aim\+IK to keep the sword oriented at a certain position during that swing. It would keep the sword orientation fixed by bending the rest of the hierarchy and that would interfere with the animation in an unwanted way. It is still possible to use Aim\+IK to redirect swinging animations like swordplay or punching, take a look at this \href{https://www.youtube.com/watch?v=OhCtiV5r8HA}{\tt tutorial video} to see how it could be done.
+
+{\bfseries Recoil/reload animations while aiming\+:} ~\newline
+ While Aim\+IK weight is 1, the solver will maintain the weapon oriented at the target at all times. This might not be the desired behaviour while playing a recoil or reloading animation. We can dynamically change the Axis of Aim\+IK to overcome this issue.
+
+
+\begin{DoxyCode}
+\textcolor{keywordtype}{void} LateUpdate() \{
+        aimIK.solver.axis = aimIK.solver.transform.InverseTransformDirection(character.forward);
+\}
+\end{DoxyCode}
+
+
+That line is telling Aim\+IK that whatever the direction of the weapon in the animation, it is the default forward aiming direction. \char`\"{}\+Character.\+forward\char`\"{} is the direction that the weapon is aimed at (keep it in character space so the effect rotates with the character) in the normal aiming animation without any recoil, so If you were currently playing an \char`\"{}aim right\char`\"{} animation, you should set it to \char`\"{}character.\+right\char`\"{} instead. 

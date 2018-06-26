@@ -1,0 +1,399 @@
+\hypertarget{class_options_file}{}\section{Options\+File Class Reference}
+\label{class_options_file}\index{Options\+File@{Options\+File}}
+
+
+Save data for the settings/options ~\newline
+ 
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_options_file_a2491b9fc88bdd86d876bdd7797fbed72}{Options\+File}} (string a\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Constructor for Options file \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_options_file_abdab0a1c6e374b7fde7967ceb8ec13b6}{Load}} ()
+\item 
+void \mbox{\hyperlink{class_options_file_aa163cc656b4a308fe79102a20dcc0fef}{Save}} ()
+\item 
+string \mbox{\hyperlink{class_options_file_a13132f95a77c7e853049e4a171070c98}{Get}} (string a\+\_\+name, out bool a\+\_\+defined)
+\item 
+void \mbox{\hyperlink{class_options_file_a443990c9593d5856b6c5b6f6bec9e9dd}{Set}} (string a\+\_\+name, string a\+\_\+value)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_options_file}{Options\+File}} \mbox{\hyperlink{class_options_file_ac77fcecfa3e8693e76c52411c612720c}{Load\+File}} (string a\+\_\+file)
+\begin{DoxyCompactList}\small\item\em Load the options data from file \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_options_file_a4c4f2e244de41428463e563442387223}{Save\+File}} (string a\+\_\+file)
+\begin{DoxyCompactList}\small\item\em Save the Options data \end{DoxyCompactList}\item 
+static string \mbox{\hyperlink{class_options_file_ac4a1f6e33de1e7e8bb453ab8597b2258}{Get\+String}} (string a\+\_\+file, string a\+\_\+name, out bool a\+\_\+defined)
+\item 
+static float \mbox{\hyperlink{class_options_file_a128957aa50ad83f1c5df353c69875bdb}{Get\+Float}} (string a\+\_\+file, string a\+\_\+name, out bool a\+\_\+defined)
+\begin{DoxyCompactList}\small\item\em Attempt to get a float from the Data file. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_options_file_a54ab3cc11b484e3b569bb39ff447cba4}{Get\+Int}} (string a\+\_\+file, string a\+\_\+name, out bool a\+\_\+defined)
+\begin{DoxyCompactList}\small\item\em Attempt to get an Int from the Data file \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_options_file_a182edb602fbf1a458da36f1af493e22b}{Get\+Bool}} (string a\+\_\+file, string a\+\_\+name, out bool a\+\_\+defined)
+\begin{DoxyCompactList}\small\item\em Attempt to get a bool from the data file \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_options_file_aa06812a9923c691bcca8af453cfbd295}{Get\+Name\+Length}} (string a\+\_\+file)
+\begin{DoxyCompactList}\small\item\em Get file name Length \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_options_file_adccaf948e362394757ef2fcde8e229a0}{Set\+String}} (string a\+\_\+file, string a\+\_\+name, string a\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Create a string in the file \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_options_file_ab075d3f5560f9a8d91c1f3cd1c0592ea}{Set\+Float}} (string a\+\_\+file, string a\+\_\+name, float a\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Create a Float in the file \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_options_file_a4a6831f269d9d6eeec4e89cd943a8769}{Set\+Int}} (string a\+\_\+file, string a\+\_\+name, int a\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Create a Int in the file \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_options_file_aff17602090f1d2948aef17426a862356}{Set\+Bool}} (string a\+\_\+file, string a\+\_\+name, bool a\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Create a Bool in the file \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_options_file_af9eef6052dd0b04288f80620f4c761b2}{m\+\_\+s\+Name}}
+\item 
+bool \mbox{\hyperlink{class_options_file_a3f1c5738c675b2e7bc8589f77a920995}{m\+\_\+b\+Loaded}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Save data for the settings/options ~\newline
+
+
+
+
+Definition at line 9 of file Options\+File.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_options_file_a2491b9fc88bdd86d876bdd7797fbed72}\label{class_options_file_a2491b9fc88bdd86d876bdd7797fbed72}} 
+\index{Options\+File@{Options\+File}!Options\+File@{Options\+File}}
+\index{Options\+File@{Options\+File}!Options\+File@{Options\+File}}
+\subsubsection{\texorpdfstring{Options\+File()}{OptionsFile()}}
+{\footnotesize\ttfamily Options\+File.\+Options\+File (\begin{DoxyParamCaption}\item[{string}]{a\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Constructor for Options file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+name} & Given name of the new file\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 255 of file Options\+File.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_options_file_a13132f95a77c7e853049e4a171070c98}\label{class_options_file_a13132f95a77c7e853049e4a171070c98}} 
+\index{Options\+File@{Options\+File}!Get@{Get}}
+\index{Get@{Get}!Options\+File@{Options\+File}}
+\subsubsection{\texorpdfstring{Get()}{Get()}}
+{\footnotesize\ttfamily string Options\+File.\+Get (\begin{DoxyParamCaption}\item[{string}]{a\+\_\+name,  }\item[{out bool}]{a\+\_\+defined }\end{DoxyParamCaption})}
+
+
+
+Definition at line 312 of file Options\+File.\+cs.
+
+\mbox{\Hypertarget{class_options_file_a182edb602fbf1a458da36f1af493e22b}\label{class_options_file_a182edb602fbf1a458da36f1af493e22b}} 
+\index{Options\+File@{Options\+File}!Get\+Bool@{Get\+Bool}}
+\index{Get\+Bool@{Get\+Bool}!Options\+File@{Options\+File}}
+\subsubsection{\texorpdfstring{Get\+Bool()}{GetBool()}}
+{\footnotesize\ttfamily static bool Options\+File.\+Get\+Bool (\begin{DoxyParamCaption}\item[{string}]{a\+\_\+file,  }\item[{string}]{a\+\_\+name,  }\item[{out bool}]{a\+\_\+defined }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Attempt to get a bool from the data file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+file} & Filepath\\
+\hline
+{\em a\+\_\+name} & Variable Name\\
+\hline
+{\em a\+\_\+defined} & Returned Value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 141 of file Options\+File.\+cs.
+
+\mbox{\Hypertarget{class_options_file_a128957aa50ad83f1c5df353c69875bdb}\label{class_options_file_a128957aa50ad83f1c5df353c69875bdb}} 
+\index{Options\+File@{Options\+File}!Get\+Float@{Get\+Float}}
+\index{Get\+Float@{Get\+Float}!Options\+File@{Options\+File}}
+\subsubsection{\texorpdfstring{Get\+Float()}{GetFloat()}}
+{\footnotesize\ttfamily static float Options\+File.\+Get\+Float (\begin{DoxyParamCaption}\item[{string}]{a\+\_\+file,  }\item[{string}]{a\+\_\+name,  }\item[{out bool}]{a\+\_\+defined }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Attempt to get a float from the Data file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+file} & filpath\\
+\hline
+{\em a\+\_\+name} & Variable name\\
+\hline
+{\em a\+\_\+defined} & Returned value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 95 of file Options\+File.\+cs.
+
+\mbox{\Hypertarget{class_options_file_a54ab3cc11b484e3b569bb39ff447cba4}\label{class_options_file_a54ab3cc11b484e3b569bb39ff447cba4}} 
+\index{Options\+File@{Options\+File}!Get\+Int@{Get\+Int}}
+\index{Get\+Int@{Get\+Int}!Options\+File@{Options\+File}}
+\subsubsection{\texorpdfstring{Get\+Int()}{GetInt()}}
+{\footnotesize\ttfamily static int Options\+File.\+Get\+Int (\begin{DoxyParamCaption}\item[{string}]{a\+\_\+file,  }\item[{string}]{a\+\_\+name,  }\item[{out bool}]{a\+\_\+defined }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Attempt to get an Int from the Data file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+file} & filepath\\
+\hline
+{\em a\+\_\+name} & Variable name\\
+\hline
+{\em a\+\_\+defined} & Returned Value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 118 of file Options\+File.\+cs.
+
+\mbox{\Hypertarget{class_options_file_aa06812a9923c691bcca8af453cfbd295}\label{class_options_file_aa06812a9923c691bcca8af453cfbd295}} 
+\index{Options\+File@{Options\+File}!Get\+Name\+Length@{Get\+Name\+Length}}
+\index{Get\+Name\+Length@{Get\+Name\+Length}!Options\+File@{Options\+File}}
+\subsubsection{\texorpdfstring{Get\+Name\+Length()}{GetNameLength()}}
+{\footnotesize\ttfamily static int Options\+File.\+Get\+Name\+Length (\begin{DoxyParamCaption}\item[{string}]{a\+\_\+file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get file name Length 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+file} & File name\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 162 of file Options\+File.\+cs.
+
+\mbox{\Hypertarget{class_options_file_ac4a1f6e33de1e7e8bb453ab8597b2258}\label{class_options_file_ac4a1f6e33de1e7e8bb453ab8597b2258}} 
+\index{Options\+File@{Options\+File}!Get\+String@{Get\+String}}
+\index{Get\+String@{Get\+String}!Options\+File@{Options\+File}}
+\subsubsection{\texorpdfstring{Get\+String()}{GetString()}}
+{\footnotesize\ttfamily static string Options\+File.\+Get\+String (\begin{DoxyParamCaption}\item[{string}]{a\+\_\+file,  }\item[{string}]{a\+\_\+name,  }\item[{out bool}]{a\+\_\+defined }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 68 of file Options\+File.\+cs.
+
+\mbox{\Hypertarget{class_options_file_abdab0a1c6e374b7fde7967ceb8ec13b6}\label{class_options_file_abdab0a1c6e374b7fde7967ceb8ec13b6}} 
+\index{Options\+File@{Options\+File}!Load@{Load}}
+\index{Load@{Load}!Options\+File@{Options\+File}}
+\subsubsection{\texorpdfstring{Load()}{Load()}}
+{\footnotesize\ttfamily void Options\+File.\+Load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 263 of file Options\+File.\+cs.
+
+\mbox{\Hypertarget{class_options_file_ac77fcecfa3e8693e76c52411c612720c}\label{class_options_file_ac77fcecfa3e8693e76c52411c612720c}} 
+\index{Options\+File@{Options\+File}!Load\+File@{Load\+File}}
+\index{Load\+File@{Load\+File}!Options\+File@{Options\+File}}
+\subsubsection{\texorpdfstring{Load\+File()}{LoadFile()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_options_file}{Options\+File}} Options\+File.\+Load\+File (\begin{DoxyParamCaption}\item[{string}]{a\+\_\+file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Load the options data from file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+file} & Filepath\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 20 of file Options\+File.\+cs.
+
+\mbox{\Hypertarget{class_options_file_aa163cc656b4a308fe79102a20dcc0fef}\label{class_options_file_aa163cc656b4a308fe79102a20dcc0fef}} 
+\index{Options\+File@{Options\+File}!Save@{Save}}
+\index{Save@{Save}!Options\+File@{Options\+File}}
+\subsubsection{\texorpdfstring{Save()}{Save()}}
+{\footnotesize\ttfamily void Options\+File.\+Save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 291 of file Options\+File.\+cs.
+
+\mbox{\Hypertarget{class_options_file_a4c4f2e244de41428463e563442387223}\label{class_options_file_a4c4f2e244de41428463e563442387223}} 
+\index{Options\+File@{Options\+File}!Save\+File@{Save\+File}}
+\index{Save\+File@{Save\+File}!Options\+File@{Options\+File}}
+\subsubsection{\texorpdfstring{Save\+File()}{SaveFile()}}
+{\footnotesize\ttfamily static void Options\+File.\+Save\+File (\begin{DoxyParamCaption}\item[{string}]{a\+\_\+file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Save the Options data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+file} & filepath\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 51 of file Options\+File.\+cs.
+
+\mbox{\Hypertarget{class_options_file_a443990c9593d5856b6c5b6f6bec9e9dd}\label{class_options_file_a443990c9593d5856b6c5b6f6bec9e9dd}} 
+\index{Options\+File@{Options\+File}!Set@{Set}}
+\index{Set@{Set}!Options\+File@{Options\+File}}
+\subsubsection{\texorpdfstring{Set()}{Set()}}
+{\footnotesize\ttfamily void Options\+File.\+Set (\begin{DoxyParamCaption}\item[{string}]{a\+\_\+name,  }\item[{string}]{a\+\_\+value }\end{DoxyParamCaption})}
+
+lol nice1  
+
+Definition at line 326 of file Options\+File.\+cs.
+
+\mbox{\Hypertarget{class_options_file_aff17602090f1d2948aef17426a862356}\label{class_options_file_aff17602090f1d2948aef17426a862356}} 
+\index{Options\+File@{Options\+File}!Set\+Bool@{Set\+Bool}}
+\index{Set\+Bool@{Set\+Bool}!Options\+File@{Options\+File}}
+\subsubsection{\texorpdfstring{Set\+Bool()}{SetBool()}}
+{\footnotesize\ttfamily static void Options\+File.\+Set\+Bool (\begin{DoxyParamCaption}\item[{string}]{a\+\_\+file,  }\item[{string}]{a\+\_\+name,  }\item[{bool}]{a\+\_\+value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create a Bool in the file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+file} & Filename\\
+\hline
+{\em a\+\_\+name} & Variable Name\\
+\hline
+{\em a\+\_\+value} & Given Value\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 235 of file Options\+File.\+cs.
+
+\mbox{\Hypertarget{class_options_file_ab075d3f5560f9a8d91c1f3cd1c0592ea}\label{class_options_file_ab075d3f5560f9a8d91c1f3cd1c0592ea}} 
+\index{Options\+File@{Options\+File}!Set\+Float@{Set\+Float}}
+\index{Set\+Float@{Set\+Float}!Options\+File@{Options\+File}}
+\subsubsection{\texorpdfstring{Set\+Float()}{SetFloat()}}
+{\footnotesize\ttfamily static void Options\+File.\+Set\+Float (\begin{DoxyParamCaption}\item[{string}]{a\+\_\+file,  }\item[{string}]{a\+\_\+name,  }\item[{float}]{a\+\_\+value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create a Float in the file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+file} & Filename\\
+\hline
+{\em a\+\_\+name} & Variable Name\\
+\hline
+{\em a\+\_\+value} & Given Value\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 213 of file Options\+File.\+cs.
+
+\mbox{\Hypertarget{class_options_file_a4a6831f269d9d6eeec4e89cd943a8769}\label{class_options_file_a4a6831f269d9d6eeec4e89cd943a8769}} 
+\index{Options\+File@{Options\+File}!Set\+Int@{Set\+Int}}
+\index{Set\+Int@{Set\+Int}!Options\+File@{Options\+File}}
+\subsubsection{\texorpdfstring{Set\+Int()}{SetInt()}}
+{\footnotesize\ttfamily static void Options\+File.\+Set\+Int (\begin{DoxyParamCaption}\item[{string}]{a\+\_\+file,  }\item[{string}]{a\+\_\+name,  }\item[{int}]{a\+\_\+value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create a Int in the file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+file} & Filename\\
+\hline
+{\em a\+\_\+name} & Variable Name\\
+\hline
+{\em a\+\_\+value} & Given Value\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 224 of file Options\+File.\+cs.
+
+\mbox{\Hypertarget{class_options_file_adccaf948e362394757ef2fcde8e229a0}\label{class_options_file_adccaf948e362394757ef2fcde8e229a0}} 
+\index{Options\+File@{Options\+File}!Set\+String@{Set\+String}}
+\index{Set\+String@{Set\+String}!Options\+File@{Options\+File}}
+\subsubsection{\texorpdfstring{Set\+String()}{SetString()}}
+{\footnotesize\ttfamily static void Options\+File.\+Set\+String (\begin{DoxyParamCaption}\item[{string}]{a\+\_\+file,  }\item[{string}]{a\+\_\+name,  }\item[{string}]{a\+\_\+value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create a string in the file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+file} & Filename\\
+\hline
+{\em a\+\_\+name} & Variable Name\\
+\hline
+{\em a\+\_\+value} & Given Value\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 189 of file Options\+File.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_options_file_a3f1c5738c675b2e7bc8589f77a920995}\label{class_options_file_a3f1c5738c675b2e7bc8589f77a920995}} 
+\index{Options\+File@{Options\+File}!m\+\_\+b\+Loaded@{m\+\_\+b\+Loaded}}
+\index{m\+\_\+b\+Loaded@{m\+\_\+b\+Loaded}!Options\+File@{Options\+File}}
+\subsubsection{\texorpdfstring{m\+\_\+b\+Loaded}{m\_bLoaded}}
+{\footnotesize\ttfamily bool Options\+File.\+m\+\_\+b\+Loaded}
+
+
+
+Definition at line 247 of file Options\+File.\+cs.
+
+\mbox{\Hypertarget{class_options_file_af9eef6052dd0b04288f80620f4c761b2}\label{class_options_file_af9eef6052dd0b04288f80620f4c761b2}} 
+\index{Options\+File@{Options\+File}!m\+\_\+s\+Name@{m\+\_\+s\+Name}}
+\index{m\+\_\+s\+Name@{m\+\_\+s\+Name}!Options\+File@{Options\+File}}
+\subsubsection{\texorpdfstring{m\+\_\+s\+Name}{m\_sName}}
+{\footnotesize\ttfamily string Options\+File.\+m\+\_\+s\+Name}
+
+
+
+Definition at line 246 of file Options\+File.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+System/\mbox{\hyperlink{_options_file_8cs}{Options\+File.\+cs}}\end{DoxyCompactItemize}

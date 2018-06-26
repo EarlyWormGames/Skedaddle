@@ -1,0 +1,233 @@
+\hypertarget{class_train_effects}{}\section{Train\+Effects Class Reference}
+\label{class_train_effects}\index{Train\+Effects@{Train\+Effects}}
+
+
+base class for all train effects to derive from.  
+
+
+Inheritance diagram for Train\+Effects\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_train_effects}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_train_effects_acabdc668bc9a6cf6d8d9e06fa5ccb071}{On\+Start}} ()
+\item 
+virtual void \mbox{\hyperlink{class_train_effects_a245e2891464a93bda2d8f80c1fb53e2c}{On\+Update}} ()
+\item 
+virtual void \mbox{\hyperlink{class_train_effects_a444cb0c6444a8945f5e1a7f02dc83b99}{Active}} ()
+\item 
+virtual void \mbox{\hyperlink{class_train_effects_a126011673013f79d482f135be84afc96}{Unactive}} ()
+\item 
+virtual void \mbox{\hyperlink{class_train_effects_ad77aba799a5d19a141128639a4bebcad}{On\+Activation}} ()
+\item 
+virtual void \mbox{\hyperlink{class_train_effects_abc55d7e7440cb7a076c7342c3cf74165}{On\+Deactivation}} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_train_effects_a56a29c87a665debd7ccb1da5557378a9}{m\+\_\+f\+Micro\+Offset}}
+\item 
+float \mbox{\hyperlink{class_train_effects_aba08005402c37f100884dc204e3e69ff}{m\+\_\+f\+Micro\+Duration}}
+\item 
+bool \mbox{\hyperlink{class_train_effects_a3ce7bfc16cf90cb9edfe9b585163d0cf}{m\+\_\+b\+Dont\+Deactivate}}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static float \mbox{\hyperlink{class_train_effects_a0a373ff901cb4f1314905fbe0000e519}{m\+\_\+f\+S\+Shake\+Spacing}}
+\begin{DoxyCompactList}\small\item\em Public Variables ///. \end{DoxyCompactList}\item 
+static float \mbox{\hyperlink{class_train_effects_a1e9949427d6c1e1e3d7d2c5d5a21d46b}{m\+\_\+f\+S\+Shake\+Duration}}
+\item 
+static float \mbox{\hyperlink{class_train_effects_a556edd33d84615059499b6ba1542a958}{m\+\_\+f\+S\+Time\+Offset}}
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_train_effects_a449cd1a05e3642c8e588d5ce13c9e0c2}{m\+\_\+b\+Is\+Shaking}}
+\begin{DoxyCompactList}\small\item\em Internal Variables ///. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+base class for all train effects to derive from. 
+
+
+
+Definition at line 7 of file Train\+Effects.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_train_effects_a444cb0c6444a8945f5e1a7f02dc83b99}\label{class_train_effects_a444cb0c6444a8945f5e1a7f02dc83b99}} 
+\index{Train\+Effects@{Train\+Effects}!Active@{Active}}
+\index{Active@{Active}!Train\+Effects@{Train\+Effects}}
+\subsubsection{\texorpdfstring{Active()}{Active()}}
+{\footnotesize\ttfamily virtual void Train\+Effects.\+Active (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_tiling_texture_ad2e8292d65a205d9a05c1cc38f23ec6e}{Tiling\+Texture}}, \mbox{\hyperlink{class_train_light_flicker_a56fcd413440a84b2974c8c37df9b8119}{Train\+Light\+Flicker}}, \mbox{\hyperlink{class_camera_shake_a386499c12399f010723509525fd0fae0}{Camera\+Shake}}, \mbox{\hyperlink{class_roof_dust_particles_a895fc128e3fdb6c87a4267baf26827e9}{Roof\+Dust\+Particles}}, and \mbox{\hyperlink{class_object_jitter_a77b8c9264b6894a2971d1b716590e159}{Object\+Jitter}}.
+
+
+
+Definition at line 76 of file Train\+Effects.\+cs.
+
+\mbox{\Hypertarget{class_train_effects_ad77aba799a5d19a141128639a4bebcad}\label{class_train_effects_ad77aba799a5d19a141128639a4bebcad}} 
+\index{Train\+Effects@{Train\+Effects}!On\+Activation@{On\+Activation}}
+\index{On\+Activation@{On\+Activation}!Train\+Effects@{Train\+Effects}}
+\subsubsection{\texorpdfstring{On\+Activation()}{OnActivation()}}
+{\footnotesize\ttfamily virtual void Train\+Effects.\+On\+Activation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_train_light_flicker_ac3959dac6aa192f03d493625d28a14de}{Train\+Light\+Flicker}}, \mbox{\hyperlink{class_tiling_texture_a83ea89d5d92568bd86a0c5bd22a3bb41}{Tiling\+Texture}}, \mbox{\hyperlink{class_roof_dust_particles_a34d700905e7de95c5381309d20846f1b}{Roof\+Dust\+Particles}}, \mbox{\hyperlink{class_camera_shake_a255a08f5518a42755e063a35ffe2523f}{Camera\+Shake}}, and \mbox{\hyperlink{class_cage_jitter_a31ae5a4505b942993f98a0141da454c2}{Cage\+Jitter}}.
+
+
+
+Definition at line 78 of file Train\+Effects.\+cs.
+
+\mbox{\Hypertarget{class_train_effects_abc55d7e7440cb7a076c7342c3cf74165}\label{class_train_effects_abc55d7e7440cb7a076c7342c3cf74165}} 
+\index{Train\+Effects@{Train\+Effects}!On\+Deactivation@{On\+Deactivation}}
+\index{On\+Deactivation@{On\+Deactivation}!Train\+Effects@{Train\+Effects}}
+\subsubsection{\texorpdfstring{On\+Deactivation()}{OnDeactivation()}}
+{\footnotesize\ttfamily virtual void Train\+Effects.\+On\+Deactivation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_train_light_flicker_aa1f0646e2c9224f0765ab172515490ee}{Train\+Light\+Flicker}}, \mbox{\hyperlink{class_roof_dust_particles_a06d2c08d9bc936dfbb2c21f9201c84dc}{Roof\+Dust\+Particles}}, and \mbox{\hyperlink{class_camera_shake_a23f08ebfe2391c0f361e2944599c8bfa}{Camera\+Shake}}.
+
+
+
+Definition at line 79 of file Train\+Effects.\+cs.
+
+\mbox{\Hypertarget{class_train_effects_acabdc668bc9a6cf6d8d9e06fa5ccb071}\label{class_train_effects_acabdc668bc9a6cf6d8d9e06fa5ccb071}} 
+\index{Train\+Effects@{Train\+Effects}!On\+Start@{On\+Start}}
+\index{On\+Start@{On\+Start}!Train\+Effects@{Train\+Effects}}
+\subsubsection{\texorpdfstring{On\+Start()}{OnStart()}}
+{\footnotesize\ttfamily virtual void Train\+Effects.\+On\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_train_light_flicker_a815f82ff9fe20dc1ea162df8eee0a6cf}{Train\+Light\+Flicker}}, \mbox{\hyperlink{class_tiling_texture_a1af8a5ac35ee619e0fb5db6900d725f6}{Tiling\+Texture}}, \mbox{\hyperlink{class_roof_dust_particles_a9e7b2f81ef7025ae571f03c871b0d4fb}{Roof\+Dust\+Particles}}, \mbox{\hyperlink{class_camera_shake_a564408e38a410303c26ea371f9474496}{Camera\+Shake}}, and \mbox{\hyperlink{class_cage_jitter_a5a4fcbd00fcb23ded787b25ad55ef56c}{Cage\+Jitter}}.
+
+
+
+Definition at line 74 of file Train\+Effects.\+cs.
+
+\mbox{\Hypertarget{class_train_effects_a245e2891464a93bda2d8f80c1fb53e2c}\label{class_train_effects_a245e2891464a93bda2d8f80c1fb53e2c}} 
+\index{Train\+Effects@{Train\+Effects}!On\+Update@{On\+Update}}
+\index{On\+Update@{On\+Update}!Train\+Effects@{Train\+Effects}}
+\subsubsection{\texorpdfstring{On\+Update()}{OnUpdate()}}
+{\footnotesize\ttfamily virtual void Train\+Effects.\+On\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_train_light_flicker_ad39662ddbaa2a6b30a2c1711cda88c54}{Train\+Light\+Flicker}}, \mbox{\hyperlink{class_tiling_texture_af38d77dd9f6f05e650c74f246a22556d}{Tiling\+Texture}}, \mbox{\hyperlink{class_roof_dust_particles_afbc9f6eba4034be6c2f9899b68dca63c}{Roof\+Dust\+Particles}}, \mbox{\hyperlink{class_camera_shake_a4bc10cdc460936d634078c39db1aed3b}{Camera\+Shake}}, and \mbox{\hyperlink{class_cage_jitter_a0e84c06f7b50189264d001f5317fc50e}{Cage\+Jitter}}.
+
+
+
+Definition at line 75 of file Train\+Effects.\+cs.
+
+\mbox{\Hypertarget{class_train_effects_a126011673013f79d482f135be84afc96}\label{class_train_effects_a126011673013f79d482f135be84afc96}} 
+\index{Train\+Effects@{Train\+Effects}!Unactive@{Unactive}}
+\index{Unactive@{Unactive}!Train\+Effects@{Train\+Effects}}
+\subsubsection{\texorpdfstring{Unactive()}{Unactive()}}
+{\footnotesize\ttfamily virtual void Train\+Effects.\+Unactive (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_tiling_texture_adf5b4300ae77f9a1602318da7a0ccc96}{Tiling\+Texture}}, \mbox{\hyperlink{class_train_light_flicker_a82942fb531694697ed18e20a15740d01}{Train\+Light\+Flicker}}, \mbox{\hyperlink{class_roof_dust_particles_a3b1f935efa79fca67c5556425b0210ae}{Roof\+Dust\+Particles}}, and \mbox{\hyperlink{class_camera_shake_ac7c118994512130c10ff57af288fe43e}{Camera\+Shake}}.
+
+
+
+Definition at line 77 of file Train\+Effects.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_train_effects_a3ce7bfc16cf90cb9edfe9b585163d0cf}\label{class_train_effects_a3ce7bfc16cf90cb9edfe9b585163d0cf}} 
+\index{Train\+Effects@{Train\+Effects}!m\+\_\+b\+Dont\+Deactivate@{m\+\_\+b\+Dont\+Deactivate}}
+\index{m\+\_\+b\+Dont\+Deactivate@{m\+\_\+b\+Dont\+Deactivate}!Train\+Effects@{Train\+Effects}}
+\subsubsection{\texorpdfstring{m\+\_\+b\+Dont\+Deactivate}{m\_bDontDeactivate}}
+{\footnotesize\ttfamily bool Train\+Effects.\+m\+\_\+b\+Dont\+Deactivate}
+
+
+
+Definition at line 18 of file Train\+Effects.\+cs.
+
+\mbox{\Hypertarget{class_train_effects_a449cd1a05e3642c8e588d5ce13c9e0c2}\label{class_train_effects_a449cd1a05e3642c8e588d5ce13c9e0c2}} 
+\index{Train\+Effects@{Train\+Effects}!m\+\_\+b\+Is\+Shaking@{m\+\_\+b\+Is\+Shaking}}
+\index{m\+\_\+b\+Is\+Shaking@{m\+\_\+b\+Is\+Shaking}!Train\+Effects@{Train\+Effects}}
+\subsubsection{\texorpdfstring{m\+\_\+b\+Is\+Shaking}{m\_bIsShaking}}
+{\footnotesize\ttfamily bool Train\+Effects.\+m\+\_\+b\+Is\+Shaking\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Internal Variables ///. 
+
+Protected Variables /// 
+
+Definition at line 27 of file Train\+Effects.\+cs.
+
+\mbox{\Hypertarget{class_train_effects_aba08005402c37f100884dc204e3e69ff}\label{class_train_effects_aba08005402c37f100884dc204e3e69ff}} 
+\index{Train\+Effects@{Train\+Effects}!m\+\_\+f\+Micro\+Duration@{m\+\_\+f\+Micro\+Duration}}
+\index{m\+\_\+f\+Micro\+Duration@{m\+\_\+f\+Micro\+Duration}!Train\+Effects@{Train\+Effects}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Micro\+Duration}{m\_fMicroDuration}}
+{\footnotesize\ttfamily float Train\+Effects.\+m\+\_\+f\+Micro\+Duration}
+
+
+
+Definition at line 17 of file Train\+Effects.\+cs.
+
+\mbox{\Hypertarget{class_train_effects_a56a29c87a665debd7ccb1da5557378a9}\label{class_train_effects_a56a29c87a665debd7ccb1da5557378a9}} 
+\index{Train\+Effects@{Train\+Effects}!m\+\_\+f\+Micro\+Offset@{m\+\_\+f\+Micro\+Offset}}
+\index{m\+\_\+f\+Micro\+Offset@{m\+\_\+f\+Micro\+Offset}!Train\+Effects@{Train\+Effects}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Micro\+Offset}{m\_fMicroOffset}}
+{\footnotesize\ttfamily float Train\+Effects.\+m\+\_\+f\+Micro\+Offset}
+
+
+
+Definition at line 16 of file Train\+Effects.\+cs.
+
+\mbox{\Hypertarget{class_train_effects_a1e9949427d6c1e1e3d7d2c5d5a21d46b}\label{class_train_effects_a1e9949427d6c1e1e3d7d2c5d5a21d46b}} 
+\index{Train\+Effects@{Train\+Effects}!m\+\_\+f\+S\+Shake\+Duration@{m\+\_\+f\+S\+Shake\+Duration}}
+\index{m\+\_\+f\+S\+Shake\+Duration@{m\+\_\+f\+S\+Shake\+Duration}!Train\+Effects@{Train\+Effects}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+S\+Shake\+Duration}{m\_fSShakeDuration}}
+{\footnotesize\ttfamily float Train\+Effects.\+m\+\_\+f\+S\+Shake\+Duration\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 14 of file Train\+Effects.\+cs.
+
+\mbox{\Hypertarget{class_train_effects_a0a373ff901cb4f1314905fbe0000e519}\label{class_train_effects_a0a373ff901cb4f1314905fbe0000e519}} 
+\index{Train\+Effects@{Train\+Effects}!m\+\_\+f\+S\+Shake\+Spacing@{m\+\_\+f\+S\+Shake\+Spacing}}
+\index{m\+\_\+f\+S\+Shake\+Spacing@{m\+\_\+f\+S\+Shake\+Spacing}!Train\+Effects@{Train\+Effects}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+S\+Shake\+Spacing}{m\_fSShakeSpacing}}
+{\footnotesize\ttfamily float Train\+Effects.\+m\+\_\+f\+S\+Shake\+Spacing\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Public Variables ///. 
+
+
+
+Definition at line 13 of file Train\+Effects.\+cs.
+
+\mbox{\Hypertarget{class_train_effects_a556edd33d84615059499b6ba1542a958}\label{class_train_effects_a556edd33d84615059499b6ba1542a958}} 
+\index{Train\+Effects@{Train\+Effects}!m\+\_\+f\+S\+Time\+Offset@{m\+\_\+f\+S\+Time\+Offset}}
+\index{m\+\_\+f\+S\+Time\+Offset@{m\+\_\+f\+S\+Time\+Offset}!Train\+Effects@{Train\+Effects}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+S\+Time\+Offset}{m\_fSTimeOffset}}
+{\footnotesize\ttfamily float Train\+Effects.\+m\+\_\+f\+S\+Time\+Offset\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 15 of file Train\+Effects.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Aesthetic/\+Train Aesthetics/\mbox{\hyperlink{_train_effects_8cs}{Train\+Effects.\+cs}}\end{DoxyCompactItemize}

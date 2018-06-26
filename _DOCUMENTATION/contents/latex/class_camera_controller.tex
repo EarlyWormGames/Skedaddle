@@ -1,0 +1,360 @@
+\hypertarget{class_camera_controller}{}\section{Camera\+Controller Class Reference}
+\label{class_camera_controller}\index{Camera\+Controller@{Camera\+Controller}}
+
+
+Camera movement handled in late update because of m  
+
+
+Inheritance diagram for Camera\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_camera_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_camera_controller_a5fac91ad6dfd73b67cbec8e427b4736e}{View\+Object}} (Game\+Object a\+\_\+object, float a\+\_\+wait\+Timer=1f, float a\+\_\+look\+Time=1f, Transform a\+\_\+look\+At=null, bool a\+\_\+b\+Cancel\+Look\+At=true)
+\begin{DoxyCompactList}\small\item\em have the camera look at a point/object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_camera_controller_a11f7d8c8c178433e5d3a54f62711ff37}{View\+Then\+Reload}} (Vector3 a\+\_\+pos, float a\+\_\+wait\+Timer=1f, float a\+\_\+look\+Time=1f)
+\begin{DoxyCompactList}\small\item\em have the camera look at a point and reload the level. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_camera_controller_a2720f41abfc672dea4fd3e386eb4e3fa}{Go\+To\+Point}} (Vector3 a\+\_\+point, float a\+\_\+wait\+Timer=float.\+Positive\+Infinity, float a\+\_\+look\+Time=1f)
+\item 
+void \mbox{\hyperlink{class_camera_controller_a90cd597ab3d5586711544b3f449eb68d}{Lerp\+To\+Point}} (Vector3 a\+\_\+point, float a\+\_\+wait\+Timer=float.\+Positive\+Infinity, float a\+\_\+look\+Speed=1f)
+\item 
+void \mbox{\hyperlink{class_camera_controller_a9b8ad016594f7b86daa8406f9f8fe31f}{Follow\+Animal}} ()
+\item 
+void \mbox{\hyperlink{class_camera_controller_ae466f73db5ef581ce90cb69f1f66605a}{Switch}} (\mbox{\hyperlink{class_animal}{Animal}} a\+\_\+animal)
+\item 
+void \mbox{\hyperlink{class_camera_controller_acebc21dbad7ad835eb72706bee190c77}{Lights\+Out}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_turn}{Turn}} all the lights in the scene off \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_camera_controller_a66d5c10c02d5c08b89ad623afde6cdf2}{Let\+There\+Be\+Light}} ()
+\begin{DoxyCompactList}\small\item\em turn all the lights in the scene on \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Rigidbody \mbox{\hyperlink{class_camera_controller_ad6e1e777936be668f56a0fe183b6917d}{m\+\_\+r\+Body}}
+\item 
+float \mbox{\hyperlink{class_camera_controller_aa5f8628654be31b528a929ae61c5ab52}{m\+\_\+f\+Y\+Add}} = 0f
+\item 
+float \mbox{\hyperlink{class_camera_controller_a8798ad2d23175bf6a1fc55905ee8e22a}{m\+\_\+f\+Camera\+Speed}} = 4f
+\item 
+float \mbox{\hyperlink{class_camera_controller_a2353caba06439ca6ec202ea74d5a607d}{m\+\_\+f\+Rotate\+Speed}} = 2f
+\item 
+float \mbox{\hyperlink{class_camera_controller_ac00593a666b5192bcd109a0eebf7a272}{m\+\_\+f\+Focal\+Speed}} = 2f
+\item 
+Vector2 \mbox{\hyperlink{class_camera_controller_af868dbed0987e517c1d5756b3a83610a}{m\+\_\+f\+Animal\+Speed\+Buffer}} = new Vector2 (0.\+5f, 0.\+5f)
+\item 
+bool \mbox{\hyperlink{class_camera_controller_a5a86f74242b3547e6f2d0d85bac35019}{m\+\_\+b\+Allow\+Manual\+Offsets}} = false
+\item 
+bool \mbox{\hyperlink{class_camera_controller_ab3e3057150c585361a707031c0fb2d29}{m\+\_\+b\+Follow\+AnimalZ}} = false
+\item 
+Animation\+Curve \mbox{\hyperlink{class_camera_controller_a70e07e27e4f1077febe45becebdc9b01}{m\+\_\+a\+Lerp\+Curve}}
+\item 
+float \mbox{\hyperlink{class_camera_controller_a1ff4ea82ac72e8be51d6ed1093fbc5e5}{m\+\_\+\+Light\+Speed}} = 1f
+\item 
+float \mbox{\hyperlink{class_camera_controller_aa0020e312684263a817d73d6c492a54d}{m\+\_\+\+Vingette\+Speed}} = 1f
+\item 
+float \mbox{\hyperlink{class_camera_controller_a07ce81630c7ad6f66a9d047cfb185e45}{m\+\_\+\+Vingette\+Max}} = 2
+\item 
+bool \mbox{\hyperlink{class_camera_controller_a85d67c9a5d7cb32ede2fbf569864cfa3}{m\+\_\+\+Its\+Lit\+Fam}} = false
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{_camera_controller_8cs_a2329f0155caaad919c97c5f57e062b81}{Camera\+End\+Delegate}} \mbox{\hyperlink{class_camera_controller_a9d88e2bce9ea6e7279f6524722069ae3}{on\+End}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+new Camera \mbox{\hyperlink{class_camera_controller_a6d8239eb360decf9f5cdace7bcd9cc19}{camera}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Camera movement handled in late update because of m 
+
+
+
+Definition at line 10 of file Camera\+Controller.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_camera_controller_a9b8ad016594f7b86daa8406f9f8fe31f}\label{class_camera_controller_a9b8ad016594f7b86daa8406f9f8fe31f}} 
+\index{Camera\+Controller@{Camera\+Controller}!Follow\+Animal@{Follow\+Animal}}
+\index{Follow\+Animal@{Follow\+Animal}!Camera\+Controller@{Camera\+Controller}}
+\subsubsection{\texorpdfstring{Follow\+Animal()}{FollowAnimal()}}
+{\footnotesize\ttfamily void Camera\+Controller.\+Follow\+Animal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 367 of file Camera\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_camera_controller_a2720f41abfc672dea4fd3e386eb4e3fa}\label{class_camera_controller_a2720f41abfc672dea4fd3e386eb4e3fa}} 
+\index{Camera\+Controller@{Camera\+Controller}!Go\+To\+Point@{Go\+To\+Point}}
+\index{Go\+To\+Point@{Go\+To\+Point}!Camera\+Controller@{Camera\+Controller}}
+\subsubsection{\texorpdfstring{Go\+To\+Point()}{GoToPoint()}}
+{\footnotesize\ttfamily void Camera\+Controller.\+Go\+To\+Point (\begin{DoxyParamCaption}\item[{Vector3}]{a\+\_\+point,  }\item[{float}]{a\+\_\+wait\+Timer = {\ttfamily float.PositiveInfinity},  }\item[{float}]{a\+\_\+look\+Time = {\ttfamily 1f} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 343 of file Camera\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_camera_controller_a90cd597ab3d5586711544b3f449eb68d}\label{class_camera_controller_a90cd597ab3d5586711544b3f449eb68d}} 
+\index{Camera\+Controller@{Camera\+Controller}!Lerp\+To\+Point@{Lerp\+To\+Point}}
+\index{Lerp\+To\+Point@{Lerp\+To\+Point}!Camera\+Controller@{Camera\+Controller}}
+\subsubsection{\texorpdfstring{Lerp\+To\+Point()}{LerpToPoint()}}
+{\footnotesize\ttfamily void Camera\+Controller.\+Lerp\+To\+Point (\begin{DoxyParamCaption}\item[{Vector3}]{a\+\_\+point,  }\item[{float}]{a\+\_\+wait\+Timer = {\ttfamily float.PositiveInfinity},  }\item[{float}]{a\+\_\+look\+Speed = {\ttfamily 1f} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 355 of file Camera\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_camera_controller_a66d5c10c02d5c08b89ad623afde6cdf2}\label{class_camera_controller_a66d5c10c02d5c08b89ad623afde6cdf2}} 
+\index{Camera\+Controller@{Camera\+Controller}!Let\+There\+Be\+Light@{Let\+There\+Be\+Light}}
+\index{Let\+There\+Be\+Light@{Let\+There\+Be\+Light}!Camera\+Controller@{Camera\+Controller}}
+\subsubsection{\texorpdfstring{Let\+There\+Be\+Light()}{LetThereBeLight()}}
+{\footnotesize\ttfamily void Camera\+Controller.\+Let\+There\+Be\+Light (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+turn all the lights in the scene on 
+
+
+
+Definition at line 398 of file Camera\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_camera_controller_acebc21dbad7ad835eb72706bee190c77}\label{class_camera_controller_acebc21dbad7ad835eb72706bee190c77}} 
+\index{Camera\+Controller@{Camera\+Controller}!Lights\+Out@{Lights\+Out}}
+\index{Lights\+Out@{Lights\+Out}!Camera\+Controller@{Camera\+Controller}}
+\subsubsection{\texorpdfstring{Lights\+Out()}{LightsOut()}}
+{\footnotesize\ttfamily void Camera\+Controller.\+Lights\+Out (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_turn}{Turn}} all the lights in the scene off 
+
+
+
+Definition at line 387 of file Camera\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_camera_controller_ae466f73db5ef581ce90cb69f1f66605a}\label{class_camera_controller_ae466f73db5ef581ce90cb69f1f66605a}} 
+\index{Camera\+Controller@{Camera\+Controller}!Switch@{Switch}}
+\index{Switch@{Switch}!Camera\+Controller@{Camera\+Controller}}
+\subsubsection{\texorpdfstring{Switch()}{Switch()}}
+{\footnotesize\ttfamily void Camera\+Controller.\+Switch (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{a\+\_\+animal }\end{DoxyParamCaption})}
+
+
+
+Definition at line 373 of file Camera\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_camera_controller_a5fac91ad6dfd73b67cbec8e427b4736e}\label{class_camera_controller_a5fac91ad6dfd73b67cbec8e427b4736e}} 
+\index{Camera\+Controller@{Camera\+Controller}!View\+Object@{View\+Object}}
+\index{View\+Object@{View\+Object}!Camera\+Controller@{Camera\+Controller}}
+\subsubsection{\texorpdfstring{View\+Object()}{ViewObject()}}
+{\footnotesize\ttfamily void Camera\+Controller.\+View\+Object (\begin{DoxyParamCaption}\item[{Game\+Object}]{a\+\_\+object,  }\item[{float}]{a\+\_\+wait\+Timer = {\ttfamily 1f},  }\item[{float}]{a\+\_\+look\+Time = {\ttfamily 1f},  }\item[{Transform}]{a\+\_\+look\+At = {\ttfamily null},  }\item[{bool}]{a\+\_\+b\+Cancel\+Look\+At = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+have the camera look at a point/object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+object} & \\
+\hline
+{\em a\+\_\+wait\+Timer} & \\
+\hline
+{\em a\+\_\+look\+Time} & \\
+\hline
+{\em a\+\_\+look\+At} & \\
+\hline
+{\em a\+\_\+b\+Cancel\+Look\+At} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 304 of file Camera\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_camera_controller_a11f7d8c8c178433e5d3a54f62711ff37}\label{class_camera_controller_a11f7d8c8c178433e5d3a54f62711ff37}} 
+\index{Camera\+Controller@{Camera\+Controller}!View\+Then\+Reload@{View\+Then\+Reload}}
+\index{View\+Then\+Reload@{View\+Then\+Reload}!Camera\+Controller@{Camera\+Controller}}
+\subsubsection{\texorpdfstring{View\+Then\+Reload()}{ViewThenReload()}}
+{\footnotesize\ttfamily void Camera\+Controller.\+View\+Then\+Reload (\begin{DoxyParamCaption}\item[{Vector3}]{a\+\_\+pos,  }\item[{float}]{a\+\_\+wait\+Timer = {\ttfamily 1f},  }\item[{float}]{a\+\_\+look\+Time = {\ttfamily 1f} }\end{DoxyParamCaption})}
+
+
+
+have the camera look at a point and reload the level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+pos} & \\
+\hline
+{\em a\+\_\+wait\+Timer} & \\
+\hline
+{\em a\+\_\+look\+Time} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 328 of file Camera\+Controller.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_camera_controller_a70e07e27e4f1077febe45becebdc9b01}\label{class_camera_controller_a70e07e27e4f1077febe45becebdc9b01}} 
+\index{Camera\+Controller@{Camera\+Controller}!m\+\_\+a\+Lerp\+Curve@{m\+\_\+a\+Lerp\+Curve}}
+\index{m\+\_\+a\+Lerp\+Curve@{m\+\_\+a\+Lerp\+Curve}!Camera\+Controller@{Camera\+Controller}}
+\subsubsection{\texorpdfstring{m\+\_\+a\+Lerp\+Curve}{m\_aLerpCurve}}
+{\footnotesize\ttfamily Animation\+Curve Camera\+Controller.\+m\+\_\+a\+Lerp\+Curve}
+
+
+
+Definition at line 46 of file Camera\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_camera_controller_a5a86f74242b3547e6f2d0d85bac35019}\label{class_camera_controller_a5a86f74242b3547e6f2d0d85bac35019}} 
+\index{Camera\+Controller@{Camera\+Controller}!m\+\_\+b\+Allow\+Manual\+Offsets@{m\+\_\+b\+Allow\+Manual\+Offsets}}
+\index{m\+\_\+b\+Allow\+Manual\+Offsets@{m\+\_\+b\+Allow\+Manual\+Offsets}!Camera\+Controller@{Camera\+Controller}}
+\subsubsection{\texorpdfstring{m\+\_\+b\+Allow\+Manual\+Offsets}{m\_bAllowManualOffsets}}
+{\footnotesize\ttfamily bool Camera\+Controller.\+m\+\_\+b\+Allow\+Manual\+Offsets = false}
+
+
+
+Definition at line 43 of file Camera\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_camera_controller_ab3e3057150c585361a707031c0fb2d29}\label{class_camera_controller_ab3e3057150c585361a707031c0fb2d29}} 
+\index{Camera\+Controller@{Camera\+Controller}!m\+\_\+b\+Follow\+AnimalZ@{m\+\_\+b\+Follow\+AnimalZ}}
+\index{m\+\_\+b\+Follow\+AnimalZ@{m\+\_\+b\+Follow\+AnimalZ}!Camera\+Controller@{Camera\+Controller}}
+\subsubsection{\texorpdfstring{m\+\_\+b\+Follow\+AnimalZ}{m\_bFollowAnimalZ}}
+{\footnotesize\ttfamily bool Camera\+Controller.\+m\+\_\+b\+Follow\+AnimalZ = false}
+
+
+
+Definition at line 44 of file Camera\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_camera_controller_af868dbed0987e517c1d5756b3a83610a}\label{class_camera_controller_af868dbed0987e517c1d5756b3a83610a}} 
+\index{Camera\+Controller@{Camera\+Controller}!m\+\_\+f\+Animal\+Speed\+Buffer@{m\+\_\+f\+Animal\+Speed\+Buffer}}
+\index{m\+\_\+f\+Animal\+Speed\+Buffer@{m\+\_\+f\+Animal\+Speed\+Buffer}!Camera\+Controller@{Camera\+Controller}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Animal\+Speed\+Buffer}{m\_fAnimalSpeedBuffer}}
+{\footnotesize\ttfamily Vector2 Camera\+Controller.\+m\+\_\+f\+Animal\+Speed\+Buffer = new Vector2 (0.\+5f, 0.\+5f)}
+
+
+
+Definition at line 42 of file Camera\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_camera_controller_a8798ad2d23175bf6a1fc55905ee8e22a}\label{class_camera_controller_a8798ad2d23175bf6a1fc55905ee8e22a}} 
+\index{Camera\+Controller@{Camera\+Controller}!m\+\_\+f\+Camera\+Speed@{m\+\_\+f\+Camera\+Speed}}
+\index{m\+\_\+f\+Camera\+Speed@{m\+\_\+f\+Camera\+Speed}!Camera\+Controller@{Camera\+Controller}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Camera\+Speed}{m\_fCameraSpeed}}
+{\footnotesize\ttfamily float Camera\+Controller.\+m\+\_\+f\+Camera\+Speed = 4f}
+
+
+
+Definition at line 39 of file Camera\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_camera_controller_ac00593a666b5192bcd109a0eebf7a272}\label{class_camera_controller_ac00593a666b5192bcd109a0eebf7a272}} 
+\index{Camera\+Controller@{Camera\+Controller}!m\+\_\+f\+Focal\+Speed@{m\+\_\+f\+Focal\+Speed}}
+\index{m\+\_\+f\+Focal\+Speed@{m\+\_\+f\+Focal\+Speed}!Camera\+Controller@{Camera\+Controller}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Focal\+Speed}{m\_fFocalSpeed}}
+{\footnotesize\ttfamily float Camera\+Controller.\+m\+\_\+f\+Focal\+Speed = 2f}
+
+
+
+Definition at line 41 of file Camera\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_camera_controller_a2353caba06439ca6ec202ea74d5a607d}\label{class_camera_controller_a2353caba06439ca6ec202ea74d5a607d}} 
+\index{Camera\+Controller@{Camera\+Controller}!m\+\_\+f\+Rotate\+Speed@{m\+\_\+f\+Rotate\+Speed}}
+\index{m\+\_\+f\+Rotate\+Speed@{m\+\_\+f\+Rotate\+Speed}!Camera\+Controller@{Camera\+Controller}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Rotate\+Speed}{m\_fRotateSpeed}}
+{\footnotesize\ttfamily float Camera\+Controller.\+m\+\_\+f\+Rotate\+Speed = 2f}
+
+
+
+Definition at line 40 of file Camera\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_camera_controller_aa5f8628654be31b528a929ae61c5ab52}\label{class_camera_controller_aa5f8628654be31b528a929ae61c5ab52}} 
+\index{Camera\+Controller@{Camera\+Controller}!m\+\_\+f\+Y\+Add@{m\+\_\+f\+Y\+Add}}
+\index{m\+\_\+f\+Y\+Add@{m\+\_\+f\+Y\+Add}!Camera\+Controller@{Camera\+Controller}}
+\subsubsection{\texorpdfstring{m\+\_\+f\+Y\+Add}{m\_fYAdd}}
+{\footnotesize\ttfamily float Camera\+Controller.\+m\+\_\+f\+Y\+Add = 0f}
+
+
+
+Definition at line 38 of file Camera\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_camera_controller_a85d67c9a5d7cb32ede2fbf569864cfa3}\label{class_camera_controller_a85d67c9a5d7cb32ede2fbf569864cfa3}} 
+\index{Camera\+Controller@{Camera\+Controller}!m\+\_\+\+Its\+Lit\+Fam@{m\+\_\+\+Its\+Lit\+Fam}}
+\index{m\+\_\+\+Its\+Lit\+Fam@{m\+\_\+\+Its\+Lit\+Fam}!Camera\+Controller@{Camera\+Controller}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Its\+Lit\+Fam}{m\_ItsLitFam}}
+{\footnotesize\ttfamily bool Camera\+Controller.\+m\+\_\+\+Its\+Lit\+Fam = false}
+
+
+
+Definition at line 51 of file Camera\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_camera_controller_a1ff4ea82ac72e8be51d6ed1093fbc5e5}\label{class_camera_controller_a1ff4ea82ac72e8be51d6ed1093fbc5e5}} 
+\index{Camera\+Controller@{Camera\+Controller}!m\+\_\+\+Light\+Speed@{m\+\_\+\+Light\+Speed}}
+\index{m\+\_\+\+Light\+Speed@{m\+\_\+\+Light\+Speed}!Camera\+Controller@{Camera\+Controller}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Light\+Speed}{m\_LightSpeed}}
+{\footnotesize\ttfamily float Camera\+Controller.\+m\+\_\+\+Light\+Speed = 1f}
+
+
+
+Definition at line 48 of file Camera\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_camera_controller_ad6e1e777936be668f56a0fe183b6917d}\label{class_camera_controller_ad6e1e777936be668f56a0fe183b6917d}} 
+\index{Camera\+Controller@{Camera\+Controller}!m\+\_\+r\+Body@{m\+\_\+r\+Body}}
+\index{m\+\_\+r\+Body@{m\+\_\+r\+Body}!Camera\+Controller@{Camera\+Controller}}
+\subsubsection{\texorpdfstring{m\+\_\+r\+Body}{m\_rBody}}
+{\footnotesize\ttfamily Rigidbody Camera\+Controller.\+m\+\_\+r\+Body}
+
+
+
+Definition at line 36 of file Camera\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_camera_controller_a07ce81630c7ad6f66a9d047cfb185e45}\label{class_camera_controller_a07ce81630c7ad6f66a9d047cfb185e45}} 
+\index{Camera\+Controller@{Camera\+Controller}!m\+\_\+\+Vingette\+Max@{m\+\_\+\+Vingette\+Max}}
+\index{m\+\_\+\+Vingette\+Max@{m\+\_\+\+Vingette\+Max}!Camera\+Controller@{Camera\+Controller}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Vingette\+Max}{m\_VingetteMax}}
+{\footnotesize\ttfamily float Camera\+Controller.\+m\+\_\+\+Vingette\+Max = 2}
+
+
+
+Definition at line 50 of file Camera\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_camera_controller_aa0020e312684263a817d73d6c492a54d}\label{class_camera_controller_aa0020e312684263a817d73d6c492a54d}} 
+\index{Camera\+Controller@{Camera\+Controller}!m\+\_\+\+Vingette\+Speed@{m\+\_\+\+Vingette\+Speed}}
+\index{m\+\_\+\+Vingette\+Speed@{m\+\_\+\+Vingette\+Speed}!Camera\+Controller@{Camera\+Controller}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Vingette\+Speed}{m\_VingetteSpeed}}
+{\footnotesize\ttfamily float Camera\+Controller.\+m\+\_\+\+Vingette\+Speed = 1f}
+
+
+
+Definition at line 49 of file Camera\+Controller.\+cs.
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_camera_controller_a6d8239eb360decf9f5cdace7bcd9cc19}\label{class_camera_controller_a6d8239eb360decf9f5cdace7bcd9cc19}} 
+\index{Camera\+Controller@{Camera\+Controller}!camera@{camera}}
+\index{camera@{camera}!Camera\+Controller@{Camera\+Controller}}
+\subsubsection{\texorpdfstring{camera}{camera}}
+{\footnotesize\ttfamily new Camera Camera\+Controller.\+camera\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line 25 of file Camera\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_camera_controller_a9d88e2bce9ea6e7279f6524722069ae3}\label{class_camera_controller_a9d88e2bce9ea6e7279f6524722069ae3}} 
+\index{Camera\+Controller@{Camera\+Controller}!on\+End@{on\+End}}
+\index{on\+End@{on\+End}!Camera\+Controller@{Camera\+Controller}}
+\subsubsection{\texorpdfstring{on\+End}{onEnd}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_camera_controller_8cs_a2329f0155caaad919c97c5f57e062b81}{Camera\+End\+Delegate}} Camera\+Controller.\+on\+End\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line 13 of file Camera\+Controller.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Game/\mbox{\hyperlink{_camera_controller_8cs}{Camera\+Controller.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,26 @@
+var class_poodle =
+[
+    [ "CalculateMoveSpeed", "class_poodle.html#afded59108342a9d5c41b91305911752b", null ],
+    [ "CanAttach", "class_poodle.html#a1176b4dc1a07c88c75498f4fc80aba4a", null ],
+    [ "DropLoris", "class_poodle.html#a5e80c74cffb2d8235abf064eb729bfec", null ],
+    [ "GetName", "class_poodle.html#a4aa6f80707dff1497fa00f855e28435e", null ],
+    [ "OnAwake", "class_poodle.html#ac1de5bc05d00449271365b51f90ef80f", null ],
+    [ "OnDeath", "class_poodle.html#a86cc87a183e2b7b2297d9481c2c0d416", null ],
+    [ "OnFixedUpdate", "class_poodle.html#a43c5147cedef40592b077814bffda480", null ],
+    [ "OnPushChange", "class_poodle.html#a5c281a37883590cab7ffd1bd361e4eac", null ],
+    [ "OnSelectChange", "class_poodle.html#a57d0ab14cdd7ac693e010ca42fe52a6e", null ],
+    [ "OnUpdate", "class_poodle.html#a48df28b8984d812658dae3516e9e421a", null ],
+    [ "PickupLoris", "class_poodle.html#aea810427376cee41f4e99fc020c50d70", null ],
+    [ "BoxCastDistance", "class_poodle.html#a8ce5f871336e0b20db5e56f59044cf2e", null ],
+    [ "BoxCastSize", "class_poodle.html#ab04d1e89fcda03d28adc20257e7eb91d", null ],
+    [ "BoxCastY_Offset", "class_poodle.html#a8f3004f4bdff69af0fac2ee8bd0646cd", null ],
+    [ "LorisCheckLayer", "class_poodle.html#a3b1ec14dd7f47087bc37e16fadd568a4", null ],
+    [ "LorisHolder", "class_poodle.html#a75a53eff0fa4c18603e09edf63ffbbf6", null ],
+    [ "m_bIKAnimationFix", "class_poodle.html#af814dd8bc3a241f977fcc3cd6f4e81d7", null ],
+    [ "m_fIKDampen", "class_poodle.html#a4001bc9e52ae2ea7ae9e8af49baf1b48", null ],
+    [ "m_fPelvisCorrectionDampening", "class_poodle.html#a66af4f17ace4a85c5280b7692a26fa0c", null ],
+    [ "m_fPushForce", "class_poodle.html#a134048ef3ba7ed3b67ca48822925c64c", null ],
+    [ "m_fRunSpeedMult", "class_poodle.html#acba2d379c3793b44fda2ea6b5dc45202", null ],
+    [ "m_IKLedgeBlend", "class_poodle.html#a09afc8011fdd8762fe83e4c56796d75a", null ],
+    [ "m_RunBuffer", "class_poodle.html#a673508ffb04736432dbacf012f3ca0ef", null ]
+];

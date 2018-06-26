@@ -1,0 +1,388 @@
+\hypertarget{class_trampoline}{}\section{Trampoline Class Reference}
+\label{class_trampoline}\index{Trampoline@{Trampoline}}
+Inheritance diagram for Trampoline\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{class_trampoline}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_trampoline_1_1_tramp_spline}{Tramp\+Spline}}
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Unity\+Event \mbox{\hyperlink{class_trampoline_a4a2450bd36816b5fa007622413b2bf33}{On\+Spline\+End}}
+\item 
+bool \mbox{\hyperlink{class_trampoline_a51524749c9009590b8585f711e4c5064}{Launch\+On\+Trigger}} = false
+\item 
+bool \mbox{\hyperlink{class_trampoline_a7b13a227faf77c125abec786dd7d8e9c}{Allow\+Objects}} = false
+\item 
+Animator \mbox{\hyperlink{class_trampoline_aa9187792ca436af65cca3180da945c8b}{Animator\+Controller}}
+\item 
+\mbox{\hyperlink{class_trampoline_1_1_tramp_spline}{Tramp\+Spline}} \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_trampoline_abe1760bab2cdc68d0e77d44c952879fa}{Animal\+Splines}}
+\item 
+\mbox{\hyperlink{class_bezier_spline}{Bezier\+Spline}} \mbox{\hyperlink{class_trampoline_a58599e3ada17e6bb98ef27fa7afa0b47}{Object\+Spline}}
+\item 
+\mbox{\hyperlink{class_bezier_spline}{Bezier\+Spline}} \mbox{\hyperlink{class_trampoline_aea8073d79b9f7ba4a0ffd874d75ff0b3}{Exit\+Spline}}
+\item 
+float \mbox{\hyperlink{class_trampoline_a7bd13ae4229933df0648f5a714bce5aa}{Launch\+Spline\+Speed}} = 1
+\item 
+Animation\+Curve \mbox{\hyperlink{class_trampoline_ac0d0e4d0f6f1e52ac36235c4a35dd28d}{Launch\+Curve}} = Animation\+Curve.\+Linear(0, 0, 1, 1)
+\item 
+Axis\+Action \mbox{\hyperlink{class_trampoline_ac7db8dd743a2cfbf7224d611eef4bad2}{Launch\+Axis}}
+\item 
+bool \mbox{\hyperlink{class_trampoline_ae47591befb521f0821ad4caae5edd492}{Invert\+Axis}}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_trampoline_a8ca649f9cd7a2ec2510ab39888c3dd16}{On\+Start}} ()
+\item 
+override bool \mbox{\hyperlink{class_trampoline_a88fb0d537bb19917501307544d3e50b5}{Check\+Detach}} ()
+\item 
+override bool \mbox{\hyperlink{class_trampoline_a7cd4dba8195da3407019ef918daa1280}{Check\+Input}} (Input\+Control input, \mbox{\hyperlink{class_animal}{Animal}} caller)
+\begin{DoxyCompactList}\small\item\em Default simply checks if the {\itshape caller}  works with \mbox{\hyperlink{class_animal_trigger_ae8394dfcf5f91b8c413959a4d6baa3a9}{Animal\+Trigger.\+Allows\+Animal(\+Animal)}} \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_trampoline_acb12701ada778aa924cf51b892abc364}{On\+Update}} ()
+\item 
+override void \mbox{\hyperlink{class_trampoline_a37c1ae11b89a61be854133cfa1628572}{Do\+Interact}} (\mbox{\hyperlink{class_animal}{Animal}} caller)
+\item 
+override void \mbox{\hyperlink{class_trampoline_a593abd52ed17139a320ee418aff6b120}{On\+Animal\+Enter}} (\mbox{\hyperlink{class_animal}{Animal}} a\+\_\+animal)
+\item 
+override void \mbox{\hyperlink{class_trampoline_a82a3dc5c89e349b31def18b36ee1ad5a}{Object\+Enter}} (Collider a\+\_\+col)
+\begin{DoxyCompactList}\small\item\em An object other than an \mbox{\hyperlink{class_animal}{Animal}} has entered the trigger \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_trampoline_a3924d1f315181a81e2117ab239b8ec0e}{Object\+Exit}} (Collider a\+\_\+col)
+\begin{DoxyCompactList}\small\item\em An object other than an \mbox{\hyperlink{class_animal}{Animal}} has exited the trigger \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_trampoline_a7ffb817b148f86e9cc5dd7faa1af7c0c}{Wrong\+Animal\+Enter}} (\mbox{\hyperlink{class_animal}{Animal}} a\+\_\+animal)
+\begin{DoxyCompactList}\small\item\em An incorrect \mbox{\hyperlink{class_animal}{Animal}} has entered the trigger \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_trampoline_ac7806793d08278aafaac93d0ac552e51}{Wrong\+Animal\+Exit}} (\mbox{\hyperlink{class_animal}{Animal}} a\+\_\+animal)
+\begin{DoxyCompactList}\small\item\em An incorrect \mbox{\hyperlink{class_animal}{Animal}} has exited the trigger \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_trampoline_a2bb01ad135e9dfe5ad5685aaea9936c9}{On\+Detach}} (\mbox{\hyperlink{class_animal}{Animal}} animal)
+\begin{DoxyCompactList}\small\item\em Detaches a specific animal from the trampoline \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+override bool \mbox{\hyperlink{class_trampoline_a7888515923868cf96a0f0bb60b318b63}{Head\+Trigger\+Only}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 7 of file Trampoline.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_trampoline_a88fb0d537bb19917501307544d3e50b5}\label{class_trampoline_a88fb0d537bb19917501307544d3e50b5}} 
+\index{Trampoline@{Trampoline}!Check\+Detach@{Check\+Detach}}
+\index{Check\+Detach@{Check\+Detach}!Trampoline@{Trampoline}}
+\subsubsection{\texorpdfstring{Check\+Detach()}{CheckDetach()}}
+{\footnotesize\ttfamily override bool Trampoline.\+Check\+Detach (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_attachable_a5cd6ea1bf16c527c033e6f09681f84f8}{Attachable}}.
+
+
+
+Definition at line 52 of file Trampoline.\+cs.
+
+\mbox{\Hypertarget{class_trampoline_a7cd4dba8195da3407019ef918daa1280}\label{class_trampoline_a7cd4dba8195da3407019ef918daa1280}} 
+\index{Trampoline@{Trampoline}!Check\+Input@{Check\+Input}}
+\index{Check\+Input@{Check\+Input}!Trampoline@{Trampoline}}
+\subsubsection{\texorpdfstring{Check\+Input()}{CheckInput()}}
+{\footnotesize\ttfamily override bool Trampoline.\+Check\+Input (\begin{DoxyParamCaption}\item[{Input\+Control}]{input,  }\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{caller }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Default simply checks if the {\itshape caller}  works with \mbox{\hyperlink{class_animal_trigger_ae8394dfcf5f91b8c413959a4d6baa3a9}{Animal\+Trigger.\+Allows\+Animal(\+Animal)}} 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_attachable_interact_a7efc3c845dc5112e6c744eee254094e6}{Attachable\+Interact}}.
+
+
+
+Definition at line 57 of file Trampoline.\+cs.
+
+\mbox{\Hypertarget{class_trampoline_a37c1ae11b89a61be854133cfa1628572}\label{class_trampoline_a37c1ae11b89a61be854133cfa1628572}} 
+\index{Trampoline@{Trampoline}!Do\+Interact@{Do\+Interact}}
+\index{Do\+Interact@{Do\+Interact}!Trampoline@{Trampoline}}
+\subsubsection{\texorpdfstring{Do\+Interact()}{DoInteract()}}
+{\footnotesize\ttfamily override void Trampoline.\+Do\+Interact (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{caller }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_attachable_interact_a9b07a54f1dbb96777c4bd287dfe438e3}{Attachable\+Interact}}.
+
+
+
+Definition at line 87 of file Trampoline.\+cs.
+
+\mbox{\Hypertarget{class_trampoline_a82a3dc5c89e349b31def18b36ee1ad5a}\label{class_trampoline_a82a3dc5c89e349b31def18b36ee1ad5a}} 
+\index{Trampoline@{Trampoline}!Object\+Enter@{Object\+Enter}}
+\index{Object\+Enter@{Object\+Enter}!Trampoline@{Trampoline}}
+\subsubsection{\texorpdfstring{Object\+Enter()}{ObjectEnter()}}
+{\footnotesize\ttfamily override void Trampoline.\+Object\+Enter (\begin{DoxyParamCaption}\item[{Collider}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+An object other than an \mbox{\hyperlink{class_animal}{Animal}} has entered the trigger 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_animal_trigger_ac9d6fbc38448a5369e5658ae0774bd58}{Animal\+Trigger}}.
+
+
+
+Definition at line 113 of file Trampoline.\+cs.
+
+\mbox{\Hypertarget{class_trampoline_a3924d1f315181a81e2117ab239b8ec0e}\label{class_trampoline_a3924d1f315181a81e2117ab239b8ec0e}} 
+\index{Trampoline@{Trampoline}!Object\+Exit@{Object\+Exit}}
+\index{Object\+Exit@{Object\+Exit}!Trampoline@{Trampoline}}
+\subsubsection{\texorpdfstring{Object\+Exit()}{ObjectExit()}}
+{\footnotesize\ttfamily override void Trampoline.\+Object\+Exit (\begin{DoxyParamCaption}\item[{Collider}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+An object other than an \mbox{\hyperlink{class_animal}{Animal}} has exited the trigger 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_animal_trigger_aad4a0cd7f224897b7d810429e05b038a}{Animal\+Trigger}}.
+
+
+
+Definition at line 132 of file Trampoline.\+cs.
+
+\mbox{\Hypertarget{class_trampoline_a593abd52ed17139a320ee418aff6b120}\label{class_trampoline_a593abd52ed17139a320ee418aff6b120}} 
+\index{Trampoline@{Trampoline}!On\+Animal\+Enter@{On\+Animal\+Enter}}
+\index{On\+Animal\+Enter@{On\+Animal\+Enter}!Trampoline@{Trampoline}}
+\subsubsection{\texorpdfstring{On\+Animal\+Enter()}{OnAnimalEnter()}}
+{\footnotesize\ttfamily override void Trampoline.\+On\+Animal\+Enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{a\+\_\+animal }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_attachable_interact_a376127af23be5456604ee5ec39f02b9b}{Attachable\+Interact}}.
+
+
+
+Definition at line 100 of file Trampoline.\+cs.
+
+\mbox{\Hypertarget{class_trampoline_a2bb01ad135e9dfe5ad5685aaea9936c9}\label{class_trampoline_a2bb01ad135e9dfe5ad5685aaea9936c9}} 
+\index{Trampoline@{Trampoline}!On\+Detach@{On\+Detach}}
+\index{On\+Detach@{On\+Detach}!Trampoline@{Trampoline}}
+\subsubsection{\texorpdfstring{On\+Detach()}{OnDetach()}}
+{\footnotesize\ttfamily override void Trampoline.\+On\+Detach (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{animal }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Detaches a specific animal from the trampoline 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_attachable_abe7cf9d7930393610c7c9c4ae14b12d7}{Attachable}}.
+
+
+
+Definition at line 281 of file Trampoline.\+cs.
+
+\mbox{\Hypertarget{class_trampoline_a8ca649f9cd7a2ec2510ab39888c3dd16}\label{class_trampoline_a8ca649f9cd7a2ec2510ab39888c3dd16}} 
+\index{Trampoline@{Trampoline}!On\+Start@{On\+Start}}
+\index{On\+Start@{On\+Start}!Trampoline@{Trampoline}}
+\subsubsection{\texorpdfstring{On\+Start()}{OnStart()}}
+{\footnotesize\ttfamily override void Trampoline.\+On\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_attachable_a3c05c0b07b831881a7ab245057d34d30}{Attachable}}.
+
+
+
+Definition at line 40 of file Trampoline.\+cs.
+
+\mbox{\Hypertarget{class_trampoline_acb12701ada778aa924cf51b892abc364}\label{class_trampoline_acb12701ada778aa924cf51b892abc364}} 
+\index{Trampoline@{Trampoline}!On\+Update@{On\+Update}}
+\index{On\+Update@{On\+Update}!Trampoline@{Trampoline}}
+\subsubsection{\texorpdfstring{On\+Update()}{OnUpdate()}}
+{\footnotesize\ttfamily override void Trampoline.\+On\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_attachable_abb659a66efacd6fa09fa1d7125c7b5e6}{Attachable}}.
+
+
+
+Definition at line 80 of file Trampoline.\+cs.
+
+\mbox{\Hypertarget{class_trampoline_a7ffb817b148f86e9cc5dd7faa1af7c0c}\label{class_trampoline_a7ffb817b148f86e9cc5dd7faa1af7c0c}} 
+\index{Trampoline@{Trampoline}!Wrong\+Animal\+Enter@{Wrong\+Animal\+Enter}}
+\index{Wrong\+Animal\+Enter@{Wrong\+Animal\+Enter}!Trampoline@{Trampoline}}
+\subsubsection{\texorpdfstring{Wrong\+Animal\+Enter()}{WrongAnimalEnter()}}
+{\footnotesize\ttfamily override void Trampoline.\+Wrong\+Animal\+Enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+An incorrect \mbox{\hyperlink{class_animal}{Animal}} has entered the trigger 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_animal_trigger_a7a27e866d74251de063bb4a36c99e99d}{Animal\+Trigger}}.
+
+
+
+Definition at line 138 of file Trampoline.\+cs.
+
+\mbox{\Hypertarget{class_trampoline_ac7806793d08278aafaac93d0ac552e51}\label{class_trampoline_ac7806793d08278aafaac93d0ac552e51}} 
+\index{Trampoline@{Trampoline}!Wrong\+Animal\+Exit@{Wrong\+Animal\+Exit}}
+\index{Wrong\+Animal\+Exit@{Wrong\+Animal\+Exit}!Trampoline@{Trampoline}}
+\subsubsection{\texorpdfstring{Wrong\+Animal\+Exit()}{WrongAnimalExit()}}
+{\footnotesize\ttfamily override void Trampoline.\+Wrong\+Animal\+Exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animal}{Animal}}}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+An incorrect \mbox{\hyperlink{class_animal}{Animal}} has exited the trigger 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_animal_trigger_abbdf7b21fc9595ff639b96e6baecec46}{Animal\+Trigger}}.
+
+
+
+Definition at line 144 of file Trampoline.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_trampoline_a7b13a227faf77c125abec786dd7d8e9c}\label{class_trampoline_a7b13a227faf77c125abec786dd7d8e9c}} 
+\index{Trampoline@{Trampoline}!Allow\+Objects@{Allow\+Objects}}
+\index{Allow\+Objects@{Allow\+Objects}!Trampoline@{Trampoline}}
+\subsubsection{\texorpdfstring{Allow\+Objects}{AllowObjects}}
+{\footnotesize\ttfamily bool Trampoline.\+Allow\+Objects = false}
+
+
+
+Definition at line 20 of file Trampoline.\+cs.
+
+\mbox{\Hypertarget{class_trampoline_abe1760bab2cdc68d0e77d44c952879fa}\label{class_trampoline_abe1760bab2cdc68d0e77d44c952879fa}} 
+\index{Trampoline@{Trampoline}!Animal\+Splines@{Animal\+Splines}}
+\index{Animal\+Splines@{Animal\+Splines}!Trampoline@{Trampoline}}
+\subsubsection{\texorpdfstring{Animal\+Splines}{AnimalSplines}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_trampoline_1_1_tramp_spline}{Tramp\+Spline}} \mbox{[}$\,$\mbox{]} Trampoline.\+Animal\+Splines}
+
+
+
+Definition at line 24 of file Trampoline.\+cs.
+
+\mbox{\Hypertarget{class_trampoline_aa9187792ca436af65cca3180da945c8b}\label{class_trampoline_aa9187792ca436af65cca3180da945c8b}} 
+\index{Trampoline@{Trampoline}!Animator\+Controller@{Animator\+Controller}}
+\index{Animator\+Controller@{Animator\+Controller}!Trampoline@{Trampoline}}
+\subsubsection{\texorpdfstring{Animator\+Controller}{AnimatorController}}
+{\footnotesize\ttfamily Animator Trampoline.\+Animator\+Controller}
+
+
+
+Definition at line 21 of file Trampoline.\+cs.
+
+\mbox{\Hypertarget{class_trampoline_aea8073d79b9f7ba4a0ffd874d75ff0b3}\label{class_trampoline_aea8073d79b9f7ba4a0ffd874d75ff0b3}} 
+\index{Trampoline@{Trampoline}!Exit\+Spline@{Exit\+Spline}}
+\index{Exit\+Spline@{Exit\+Spline}!Trampoline@{Trampoline}}
+\subsubsection{\texorpdfstring{Exit\+Spline}{ExitSpline}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bezier_spline}{Bezier\+Spline}} Trampoline.\+Exit\+Spline}
+
+
+
+Definition at line 26 of file Trampoline.\+cs.
+
+\mbox{\Hypertarget{class_trampoline_ae47591befb521f0821ad4caae5edd492}\label{class_trampoline_ae47591befb521f0821ad4caae5edd492}} 
+\index{Trampoline@{Trampoline}!Invert\+Axis@{Invert\+Axis}}
+\index{Invert\+Axis@{Invert\+Axis}!Trampoline@{Trampoline}}
+\subsubsection{\texorpdfstring{Invert\+Axis}{InvertAxis}}
+{\footnotesize\ttfamily bool Trampoline.\+Invert\+Axis}
+
+
+
+Definition at line 32 of file Trampoline.\+cs.
+
+\mbox{\Hypertarget{class_trampoline_ac7db8dd743a2cfbf7224d611eef4bad2}\label{class_trampoline_ac7db8dd743a2cfbf7224d611eef4bad2}} 
+\index{Trampoline@{Trampoline}!Launch\+Axis@{Launch\+Axis}}
+\index{Launch\+Axis@{Launch\+Axis}!Trampoline@{Trampoline}}
+\subsubsection{\texorpdfstring{Launch\+Axis}{LaunchAxis}}
+{\footnotesize\ttfamily Axis\+Action Trampoline.\+Launch\+Axis}
+
+
+
+Definition at line 31 of file Trampoline.\+cs.
+
+\mbox{\Hypertarget{class_trampoline_ac0d0e4d0f6f1e52ac36235c4a35dd28d}\label{class_trampoline_ac0d0e4d0f6f1e52ac36235c4a35dd28d}} 
+\index{Trampoline@{Trampoline}!Launch\+Curve@{Launch\+Curve}}
+\index{Launch\+Curve@{Launch\+Curve}!Trampoline@{Trampoline}}
+\subsubsection{\texorpdfstring{Launch\+Curve}{LaunchCurve}}
+{\footnotesize\ttfamily Animation\+Curve Trampoline.\+Launch\+Curve = Animation\+Curve.\+Linear(0, 0, 1, 1)}
+
+
+
+Definition at line 28 of file Trampoline.\+cs.
+
+\mbox{\Hypertarget{class_trampoline_a51524749c9009590b8585f711e4c5064}\label{class_trampoline_a51524749c9009590b8585f711e4c5064}} 
+\index{Trampoline@{Trampoline}!Launch\+On\+Trigger@{Launch\+On\+Trigger}}
+\index{Launch\+On\+Trigger@{Launch\+On\+Trigger}!Trampoline@{Trampoline}}
+\subsubsection{\texorpdfstring{Launch\+On\+Trigger}{LaunchOnTrigger}}
+{\footnotesize\ttfamily bool Trampoline.\+Launch\+On\+Trigger = false}
+
+
+
+Definition at line 19 of file Trampoline.\+cs.
+
+\mbox{\Hypertarget{class_trampoline_a7bd13ae4229933df0648f5a714bce5aa}\label{class_trampoline_a7bd13ae4229933df0648f5a714bce5aa}} 
+\index{Trampoline@{Trampoline}!Launch\+Spline\+Speed@{Launch\+Spline\+Speed}}
+\index{Launch\+Spline\+Speed@{Launch\+Spline\+Speed}!Trampoline@{Trampoline}}
+\subsubsection{\texorpdfstring{Launch\+Spline\+Speed}{LaunchSplineSpeed}}
+{\footnotesize\ttfamily float Trampoline.\+Launch\+Spline\+Speed = 1}
+
+
+
+Definition at line 27 of file Trampoline.\+cs.
+
+\mbox{\Hypertarget{class_trampoline_a58599e3ada17e6bb98ef27fa7afa0b47}\label{class_trampoline_a58599e3ada17e6bb98ef27fa7afa0b47}} 
+\index{Trampoline@{Trampoline}!Object\+Spline@{Object\+Spline}}
+\index{Object\+Spline@{Object\+Spline}!Trampoline@{Trampoline}}
+\subsubsection{\texorpdfstring{Object\+Spline}{ObjectSpline}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bezier_spline}{Bezier\+Spline}} Trampoline.\+Object\+Spline}
+
+
+
+Definition at line 25 of file Trampoline.\+cs.
+
+\mbox{\Hypertarget{class_trampoline_a4a2450bd36816b5fa007622413b2bf33}\label{class_trampoline_a4a2450bd36816b5fa007622413b2bf33}} 
+\index{Trampoline@{Trampoline}!On\+Spline\+End@{On\+Spline\+End}}
+\index{On\+Spline\+End@{On\+Spline\+End}!Trampoline@{Trampoline}}
+\subsubsection{\texorpdfstring{On\+Spline\+End}{OnSplineEnd}}
+{\footnotesize\ttfamily Unity\+Event Trampoline.\+On\+Spline\+End}
+
+
+
+Definition at line 16 of file Trampoline.\+cs.
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_trampoline_a7888515923868cf96a0f0bb60b318b63}\label{class_trampoline_a7888515923868cf96a0f0bb60b318b63}} 
+\index{Trampoline@{Trampoline}!Head\+Trigger\+Only@{Head\+Trigger\+Only}}
+\index{Head\+Trigger\+Only@{Head\+Trigger\+Only}!Trampoline@{Trampoline}}
+\subsubsection{\texorpdfstring{Head\+Trigger\+Only}{HeadTriggerOnly}}
+{\footnotesize\ttfamily override bool Trampoline.\+Head\+Trigger\+Only\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 33 of file Trampoline.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Interactables/\+Attachables/\mbox{\hyperlink{_trampoline_8cs}{Trampoline.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,49 @@
+C\+CD (Cyclic Coordinate Descent) is one of the simplest and most popular inverse kinematics methods that has been extensively used in the computer games industry. The main idea behind the solver is to align one joint with the end effector and the target at a time, so that the last bone of the chain iteratively gets closer to the target. C\+CD is very fast and reliable even with rotation limits applied. C\+CD tends to overemphasise the rotations of the bones closer to the target position (a very long C\+CD chain would just roll in around it\textquotesingle{}s target). Reducing bone weight down the hierarchy will compensate for this effect. It is designed to handle serial chains, thus, it is difficult to extend to problems with multiple end effectors (in this case go with F\+A\+B\+R\+IK). It also takes a lot of iterations to fully extend the chain.
+
+Monitoring and validating the IK chain each frame would be expensive on the performance, therefore changing the bone hierarchy in runtime has to be done by calling Set\+Chain (Transform\mbox{[}\mbox{]} hierarchy) on the solver. Set\+Chain returns true if the hierarchy is valid. C\+CD allows for direct editing of it\textquotesingle{}s bones\textquotesingle{} rotations (not by the scene view handles though), but not positions, meaning you can write a script that rotates the bones in a C\+CD chain each frame, but you should not try to change the bone positions like you can do with a F\+A\+B\+R\+IK solver. You can, however, rescale the bones at will, C\+CD does not care about bone lengths.
+
+{\bfseries Getting started\+:}
+\begin{DoxyItemize}
+\item Add the C\+C\+D\+IK component to the first Game\+Object in the chain
+\item Assign all the elements in the chain to \char`\"{}\+Bones\char`\"{} in the component. Parents first, bones can be skipped.
+\item Press Play, set weight to 1
+\end{DoxyItemize}
+
+{\bfseries Changing the target position\+:}
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{public} CCDIK ccdIK;
+
+\textcolor{keywordtype}{void} LateUpdate () \{
+    ccdIK.solver.IKPosition = something;
+\}
+\end{DoxyCode}
+
+
+{\bfseries Adding C\+C\+D\+IK in runtime\+:}
+\begin{DoxyItemize}
+\item Add the C\+C\+D\+IK component via script
+\item Call C\+C\+D\+I\+K.\+solver.\+Set\+Chain()
+\end{DoxyItemize}
+
+{\bfseries Using C\+CD with Rotation Limits\+:} ~\newline
+Simply add a Rotation Limit component (Rotation\+Limit\+Angle, Rotation\+Limit\+Hinge, Rotation\+Limit\+Polygonal or Rotation\+Limit\+Spline) to a bone that has been assigned to the \char`\"{}\+Bones\char`\"{} of the C\+C\+D\+IK component. Note that each rotation limit decreases the stability and continuity of the solver. If C\+C\+D\+IK is unable to solve a highly constrained chain at certain target positions, it is most likely not a bug with Final\+IK, but a fundamental handicap of the C\+CD algorithm (remember, no IK algorithm is perfect).
+
+ {\bfseries Component variables\+:}
+\begin{DoxyItemize}
+\item {\bfseries time\+Step} -\/ if zero, will update the solver in every Late\+Update(). Use this for chains that are animated. If $>$ 0, will be used as updating frequency so that the solver will reach its target in the same time on all machines
+\item {\bfseries fix\+Transforms} -\/ if true, will fix all the Transforms used by the solver to their initial state in each Update. This prevents potential problems with unanimated bones and animator culling with a small cost of performance
+\end{DoxyItemize}
+
+{\bfseries Solver variables\+:}
+\begin{DoxyItemize}
+\item {\bfseries target} -\/ the target Transform. If assigned, solver I\+K\+Position will be automatically set to the position of the target.
+\item {\bfseries weight} -\/ the solver weight for smoothly blending out the effect of the IK
+\item {\bfseries tolerance} -\/ minimum distance from last reached position. Will stop solving if difference from previous reached position is less than tolerance. If tolerance is zero, will iterate until max\+Iterations.
+\item {\bfseries max\+Iterations} -\/ max iterations per frame. If tolerance is 0, will always iterate until max\+Iterations
+\item {\bfseries use\+Rotation\+Limits} -\/ if true, will use any Rotation\+Limit component attached to the bones
+\item {\bfseries bones} -\/ bones used by the solver to reach to the target. All bones need to be sorted in descending order (parents first). Bones can be skipped in the hierarchy. The bone hierarchy can not be branched, meaning you cant assing bones from both hands. Bone weight determines how strongly it is used by the solver.
+\end{DoxyItemize}
+
+ 

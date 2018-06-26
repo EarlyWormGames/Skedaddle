@@ -1,0 +1,162 @@
+\hypertarget{class_sweeping_slider}{}\section{Sweeping\+Slider Class Reference}
+\label{class_sweeping_slider}\index{Sweeping\+Slider@{Sweeping\+Slider}}
+
+
+sweep test for sliding objects  
+
+
+Inheritance diagram for Sweeping\+Slider\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_sweeping_slider}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Rigidbody \mbox{\hyperlink{class_sweeping_slider_a96e08844d4d167c5e434b730ab078ea0}{Sweep\+Body}}
+\item 
+Transform \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_sweeping_slider_a4c909987850cc1ca277166a961c8f544}{Growing\+Objects}}
+\item 
+float \mbox{\hyperlink{class_sweeping_slider_a6652f5431d5b04c25135bd9ddec8fd3c}{Grow\+Min}} = 1
+\item 
+float \mbox{\hyperlink{class_sweeping_slider_a54a4f66dd3e0e8f40e2a63965017acce}{Grow\+Max}} = 2
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_sweeping_slider_a333d1088bd5ef48fe770e43527f75c49}{On\+Start}} ()
+\begin{DoxyCompactList}\small\item\em Allows for child/parent classes to still call Start properly \end{DoxyCompactList}\item 
+override bool \mbox{\hyperlink{class_sweeping_slider_ac2a74d4cc8483404f577f51aef02589e}{Do\+Slide}} (float time)
+\begin{DoxyCompactList}\small\item\em Called for every frame the object is moving \end{DoxyCompactList}\item 
+override bool \mbox{\hyperlink{class_sweeping_slider_aded891966e0230cae066605d1d5aaf78}{Do\+Move}} (Vector3 position)
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_sweeping_slider_a3def56a1e81ee06a67744cc00d5bd622}{Use\+Sweep}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+sweep test for sliding objects 
+
+figure out if an object can move without hitting something. 
+
+Definition at line 10 of file Sweeping\+Slider.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sweeping_slider_aded891966e0230cae066605d1d5aaf78}\label{class_sweeping_slider_aded891966e0230cae066605d1d5aaf78}} 
+\index{Sweeping\+Slider@{Sweeping\+Slider}!Do\+Move@{Do\+Move}}
+\index{Do\+Move@{Do\+Move}!Sweeping\+Slider@{Sweeping\+Slider}}
+\subsubsection{\texorpdfstring{Do\+Move()}{DoMove()}}
+{\footnotesize\ttfamily override bool Sweeping\+Slider.\+Do\+Move (\begin{DoxyParamCaption}\item[{Vector3}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_sliding_object_ab5a9f4c9a30b3fd106f9c4ea9218d679}{Sliding\+Object}}.
+
+
+
+Definition at line 36 of file Sweeping\+Slider.\+cs.
+
+\mbox{\Hypertarget{class_sweeping_slider_ac2a74d4cc8483404f577f51aef02589e}\label{class_sweeping_slider_ac2a74d4cc8483404f577f51aef02589e}} 
+\index{Sweeping\+Slider@{Sweeping\+Slider}!Do\+Slide@{Do\+Slide}}
+\index{Do\+Slide@{Do\+Slide}!Sweeping\+Slider@{Sweeping\+Slider}}
+\subsubsection{\texorpdfstring{Do\+Slide()}{DoSlide()}}
+{\footnotesize\ttfamily override bool Sweeping\+Slider.\+Do\+Slide (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Called for every frame the object is moving 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_sliding_object_a5da98cd763d752b6a7378d181b35f3d0}{Sliding\+Object}}.
+
+
+
+Definition at line 24 of file Sweeping\+Slider.\+cs.
+
+\mbox{\Hypertarget{class_sweeping_slider_a333d1088bd5ef48fe770e43527f75c49}\label{class_sweeping_slider_a333d1088bd5ef48fe770e43527f75c49}} 
+\index{Sweeping\+Slider@{Sweeping\+Slider}!On\+Start@{On\+Start}}
+\index{On\+Start@{On\+Start}!Sweeping\+Slider@{Sweeping\+Slider}}
+\subsubsection{\texorpdfstring{On\+Start()}{OnStart()}}
+{\footnotesize\ttfamily override void Sweeping\+Slider.\+On\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Allows for child/parent classes to still call Start properly 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_moving_object_a17c2c8f8e720dc68bf25c0abc59bf5f9}{Moving\+Object}}.
+
+
+
+Definition at line 18 of file Sweeping\+Slider.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_sweeping_slider_a4c909987850cc1ca277166a961c8f544}\label{class_sweeping_slider_a4c909987850cc1ca277166a961c8f544}} 
+\index{Sweeping\+Slider@{Sweeping\+Slider}!Growing\+Objects@{Growing\+Objects}}
+\index{Growing\+Objects@{Growing\+Objects}!Sweeping\+Slider@{Sweeping\+Slider}}
+\subsubsection{\texorpdfstring{Growing\+Objects}{GrowingObjects}}
+{\footnotesize\ttfamily Transform \mbox{[}$\,$\mbox{]} Sweeping\+Slider.\+Growing\+Objects}
+
+
+
+Definition at line 13 of file Sweeping\+Slider.\+cs.
+
+\mbox{\Hypertarget{class_sweeping_slider_a54a4f66dd3e0e8f40e2a63965017acce}\label{class_sweeping_slider_a54a4f66dd3e0e8f40e2a63965017acce}} 
+\index{Sweeping\+Slider@{Sweeping\+Slider}!Grow\+Max@{Grow\+Max}}
+\index{Grow\+Max@{Grow\+Max}!Sweeping\+Slider@{Sweeping\+Slider}}
+\subsubsection{\texorpdfstring{Grow\+Max}{GrowMax}}
+{\footnotesize\ttfamily float Sweeping\+Slider.\+Grow\+Max = 2}
+
+
+
+Definition at line 15 of file Sweeping\+Slider.\+cs.
+
+\mbox{\Hypertarget{class_sweeping_slider_a6652f5431d5b04c25135bd9ddec8fd3c}\label{class_sweeping_slider_a6652f5431d5b04c25135bd9ddec8fd3c}} 
+\index{Sweeping\+Slider@{Sweeping\+Slider}!Grow\+Min@{Grow\+Min}}
+\index{Grow\+Min@{Grow\+Min}!Sweeping\+Slider@{Sweeping\+Slider}}
+\subsubsection{\texorpdfstring{Grow\+Min}{GrowMin}}
+{\footnotesize\ttfamily float Sweeping\+Slider.\+Grow\+Min = 1}
+
+
+
+Definition at line 14 of file Sweeping\+Slider.\+cs.
+
+\mbox{\Hypertarget{class_sweeping_slider_a96e08844d4d167c5e434b730ab078ea0}\label{class_sweeping_slider_a96e08844d4d167c5e434b730ab078ea0}} 
+\index{Sweeping\+Slider@{Sweeping\+Slider}!Sweep\+Body@{Sweep\+Body}}
+\index{Sweep\+Body@{Sweep\+Body}!Sweeping\+Slider@{Sweeping\+Slider}}
+\subsubsection{\texorpdfstring{Sweep\+Body}{SweepBody}}
+{\footnotesize\ttfamily Rigidbody Sweeping\+Slider.\+Sweep\+Body}
+
+
+
+Definition at line 12 of file Sweeping\+Slider.\+cs.
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_sweeping_slider_a3def56a1e81ee06a67744cc00d5bd622}\label{class_sweeping_slider_a3def56a1e81ee06a67744cc00d5bd622}} 
+\index{Sweeping\+Slider@{Sweeping\+Slider}!Use\+Sweep@{Use\+Sweep}}
+\index{Use\+Sweep@{Use\+Sweep}!Sweeping\+Slider@{Sweeping\+Slider}}
+\subsubsection{\texorpdfstring{Use\+Sweep}{UseSweep}}
+{\footnotesize\ttfamily bool Sweeping\+Slider.\+Use\+Sweep\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line 16 of file Sweeping\+Slider.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Interactables/\+Other/\mbox{\hyperlink{_sweeping_slider_8cs}{Sweeping\+Slider.\+cs}}\end{DoxyCompactItemize}
